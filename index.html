@@ -1,179 +1,184 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>हिंदू एन्साइक्लोपीडिया | Hindu Encyclopedia</title>
-    <meta name="description" content="सनातन इतिहास • हेरिटेज • सत्य - The ultimate Hindu Encyclopedia">
-    <meta name="theme-color" content="#4A0404">
+    <title>Hindu Encyclopedia</title>
+    <meta name="description" content="Eternal History • Sacred Heritage • Historical Truth - The ultimate Hindu Encyclopedia">
+    <meta name="theme-color" content="#FF6B35">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --saffron: #FF9933;
-            --gold: #FFD700;
-            --maroon: #4A0404;
-            --dark-maroon: #2d0000;
-            --text-color: #ffffff;
+            --primary-saffron: #FF6B35;
+            --secondary-gold: #F7931E;
+            --text-dark: #2c3e50;
+            --bg-start: #fefefe;
+            --bg-end: #f8f9fa;
+            --white: #ffffff;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            background-color: var(--maroon);
-            color: var(--text-color);
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+            color: var(--text-dark);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-saffron), var(--secondary-gold));
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(to right, #FFD700, #FDB931);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 2rem 1rem;
             text-align: center;
-        }
-
-        /* Mandala Pattern Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at center, transparent 0%, transparent 20%, var(--dark-maroon) 20%, var(--dark-maroon) 22%, transparent 22%),
-                radial-gradient(circle at center, transparent 0%, transparent 30%, var(--saffron) 30%, var(--saffron) 30.5%, transparent 30.5%),
-                radial-gradient(circle at center, transparent 0%, transparent 40%, var(--gold) 40%, var(--gold) 40.2%, transparent 40.2%),
-                conic-gradient(from 0deg at 50% 50%, transparent 0deg, var(--dark-maroon) 15deg, transparent 30deg, var(--dark-maroon) 45deg, transparent 60deg, var(--dark-maroon) 75deg, transparent 90deg, var(--dark-maroon) 105deg, transparent 120deg, var(--dark-maroon) 135deg, transparent 150deg, var(--dark-maroon) 165deg, transparent 180deg, var(--dark-maroon) 195deg, transparent 210deg, var(--dark-maroon) 225deg, transparent 240deg, var(--dark-maroon) 255deg, transparent 270deg, var(--dark-maroon) 285deg, transparent 300deg, var(--dark-maroon) 315deg, transparent 330deg, var(--dark-maroon) 345deg, transparent 360deg);
-            background-size: 100% 100%;
-            opacity: 0.1;
-            z-index: -1;
-            animation: spin 60s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        header {
-            margin-bottom: 3rem;
-            animation: fadeInDown 1.5s ease-out;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            background: linear-gradient(to right, var(--saffron), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
-            line-height: 1.2;
-        }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 4rem;
-            }
+            max-width: 600px;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .tagline {
             font-size: 1.2rem;
-            margin-top: 0.5rem;
-            color: var(--gold);
-            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
             opacity: 0.9;
+            line-height: 1.6;
         }
 
-        main {
+        /* Buttons */
+        .btn-container {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
             width: 100%;
-            max-width: 400px;
-            padding: 0 1rem;
-            box-sizing: border-box;
-            animation: fadeInUp 1.5s ease-out 0.5s backwards;
         }
 
-        .nav-link {
+        .nav-btn {
             display: block;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--saffron);
-            color: var(--text-color);
+            background: var(--white);
+            color: var(--text-dark);
             text-decoration: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 1.2rem 2rem;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid transparent; /* Prepare for border transition if needed, though mostly shadow based */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(5px);
+            z-index: 1;
         }
 
-        .nav-link::before {
+        /* Gradient border effect simulated with background-clip or box-shadow */
+        .nav-btn::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-            transition: 0.5s;
+            background: linear-gradient(45deg, var(--primary-saffron), var(--secondary-gold));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            border-radius: 16px; /* Match button radius */
         }
 
-        .nav-link:hover {
+        .nav-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 15px var(--gold);
-            background: rgba(255, 153, 51, 0.1);
-            border-color: var(--gold);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(247, 147, 30, 0.4); /* Glow matching gold/orange */
+            border-color: transparent;
         }
 
-        .nav-link:hover::before {
-            left: 100%;
+        .nav-btn:hover::before {
+            opacity: 1;
         }
 
+        /* Footer */
         footer {
-            margin-top: 4rem;
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white); /* Can be transparent or white matching bg-end */
+            color: var(--text-dark);
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            animation: fadeIn 2s ease-in 1s backwards;
+            opacity: 0.8;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
+        main {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Responsive Tweaks */
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            .tagline {
+                font-size: 1.5rem;
+            }
+            .nav-btn {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>हिंदू एन्साइक्लोपीडिया <br> <span style="font-size: 0.6em; display: block; margin-top: 5px;">Hindu Encyclopedia</span></h1>
-        <div class="tagline">सनातन इतिहास • हेरिटेज • सत्य</div>
+        <div class="logo">Hindu Encyclopedia</div>
     </header>
 
     <main>
-        <a href="itihas-puran.html" class="nav-link">[ इतिहास पुराण ]</a>
-        <a href="hindu-heritage.html" class="nav-link">[ हिंदू हेरिटेज ]</a>
-        <a href="hindu-archives.html" class="nav-link">[ हिंदू आर्काइव्स ]</a>
+        <div class="tagline">Eternal History • Sacred Heritage • Historical Truth</div>
+
+        <div class="btn-container">
+            <a href="itihas-puran.html" class="nav-btn">Itihas Puran - Timeline</a>
+            <a href="hindu-heritage.html" class="nav-btn">Hindu Heritage - Map</a>
+            <a href="hindu-archives.html" class="nav-btn">Hindu Archives - Incidents</a>
+        </div>
     </main>
 
     <footer>
@@ -181,10 +186,8 @@
     </footer>
 
     <script>
-        // Simple script to handle potential PWA install prompt or other interactions if needed in future
-        // Keeping minimal as requested
+        // Placeholder for PWA or interactivity
         if ('serviceWorker' in navigator) {
-            // Placeholder for service worker registration
             // navigator.serviceWorker.register('/sw.js');
         }
     </script>
