@@ -296,8 +296,13 @@
         .child-node {
             background: var(--white);
             color: var(--text-dark);
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             font-weight: 600;
             font-size: 1.1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
@@ -307,6 +312,23 @@
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 5;
             cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .child-title {
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        .child-content {
+            display: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .child-node.visible {
@@ -315,8 +337,34 @@
         }
 
         .child-node:hover {
-            background: var(--primary-saffron);
+            box-shadow: 0 8px 20px rgba(247, 147, 30, 0.3);
+            border-color: var(--secondary-gold);
+        }
+
+        .child-node.expanded {
+            width: 200px;
+            height: auto;
+            min-height: 120px;
+            border-radius: 15px;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-saffron), var(--secondary-gold));
             color: var(--white);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(247, 147, 30, 0.4);
+            border-color: transparent;
+        }
+
+        .child-node.expanded .child-title {
+            color: var(--white);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        .child-node.expanded .child-content {
+            display: block;
+            opacity: 1;
         }
 
         /* SVG Wires Layer */
@@ -398,9 +446,36 @@
 
         // Tree Data & Logic
         const deitiesData = {
-            0: { name: 'विष्णु', children: [] },
-            1: { name: 'ब्रह्मा', children: ['नारद', 'अंगिरा', 'बृहस्पति', 'पुलस्त्य', 'दक्ष'] },
-            2: { name: 'महेश', children: [] }
+            0: {
+                name: 'विष्णु',
+                children: [
+                    { title: 'Intro', content: 'पालनकर्ता, क्षीरसागर वासी, चक्रधारी' },
+                    { title: 'कहानी', content: 'विष्णु पुराण अनुसार, वे सर्वव्यापी हैं।' },
+                    { title: '10 अवतार', content: 'मत्स्य, कूर्म, वराह, नृसिंह, वामन, परशुराम, राम, कृष्ण, बुद्ध, कल्कि' },
+                    { title: 'Connections', content: 'ब्रह्मा रचयिता, महेश संहारक' },
+                    { title: 'Heritage', content: 'बद्रीनाथ, तिरुपति, जगन्नाथ' }
+                ]
+            },
+            1: {
+                name: 'ब्रह्मा',
+                children: [
+                    { title: 'Intro', content: 'सृष्टि रचयिता, चार मुख, अनादि' },
+                    { title: 'कहानी', content: 'ब्रह्म पुराण अनुसार, कमलोद्भव हैं।' },
+                    { title: 'संतान', content: 'नारद, अंगिरा, बृहस्पति, पुलस्त्य, दक्ष' },
+                    { title: 'Connections', content: 'विष्णु नाभिकमल से उत्पन्न' },
+                    { title: 'Heritage', content: 'पुष्कर ब्रह्मा मंदिर' }
+                ]
+            },
+            2: {
+                name: 'महेश',
+                children: [
+                    { title: 'Intro', content: 'संहारकर्ता, त्रिनेत्र, नीलकंठ' },
+                    { title: 'कहानी', content: 'शिव पुराण अनुसार, वे ही आदि और अंत हैं।' },
+                    { title: '5 रूप', content: 'सद्योजात, वामदेव, अघोर, तत्पुरुष, ईशान' },
+                    { title: 'तांडव', content: 'आनंद तांडव, रुद्र तांडव' },
+                    { title: 'Heritage', content: '१२ ज्योतिर्लिंग, कैलाश' }
+                ]
+            }
         };
 
         const mainTrunk = document.getElementById('main-trunk');
@@ -488,18 +563,54 @@
             branchesContainer.innerHTML = '';
             wiresSvg.innerHTML = '';
 
+            // Randomize margins for organic placement
+            const marginOptions = ['0 1rem', '1rem 0', '-1rem 1rem', '1rem -1rem', '2rem 1rem'];
+
             // Create nodes
-            children.forEach((childName, index) => {
+            children.forEach((childObj, index) => {
                 const node = document.createElement('div');
                 node.className = 'child-node';
                 node.id = `child-${index}`;
-                node.textContent = childName;
+
+                // Assign a random organic margin
+                node.style.margin = marginOptions[index % marginOptions.length];
+
+                const title = document.createElement('h3');
+                title.className = 'child-title';
+                title.textContent = childObj.title;
+
+                const content = document.createElement('p');
+                content.className = 'child-content';
+                content.textContent = childObj.content;
+
+                node.appendChild(title);
+                node.appendChild(content);
+
+                // Add expansion logic
+                node.onclick = (e) => {
+                    e.stopPropagation(); // Prevent bubbling up
+
+                    // Collapse others
+                    document.querySelectorAll('.child-node.expanded').forEach(expandedNode => {
+                        if (expandedNode !== node) expandedNode.classList.remove('expanded');
+                    });
+
+                    // Toggle current
+                    node.classList.toggle('expanded');
+
+                    // Redraw wires smoothly
+                    setTimeout(() => {
+                        wiresSvg.innerHTML = '';
+                        drawWires(children.length, false);
+                    }, 300); // Wait for CSS transition
+                };
+
                 branchesContainer.appendChild(node);
             });
 
             // Need to wait for DOM to update to get coordinates
             requestAnimationFrame(() => {
-                drawWires(children.length);
+                drawWires(children.length, true);
 
                 // Animate nodes in
                 const nodes = document.querySelectorAll('.child-node');
@@ -511,7 +622,7 @@
             });
         }
 
-        function drawWires(count) {
+        function drawWires(count, animate = true) {
             const treeAreaRect = document.getElementById('tree-area').getBoundingClientRect();
             const trunkRect = mainTrunk.getBoundingClientRect();
 
@@ -521,6 +632,7 @@
 
             for (let i = 0; i < count; i++) {
                 const childNode = document.getElementById(`child-${i}`);
+                if (!childNode) continue;
                 const childRect = childNode.getBoundingClientRect();
 
                 // Child top center relative to tree area
@@ -543,18 +655,41 @@
 
                 wiresSvg.appendChild(path);
 
-                // Animate wire drawing
-                const length = path.getTotalLength();
-                path.style.strokeDasharray = length;
-                path.style.strokeDashoffset = length;
+                if (animate) {
+                    // Animate wire drawing
+                    const length = path.getTotalLength();
+                    path.style.strokeDasharray = length;
+                    path.style.strokeDashoffset = length;
 
-                // Trigger reflow
-                path.getBoundingClientRect();
+                    // Trigger reflow
+                    path.getBoundingClientRect();
 
-                path.style.transition = `stroke-dashoffset 0.8s ease-in-out ${i * 0.1}s`;
-                path.style.strokeDashoffset = '0';
+                    path.style.transition = `stroke-dashoffset 0.8s ease-in-out ${i * 0.1}s`;
+                    path.style.strokeDashoffset = '0';
+                } else {
+                    path.style.strokeDashoffset = '0';
+                }
             }
         }
+
+        // Click outside collapses expanded nodes
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.child-node')) {
+                let changed = false;
+                document.querySelectorAll('.child-node.expanded').forEach(node => {
+                    node.classList.remove('expanded');
+                    changed = true;
+                });
+
+                if (changed) {
+                    setTimeout(() => {
+                        wiresSvg.innerHTML = '';
+                        const currentDeity = deitiesData[currentDeityIndex];
+                        drawWires(currentDeity.children.length, false);
+                    }, 300);
+                }
+            }
+        });
 
         // Redraw wires on resize
         window.addEventListener('resize', () => {
@@ -563,12 +698,7 @@
                 // Quick redraw without animation
                 requestAnimationFrame(() => {
                     wiresSvg.innerHTML = '';
-                    drawWires(currentDeity.children.length);
-                    // Reset dashoffset immediately
-                    document.querySelectorAll('.wire').forEach(wire => {
-                        wire.style.transition = 'none';
-                        wire.style.strokeDashoffset = '0';
-                    });
+                    drawWires(currentDeity.children.length, false);
                 });
             }
         });
