@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>इतिहास पुराण | Tree Timeline</title>
+    <meta name="description" content="Tree Timeline of Hindu Deities">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-saffron: #FF6B35;
+            --secondary-gold: #F7931E;
+            --text-dark: #2c3e50;
+            --bg-start: #fefefe;
+            --bg-end: #f8f9fa;
+            --white: #ffffff;
+            --trunk-color: #8b5a2b;
+            --leaf-color: #4CAF50;
+            --wire-color: #FF6B35;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-saffron), var(--secondary-gold));
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .header-content a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .header-content a:hover {
+            opacity: 0.9;
+        }
+
+        .header-separator {
+            opacity: 0.8;
+            margin: 0 0.2rem;
+        }
+
+        @media (max-width: 400px) {
+            .header-content {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Volume Slider Container */
+        .slider-section {
+            padding: 2rem 1rem;
+            background: var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .slider-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-saffron);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 80px;
+        }
+
+        .slider-label.active {
+            color: var(--primary-saffron);
+            font-weight: 700;
+            transform: scale(1.1);
+        }
+
+        .slider-label.left { text-align: right; }
+        .slider-label.center { text-align: center; width: auto; font-size: 1.3rem; }
+        .slider-label.right { text-align: left; }
+
+        /* Custom Range Slider */
+        .slider-container {
+            flex: 1;
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+            position: relative;
+            z-index: 2;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        /* Track */
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #e0e0e0;
+            border-radius: 4px;
+            border: none;
+        }
+
+        /* Thumb */
+        input[type=range]::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: var(--primary-saffron);
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -8px; /* (8px height / 2) - (24px height / 2) */
+            box-shadow: 0 2px 6px rgba(247, 147, 30, 0.5);
+            transition: transform 0.1s;
+        }
+
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        /* Active Track Overlay (CSS trick to fill lower track) */
+        .slider-track-fill {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-saffron), var(--secondary-gold));
+            border-radius: 4px;
+            transform: translateY(-50%);
+            z-index: 1;
+            pointer-events: none;
+            width: 50%; /* Default Brahma position */
+            transition: width 0.3s ease;
+        }
+
+        /* Tick marks */
+        .slider-ticks {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            z-index: 0;
+            pointer-events: none;
+            padding: 0 12px; /* Half thumb width to align */
+            box-sizing: border-box;
+        }
+
+        .tick {
+            width: 4px;
+            height: 12px;
+            background: #bdbdbd;
+            border-radius: 2px;
+            margin-top: -2px;
+        }
+
+        .swipe-hint {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .swipe-hint { display: block; }
+        }
+
+        /* Tree Area Styles */
+        #tree-area {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 1rem;
+            min-height: 400px;
+            overflow: hidden;
+        }
+
+        .trunk-node {
+            background: linear-gradient(135deg, var(--trunk-color), #5c3a18);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(139, 90, 43, 0.4);
+            z-index: 5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .trunk-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(139, 90, 43, 0.6);
+        }
+
+        .trunk-node.active-trunk {
+            animation: pulseTrunk 2s infinite;
+        }
+
+        @keyframes pulseTrunk {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 0 10px 25px rgba(247, 147, 30, 0.5); }
+            100% { transform: scale(1); }
+        }
+
+        .branches-container {
+            position: relative;
+            width: 100%;
+            flex: 1;
+            margin-top: 4rem; /* Space for wires */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            max-width: 600px;
+        }
+
+        .child-node {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 2px solid var(--primary-saffron);
+            opacity: 0;
+            transform: translateY(-20px) scale(0.8);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        .child-node.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .child-node:hover {
+            background: var(--primary-saffron);
+            color: var(--white);
+        }
+
+        /* SVG Wires Layer */
+        #wires-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wire {
+            fill: none;
+            stroke: var(--wire-color);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 5px rgba(255, 107, 53, 0.5));
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">← Home</a>
+            <span class="header-separator">|</span>
+            <span>इतिहास पुराण</span>
+            <span class="header-separator">|</span>
+            <span>Tree Timeline</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="slider-section">
+            <div class="slider-title">त्रिमूर्ति Timeline</div>
+            <div class="volume-control">
+                <div class="slider-label left" id="label-vishnu" onclick="setSliderValue(0)">◄ विष्णु</div>
+                <div class="slider-container">
+                    <div class="slider-ticks">
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                    </div>
+                    <div class="slider-track-fill" id="track-fill"></div>
+                    <input type="range" id="trimurti-slider" min="0" max="2" value="1" step="1" oninput="handleSliderChange(this.value)">
+                </div>
+                <div class="slider-label right" id="label-mahesh" onclick="setSliderValue(2)">महेश ►</div>
+            </div>
+            <div class="slider-label center active" id="label-brahma" onclick="setSliderValue(1)" style="margin-top:1rem;">ब्रह्मा</div>
+            <div class="swipe-hint">Swipe left/right to change</div>
+        </section>
+
+        <!-- Tree Area -->
+        <section id="tree-area">
+            <svg id="wires-svg" preserveAspectRatio="xMidYMid meet"></svg>
+            <div id="main-trunk" class="trunk-node" onclick="expandTrunk()">ब्रह्मा</div>
+            <div class="branches-container" id="branches-container">
+                <!-- Children populated by JS -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const slider = document.getElementById('trimurti-slider');
+        const trackFill = document.getElementById('track-fill');
+        const labels = {
+            0: document.getElementById('label-vishnu'),
+            1: document.getElementById('label-brahma'),
+            2: document.getElementById('label-mahesh')
+        };
+        const fillPercentages = { 0: '0%', 1: '50%', 2: '100%' };
+
+        // State
+        let currentDeityIndex = 1;
+
+        // Tree Data & Logic
+        const deitiesData = {
+            0: { name: 'विष्णु', children: [] },
+            1: { name: 'ब्रह्मा', children: ['नारद', 'अंगिरा', 'बृहस्पति', 'पुलस्त्य', 'दक्ष'] },
+            2: { name: 'महेश', children: [] }
+        };
+
+        const mainTrunk = document.getElementById('main-trunk');
+        const branchesContainer = document.getElementById('branches-container');
+        const wiresSvg = document.getElementById('wires-svg');
+
+        let isExpanded = false;
+
+        function updateSliderUI(value) {
+            trackFill.style.width = fillPercentages[value];
+            slider.value = value;
+
+            // Update labels
+            for (let i = 0; i <= 2; i++) {
+                if (i === parseInt(value)) {
+                    labels[i].classList.add('active');
+                } else {
+                    labels[i].classList.remove('active');
+                }
+            }
+        }
+
+        function handleSliderChange(value) {
+            updateSliderUI(value);
+            currentDeityIndex = parseInt(value);
+            resetTree();
+            mainTrunk.textContent = deitiesData[currentDeityIndex].name;
+            mainTrunk.classList.add('active-trunk');
+            setTimeout(() => mainTrunk.classList.remove('active-trunk'), 2000);
+        }
+
+        function setSliderValue(value) {
+            handleSliderChange(value);
+        }
+
+        // Touch swipe support for mobile
+        let touchstartX = 0;
+        let touchendX = 0;
+        const mainArea = document.querySelector('main');
+
+        mainArea.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        mainArea.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            if (touchendX < touchstartX - threshold) {
+                // Swiped Left - increase index (move towards Mahesh)
+                if (currentDeityIndex < 2) setSliderValue(currentDeityIndex + 1);
+            }
+            if (touchendX > touchstartX + threshold) {
+                // Swiped Right - decrease index (move towards Vishnu)
+                if (currentDeityIndex > 0) setSliderValue(currentDeityIndex - 1);
+            }
+        }
+
+        function resetTree() {
+            isExpanded = false;
+            branchesContainer.innerHTML = '';
+            wiresSvg.innerHTML = '';
+        }
+
+        function expandTrunk() {
+            if (isExpanded) return;
+
+            const currentDeity = deitiesData[currentDeityIndex];
+            if (!currentDeity.children || currentDeity.children.length === 0) {
+                // Shake trunk if no children
+                mainTrunk.style.transform = 'translateX(-5px)';
+                setTimeout(() => mainTrunk.style.transform = 'translateX(5px)', 100);
+                setTimeout(() => mainTrunk.style.transform = 'translateX(0)', 200);
+                return;
+            }
+
+            isExpanded = true;
+            renderChildren(currentDeity.children);
+        }
+
+        function renderChildren(children) {
+            branchesContainer.innerHTML = '';
+            wiresSvg.innerHTML = '';
+
+            // Create nodes
+            children.forEach((childName, index) => {
+                const node = document.createElement('div');
+                node.className = 'child-node';
+                node.id = `child-${index}`;
+                node.textContent = childName;
+                branchesContainer.appendChild(node);
+            });
+
+            // Need to wait for DOM to update to get coordinates
+            requestAnimationFrame(() => {
+                drawWires(children.length);
+
+                // Animate nodes in
+                const nodes = document.querySelectorAll('.child-node');
+                nodes.forEach((node, index) => {
+                    setTimeout(() => {
+                        node.classList.add('visible');
+                    }, 500 + (index * 150)); // Stagger appearance after wires
+                });
+            });
+        }
+
+        function drawWires(count) {
+            const treeAreaRect = document.getElementById('tree-area').getBoundingClientRect();
+            const trunkRect = mainTrunk.getBoundingClientRect();
+
+            // Trunk bottom center relative to tree area
+            const startX = trunkRect.left + (trunkRect.width / 2) - treeAreaRect.left;
+            const startY = trunkRect.bottom - treeAreaRect.top;
+
+            for (let i = 0; i < count; i++) {
+                const childNode = document.getElementById(`child-${i}`);
+                const childRect = childNode.getBoundingClientRect();
+
+                // Child top center relative to tree area
+                const endX = childRect.left + (childRect.width / 2) - treeAreaRect.left;
+                const endY = childRect.top - treeAreaRect.top;
+
+                // Create organic path
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+                // Bezier curve for organic look
+                const cp1X = startX;
+                const cp1Y = startY + (endY - startY) * 0.6;
+                const cp2X = endX;
+                const cp2Y = startY + (endY - startY) * 0.4;
+
+                const d = `M ${startX} ${startY} C ${cp1X} ${cp1Y}, ${cp2X} ${cp2Y}, ${endX} ${endY}`;
+
+                path.setAttribute("d", d);
+                path.setAttribute("class", "wire");
+
+                wiresSvg.appendChild(path);
+
+                // Animate wire drawing
+                const length = path.getTotalLength();
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+
+                // Trigger reflow
+                path.getBoundingClientRect();
+
+                path.style.transition = `stroke-dashoffset 0.8s ease-in-out ${i * 0.1}s`;
+                path.style.strokeDashoffset = '0';
+            }
+        }
+
+        // Redraw wires on resize
+        window.addEventListener('resize', () => {
+            if (isExpanded) {
+                const currentDeity = deitiesData[currentDeityIndex];
+                // Quick redraw without animation
+                requestAnimationFrame(() => {
+                    wiresSvg.innerHTML = '';
+                    drawWires(currentDeity.children.length);
+                    // Reset dashoffset immediately
+                    document.querySelectorAll('.wire').forEach(wire => {
+                        wire.style.transition = 'none';
+                        wire.style.strokeDashoffset = '0';
+                    });
+                });
+            }
+        });
+
+        // Initialize
+        updateSliderUI(1);
+        mainTrunk.classList.add('active-trunk');
+        setTimeout(() => mainTrunk.classList.remove('active-trunk'), 2000);
+    </script>
+</body>
+</html>
