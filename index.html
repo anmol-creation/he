@@ -9,161 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-saffron: #FF6B35;
-            --secondary-gold: #F7931E;
-            --text-dark: #2c3e50;
-            --bg-start: #fefefe;
-            --bg-end: #f8f9fa;
-            --white: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
-            color: var(--text-dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-        }
-
-        /* Sticky Header */
-        header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background: linear-gradient(90deg, var(--primary-saffron), var(--secondary-gold));
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0;
-            background: linear-gradient(to right, #FFD700, #FDB931);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: 0.5px;
-        }
-
-        /* Main Content */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1rem;
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        /* Buttons */
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            width: 100%;
-        }
-
-        .nav-btn {
-            display: block;
-            background: var(--white);
-            color: var(--text-dark);
-            text-decoration: none;
-            padding: 1.2rem 2rem;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid transparent; /* Prepare for border transition if needed, though mostly shadow based */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        /* Gradient border effect simulated with background-clip or box-shadow */
-        .nav-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--primary-saffron), var(--secondary-gold));
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-            border-radius: 16px; /* Match button radius */
-        }
-
-        .nav-btn:hover {
-            transform: scale(1.05);
-            color: var(--white);
-            box-shadow: 0 8px 25px rgba(247, 147, 30, 0.4); /* Glow matching gold/orange */
-            border-color: transparent;
-        }
-
-        .nav-btn:hover::before {
-            opacity: 1;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--white); /* Can be transparent or white matching bg-end */
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            opacity: 0.8;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        main {
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* Responsive Tweaks */
-        @media (min-width: 768px) {
-            .logo {
-                font-size: 2.2rem;
-            }
-            .tagline {
-                font-size: 1.5rem;
-            }
-            .nav-btn {
-                font-size: 1.2rem;
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
@@ -175,7 +22,7 @@
         <div class="tagline">Eternal History • Sacred Heritage • Historical Truth</div>
 
         <div class="btn-container">
-            <a href="itihas-puran.html" class="nav-btn">Itihas Puran - Timeline</a>
+            <a href="pages/itihas-puran.html" class="nav-btn">Itihas Puran - Timeline</a>
             <a href="hindu-heritage.html" class="nav-btn">Hindu Heritage - Map</a>
             <a href="hindu-archives.html" class="nav-btn">Hindu Archives - Incidents</a>
         </div>
@@ -185,11 +32,7 @@
         © 2026 - Original Research Only
     </footer>
 
-    <script>
-        // Placeholder for PWA or interactivity
-        if ('serviceWorker' in navigator) {
-            // navigator.serviceWorker.register('/sw.js');
-        }
-    </script>
+    <script src="js/global.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
