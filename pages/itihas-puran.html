@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>इतिहास पुराण | Tree Timeline</title>
+    <meta name="description" content="Tree Timeline of Hindu Deities">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/timeline.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html">← Home</a>
+            <span class="header-separator">|</span>
+            <span>इतिहास पुराण</span>
+            <span class="header-separator">|</span>
+            <span>Tree Timeline</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="slider-section">
+            <div class="slider-title">त्रिमूर्ति Timeline</div>
+            <div class="volume-control">
+                <div class="slider-label left" id="label-vishnu" onclick="setSliderValue(0)">◄ विष्णु</div>
+                <div class="slider-container">
+                    <div class="slider-ticks">
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                    </div>
+                    <div class="slider-track-fill" id="track-fill"></div>
+                    <input type="range" id="trimurti-slider" min="0" max="2" value="1" step="1" oninput="handleSliderChange(this.value)">
+                </div>
+                <div class="slider-label right" id="label-mahesh" onclick="setSliderValue(2)">महेश ►</div>
+            </div>
+            <div class="slider-label center active" id="label-brahma" onclick="setSliderValue(1)" style="margin-top:1rem;">ब्रह्मा</div>
+            <div class="swipe-hint">Swipe left/right to change</div>
+        </section>
+
+        <!-- Tree Area -->
+        <section id="tree-area">
+            <svg id="wires-svg" preserveAspectRatio="xMidYMid meet"></svg>
+            <div id="main-trunk" class="trunk-node" onclick="expandTrunk()">ब्रह्मा</div>
+            <div class="branches-container" id="branches-container">
+                <!-- Children populated by JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/timeline.js"></script>
+</body>
+</html>
