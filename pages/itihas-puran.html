@@ -24,8 +24,48 @@
     </header>
 
     <main>
-        <section class="slider-section">
-            <div class="slider-title">त्रिमूर्ति Timeline</div>
+        <!-- Historic Map Banner -->
+        <a href="historic-map.html" class="historic-map-banner">
+            <h2>संपूर्ण सनातन इतिहास</h2>
+            <p>Interactive Historic Map: Explore the complete lineage from Brahma to modern times, navigate eras, and discover ancient stories.</p>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search any King, Dynasty, Era, or Surname...">
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="portal-grid">
+            <a href="historic-map.html?focus=dynasties" class="portal-card">
+                <div class="portal-card-icon">👑</div>
+                <div class="portal-card-title">प्रमुख वंश</div>
+                <div class="portal-card-desc">Suryavansh, Chandravansh, Kuruvansh, etc.</div>
+            </a>
+            <a href="historic-map.html?focus=kings" class="portal-card">
+                <div class="portal-card-icon">⚔️</div>
+                <div class="portal-card-title">महान राजा व सम्राट</div>
+                <div class="portal-card-desc">Chakravarti Samrats, Dharmarajs, Warriors</div>
+            </a>
+            <a href="historic-map.html?focus=eras" class="portal-card">
+                <div class="portal-card-icon">⏳</div>
+                <div class="portal-card-title">कालगणना और युग</div>
+                <div class="portal-card-desc">Satya, Treta, Dwapar, Kali Yug & Manvantaras</div>
+            </a>
+            <a href="historic-map.html?focus=surnames" class="portal-card">
+                <div class="portal-card-icon">🧬</div>
+                <div class="portal-card-title">Surnames / गोत्र</div>
+                <div class="portal-card-desc">Trace modern lineages back to ancient roots</div>
+            </a>
+            <a href="historic-map.html?focus=sages" class="portal-card">
+                <div class="portal-card-icon">📜</div>
+                <div class="portal-card-title">ऋषि परंपरा</div>
+                <div class="portal-card-desc">Saptarishi, Gurukul lineages and knowledge flow</div>
+            </a>
+        </div>
+
+        <section class="slider-section" style="margin-top: 2rem;">
+            <div class="slider-title">त्रिमूर्ति Timeline (Legacy View)</div>
             <div class="volume-control">
                 <div class="slider-label left" id="label-vishnu" onclick="setSliderValue(0)">◄ विष्णु</div>
                 <div class="slider-container">

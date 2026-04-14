@@ -1,0 +1,274 @@
+/* historic-map.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent default scrolling */
+    background: #f8f9fa;
+}
+
+.map-control-btn {
+    background: var(--primary-saffron);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.map-control-btn:hover {
+    background: var(--secondary-gold);
+}
+
+/* River of Time (Fixed Sidebar) */
+#river-of-time {
+    position: absolute;
+    left: 0;
+    top: 60px; /* Below header */
+    bottom: 0;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.time-marker {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #888;
+    padding: 10px 0;
+    transition: color 0.3s, font-size 0.3s;
+    cursor: pointer;
+}
+
+.time-marker.active {
+    color: var(--primary-saffron);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.time-line {
+    flex-grow: 1;
+    width: 2px;
+    background: linear-gradient(to bottom, #ccc, #eee);
+    margin: 5px 0;
+}
+
+/* Map Container & Canvas */
+#map-container {
+    position: absolute;
+    top: 60px;
+    left: 60px; /* Next to river of time */
+    right: 0;
+    bottom: 0;
+    overflow: hidden; /* We will handle drag manually */
+    cursor: grab;
+    background: radial-gradient(circle, #fff 20%, #f0f0f0 100%);
+}
+
+#map-container:active {
+    cursor: grabbing;
+}
+
+#map-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    /* transform is manipulated by JS */
+    width: 5000px; /* Very large virtual area */
+    height: 5000px;
+}
+
+#connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.map-wire {
+    fill: none;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    opacity: 0.6;
+}
+
+#nodes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Map Nodes */
+.map-node {
+    position: absolute;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+    min-width: 140px;
+    text-align: center;
+    border-top: 4px solid var(--primary-saffron); /* Default color */
+    transform: translate(-50%, -50%); /* Center on coordinate */
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.map-node:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.map-node.macro-mode {
+    padding: 5px;
+    min-width: 60px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+.map-node.macro-mode .node-details {
+    display: none;
+}
+
+.node-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.macro-mode .node-title {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.node-details {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.heritage-dots {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    display: flex;
+    gap: 3px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+/* Side Panel (Focus Pop-up) */
+#focus-panel {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    bottom: 20px;
+    width: 350px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+#focus-panel.hidden {
+    transform: translateX(400px); /* Slide out */
+}
+
+#close-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.panel-header {
+    padding: 30px 20px 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.panel-header h2 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.5rem;
+}
+
+.panel-subtitle {
+    margin: 5px 0 0 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.panel-dots {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.panel-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--primary-saffron);
+    border-bottom: 2px solid var(--primary-saffron);
+}
+
+.panel-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+}

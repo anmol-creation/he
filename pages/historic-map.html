@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपूर्ण सनातन इतिहास | Historic Map</title>
+    <meta name="description" content="Interactive Infinite Canvas of Sanatan History">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/historic-map.css">
+</head>
+<body>
+    <header style="position: absolute; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px);">
+        <div class="header-content">
+            <a href="itihas-puran.html">← Back</a>
+            <span class="header-separator">|</span>
+            <span>संपूर्ण सनातन इतिहास</span>
+            <div style="margin-left: auto; display: flex; gap: 10px;">
+                <button id="zoom-out-btn" class="map-control-btn">- Zoom Out</button>
+                <button id="zoom-in-btn" class="map-control-btn">+ Zoom In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fixed River of Time (Left Sidebar) -->
+    <aside id="river-of-time">
+        <div class="time-marker" data-yug="satya">सत्य युग</div>
+        <div class="time-line"></div>
+        <div class="time-marker" data-yug="treta">त्रेता युग</div>
+        <div class="time-line"></div>
+        <div class="time-marker active" data-yug="dwapar">द्वापर युग</div>
+        <div class="time-line"></div>
+        <div class="time-marker" data-yug="kali">कलि युग</div>
+    </aside>
+
+    <!-- Map Area (Infinite Canvas) -->
+    <main id="map-container">
+        <div id="map-canvas">
+            <svg id="connection-lines" preserveAspectRatio="none"></svg>
+            <div id="nodes-container">
+                <!-- Nodes dynamically injected here by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Focus Node Pop-up/Panel (Hidden by default) -->
+    <div id="focus-panel" class="hidden">
+        <button id="close-panel">✕</button>
+        <div class="panel-header" id="panel-header">
+            <div class="panel-dots" id="panel-dots"></div>
+            <h2 id="panel-name">Name</h2>
+            <p id="panel-subtitle" class="panel-subtitle">Subtitle</p>
+        </div>
+        <div class="panel-tabs">
+            <button class="tab-btn active" data-tab="parichay">परिचय</button>
+            <button class="tab-btn" data-tab="jeevan">जीवन</button>
+            <button class="tab-btn" data-tab="kathayein">कथाएँ</button>
+        </div>
+        <div class="panel-content" id="panel-content-area">
+            <!-- Dynamic Content -->
+        </div>
+    </div>
+
+    <script src="../js/historic-map.js"></script>
+</body>
+</html>
