@@ -62,20 +62,20 @@ const historicData = [
     { id: 'danu', name: 'दनु', subtitle: 'दानवों की माता', x: 0, y: 0, color: '#ff99cc', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya' },
 
     // Offspring of Kashyap (from Aditi) -> Devas / Suryavansh
-    { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', x: 2500, y: 3000, color: '#FF9900', parent: 'kashyap', motherColor: '#ff99cc', yug: 'satya' },
-    { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', x: 2200, y: 3000, color: '#FFD700', parent: 'kashyap', yug: 'satya' },
+    { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', x: 2500, y: 3500, color: '#FF9900', parent: 'kashyap', mother: 'aditi', motherColor: '#ff99cc', yug: 'satya' },
+    { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', x: 2200, y: 3500, color: '#FFD700', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
 
     // Offspring of Kashyap (from Diti) -> Daityas
-    { id: 'hiranyakashipu', name: 'हिरण्यकशिपु', subtitle: 'दैत्यराज (दिति पुत्र)', x: 2800, y: 3000, color: '#8B0000', parent: 'kashyap', yug: 'satya' },
-    { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', x: 3000, y: 3000, color: '#8B0000', parent: 'kashyap', yug: 'satya' },
-    { id: 'prahlada', name: 'प्रह्लाद', subtitle: 'विष्णु भक्त', x: 2800, y: 3500, color: '#8B0000', parent: 'hiranyakashipu', yug: 'satya' },
-    { id: 'vairochana', name: 'विरोचन', subtitle: 'प्रह्लाद पुत्र', x: 2800, y: 4000, color: '#8B0000', parent: 'prahlada', yug: 'treta' },
-    { id: 'bali', name: 'बलि', subtitle: 'महान दैत्यराज', x: 2800, y: 4500, color: '#8B0000', parent: 'vairochana', yug: 'treta' },
+    { id: 'hiranyakashipu', name: 'हिरण्यकशिपु', subtitle: 'दैत्यराज (दिति पुत्र)', x: 2800, y: 3500, color: '#8B0000', parent: 'kashyap', mother: 'diti', yug: 'satya' },
+    { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', x: 3000, y: 3500, color: '#8B0000', parent: 'kashyap', mother: 'diti', yug: 'satya' },
+    { id: 'prahlada', name: 'प्रह्लाद', subtitle: 'विष्णु भक्त', x: 2800, y: 4000, color: '#8B0000', parent: 'hiranyakashipu', yug: 'satya' },
+    { id: 'vairochana', name: 'विरोचन', subtitle: 'प्रह्लाद पुत्र', x: 2800, y: 4500, color: '#8B0000', parent: 'prahlada', yug: 'treta' },
+    { id: 'bali', name: 'बलि', subtitle: 'महान दैत्यराज', x: 2800, y: 5000, color: '#8B0000', parent: 'vairochana', yug: 'treta' },
 
     // Offspring of Kashyap (from Kadru & Vinata)
-    { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', x: 1800, y: 3000, color: '#2E8B57', parent: 'kashyap', yug: 'satya' },
-    { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', x: 1600, y: 3000, color: '#2E8B57', parent: 'kashyap', yug: 'satya' },
-    { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', x: 1400, y: 3000, color: '#DAA520', parent: 'kashyap', yug: 'satya' },
+    { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', x: 1800, y: 3500, color: '#2E8B57', parent: 'kashyap', mother: 'kadru', yug: 'satya' },
+    { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', x: 1600, y: 3500, color: '#2E8B57', parent: 'kashyap', mother: 'kadru', yug: 'satya' },
+    { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', x: 1400, y: 3500, color: '#DAA520', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
 
     // ==========================================
     // PULASTYA'S DESCENDANTS (Yakshas & Rakshasas)
@@ -119,18 +119,20 @@ const historicData = [
 
     // Dasharath's Wives
     { id: 'kaushalya', name: 'कौशल्या', subtitle: 'राम की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
+    { id: 'kaikeyi', name: 'कैकेयी', subtitle: 'भरत की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
+    { id: 'sumitra', name: 'सुमित्रा', subtitle: 'लक्ष्मण/शत्रुघ्न की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
 
     // Ramayana Siblings
-    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 2200, y: 7000, color: '#FF9900', parent: 'dasharath', yug: 'treta', motherColor: '#FFD700' },
-    { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', x: 2400, y: 7000, color: '#FF9900', parent: 'dasharath', yug: 'treta' },
-    { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', x: 2600, y: 7000, color: '#FF9900', parent: 'dasharath', yug: 'treta' },
-    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', x: 2800, y: 7000, color: '#FF9900', parent: 'dasharath', yug: 'treta' },
+    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 2200, y: 7000, color: '#FF9900', parent: 'dasharath', mother: 'kaushalya', yug: 'treta', motherColor: '#FFD700' },
+    { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', x: 2400, y: 7000, color: '#FF9900', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta' },
+    { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', x: 2600, y: 7000, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', x: 2800, y: 7000, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
 
     // Ram's Wife
     { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'ram', yug: 'treta' },
 
-    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', x: 2100, y: 7500, color: '#FF9900', parent: 'ram', yug: 'treta' },
-    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', x: 2300, y: 7500, color: '#FF9900', parent: 'ram', yug: 'treta' },
+    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', x: 2100, y: 7500, color: '#FF9900', parent: 'ram', mother: 'sita', yug: 'treta' },
+    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', x: 2300, y: 7500, color: '#FF9900', parent: 'ram', mother: 'sita', yug: 'treta' },
 
     // Chandravansh (Blue) - Connected from Atri
     { id: 'chandra', name: 'चंद्र', subtitle: 'चंद्र देव', x: 6100, y: 2000, color: '#3399FF', parent: 'atri', yug: 'satya' },

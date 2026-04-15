@@ -39,17 +39,26 @@ function renderNodes() {
 
         node.id = `node-${data.id}`;
 
-        // If it's a spouse, place it slightly offset from the husband
         let finalX = data.x;
         let finalY = data.y;
 
+        // If it's a spouse, distribute them symmetrically BELOW the husband
         if (data.spouseOf) {
             const husband = dataList.find(d => d.id === data.spouseOf);
             if (husband) {
-                // Place wife 160px to the right of the husband
-                finalX = husband.x + 160;
-                finalY = husband.y;
-                // Also update the data object coordinates so wires connect properly
+                // Find all wives of this husband
+                const allWives = dataList.filter(d => d.spouseOf === husband.id);
+                const wifeIndex = allWives.findIndex(w => w.id === data.id);
+
+                // Distribute horizontally based on how many wives there are
+                const spacing = 180; // horizontal space between wife cards
+                const totalWidth = (allWives.length - 1) * spacing;
+                const startX = husband.x - (totalWidth / 2);
+
+                finalX = startX + (wifeIndex * spacing);
+                finalY = husband.y + 160; // Place below husband
+
+                // Update object so wires know where they are
                 data.x = finalX;
                 data.y = finalY;
             }
@@ -89,55 +98,119 @@ function drawConnections() {
     svg.innerHTML = '';
     const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
 
+    // Universal Colors
+    const COLOR_MARRIAGE = '#FF1493'; // Deep Pink for Husband-Wife
+    const COLOR_SIBLING = '#4169E1';  // Royal Blue for Sisters/Siblings group line
+
+    // Track drawn sibling groups so we don't draw overlapping lines
+    const drawnWifeGroups = new Set();
+
     dataList.forEach(data => {
-        // Draw connection to parent (for both children and married daughters)
-        if (data.parent) {
-            const parent = dataList.find(d => d.id === data.parent);
-            if (parent) {
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                const startX = parent.x;
-                const startY = parent.y;
-                const endX = data.x;
-                const endY = data.y;
-
-                let d = "";
-                // If this is a spouse node connecting to her father (Daksha to Aditi)
-                if (data.spouseOf) {
-                    // Make the wire a long smooth bezier curve spanning horizontally and vertically
-                    const controlX1 = startX + (endX - startX) / 2;
-                    const controlY1 = startY + 500; // Dip down
-                    const controlX2 = startX + (endX - startX) / 2;
-                    const controlY2 = endY - 500;
-                    d = `M ${startX} ${startY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${endX} ${endY}`;
-
-                    path.setAttribute('stroke-dasharray', '5,5'); // Dashed line for marriage lineage
-                    path.setAttribute('stroke-width', '2px');
-                } else {
-                    // Normal child bezier curve
-                    const controlY = startY + (endY - startY) / 2;
-                    d = `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`;
-                }
-
-                path.setAttribute('d', d);
-                path.setAttribute('class', 'map-wire');
-                path.setAttribute('stroke', data.color || '#999');
-
-                // Add specific class for easy selection
-                if (data.spouseOf) path.classList.add('marriage-wire');
-
-                svg.appendChild(path);
-            }
-        }
-
-        // Draw short horizontal connection block between Husband and Wife
+        // 1. Draw Marriage Connection (Husband to Wife)
         if (data.spouseOf) {
             const husband = dataList.find(d => d.id === data.spouseOf);
             if (husband) {
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.setAttribute('d', `M ${husband.x + 70} ${husband.y} L ${data.x - 60} ${data.y}`);
+                // Draw line from husband's bottom center to wife's top center
+                path.setAttribute('d', `M ${husband.x} ${husband.y + 40} C ${husband.x} ${husband.y + 100}, ${data.x} ${data.y - 100}, ${data.x} ${data.y - 40}`);
+                path.setAttribute('class', 'map-wire marriage-wire');
+                path.setAttribute('stroke', COLOR_MARRIAGE);
+                path.setAttribute('stroke-width', '3px');
+                svg.appendChild(path);
+            }
+
+            // 2. Draw Sibling Line for Wives (e.g., Daksha's daughters)
+            if (data.parent) {
+                const husbandId = data.spouseOf;
+                const parentId = data.parent;
+                const groupKey = `${husbandId}-${parentId}`;
+
+                // Draw the horizontal bar uniting the sisters only once per group
+                if (!drawnWifeGroups.has(groupKey)) {
+                    drawnWifeGroups.add(groupKey);
+
+                    // Find all wives of this husband who share the same father
+                    const sisterWives = dataList.filter(w => w.spouseOf === husbandId && w.parent === parentId);
+
+                    if (sisterWives.length > 1) {
+                        // Find min and max X
+                        const minX = Math.min(...sisterWives.map(w => w.x));
+                        const maxX = Math.max(...sisterWives.map(w => w.x));
+                        const sharedY = data.y - 80; // Above the wives
+
+                        // Horizontal line connecting sisters
+                        const hPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        hPath.setAttribute('d', `M ${minX} ${sharedY} L ${maxX} ${sharedY}`);
+                        hPath.setAttribute('class', 'map-wire sibling-wire');
+                        hPath.setAttribute('stroke', COLOR_SIBLING);
+                        hPath.setAttribute('stroke-width', '2px');
+                        svg.appendChild(hPath);
+
+                        // Vertical drops to each sister
+                        sisterWives.forEach(sw => {
+                            const vPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                            vPath.setAttribute('d', `M ${sw.x} ${sharedY} L ${sw.x} ${sw.y - 40}`);
+                            vPath.setAttribute('class', 'map-wire sibling-wire');
+                            vPath.setAttribute('stroke', COLOR_SIBLING);
+                            vPath.setAttribute('stroke-width', '2px');
+                            svg.appendChild(vPath);
+                        });
+
+                        // Draw line back to father from the center of the horizontal bar
+                        const father = dataList.find(d => d.id === parentId);
+                        if (father) {
+                            const centerX = minX + (maxX - minX) / 2;
+                            const fPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                            // Long sweeping dashed line to father
+                            const controlY = father.y + (sharedY - father.y) / 2;
+                            fPath.setAttribute('d', `M ${father.x} ${father.y + 40} C ${father.x} ${controlY}, ${centerX} ${controlY}, ${centerX} ${sharedY}`);
+                            fPath.setAttribute('class', 'map-wire');
+                            fPath.setAttribute('stroke', COLOR_SIBLING);
+                            fPath.setAttribute('stroke-dasharray', '5,5');
+                            svg.appendChild(fPath);
+                        }
+                    } else {
+                        // Single wife connecting back to father
+                        const father = dataList.find(d => d.id === parentId);
+                        if (father) {
+                            const fPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                            const controlY = father.y + (data.y - father.y) / 2;
+                            fPath.setAttribute('d', `M ${father.x} ${father.y + 40} C ${father.x} ${controlY}, ${data.x} ${controlY}, ${data.x} ${data.y - 40}`);
+                            fPath.setAttribute('class', 'map-wire');
+                            fPath.setAttribute('stroke', COLOR_SIBLING);
+                            fPath.setAttribute('stroke-dasharray', '5,5');
+                            svg.appendChild(fPath);
+                        }
+                    }
+                }
+            }
+        } else if (data.parent) {
+            // 3. Normal Parent to Child Line
+            const parent = dataList.find(d => d.id === data.parent);
+            if (parent) {
+                // Determine if we should route from father or mother
+                // By default route from father
+                let sourceX = parent.x;
+                let sourceY = parent.y;
+
+                if (data.mother) {
+                    const mother = dataList.find(d => d.id === data.mother);
+                    if (mother) {
+                        sourceX = mother.x;
+                        sourceY = mother.y;
+                    }
+                }
+
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const startX = sourceX;
+                const startY = sourceY + 40; // Bottom of parent card
+                const endX = data.x;
+                const endY = data.y - 40; // Top of child card
+
+                const controlY = startY + (endY - startY) / 2;
+                path.setAttribute('d', `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`);
                 path.setAttribute('class', 'map-wire');
-                path.setAttribute('stroke', '#ff99cc');
-                path.setAttribute('stroke-width', '2px');
+                path.setAttribute('stroke', data.color || '#999');
 
                 svg.appendChild(path);
             }
@@ -385,16 +458,16 @@ function setupEventListeners() {
     container.addEventListener('wheel', (e) => {
         e.preventDefault();
 
-        const zoomIntensity = 0.1;
-        const delta = e.deltaY > 0 ? -zoomIntensity : zoomIntensity;
-        const newScale = Math.min(Math.max(0.2, scale + delta), 2); // Limit zoom 0.2x to 2x
+        // Use exponential zoom for smooth trackpad and mouse wheel zooming
+        const zoomFactor = Math.exp(e.deltaY * -0.002);
+        const newScale = Math.min(Math.max(0.1, scale * zoomFactor), 2.5);
 
         // Calculate focal point to zoom towards mouse cursor
         const rect = container.getBoundingClientRect();
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
 
-        // Adjust translate to keep mouse position fixed
+        // Adjust translate to keep mouse position fixed under cursor
         translateX = mouseX - (mouseX - translateX) * (newScale / scale);
         translateY = mouseY - (mouseY - translateY) * (newScale / scale);
 
