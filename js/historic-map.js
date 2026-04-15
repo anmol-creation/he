@@ -35,9 +35,28 @@ function renderNodes() {
     dataList.forEach(data => {
         const node = document.createElement('div');
         node.className = 'map-node';
+        if (data.spouseOf) node.classList.add('spouse-node');
+
         node.id = `node-${data.id}`;
-        node.style.left = `${data.x}px`;
-        node.style.top = `${data.y}px`;
+
+        // If it's a spouse, place it slightly offset from the husband
+        let finalX = data.x;
+        let finalY = data.y;
+
+        if (data.spouseOf) {
+            const husband = dataList.find(d => d.id === data.spouseOf);
+            if (husband) {
+                // Place wife 160px to the right of the husband
+                finalX = husband.x + 160;
+                finalY = husband.y;
+                // Also update the data object coordinates so wires connect properly
+                data.x = finalX;
+                data.y = finalY;
+            }
+        }
+
+        node.style.left = `${finalX}px`;
+        node.style.top = `${finalY}px`;
         node.style.borderTopColor = data.color;
 
         // Heritage Dots
@@ -71,26 +90,54 @@ function drawConnections() {
     const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
 
     dataList.forEach(data => {
+        // Draw connection to parent (for both children and married daughters)
         if (data.parent) {
             const parent = dataList.find(d => d.id === data.parent);
             if (parent) {
-                // Draw line from parent to child
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-
-                // SVG coordinates match virtual canvas coordinates
                 const startX = parent.x;
                 const startY = parent.y;
                 const endX = data.x;
                 const endY = data.y;
 
-                // Bezier curve for metro-style curved lines
-                const controlY = startY + (endY - startY) / 2;
-                const d = `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`;
+                let d = "";
+                // If this is a spouse node connecting to her father (Daksha to Aditi)
+                if (data.spouseOf) {
+                    // Make the wire a long smooth bezier curve spanning horizontally and vertically
+                    const controlX1 = startX + (endX - startX) / 2;
+                    const controlY1 = startY + 500; // Dip down
+                    const controlX2 = startX + (endX - startX) / 2;
+                    const controlY2 = endY - 500;
+                    d = `M ${startX} ${startY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${endX} ${endY}`;
+
+                    path.setAttribute('stroke-dasharray', '5,5'); // Dashed line for marriage lineage
+                    path.setAttribute('stroke-width', '2px');
+                } else {
+                    // Normal child bezier curve
+                    const controlY = startY + (endY - startY) / 2;
+                    d = `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`;
+                }
 
                 path.setAttribute('d', d);
                 path.setAttribute('class', 'map-wire');
-                // Color line based on child's color to show new branch, else parent
                 path.setAttribute('stroke', data.color || '#999');
+
+                // Add specific class for easy selection
+                if (data.spouseOf) path.classList.add('marriage-wire');
+
+                svg.appendChild(path);
+            }
+        }
+
+        // Draw short horizontal connection block between Husband and Wife
+        if (data.spouseOf) {
+            const husband = dataList.find(d => d.id === data.spouseOf);
+            if (husband) {
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', `M ${husband.x + 70} ${husband.y} L ${data.x - 60} ${data.y}`);
+                path.setAttribute('class', 'map-wire');
+                path.setAttribute('stroke', '#ff99cc');
+                path.setAttribute('stroke-width', '2px');
 
                 svg.appendChild(path);
             }
@@ -163,13 +210,15 @@ function highlightRelatives(centerNodeId) {
     const node = dataList.find(d => d.id === centerNodeId);
     if (!node) return;
 
-    // Find parents, children, siblings
+    // Find parents, children, siblings, and spouses
     const relatives = new Set([centerNodeId]);
-    if (node.parent) relatives.add(node.parent);
+    if (node.parent) relatives.add(node.parent); // Father
+    if (node.spouseOf) relatives.add(node.spouseOf); // Husband
 
     dataList.forEach(d => {
         if (d.parent === centerNodeId) relatives.add(d.id); // Child
         if (node.parent && d.parent === node.parent) relatives.add(d.id); // Sibling
+        if (d.spouseOf === centerNodeId) relatives.add(d.id); // Wife
     });
 
     document.querySelectorAll('.map-node').forEach(n => {
