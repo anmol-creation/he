@@ -266,7 +266,8 @@ function navigateRelative(direction) {
     }
 
     if (targetId) {
-        openPanel(historicData.find(d => d.id === targetId));
+        // Sirf focus change karo, panel hide kar do taaki map clear dikhe
+        document.getElementById('focus-panel').classList.add('hidden');
         focusOnNode(targetId);
     }
 }
