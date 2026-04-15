@@ -191,13 +191,23 @@ function updateTransform() {
 }
 
 function updateRiverOfTime() {
-    const containerRect = container.getBoundingClientRect();
-    const screenCenterY = (containerRect.height / 2 - translateY) / scale;
-
     let activeYug = 'satya';
-    if (screenCenterY > 8000) activeYug = 'kali';
-    else if (screenCenterY > 6000) activeYug = 'dwapar';
-    else if (screenCenterY > 4000) activeYug = 'treta';
+
+    // If in focus mode, highlight the Yug of the currently focused node
+    if (!isMacroMode && focusedNodeId) {
+        const node = historicData.find(d => d.id === focusedNodeId);
+        if (node && node.yug) {
+            activeYug = node.yug;
+        }
+    } else {
+        // If in macro mode (free panning), calculate based on screen center Y
+        const containerRect = container.getBoundingClientRect();
+        const screenCenterY = (containerRect.height / 2 - translateY) / scale;
+
+        if (screenCenterY > 9500) activeYug = 'kali';
+        else if (screenCenterY > 7000) activeYug = 'dwapar';
+        else if (screenCenterY > 4000) activeYug = 'treta';
+    }
 
     document.querySelectorAll('.time-marker').forEach(marker => {
         if (marker.dataset.yug === activeYug) {
@@ -416,6 +426,31 @@ function setupEventListeners() {
     document.getElementById('zoom-out-btn').addEventListener('click', () => {
         scale = Math.max(scale - 0.2, 0.2);
         updateTransform();
+    });
+
+    // River of Time Navigation
+    document.querySelectorAll('.time-marker').forEach(marker => {
+        marker.addEventListener('click', (e) => {
+            const yug = e.target.dataset.yug;
+            // Define an entry/key node for each Yug to jump to
+            const yugEntryNodes = {
+                'satya': 'brahma',
+                'treta': 'ram',
+                'dwapar': 'krishna',
+                'kali': 'parikshit'
+            };
+
+            const targetNodeId = yugEntryNodes[yug];
+            if (targetNodeId) {
+                // If in macro mode, we just want to pan there. If in focus, focus there.
+                if (isMacroMode) {
+                    scale = 1;
+                    isMacroMode = false;
+                }
+                document.getElementById('focus-panel').classList.add('hidden');
+                focusOnNode(targetNodeId);
+            }
+        });
     });
 
     // Panel Close
