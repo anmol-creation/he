@@ -8,6 +8,25 @@ const canvas = document.getElementById('map-canvas');
 const nodesContainer = document.getElementById('nodes-container');
 const svg = document.getElementById('connection-lines');
 
+// River of Time Hierarchy Definitions
+const RIVER_OF_TIME_HIERARCHY = {
+    'kalpa': [
+        { id: 'shveta-varaha', name: 'श्वेत वाराह कल्प', yStart: 0, yEnd: 15000, entryNode: 'brahma' }
+    ],
+    'manvantara': [
+        { id: 'vaivasvata', name: 'वैवस्वत मन्वन्तर', yStart: 0, yEnd: 15000, entryNode: 'brahma' }
+    ],
+    'mahayuga': [
+        { id: '28th', name: '28वाँ महायुग', yStart: 1000, yEnd: 15000, entryNode: 'ram' }
+    ],
+    'yuga': [
+        { id: 'satya', name: 'सत्य युग', yStart: 1000, yEnd: 3000, entryNode: 'brahma' },
+        { id: 'treta', name: 'त्रेता युग', yStart: 4000, yEnd: 6000, entryNode: 'ram' },
+        { id: 'dwapar', name: 'द्वापर युग', yStart: 7000, yEnd: 9000, entryNode: 'krishna' },
+        { id: 'kali', name: 'कलि युग', yStart: 9500, yEnd: 15000, entryNode: 'parikshit' }
+    ]
+};
+
 let scale = 1;
 let translateX = -4500; // Center around X:5000 (Brahma)
 let translateY = -500; // Center around Top Y:1000 (Brahma)
@@ -245,26 +264,74 @@ function updateTransform() {
 }
 
 function updateRiverOfTime() {
-    let activeYug = 'satya';
+    const aside = document.getElementById('river-of-time');
 
-    // If in focus mode, highlight the Yug of the currently focused node
+    // Determine the level of detail based on scale
+    let hierarchyLevel = 'yuga';
+    if (scale < 0.3) {
+        hierarchyLevel = 'kalpa';
+    } else if (scale < 0.6) {
+        hierarchyLevel = 'manvantara';
+    } else if (scale < 0.9) {
+        hierarchyLevel = 'mahayuga';
+    }
+
+    // Check if we need to re-render the sidebar
+    const currentRenderedLevel = aside.dataset.level;
+    if (currentRenderedLevel !== hierarchyLevel) {
+        aside.innerHTML = '';
+        aside.dataset.level = hierarchyLevel;
+
+        const periods = RIVER_OF_TIME_HIERARCHY[hierarchyLevel];
+        periods.forEach((period, index) => {
+            const marker = document.createElement('div');
+            marker.className = 'time-marker';
+            marker.dataset.id = period.id;
+            marker.textContent = period.name;
+
+            // Re-bind click event dynamically
+            marker.addEventListener('click', () => {
+                if (isMacroMode) {
+                    scale = 1;
+                    isMacroMode = false;
+                }
+                document.getElementById('focus-panel').classList.add('hidden');
+                focusOnNode(period.entryNode);
+            });
+
+            aside.appendChild(marker);
+
+            if (index < periods.length - 1) {
+                const line = document.createElement('div');
+                line.className = 'time-line';
+                aside.appendChild(line);
+            }
+        });
+    }
+
+    // Determine the active period based on Y coordinate
+    let activeId = null;
+    const periods = RIVER_OF_TIME_HIERARCHY[hierarchyLevel];
+
     if (!isMacroMode && focusedNodeId) {
         const node = window.HistoricDB ? window.HistoricDB.getNode(focusedNodeId) : historicData.find(d => d.id === focusedNodeId);
-        if (node && node.yug) {
-            activeYug = node.yug;
+        if (node) {
+            // Find which period this node's Y falls into
+            const matchedPeriod = periods.find(p => node.y >= p.yStart && node.y < p.yEnd);
+            if (matchedPeriod) activeId = matchedPeriod.id;
         }
     } else {
-        // If in macro mode (free panning), calculate based on screen center Y
         const containerRect = container.getBoundingClientRect();
         const screenCenterY = (containerRect.height / 2 - translateY) / scale;
 
-        if (screenCenterY > 9500) activeYug = 'kali';
-        else if (screenCenterY > 7000) activeYug = 'dwapar';
-        else if (screenCenterY > 4000) activeYug = 'treta';
+        // Find which period the screen center Y falls into
+        const matchedPeriod = periods.find(p => screenCenterY >= p.yStart && screenCenterY < p.yEnd);
+        if (matchedPeriod) activeId = matchedPeriod.id;
     }
 
+    // Highlight active
     document.querySelectorAll('.time-marker').forEach(marker => {
-        if (marker.dataset.yug === activeYug) {
+        if (marker.dataset.id === activeId) {
             marker.classList.add('active');
         } else {
             marker.classList.remove('active');
@@ -486,30 +553,8 @@ function setupEventListeners() {
         updateTransform();
     });
 
-    // River of Time Navigation
-    document.querySelectorAll('.time-marker').forEach(marker => {
-        marker.addEventListener('click', (e) => {
-            const yug = e.target.dataset.yug;
-            // Define an entry/key node for each Yug to jump to
-            const yugEntryNodes = {
-                'satya': 'brahma',
-                'treta': 'ram',
-                'dwapar': 'krishna',
-                'kali': 'parikshit'
-            };
-
-            const targetNodeId = yugEntryNodes[yug];
-            if (targetNodeId) {
-                // If in macro mode, we just want to pan there. If in focus, focus there.
-                if (isMacroMode) {
-                    scale = 1;
-                    isMacroMode = false;
-                }
-                document.getElementById('focus-panel').classList.add('hidden');
-                focusOnNode(targetNodeId);
-            }
-        });
-    });
+    // Initial River of Time render
+    updateRiverOfTime();
 
     // Panel Close
     document.getElementById('close-panel').addEventListener('click', () => {
