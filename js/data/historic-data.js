@@ -6,17 +6,17 @@
 
 const historicData = [
     // ==========================================
-    // TRIMURTI (The Ultimate Roots)
+    // TRIMURTI (The Ultimate Roots) - Anadi (Before current Kalpa)
     // ==========================================
-    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', x: 5000, y: 1000, color: '#FFD700', type: 'root', yug: 'satya' },
-    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', x: 3000, y: 1000, color: '#3399FF', type: 'root', yug: 'satya' },
-    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', x: 7000, y: 1000, color: '#FF3333', type: 'root', yug: 'satya' },
+    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', x: 5000, y: -2000, color: '#FFD700', type: 'root', yug: 'pre-kalpa' },
+    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', x: 3000, y: -2000, color: '#3399FF', type: 'root', yug: 'pre-kalpa' },
+    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', x: 7000, y: -2000, color: '#FF3333', type: 'root', yug: 'pre-kalpa' },
 
     // ==========================================
     // VISHNU'S CREATIONS & AVATARS
     // ==========================================
-    { id: 'kamadeva', name: 'कामदेव', subtitle: 'विष्णु के पुत्र', x: 3000, y: 1500, color: '#FF66B2', parent: 'vishnu', yug: 'satya' },
-    { id: 'rati', name: 'रति', subtitle: 'कामदेव की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'kamadeva', yug: 'satya' },
+    { id: 'kamadeva', name: 'कामदेव', subtitle: 'विष्णु के पुत्र', x: 3000, y: -1000, color: '#FF66B2', parent: 'vishnu', yug: 'pre-kalpa' },
+    { id: 'rati', name: 'रति', subtitle: 'कामदेव की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'kamadeva', yug: 'pre-kalpa' },
 
     // ==========================================
     // BRAHMA'S DIRECT DESCENDANTS (Satya Yug)

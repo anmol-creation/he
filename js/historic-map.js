@@ -9,27 +9,33 @@ const nodesContainer = document.getElementById('nodes-container');
 const svg = document.getElementById('connection-lines');
 
 // River of Time Hierarchy Definitions
+// Using negative Y for entities existing before current Kalpa (e.g. Trimurti).
+// Expanding Y bounds to give space for multiple Kalpas/Manvantaras.
 const RIVER_OF_TIME_HIERARCHY = {
     'kalpa': [
-        { id: 'shveta-varaha', name: 'श्वेत वाराह कल्प', yStart: 0, yEnd: 15000, entryNode: 'brahma' }
+        { id: 'pre-kalpa', name: 'पूर्व कल्प / अनादि', yStart: -10000, yEnd: -1, entryNode: 'vishnu' },
+        { id: 'shveta-varaha', name: 'श्वेत वाराह कल्प', yStart: 0, yEnd: 100000, entryNode: 'brahma' }
     ],
     'manvantara': [
-        { id: 'vaivasvata', name: 'वैवस्वत मन्वन्तर', yStart: 0, yEnd: 15000, entryNode: 'brahma' }
+        { id: 'swayambhuva', name: '१. स्वायंभुव मन्वन्तर', yStart: 0, yEnd: 5000, entryNode: 'brahma' },
+        { id: 'chakshusha', name: '६. चाक्षुष मन्वन्तर', yStart: 5000, yEnd: 10000, entryNode: 'brahma' },
+        { id: 'vaivasvata', name: '७. वैवस्वत मन्वन्तर (वर्तमान)', yStart: 10000, yEnd: 50000, entryNode: 'brahma' }
     ],
     'mahayuga': [
-        { id: '28th', name: '28वाँ महायुग', yStart: 1000, yEnd: 15000, entryNode: 'ram' }
+        { id: '24th', name: '24वाँ महायुग', yStart: 10000, yEnd: 15000, entryNode: 'ram' },
+        { id: '28th', name: '28वाँ महायुग (वर्तमान)', yStart: 20000, yEnd: 50000, entryNode: 'ram' }
     ],
     'yuga': [
-        { id: 'satya', name: 'सत्य युग', yStart: 1000, yEnd: 3000, entryNode: 'brahma' },
-        { id: 'treta', name: 'त्रेता युग', yStart: 4000, yEnd: 6000, entryNode: 'ram' },
-        { id: 'dwapar', name: 'द्वापर युग', yStart: 7000, yEnd: 9000, entryNode: 'krishna' },
-        { id: 'kali', name: 'कलि युग', yStart: 9500, yEnd: 15000, entryNode: 'parikshit' }
+        { id: 'satya', name: 'सत्य युग (28वाँ)', yStart: 20000, yEnd: 25000, entryNode: 'brahma' },
+        { id: 'treta', name: 'त्रेता युग (28वाँ)', yStart: 25000, yEnd: 30000, entryNode: 'ram' },
+        { id: 'dwapar', name: 'द्वापर युग (28वाँ)', yStart: 30000, yEnd: 35000, entryNode: 'krishna' },
+        { id: 'kali', name: 'कलि युग (28वाँ)', yStart: 35000, yEnd: 50000, entryNode: 'parikshit' }
     ]
 };
 
 let scale = 1;
 let translateX = -4500; // Center around X:5000 (Brahma)
-let translateY = -500; // Center around Top Y:1000 (Brahma)
+let translateY = 1500;  // Center around Top Y:-1000 (Trimurti)
 let isDragging = false;
 let startX, startY;
 
