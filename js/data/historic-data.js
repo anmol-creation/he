@@ -6,11 +6,16 @@
 
 const historicData = [
     // ==========================================
-    // TRIMURTI (The Ultimate Roots) - Anadi (Before current Kalpa)
+    // SUPREME (Parabrahman) - The Ultimate Source
     // ==========================================
-    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', x: 5000, y: -2000, color: '#FFD700', type: 'root', yug: 'pre-kalpa' },
-    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', x: 3000, y: -2000, color: '#3399FF', type: 'root', yug: 'pre-kalpa' },
-    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', x: 7000, y: -2000, color: '#FF3333', type: 'root', yug: 'pre-kalpa' },
+    { id: 'brahman', name: 'परब्रह्म', subtitle: 'ईश्वर (The Supreme Soul)', x: 5000, y: -3000, color: '#FFFFFF', type: 'root', yug: 'pre-kalpa' },
+
+    // ==========================================
+    // TRIMURTI - Manifestations of the Supreme
+    // ==========================================
+    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', parent: 'brahman', x: 3000, y: -2000, color: '#3399FF', yug: 'pre-kalpa' },
+    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', parent: 'brahman', x: 5000, y: -2000, color: '#FFD700', yug: 'pre-kalpa' },
+    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', parent: 'brahman', x: 7000, y: -2000, color: '#FF3333', yug: 'pre-kalpa' },
 
     // ==========================================
     // VISHNU'S CREATIONS & AVATARS
