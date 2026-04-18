@@ -34,7 +34,7 @@ const historicData = [
     { id: 'sanatkumar', name: 'सनत्कुमार', subtitle: 'सनत कुमार', x: 4400, y: 1500, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
 
     // 2. Physical/Other Creations
-    { id: 'narada', name: 'नारद', subtitle: 'मानस पुत्र / देवर्षि', x: 4600, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'narada', name: 'नारद', subtitle: 'मानस पुत्र / देवर्षि', x: 4600, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' , parichay: 'देवर्षि नारद, ब्रह्मा के मानस पुत्र।', events: ['वाल्मीकि को राम कथा संक्षेप में सुनाई (बालकाण्ड, सर्ग 1)'] },
     { id: 'jambavan', name: 'जाम्बवान', subtitle: 'ब्रह्मा की जम्हाई से', x: 4800, y: 1500, color: '#A0522D', parent: 'brahma', yug: 'satya' },
     { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', x: 8000, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
 
@@ -159,7 +159,13 @@ const historicData = [
     { id: 'ambashtha', name: 'अम्बष्ठ', subtitle: 'कायस्थ गोत्र', x: 7400, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' },
     { id: 'gaur', name: 'गौड़', subtitle: 'कायस्थ गोत्र', x: 7600, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' },
     { id: 'nigam', name: 'निगम', subtitle: 'कायस्थ गोत्र', x: 7800, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' },
-    { id: 'valmiki_k', name: 'वाल्मीकि', subtitle: 'कायस्थ गोत्र', x: 8000, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' },
+    { id: 'valmiki_k', name: 'वाल्मीकि', subtitle: 'कायस्थ गोत्र', x: 8000, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' , parichay: "वाल्मीकि (आदिकवि) - वाल्मीकि रामायण के रचयिता।", kathayein: [
+    {
+        title: "नारद-वाल्मीकि संवाद (बालकाण्ड - सर्ग १)",
+        source: "वाल्मीकि रामायण, बालकाण्ड, सर्ग 1, श्लोक 1-8",
+        content: `तप और स्वाध्याय में निरत, वाग्मियों (बोलने वालों) में श्रेष्ठ मुनि नारद जी से तपस्वी वाल्मीकि जी ने पूछा- || [1] (Bala Kanda, Sarga 1, Shloka 1)\n\n"इस समय संसार में गुणवान, वीर्यवान, धर्मज्ञ, कृतज्ञ, सत्यवादी और दृढ़व्रत (अपने व्रत पर अटल रहने वाला) कौन है?" || [2] (Bala Kanda, Sarga 1, Shloka 2)\n\n"वह कौन है जो सदाचार से युक्त हो, जो सब प्राणियों का हितैषी हो, जो विद्वान हो, जो समर्थ (सब कार्य करने में) हो और जिसका दर्शन सदा प्रिय (सुंदर) लगे?" || [3] (Bala Kanda, Sarga 1, Shloka 3)\n\n"वह कौन है जो मन को वश में रखने वाला हो, जिसने क्रोध जीत लिया हो, जो कांतिमान हो, जो किसी की निंदा (ईर्ष्या) न करता हो और युद्ध में क्रोधित होने पर जिससे देवता भी डरते हों?" || [4] (Bala Kanda, Sarga 1, Shloka 4)\n\n"मैं यह सब विस्तार से सुनना चाहता हूँ। मुझे यह जानने की बहुत उत्सुकता है। महर्षे! आप ऐसे पुरुष को जानने में समर्थ हैं।" || [5] (Bala Kanda, Sarga 1, Shloka 5)\n\nवाल्मीकि मुनि के ऐसे वचन सुनकर, तीनों लोकों का ज्ञान रखने वाले नारद जी प्रसन्न होकर बोले- "सुनो!" || [6] (Bala Kanda, Sarga 1, Shloka 6)\n\n"मुने! तुमने जिन बहुत-से और दुर्लभ गुणों का वर्णन किया है, वे जिस पुरुष में हैं, मैं विचार कर तुम्हें बताता हूँ; सुनो।" || [7] (Bala Kanda, Sarga 1, Shloka 7)\n\n"इक्ष्वाकु वंश में उत्पन्न एक ऐसे पुरुष हैं जो 'राम' नाम से लोगों में विख्यात हैं। वे मन को वश में रखने वाले, महाबलवान, कांतिमान, धैर्यवान और इन्द्रियों को जीतने वाले हैं।" || [8] (Bala Kanda, Sarga 1, Shloka 8)`
+    }
+] },
     { id: 'asthana', name: 'अस्थाना', subtitle: 'कायस्थ गोत्र', x: 8200, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' },
     { id: 'kulshreshtha', name: 'कुलश्रेष्ठ', subtitle: 'कायस्थ गोत्र', x: 8400, y: 3000, color: '#FFD700', parent: 'chitragupta', mother: 'nandini', yug: 'satya' },
 
@@ -182,7 +188,13 @@ const historicData = [
     { id: 'sumitra', name: 'सुमित्रा', subtitle: 'लक्ष्मण/शत्रुघ्न की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
 
     // Ramayana Siblings
-    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 700, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaushalya', yug: 'treta', motherColor: '#FFD700' },
+    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 700, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaushalya', yug: 'treta', motherColor: '#FFD700' , kathayein: [
+    {
+        title: "१६ कल्याणकारी गुण (नारद द्वारा वर्णित)",
+        source: "वाल्मीकि रामायण, बालकाण्ड, सर्ग 1",
+        content: `महर्षि वाल्मीकि के प्रश्न के उत्तर में देवर्षि नारद ने श्रीराम के निम्नलिखित १६ गुणों का वर्णन किया:\n१. गुणवान (शील आदि गुणों से युक्त)\n२. वीर्यवान (पराक्रमी)\n३. धर्मज्ञ (धर्म को जानने वाले)\n४. कृतज्ञ (किए हुए उपकार को मानने वाले)\n५. सत्यवाक्य (सत्य बोलने वाले)\n६. दृढ़व्रत (अपने व्रत पर अटल रहने वाले)\n७. चारित्र्यवान (सदाचार से युक्त)\n८. सर्वभूतहित (सभी प्राणियों के हितैषी)\n९. विद्वान (सब विद्याओं को जानने वाले)\n१०. समर्थ (सब कार्य करने में सक्षम)\n११. सदैकप्रियदर्शन (जिनका दर्शन सदा प्रिय लगे)\n१२. आत्मवान (मन को वश में रखने वाले)\n१३. जितक्रोध (जिन्होंने क्रोध जीत लिया हो)\n१४. द्युतिमान (कांतिमान)\n१५. अनसूयक (किसी की निंदा/ईर्ष्या न करने वाले)\n१६. बिभ्यति देवाश्च जातरोषस्य संयुगे (युद्ध में क्रोधित होने पर जिनसे देवता भी डरते हों)`
+    }
+] },
     { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', x: 900, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta' },
     { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', x: 1100, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
     { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', x: 1300, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
