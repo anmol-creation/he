@@ -126,8 +126,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${spouseText}
                         <div class="sp-detail-row">
                             <span class="sp-detail-label">विवरण:</span>
-                            <span class="sp-detail-value">सनातन धर्म के इतिहास में महत्वपूर्ण योगदान। (More details can be added in future database updates).</span>
+                            <span class="sp-detail-value">${item.parichay || 'सनातन धर्म के इतिहास में महत्वपूर्ण योगदान।'}</span>
                         </div>
+                        ${item.events ? `
+                        <div class="sp-detail-row" style="margin-top: 1rem;">
+                            <span class="sp-detail-label">प्रमुख घटनाएँ:</span>
+                            <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0;">
+                                ${item.events.map(ev => `<li>${ev}</li>`).join('')}
+                            </ul>
+                        </div>` : ''}
+                        ${item.kathayein ? `
+                        <div class="sp-detail-row" style="margin-top: 1rem;">
+                            <span class="sp-detail-label">कथाएँ व प्रसंग:</span>
+                            ${item.kathayein.map(katha => `
+                                <div style="margin-top: 1rem; background: rgba(0,0,0,0.03); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-saffron);">
+                                    <strong style="display: block; color: var(--primary-saffron); margin-bottom: 0.5rem;">${katha.title}</strong>
+                                    <em style="display: block; font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Source: ${katha.source}</em>
+                                    <p style="white-space: pre-line; margin: 0; font-size: 0.95rem; line-height: 1.6;">${katha.content}</p>
+                                </div>
+                            `).join('')}
+                        </div>` : ''}
                     </div>
                 </div>
             `
@@ -230,5 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    updateView(); // Initial state
+    // Check if there is an entity ID in the URL to jump to
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetEntityId = urlParams.get('entity');
+
+    if (targetEntityId) {
+        window.SinglePageBookApp.goToEntity(targetEntityId);
+    } else {
+        updateView(); // Initial state
+    }
 });

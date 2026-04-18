@@ -106,13 +106,8 @@ function renderNodes() {
 
         node.addEventListener('click', (e) => {
             e.stopPropagation();
-            // If in macro mode, clicking zooms in and focuses.
-            if (isMacroMode) {
-                scale = 1;
-                isMacroMode = false;
-            }
-            openPanel(data);
-            focusOnNode(data.id);
+            // Redirect to the individual entity profile page inside the Itihas Book
+            window.location.href = `itihas-book.html?entity=${data.id}`;
         });
 
         nodesContainer.appendChild(node);
