@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity List | इतिहास पुराण</title>
+    <meta name="description" content="List of entities by category">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 1rem;
+        }
+        h1 {
+            color: var(--primary-saffron);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .entity-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .entity-item {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .entity-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(247, 147, 30, 0.15);
+            border-color: rgba(247, 147, 30, 0.3);
+        }
+        .entity-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .entity-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="itihas-puran.html">← इतिहास पुराण</a>
+            <span class="header-separator">|</span>
+            <span id="category-title">Loading...</span>
+        </div>
+    </header>
+
+    <main>
+        <h1 id="page-title">Entity List</h1>
+        <div class="entity-list-container" id="entity-list">
+            <!-- List items will be injected here -->
+        </div>
+    </main>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/data/historic-data.js"></script>
+    <script src="../js/entity-list.js"></script>
+</body>
+</html>
