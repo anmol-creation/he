@@ -41,7 +41,7 @@ let startX, startY;
 
 const MACRO_ZOOM_THRESHOLD = 0.5;
 let isMacroMode = false;
-let focusedNodeId = 'brahma';
+let focusedNodeId = 'brahman';
 
 // Initialize
 function initMap() {
@@ -50,7 +50,7 @@ function initMap() {
     setupEventListeners();
 
     // Focus on the top node initially
-    focusOnNode('brahma');
+    focusOnNode('brahman');
 }
 
 function renderNodes() {
