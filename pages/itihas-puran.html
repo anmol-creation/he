@@ -31,33 +31,36 @@
         </a>
 
         <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" class="search-bar" placeholder="Search any King, Dynasty, Era, or Surname...">
+        <div class="search-container" style="position: relative;">
+            <input type="text" id="search-input" class="search-bar" placeholder="Search any King, Dynasty, Era, or Surname..." autocomplete="off">
+            <div id="search-results" class="search-results-dropdown" style="display: none; position: absolute; top: 100%; left: 1rem; right: 1rem; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 10; max-height: 300px; overflow-y: auto; margin-top: 0.5rem; border: 1px solid rgba(0,0,0,0.05);">
+                <!-- Search results will be injected here -->
+            </div>
         </div>
 
         <!-- Categories Grid -->
         <div class="portal-grid">
-            <a href="historic-map.html?focus=dynasties" class="portal-card">
+            <a href="entity-list.html?category=dynasties" class="portal-card">
                 <div class="portal-card-icon">👑</div>
                 <div class="portal-card-title">प्रमुख वंश</div>
                 <div class="portal-card-desc">Suryavansh, Chandravansh, Kuruvansh, etc.</div>
             </a>
-            <a href="historic-map.html?focus=kings" class="portal-card">
+            <a href="entity-list.html?category=kings" class="portal-card">
                 <div class="portal-card-icon">⚔️</div>
                 <div class="portal-card-title">महान राजा व सम्राट</div>
                 <div class="portal-card-desc">Chakravarti Samrats, Dharmarajs, Warriors</div>
             </a>
-            <a href="historic-map.html?focus=eras" class="portal-card">
+            <a href="entity-list.html?category=eras" class="portal-card">
                 <div class="portal-card-icon">⏳</div>
                 <div class="portal-card-title">कालगणना और युग</div>
                 <div class="portal-card-desc">Satya, Treta, Dwapar, Kali Yug & Manvantaras</div>
             </a>
-            <a href="historic-map.html?focus=surnames" class="portal-card">
+            <a href="entity-list.html?category=surnames" class="portal-card">
                 <div class="portal-card-icon">🧬</div>
                 <div class="portal-card-title">Surnames / गोत्र</div>
                 <div class="portal-card-desc">Trace modern lineages back to ancient roots</div>
             </a>
-            <a href="historic-map.html?focus=sages" class="portal-card">
+            <a href="entity-list.html?category=sages" class="portal-card">
                 <div class="portal-card-icon">📜</div>
                 <div class="portal-card-title">ऋषि परंपरा</div>
                 <div class="portal-card-desc">Saptarishi, Gurukul lineages and knowledge flow</div>
@@ -79,5 +82,6 @@
 
     <script src="../js/global.js"></script>
     <script src="../js/data/historic-data.js"></script>
+    <script src="../js/itihas-puran.js"></script>
 </body>
 </html>

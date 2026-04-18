@@ -243,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetIndex = pagesData.findIndex(page => page.id === id);
             if (targetIndex !== -1) {
                 currentPageIndex = targetIndex;
-                updateView();
             }
+            updateView();
         }
     };
 
