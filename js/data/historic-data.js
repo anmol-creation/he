@@ -200,7 +200,11 @@ const historicData = [
     { id: 'aja', name: 'अज', subtitle: 'रघु के पुत्र', x: 1000, y: 6500, color: '#FF9900', parent: 'raghu', yug: 'treta' },
     { id: 'dasharath', name: 'दशरथ', subtitle: 'अयोध्या के चक्रवर्ती सम्राट', x: 1000, y: 7000, color: '#FF9900', parent: 'aja', yug: 'treta',
   parichay: 'अयोध्या के महान चक्रवर्ती सम्राट, भगवान राम के पिता।',
-  events: ['गुणों और प्रजा-हित को देखकर ज्येष्ठ पुत्र राम को युवराज बनाने का निर्णय लिया।'],
+  events: [
+    'गुणों और प्रजा-हित को देखकर ज्येष्ठ पुत्र राम को युवराज बनाने का निर्णय लिया।',
+    'सत्य वचन और धर्म-बंधन के कारण रानी कैकेयी को दिए वरदानों की पूर्ति हेतु राम को १४ वर्ष के वनवास का आदेश दिया। (बालकाण्ड, सर्ग 1, श्लोक 23)',
+    'राम के चित्रकूट जाने पर पुत्रशोक से पीड़ित होकर विलाप करते हुए स्वर्ग सिधारे। (बालकाण्ड, सर्ग 1, श्लोक 32)'
+  ],
   kathayein: [
     {
       title: "राम को युवराज बनाने का निर्णय (गुणों और प्रजा-हित के आधार पर)",
@@ -212,11 +216,20 @@ const historicData = [
 
     // Dasharath's Wives
     { id: 'kaushalya', name: 'कौशल्या', subtitle: 'राम की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
-    { id: 'kaikeyi', name: 'कैकेयी', subtitle: 'भरत की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
+    { id: 'kaikeyi', name: 'कैकेयी', subtitle: 'भरत की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta',
+      parichay: 'राजा दशरथ की रानी और भरत की माता।',
+      events: ['राम के राज्याभिषेक की तैयारी देखकर पूर्व में दिए गए वर माँगे: राम को वनवास और भरत को राज्याभिषेक। (बालकाण्ड, सर्ग 1, श्लोक 21-22)']
+    },
     { id: 'sumitra', name: 'सुमित्रा', subtitle: 'लक्ष्मण/शत्रुघ्न की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
 
     // Ramayana Siblings
-    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 700, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaushalya', yug: 'treta', motherColor: '#FFD700' , kathayein: [
+    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 700, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaushalya', yug: 'treta', motherColor: '#FFD700',
+      events: [
+        'पिता दशरथ और कैकेयी के वचनानुसार १४ वर्ष के वनवास हेतु अयोध्या से प्रस्थान। (बालकाण्ड, सर्ग 1, श्लोक 24)',
+        'शृंगवेरपुर में गंगा तट पर निषादराज गुह से भेंट की और सारथि को विदा किया। (बालकाण्ड, सर्ग 1, श्लोक 29)',
+        'भरद्वाज मुनि की आज्ञा से चित्रकूट पर्वत पर गए और एक सुंदर पर्णकुटी बनाकर निवास किया। (बालकाण्ड, सर्ग 1, श्लोक 30-31)'
+      ],
+      kathayein: [
     {
         title: "१६ कल्याणकारी गुण (नारद द्वारा वर्णित)",
         source: "वाल्मीकि रामायण, बालकाण्ड, सर्ग 1",
@@ -255,12 +268,21 @@ const historicData = [
   - सत्य में: द्वितीय धर्मराज के समान`
     }
 ] },
-    { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', x: 900, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta' },
-    { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', x: 1100, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', x: 900, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta',
+      parichay: 'वे महाबलशाली वीर थे और उनमें राज्य का तनिक भी लोभ नहीं था।',
+      events: ['वशिष्ठ आदि प्रमुख ब्राह्मणों द्वारा राज्य संचालन के लिए नियुक्त किए जाने पर भी, राज्य की कामना न करके पूज्य राम को प्रसन्न करने (लौटाने) के लिए चित्रकूट गए। (बालकाण्ड, सर्ग 1)']
+    },
+    { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', x: 1100, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta',
+      parichay: 'माता सुमित्रा के आनंद बढ़ाने वाले, अत्यंत विनयशील और राम को अत्यधिक प्रिय।',
+      events: ['अपने बड़े भाई राम को अत्यधिक प्रिय होने के कारण, सुबंधुत्व का परिचय देते हुए स्नेहवश उनके साथ वन गए। (बालकाण्ड, सर्ग 1, श्लोक 25)']
+    },
     { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', x: 1300, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
 
     // Ram's Wife
-    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'ram', yug: 'treta' },
+    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'ram', yug: 'treta',
+      parichay: 'वे देवमाया की भाँति सुन्दरी, समस्त शुभलक्षणों से विभूषित, स्त्रियों में उत्तम तथा सदा पति का हित चाहने वाली थीं।',
+      events: ['राम के प्राणों के समान प्रियतमा पत्नी होने के कारण, रोहिणी जैसे चन्द्रमा के पीछे चलती है, वैसे ही राम के पीछे-पीछे वन गईं। (बालकाण्ड, सर्ग 1, श्लोक 26-28)']
+    },
 
     { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', x: 600, y: 8000, color: '#FF9900', parent: 'ram', mother: 'sita', yug: 'treta' },
     { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', x: 800, y: 8000, color: '#FF9900', parent: 'ram', mother: 'sita', yug: 'treta' },
