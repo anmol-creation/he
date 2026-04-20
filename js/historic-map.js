@@ -62,6 +62,15 @@ function setupSearchLogic() {
     const suggestionsBox = document.getElementById('map-search-suggestions');
     if (!searchInput || !suggestionsBox) return;
 
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const firstSuggestion = suggestionsBox.querySelector('div');
+            if (firstSuggestion) {
+                firstSuggestion.click();
+            }
+        }
+    });
+
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
         suggestionsBox.innerHTML = '';
@@ -72,10 +81,23 @@ function setupSearchLogic() {
         }
 
         const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
-        const matches = dataList.filter(d =>
-            d.name.toLowerCase().includes(query) ||
-            (d.subtitle && d.subtitle.toLowerCase().includes(query))
-        ).slice(0, 8); // Top 8 results
+        const matches = dataList.filter(d => {
+            const searchFields = [
+                d.name,
+                d.subtitle,
+                d.id,
+                d.color,
+                d.mother,
+                d.spouseOf
+            ];
+
+            // Check if any alias or alternative names exist
+            if (d.aliases) searchFields.push(...d.aliases);
+
+            return searchFields.some(field =>
+                field && String(field).toLowerCase().includes(query)
+            );
+        }).slice(0, 8); // Top 8 results
 
         if (matches.length > 0) {
             matches.forEach(match => {
@@ -93,7 +115,6 @@ function setupSearchLogic() {
                 div.addEventListener('click', () => {
                     searchInput.value = match.name;
                     suggestionsBox.style.display = 'none';
-                    document.getElementById('focus-panel').classList.add('hidden');
                     if (isLineageMode) {
                         isLineageMode = false;
                         lineagePath.clear();
@@ -105,6 +126,7 @@ function setupSearchLogic() {
                         });
                     }
                     focusOnNode(match.id);
+                    openPanel(match);
                 });
 
                 suggestionsBox.appendChild(div);
@@ -305,12 +327,14 @@ function drawConnections() {
                 // By default route from father
                 let sourceX = parent.x;
                 let sourceY = parent.y;
+                let sourceId = parent.id;
 
                 if (data.mother) {
                     const mother = dataList.find(d => d.id === data.mother);
                     if (mother) {
                         sourceX = mother.x;
                         sourceY = mother.y;
+                        sourceId = mother.id;
                     }
                 }
 
@@ -324,6 +348,8 @@ function drawConnections() {
                 path.setAttribute('d', `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`);
                 path.setAttribute('class', 'map-wire');
                 path.setAttribute('stroke', data.color || '#999');
+                path.setAttribute('data-from', sourceId);
+                path.setAttribute('data-to', data.id);
 
                 svg.appendChild(path);
             }
@@ -766,7 +792,13 @@ function showLineageToRoot(startNodeId) {
             if (ny > maxY) maxY = ny;
         }
 
-        currentNodeId = node.parent;
+        if (node.mother) lineagePath.add(node.mother);
+
+        if (node.parents && node.parents.length > 0) {
+             currentNodeId = node.parents[0];
+        } else {
+             currentNodeId = node.parent;
+        }
     }
 
     if (minX === Infinity) return; // Fallback if no valid bounds were found
@@ -791,10 +823,17 @@ function showLineageToRoot(startNodeId) {
     document.querySelectorAll('.map-wire').forEach(w => {
         const fromId = w.dataset.from;
         const toId = w.dataset.to;
-        if (lineagePath.has(fromId) && lineagePath.has(toId)) {
-            w.style.opacity = '1';
-            w.style.strokeWidth = '4';
-            w.style.stroke = 'var(--primary-saffron)';
+
+        // If the wire connects two nodes in our path, or connects a parent to an intermediate grouping line
+        if ((lineagePath.has(fromId) && lineagePath.has(toId)) || (!fromId && !toId)) {
+            // Check if both nodes are validly in lineage path
+            if (fromId && toId) {
+                w.style.opacity = '1';
+                w.style.strokeWidth = '4';
+                w.style.stroke = 'var(--primary-saffron)';
+            } else {
+                w.style.opacity = '0.05';
+            }
         } else {
             w.style.opacity = '0.05';
             w.style.strokeWidth = '2';
