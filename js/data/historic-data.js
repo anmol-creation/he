@@ -8,19 +8,19 @@ const historicData = [
     // ==========================================
     // SUPREME (Parabrahman) - The Ultimate Source
     // ==========================================
-    { id: 'brahman', name: 'परब्रह्म', subtitle: 'ईश्वर (The Supreme Soul)', x: 5000, y: -3000, color: '#FFFFFF', type: 'root', yug: 'pre-kalpa' },
+    { id: 'brahman', name: 'परब्रह्म', subtitle: 'ईश्वर (The Supreme Soul)', x: 5000, y: 0, color: '#FFFFFF', type: 'root', yug: 'pre-kalpa' },
 
     // ==========================================
     // TRIMURTI - Manifestations of the Supreme
     // ==========================================
-    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', parent: 'brahman', x: 3000, y: -2000, color: '#3399FF', yug: 'pre-kalpa' },
-    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', parent: 'brahman', x: 5000, y: -2000, color: '#FFD700', yug: 'pre-kalpa' },
-    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', parent: 'brahman', x: 7000, y: -2000, color: '#FF3333', yug: 'pre-kalpa' },
+    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', parent: 'brahman', x: 0, y: 200, color: '#3399FF', yug: 'pre-kalpa' },
+    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', parent: 'brahman', x: 5000, y: 200, color: '#FFD700', yug: 'pre-kalpa' },
+    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', parent: 'brahman', x: 10000, y: 200, color: '#FF3333', yug: 'pre-kalpa' },
 
     // ==========================================
     // VISHNU'S CREATIONS & AVATARS
     // ==========================================
-    { id: 'kamadeva', name: 'कामदेव', subtitle: 'विष्णु के पुत्र', x: 3000, y: -1000, color: '#FF66B2', parent: 'vishnu', yug: 'pre-kalpa' },
+    { id: 'kamadeva', name: 'कामदेव', subtitle: 'विष्णु के पुत्र', x: 0, y: 400, color: '#FF66B2', parent: 'vishnu', yug: 'pre-kalpa' },
     { id: 'rati', name: 'रति', subtitle: 'कामदेव की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'kamadeva', yug: 'pre-kalpa' },
 
     // ==========================================
@@ -28,40 +28,40 @@ const historicData = [
     // ==========================================
 
     // 1. Sanat Kumaras (Eternally young sages)
-    { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', x: 3800, y: 1500, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
-    { id: 'sanandan', name: 'सनन्दन', subtitle: 'सनत कुमार', x: 4000, y: 1500, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
-    { id: 'sanatan', name: 'सनातन', subtitle: 'सनत कुमार', x: 4200, y: 1500, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
-    { id: 'sanatkumar', name: 'सनत्कुमार', subtitle: 'सनत कुमार', x: 4400, y: 1500, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
+    { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', x: 1000, y: 400, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
+    { id: 'sanandan', name: 'सनन्दन', subtitle: 'सनत कुमार', x: 1200, y: 400, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
+    { id: 'sanatan', name: 'सनातन', subtitle: 'सनत कुमार', x: 1400, y: 400, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
+    { id: 'sanatkumar', name: 'सनत्कुमार', subtitle: 'सनत कुमार', x: 1600, y: 400, color: '#FFFF99', parent: 'brahma', yug: 'satya' },
 
     // 2. Physical/Other Creations
-    { id: 'narada', name: 'नारद', subtitle: 'मानस पुत्र / देवर्षि', x: 4600, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' , parichay: 'देवर्षि नारद, ब्रह्मा के मानस पुत्र।', events: ['वाल्मीकि को राम कथा संक्षेप में सुनाई (बालकाण्ड, सर्ग 1)'] },
-    { id: 'jambavan', name: 'जाम्बवान', subtitle: 'ब्रह्मा की जम्हाई से', x: 4800, y: 1500, color: '#A0522D', parent: 'brahma', yug: 'satya' },
-    { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', x: 8000, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'narada', name: 'नारद', subtitle: 'मानस पुत्र / देवर्षि', x: 1800, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' , parichay: 'देवर्षि नारद, ब्रह्मा के मानस पुत्र।', events: ['वाल्मीकि को राम कथा संक्षेप में सुनाई (बालकाण्ड, सर्ग 1)'] },
+    { id: 'jambavan', name: 'जाम्बवान', subtitle: 'ब्रह्मा की जम्हाई से', x: 2000, y: 400, color: '#A0522D', parent: 'brahma', yug: 'satya' },
+    { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', x: 2200, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
 
     // 3. Manas Putras (The Prajapatis & Sages)
-    { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', x: 1000, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'angiras', name: 'अंगिरस', subtitle: 'सप्तर्षि / मानस पुत्र', x: 1500, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'pulastya', name: 'पुलस्त्य', subtitle: 'सप्तर्षि / मानस पुत्र', x: 2000, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'pulaha', name: 'पुलह', subtitle: 'सप्तर्षि / मानस पुत्र', x: 2500, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'kratu', name: 'क्रतु', subtitle: 'सप्तर्षि / मानस पुत्र', x: 5000, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'bhrigu', name: 'भृगु', subtitle: 'मानस पुत्र', x: 5500, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'vashistha', name: 'वशिष्ठ', subtitle: 'सप्तर्षि / मानस पुत्र', x: 6000, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'atri', name: 'अत्रि', subtitle: 'सप्तर्षि / मानस पुत्र', x: 6500, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
-    { id: 'daksha', name: 'दक्ष प्रजापति', subtitle: 'अंगूठे से उत्पन्न', x: 8500, y: 1500, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', x: 2400, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'angiras', name: 'अंगिरस', subtitle: 'सप्तर्षि / मानस पुत्र', x: 2600, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'pulastya', name: 'पुलस्त्य', subtitle: 'सप्तर्षि / मानस पुत्र', x: 2800, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'pulaha', name: 'पुलह', subtitle: 'सप्तर्षि / मानस पुत्र', x: 3000, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'kratu', name: 'क्रतु', subtitle: 'सप्तर्षि / मानस पुत्र', x: 3200, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'bhrigu', name: 'भृगु', subtitle: 'मानस पुत्र', x: 3400, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'vashistha', name: 'वशिष्ठ', subtitle: 'सप्तर्षि / मानस पुत्र', x: 3600, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'atri', name: 'अत्रि', subtitle: 'सप्तर्षि / मानस पुत्र', x: 3800, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
+    { id: 'daksha', name: 'दक्ष प्रजापति', subtitle: 'अंगूठे से उत्पन्न', x: 4000, y: 400, color: '#FFD700', parent: 'brahma', yug: 'satya' },
 
     // 4. The First Humans
-    { id: 'svayambhuva_manu', name: 'स्वायंभुव मनु', subtitle: 'प्रथम पुरुष', x: 7500, y: 1500, color: '#FF9900', parent: 'brahma', yug: 'satya' },
+    { id: 'svayambhuva_manu', name: 'स्वायंभुव मनु', subtitle: 'प्रथम पुरुष', x: 4200, y: 400, color: '#FF9900', parent: 'brahma', yug: 'satya' },
     // Shatarupa is Manu's wife (and also created by Brahma, but we'll list her as spouse for layout)
     { id: 'shatarupa', name: 'शतरूपा', subtitle: 'प्रथम स्त्री', x: 0, y: 0, color: '#ff99cc', parent: 'brahma', spouseOf: 'svayambhuva_manu', yug: 'satya' },
 
     // ==========================================
     // MANU'S DESCENDANTS
     // ==========================================
-    { id: 'uttanapada', name: 'उत्तानपाद', subtitle: 'मनु के पुत्र', x: 7400, y: 2000, color: '#FF9900', parent: 'svayambhuva_manu', yug: 'satya' },
-    { id: 'priyavrata', name: 'प्रियव्रत', subtitle: 'मनु के पुत्र', x: 7700, y: 2000, color: '#FF9900', parent: 'svayambhuva_manu', yug: 'satya' },
-    { id: 'dhruva', name: 'ध्रुव', subtitle: 'परम भक्त / ध्रुव तारा', x: 7400, y: 2500, color: '#FF9900', parent: 'uttanapada', yug: 'satya' },
-    { id: 'vena', name: 'वेन', subtitle: 'अधर्मी राजा', x: 7400, y: 3000, color: '#FF9900', parent: 'dhruva', yug: 'satya' },
-    { id: 'prithu', name: 'पृथु', subtitle: 'जिनके नाम पर पृथ्वी', x: 7400, y: 3500, color: '#FF9900', parent: 'vena', yug: 'satya' },
+    { id: 'uttanapada', name: 'उत्तानपाद', subtitle: 'मनु के पुत्र', x: 4100, y: 700, color: '#FF9900', parent: 'svayambhuva_manu', yug: 'satya' },
+    { id: 'priyavrata', name: 'प्रियव्रत', subtitle: 'मनु के पुत्र', x: 4300, y: 700, color: '#FF9900', parent: 'svayambhuva_manu', yug: 'satya' },
+    { id: 'dhruva', name: 'ध्रुव', subtitle: 'परम भक्त / ध्रुव तारा', x: 4100, y: 900, color: '#FF9900', parent: 'uttanapada', yug: 'satya' },
+    { id: 'vena', name: 'वेन', subtitle: 'अधर्मी राजा', x: 4100, y: 1100, color: '#FF9900', parent: 'dhruva', yug: 'satya' },
+    { id: 'prithu', name: 'पृथु', subtitle: 'जिनके नाम पर पृथ्वी', x: 4100, y: 1300, color: '#FF9900', parent: 'vena', yug: 'satya' },
 
     // ==========================================
     // SHIVA'S DESCENDANTS
