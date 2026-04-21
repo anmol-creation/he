@@ -43,106 +43,14 @@ const MACRO_ZOOM_THRESHOLD = 0.5;
 let isMacroMode = false;
 let focusedNodeId = 'brahman';
 
-let isLineageMode = false;
-let lineagePath = new Set();
-
 // Initialize
 function initMap() {
     renderNodes();
     drawConnections();
     setupEventListeners();
-    setupSearchLogic();
 
     // Focus on the top node initially
     focusOnNode('brahman');
-}
-
-function setupSearchLogic() {
-    const searchInput = document.getElementById('map-search-input');
-    const suggestionsBox = document.getElementById('map-search-suggestions');
-    if (!searchInput || !suggestionsBox) return;
-
-    searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            const firstSuggestion = suggestionsBox.querySelector('div');
-            if (firstSuggestion) {
-                firstSuggestion.click();
-            }
-        }
-    });
-
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        suggestionsBox.innerHTML = '';
-
-        if (query.length < 1) {
-            suggestionsBox.style.display = 'none';
-            return;
-        }
-
-        const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
-        const matches = dataList.filter(d => {
-            const searchFields = [
-                d.name,
-                d.subtitle,
-                d.id,
-                d.color,
-                d.mother,
-                d.spouseOf
-            ];
-
-            // Check if any alias or alternative names exist
-            if (d.aliases) searchFields.push(...d.aliases);
-
-            return searchFields.some(field =>
-                field && String(field).toLowerCase().includes(query)
-            );
-        }).slice(0, 8); // Top 8 results
-
-        if (matches.length > 0) {
-            matches.forEach(match => {
-                const div = document.createElement('div');
-                div.style.padding = '10px 15px';
-                div.style.cursor = 'pointer';
-                div.style.borderBottom = '1px solid #f0f0f0';
-                div.style.fontFamily = 'Poppins';
-                div.style.fontSize = '14px';
-                div.innerHTML = `<strong>${match.name}</strong> <span style="color:#666; font-size:12px;">- ${match.subtitle || ''}</span>`;
-
-                div.addEventListener('mouseenter', () => div.style.background = '#f9f9f9');
-                div.addEventListener('mouseleave', () => div.style.background = 'white');
-
-                div.addEventListener('click', () => {
-                    searchInput.value = match.name;
-                    suggestionsBox.style.display = 'none';
-                    if (isLineageMode) {
-                        isLineageMode = false;
-                        lineagePath.clear();
-                        const exitBtn = document.getElementById('exit-lineage-btn');
-                        if (exitBtn) exitBtn.remove();
-                        document.querySelectorAll('.map-wire').forEach(w => {
-                            w.style.strokeWidth = '2';
-                            w.style.stroke = 'url(#lineGradient)';
-                        });
-                    }
-                    focusOnNode(match.id);
-                    openPanel(match);
-                });
-
-                suggestionsBox.appendChild(div);
-            });
-            suggestionsBox.style.display = 'block';
-        } else {
-            suggestionsBox.style.display = 'none';
-        }
-    });
-
-    // Close suggestions on outside click
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('#map-search-container')) {
-            suggestionsBox.style.display = 'none';
-        }
-    });
 }
 
 function renderNodes() {
@@ -196,33 +104,10 @@ function renderNodes() {
             <div class="node-details">${data.subtitle}</div>
         `;
 
-        let touchTimer = null;
         node.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (isLineageMode) return; // Disable profile redirect while in lineage mode
-
-            // Allow double-click to show lineage
-            if (e.detail === 2) {
-                if (touchTimer) clearTimeout(touchTimer);
-                touchTimer = null;
-                showLineageToRoot(data.id);
-                return;
-            }
-
-            // Simple check for touch double tap
-            if (touchTimer) {
-                clearTimeout(touchTimer);
-                touchTimer = null;
-                showLineageToRoot(data.id);
-                return;
-            }
-
-            touchTimer = setTimeout(() => {
-                touchTimer = null;
-                // Focus then open panel (overriding original redirect to profile as user wanted info card)
-                focusOnNode(data.id);
-                openPanel(data);
-            }, 250); // 250ms delay for double tap check
+            // Redirect to the individual entity profile page inside the Itihas Book
+            window.location.href = `itihas-book.html?entity=${data.id}`;
         });
 
         nodesContainer.appendChild(node);
@@ -327,14 +212,12 @@ function drawConnections() {
                 // By default route from father
                 let sourceX = parent.x;
                 let sourceY = parent.y;
-                let sourceId = parent.id;
 
                 if (data.mother) {
                     const mother = dataList.find(d => d.id === data.mother);
                     if (mother) {
                         sourceX = mother.x;
                         sourceY = mother.y;
-                        sourceId = mother.id;
                     }
                 }
 
@@ -348,8 +231,6 @@ function drawConnections() {
                 path.setAttribute('d', `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`);
                 path.setAttribute('class', 'map-wire');
                 path.setAttribute('stroke', data.color || '#999');
-                path.setAttribute('data-from', sourceId);
-                path.setAttribute('data-to', data.id);
 
                 svg.appendChild(path);
             }
@@ -460,8 +341,6 @@ function updateRiverOfTime() {
 }
 
 function highlightRelatives(centerNodeId) {
-    if (isLineageMode) return; // Prevent highlighting relatives if lineage mode is active
-
     if (!centerNodeId || isMacroMode) {
         document.querySelectorAll('.map-node').forEach(n => n.style.opacity = '1');
         document.querySelectorAll('.map-wire').forEach(w => w.style.opacity = '0.6');
@@ -491,21 +370,10 @@ function highlightRelatives(centerNodeId) {
             n.style.zIndex = id === centerNodeId ? '10' : '5';
             n.style.boxShadow = id === centerNodeId ? '0 0 20px var(--primary-saffron)' : '';
         } else {
-            n.style.opacity = '0.15';
+            n.style.opacity = '0.3';
             n.style.transform = 'translate(-50%, -50%) scale(1)';
             n.style.zIndex = '1';
             n.style.boxShadow = '';
-        }
-    });
-
-    // Handle wires opacity
-    document.querySelectorAll('.map-wire').forEach(w => {
-        const fromId = w.dataset.from;
-        const toId = w.dataset.to;
-        if (relatives.has(fromId) && relatives.has(toId)) {
-            w.style.opacity = '0.8';
-        } else {
-            w.style.opacity = '0.1';
         }
     });
 }
@@ -694,17 +562,6 @@ function setupEventListeners() {
         document.getElementById('focus-panel').classList.add('hidden');
     });
 
-    // Show Lineage Button
-    const lineageBtn = document.getElementById('show-lineage-btn');
-    if (lineageBtn) {
-        lineageBtn.addEventListener('click', () => {
-            if (focusedNodeId) {
-                document.getElementById('focus-panel').classList.add('hidden');
-                showLineageToRoot(focusedNodeId);
-            }
-        });
-    }
-
     // Panel Tabs
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -765,161 +622,6 @@ function focusOnNode(nodeId) {
         if (progress < 1) requestAnimationFrame(animate);
     }
     animate();
-}
-
-function showLineageToRoot(startNodeId) {
-    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
-    isLineageMode = true;
-    lineagePath.clear();
-
-    let currentNodeId = startNodeId;
-    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-
-    // Trace path to root
-    while (currentNodeId) {
-        lineagePath.add(currentNodeId);
-        const node = dataList.find(d => d.id === currentNodeId);
-        if (!node) break;
-
-        // Track bounds, ensure valid integers
-        const nx = parseFloat(node.x);
-        const ny = parseFloat(node.y);
-
-        if (!isNaN(nx) && !isNaN(ny)) {
-            if (nx < minX) minX = nx;
-            if (nx > maxX) maxX = nx;
-            if (ny < minY) minY = ny;
-            if (ny > maxY) maxY = ny;
-        }
-
-        if (node.mother) lineagePath.add(node.mother);
-
-        if (node.parents && node.parents.length > 0) {
-             currentNodeId = node.parents[0];
-        } else {
-             currentNodeId = node.parent;
-        }
-    }
-
-    if (minX === Infinity) return; // Fallback if no valid bounds were found
-
-    // Highlight the path
-    document.querySelectorAll('.map-node').forEach(n => {
-        const id = n.id.replace('node-', '');
-        if (lineagePath.has(id)) {
-            n.style.opacity = '1';
-            n.style.transform = 'translate(-50%, -50%) scale(1.2)';
-            n.style.zIndex = '10';
-            n.style.boxShadow = '0 0 20px var(--primary-saffron)';
-        } else {
-            n.style.opacity = '0.05';
-            n.style.transform = 'translate(-50%, -50%) scale(1)';
-            n.style.zIndex = '1';
-            n.style.boxShadow = '';
-        }
-    });
-
-    // Highlight wires
-    document.querySelectorAll('.map-wire').forEach(w => {
-        const fromId = w.dataset.from;
-        const toId = w.dataset.to;
-
-        // If the wire connects two nodes in our path, or connects a parent to an intermediate grouping line
-        if ((lineagePath.has(fromId) && lineagePath.has(toId)) || (!fromId && !toId)) {
-            // Check if both nodes are validly in lineage path
-            if (fromId && toId) {
-                w.style.opacity = '1';
-                w.style.strokeWidth = '4';
-                w.style.stroke = 'var(--primary-saffron)';
-            } else {
-                w.style.opacity = '0.05';
-            }
-        } else {
-            w.style.opacity = '0.05';
-            w.style.strokeWidth = '2';
-            w.style.stroke = 'url(#lineGradient)'; // Revert to default
-        }
-    });
-
-    // Animate map to fit bounds
-    const padding = 500;
-    const width = (maxX - minX) + padding * 2;
-    const height = (maxY - minY) + padding * 2;
-
-    const containerRect = container.getBoundingClientRect();
-    const scaleX = containerRect.width / width;
-    const scaleY = containerRect.height / height;
-
-    // Zoom out just enough to fit, but not too small
-    const targetScale = Math.max(0.1, Math.min(scaleX, scaleY, 0.8));
-
-    const targetTx = (containerRect.width / 2) - ((minX + maxX) / 2 * targetScale);
-    const targetTy = (containerRect.height / 2) - ((minY + maxY) / 2 * targetScale);
-
-    let progress = 0;
-    const startTx = translateX;
-    const startTy = translateY;
-    const startScale = scale;
-
-    function animateBounds() {
-        progress += 0.03;
-        if (progress > 1) progress = 1;
-
-        const easeOutQuad = t => t * (2 - t);
-        const p = easeOutQuad(progress);
-
-        translateX = startTx + (targetTx - startTx) * p;
-        translateY = startTy + (targetTy - startTy) * p;
-        scale = startScale + (targetScale - startScale) * p;
-
-        updateTransform();
-
-        if (progress < 1) {
-            requestAnimationFrame(animateBounds);
-        }
-    }
-    animateBounds();
-
-    // Add a small button or UI hint to exit Lineage Mode
-    showExitLineageUI();
-}
-
-function showExitLineageUI() {
-    let exitBtn = document.getElementById('exit-lineage-btn');
-    if (!exitBtn) {
-        exitBtn = document.createElement('button');
-        exitBtn.id = 'exit-lineage-btn';
-        exitBtn.innerText = '✕ वंश दृश्य बंद करें';
-        exitBtn.style.position = 'absolute';
-        exitBtn.style.bottom = '30px';
-        exitBtn.style.left = '50%';
-        exitBtn.style.transform = 'translateX(-50%)';
-        exitBtn.style.padding = '10px 20px';
-        exitBtn.style.background = 'var(--text-dark)';
-        exitBtn.style.color = 'white';
-        exitBtn.style.border = 'none';
-        exitBtn.style.borderRadius = '30px';
-        exitBtn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
-        exitBtn.style.zIndex = '1000';
-        exitBtn.style.fontFamily = 'Poppins';
-        exitBtn.style.cursor = 'pointer';
-
-        exitBtn.addEventListener('click', () => {
-            isLineageMode = false;
-            lineagePath.clear();
-            exitBtn.remove();
-
-            // Restore wire styles
-            document.querySelectorAll('.map-wire').forEach(w => {
-                w.style.strokeWidth = '2';
-                w.style.stroke = 'url(#lineGradient)';
-            });
-
-            // Re-focus original node
-            focusOnNode(focusedNodeId);
-        });
-        document.body.appendChild(exitBtn);
-    }
 }
 
 function openPanel(data) {
