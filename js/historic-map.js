@@ -645,3 +645,119 @@ function openPanel(data) {
 
 // Start
 initMap();
+
+// Search Functionality
+document.getElementById('map-search-input')?.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    const resultsContainer = document.getElementById('map-search-results');
+
+    if (query.length < 2) {
+        resultsContainer.style.display = 'none';
+        return;
+    }
+
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
+    const matches = dataList.filter(d =>
+        (d.name && d.name.toLowerCase().includes(query)) ||
+        (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
+        (d.subtitle && d.subtitle.toLowerCase().includes(query))
+    ).slice(0, 10);
+
+    if (matches.length > 0) {
+        resultsContainer.innerHTML = matches.map(m => `
+            <div class="search-result-item" style="padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; text-align: left;" data-id="${m.id}">
+                <div style="font-weight: 600; color: var(--primary-dark);">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
+                <div style="font-size: 0.8rem; color: #666;">${m.subtitle || ''}</div>
+            </div>
+        `).join('');
+        resultsContainer.style.display = 'block';
+
+        // Add click listeners to results
+        document.querySelectorAll('.search-result-item').forEach(item => {
+            item.addEventListener('click', (ev) => {
+                const id = ev.currentTarget.dataset.id;
+                document.getElementById('map-search-input').value = ev.currentTarget.querySelector('div').innerText;
+                resultsContainer.style.display = 'none';
+
+                // Clear any lineage trace
+                document.querySelectorAll('.map-node').forEach(n => n.style.opacity = '1');
+                document.querySelectorAll('.connection-line').forEach(l => l.style.opacity = '1');
+
+                focusOnNode(id);
+                const nodeData = dataList.find(d => d.id === id);
+                if (nodeData) openPanel(nodeData);
+            });
+        });
+    } else {
+        resultsContainer.innerHTML = '<div style="padding: 10px; color: #666; text-align: left;">No results found</div>';
+        resultsContainer.style.display = 'block';
+    }
+});
+
+// Hide search results when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+        const resultsContainer = document.getElementById('map-search-results');
+        if (resultsContainer) resultsContainer.style.display = 'none';
+    }
+});
+
+// Lineage Routing Function
+function traceLineage(nodeId) {
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
+    const pathIds = new Set();
+    let currentId = nodeId;
+
+    // Trace back to root
+    while (currentId) {
+        pathIds.add(currentId);
+        const node = dataList.find(d => d.id === currentId);
+        if (!node || !node.parent) break;
+        currentId = node.parent;
+    }
+
+    // Dim all nodes and lines
+    document.querySelectorAll('.map-node').forEach(n => {
+        if (pathIds.has(n.dataset.id)) {
+            n.style.opacity = '1';
+            n.style.boxShadow = '0 0 20px rgba(255, 107, 53, 0.8)'; // Highlight
+        } else {
+            n.style.opacity = '0.1';
+            n.style.boxShadow = 'none';
+        }
+    });
+
+    document.querySelectorAll('.connection-line').forEach(line => {
+        const sourceId = line.dataset.source;
+        const targetId = line.dataset.target;
+        if (pathIds.has(sourceId) && pathIds.has(targetId)) {
+            line.style.opacity = '1';
+            line.style.strokeWidth = '4';
+        } else {
+            line.style.opacity = '0.05';
+            line.style.strokeWidth = '2';
+        }
+    });
+
+    // Switch to macro mode to see the whole lineage
+    isMacroMode = true;
+    scale = 0.3; // Zoom out
+
+    // Try to center on the path
+    const nodesInPath = dataList.filter(d => pathIds.has(d.id));
+    if (nodesInPath.length > 0) {
+        const minX = Math.min(...nodesInPath.map(n => n.x));
+        const maxX = Math.max(...nodesInPath.map(n => n.x));
+        const minY = Math.min(...nodesInPath.map(n => n.y));
+        const maxY = Math.max(...nodesInPath.map(n => n.y));
+
+        const centerX = (minX + maxX) / 2;
+        const centerY = (minY + maxY) / 2;
+
+        const containerRect = container.getBoundingClientRect();
+        translateX = (containerRect.width / 2) - (centerX * scale);
+        translateY = (containerRect.height / 2) - (centerY * scale);
+    }
+
+    updateTransform();
+}
