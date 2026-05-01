@@ -659,6 +659,7 @@ document.getElementById('map-search-input')?.addEventListener('input', (e) => {
     const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
     const matches = dataList.filter(d =>
         (d.name && d.name.toLowerCase().includes(query)) ||
+        (d.id && d.id.toLowerCase().includes(query)) ||
         (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
         (d.subtitle && d.subtitle.toLowerCase().includes(query))
     ).slice(0, 10);
@@ -666,7 +667,7 @@ document.getElementById('map-search-input')?.addEventListener('input', (e) => {
     if (matches.length > 0) {
         resultsContainer.innerHTML = matches.map(m => `
             <div class="search-result-item" style="padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; text-align: left;" data-id="${m.id}">
-                <div style="font-weight: 600; color: var(--primary-dark);">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
+                <div style="font-weight: 600; color: var(--text-dark);">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
                 <div style="font-size: 0.8rem; color: #666;">${m.subtitle || ''}</div>
             </div>
         `).join('');
