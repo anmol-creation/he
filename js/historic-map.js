@@ -644,7 +644,14 @@ function openPanel(data) {
 }
 
 // Start
-initMap();
+
+// Wait for the data to be loaded before initializing
+if (window.historicData || window.HistoricDB) {
+    initMap();
+} else {
+    window.addEventListener('HistoricDataLoaded', initMap);
+}
+
 
 // Search Functionality
 document.getElementById('map-search-input')?.addEventListener('input', (e) => {

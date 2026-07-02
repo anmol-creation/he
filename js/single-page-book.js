@@ -2,12 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    if (!window.HistoricDB || typeof window.HistoricDB.getAll !== 'function') {
-        console.error("Historic Data not loaded properly.");
-        return;
-    }
+    const initBook = () => {
+        if (!window.HistoricDB || typeof window.HistoricDB.getAll !== 'function') {
+            console.error("Historic Data not loaded properly.");
+            return;
+        }
 
-    const allData = window.HistoricDB.getAll();
+        const allData = window.HistoricDB.getAll();
     const sliderContainer = document.getElementById('book-slider');
     const prevBtn = document.getElementById('prev-page');
     const nextBtn = document.getElementById('next-page');
