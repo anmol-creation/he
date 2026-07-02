@@ -1,0 +1,23 @@
+export const suryavanshData = [
+    { id: 'vaivasvata_manu', name: 'वैवस्वत मनु', subtitle: 'वर्तमान मनु', x: 1000, y: 4000, color: '#FF9900', parent: 'surya', yug: 'satya' },
+    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', x: 1000, y: 4500, color: '#FF9900', parent: 'vaivasvata_manu', yug: 'satya' },
+    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', x: 1000, y: 5000, color: '#FF9900', parent: 'ikshvaku', yug: 'treta' },
+    { id: 'bhagirath', name: 'भगीरथ', subtitle: 'गंगा को लाने वाले', x: 1000, y: 5500, color: '#FF9900', parent: 'harishchandra', yug: 'treta' },
+    { id: 'raghu', name: 'रघु', subtitle: 'रघुवंश के संस्थापक', x: 1000, y: 6000, color: '#FF9900', parent: 'bhagirath', yug: 'treta' },
+    { id: 'aja', name: 'अज', subtitle: 'रघु के पुत्र', x: 1000, y: 6500, color: '#FF9900', parent: 'raghu', yug: 'treta' },
+    { id: 'dasharath', name: 'दशरथ', subtitle: 'अयोध्या के चक्रवर्ती सम्राट', x: 1000, y: 7000, color: '#FF9900', parent: 'aja', yug: 'treta' },
+    { id: 'kaushalya', name: 'कौशल्या', subtitle: 'राम की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
+    { id: 'kaikeyi', name: 'कैकेयी', subtitle: 'भरत की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
+    { id: 'sumitra', name: 'सुमित्रा', subtitle: 'लक्ष्मण/शत्रुघ्न की माता', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'dasharath', yug: 'treta' },
+    { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', x: 700, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaushalya', yug: 'treta', motherColor: '#FFD700' },
+    { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', x: 900, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta' },
+    { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', x: 1100, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', x: 1300, y: 7500, color: '#FF9900', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'ram', yug: 'treta' },
+    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', x: 600, y: 8000, color: '#FF9900', parent: 'ram', mother: 'sita', yug: 'treta' },
+    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', x: 800, y: 8000, color: '#FF9900', parent: 'ram', mother: 'sita', yug: 'treta' },
+    { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', x: 2000, y: 7500, color: '#FFD700', parent: 'vayu', yug: 'treta' },
+    { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', x: 1800, y: 7500, color: '#FF9900', parent: 'surya', yug: 'treta' },
+    { id: 'vali', name: 'बाली', subtitle: 'किष्किंधा नरेश', x: 1600, y: 7500, color: '#FF9900', parent: 'indra', yug: 'treta' },
+    { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', x: 1400, y: 7500, color: '#FFD700', parent: 'arun', yug: 'treta' }
+];
