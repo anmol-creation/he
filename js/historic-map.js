@@ -43,14 +43,45 @@ const MACRO_ZOOM_THRESHOLD = 0.5;
 let isMacroMode = false;
 let focusedNodeId = 'brahman';
 
+
+
 // Initialize
 function initMap() {
-    renderNodes();
-    drawConnections();
-    setupEventListeners();
+    console.log("initMap called");
+    // Run layout engine to dynamically calculate X coordinates
+    if (window.LayoutEngine && window.HistoricDB) {
+        console.log("Running LayoutEngine");
+        try {
+            const engine = new window.LayoutEngine(window.HistoricDB.getAll());
+            const updatedData = engine.process();
 
-    // Focus on the top node initially
-    focusOnNode('brahman');
+            // Override the global historicData reference so rendering uses updated X values
+            window.historicData = updatedData;
+            window.HistoricDB.getAll = () => updatedData;
+            window.HistoricDB.getNode = (id) => updatedData.find(d => d.id === id);
+            window.HistoricDB.getChildren = (id) => updatedData.filter(d => d.parent === id);
+            window.HistoricDB.getSiblings = (id) => {
+                const node = updatedData.find(d => d.id === id);
+                if (!node || !node.parent) return [];
+                return updatedData.filter(d => d.parent === node.parent);
+            };
+            console.log("LayoutEngine completed successfully");
+        } catch (e) {
+            console.error("LayoutEngine error:", e);
+        }
+    } else {
+        console.warn("LayoutEngine or HistoricDB missing", {LayoutEngine: !!window.LayoutEngine, HistoricDB: !!window.HistoricDB});
+    }
+
+    try {
+        renderNodes();
+        drawConnections();
+        setupEventListeners();
+        // Focus on the top node initially
+        focusOnNode('brahman');
+    } catch(e) {
+        console.error("Rendering error:", e);
+    }
 }
 
 function renderNodes() {
@@ -64,33 +95,9 @@ function renderNodes() {
 
         node.id = `node-${data.id}`;
 
-        let finalX = data.x;
-        let finalY = data.y;
-
-        // If it's a spouse, distribute them symmetrically BELOW the husband
-        if (data.spouseOf) {
-            const husband = dataList.find(d => d.id === data.spouseOf);
-            if (husband) {
-                // Find all wives of this husband
-                const allWives = dataList.filter(d => d.spouseOf === husband.id);
-                const wifeIndex = allWives.findIndex(w => w.id === data.id);
-
-                // Distribute horizontally based on how many wives there are
-                const spacing = 180; // horizontal space between wife cards
-                const totalWidth = (allWives.length - 1) * spacing;
-                const startX = husband.x - (totalWidth / 2);
-
-                finalX = startX + (wifeIndex * spacing);
-                finalY = husband.y + 160; // Place below husband
-
-                // Update object so wires know where they are
-                data.x = finalX;
-                data.y = finalY;
-            }
-        }
-
-        node.style.left = `${finalX}px`;
-        node.style.top = `${finalY}px`;
+        // We use data.x and data.y directly as they are now dynamically calculated by LayoutEngine
+        node.style.left = `${data.x}px`;
+        node.style.top = `${data.y}px`;
         node.style.borderTopColor = data.color;
 
         // Heritage Dots
