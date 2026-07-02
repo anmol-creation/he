@@ -8,20 +8,23 @@ const historicData = [
     // ==========================================
     // SUPREME (Parabrahman) - The Ultimate Source
     // ==========================================
-    { id: 'brahman', name: 'परब्रह्म', subtitle: 'ईश्वर (The Supreme Soul)', x: 5000, y: 0, color: '#FFFFFF', type: 'root', yug: 'pre-kalpa' },
+    { id: 'brahman', name: 'परब्रह्म', subtitle: 'ईश्वर (The Supreme Soul)', x: 8000, y: 0, color: '#FFFFFF', type: 'root', yug: 'pre-kalpa' },
 
     // ==========================================
     // TRIMURTI - Manifestations of the Supreme
     // ==========================================
-    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', parent: 'brahman', x: 0, y: 200, color: '#3399FF', yug: 'pre-kalpa' },
-    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', parent: 'brahman', x: 5000, y: 200, color: '#FFD700', yug: 'pre-kalpa' },
-    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', parent: 'brahman', x: 10000, y: 200, color: '#FF3333', yug: 'pre-kalpa' },
+    { id: 'brahma', name: 'ब्रह्मा', subtitle: 'सृष्टि रचयिता', parent: 'brahman', x: 0, y: 200, color: '#FFD700', yug: 'pre-kalpa' },
+    { id: 'vishnu', name: 'विष्णु', subtitle: 'पालनकर्ता', parent: 'brahman', x: 8000, y: 200, color: '#3399FF', yug: 'pre-kalpa' },
+    { id: 'shiva', name: 'महेश (शिव)', subtitle: 'संहारकर्ता', parent: 'brahman', x: 16000, y: 200, color: '#FF3333', yug: 'pre-kalpa' },
 
     // ==========================================
     // VISHNU'S CREATIONS & AVATARS
     // ==========================================
-    { id: 'kamadeva', name: 'कामदेव', subtitle: 'विष्णु के पुत्र', x: 0, y: 400, color: '#FF66B2', parent: 'vishnu', yug: 'pre-kalpa' },
+    { id: 'kamadeva', name: 'कामदेव', subtitle: 'विष्णु के पुत्र', x: 7700, y: 400, color: '#FF66B2', parent: 'vishnu', yug: 'pre-kalpa' },
     { id: 'rati', name: 'रति', subtitle: 'कामदेव की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'kamadeva', yug: 'pre-kalpa' },
+    { id: 'harsha', name: 'हर्ष', subtitle: 'कामदेव-रति पुत्र', x: 7700, y: 600, color: '#FF66B2', parent: 'kamadeva', mother: 'rati', yug: 'pre-kalpa' },
+
+    { id: 'ayyappan', name: 'अय्यप्पन', subtitle: 'हरिहर पुत्र (विष्णु-शिव)', x: 8300, y: 400, color: '#3399FF', parent: 'vishnu', mother: 'shiva', yug: 'pre-kalpa' }, // Using 'shiva' as mother contextually since Mohini form isn't separated
 
     // ==========================================
     // BRAHMA'S DIRECT DESCENDANTS (Satya Yug)
@@ -69,8 +72,24 @@ const historicData = [
     { id: 'sati', name: 'सती', subtitle: 'दक्ष पुत्री', x: 0, y: 0, color: '#ff99cc', parent: 'daksha', spouseOf: 'shiva', yug: 'satya' },
     { id: 'parvati', name: 'पार्वती', subtitle: 'शैलपुत्री / शक्ति', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'shiva', yug: 'satya' },
 
-    { id: 'kartikeya', name: 'कार्तिकेय', subtitle: 'देव सेनापति', x: 6800, y: 1500, color: '#FF3333', parent: 'shiva', mother: 'parvati', yug: 'satya' },
-    { id: 'ganesha', name: 'गणेश', subtitle: 'प्रथम पूज्य', x: 7200, y: 1500, color: '#FF3333', parent: 'shiva', mother: 'parvati', yug: 'satya' },
+    // Shiva's Direct Sons/Daughters
+    { id: 'ashok_sundari', name: 'अशोक सुंदरी', subtitle: 'कल्पवृक्ष से उत्पन्न', x: 15400, y: 400, color: '#FF3333', parent: 'shiva', mother: 'parvati', yug: 'satya' },
+    { id: 'andhaka', name: 'अंधक', subtitle: 'पसीने से उत्पन्न', x: 15700, y: 400, color: '#FF3333', parent: 'shiva', yug: 'satya' },
+    { id: 'jalandhara', name: 'जलंधर', subtitle: 'क्रोधाग्नि से उत्पन्न', x: 16000, y: 400, color: '#FF3333', parent: 'shiva', yug: 'satya' },
+    { id: 'bhauma', name: 'भौम (मंगल)', subtitle: 'रक्त/पसीने से उत्पन्न', x: 16300, y: 400, color: '#FF3333', parent: 'shiva', yug: 'satya' },
+    { id: 'sukesha', name: 'सुकेश', subtitle: 'दत्तक पुत्र (राक्षस वंश)', x: 16600, y: 400, color: '#FF3333', parent: 'shiva', yug: 'satya' },
+
+    { id: 'kartikeya', name: 'कार्तिकेय', subtitle: 'देव सेनापति', x: 15100, y: 400, color: '#FF3333', parent: 'shiva', mother: 'parvati', yug: 'satya' },
+    { id: 'devasena', name: 'देवसेना', subtitle: 'कार्तिकेय की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'kartikeya', yug: 'satya' },
+    { id: 'valli', name: 'वल्ली', subtitle: 'कार्तिकेय की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'kartikeya', yug: 'satya' },
+
+    { id: 'ganesha', name: 'गणेश', subtitle: 'प्रथम पूज्य', x: 14800, y: 400, color: '#FF3333', parent: 'shiva', mother: 'parvati', yug: 'satya' },
+    { id: 'riddhi', name: 'रिद्धि', subtitle: 'गणेश की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'ganesha', yug: 'satya' },
+    { id: 'siddhi', name: 'सिद्धि', subtitle: 'गणेश की पत्नी', x: 0, y: 0, color: '#ff99cc', parent: '', spouseOf: 'ganesha', yug: 'satya' },
+
+    // Ganesha's Children
+    { id: 'shubh', name: 'शुभ', subtitle: 'गणेश पुत्र', x: 14650, y: 600, color: '#FF3333', parent: 'ganesha', mother: 'riddhi', yug: 'satya' },
+    { id: 'labh', name: 'लाभ', subtitle: 'गणेश पुत्र', x: 14950, y: 600, color: '#FF3333', parent: 'ganesha', mother: 'siddhi', yug: 'satya' },
 
 
     // ==========================================
