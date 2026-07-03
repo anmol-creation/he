@@ -12,54 +12,140 @@ const STEP_DISTANCE_X = NODE_WIDTH + MIN_GAP_X;
 const MIN_GAP_Y = 200; // Vertical generational spacing (200px as requested)
 
 class LayoutEngine {
-    constructor(data) {
+    constructor(data, expandedGroups = new Set()) {
         this.rawData = data;
+        this.expandedGroups = expandedGroups;
         this.nodesMap = new Map();
         this.rootId = 'brahman'; // Default root
     }
 
     buildTree() {
-        // 1. Initialize nodes map
+        // 1. Find explicit groups and handle their members if collapsed
+        const explicitGroupIds = new Set();
         this.rawData.forEach(node => {
+            if (node.type === 'group') {
+                explicitGroupIds.add(node.id);
+            }
+        });
+
+        const activeNodes = [];
+        // console.log("expandedGroups in buildTree:", Array.from(this.expandedGroups));
+        const membershipMap = new Map(); // childId -> groupId
+
+        // Map members to their unexpanded groups
+        // console.log("expandedGroups in buildTree:", Array.from(this.expandedGroups));
+        this.rawData.forEach(node => {
+            if (node.type === 'group' && !this.expandedGroups.has(node.id)) {
+                if (node.members && Array.isArray(node.members)) {
+                    node.members.forEach(m => membershipMap.set(m, node.id));
+                }
+            }
+        });
+
+        // Filter out nodes that are hidden inside collapsed groups
+        this.rawData.forEach(node => {
+            if (!membershipMap.has(node.id)) {
+                activeNodes.push(node);
+            } else {
+                // console.log("Hiding node:", node.id);
+            }
+        });
+        // console.log("Active nodes count:", activeNodes.length);
+
+        // 2. Auto-grouping for Wives
+        const husbandWivesMap = new Map(); // husbandId -> array of wife nodes
+        activeNodes.forEach(node => {
+            if (node.spouseOf) {
+                if (!husbandWivesMap.has(node.spouseOf)) {
+                    husbandWivesMap.set(node.spouseOf, []);
+                }
+                husbandWivesMap.get(node.spouseOf).push(node);
+            }
+        });
+
+        const autoGroupIds = new Set();
+        husbandWivesMap.forEach((wives, husbandId) => {
+            if (wives.length > 1) {
+                const groupId = `${husbandId}_wives_group`;
+                if (!this.expandedGroups.has(groupId)) {
+                    // Create auto group node
+                    const husband = activeNodes.find(n => n.id === husbandId);
+                    if (husband) {
+                        const groupNode = {
+                            id: groupId,
+                            name: `पत्नियाँ (${wives.length})`, // "Wives (N)"
+                            subtitle: `${husband.name} की पत्नियाँ`,
+                            type: 'group',
+                            isAutoGroup: true,
+                            members: wives.map(w => w.id),
+                            spouseOf: husbandId,
+                            color: '#ff99cc' // default wife color
+                        };
+                        activeNodes.push(groupNode);
+                        autoGroupIds.add(groupId);
+
+                        // Map wives to this group
+                        wives.forEach(w => membershipMap.set(w.id, groupId));
+                    }
+                }
+            }
+        });
+
+        // Refilter active nodes to remove wives now hidden in auto-groups
+        const finalActiveNodes = activeNodes.filter(node => !membershipMap.has(node.id));
+
+        // 3. Initialize nodes map
+        finalActiveNodes.forEach(node => {
             this.nodesMap.set(node.id, {
                 ...node,
                 children: [],
                 spouses: [],
                 depth: 0,
                 layout: {
-                    x: 0, // Local X relative to parent initially, absolute later
+                    x: 0,
                     width: NODE_WIDTH,
-                    // We will maintain left and right contours (arrays of relative x offsets per depth level)
-                    // For simplicity, bounding box per depth level or just a broad bounding box might work.
-                    // To be safe and robust, let's track the min/max X at *each* relative depth.
                     contours: { min: [], max: [] },
                     isSpouse: !!node.spouseOf
                 }
             });
         });
 
-        // 2. Build relationships
+        // 4. Build relationships
         this.nodesMap.forEach(node => {
-            if (node.spouseOf && this.nodesMap.has(node.spouseOf)) {
-                // Spouses are treated as children for structural layout (one generation down)
-                const partner = this.nodesMap.get(node.spouseOf);
+            // Re-map parents/mothers to groups if the parent/mother is hidden inside a collapsed group
+            let effectiveParent = node.parent;
+            if (effectiveParent && membershipMap.has(effectiveParent)) {
+                effectiveParent = membershipMap.get(effectiveParent);
+            }
+
+            let effectiveMother = node.mother;
+            if (effectiveMother && membershipMap.has(effectiveMother)) {
+                effectiveMother = membershipMap.get(effectiveMother);
+            }
+
+            // If the node itself is a group, and it's an auto-wife-group, treat it as a spouse
+            let effectiveSpouseOf = node.spouseOf;
+            if (node.isAutoGroup && node.spouseOf) {
+                 effectiveSpouseOf = node.spouseOf;
+            }
+
+            if (effectiveSpouseOf && this.nodesMap.has(effectiveSpouseOf)) {
+                const partner = this.nodesMap.get(effectiveSpouseOf);
                 if (partner) {
                     partner.children.push(node.id);
                 }
-            } else if (node.parent && this.nodesMap.has(node.parent) && !node.spouseOf) {
-                // Check if node has a mother defined and mother exists
+            } else if (effectiveParent && this.nodesMap.has(effectiveParent) && !effectiveSpouseOf) {
                 let pushedToMother = false;
-                if (node.mother && this.nodesMap.has(node.mother)) {
-                    const motherNode = this.nodesMap.get(node.mother);
+                if (effectiveMother && this.nodesMap.has(effectiveMother)) {
+                    const motherNode = this.nodesMap.get(effectiveMother);
                     if (motherNode) {
                         motherNode.children.push(node.id);
                         pushedToMother = true;
                     }
                 }
 
-                // Fallback to father if no mother or mother not in map
                 if (!pushedToMother) {
-                    const parentNode = this.nodesMap.get(node.parent);
+                    const parentNode = this.nodesMap.get(effectiveParent);
                     if (parentNode) {
                         parentNode.children.push(node.id);
                     }
@@ -207,15 +293,33 @@ class LayoutEngine {
         this.calculateIntrinsicWidths();
 
         // Find root nodes (nodes without parents)
+
         const rootNodes = [];
-        this.nodesMap.forEach(node => {
-            if (!node.parent && !node.spouseOf) {
-                rootNodes.push(node.id);
+        // console.log("NodesMap size:", this.nodesMap.size);
+        this.nodesMap.forEach((node, id) => {
+            let isChild = false;
+            let isSpouse = false;
+            this.nodesMap.forEach((otherNode) => {
+                if (otherNode.children && otherNode.children.includes(id)) isChild = true;
+                if (otherNode.spouses && otherNode.spouses.includes(id)) isSpouse = true;
+            });
+            if (!isChild && !isSpouse) {
+                rootNodes.push(id);
             }
         });
 
-        // Calculate depths starting from roots
+
+        if (rootNodes.length === 0) {
+            console.log("No root nodes found! Printing sample nodes to see what's wrong:");
+            let i = 0;
+            this.nodesMap.forEach((node, id) => {
+                if (i++ < 5) console.log(id, "-> parent:", node.parent, "children:", node.children, "spouses:", node.spouses);
+            });
+            console.log("brahman ->", this.nodesMap.get("brahman"));
+        }
+
         rootNodes.forEach(rootId => this.calculateDepths(rootId, 0));
+
 
         let currentRootX = 5000; // Starting point for the first root
         let globalContour = { min: [], max: [] };
@@ -254,9 +358,19 @@ class LayoutEngine {
             this.calculateAbsolutePositions(rootId, currentRootX, 0);
         });
 
+
+        // Check for disconnected nodes (no layout calculated)
+        this.nodesMap.forEach((node, id) => {
+            if (isNaN(node.layout.x)) console.log("NaN layout X for:", id);
+            if (isNaN(node.depth)) console.log("NaN depth for:", id);
+        });
+
         // Extract the updated data
         return Array.from(this.nodesMap.values()).map(node => {
             const { layout, children, spouses, depth, contours, ...originalNode } = node;
+            if (node.type === 'group' || node.isAutoGroup) {
+                originalNode.isExpanded = this.expandedGroups.has(node.id);
+            }
             return originalNode;
         });
     }
