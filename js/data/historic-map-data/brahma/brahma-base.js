@@ -1,8 +1,9 @@
 export const brahmaBaseData = [
-    { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', color: '#FFFF99', parent: 'brahma', yug: 'satya' },
-    { id: 'sanandan', name: 'सनन्दन', subtitle: 'सनत कुमार', color: '#FFFF99', parent: 'brahma', yug: 'satya' },
-    { id: 'sanatan', name: 'सनातन', subtitle: 'सनत कुमार', color: '#FFFF99', parent: 'brahma', yug: 'satya' },
-    { id: 'sanatkumar', name: 'सनत्कुमार', subtitle: 'सनत कुमार', color: '#FFFF99', parent: 'brahma', yug: 'satya' },
+    { id: '4_kumars', name: 'चार कुमार', subtitle: 'सनकादि ऋषि', type: 'group', members: ['sanak', 'sanandan', 'sanatan', 'sanatkumar'], color: '#FFFF99', parent: 'brahma', yug: 'satya' },
+    { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', color: '#FFFF99', parent: '4_kumars', yug: 'satya' },
+    { id: 'sanandan', name: 'सनन्दन', subtitle: 'सनत कुमार', color: '#FFFF99', parent: '4_kumars', yug: 'satya' },
+    { id: 'sanatan', name: 'सनातन', subtitle: 'सनत कुमार', color: '#FFFF99', parent: '4_kumars', yug: 'satya' },
+    { id: 'sanatkumar', name: 'सनत्कुमार', subtitle: 'सनत कुमार', color: '#FFFF99', parent: '4_kumars', yug: 'satya' },
     { id: 'narada', name: 'नारद', subtitle: 'मानस पुत्र / देवर्षि', color: '#FFD700', parent: 'brahma', yug: 'satya' , parichay: 'देवर्षि नारद, ब्रह्मा के मानस पुत्र।', events: ['वाल्मीकि को राम कथा संक्षेप में सुनाई (बालकाण्ड, सर्ग 1)'] },
     { id: 'jambavan', name: 'जाम्बवान', subtitle: 'ब्रह्मा की जम्हाई से', color: '#A0522D', parent: 'brahma', yug: 'satya' },
     { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', color: '#FFD700', parent: 'brahma', yug: 'satya' },
