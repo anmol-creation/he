@@ -33,12 +33,12 @@ const RIVER_OF_TIME_HIERARCHY = {
     ]
 };
 
-let scale = 1;
+let scale = 0.1;
 let translateX = -4500; // Center around X:5000 (Brahma)
-let translateY = 1500;  // Center around Top Y:-1000 (Trimurti)
+let translateY = 0;
+console.log('INIT SCRIPT');  // Center around Top Y:-1000 (Trimurti)
 let isDragging = false;
 let startX, startY;
-
 const MACRO_ZOOM_THRESHOLD = 0.5;
 let isMacroMode = false;
 let focusedNodeId = 'brahman';
@@ -76,12 +76,38 @@ function initMap() {
     try {
         renderNodes();
         drawConnections();
+        drawTimeDividers();
         setupEventListeners();
         // Focus on the top node initially
         focusOnNode('brahman');
     } catch(e) {
         console.error("Rendering error:", e);
     }
+}
+
+
+function drawTimeDividers() {
+    // We will place horizontal bands based on Y spacing
+    // We know root is at Y=0, level 1 at Y=300, level 2 at Y=600 etc.
+    const dividers = [
+        { label: 'Sanatan', y: 150 },
+        { label: 'Maha-Kalpa', y: 450 },
+        { label: 'Kalpa', y: 750 },
+        { label: 'Manvantara', y: 1050 }
+    ];
+
+    dividers.forEach(div => {
+        const line = document.createElement('div');
+        line.className = 'time-band-divider';
+        line.style.top = `${div.y}px`;
+
+        const label = document.createElement('div');
+        label.className = 'time-band-label';
+        label.innerText = div.label;
+        line.appendChild(label);
+
+        nodesContainer.appendChild(line);
+    });
 }
 
 function renderNodes() {
@@ -321,24 +347,19 @@ function updateRiverOfTime() {
     let activeId = null;
     const periods = RIVER_OF_TIME_HIERARCHY[hierarchyLevel];
 
-    if (!isMacroMode && focusedNodeId) {
-        const node = window.HistoricDB ? window.HistoricDB.getNode(focusedNodeId) : historicData.find(d => d.id === focusedNodeId);
-        if (node) {
-            // Find which period this node's Y falls into
-            const matchedPeriod = periods.find(p => node.y >= p.yStart && node.y < p.yEnd);
-            if (matchedPeriod) activeId = matchedPeriod.id;
-        }
-    } else {
-        const containerRect = container.getBoundingClientRect();
-        const screenCenterY = (containerRect.height / 2 - translateY) / scale;
 
-        // Find which period the screen center Y falls into
-        const matchedPeriod = periods.find(p => screenCenterY >= p.yStart && screenCenterY < p.yEnd);
+    // Temporarily disabled Y-based highlighting as Y is now dynamically generational.
+    // Future update will use Time Carousel integration.
+    // Temporarily disabled Y-based highlighting as Y is now dynamically generational.
+    // Future update will use Time Carousel integration.
+    if (!isMacroMode && focusedNodeId) {
+        // Find which period this node's entryNode matches
+        const matchedPeriod = periods.find(p => p.entryNode === focusedNodeId);
         if (matchedPeriod) activeId = matchedPeriod.id;
     }
 
-    // Highlight active
-    document.querySelectorAll('.time-marker').forEach(marker => {
+    const markers = aside.querySelectorAll('.time-marker');
+    markers.forEach(marker => {
         if (marker.dataset.id === activeId) {
             marker.classList.add('active');
         } else {
