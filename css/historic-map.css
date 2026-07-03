@@ -353,31 +353,3 @@ body, html {
     padding: 2px 10px;
     border-radius: 10px;
 }
-
-
-.group-node {
-    border-style: dashed;
-    border-width: 2px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.group-node:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-.group-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: var(--primary-saffron);
-    color: white;
-    border-radius: 20px;
-    padding: 2px 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 10;
-}
