@@ -154,6 +154,7 @@ class LayoutEngine {
             if (spouseNode) {
                 // spouse layout.x is relative to the main node
                 spouseNode.x = node.x + spouseNode.layout.x;
+                spouseNode.y = node.y + 160;
             }
         });
 
