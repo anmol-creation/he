@@ -41,11 +41,29 @@ class LayoutEngine {
         // 2. Build relationships
         this.nodesMap.forEach(node => {
             if (node.spouseOf && this.nodesMap.has(node.spouseOf)) {
+                // Spouses are treated as children for structural layout (one generation down)
                 const partner = this.nodesMap.get(node.spouseOf);
-                if (partner) partner.spouses.push(node.id);
+                if (partner) {
+                    partner.children.push(node.id);
+                }
             } else if (node.parent && this.nodesMap.has(node.parent) && !node.spouseOf) {
-                const parentNode = this.nodesMap.get(node.parent);
-                if (parentNode) parentNode.children.push(node.id);
+                // Check if node has a mother defined and mother exists
+                let pushedToMother = false;
+                if (node.mother && this.nodesMap.has(node.mother)) {
+                    const motherNode = this.nodesMap.get(node.mother);
+                    if (motherNode) {
+                        motherNode.children.push(node.id);
+                        pushedToMother = true;
+                    }
+                }
+
+                // Fallback to father if no mother or mother not in map
+                if (!pushedToMother) {
+                    const parentNode = this.nodesMap.get(node.parent);
+                    if (parentNode) {
+                        parentNode.children.push(node.id);
+                    }
+                }
             }
         });
 
@@ -58,12 +76,7 @@ class LayoutEngine {
 
         node.depth = currentDepth;
 
-        // Spouses share the same depth
-        node.spouses.forEach(spouseId => {
-            const spouseNode = this.nodesMap.get(spouseId);
-            if(spouseNode) spouseNode.depth = currentDepth;
-        });
-
+        // Children (which includes spouses now) are one depth lower
         node.children.forEach(childId => {
             this.calculateDepths(childId, currentDepth + 1);
         });
@@ -71,21 +84,7 @@ class LayoutEngine {
 
     calculateIntrinsicWidths() {
         this.nodesMap.forEach(node => {
-            if (!node.layout.isSpouse) {
-                // Main node width (200px) + (spouse width (200px) + gap (100px)) per spouse
-                const spouseCount = node.spouses.length;
-                const totalWidth = NODE_WIDTH + (spouseCount * STEP_DISTANCE_X);
-                node.layout.width = totalWidth;
-
-                // Position spouses relative to main node
-                node.spouses.forEach((spouseId, index) => {
-                    const spouseNode = this.nodesMap.get(spouseId);
-                    if (spouseNode) {
-                        // Spouses are placed to the right of the main node
-                        spouseNode.layout.x = (index + 1) * STEP_DISTANCE_X;
-                    }
-                });
-            }
+            node.layout.width = NODE_WIDTH; // All nodes are standard width now
         });
     }
 
@@ -194,15 +193,6 @@ class LayoutEngine {
         node.x = absoluteX;
         // Calculate Y strictly based on depth: startY + (depth * spacing)
         node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
-
-        // Spouses absolute position
-        node.spouses.forEach(spouseId => {
-            const spouseNode = this.nodesMap.get(spouseId);
-            if (spouseNode) {
-                spouseNode.x = node.x + spouseNode.layout.x;
-                spouseNode.y = node.y; // Spouses share same Y
-            }
-        });
 
         // Children absolute position
         node.children.forEach(childId => {
