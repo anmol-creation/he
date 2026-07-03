@@ -1,13 +1,15 @@
 /**
  * Auto-Slip Tree Layout Engine
  *
- * Calculates dynamic X-coordinates for a hierarchical tree structure to prevent overlaps
+ * Calculates dynamic X and Y coordinates for a hierarchical tree structure to prevent overlaps
  * while maintaining strict spacing and centering rules.
  */
 
 const NODE_WIDTH = 200;
-const MIN_GAP = 100;
-const STEP_DISTANCE = NODE_WIDTH + MIN_GAP;
+const NODE_HEIGHT = 100; // assumed physical height of a node for y-spacing calculations
+const MIN_GAP_X = 100;
+const STEP_DISTANCE_X = NODE_WIDTH + MIN_GAP_X;
+const MIN_GAP_Y = 200; // Vertical generational spacing (200px as requested)
 
 class LayoutEngine {
     constructor(data) {
@@ -23,12 +25,14 @@ class LayoutEngine {
                 ...node,
                 children: [],
                 spouses: [],
+                depth: 0,
                 layout: {
                     x: 0, // Local X relative to parent initially, absolute later
                     width: NODE_WIDTH,
-                    subtreeWidth: NODE_WIDTH,
-                    subtreeLeft: 0,
-                    subtreeRight: NODE_WIDTH,
+                    // We will maintain left and right contours (arrays of relative x offsets per depth level)
+                    // For simplicity, bounding box per depth level or just a broad bounding box might work.
+                    // To be safe and robust, let's track the min/max X at *each* relative depth.
+                    contours: { min: [], max: [] },
                     isSpouse: !!node.spouseOf
                 }
             });
@@ -48,12 +52,29 @@ class LayoutEngine {
         return this.nodesMap;
     }
 
+    calculateDepths(nodeId, currentDepth = 0) {
+        const node = this.nodesMap.get(nodeId);
+        if (!node) return;
+
+        node.depth = currentDepth;
+
+        // Spouses share the same depth
+        node.spouses.forEach(spouseId => {
+            const spouseNode = this.nodesMap.get(spouseId);
+            if(spouseNode) spouseNode.depth = currentDepth;
+        });
+
+        node.children.forEach(childId => {
+            this.calculateDepths(childId, currentDepth + 1);
+        });
+    }
+
     calculateIntrinsicWidths() {
         this.nodesMap.forEach(node => {
             if (!node.layout.isSpouse) {
                 // Main node width (200px) + (spouse width (200px) + gap (100px)) per spouse
                 const spouseCount = node.spouses.length;
-                const totalWidth = NODE_WIDTH + (spouseCount * STEP_DISTANCE);
+                const totalWidth = NODE_WIDTH + (spouseCount * STEP_DISTANCE_X);
                 node.layout.width = totalWidth;
 
                 // Position spouses relative to main node
@@ -61,64 +82,95 @@ class LayoutEngine {
                     const spouseNode = this.nodesMap.get(spouseId);
                     if (spouseNode) {
                         // Spouses are placed to the right of the main node
-                        spouseNode.layout.x = (index + 1) * STEP_DISTANCE;
+                        spouseNode.layout.x = (index + 1) * STEP_DISTANCE_X;
                     }
                 });
             }
         });
     }
 
-    calculateSubtreeWidths(nodeId) {
+    // Merges child contours into parent contours with an offset
+    mergeContours(parentContours, childContours, shiftX) {
+        for (let i = 0; i < childContours.min.length; i++) {
+            const childMin = childContours.min[i] + shiftX;
+            const childMax = childContours.max[i] + shiftX;
+            // The child's depth 'i' corresponds to parent's depth 'i+1'
+            const depthIndex = i + 1;
+
+            if (parentContours.min[depthIndex] === undefined) {
+                parentContours.min[depthIndex] = childMin;
+                parentContours.max[depthIndex] = childMax;
+            } else {
+                parentContours.min[depthIndex] = Math.min(parentContours.min[depthIndex], childMin);
+                parentContours.max[depthIndex] = Math.max(parentContours.max[depthIndex], childMax);
+            }
+        }
+    }
+
+    calculateSubtreeLayout(nodeId) {
         const node = this.nodesMap.get(nodeId);
         if (!node) return;
 
-        // Leaf node or node without children
+        // Post-order traversal: calculate children first
+        node.children.forEach(childId => {
+            this.calculateSubtreeLayout(childId);
+        });
+
+        // Initialize node's own contour (depth 0 relative to itself)
+        node.layout.contours = {
+            min: [0], // Local X is 0
+            max: [node.layout.width]
+        };
+
         if (node.children.length === 0) {
-            node.layout.subtreeWidth = node.layout.width;
-            node.layout.subtreeLeft = 0;
-            node.layout.subtreeRight = node.layout.width;
             return;
         }
 
-        // Post-order traversal: calculate children first
-        node.children.forEach(childId => {
-            this.calculateSubtreeWidths(childId);
-        });
-
-        // Auto-slip layout for children
-        let minLeft = 0;
-        let maxRight = 0;
-
+        // Auto-slip logic using contours to prevent deep branch overlaps
         node.children.forEach((childId, index) => {
             const childNode = this.nodesMap.get(childId);
 
             if (index === 0) {
-                // First child starts at 0
                 childNode.layout.x = 0;
-                minLeft = childNode.layout.subtreeLeft;
-                maxRight = childNode.layout.subtreeRight;
             } else {
-                // Auto-slip: Next child must slip to the right of the entire previous subtree's max right + MIN_GAP
-                // Calculate required shift
-                const requiredStart = maxRight + MIN_GAP;
-                const shift = requiredStart - childNode.layout.subtreeLeft;
+                // Find required shift by comparing current accumulated parent contours vs this child's contours
+                // We want: parent_max[d] + MIN_GAP_X <= child_min[d-1] + shift
+                // so: shift = max(parent_max[d] + MIN_GAP_X - child_min[d-1]) across all overlapping depths
+                let maxRequiredShift = 0;
 
-                childNode.layout.x = shift;
-                maxRight = shift + childNode.layout.subtreeRight;
+                for(let i=0; i<childNode.layout.contours.min.length; i++) {
+                    const depthInParent = i + 1;
+                    if(node.layout.contours.max[depthInParent] !== undefined) {
+                        const requiredStart = node.layout.contours.max[depthInParent] + MIN_GAP_X;
+                        const shift = requiredStart - childNode.layout.contours.min[i];
+                        if (shift > maxRequiredShift) {
+                            maxRequiredShift = shift;
+                        }
+                    }
+                }
+
+                // If there's no depth overlap (rare, maybe empty levels?), we just fallback to placing it next to the last child's root level
+                if (maxRequiredShift === 0) {
+                    const prevChildNode = this.nodesMap.get(node.children[index-1]);
+                    maxRequiredShift = prevChildNode.layout.x + prevChildNode.layout.width + MIN_GAP_X;
+                }
+
+                childNode.layout.x = maxRequiredShift;
             }
+
+            // Merge this child's shifted contour into the parent's contour
+            this.mergeContours(node.layout.contours, childNode.layout.contours, childNode.layout.x);
         });
 
         // Center parent above children
         const firstChild = this.nodesMap.get(node.children[0]);
         const lastChild = this.nodesMap.get(node.children[node.children.length - 1]);
 
-        // Center relative to the full bounds of the children
         const firstChildCenter = firstChild.layout.x + (firstChild.layout.width / 2);
         const lastChildCenter = lastChild.layout.x + (lastChild.layout.width / 2);
         const childrenCenter = (firstChildCenter + lastChildCenter) / 2;
 
-        // Make the parent exactly at x = 0 (relative to itself).
-        // We shift all children so they are centered under the parent (where parent is 0).
+        // Shift all children to center them under the parent (parent remains at relative x=0)
         const parentShift = (node.layout.width / 2) - childrenCenter;
 
         node.children.forEach(childId => {
@@ -126,42 +178,36 @@ class LayoutEngine {
             childNode.layout.x += parentShift;
         });
 
-        // Recalculate minLeft and maxRight with the shift
-        minLeft = minLeft + parentShift;
-        maxRight = maxRight + parentShift;
-
-        // Parent's bounding box might be wider than the children's span
-        minLeft = Math.min(0, minLeft);
-        maxRight = Math.max(node.layout.width, maxRight);
-
-        node.layout.subtreeLeft = minLeft;
-        node.layout.subtreeRight = maxRight;
-        node.layout.subtreeWidth = maxRight - minLeft;
+        // We must also shift the merged child contours in the parent's contour array
+        for(let d=1; d < node.layout.contours.min.length; d++) {
+            if(node.layout.contours.min[d] !== undefined) {
+                node.layout.contours.min[d] += parentShift;
+                node.layout.contours.max[d] += parentShift;
+            }
+        }
     }
 
-    calculateAbsolutePositions(nodeId, absoluteX = 5000) {
+    calculateAbsolutePositions(nodeId, absoluteX = 5000, startY = 1000) {
         const node = this.nodesMap.get(nodeId);
         if (!node) return;
 
-        // Set the absolute X
-        // The root is given a starting absoluteX.
-        // For other nodes, absoluteX is passed down from the parent calculation.
         node.x = absoluteX;
+        // Calculate Y strictly based on depth: startY + (depth * spacing)
+        node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
 
         // Spouses absolute position
         node.spouses.forEach(spouseId => {
             const spouseNode = this.nodesMap.get(spouseId);
             if (spouseNode) {
-                // spouse layout.x is relative to the main node
                 spouseNode.x = node.x + spouseNode.layout.x;
+                spouseNode.y = node.y; // Spouses share same Y
             }
         });
 
         // Children absolute position
         node.children.forEach(childId => {
             const childNode = this.nodesMap.get(childId);
-            // child layout.x is relative to the parent
-            this.calculateAbsolutePositions(childId, node.x + childNode.layout.x);
+            this.calculateAbsolutePositions(childId, node.x + childNode.layout.x, startY);
         });
     }
 
@@ -178,28 +224,49 @@ class LayoutEngine {
             }
         });
 
+        // Calculate depths starting from roots
+        rootNodes.forEach(rootId => this.calculateDepths(rootId, 0));
+
         let currentRootX = 5000; // Starting point for the first root
-        let lastMaxRight = null;
+        let globalContour = { min: [], max: [] };
 
         rootNodes.forEach((rootId, index) => {
-            this.calculateSubtreeWidths(rootId);
-
+            this.calculateSubtreeLayout(rootId);
             const rootNode = this.nodesMap.get(rootId);
 
-            // If it's not the first root, auto-slip it next to previous root
-            if (index > 0 && lastMaxRight !== null) {
-                const shift = (lastMaxRight + MIN_GAP) - rootNode.layout.subtreeLeft;
-                currentRootX += shift;
+            if (index > 0) {
+                // Auto-slip roots against each other
+                let maxRequiredShift = 0;
+                for (let i = 0; i < rootNode.layout.contours.min.length; i++) {
+                    if (globalContour.max[i] !== undefined) {
+                        const shift = (globalContour.max[i] + MIN_GAP_X) - rootNode.layout.contours.min[i];
+                        if (shift > maxRequiredShift) maxRequiredShift = shift;
+                    }
+                }
+                currentRootX += maxRequiredShift;
             }
 
-            this.calculateAbsolutePositions(rootId, currentRootX);
-            lastMaxRight = currentRootX + rootNode.layout.subtreeRight;
+            // Merge root contour into global contour
+            for (let i = 0; i < rootNode.layout.contours.min.length; i++) {
+                const rMin = rootNode.layout.contours.min[i] + currentRootX;
+                const rMax = rootNode.layout.contours.max[i] + currentRootX;
+                if (globalContour.min[i] === undefined) {
+                    globalContour.min[i] = rMin;
+                    globalContour.max[i] = rMax;
+                } else {
+                    globalContour.min[i] = Math.min(globalContour.min[i], rMin);
+                    globalContour.max[i] = Math.max(globalContour.max[i], rMax);
+                }
+            }
+
+            // Calculate final absolute positions.
+            // We give startY = 0 for the absolute root to make rendering cleaner
+            this.calculateAbsolutePositions(rootId, currentRootX, 0);
         });
 
         // Extract the updated data
         return Array.from(this.nodesMap.values()).map(node => {
-            // Return original properties with updated X
-            const { layout, children, spouses, ...originalNode } = node;
+            const { layout, children, spouses, depth, contours, ...originalNode } = node;
             return originalNode;
         });
     }
