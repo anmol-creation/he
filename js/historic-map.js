@@ -41,41 +41,30 @@ let isDragging = false;
 let startX, startY;
 const MACRO_ZOOM_THRESHOLD = 0.5;
 let isMacroMode = false;
-let expandedGroups = new Set();
 let focusedNodeId = 'brahman';
 
 
 
 // Initialize
-
-// Group toggling state
-window.expandedGroups = window.expandedGroups || new Set();
-
-window.toggleGroup = function(groupId, event) {
-    if(event) event.stopPropagation();
-    if (window.expandedGroups.has(groupId)) {
-        window.expandedGroups.delete(groupId);
-    } else {
-        window.expandedGroups.add(groupId);
-    }
-    initMap(); // Re-render map and layout
-};
-
 function initMap() {
     console.log("initMap called");
     // Run layout engine to dynamically calculate X coordinates
     if (window.LayoutEngine && window.HistoricDB) {
         console.log("Running LayoutEngine");
         try {
-            const engine = new window.LayoutEngine(window.HistoricDB.getAll(), window.expandedGroups);
+            const engine = new window.LayoutEngine(window.HistoricDB.getAll());
             const updatedData = engine.process();
 
             // Override the global historicData reference so rendering uses updated X values
             window.historicData = updatedData;
-
-
-
-
+            window.HistoricDB.getAll = () => updatedData;
+            window.HistoricDB.getNode = (id) => updatedData.find(d => d.id === id);
+            window.HistoricDB.getChildren = (id) => updatedData.filter(d => d.parent === id);
+            window.HistoricDB.getSiblings = (id) => {
+                const node = updatedData.find(d => d.id === id);
+                if (!node || !node.parent) return [];
+                return updatedData.filter(d => d.parent === node.parent);
+            };
             console.log("LayoutEngine completed successfully");
         } catch (e) {
             console.error("LayoutEngine error:", e);
@@ -123,7 +112,7 @@ function drawTimeDividers() {
 
 function renderNodes() {
     nodesContainer.innerHTML = '';
-    const dataList = window.historicData || (window.HistoricDB ? window.HistoricDB.getAll() : []); // Fallback just in case
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData; // Fallback just in case
 
     dataList.forEach(data => {
         const node = document.createElement('div');
@@ -135,15 +124,6 @@ function renderNodes() {
         // We use data.x and data.y directly as they are now dynamically calculated by LayoutEngine
         node.style.left = `${data.x}px`;
         node.style.top = `${data.y}px`;
-
-        let groupBadgeHtml = '';
-        if (data.type === 'group') {
-            const isExpanded = window.expandedGroups && window.expandedGroups.has(data.id);
-            groupBadgeHtml = `<div class="group-badge" onclick="window.toggleGroup('${data.id}', event)">${isExpanded ? '-' : '+'}</div>`;
-            if (!isExpanded) {
-                node.classList.add('collapsed-group');
-            }
-        }
         node.style.borderTopColor = data.color;
 
         // Heritage Dots
@@ -152,7 +132,6 @@ function renderNodes() {
         if (data.motherColor) dotsHtml += `<div class="dot" style="background-color: ${data.motherColor}"></div>`;
 
         node.innerHTML = `
-            ${groupBadgeHtml}
             <div class="heritage-dots">${dotsHtml}</div>
             <div class="node-title">${data.name}</div>
             <div class="node-details">${data.subtitle}</div>
@@ -170,7 +149,7 @@ function renderNodes() {
 
 function drawConnections() {
     svg.innerHTML = '';
-    const dataList = window.historicData || [];
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
 
     // Universal Colors
     const COLOR_MARRIAGE = '#FF1493'; // Deep Pink for Husband-Wife
@@ -397,7 +376,7 @@ function highlightRelatives(centerNodeId) {
         return;
     }
 
-    const dataList = window.historicData || [];
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
     const node = dataList.find(d => d.id === centerNodeId);
     if (!node) return;
 
@@ -431,7 +410,7 @@ function highlightRelatives(centerNodeId) {
 function navigateRelative(direction) {
     if (!focusedNodeId || isMacroMode) return;
 
-    const dataList = window.historicData || [];
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
     const node = dataList.find(d => d.id === focusedNodeId);
     if (!node) return;
 
@@ -628,7 +607,7 @@ function setupEventListeners() {
 }
 
 function focusOnNode(nodeId) {
-    const dataList = window.historicData || [];
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
     const nodeData = dataList.find(d => d.id === nodeId);
     if (!nodeData) return;
 
@@ -713,7 +692,7 @@ document.getElementById('map-search-input')?.addEventListener('input', (e) => {
         return;
     }
 
-    const dataList = window.historicData || [];
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
     const matches = dataList.filter(d =>
         (d.name && d.name.toLowerCase().includes(query)) ||
         (d.id && d.id.toLowerCase().includes(query)) ||
@@ -762,7 +741,7 @@ document.addEventListener('click', (e) => {
 
 // Lineage Routing Function
 function traceLineage(nodeId) {
-    const dataList = window.historicData || [];
+    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
     const pathIds = new Set();
     let currentId = nodeId;
 
@@ -817,32 +796,5 @@ function traceLineage(nodeId) {
         translateY = (containerRect.height / 2) - (centerY * scale);
     }
 
-    updateTransform();
-}
-
-
-function toggleGroup(groupId) {
-    if (expandedGroups.has(groupId)) {
-        expandedGroups.delete(groupId);
-    } else {
-        expandedGroups.add(groupId);
-    }
-
-    // Clear and re-render the map with new layout
-    const container = document.getElementById('map-container');
-    const svg = document.getElementById('map-wires');
-
-    // Save current pan/zoom state
-    const currentTranslateX = translateX;
-    const currentTranslateY = translateY;
-    const currentScale = scale;
-
-    // Re-initialize map (which will re-run layout engine)
-    initMap();
-
-    // Restore pan/zoom state
-    translateX = currentTranslateX;
-    translateY = currentTranslateY;
-    scale = currentScale;
     updateTransform();
 }
