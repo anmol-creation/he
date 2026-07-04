@@ -12,6 +12,7 @@ export const chandravanshData = [
     { id: 'vasudev', name: 'वसुदेव', subtitle: 'कृष्ण के पिता', color: '#9933CC', parent: 'shurasen', yug: 'dwapar' },
     { id: 'nanda', name: 'नंद बाबा', subtitle: 'पालक पिता', color: '#FFD700', parent: 'shurasen', yug: 'dwapar' },
     { id: 'krishna', name: 'कृष्ण', subtitle: 'पूर्णावतार', color: '#9933CC', parent: 'vasudev', yug: 'dwapar' },
+    { id: 'jambavati', name: 'जाम्बवती', subtitle: 'श्रीकृष्ण की पत्नी', color: '#ff99cc', parent: 'jambavan', spouseOf: 'krishna', yug: 'dwapar', parichay: 'जाम्बवान की पुत्री और श्रीकृष्ण की अष्टभार्याओं में से एक।' },
     { id: 'balram', name: 'बलराम', subtitle: 'शेषनाग अवतार', color: '#9933CC', parent: 'vasudev', yug: 'dwapar' },
     { id: 'dushyant', name: 'दुष्यंत', subtitle: 'पुरु वंश', color: '#3399FF', parent: 'puru', yug: 'treta' },
     { id: 'bharat_kuru', name: 'भरत', subtitle: 'चक्रवर्ती सम्राट', color: '#3399FF', parent: 'dushyant', yug: 'treta' },

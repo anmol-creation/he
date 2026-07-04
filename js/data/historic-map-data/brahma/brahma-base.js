@@ -5,6 +5,7 @@ export const brahmaBaseData = [
     { id: 'sanatkumar', name: 'सनत्कुमार', subtitle: 'सनत कुमार', color: '#FFFF99', parent: 'brahma', yug: 'satya' },
     { id: 'narada', name: 'नारद', subtitle: 'मानस पुत्र / देवर्षि', color: '#FFD700', parent: 'brahma', yug: 'satya' , parichay: 'देवर्षि नारद, ब्रह्मा के मानस पुत्र।', events: ['वाल्मीकि को राम कथा संक्षेप में सुनाई (बालकाण्ड, सर्ग 1)'] },
     { id: 'jambavan', name: 'जाम्बवान', subtitle: 'ब्रह्मा की जम्हाई से', color: '#A0522D', parent: 'brahma', yug: 'satya' },
+    { id: 'sukumaran', name: 'सुकुमारन', subtitle: 'जाम्बवान के पुत्र', color: '#A0522D', parent: 'jambavan', yug: 'dwapar' },
     { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', color: '#FFD700', parent: 'brahma', yug: 'satya' },
     { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', color: '#FFD700', parent: 'brahma', yug: 'satya' },
     { id: 'angiras', name: 'अंगिरस', subtitle: 'सप्तर्षि / मानस पुत्र', color: '#FFD700', parent: 'brahma', yug: 'satya' },
