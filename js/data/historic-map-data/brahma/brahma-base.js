@@ -134,11 +134,54 @@ export const brahmaBaseData = [
     { id: 'trijata', name: 'त्रिजटा', subtitle: 'विभीषण की पुत्री', color: '#ff99cc', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'अशोक वाटिका में माता सीता की स्नेही रक्षक।' },
     { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', color: '#4B0082', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
     { id: 'khyati', name: 'ख्याति', subtitle: 'दक्ष पुत्री', color: '#ff99cc', parent: 'daksha', spouseOf: 'bhrigu', yug: 'satya' },
-    { id: 'chyavana', name: 'च्यवन', subtitle: 'भृगु पुत्र', color: '#FFD700', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
+    { id: 'paulomi', name: 'पुलोमा', subtitle: 'भृगु पत्नी', color: '#ff99cc', parent: '', spouseOf: 'bhrigu', yug: 'satya', parichay: 'महर्षि भृगु की पत्नी और च्यवन ऋषि की माता।' },
+    { id: 'dhata', name: 'धाता', subtitle: 'भृगु पुत्र', color: '#FFD700', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
+    { id: 'vidhata', name: 'विधाता', subtitle: 'भृगु पुत्र', color: '#FFD700', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
+
+    // Markandeya's Lineage
+    { id: 'ayati', name: 'आयति', subtitle: 'धाता पत्नी', color: '#ff99cc', parent: '', spouseOf: 'dhata', yug: 'satya' },
+    { id: 'niyati', name: 'नियति', subtitle: 'विधाता पत्नी', color: '#ff99cc', parent: '', spouseOf: 'vidhata', yug: 'satya' },
+    { id: 'mrikanda', name: 'मृकंड', subtitle: 'विधाता पुत्र', color: '#FFD700', parent: 'vidhata', mother: 'niyati', yug: 'satya' },
+    { id: 'markandeya', name: 'मार्कण्डेय', subtitle: 'चिरंजीवी ऋषि', color: '#FFD700', parent: 'mrikanda', yug: 'satya', parichay: 'मृकंड के पुत्र, भगवान शिव के परम भक्त जिन्हें अजर-अमर (चिरंजीवी) होने का वरदान मिला।' },
+    { id: 'vedashira', name: 'वेदशिरा', subtitle: 'मार्कण्डेय पुत्र', color: '#FFD700', parent: 'markandeya', yug: 'treta', parichay: 'चिरंजीवी मार्कण्डेय मुनि के पुत्र और महान तपस्वी।' },
+
+    // Dhata's deeper line
+    { id: 'prana_rishi', name: 'प्राण', subtitle: 'धाता पुत्र', color: '#FFD700', parent: 'dhata', mother: 'ayati', yug: 'satya' },
+    { id: 'dyutiman', name: 'द्युतिमान', subtitle: 'प्राण पुत्र', color: '#FFD700', parent: 'prana_rishi', yug: 'satya' },
+    { id: 'rajavan', name: 'राजवान', subtitle: 'द्युतिमान पुत्र', color: '#FFD700', parent: 'dyutiman', yug: 'satya' },
+
+    // Dadhichi
+    { id: 'dadhichi', name: 'दधीचि', subtitle: 'भृगु पुत्र', color: '#FFD700', parent: 'bhrigu', yug: 'satya', parichay: 'महान शिव भक्त ऋषि जिन्होंने वृत्रासुर के वध हेतु वज्र बनाने के लिए अपनी अस्थियों का दान किया था।' },
+    { id: 'pippalada', name: 'पिप्पलाद', subtitle: 'दधीचि पुत्र', color: '#FFD700', parent: 'dadhichi', yug: 'satya', parichay: 'दधीचि के पुत्र और प्रश्न उपनिषद के मुख्य ऋषि। इन्होने ही नवग्रहों में शनि देव को दंडित किया था।' },
+
+    // Shukracharya & his family
     { id: 'shukracharya', name: 'शुक्राचार्य', subtitle: 'दैत्यों के गुरु', color: '#FFD700', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
-    { id: 'aurva', name: 'और्व', subtitle: 'भृगु वंश', color: '#FFD700', parent: 'chyavana', yug: 'treta' },
+    { id: 'jayanti', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / शुक्र पत्नी', color: '#ff99cc', parent: '', spouseOf: 'shukracharya', yug: 'satya' },
+    { id: 'devayani', name: 'देवयानी', subtitle: 'शुक्राचार्य पुत्री', color: '#ff99cc', parent: 'shukracharya', mother: 'jayanti', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री, जिनका विवाह राजा ययाति से हुआ।' },
+    { id: 'araj', name: 'अरज', subtitle: 'शुक्राचार्य पुत्री', color: '#ff99cc', parent: 'shukracharya', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री जिसे राजा दंड ने अपमानित किया था, जिसके कारण दंडकारण्य वन बना।' },
+    { id: 'shanda', name: 'शण्ड', subtitle: 'शुक्राचार्य पुत्र', color: '#FFD700', parent: 'shukracharya', yug: 'satya', parichay: 'हिरण्यकशिपु के गुरु-पुत्र, जो प्रह्लाद को पढ़ाते थे।' },
+    { id: 'marka', name: 'मर्क', subtitle: 'शुक्राचार्य पुत्र', color: '#FFD700', parent: 'shukracharya', yug: 'satya', parichay: 'हिरण्यकशिपु के गुरु-पुत्र, जो प्रह्लाद को पढ़ाते थे।' },
+
+    // Chyavana & his family
+    { id: 'chyavana', name: 'च्यवन', subtitle: 'भृगु पुत्र', color: '#FFD700', parent: 'bhrigu', mother: 'paulomi', yug: 'satya', parichay: 'च्यवनप्राश के आविष्कारक और महान ऋषि।' },
+    { id: 'sukanya', name: 'सुकन्या', subtitle: 'शर्याति पुत्री', color: '#ff99cc', parent: '', spouseOf: 'chyavana', yug: 'satya', parichay: 'राजा शर्याति की पुत्री और च्यवन ऋषि की परम पतिव्रता पत्नी।' },
+    { id: 'pramati', name: 'प्रमति', subtitle: 'च्यवन पुत्र', color: '#FFD700', parent: 'chyavana', mother: 'sukanya', yug: 'satya' },
+
+    // Deeper Chyavana line (Shaunaka)
+    { id: 'apnavana', name: 'अप्नवान', subtitle: 'च्यवन वंश', color: '#FFD700', parent: 'chyavana', yug: 'treta', parichay: 'भृगु वंश के ऋषि, जो महाभारत के अनुसार च्यवन के पुत्र और और्व के पिता थे।' },
+    { id: 'ruru', name: 'रुरु', subtitle: 'प्रमति पुत्र', color: '#FFD700', parent: 'pramati', yug: 'treta', parichay: 'च्यवन के पौत्र। इन्होने अपनी आधी आयु देकर अपनी पत्नी प्रमद्वरा को जीवित किया था।' },
+    { id: 'pramadvara', name: 'प्रमद्वरा', subtitle: 'रुरु पत्नी', color: '#ff99cc', parent: '', spouseOf: 'ruru', yug: 'treta', parichay: 'मेनका अप्सरा की पुत्री और रुरु की पत्नी।' },
+    { id: 'shunaka', name: 'शुनक', subtitle: 'रुरु पुत्र', color: '#FFD700', parent: 'ruru', mother: 'pramadvara', yug: 'treta' },
+    { id: 'shaunaka', name: 'शौनक', subtitle: 'महान कुलपति ऋषि', color: '#FFD700', parent: 'shunaka', yug: 'dwapar', parichay: 'नैमिषारण्य के महान कुलपति। इन्हीं के आश्रम में सूत जी ने 18 पुराणों और महाभारत की कथा सुनाई थी।' },
+
+    // Aurva line
+    { id: 'aurva', name: 'और्व', subtitle: 'भृगु वंश', color: '#FFD700', parent: 'pramati', yug: 'treta', parichay: 'भृगु वंश के महान ऋषि, जो अपनी माता की जांघ (ऊरु) से प्रकट हुए थे।' },
     { id: 'ruchika', name: 'ऋचीक', subtitle: 'भृगु वंश', color: '#FFD700', parent: 'aurva', yug: 'treta' },
     { id: 'jamadagni', name: 'जमदग्नि', subtitle: 'सप्तर्षि', color: '#FFD700', parent: 'ruchika', yug: 'treta' },
+    { id: 'rumanvan', name: 'रुमण्वान', subtitle: 'जमदग्नि पुत्र', color: '#FFD700', parent: 'jamadagni', yug: 'treta' },
+    { id: 'sushena_rishi', name: 'सुषेण', subtitle: 'जमदग्नि पुत्र', color: '#FFD700', parent: 'jamadagni', yug: 'treta' },
+    { id: 'vasu_rishi', name: 'वसु', subtitle: 'जमदग्नि पुत्र', color: '#FFD700', parent: 'jamadagni', yug: 'treta' },
+    { id: 'vishwavasu', name: 'विश्वावसु', subtitle: 'जमदग्नि पुत्र', color: '#FFD700', parent: 'jamadagni', yug: 'treta' },
     { id: 'parashurama', name: 'परशुराम', subtitle: 'विष्णु अवतार', color: '#FFD700', parent: 'jamadagni', yug: 'treta' },
     { id: 'arundhati', name: 'अरुंधती', subtitle: 'वशिष्ठ पत्नी', color: '#ff99cc', parent: '', spouseOf: 'vashistha', yug: 'satya' },
     { id: 'shakti', name: 'शक्ति', subtitle: 'वशिष्ठ पुत्र', color: '#FFD700', parent: 'vashistha', mother: 'arundhati', yug: 'satya' },
@@ -203,4 +246,27 @@ export const brahmaBaseData = [
     { id: 'ratanmool', name: 'रतनमूल', subtitle: 'हिमवान के पुत्र', color: '#FFD700', parent: 'himavan', mother: 'bhujangakshi_himavan', yug: 'satya' },
     { id: 'devadhar', name: 'देवधर', subtitle: 'हिमवान के पुत्र', color: '#FFD700', parent: 'himavan', mother: 'bhujangakshi_himavan', yug: 'satya' },
 
+    // --- PULAHA LINEAGE ---
+    { id: 'kshama_pulaha', name: 'क्षमा', subtitle: 'दक्ष पुत्री / पुलह पत्नी', color: '#ff99cc', parent: 'daksha', spouseOf: 'pulaha', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि पुलह की मुख्य पत्नी।' },
+    { id: 'gati_pulaha', name: 'गति', subtitle: 'कर्दम पुत्री / पुलह पत्नी', color: '#ff99cc', parent: '', spouseOf: 'pulaha', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि पुलह की पत्नी।' },
+    { id: 'kardama_pulaha_son', name: 'कर्दम (पुलह पुत्र)', subtitle: 'पुलह और क्षमा के पुत्र', color: '#FFD700', parent: 'pulaha', mother: 'kshama_pulaha', yug: 'satya', parichay: 'विष्णु पुराण के अनुसार क्षमा और पुलह के पुत्र। (यह कर्दम प्रजापति से भिन्न हैं)' },
+    { id: 'arvarivat', name: 'अर्वरिवत', subtitle: 'पुलह पुत्र', color: '#FFD700', parent: 'pulaha', mother: 'kshama_pulaha', yug: 'satya' },
+    { id: 'sahishnu', name: 'सहिष्णु', subtitle: 'पुलह पुत्र', color: '#FFD700', parent: 'pulaha', yug: 'satya' },
+    { id: 'karmashreshtha', name: 'कर्मश्रेष्ठ', subtitle: 'पुलह पुत्र', color: '#FFD700', parent: 'pulaha', mother: 'gati_pulaha', yug: 'satya' },
+    { id: 'variyan', name: 'वरीयां', subtitle: 'पुलह पुत्र', color: '#FFD700', parent: 'pulaha', mother: 'gati_pulaha', yug: 'satya' },
+
+    // --- PULAHA'S FURTHER DESCENDANTS & SPECIES ---
+    { id: 'kamadeva_rishi', name: 'कामदेव (ऋषि)', subtitle: 'सहिष्णु के पुत्र', color: '#FFD700', parent: 'sahishnu', yug: 'satya', parichay: 'ऋषि सहिष्णु के पुत्र। (ये रति-पति कामदेव से अलग हैं)।' },
+
+    // प्रजातियां (Species born from Pulaha)
+    { id: 'simha_species', name: 'सिंह (Lions)', subtitle: 'पुलह वंश / प्रजाति', color: '#A0522D', parent: 'pulaha', yug: 'satya', parichay: 'पुराणों के अनुसार शेर (Lions) प्रजाति की उत्पत्ति महर्षि पुलह से मानी गई है।' },
+    { id: 'vyaghra_species', name: 'व्याघ्र (Tigers)', subtitle: 'पुलह वंश / प्रजाति', color: '#A0522D', parent: 'pulaha', yug: 'satya', parichay: 'बाघ प्रजाति के मूल जनक महर्षि पुलह माने जाते हैं।' },
+    { id: 'vrika_species', name: 'वृक (Wolves)', subtitle: 'पुलह वंश / प्रजाति', color: '#A0522D', parent: 'pulaha', yug: 'satya', parichay: 'भेड़िये और कुछ हिंसक पशुओं की उत्पत्ति महर्षि पुलह से हुई।' },
+    { id: 'kimpurusha_species', name: 'किंपुरुष', subtitle: 'देव-योनि प्राणी', color: '#A0522D', parent: 'pulaha', yug: 'satya', parichay: 'आधे मनुष्य और आधे पशु के रूप वाले रहस्यमयी देव-योनि प्राणी।' },
+    { id: 'shalabha_species', name: 'शलभ (Locusts)', subtitle: 'कीट प्रजाति', color: '#A0522D', parent: 'pulaha', yug: 'satya', parichay: 'टिड्डियों और इसी प्रकार के कीटों की उत्पत्ति भी पुलह वंश से मानी गई है।' },
+
+    // --- KRATU LINEAGE ---
+    { id: 'sannati_kratu', name: 'सन्नति', subtitle: 'दक्ष पुत्री / क्रतु पत्नी', color: '#ff99cc', parent: 'daksha', spouseOf: 'kratu', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि क्रतु की पत्नी (विष्णु पुराण)।' },
+    { id: 'kriya_kratu', name: 'क्रिया', subtitle: 'कर्दम पुत्री / क्रतु पत्नी', color: '#ff99cc', parent: '', spouseOf: 'kratu', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि क्रतु की पत्नी (श्रीमद्भागवत)।' },
+    { id: 'valakhilya_rishis', name: 'बालखिल्य ऋषि (60,000)', subtitle: 'क्रतु पुत्र', color: '#FFD700', parent: 'kratu', mother: 'sannati_kratu', yug: 'satya', parichay: 'महर्षि क्रतु के 60,000 पुत्र। ये आकार में अंगूठे के पोर जितने होते हैं और सदैव सूर्य देव के रथ के साथ चलते हुए उनकी स्तुति करते हैं।' }
 ];
