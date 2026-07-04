@@ -1,9 +1,9 @@
 :root {
     --primary-saffron: #FF6B35;
     --secondary-gold: #F7931E;
-    --text-dark: #2c3e50;
-    --bg-start: #fefefe;
-    --bg-end: #f8f9fa;
+    --text-dark: #ffffff;
+    --bg-start: #111111;
+    --bg-end: #111111;
     --white: #ffffff;
     --trunk-color: #8b5a2b;
     --leaf-color: #4CAF50;
@@ -91,7 +91,7 @@ header {
 footer {
     text-align: center;
     padding: 1.5rem;
-    background: var(--white);
+    background: #1a1a1a;
     color: var(--text-dark);
     font-size: 0.9rem;
     opacity: 0.8;
