@@ -153,6 +153,7 @@ export const brahmaBaseData = [
     // Dadhichi
     { id: 'dadhichi', name: 'दधीचि', subtitle: 'भृगु पुत्र', color: '#FFD700', parent: 'bhrigu', yug: 'satya', parichay: 'महान शिव भक्त ऋषि जिन्होंने वृत्रासुर के वध हेतु वज्र बनाने के लिए अपनी अस्थियों का दान किया था।' },
     { id: 'pippalada', name: 'पिप्पलाद', subtitle: 'दधीचि पुत्र', color: '#FFD700', parent: 'dadhichi', yug: 'satya', parichay: 'दधीचि के पुत्र और प्रश्न उपनिषद के मुख्य ऋषि। इन्होने ही नवग्रहों में शनि देव को दंडित किया था।' },
+    { id: 'padma_pippalada', name: 'पद्मा', subtitle: 'अनरण्य पुत्री', color: '#ff99cc', parent: '', spouseOf: 'pippalada', yug: 'satya', parichay: 'इक्ष्वाकु वंशी राजा अनरण्य की पुत्री और महर्षि पिप्पलाद की पत्नी।' },
 
     // Shukracharya & his family
     { id: 'shukracharya', name: 'शुक्राचार्य', subtitle: 'दैत्यों के गुरु', color: '#FFD700', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
@@ -185,9 +186,18 @@ export const brahmaBaseData = [
     { id: 'parashurama', name: 'परशुराम', subtitle: 'विष्णु अवतार', color: '#FFD700', parent: 'jamadagni', yug: 'treta' },
     { id: 'arundhati', name: 'अरुंधती', subtitle: 'वशिष्ठ पत्नी', color: '#ff99cc', parent: '', spouseOf: 'vashistha', yug: 'satya' },
     { id: 'shakti', name: 'शक्ति', subtitle: 'वशिष्ठ पुत्र', color: '#FFD700', parent: 'vashistha', mother: 'arundhati', yug: 'satya' },
-    { id: 'parashar', name: 'पराशर', subtitle: 'महान ऋषि', color: '#FFD700', parent: 'shakti', yug: 'treta' },
-    { id: 'vyasa', name: 'वेद व्यास', subtitle: 'महाभारत रचयिता', color: '#FFD700', parent: 'parashar', yug: 'dwapar' },
+    { id: 'adrishyanti', name: 'अदृश्यन्ती', subtitle: 'शक्ति पत्नी', color: '#ff99cc', parent: '', spouseOf: 'shakti', yug: 'satya', parichay: 'महर्षि शक्ति की पत्नी और पराशर की माता।' },
+    { id: 'parashar', name: 'पराशर', subtitle: 'महान ऋषि', color: '#FFD700', parent: 'shakti', mother: 'adrishyanti', yug: 'treta' },
+    { id: 'satyavati', name: 'सत्यवती', subtitle: 'मत्स्यगंधा', color: '#ff99cc', parent: '', spouseOf: 'parashar', yug: 'treta', parichay: 'निषादराज की पुत्री। पराशर ऋषि के आशीर्वाद से इन्होने वेद व्यास को जन्म दिया। बाद में शांतनु से विवाह किया।' },
+    { id: 'vyasa', name: 'वेद व्यास', subtitle: 'महाभारत रचयिता', color: '#FFD700', parent: 'parashar', mother: 'satyavati', yug: 'dwapar' },
     { id: 'shuka', name: 'शुकदेव', subtitle: 'व्यास पुत्र', color: '#FFD700', parent: 'vyasa', yug: 'dwapar' },
+    { id: 'pivari', name: 'पिबरी', subtitle: 'शुकदेव पत्नी', color: '#ff99cc', parent: '', spouseOf: 'shuka', yug: 'dwapar', parichay: 'शुकदेव मुनि की पत्नी और पितरों की मानसी पुत्री।' },
+    { id: 'krishna_shuka', name: 'कृष्ण (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', color: '#FFD700', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
+    { id: 'gaura', name: 'गौर', subtitle: 'शुकदेव पुत्र', color: '#FFD700', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
+    { id: 'prabhu', name: 'प्रभु', subtitle: 'शुकदेव पुत्र', color: '#FFD700', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
+    { id: 'shambhu_shuka', name: 'शम्भु (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', color: '#FFD700', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
+    { id: 'bhurishrava_shuka', name: 'भूरिश्रवा (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', color: '#FFD700', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
+    { id: 'kirtimati', name: 'कीर्तिमती', subtitle: 'शुकदेव पुत्री', color: '#ff99cc', parent: 'shuka', mother: 'pivari', yug: 'dwapar', parichay: 'शुकदेव की पुत्री जिसका विवाह राजा अणुह से हुआ।' },
 
     // --- CHITRAGUPTA WIVES ---
     { id: 'nandini_chitragupta', name: 'नंदिनी', subtitle: 'सूर्यदक्षिणा / चित्रगुप्त की पत्नी', color: '#ff99cc', parent: '', spouseOf: 'chitragupta', yug: 'satya' },
