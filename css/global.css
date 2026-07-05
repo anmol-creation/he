@@ -32,14 +32,15 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, var(--primary-saffron), var(--secondary-gold));
+    background: var(--bg-start); /* Black */
+    border-bottom: 1px solid rgba(255,107,53,0.2);
     padding: 1rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--primary-saffron); /* Orange */
     text-align: center;
 }
 
@@ -65,7 +66,7 @@ header {
 }
 
 .header-content a {
-    color: var(--white);
+    color: var(--primary-saffron); /* Orange */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -77,8 +78,9 @@ header {
 }
 
 .header-separator {
-    opacity: 0.8;
+    opacity: 0.5;
     margin: 0 0.2rem;
+    color: var(--primary-saffron);
 }
 
 @media (max-width: 400px) {

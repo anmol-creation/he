@@ -33,14 +33,14 @@ main {
 
 .nav-btn {
     display: block;
-    background: var(--white);
-    color: var(--text-dark);
+    background: #111111; /* Black background */
+    color: var(--white); /* White text */
     text-decoration: none;
     padding: 1.2rem 2rem;
     border-radius: 16px;
     font-weight: 600;
     font-size: 1.1rem;
-    border: 2px solid transparent; /* Prepare for border transition if needed, though mostly shadow based */
+    border: 2px solid var(--primary-saffron); /* Prepare for border transition if needed, though mostly shadow based */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
