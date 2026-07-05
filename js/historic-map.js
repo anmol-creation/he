@@ -124,10 +124,15 @@ function renderNodes() {
         node.className = 'map-node';
 
         const nodeColor = data.inheritedColor || '#FF6B35';
+        const isDaughter = data.id.endsWith('_daughter') || (data.gender === 'female' && !data.spouseOf);
+
         if (data.spouseOf) {
             node.classList.add('spouse-node');
             node.style.border = '3px solid #ff99cc';
             node.style.background = '#2a2025';
+        } else if (isDaughter) {
+            node.style.border = '3px solid #ffb6c1'; // Light pink border
+            node.style.background = '#2a2025'; // Same dark pink background
         } else {
             node.style.border = `3px solid ${nodeColor}`;
             node.style.background = '#222';
