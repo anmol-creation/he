@@ -19,19 +19,51 @@ class LayoutEngine {
     }
 
     buildTree() {
-        // 1. Initialize nodes map
+        this.transitionWires = []; // Track pairs for dashed lines
+
+        // Pre-process: Auto-duplicate female nodes with BOTH parent and spouseOf
+        const processedData = [];
         this.rawData.forEach(node => {
+            if (node.parent && node.spouseOf) {
+                // Rule 4: Auto Duplication
+
+                // Node A: Daughter Node (in father's tree)
+                const daughterNode = {
+                    ...node,
+                    id: `${node.id}_daughter`,
+                    spouseOf: null, // Remove husband link
+                    subtitle: `${node.subtitle || ''} (Daughter)`.trim()
+                };
+
+                // Node B: Wife Node (next to husband)
+                const wifeNode = {
+                    ...node,
+                    parent: null, // Remove father link
+                    subtitle: `${node.subtitle || ''} (Wife)`.trim()
+                };
+
+                processedData.push(daughterNode, wifeNode);
+
+                // Track for drawing dashed line from Daughter -> Wife
+                this.transitionWires.push({
+                    from: daughterNode.id,
+                    to: wifeNode.id
+                });
+            } else {
+                processedData.push(node);
+            }
+        });
+
+        // 1. Initialize nodes map using processed data
+        processedData.forEach(node => {
             this.nodesMap.set(node.id, {
                 ...node,
                 children: [],
                 spouses: [],
                 depth: 0,
                 layout: {
-                    x: 0, // Local X relative to parent initially, absolute later
-                    width: NODE_WIDTH,
-                    // We will maintain left and right contours (arrays of relative x offsets per depth level)
-                    // For simplicity, bounding box per depth level or just a broad bounding box might work.
-                    // To be safe and robust, let's track the min/max X at *each* relative depth.
+                    x: 0,
+                    width: 200, // NODE_WIDTH
                     contours: { min: [], max: [] },
                     isSpouse: !!node.spouseOf
                 }
@@ -41,13 +73,11 @@ class LayoutEngine {
         // 2. Build relationships
         this.nodesMap.forEach(node => {
             if (node.spouseOf && this.nodesMap.has(node.spouseOf)) {
-                // Spouses are treated as children for structural layout (one generation down)
                 const partner = this.nodesMap.get(node.spouseOf);
                 if (partner) {
                     partner.children.push(node.id);
                 }
             } else if (node.parent && this.nodesMap.has(node.parent) && !node.spouseOf) {
-                // Check if node has a mother defined and mother exists
                 let pushedToMother = false;
                 if (node.mother && this.nodesMap.has(node.mother)) {
                     const motherNode = this.nodesMap.get(node.mother);
@@ -56,8 +86,6 @@ class LayoutEngine {
                         pushedToMother = true;
                     }
                 }
-
-                // Fallback to father if no mother or mother not in map
                 if (!pushedToMother) {
                     const parentNode = this.nodesMap.get(node.parent);
                     if (parentNode) {
@@ -311,10 +339,15 @@ class LayoutEngine {
         this.assignLineageColors();
 
         // Extract the updated data
-        return Array.from(this.nodesMap.values()).map(node => {
+        const finalNodes = Array.from(this.nodesMap.values()).map(node => {
             const { layout, children, spouses, depth, contours, ...originalNode } = node;
             return originalNode;
         });
+
+        return {
+            nodes: finalNodes,
+            transitionWires: this.transitionWires
+        };
     }
 }
 

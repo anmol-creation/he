@@ -53,8 +53,13 @@ function initMap() {
         console.log("Running LayoutEngine");
         try {
             const engine = new window.LayoutEngine(window.HistoricDB.getAll());
-            const updatedData = engine.process();
+            const result = engine.process();
+            const updatedData = result.nodes;
 
+            // Store transition wires globally for drawing
+            window.transitionWires = result.transitionWires;
+
+            // Override the global historicData reference so rendering uses updated X values
             // Override the global historicData reference so rendering uses updated X values
             window.historicData = updatedData;
             window.HistoricDB.getAll = () => updatedData;
@@ -367,7 +372,34 @@ function updateRiverOfTime() {
             marker.classList.remove('active');
         }
     });
+
+    // Draw Transition Wires (Rule 4)
+    if (window.transitionWires) {
+        window.transitionWires.forEach(wire => {
+            const fromNode = dataList.find(d => d.id === wire.from);
+            const toNode = dataList.find(d => d.id === wire.to);
+
+            if (fromNode && toNode) {
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.classList.add('map-wire', 'transition-wire');
+
+                const startX = fromNode.x;
+                const startY = fromNode.y + 20; // Slightly below center
+                const endX = toNode.x;
+                const endY = toNode.y - 20; // Slightly above center
+
+                // Curve logic
+                const midY = startY + (endY - startY) / 2;
+                const d = `M ${startX} ${startY} C ${startX} ${midY}, ${endX} ${midY}, ${endX} ${endY}`;
+
+                path.setAttribute('d', d);
+                svg.appendChild(path);
+            }
+        });
+    }
 }
+
+// Highlight Relatives
 
 function highlightRelatives(centerNodeId) {
     if (!centerNodeId || isMacroMode) {
