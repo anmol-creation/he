@@ -572,15 +572,46 @@ function setupEventListeners() {
         updateTransform();
     }, { passive: false });
 
+    // Predefined zoom levels
+    const zoomLevels = [0.15, 0.4, 0.8, 1.2];
+
+    function zoomToLevel(newScale) {
+        if (!focusedNodeId) return;
+
+        const dataList = window.HistoricDB ? window.HistoricDB.getAll() : historicData;
+        const nodeData = dataList.find(d => d.id === focusedNodeId);
+        if (!nodeData) return;
+
+        scale = newScale;
+
+        // Calculate focal point to keep the focused node centered
+        const containerRect = container.getBoundingClientRect();
+        const isMobile = window.innerWidth <= 768;
+        const yOffset = isMobile ? (containerRect.height * 0.25) : 0;
+
+        translateX = (containerRect.width / 2) - (nodeData.x * scale);
+        translateY = (containerRect.height / 2) - (nodeData.y * scale) - yOffset;
+
+        updateTransform();
+    }
+
     // Buttons
     document.getElementById('zoom-in-btn').addEventListener('click', () => {
-        scale = Math.min(scale + 0.2, 2);
-        updateTransform();
+        let currentLevelIdx = zoomLevels.findIndex(l => l >= scale) || 0;
+        if (currentLevelIdx === -1) currentLevelIdx = zoomLevels.length - 1;
+
+        if (currentLevelIdx < zoomLevels.length - 1) {
+            zoomToLevel(zoomLevels[currentLevelIdx + 1]);
+        }
     });
 
     document.getElementById('zoom-out-btn').addEventListener('click', () => {
-        scale = Math.max(scale - 0.2, 0.2);
-        updateTransform();
+        let currentLevelIdx = zoomLevels.findIndex(l => l >= Math.abs(scale - 0.01));
+        if (currentLevelIdx === -1) currentLevelIdx = zoomLevels.length;
+
+        if (currentLevelIdx > 0) {
+            zoomToLevel(zoomLevels[currentLevelIdx - 1]);
+        }
     });
 
     // Initial River of Time render
