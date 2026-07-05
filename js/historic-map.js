@@ -624,7 +624,30 @@ function setupEventListeners() {
             if(tab === 'jeevan') contentArea.innerHTML = '<p>जीवन की मुख्य घटनाएँ और टाइमलाइन।</p>';
             if(tab === 'kathayein') contentArea.innerHTML = '<p>प्रचलित कथाएँ और प्रसंग।</p>';
         });
-    });
+    // Legend Interaction
+    const legendDots = document.querySelectorAll('.legend-dot');
+    const legendPopup = document.getElementById('legend-popup');
+    const legendText = document.getElementById('legend-text');
+
+    if (legendDots && legendPopup) {
+        legendDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                legendText.textContent = dot.dataset.desc;
+                legendPopup.style.display = 'block';
+
+                // Auto hide after 3 seconds
+                setTimeout(() => {
+                    legendPopup.style.display = 'none';
+                }, 3000);
+            });
+        });
+
+        // Hide on outside click
+        document.addEventListener('click', () => {
+            legendPopup.style.display = 'none';
+        });
+    }
 }
 
 function focusOnNode(nodeId) {

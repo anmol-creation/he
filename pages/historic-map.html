@@ -33,6 +33,21 @@
     <!-- Bottom Navigation Bar (Footer) -->
     <nav id="bottom-nav-bar">
         <a href="itihas-puran.html" class="nav-btn" title="Back">⬅</a>
+
+        <!-- Legend Dots -->
+        <div id="map-legend-container" style="display: flex; gap: 10px; align-items: center; position: relative;">
+            <div class="legend-dot" data-desc="सूर्यवंश (Suryavansh Lineage)" style="background-color: #FF9900; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="चंद्रवंश (Chandravansh Lineage)" style="background-color: #4169E1; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="पत्नी (Wife Node & Connection)" style="background-color: #ff99cc; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="पुत्री (Daughter Node)" style="background-color: #ffb6c1; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="विवाह (Marriage Transition Wire)" style="background-color: transparent; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px dashed red;"></div>
+
+            <!-- Legend Popup -->
+            <div id="legend-popup" style="display: none; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(34,34,34,0.95); padding: 10px 15px; border-radius: 8px; border: 1px solid #FF6B35; color: white; white-space: nowrap; font-size: 0.9rem; z-index: 300;">
+                <span id="legend-text">Legend</span>
+            </div>
+        </div>
+
         <a href="../index.html" class="nav-btn" title="Home">🏠</a>
     </nav>
 
