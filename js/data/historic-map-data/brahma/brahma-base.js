@@ -4,6 +4,29 @@ export const brahmaBaseData = [
     // Other Manas/Sharirik Putras
     { id: 'dharma_brahma', name: 'धर्म', subtitle: 'ब्रह्मा के हृदय से', parent: 'brahma', yug: 'satya' },
     { id: 'adharma_brahma', name: 'अधर्म', subtitle: 'ब्रह्मा की पीठ से', parent: 'brahma', yug: 'satya' },
+
+// Adharma Lineage
+    { id: 'mithya', name: 'मिथ्या', subtitle: 'अधर्म की पत्नी', parent: '', spouseOf: 'adharma_brahma', yug: 'satya', parichay: 'अधर्म की पत्नी मिथ्या (झूठ/माया)।' },
+    { id: 'dambha', name: 'दंभ', subtitle: 'अधर्म-मिथ्या पुत्र', parent: 'adharma_brahma', mother: 'mithya', yug: 'satya', parichay: 'दंभ (पाखंड), अधर्म का पुत्र।' },
+    { id: 'maya_adharma', name: 'माया', subtitle: 'अधर्म-मिथ्या पुत्री', parent: 'adharma_brahma', mother: 'mithya', yug: 'satya', parichay: 'माया (धोखा), अधर्म की पुत्री।' },
+
+    { id: 'lobha_dambha', name: 'लोभ (Dambha)', subtitle: 'दंभ-माया पुत्र', parent: 'dambha', mother: 'maya_adharma', yug: 'satya', parichay: 'दंभ और माया से उत्पन्न लोभ (लालच)।' },
+    { id: 'nikriti', name: 'निकृति', subtitle: 'दंभ-माया पुत्री', parent: 'dambha', mother: 'maya_adharma', yug: 'satya', parichay: 'शठता/छल की देवी।' },
+
+    { id: 'krodha_lobha', name: 'क्रोध (Lobha)', subtitle: 'लोभ-निकृति पुत्र', parent: 'lobha_dambha', mother: 'nikriti', yug: 'satya', parichay: 'लोभ और निकृति से उत्पन्न क्रोध।' },
+    { id: 'himsa', name: 'हिंसा', subtitle: 'लोभ-निकृति पुत्री', parent: 'lobha_dambha', mother: 'nikriti', yug: 'satya', parichay: 'हिंसा (Violence)।' },
+
+    { id: 'kali_purush', name: 'कलि', subtitle: 'कलियुग का राक्षस', parent: 'krodha_lobha', mother: 'himsa', yug: 'satya', parichay: 'क्रोध और हिंसा का पुत्र कलि, जो कलियुग का अधिपति और कल्कि अवतार का मुख्य शत्रु है।' },
+    { id: 'durukti', name: 'दुरुक्ति', subtitle: 'क्रोध-हिंसा पुत्री', parent: 'krodha_lobha', mother: 'himsa', yug: 'satya', parichay: 'अपशब्द और गाली की देवी।' },
+
+    { id: 'bhaya_kali', name: 'भय (Fear)', subtitle: 'कलि-दुरुक्ति पुत्र', parent: 'kali_purush', mother: 'durukti', yug: 'satya', parichay: 'कलि और दुरुक्ति से उत्पन्न भय।' },
+    { id: 'mrityu_kali', name: 'मृत्यु', subtitle: 'कलि-दुरुक्ति पुत्री', parent: 'kali_purush', mother: 'durukti', yug: 'satya', parichay: 'मृत्यु।' },
+
+    { id: 'niraya', name: 'निरय (नर्क)', subtitle: 'भय-मृत्यु पुत्र', parent: 'bhaya_kali', mother: 'mrityu_kali', yug: 'satya', parichay: 'निरय (नर्क)।' },
+    { id: 'yatana', name: 'यातना', subtitle: 'भय-मृत्यु पुत्री', parent: 'bhaya_kali', mother: 'mrityu_kali', yug: 'satya', parichay: 'यातना (पीड़ा/कष्ट)।' },
+
+    { id: 'dukha_niraya', name: 'दुःख', subtitle: 'निरय-यातना पुत्र', parent: 'niraya', mother: 'yatana', yug: 'satya', parichay: 'निरय और यातना से दुःख (Sorrow) का जन्म हुआ।' },
+    { id: 'vyadhi', name: 'व्याधि', subtitle: 'निरय-यातना पुत्री', parent: 'niraya', mother: 'yatana', yug: 'satya', parichay: 'व्याधि (रोग/Disease)।' },
 // wives from Vishnu Purana
     { id: 'shraddha_daksha', name: 'श्रद्धा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_brahma', yug: 'satya' },
     { id: 'lakshmi_daksha', name: 'लक्ष्मी', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_brahma', yug: 'satya' },
