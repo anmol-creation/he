@@ -682,6 +682,22 @@ if (window.historicData || window.HistoricDB) {
 }
 
 
+
+// Search Toggle
+const searchToggleBtn = document.getElementById('search-toggle-btn');
+const searchInput = document.getElementById('map-search-input');
+if (searchToggleBtn && searchInput) {
+    searchToggleBtn.addEventListener('click', () => {
+        searchInput.classList.toggle('collapsed');
+        if (!searchInput.classList.contains('collapsed')) {
+            searchInput.focus();
+        } else {
+            const res = document.getElementById('map-search-results');
+            if (res) res.style.display = 'none';
+        }
+    });
+}
+
 // Search Functionality
 document.getElementById('map-search-input')?.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase().trim();
