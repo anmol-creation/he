@@ -456,6 +456,8 @@ function setupEventListeners() {
     let touchStartY = 0;
     let initialPinchDistance = null;
     let initialScale = 1;
+    let initialPinchCenterX = 0;
+    let initialPinchCenterY = 0;
 
     container.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
@@ -472,6 +474,11 @@ function setupEventListeners() {
                 e.touches[0].clientY - e.touches[1].clientY
             );
             initialScale = scale;
+
+            // Calculate center point of the pinch relative to container
+            const rect = container.getBoundingClientRect();
+            initialPinchCenterX = ((e.touches[0].clientX + e.touches[1].clientX) / 2) - rect.left;
+            initialPinchCenterY = ((e.touches[0].clientY + e.touches[1].clientY) / 2) - rect.top;
         }
     }, {passive: false});
 
@@ -490,6 +497,11 @@ function setupEventListeners() {
                 e.touches[0].clientY - e.touches[1].clientY
             );
             const newScale = Math.min(Math.max(0.1, initialScale * (currentDistance / initialPinchDistance)), 2);
+
+            // Adjust translate to keep the pinch center fixed under the fingers
+            translateX = initialPinchCenterX - (initialPinchCenterX - translateX) * (newScale / scale);
+            translateY = initialPinchCenterY - (initialPinchCenterY - translateY) * (newScale / scale);
+
             scale = newScale;
             updateTransform();
         }
