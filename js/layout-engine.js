@@ -82,6 +82,60 @@ class LayoutEngine {
         });
     }
 
+
+    assignLineageColors() {
+        // Base lineage color mappings
+        const rootColors = {
+            'brahma': '#F7931E', // Base Saffron for Brahma
+            'vishnu': '#3399FF', // Blue for Vishnu
+            'mahesh': '#9933FF', // Purple for Mahesh
+            'suryavansh_root': '#FF9900', // Example specific roots if they exist
+            'chandravansh_root': '#4169E1'
+        };
+
+        const defaultColor = 'var(--primary-saffron)';
+
+        // 1. Assign colors to root nodes explicitly if defined
+        this.nodesMap.forEach((node, id) => {
+            if (rootColors[id]) {
+                node.inheritedColor = rootColors[id];
+            } else if (!node.parent && !node.spouseOf) {
+                node.inheritedColor = defaultColor;
+            }
+        });
+
+        // 2. Cascade colors down the tree (BFS or DFS)
+        // We use a DFS approach
+        const traverseAndColor = (nodeId, colorToPass) => {
+            const node = this.nodesMap.get(nodeId);
+            if (!node) return;
+
+            // If the node has a specifically mapped root color, use it, else inherit
+            const nodeColor = rootColors[nodeId] || colorToPass || defaultColor;
+            node.inheritedColor = nodeColor;
+
+            node.children.forEach(childId => {
+                const child = this.nodesMap.get(childId);
+                if (child) {
+                    if (child.spouseOf === nodeId) {
+                        // It's a wife node logically structured as a child, wives don't inherit lineage color for their own children usually, but they are pink anyway.
+                        child.inheritedColor = nodeColor;
+                    } else {
+                        // True child, inherits father's color
+                        traverseAndColor(childId, nodeColor);
+                    }
+                }
+            });
+        };
+
+        // Start coloring from absolute roots
+        this.nodesMap.forEach(node => {
+            if (!node.parent && !node.spouseOf) {
+                traverseAndColor(node.id, rootColors[node.id] || defaultColor);
+            }
+        });
+    }
+
     calculateIntrinsicWidths() {
         this.nodesMap.forEach(node => {
             node.layout.width = NODE_WIDTH; // All nodes are standard width now
@@ -253,6 +307,8 @@ class LayoutEngine {
             // We give startY = 0 for the absolute root to make rendering cleaner
             this.calculateAbsolutePositions(rootId, currentRootX, 0);
         });
+
+        this.assignLineageColors();
 
         // Extract the updated data
         return Array.from(this.nodesMap.values()).map(node => {
