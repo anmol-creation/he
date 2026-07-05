@@ -8,6 +8,7 @@ export const kashyapData = [
     { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'sanjna_wife', name: 'संज्ञा', subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री', parent: '', spouseOf: 'surya', yug: 'satya' },
     { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
+    { id: 'vayu', name: 'वायु', subtitle: 'पवन देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'hiranyakashipu', name: 'हिरण्यकशिपु', subtitle: 'दैत्यराज (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' },
     { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' },
     { id: 'prahlada', name: 'प्रह्लाद', subtitle: 'विष्णु भक्त', parent: 'hiranyakashipu', yug: 'satya' },
@@ -16,4 +17,5 @@ export const kashyapData = [
     { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' },
     { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' },
     { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
+    { id: 'arun', name: 'अरुण', subtitle: 'सूर्य के सारथी (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' }
 ];
