@@ -467,3 +467,11 @@ body, html {
 .nav-btn:hover {
     color: var(--primary-saffron);
 }
+
+.transition-wire {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+    stroke-dasharray: 5,5;
+    opacity: 0.8;
+}
