@@ -1,4 +1,21 @@
 export const brahmaBaseData = [
+    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी', parent: '', spouseOf: 'brahma', yug: 'pre-kalpa' },
+
+    // Other Manas/Sharirik Putras
+    { id: 'dharma_brahma', name: 'धर्म', subtitle: 'ब्रह्मा के हृदय से', parent: 'brahma', yug: 'satya' },
+    { id: 'adharma_brahma', name: 'अधर्म', subtitle: 'ब्रह्मा की पीठ से', parent: 'brahma', yug: 'satya' },
+    { id: 'kamadeva', name: 'कामदेव', subtitle: 'ब्रह्मा के मन से', parent: 'brahma', yug: 'satya' },
+    { id: 'rati', name: 'रति', subtitle: 'कामदेव की पत्नी', parent: '', spouseOf: 'kamadeva', yug: 'satya' },
+    { id: 'harsha', name: 'हर्ष', subtitle: 'कामदेव पुत्र', parent: 'kamadeva', mother: 'rati', yug: 'satya' },
+    { id: 'krodha_brahma', name: 'क्रोध', subtitle: 'भौं से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'lobha_brahma', name: 'लोभ', subtitle: 'होंठ से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'moha_brahma', name: 'मोह', subtitle: 'ब्रह्मा से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'ahankara_brahma', name: 'अहंकार', subtitle: 'ब्रह्मा से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'agni_brahma', name: 'अग्नि', subtitle: 'मुख से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'swaha_brahma', name: 'स्वाहा', subtitle: 'ब्रह्मा की पुत्री', parent: 'brahma', yug: 'satya' },
+    { id: 'swadha_brahma', name: 'स्वधा', subtitle: 'ब्रह्मा की पुत्री', parent: 'brahma', yug: 'satya' },
+    { id: 'nirriti_brahma', name: 'निऋति', subtitle: 'गुदा से उत्पन्न', parent: 'brahma', yug: 'satya' },
+
     { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya' },
     { id: 'sanandan', name: 'सनन्दन', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya' },
     { id: 'sanatan', name: 'सनातन', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya' },
