@@ -461,11 +461,10 @@ function setupEventListeners() {
         if (e.touches.length === 1) {
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
-            if (isMacroMode) {
-                isDragging = true;
-                startX = touchStartX - translateX;
-                startY = touchStartY - translateY;
-            }
+            // Always allow free dragging regardless of macro mode
+            isDragging = true;
+            startX = touchStartX - translateX;
+            startY = touchStartY - translateY;
         } else if (e.touches.length === 2) {
             isDragging = false;
             initialPinchDistance = Math.hypot(
@@ -480,7 +479,7 @@ function setupEventListeners() {
         e.preventDefault(); // Prevent native scrolling
 
         if (e.touches.length === 1) {
-            if (isMacroMode && isDragging) {
+            if (isDragging) {
                 translateX = e.touches[0].clientX - startX;
                 translateY = e.touches[0].clientY - startY;
                 updateTransform();
@@ -500,24 +499,6 @@ function setupEventListeners() {
         if (e.touches.length === 0) {
             isDragging = false;
             initialPinchDistance = null;
-
-            // Detect Swipe if not in macro mode
-            if (!isMacroMode && e.changedTouches.length === 1) {
-                const touchEndX = e.changedTouches[0].clientX;
-                const touchEndY = e.changedTouches[0].clientY;
-                const dx = touchEndX - touchStartX;
-                const dy = touchEndY - touchStartY;
-
-                if (Math.abs(dx) > Math.abs(dy)) {
-                    // Horizontal swipe
-                    if (dx > 50) navigateRelative('left');
-                    else if (dx < -50) navigateRelative('right');
-                } else {
-                    // Vertical swipe
-                    if (dy > 50) navigateRelative('up');
-                    else if (dy < -50) navigateRelative('down');
-                }
-            }
         }
     });
 
@@ -541,28 +522,6 @@ function setupEventListeners() {
         isDragging = false;
     });
 
-    // Keyboard Navigation (Desktop fallback for swipe)
-    window.addEventListener('keydown', (e) => {
-        if (isMacroMode) return; // Only navigate relatives in focus mode
-        switch (e.key) {
-            case 'ArrowUp':
-                navigateRelative('up');
-                e.preventDefault();
-                break;
-            case 'ArrowDown':
-                navigateRelative('down');
-                e.preventDefault();
-                break;
-            case 'ArrowLeft':
-                navigateRelative('left');
-                e.preventDefault();
-                break;
-            case 'ArrowRight':
-                navigateRelative('right');
-                e.preventDefault();
-                break;
-        }
-    });
 
     // Zooming (Wheel)
     container.addEventListener('wheel', (e) => {
