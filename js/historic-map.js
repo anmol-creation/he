@@ -150,8 +150,9 @@ function renderNodes() {
 
         node.addEventListener('click', (e) => {
             e.stopPropagation();
-            // Redirect to the individual entity profile page inside the Itihas Book
-            window.location.href = `itihas-book.html?entity=${data.id}`;
+            // Do not redirect. Make this the Focus Node and open Side Panel.
+            focusOnNode(data.id);
+            openPanel(data);
         });
 
         nodesContainer.appendChild(node);
@@ -671,17 +672,37 @@ function focusOnNode(nodeId) {
 function openPanel(data) {
     const panel = document.getElementById('focus-panel');
     document.getElementById('panel-name').textContent = data.name;
-    document.getElementById('panel-subtitle').textContent = data.subtitle;
+    document.getElementById('panel-subtitle').textContent = data.subtitle || '';
 
     const dotsContainer = document.getElementById('panel-dots');
     dotsContainer.innerHTML = '';
-    if (data.color) dotsContainer.innerHTML += `<div class="dot" style="background-color: ${data.color}"></div>`;
-    if (data.motherColor) dotsContainer.innerHTML += `<div class="dot" style="background-color: ${data.motherColor}"></div>`;
+    const nodeColor = data.inheritedColor || 'var(--primary-saffron)';
+    dotsContainer.innerHTML += `<div class="dot" style="background-color: ${nodeColor}"></div>`;
+
+    // Extract parichay, events
+    let parichayHtml = data.parichay ? `<p>${data.parichay}</p>` : '<p>विस्तृत परिचय उपलब्ध नहीं है।</p>';
+
+    let vanshText = 'अन्य';
+    if(nodeColor === '#FF9900') vanshText = 'सूर्यवंश (Suryavansh)';
+    else if(nodeColor === '#4169E1') vanshText = 'चंद्रवंश (Chandravansh)';
+
+    let yugText = 'अज्ञात';
+    if(data.yug === 'satya') yugText = 'सत्य युग';
+    else if(data.yug === 'treta') yugText = 'त्रेता युग';
+    else if(data.yug === 'dwapar') yugText = 'द्वापर युग';
 
     document.getElementById('panel-content-area').innerHTML = `
-        <p><strong>वंश:</strong> ${data.color === '#FF9900' ? 'सूर्यवंश' : data.color === '#3399FF' ? 'चंद्रवंश' : 'अन्य'}</p>
-        <p><strong>युग:</strong> ${data.yug === 'satya' ? 'सत्य' : data.yug === 'treta' ? 'त्रेता' : 'द्वापर'}</p>
-        <p>यहाँ विस्तृत जानकारी प्रदर्शित होगी।</p>
+        <div style="margin-bottom: 15px;">
+            <span style="font-size:0.8rem; background:#333; padding:2px 8px; border-radius:10px; margin-right:5px;">${vanshText}</span>
+            <span style="font-size:0.8rem; background:#333; padding:2px 8px; border-radius:10px;">${yugText}</span>
+        </div>
+        ${parichayHtml}
+
+        <div style="margin-top: 20px; text-align: center;">
+            <a href="itihas-book.html?entity=${data.id}" style="display:inline-block; background:var(--primary-saffron); color:#fff; text-decoration:none; padding:10px 20px; border-radius:25px; font-weight:600; box-shadow:0 4px 10px rgba(255,107,53,0.3); transition:all 0.3s;">
+                📖 Read Full Info
+            </a>
+        </div>
     `;
 
     panel.classList.remove('hidden');
