@@ -40,19 +40,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-saffron); /* Orange */
+    color: #FF6B35; /* Orange to match logo */
     text-align: center;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    background: linear-gradient(to right, #FFD700, #FDB931);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    letter-spacing: 0.5px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.site-logo {
+    height: 40px; /* Adjust as needed */
+    width: auto;
+    border-radius: 4px;
 }
 
 .header-content {
@@ -66,7 +68,7 @@ header {
 }
 
 .header-content a {
-    color: var(--primary-saffron); /* Orange */
+    color: #FF6B35; /* Orange to match logo */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -80,7 +82,7 @@ header {
 .header-separator {
     opacity: 0.5;
     margin: 0 0.2rem;
-    color: var(--primary-saffron);
+    color: #FF6B35;
 }
 
 @media (max-width: 400px) {
@@ -101,7 +103,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .logo {
-        font-size: 2.2rem;
+    .site-logo {
+        height: 50px;
     }
 }
