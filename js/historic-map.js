@@ -659,7 +659,7 @@ function focusOnNode(nodeId) {
 
     // Force out of macro mode on focus
     if (isMacroMode) {
-        scale = 0.8;
+        scale = 0.4;
         isMacroMode = false;
     }
 
