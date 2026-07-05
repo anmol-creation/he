@@ -122,19 +122,25 @@ function renderNodes() {
     dataList.forEach(data => {
         const node = document.createElement('div');
         node.className = 'map-node';
-        if (data.spouseOf) node.classList.add('spouse-node');
+
+        const nodeColor = data.inheritedColor || '#FF6B35';
+        if (data.spouseOf) {
+            node.classList.add('spouse-node');
+            node.style.border = '3px solid #ff99cc';
+            node.style.background = '#2a2025';
+        } else {
+            node.style.border = `3px solid ${nodeColor}`;
+            node.style.background = '#222';
+        }
 
         node.id = `node-${data.id}`;
 
         // We use data.x and data.y directly as they are now dynamically calculated by LayoutEngine
         node.style.left = `${data.x}px`;
         node.style.top = `${data.y}px`;
-        node.style.borderTopColor = data.color;
 
-        // Heritage Dots
+        // Heritage Dots (removed manual color dots)
         let dotsHtml = '';
-        if (data.color) dotsHtml += `<div class="dot" style="background-color: ${data.color}"></div>`;
-        if (data.motherColor) dotsHtml += `<div class="dot" style="background-color: ${data.motherColor}"></div>`;
 
         node.innerHTML = `
             <div class="heritage-dots">${dotsHtml}</div>
@@ -269,7 +275,7 @@ function drawConnections() {
                 const controlY = startY + (endY - startY) / 2;
                 path.setAttribute('d', `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`);
                 path.setAttribute('class', 'map-wire');
-                path.setAttribute('stroke', data.color || '#999');
+                path.setAttribute('stroke', data.inheritedColor || '#FF6B35');
 
                 svg.appendChild(path);
             }
@@ -372,31 +378,6 @@ function updateRiverOfTime() {
             marker.classList.remove('active');
         }
     });
-
-    // Draw Transition Wires (Rule 4)
-    if (window.transitionWires) {
-        window.transitionWires.forEach(wire => {
-            const fromNode = dataList.find(d => d.id === wire.from);
-            const toNode = dataList.find(d => d.id === wire.to);
-
-            if (fromNode && toNode) {
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.classList.add('map-wire', 'transition-wire');
-
-                const startX = fromNode.x;
-                const startY = fromNode.y + 20; // Slightly below center
-                const endX = toNode.x;
-                const endY = toNode.y - 20; // Slightly above center
-
-                // Curve logic
-                const midY = startY + (endY - startY) / 2;
-                const d = `M ${startX} ${startY} C ${startX} ${midY}, ${endX} ${midY}, ${endX} ${endY}`;
-
-                path.setAttribute('d', d);
-                svg.appendChild(path);
-            }
-        });
-    }
 }
 
 // Highlight Relatives
@@ -429,7 +410,7 @@ function highlightRelatives(centerNodeId) {
             n.style.opacity = '1';
             n.style.transform = id === centerNodeId ? 'translate(-50%, -50%) scale(1.1)' : 'translate(-50%, -50%) scale(1)';
             n.style.zIndex = id === centerNodeId ? '10' : '5';
-            n.style.boxShadow = id === centerNodeId ? '0 0 20px var(--primary-saffron)' : '';
+            n.style.boxShadow = id === centerNodeId ? '0 0 20px #FF6B35' : '';
         } else {
             n.style.opacity = '0.3';
             n.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -678,7 +659,7 @@ function focusOnNode(nodeId) {
 
     // Force out of macro mode on focus
     if (isMacroMode) {
-        scale = 1;
+        scale = 0.8;
         isMacroMode = false;
     }
 
