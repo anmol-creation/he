@@ -6,6 +6,7 @@ export const kashyapData = [
     { id: 'vinata', name: 'विनता', subtitle: 'गरुड़ की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya' },
     { id: 'danu', name: 'दनु', subtitle: 'दानवों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya' },
     { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
+    { id: 'sanjna_wife', name: 'संज्ञा', subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री', parent: '', spouseOf: 'surya', yug: 'satya' },
     { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'hiranyakashipu', name: 'हिरण्यकशिपु', subtitle: 'दैत्यराज (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' },
     { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' },
