@@ -412,4 +412,19 @@ export const brahmaBaseData = [
     { id: 'sannati_kratu', name: 'सन्नति', subtitle: 'दक्ष पुत्री / क्रतु पत्नी', parent: 'daksha', spouseOf: 'kratu', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि क्रतु की पत्नी (विष्णु पुराण)।' },
     { id: 'kriya_kratu', name: 'क्रिया', subtitle: 'कर्दम पुत्री / क्रतु पत्नी', parent: '', spouseOf: 'kratu', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि क्रतु की पत्नी (श्रीमद्भागवत)।' },
     { id: 'valakhilya_rishis', name: 'बालखिल्य ऋषि (60,000)', subtitle: 'क्रतु पुत्र', parent: 'kratu', mother: 'sannati_kratu', yug: 'satya', parichay: 'महर्षि क्रतु के 60,000 पुत्र। ये आकार में अंगूठे के पोर जितने होते हैं और सदैव सूर्य देव के रथ के साथ चलते हुए उनकी स्तुति करते हैं।' },
+
+    // --- OTHER BRAHMA CREATIONS ---
+    { id: 'ahalya_creation', name: 'अहल्या', subtitle: 'ब्रह्मा की रचना', parent: 'brahma', yug: 'satya', parichay: 'ब्रह्मा जी द्वारा रची गई ब्रह्मांड की सबसे सुंदर स्त्री (बाद में महर्षि गौतम की पत्नी)।' },
+    { id: 'agnishvatta_pitri', name: 'अग्निष्वात्त', subtitle: 'पितृगण', parent: 'brahma', yug: 'satya' },
+    { id: 'barhishad_pitri', name: 'बर्हिषद', subtitle: 'पितृगण', parent: 'brahma', yug: 'satya' },
+    { id: 'swaha', name: 'स्वाहा', subtitle: 'ब्रह्मा की मानस पुत्री', parent: 'brahma', yug: 'satya', parichay: 'अग्नि की पत्नी, देवताओं तक आहुति पहुँचाने वाली।' },
+    { id: 'swadha', name: 'स्वधा', subtitle: 'ब्रह्मा की मानस पुत्री', parent: 'brahma', yug: 'satya', parichay: 'पितरों की पत्नी, पितरों तक तर्पण पहुँचाने वाली।' },
+    { id: 'agni_abhimani', name: 'अग्नि (अभिमानी)', subtitle: 'मुख से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'nidra', name: 'निद्रा (योगनिद्रा)', subtitle: 'ब्रह्मा की रचना', parent: 'brahma', yug: 'satya' },
+    { id: 'apantaratamas', name: 'अपान्तरतमा', subtitle: 'वाणी से उत्पन्न मानस पुत्र', parent: 'brahma', yug: 'satya', parichay: 'ब्रह्मा जी की वाणी से उत्पन्न मानस पुत्र (बाद में वेदव्यास बने)।' },
+
+    { id: 'brahmana_varna', name: 'ब्राह्मण (वर्ण)', subtitle: 'मुख से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'kshatriya_varna', name: 'क्षत्रिय (वर्ण)', subtitle: 'भुजाओं से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'vaishya_varna', name: 'वैश्य (वर्ण)', subtitle: 'जंघाओं से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'shudra_varna', name: 'शूद्र (वर्ण)', subtitle: 'पैरों से उत्पन्न', parent: 'brahma', yug: 'satya' },
 ];
