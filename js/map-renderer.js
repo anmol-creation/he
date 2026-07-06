@@ -59,11 +59,22 @@ window.MapRenderer = {
                         wives.forEach(wife => {
                             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                             const startX = husband.x;
-                            const startY = husband.y + 40;
+                            let startY = husband.y + 40;
                             const endX = wife.x;
-                            const endY = wife.y - 40;
-                            const controlY = startY + (endY - startY) / 2;
-                            path.setAttribute('d', `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`);
+                            let endY = wife.y - 40;
+
+                            let controlY = startY + (endY - startY) / 2;
+                            let dAttribute = `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`;
+
+                            // Adjust wire for single wife on same Y axis
+                            if (wives.length === 1 && husband.y === wife.y) {
+                                startY = husband.y; // side of node conceptually
+                                endY = wife.y;
+                                controlY = startY;
+                                dAttribute = `M ${startX} ${startY} L ${endX} ${endY}`;
+                            }
+
+                            path.setAttribute('d', dAttribute);
                             path.setAttribute('class', 'map-wire');
                             path.setAttribute('stroke', '#FF1493'); // Marriage color
                             svg.appendChild(path);
