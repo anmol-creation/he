@@ -1,4 +1,33 @@
 export const brahmaBaseData = [
+    // Wives of Brahma
+    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'satya' },
+    { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya' },
+    { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya' },
+
+    // Mind/Body-born creations
+    { id: 'ribhu', name: 'ऋभु', subtitle: 'मानस पुत्र', parent: 'brahma', yug: 'satya' },
+    { id: 'hansa', name: 'हंस', subtitle: 'मानस पुत्र', parent: 'brahma', yug: 'satya' },
+    { id: 'atharva', name: 'अथर्वा', subtitle: 'ज्येष्ठ मानस पुत्र', parent: 'brahma', yug: 'satya' },
+    { id: 'dharma_deva', name: 'धर्म', subtitle: 'वक्षस्थल से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'kamadeva', name: 'कामदेव', subtitle: 'हृदय से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'rudra_ekadash', name: 'रुद्र', subtitle: 'ललाट से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'adharma', name: 'अधर्म', subtitle: 'पीठ से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'lobha', name: 'लोभ', subtitle: 'निचले होंठ से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'krodha', name: 'क्रोध', subtitle: 'भौहों से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'moha', name: 'मोह', subtitle: 'बुद्धि से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'ahamkara', name: 'अहंकार', subtitle: 'अहंकार से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'pramada', name: 'प्रमाद', subtitle: 'कंठ से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'mrityu', name: 'मृत्यु', subtitle: 'आँखों से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'bhaya', name: 'भय', subtitle: 'नाभि से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'nirriti', name: 'निरृति', subtitle: 'मलद्वार से उत्पन्न', parent: 'brahma', yug: 'satya' },
+    { id: 'sankalpa', name: 'संकल्प', subtitle: 'इच्छा से उत्पन्न', parent: 'brahma', yug: 'satya' },
+
+    // Personifications / Veda
+    { id: 'rigveda', name: 'ऋग्वेद', subtitle: 'पूर्व मुख से', parent: 'brahma', yug: 'satya' },
+    { id: 'yajurveda', name: 'यजुर्वेद', subtitle: 'दक्षिण मुख से', parent: 'brahma', yug: 'satya' },
+    { id: 'samaveda', name: 'सामवेद', subtitle: 'पश्चिम मुख से', parent: 'brahma', yug: 'satya' },
+    { id: 'atharvaveda', name: 'अथर्ववेद', subtitle: 'उत्तर मुख से', parent: 'brahma', yug: 'satya' },
+
     { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya' },
     { id: 'sanandan', name: 'सनन्दन', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya' },
     { id: 'sanatan', name: 'सनातन', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya' },
