@@ -53,8 +53,8 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
     if (node.spouses.length === 1) {
         const spouseNode = nodesMap.get(node.spouses[0]);
         if (spouseNode) {
-            // Single spouse: Same Y as husband, but shifted right by husband's width + gap
-            spouseNode.x = node.x + NODE_WIDTH + 50;
+            // Single spouse: Same Y as husband, shifted by the layout engine's contour calculation
+            spouseNode.x = node.x + spouseNode.layout.x;
             spouseNode.y = node.y;
             // Position spouse's children (if directly attached to her)
             spouseNode.children.forEach(childId => {
@@ -65,14 +65,11 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
         }
     } else if (node.spouses.length > 1) {
         // Multiple spouses: Below husband (depth + 0.5 roughly translated to Y offset)
-        // They need to be arranged horizontally.
-        const totalSpousesWidth = node.spouses.length * NODE_WIDTH + (node.spouses.length - 1) * 50;
-        let startSpouseX = node.x - (totalSpousesWidth / 2) + (NODE_WIDTH / 2);
-
-        node.spouses.forEach((spouseId, idx) => {
+        node.spouses.forEach((spouseId) => {
             const spouseNode = nodesMap.get(spouseId);
             if (spouseNode) {
-                spouseNode.x = startSpouseX + (idx * (NODE_WIDTH + 50));
+                // Use the relative x calculated by the true auto-slip contour in contour-calculator.js
+                spouseNode.x = node.x + spouseNode.layout.x;
                 spouseNode.y = node.y + 150; // Y + 150px
 
                 spouseNode.children.forEach(childId => {

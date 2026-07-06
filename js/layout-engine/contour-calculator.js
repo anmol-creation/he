@@ -93,6 +93,64 @@ export function calculateSubtreeLayout(nodesMap, nodeId) {
         mergeContours(node.layout.contours, childNode.layout.contours, childNode.layout.x);
     });
 
+    // --- New Wives Contour Merging Logic ---
+    // Wives also have contours (especially if they have children directly attached to them).
+    // We must merge their contours into the husband's global contour array so they take up space.
+    if (node.spouses.length > 0) {
+        let currentSpouseX = 0;
+
+        if (node.spouses.length === 1) {
+            // Single spouse is offset by a fixed amount initially (since she's adjacent)
+            // But we must also ensure her children don't overlap the husband's direct children
+            currentSpouseX = NODE_WIDTH + MIN_GAP_X;
+            const spouseNode = nodesMap.get(node.spouses[0]);
+            spouseNode.layout.x = currentSpouseX; // Set local relative X
+            mergeContours(node.layout.contours, spouseNode.layout.contours, currentSpouseX);
+        } else {
+            // Multiple spouses use true auto-slip against each other
+            let spousesContour = { min: [], max: [] };
+            let lastSpX = 0;
+
+            node.spouses.forEach((spouseId, idx) => {
+                const spouseNode = nodesMap.get(spouseId);
+
+                if (idx === 0) {
+                    spouseNode.layout.x = 0;
+                } else {
+                    let maxRequiredShift = 0;
+                    for (let i = 0; i < spouseNode.layout.contours.min.length; i++) {
+                        if (spousesContour.max[i] !== undefined) {
+                            const shift = (spousesContour.max[i] + MIN_GAP_X) - spouseNode.layout.contours.min[i];
+                            if (shift > maxRequiredShift) {
+                                maxRequiredShift = shift;
+                            }
+                        }
+                    }
+                    if (maxRequiredShift === 0) {
+                        const prevSpouseNode = nodesMap.get(node.spouses[idx-1]);
+                        maxRequiredShift = prevSpouseNode.layout.x + prevSpouseNode.layout.width + MIN_GAP_X;
+                    }
+                    spouseNode.layout.x = maxRequiredShift;
+                }
+
+                mergeContours(spousesContour, spouseNode.layout.contours, spouseNode.layout.x);
+                lastSpX = spouseNode.layout.x;
+            });
+
+            // Center the husband over the block of spouses
+            const totalSpousesWidth = (lastSpX + NODE_WIDTH); // roughly
+            const husbandCenterOffset = -(totalSpousesWidth / 2) + (NODE_WIDTH / 2);
+
+            // Shift all spouses to center them under the husband's relative 0, and merge into husband
+            node.spouses.forEach(spouseId => {
+                const spouseNode = nodesMap.get(spouseId);
+                spouseNode.layout.x += husbandCenterOffset;
+                mergeContours(node.layout.contours, spouseNode.layout.contours, spouseNode.layout.x);
+            });
+        }
+    }
+
+
     // Center parent above children
     if (node.children.length > 0) {
         const firstChild = nodesMap.get(node.children[0]);
