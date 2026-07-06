@@ -344,6 +344,60 @@ export const brahmaBaseData = [
     { id: 'karmashreshtha', name: 'कर्मश्रेष्ठ', subtitle: 'पुलह पुत्र', parent: 'pulaha', mother: 'gati_pulaha', yug: 'satya' },
     { id: 'variyan', name: 'वरीयां', subtitle: 'पुलह पुत्र', parent: 'pulaha', mother: 'gati_pulaha', yug: 'satya' },
 
+    // --- DHARMA DEVA LINEAGE (Sons of Brahma) ---
+    { id: 'murti_dharma', name: 'मूर्ति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'shraddha_dharma', name: 'श्रद्धा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'maitri_dharma', name: 'मैत्री', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'daya_dharma', name: 'दया', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'shanti_dharma', name: 'शान्ति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'tushti_dharma', name: 'तुष्टि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'pushti_dharma', name: 'पुष्टि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'kriya_dharma', name: 'क्रिया', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'unnati_dharma', name: 'उन्नति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'buddhi_dharma', name: 'बुद्धि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'medha_dharma', name: 'मेधा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'titiksha_dharma', name: 'तितिक्षा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'hri_dharma', name: 'ह्री (लज्जा)', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+
+    { id: 'nara_narayana', name: 'नर-नारायण', subtitle: 'मूर्ति के पुत्र', parent: 'dharma_deva', mother: 'murti_dharma', yug: 'satya' },
+    { id: 'shubha', name: 'शुभ', subtitle: 'श्रद्धा के पुत्र', parent: 'dharma_deva', mother: 'shraddha_dharma', yug: 'satya' },
+    { id: 'prasada', name: 'प्रसाद', subtitle: 'मैत्री के पुत्र', parent: 'dharma_deva', mother: 'maitri_dharma', yug: 'satya' },
+    { id: 'abhaya', name: 'अभय', subtitle: 'दया के पुत्र', parent: 'dharma_deva', mother: 'daya_dharma', yug: 'satya' },
+    { id: 'sukha', name: 'सुख', subtitle: 'शान्ति के पुत्र', parent: 'dharma_deva', mother: 'shanti_dharma', yug: 'satya' },
+    { id: 'muda', name: 'मुद', subtitle: 'तुष्टि के पुत्र', parent: 'dharma_deva', mother: 'tushti_dharma', yug: 'satya' },
+    { id: 'smaya', name: 'स्मय', subtitle: 'पुष्टि के पुत्र', parent: 'dharma_deva', mother: 'pushti_dharma', yug: 'satya' },
+    { id: 'yoga', name: 'योग', subtitle: 'क्रिया के पुत्र', parent: 'dharma_deva', mother: 'kriya_dharma', yug: 'satya' },
+    { id: 'darpa', name: 'दर्प', subtitle: 'उन्नति के पुत्र', parent: 'dharma_deva', mother: 'unnati_dharma', yug: 'satya' },
+    { id: 'artha', name: 'अर्थ', subtitle: 'बुद्धि के पुत्र', parent: 'dharma_deva', mother: 'buddhi_dharma', yug: 'satya' },
+    { id: 'smriti', name: 'स्मृति', subtitle: 'मेधा के पुत्र', parent: 'dharma_deva', mother: 'medha_dharma', yug: 'satya' },
+    { id: 'kshema', name: 'क्षेम', subtitle: 'तितिक्षा के पुत्र', parent: 'dharma_deva', mother: 'titiksha_dharma', yug: 'satya' },
+    { id: 'prashraya', name: 'प्रश्रय', subtitle: 'ह्री के पुत्र', parent: 'dharma_deva', mother: 'hri_dharma', yug: 'satya' },
+
+    // --- ADHARMA LINEAGE ---
+    { id: 'mrisha_adharma', name: 'मृषा', subtitle: 'अधर्म की पत्नी', spouseOf: 'adharma', yug: 'satya' },
+    { id: 'dambha', name: 'दम्भ', subtitle: 'अधर्म पुत्र', parent: 'adharma', mother: 'mrisha_adharma', yug: 'satya' },
+    { id: 'maya_adharma', name: 'माया', subtitle: 'अधर्म पुत्री', parent: 'adharma', mother: 'mrisha_adharma', yug: 'satya' },
+    { id: 'maya_spouse', name: 'माया', subtitle: 'दम्भ की पत्नी', spouseOf: 'dambha', yug: 'satya' }, // incest representation
+    { id: 'lobha_adharma', name: 'लोभ', subtitle: 'दम्भ पुत्र', parent: 'dambha', mother: 'maya_spouse', yug: 'satya' },
+    { id: 'nikriti', name: 'निकृति', subtitle: 'दम्भ पुत्री', parent: 'dambha', mother: 'maya_spouse', yug: 'satya' },
+    { id: 'nikriti_spouse', name: 'निकृति', subtitle: 'लोभ की पत्नी', spouseOf: 'lobha_adharma', yug: 'satya' },
+    { id: 'krodha_adharma', name: 'क्रोध', subtitle: 'लोभ पुत्र', parent: 'lobha_adharma', mother: 'nikriti_spouse', yug: 'satya' },
+    { id: 'hinsa', name: 'हिंसा', subtitle: 'लोभ पुत्री', parent: 'lobha_adharma', mother: 'nikriti_spouse', yug: 'satya' },
+    { id: 'hinsa_spouse', name: 'हिंसा', subtitle: 'क्रोध की पत्नी', spouseOf: 'krodha_adharma', yug: 'satya' },
+    { id: 'kali', name: 'कलि', subtitle: 'क्रोध पुत्र', parent: 'krodha_adharma', mother: 'hinsa_spouse', yug: 'satya' },
+    { id: 'durukti', name: 'दुरुक्ति', subtitle: 'क्रोध पुत्री', parent: 'krodha_adharma', mother: 'hinsa_spouse', yug: 'satya' },
+    { id: 'durukti_spouse', name: 'दुरुक्ति', subtitle: 'कलि की पत्नी', spouseOf: 'kali', yug: 'satya' },
+    { id: 'mrityu_adharma', name: 'मृत्यु', subtitle: 'कलि पुत्र', parent: 'kali', mother: 'durukti_spouse', yug: 'satya' },
+    { id: 'bhiti', name: 'भीति', subtitle: 'कलि पुत्री', parent: 'kali', mother: 'durukti_spouse', yug: 'satya' },
+    { id: 'bhiti_spouse', name: 'भीति', subtitle: 'मृत्यु की पत्नी', spouseOf: 'mrityu_adharma', yug: 'satya' },
+    { id: 'niraya', name: 'निरय', subtitle: 'मृत्यु पुत्र', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' },
+    { id: 'yatana', name: 'यातना', subtitle: 'मृत्यु पुत्री', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' },
+
+    // --- KAMADEVA LINEAGE (Son of Brahma) ---
+    { id: 'rati', name: 'रति', subtitle: 'कामदेव पत्नी / दक्ष पुत्री', parent: 'daksha', spouseOf: 'kamadeva', yug: 'satya' },
+    { id: 'harsha', name: 'हर्ष', subtitle: 'कामदेव पुत्र', parent: 'kamadeva', mother: 'rati', yug: 'satya' },
+    { id: 'yash_kamadeva', name: 'यश', subtitle: 'कामदेव पुत्र', parent: 'kamadeva', mother: 'rati', yug: 'satya' },
+
     // --- PULAHA'S FURTHER DESCENDANTS & SPECIES ---
     { id: 'kamadeva_rishi', name: 'कामदेव (ऋषि)', subtitle: 'सहिष्णु के पुत्र', parent: 'sahishnu', yug: 'satya', parichay: 'ऋषि सहिष्णु के पुत्र। (ये रति-पति कामदेव से अलग हैं)।' },
 
