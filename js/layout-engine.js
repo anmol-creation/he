@@ -23,8 +23,13 @@ class LayoutEngine {
 
         // Pre-process: Auto-duplicate female nodes with BOTH parent and spouseOf
         const processedData = [];
+
+        // Helper to check if a node exists in rawData
+        const nodeExists = (id) => this.rawData.some(d => d.id === id);
+
         this.rawData.forEach(node => {
-            if (node.parent && node.spouseOf) {
+            // Only auto-duplicate if BOTH the parent and the spouse actually exist in the data
+            if (node.parent && node.spouseOf && nodeExists(node.parent) && nodeExists(node.spouseOf)) {
                 // Rule 4: Auto Duplication
 
                 // Node A: Daughter Node (in father's tree)
@@ -75,7 +80,8 @@ class LayoutEngine {
             if (node.spouseOf && this.nodesMap.has(node.spouseOf)) {
                 const partner = this.nodesMap.get(node.spouseOf);
                 if (partner) {
-                    partner.children.push(node.id);
+                    // Put in spouses array, not children array
+                    partner.spouses.push(node.id);
                 }
             } else if (node.parent && this.nodesMap.has(node.parent) && !node.spouseOf) {
                 let pushedToMother = false;
@@ -104,7 +110,32 @@ class LayoutEngine {
 
         node.depth = currentDepth;
 
-        // Children (which includes spouses now) are one depth lower
+        // Handle spouses:
+        // Single spouse stays on same visual generation logic usually, but to prevent overlaps we process them
+        // We assign depth logic separately for spouses
+        if (node.spouses.length === 1) {
+            const spouseNode = this.nodesMap.get(node.spouses[0]);
+            if (spouseNode) {
+                spouseNode.depth = currentDepth; // Same depth level visually initially
+                // Calculate children of spouse (if any directly attached)
+                spouseNode.children.forEach(childId => {
+                    this.calculateDepths(childId, currentDepth + 1);
+                });
+            }
+        } else if (node.spouses.length > 1) {
+            // Multiple spouses pushed slightly down (visually handled later, depth + 0.5 conceptually)
+            node.spouses.forEach(spouseId => {
+                const spouseNode = this.nodesMap.get(spouseId);
+                if (spouseNode) {
+                    spouseNode.depth = currentDepth + 0.5; // Custom half-depth flag
+                    spouseNode.children.forEach(childId => {
+                        this.calculateDepths(childId, currentDepth + 1); // Children are full depth below husband
+                    });
+                }
+            });
+        }
+
+        // True Children are one full depth lower
         node.children.forEach(childId => {
             this.calculateDepths(childId, currentDepth + 1);
         });
@@ -146,16 +177,19 @@ class LayoutEngine {
             const nodeColor = rootColors[nodeId] || colorToPass || defaultColor;
             node.inheritedColor = nodeColor;
 
+            node.spouses.forEach(spouseId => {
+                const spouse = this.nodesMap.get(spouseId);
+                if (spouse) {
+                    spouse.inheritedColor = nodeColor;
+                    // wives don't have children mapped directly in traversal if we just color them,
+                    // but we will color their children from the husband's tree traversal below.
+                }
+            });
+
             node.children.forEach(childId => {
                 const child = this.nodesMap.get(childId);
                 if (child) {
-                    if (child.spouseOf === nodeId) {
-                        // It's a wife node logically structured as a child, wives don't inherit lineage color for their own children usually, but they are pink anyway.
-                        child.inheritedColor = nodeColor;
-                    } else {
-                        // True child, inherits father's color
-                        traverseAndColor(childId, nodeColor);
-                    }
+                    traverseAndColor(childId, nodeColor);
                 }
             });
         };
@@ -196,7 +230,10 @@ class LayoutEngine {
         const node = this.nodesMap.get(nodeId);
         if (!node) return;
 
-        // Post-order traversal: calculate children first
+        // Post-order traversal: calculate spouses and children first
+        node.spouses.forEach(spouseId => {
+            this.calculateSubtreeLayout(spouseId);
+        });
         node.children.forEach(childId => {
             this.calculateSubtreeLayout(childId);
         });
@@ -207,7 +244,18 @@ class LayoutEngine {
             max: [node.layout.width]
         };
 
-        if (node.children.length === 0) {
+        // If it's a single spouse, its width conceptually extends the husband's width
+        if (node.spouses.length === 1) {
+            node.layout.contours.max[0] = NODE_WIDTH + 50 + NODE_WIDTH; // husband + gap + wife
+        } else if (node.spouses.length > 1) {
+            const totalSpousesWidth = node.spouses.length * NODE_WIDTH + (node.spouses.length - 1) * 50;
+            const halfSpouses = totalSpousesWidth / 2;
+            const husbandCenter = NODE_WIDTH / 2;
+            node.layout.contours.min[0] = Math.min(0, husbandCenter - halfSpouses);
+            node.layout.contours.max[0] = Math.max(NODE_WIDTH, husbandCenter + halfSpouses);
+        }
+
+        if (node.children.length === 0 && node.spouses.length === 0) {
             return;
         }
 
@@ -248,26 +296,28 @@ class LayoutEngine {
         });
 
         // Center parent above children
-        const firstChild = this.nodesMap.get(node.children[0]);
-        const lastChild = this.nodesMap.get(node.children[node.children.length - 1]);
+        if (node.children.length > 0) {
+            const firstChild = this.nodesMap.get(node.children[0]);
+            const lastChild = this.nodesMap.get(node.children[node.children.length - 1]);
 
-        const firstChildCenter = firstChild.layout.x + (firstChild.layout.width / 2);
-        const lastChildCenter = lastChild.layout.x + (lastChild.layout.width / 2);
-        const childrenCenter = (firstChildCenter + lastChildCenter) / 2;
+            const firstChildCenter = firstChild.layout.x + (firstChild.layout.width / 2);
+            const lastChildCenter = lastChild.layout.x + (lastChild.layout.width / 2);
+            const childrenCenter = (firstChildCenter + lastChildCenter) / 2;
 
-        // Shift all children to center them under the parent (parent remains at relative x=0)
-        const parentShift = (node.layout.width / 2) - childrenCenter;
+            // Shift all children to center them under the parent (parent remains at relative x=0)
+            const parentShift = (node.layout.width / 2) - childrenCenter;
 
-        node.children.forEach(childId => {
-            const childNode = this.nodesMap.get(childId);
-            childNode.layout.x += parentShift;
-        });
+            node.children.forEach(childId => {
+                const childNode = this.nodesMap.get(childId);
+                childNode.layout.x += parentShift;
+            });
 
-        // We must also shift the merged child contours in the parent's contour array
-        for(let d=1; d < node.layout.contours.min.length; d++) {
-            if(node.layout.contours.min[d] !== undefined) {
-                node.layout.contours.min[d] += parentShift;
-                node.layout.contours.max[d] += parentShift;
+            // We must also shift the merged child contours in the parent's contour array
+            for(let d=1; d < node.layout.contours.min.length; d++) {
+                if(node.layout.contours.min[d] !== undefined) {
+                    node.layout.contours.min[d] += parentShift;
+                    node.layout.contours.max[d] += parentShift;
+                }
             }
         }
     }
@@ -280,7 +330,41 @@ class LayoutEngine {
         // Calculate Y strictly based on depth: startY + (depth * spacing)
         node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
 
-        // Children absolute position
+        // Spouses absolute position
+        if (node.spouses.length === 1) {
+            const spouseNode = this.nodesMap.get(node.spouses[0]);
+            if (spouseNode) {
+                // Single spouse: Same Y as husband, but shifted right by husband's width + gap
+                spouseNode.x = node.x + NODE_WIDTH + 50;
+                spouseNode.y = node.y;
+                // Position spouse's children (if directly attached to her)
+                spouseNode.children.forEach(childId => {
+                    const childNode = this.nodesMap.get(childId);
+                    // Child positions are relative to their parent
+                    this.calculateAbsolutePositions(childId, spouseNode.x + childNode.layout.x, startY);
+                });
+            }
+        } else if (node.spouses.length > 1) {
+            // Multiple spouses: Below husband (depth + 0.5 roughly translated to Y offset)
+            // They need to be arranged horizontally.
+            const totalSpousesWidth = node.spouses.length * NODE_WIDTH + (node.spouses.length - 1) * 50;
+            let startSpouseX = node.x - (totalSpousesWidth / 2) + (NODE_WIDTH / 2);
+
+            node.spouses.forEach((spouseId, idx) => {
+                const spouseNode = this.nodesMap.get(spouseId);
+                if (spouseNode) {
+                    spouseNode.x = startSpouseX + (idx * (NODE_WIDTH + 50));
+                    spouseNode.y = node.y + 150; // Y + 150px
+
+                    spouseNode.children.forEach(childId => {
+                        const childNode = this.nodesMap.get(childId);
+                        this.calculateAbsolutePositions(childId, spouseNode.x + childNode.layout.x, startY);
+                    });
+                }
+            });
+        }
+
+        // True Children absolute position (Children of Husband)
         node.children.forEach(childId => {
             const childNode = this.nodesMap.get(childId);
             this.calculateAbsolutePositions(childId, node.x + childNode.layout.x, startY);
