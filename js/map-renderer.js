@@ -97,7 +97,13 @@ window.MapRenderer = {
                     }
                 }
             } else if (data.parent) {
-                const sourceNode = dataList.find(d => d.id === data.parent);
+                // Determine connection source: Mother first, else Father
+                let sourceNodeId = data.parent;
+                if (data.mother && dataList.find(d => d.id === data.mother)) {
+                    sourceNodeId = data.mother;
+                }
+                const sourceNode = dataList.find(d => d.id === sourceNodeId);
+
                 if (sourceNode) {
                     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                     const startX = sourceNode.x;

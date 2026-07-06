@@ -1,4 +1,5 @@
 // Core Init file tying all modules together
+import './layout-engine/index.js';
 
 function initMap() {
     console.log("initMap called");
