@@ -105,7 +105,7 @@ export const brahmaBaseData = [
     { id: 'nabhi', name: 'नाभि', subtitle: 'आग्नीध्र पुत्र', parent: 'agnidhra', yug: 'satya' },
     { id: 'merudevi', name: 'मेरुदेवी', subtitle: 'नाभि पत्नी', parent: '', spouseOf: 'nabhi', yug: 'satya' },
     { id: 'rishabhdev', name: 'ऋषभदेव', subtitle: 'तीर्थंकर / विष्णु अवतार', parent: 'nabhi', mother: 'merudevi', yug: 'satya', parichay: 'भगवान विष्णु के अंशावतार और जैन धर्म के प्रथम तीर्थंकर (आदिनाथ)।' },
-    { id: 'jayanti_rishabha', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / ऋषभ पत्नी', parent: '', spouseOf: 'rishabhdev', yug: 'satya' },
+    { id: 'jayanti_rishabha', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / ऋषभ पत्नी', parent: 'indra', spouseOf: 'rishabhdev', yug: 'satya' },
     { id: 'bharata_jada', name: 'भरत (जड़ भरत)', subtitle: 'चक्रवर्ती सम्राट', parent: 'rishabhdev', mother: 'jayanti_rishabha', yug: 'satya', parichay: 'महान चक्रवर्ती सम्राट, जिनके नाम पर हमारे देश का नाम भारतवर्ष पड़ा।' },
 
     // Deeper Lineage of Bharata
@@ -257,7 +257,7 @@ export const brahmaBaseData = [
 
     // Shukracharya & his family
     { id: 'shukracharya', name: 'शुक्राचार्य', subtitle: 'दैत्यों के गुरु', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
-    { id: 'jayanti', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / शुक्र पत्नी', parent: '', spouseOf: 'shukracharya', yug: 'satya' },
+    { id: 'jayanti', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / शुक्र पत्नी', parent: 'indra', spouseOf: 'shukracharya', yug: 'satya' },
     { id: 'devayani', name: 'देवयानी', subtitle: 'शुक्राचार्य पुत्री', parent: 'shukracharya', mother: 'jayanti', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री, जिनका विवाह राजा ययाति से हुआ।' },
     { id: 'araj', name: 'अरज', subtitle: 'शुक्राचार्य पुत्री', parent: 'shukracharya', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री जिसे राजा दंड ने अपमानित किया था, जिसके कारण दंडकारण्य वन बना।' },
     { id: 'shanda', name: 'शण्ड', subtitle: 'शुक्राचार्य पुत्र', parent: 'shukracharya', yug: 'satya', parichay: 'हिरण्यकशिपु के गुरु-पुत्र, जो प्रह्लाद को पढ़ाते थे।' },

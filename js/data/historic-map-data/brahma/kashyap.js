@@ -17,7 +17,13 @@ export const kashyapData = [
     // Aditi's Children
     { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'sanjna_wife', name: 'संज्ञा', subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री', parent: '', spouseOf: 'surya', yug: 'satya' },
+
     { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
+    { id: 'shachi_indrani', name: 'शची (इंद्राणी)', subtitle: 'इंद्र की पत्नी', parent: 'puloman_danava', spouseOf: 'indra', yug: 'satya' },
+    { id: 'jayanta', name: 'जयंत', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya', parichay: 'देवराज इंद्र और शची के पुत्र (रामायण में काक रूप धारण किया था)।' },
+    { id: 'devasena', name: 'देवसेना', subtitle: 'इंद्र पुत्री', parent: 'indra', mother: 'shachi_indrani', yug: 'satya', parichay: 'इंद्र की पुत्री, जिनका विवाह भगवान कार्तिकेय से हुआ।' },
+    { id: 'midhusha', name: 'मीढुष', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya' },
+
     { id: 'vayu', name: 'वायु', subtitle: 'पवन देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'upendra_vamana', name: 'उपेन्द्र (वामन)', subtitle: 'विष्णु अवतार (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'treta', parichay: 'अदिति के पुत्र के रूप में भगवान विष्णु का वामन अवतार।' },
 
