@@ -56,7 +56,28 @@ export const brahmaBaseData = [
     { id: 'devahuti', name: 'देवहूति', subtitle: 'मनु पुत्री', parent: 'svayambhuva_manu', mother: 'shatarupa', yug: 'satya' },
     { id: 'kardama_prajapati', name: 'कर्दम (प्रजापति)', subtitle: 'ब्रह्मा की छाया से', parent: 'brahma', spouseOf: 'devahuti', yug: 'satya' },
     { id: 'kapila_avatar', name: 'कपिल मुनि', subtitle: 'विष्णु अवतार', parent: 'kardama_prajapati', mother: 'devahuti', yug: 'satya', parichay: 'सांख्य दर्शन के प्रणेता महान मुनि और विष्णु के अवतार।' },
-    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya' },
+
+    // --- MARICHI LINEAGE ---
+    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya' },
+    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya' },
+    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya' },
+
+    // Marichi's children from Kala
+    { id: 'purnima_marichi', name: 'पूर्णिमा', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'kala', yug: 'satya' },
+    { id: 'viraja_purnima', name: 'विरज', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' },
+    { id: 'vishvaga_purnima', name: 'विश्वग', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' },
+    { id: 'devakulya_purnima', name: 'देवकुल्या', subtitle: 'पूर्णिमा पुत्री', parent: 'purnima_marichi', yug: 'satya', parichay: 'पूर्णिमा की पुत्री जो बाद में नदी रूप (गंगा) में परिणत हुईं।' },
+
+    // Marichi's child from Sambhuti
+    { id: 'paurnamasa_marichi', name: 'पौर्णमास', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'sambhuti_marichi', yug: 'satya' },
+
+    // Marichi's Apsara Daughters
+    { id: 'sulochna_apsara', name: 'सुलोचना', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' },
+    { id: 'vishalakshi_apsara', name: 'विशालाक्षी', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' },
+    { id: 'suvarna_apsara', name: 'सुवर्णा', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' },
+    { id: 'bhadraka_apsara', name: 'भद्रका', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' },
+    // ----------------------
+
     { id: 'anusuya', name: 'अनुसूया', subtitle: 'कर्दम पुत्री / अत्रि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'atri', yug: 'satya', parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।' },
     { id: 'shanti', name: 'शांति', subtitle: 'कर्दम पुत्री / अथर्वा पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', yug: 'satya' },
 
@@ -84,7 +105,7 @@ export const brahmaBaseData = [
     { id: 'nabhi', name: 'नाभि', subtitle: 'आग्नीध्र पुत्र', parent: 'agnidhra', yug: 'satya' },
     { id: 'merudevi', name: 'मेरुदेवी', subtitle: 'नाभि पत्नी', parent: '', spouseOf: 'nabhi', yug: 'satya' },
     { id: 'rishabhdev', name: 'ऋषभदेव', subtitle: 'तीर्थंकर / विष्णु अवतार', parent: 'nabhi', mother: 'merudevi', yug: 'satya', parichay: 'भगवान विष्णु के अंशावतार और जैन धर्म के प्रथम तीर्थंकर (आदिनाथ)।' },
-    { id: 'jayanti_rishabha', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / ऋषभ पत्नी', parent: '', spouseOf: 'rishabhdev', yug: 'satya' },
+    { id: 'jayanti_rishabha', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / ऋषभ पत्नी', parent: 'indra', spouseOf: 'rishabhdev', yug: 'satya' },
     { id: 'bharata_jada', name: 'भरत (जड़ भरत)', subtitle: 'चक्रवर्ती सम्राट', parent: 'rishabhdev', mother: 'jayanti_rishabha', yug: 'satya', parichay: 'महान चक्रवर्ती सम्राट, जिनके नाम पर हमारे देश का नाम भारतवर्ष पड़ा।' },
 
     // Deeper Lineage of Bharata
@@ -236,7 +257,7 @@ export const brahmaBaseData = [
 
     // Shukracharya & his family
     { id: 'shukracharya', name: 'शुक्राचार्य', subtitle: 'दैत्यों के गुरु', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
-    { id: 'jayanti', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / शुक्र पत्नी', parent: '', spouseOf: 'shukracharya', yug: 'satya' },
+    { id: 'jayanti', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / शुक्र पत्नी', parent: 'indra', spouseOf: 'shukracharya', yug: 'satya' },
     { id: 'devayani', name: 'देवयानी', subtitle: 'शुक्राचार्य पुत्री', parent: 'shukracharya', mother: 'jayanti', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री, जिनका विवाह राजा ययाति से हुआ।' },
     { id: 'araj', name: 'अरज', subtitle: 'शुक्राचार्य पुत्री', parent: 'shukracharya', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री जिसे राजा दंड ने अपमानित किया था, जिसके कारण दंडकारण्य वन बना।' },
     { id: 'shanda', name: 'शण्ड', subtitle: 'शुक्राचार्य पुत्र', parent: 'shukracharya', yug: 'satya', parichay: 'हिरण्यकशिपु के गुरु-पुत्र, जो प्रह्लाद को पढ़ाते थे।' },
