@@ -40,49 +40,6 @@
             </div>
         </div>
 
-        <!-- Vansh & Gotra Directory (Cascading Dropdowns) -->
-        <section id="vansh-gotra-directory" style="margin-top: 2rem; margin-bottom: 3rem; background: var(--bg-dark); border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 2rem;">
-            <h3 style="color: var(--primary-saffron); margin-bottom: 1rem; font-size: 1.5rem; text-align: center;">Vansh & Gotra Directory</h3>
-            <p style="color: var(--text-light); text-align: center; margin-bottom: 2rem; font-size: 0.9rem;">Trace your lineage back to the Root Ancestor (Brahma) through your Surname or Gotra.</p>
-
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: 0 auto;">
-
-                <!-- Level 1: Pillar -->
-                <div>
-                    <label for="pillar-select" style="display: block; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 500;">1. Select Main Category (Pillar)</label>
-                    <select id="pillar-select" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; font-family: 'Poppins', sans-serif;">
-                        <option value="">-- Select Main Category --</option>
-                    </select>
-                </div>
-
-                <!-- Level 2: Subcategory/Branch -->
-                <div>
-                    <label for="subcategory-select" style="display: block; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 500;">2. Select Branch / Gotra</label>
-                    <select id="subcategory-select" disabled style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; font-family: 'Poppins', sans-serif;">
-                        <option value="">-- Select Branch / Gotra --</option>
-                    </select>
-                </div>
-
-                <!-- Level 3: Surname -->
-                <div>
-                    <label for="surname-select" style="display: block; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 500;">3. Select Surname / Up-naam</label>
-                    <select id="surname-select" disabled style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; font-family: 'Poppins', sans-serif;">
-                        <option value="">-- Select Surname --</option>
-                    </select>
-                </div>
-
-                <!-- Result Card -->
-                <div id="lineage-result-card" style="display: none; margin-top: 1rem; background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(0,0,0,0) 100%); border-left: 4px solid var(--primary-saffron); padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: white; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">Lineage Path Result</h4>
-                    <p style="color: #ccc; margin-bottom: 0.5rem;"><strong>Surname:</strong> <span id="res-surname" style="color: var(--primary-saffron);"></span></p>
-                    <p style="color: #ccc; margin-bottom: 0.5rem;"><strong>Main Pillar:</strong> <span id="res-pillar" style="color: white;"></span></p>
-                    <p style="color: #ccc; margin-bottom: 0.5rem;"><strong>Branch/Gotra:</strong> <span id="res-branch" style="color: white;"></span></p>
-                    <p style="color: #ccc; margin-top: 1rem; font-size: 1.1rem;"><strong>Root Ancestor Chain:</strong><br><span id="res-ancestor" style="color: var(--secondary-gold); display: block; margin-top: 0.5rem;"></span></p>
-                </div>
-
-            </div>
-        </section>
-
         <!-- Categories Grid -->
         <div class="portal-grid">
             <a href="entity-list.html?category=dynasties" class="portal-card">
@@ -100,7 +57,7 @@
                 <div class="portal-card-title">कालगणना और युग</div>
                 <div class="portal-card-desc">Satya, Treta, Dwapar, Kali Yug & Manvantaras</div>
             </a>
-            <a href="entity-list.html?category=surnames" class="portal-card">
+            <a href="vansh-gotra.html" class="portal-card">
                 <div class="portal-card-icon">🧬</div>
                 <div class="portal-card-title">Surnames / गोत्र</div>
                 <div class="portal-card-desc">Trace modern lineages back to ancient roots</div>
@@ -137,8 +94,6 @@
 
     <script src="../js/global.js"></script>
     <script type="module" src="../js/data/historic-data.js"></script>
-    <script src="../js/data/vansh-gotra-data.js"></script>
-    <script src="../js/vansh-gotra-ui.js"></script>
     <script src="../js/itihas-puran.js"></script>
 </body>
 </html>
