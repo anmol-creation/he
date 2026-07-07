@@ -1,6 +1,6 @@
 {
   "name": "Hindu Encyclopedia",
-  "short_name": "Itihas",
+  "short_name": "Hindu Encyclopedia",
   "description": "Interactive map and digital library of Hindu history and scriptures.",
   "start_url": "./index.html",
   "display": "standalone",
