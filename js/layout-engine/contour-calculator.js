@@ -11,12 +11,12 @@ export function calculateIntrinsicWidths(nodesMap) {
 }
 
 // Merges child contours into parent contours with an offset
-export function mergeContours(parentContours, childContours, shiftX) {
+export function mergeContours(parentContours, childContours, shiftX, depthOffset = 1) {
     for (let i = 0; i < childContours.min.length; i++) {
         const childMin = childContours.min[i] + shiftX;
         const childMax = childContours.max[i] + shiftX;
-        // The child's depth 'i' corresponds to parent's depth 'i+1'
-        const depthIndex = i + 1;
+        // depthOffset = 1 for children, 0 for spouses
+        const depthIndex = i + depthOffset;
 
         if (parentContours.min[depthIndex] === undefined) {
             parentContours.min[depthIndex] = childMin;
@@ -90,7 +90,7 @@ export function calculateSubtreeLayout(nodesMap, nodeId) {
         }
 
         // Merge this child's shifted contour into the parent's contour
-        mergeContours(node.layout.contours, childNode.layout.contours, childNode.layout.x);
+        mergeContours(node.layout.contours, childNode.layout.contours, childNode.layout.x, 1);
     });
 
     // --- New Wives Contour Merging Logic ---
@@ -105,7 +105,7 @@ export function calculateSubtreeLayout(nodesMap, nodeId) {
             currentSpouseX = NODE_WIDTH + MIN_GAP_X;
             const spouseNode = nodesMap.get(node.spouses[0]);
             spouseNode.layout.x = currentSpouseX; // Set local relative X
-            mergeContours(node.layout.contours, spouseNode.layout.contours, currentSpouseX);
+            mergeContours(node.layout.contours, spouseNode.layout.contours, currentSpouseX, 0); // depthOffset 0 for spouse
         } else {
             // Multiple spouses use true auto-slip against each other
             let spousesContour = { min: [], max: [] };
@@ -133,7 +133,7 @@ export function calculateSubtreeLayout(nodesMap, nodeId) {
                     spouseNode.layout.x = maxRequiredShift;
                 }
 
-                mergeContours(spousesContour, spouseNode.layout.contours, spouseNode.layout.x);
+                mergeContours(spousesContour, spouseNode.layout.contours, spouseNode.layout.x, 0);
                 lastSpX = spouseNode.layout.x;
             });
 
@@ -145,7 +145,7 @@ export function calculateSubtreeLayout(nodesMap, nodeId) {
             node.spouses.forEach(spouseId => {
                 const spouseNode = nodesMap.get(spouseId);
                 spouseNode.layout.x += husbandCenterOffset;
-                mergeContours(node.layout.contours, spouseNode.layout.contours, spouseNode.layout.x);
+                mergeContours(node.layout.contours, spouseNode.layout.contours, spouseNode.layout.x, 0); // depthOffset 0 for spouse
             });
         }
     }
@@ -174,6 +174,25 @@ export function calculateSubtreeLayout(nodesMap, nodeId) {
                 node.layout.contours.min[d] += parentShift;
                 node.layout.contours.max[d] += parentShift;
             }
+        }
+    }
+
+    // --- Strict Bounding Box Flattening (The New Rule) ---
+    // Make sure the entire width reserved by any generation of this lineage
+    // is applied to ALL generations of this contour. This ensures that a sibling
+    // placed next to this node will completely clear this node's entire family tree.
+    let globalMin = 0;
+    let globalMax = 0;
+    for (let i = 0; i < node.layout.contours.min.length; i++) {
+        if (node.layout.contours.min[i] !== undefined) {
+            globalMin = Math.min(globalMin, node.layout.contours.min[i]);
+            globalMax = Math.max(globalMax, node.layout.contours.max[i]);
+        }
+    }
+    for (let i = 0; i < node.layout.contours.min.length; i++) {
+        if (node.layout.contours.min[i] !== undefined) {
+            node.layout.contours.min[i] = globalMin;
+            node.layout.contours.max[i] = globalMax;
         }
     }
 }
