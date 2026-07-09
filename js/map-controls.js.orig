@@ -10,7 +10,6 @@ window.MapControls = {
                 state.isDragging = true;
                 state.startX = state.touchStartX - state.translateX;
                 state.startY = state.touchStartY - state.translateY;
-                state.touchStartTime = Date.now();
             } else if (e.touches.length === 2) {
                 state.isDragging = false;
                 state.initialPinchDistance = Math.hypot(
@@ -52,43 +51,6 @@ window.MapControls = {
             if (e.touches.length === 0) {
                 state.isDragging = false;
                 state.initialPinchDistance = null;
-
-                // Check for swipe gesture for node navigation
-                if (state.touchStartTime && !state.isMacroMode && state.focusedNodeId) {
-                    const touchDuration = Date.now() - state.touchStartTime;
-                    const endTouch = e.changedTouches[0];
-                    const deltaX = endTouch.clientX - state.touchStartX;
-                    const deltaY = endTouch.clientY - state.touchStartY;
-
-                    const absX = Math.abs(deltaX);
-                    const absY = Math.abs(deltaY);
-
-                    // Fast swipe (less than 300ms) and distance > 30px
-                    if (touchDuration < 300 && Math.max(absX, absY) > 30) {
-                        let direction = null;
-                        // Determine primary direction of swipe
-                        if (absX > absY) {
-                            direction = deltaX > 0 ? 'right' : 'left';
-                        } else {
-                            direction = deltaY > 0 ? 'down' : 'up';
-                        }
-
-                        // Note: A left swipe on screen means the user wants to see what is on the right,
-                        // but intuitively "swiping left" means "go left". We will map:
-                        // swipe left (finger moves left, deltaX < 0) -> move focus left
-                        // swipe right (finger moves right, deltaX > 0) -> move focus right
-                        // swipe up (finger moves up, deltaY < 0) -> move focus up
-                        // swipe down (finger moves down, deltaY > 0) -> move focus down
-
-                        const actualDir = absX > absY
-                            ? (deltaX < 0 ? 'left' : 'right')
-                            : (deltaY < 0 ? 'up' : 'down');
-
-                        if (window.MapControls && window.MapControls.navigateDirection) {
-                            window.MapControls.navigateDirection(actualDir);
-                        }
-                    }
-                }
             }
         });
 
@@ -205,46 +167,5 @@ window.MapControls = {
             if (progress < 1) requestAnimationFrame(animate);
         }
         animate();
-    },
-
-    navigateDirection(direction) {
-        const state = window.MapState;
-        if (!state.focusedNodeId || state.isMacroMode) return;
-
-        const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
-        const current = dataList.find(d => d.id === state.focusedNodeId);
-        if (!current) return;
-
-        let bestCandidate = null;
-        let minScore = Infinity;
-
-        for (const node of dataList) {
-            if (node.id === current.id) continue;
-
-            const dx = node.x - current.x;
-            const dy = node.y - current.y;
-
-            let isValidDirection = false;
-            if (direction === 'left' && dx < -10) isValidDirection = true;
-            else if (direction === 'right' && dx > 10) isValidDirection = true;
-            else if (direction === 'up' && dy < -10) isValidDirection = true;
-            else if (direction === 'down' && dy > 10) isValidDirection = true;
-
-            if (isValidDirection) {
-                let primaryDist = direction === 'left' || direction === 'right' ? Math.abs(dx) : Math.abs(dy);
-                let secondaryDist = direction === 'left' || direction === 'right' ? Math.abs(dy) : Math.abs(dx);
-
-                let score = primaryDist + (secondaryDist * 3);
-
-                if (score < minScore) {
-                    minScore = score;
-                    bestCandidate = node;
-                }
-            }
-        }
-
-        if (bestCandidate) {
-            this.focusOnNode(bestCandidate.id);
-        }
     }
 };
