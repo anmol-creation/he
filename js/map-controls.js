@@ -65,7 +65,7 @@ window.MapControls = {
                 state.isDragging = false;
                 state.initialPinchDistance = null;
 
-                // Swipe Navigation logic based on relationships
+                // Fast Swipe Navigation (Parents/Children/Siblings only)
                 if (state.touchStartTime && !state.isMacroMode && state.focusedNodeId) {
                     const touchDuration = Date.now() - state.touchStartTime;
                     const endTouch = e.changedTouches[0];
@@ -75,14 +75,7 @@ window.MapControls = {
                     const absX = Math.abs(deltaX);
                     const absY = Math.abs(deltaY);
 
-                    // Fast swipe (< 300ms, > 30px distance)
                     if (touchDuration < 300 && Math.max(absX, absY) > 30) {
-                        // User Request mapping:
-                        // Top to Bottom swipe -> Upwards (Parent) -> deltaY > 0 -> 'up'
-                        // Bottom to Top swipe -> Downwards (Children) -> deltaY < 0 -> 'down'
-                        // Left to Right swipe -> Left (Sibling) -> deltaX > 0 -> 'left'
-                        // Right to Left swipe -> Right (Sibling) -> deltaX < 0 -> 'right'
-
                         const actualDir = absX > absY
                             ? (deltaX > 0 ? 'left' : 'right')
                             : (deltaY > 0 ? 'up' : 'down');
@@ -148,6 +141,10 @@ window.MapControls = {
         });
     },
 
+
+
+
+
     navigateDirection(direction) {
         const state = window.MapState;
         if (!state.focusedNodeId || state.isMacroMode) return;
@@ -159,29 +156,31 @@ window.MapControls = {
         let bestCandidate = null;
         let minScore = Infinity;
 
-        // Relationship-based Navigation Logic
+        // Visual Line Based Navigation Logic (Strictly structural/visual connections only, agnostic of relationship ID names)
         const validCandidates = dataList.filter(n => {
             if (n.id === current.id) return false;
 
-            if (direction === 'up') {
-                // Look for Parent or Mother
-                if (current.parent === n.id || current.mother === n.id) return true;
+            // Check if there's a visual line connection (up/down/spouse)
+            // A node is visually connected downwards if its source/parent draws a line down to it
+            const connectedDown = (n.parent === current.id || n.mother === current.id || n.spouseOf === current.id);
+            // A node is visually connected upwards if current draws a line up to it
+            const connectedUp = (current.parent === n.id || current.mother === n.id || current.spouseOf === n.id);
+
+            // A node is visually a lateral sibling if they share the EXACT same visual origin line
+            const connectedLateral = (
+                (n.parent && current.parent && n.parent === current.parent) ||
+                (n.mother && current.mother && n.mother === current.mother) ||
+                (n.spouseOf && current.spouseOf && n.spouseOf === current.spouseOf)
+            );
+
+            if (direction === 'up' && connectedUp) return true;
+            if (direction === 'down' && connectedDown) return true;
+            if ((direction === 'left' || direction === 'right') && (connectedLateral || connectedUp || connectedDown)) {
+                // Lateral movement can hop across siblings, or adjacent spouses, or anything on a similar Y-level
+                // that is structurally connected to the same cluster.
+                return true;
             }
-            else if (direction === 'down') {
-                // Look for Children or Wives (Wives generally drawn below or beside, but structurally they belong "down" the tree from a husband perspective, though siblings logic handles left/right)
-                if (n.parent === current.id || n.mother === current.id) return true;
-                if (n.spouseOf === current.id) return true;
-            }
-            else if (direction === 'left' || direction === 'right') {
-                // Look for Siblings or Co-wives or Husband (if current is wife)
-                // Siblings: share same parent
-                if (n.parent && current.parent && n.parent === current.parent) return true;
-                if (n.mother && current.mother && n.mother === current.mother) return true;
-                // Co-wives: share same husband
-                if (n.spouseOf && current.spouseOf && n.spouseOf === current.spouseOf) return true;
-                // Husband to Wife or Wife to Husband (allow lateral movement for spouses as well)
-                if (n.spouseOf === current.id || current.spouseOf === n.id) return true;
-            }
+
             return false;
         });
 
@@ -191,20 +190,21 @@ window.MapControls = {
 
             let isValidDirection = false;
 
-            // Spatial strictness to ensure it picks the right one among valid family members
+            // Extremely strict spatial check based on the swipe direction
             if (direction === 'left' && dx < -10) isValidDirection = true;
             else if (direction === 'right' && dx > 10) isValidDirection = true;
             else if (direction === 'up' && dy < -10) isValidDirection = true;
             else if (direction === 'down' && dy > 10) isValidDirection = true;
 
-            // If they are on the exact same spot (like multiple wives or proxy nodes), allow it based on context
+            // If they are on the exact same spot (like multiple proxy wives), allow it based on context
             if (Math.abs(dx) <= 10 && Math.abs(dy) <= 10) isValidDirection = true;
 
             if (isValidDirection) {
+                // Penalize perpendicular distance heavily to ensure straight lines are preferred
                 let primaryDist = direction === 'left' || direction === 'right' ? Math.abs(dx) : Math.abs(dy);
                 let secondaryDist = direction === 'left' || direction === 'right' ? Math.abs(dy) : Math.abs(dx);
 
-                let score = primaryDist + (secondaryDist * 3);
+                let score = primaryDist + (secondaryDist * 5);
 
                 if (score < minScore) {
                     minScore = score;
@@ -278,6 +278,5 @@ window.MapControls = {
             if (progress < 1) requestAnimationFrame(animate);
         }
         animate();
-    },
-
+    }
 };
