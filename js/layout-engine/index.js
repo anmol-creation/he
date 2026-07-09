@@ -74,7 +74,8 @@ class LayoutEngine {
 
         return {
             nodes: finalNodes,
-            transitionWires: this.transitionWires
+            transitionWires: this.transitionWires,
+            pathFinder: new window.PathFinder(finalNodes) // we will make PathFinder global
         };
     }
 }

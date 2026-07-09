@@ -18,6 +18,66 @@ window.MapUI = {
             });
         });
 
+
+        // Route UI Logic
+        const routeToggleBtn = document.getElementById('route-toggle-btn');
+        const routeBox = document.getElementById('route-search-box');
+        const findRouteBtn = document.getElementById('find-route-btn');
+        const clearRouteBtn = document.getElementById('clear-route-btn');
+        const startInput = document.getElementById('route-start-input');
+        const endInput = document.getElementById('route-end-input');
+        const errorMsg = document.getElementById('route-error-msg');
+
+        if (routeToggleBtn) {
+            routeToggleBtn.addEventListener('click', () => {
+                routeBox.classList.toggle('active');
+            });
+        }
+
+        if (clearRouteBtn) {
+            clearRouteBtn.addEventListener('click', () => {
+                startInput.value = '';
+                endInput.value = '';
+                errorMsg.style.display = 'none';
+                if (window.MapRenderer) window.MapRenderer.drawRoute(null);
+            });
+        }
+
+        if (findRouteBtn) {
+            findRouteBtn.addEventListener('click', () => {
+                const start = startInput.value.trim().toLowerCase();
+                const end = endInput.value.trim().toLowerCase();
+                errorMsg.style.display = 'none';
+
+                if (start && end && window.PathFinder) {
+                    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
+                    const pf = new window.PathFinder(dataList);
+                    const path = pf.findShortestPath(start, end);
+
+                    if (path) {
+                        if (window.MapRenderer) window.MapRenderer.drawRoute(path);
+                        // Optional: close panel if open
+                        document.getElementById('focus-panel').classList.add('hidden');
+                    } else {
+                        errorMsg.style.display = 'block';
+                    }
+                }
+            });
+        }
+
+        // Panel Start Route from Here
+        const panelStartBtn = document.getElementById('panel-start-route-btn');
+        if (panelStartBtn) {
+            panelStartBtn.addEventListener('click', () => {
+                const state = window.MapState;
+                if (state.focusedNodeId) {
+                    startInput.value = state.focusedNodeId;
+                    routeBox.classList.add('active');
+                    endInput.focus();
+                }
+            });
+        }
+
         // Search Toggle
         const searchToggleBtn = document.getElementById('search-toggle-btn');
         const searchInput = document.getElementById('map-search-input');

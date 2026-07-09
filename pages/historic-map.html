@@ -21,7 +21,26 @@
             <input type="text" id="map-search-input" class="search-bar collapsed" placeholder="Search Entity..." autocomplete="off">
             <div id="map-search-results" class="search-results-dropdown"></div>
         </div>
+        <button id="route-toggle-btn" class="floating-btn" title="Lineage Route" style="border-radius:50%; background:rgba(34,34,34,0.9); color:white; width:45px; height:45px; border:1px solid rgba(255,255,255,0.1);">🧭</button>
         <button id="map-view-btn" class="floating-btn" title="Map View / Filters">🗺️</button>
+    </div>
+
+
+    <!-- Route Search Box -->
+    <div id="route-search-box" class="route-search-container">
+        <div class="route-input-group">
+            <label>Start Node ID</label>
+            <input type="text" id="route-start-input" placeholder="e.g. ram">
+        </div>
+        <div class="route-input-group">
+            <label>End Node ID</label>
+            <input type="text" id="route-end-input" placeholder="e.g. brahma">
+        </div>
+        <div class="route-actions">
+            <button id="clear-route-btn" class="map-control-btn">Clear</button>
+            <button id="find-route-btn" class="map-control-btn">Find Route</button>
+        </div>
+        <div id="route-error-msg" style="color: #ff6b6b; font-size: 0.8rem; margin-top: 5px; display: none;">Route not found.</div>
     </div>
 
     <!-- Floating Controls (Bottom-Right) -->
@@ -76,6 +95,7 @@
             <h2 id="panel-name">Name</h2>
             <p id="panel-subtitle" class="panel-subtitle">Subtitle</p>
         </div>
+        <button id="panel-start-route-btn" class="panel-route-btn">🧭 Start Route from Here</button>
         <div class="panel-tabs">
             <button class="tab-btn active" data-tab="parichay">परिचय</button>
             <button class="tab-btn" data-tab="jeevan">जीवन</button>
@@ -90,6 +110,7 @@
     <script type="module" src="../js/data/historic-data.js"></script>
     <!-- Core Engine & Map Modules -->
     <script type="module" src="../js/layout-engine/index.js"></script>
+    <script src="../js/path-finder.js"></script>
     <script src="../js/map-state.js"></script>
     <script src="../js/map-renderer.js"></script>
     <script src="../js/map-controls.js"></script>
