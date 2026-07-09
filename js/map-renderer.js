@@ -194,5 +194,84 @@ window.MapRenderer = {
                 n.style.boxShadow = '';
             }
         });
+    },
+
+    drawRoute(pathArray) {
+        // Clear any existing route wires
+        document.querySelectorAll('.route-wire').forEach(el => el.remove());
+
+        if (!pathArray || pathArray.length === 0) {
+            // Restore defaults if no route
+            if (window.MapState.focusedNodeId) {
+                this.highlightRelatives(window.MapState.focusedNodeId);
+            } else {
+                this.highlightRelatives(null);
+            }
+            return;
+        }
+
+        const svg = window.MapState.svg;
+        const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
+
+        // Dim everything
+        document.querySelectorAll('.map-node').forEach(n => {
+            n.style.opacity = '0.1';
+            n.style.boxShadow = '';
+            n.style.transform = 'translate(-50%, -50%) scale(1)';
+            n.style.zIndex = '1';
+        });
+        document.querySelectorAll('.map-wire').forEach(w => w.style.opacity = '0.1');
+
+        const pathSet = new Set(pathArray);
+
+        // Highlight nodes in path
+        pathArray.forEach((id, index) => {
+            const n = document.getElementById(`node-${id}`);
+            if (n) {
+                n.style.opacity = '1';
+                n.style.zIndex = '20';
+                if (index === 0) {
+                    n.style.boxShadow = '0 0 30px #00FF00'; // Start green
+                } else if (index === pathArray.length - 1) {
+                    n.style.boxShadow = '0 0 30px #FF0000'; // End red
+                } else {
+                    n.style.boxShadow = '0 0 15px #00BFFF'; // Mid blue
+                }
+            }
+        });
+
+        // Draw thick route lines connecting the path sequentially
+        for (let i = 0; i < pathArray.length - 1; i++) {
+            const fromNode = dataList.find(d => d.id === pathArray[i]);
+            const toNode = dataList.find(d => d.id === pathArray[i+1]);
+
+            if (fromNode && toNode) {
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const startX = fromNode.x;
+                const startY = fromNode.y;
+                const endX = toNode.x;
+                const endY = toNode.y;
+
+                let dAttr = '';
+                // If same Y (siblings/spouses), straight line
+                if (startY === endY) {
+                    dAttr = `M ${startX} ${startY} L ${endX} ${endY}`;
+                } else {
+                    // Curve for parent-child
+                    const controlY = startY + (endY - startY) / 2;
+                    dAttr = `M ${startX} ${startY} C ${startX} ${controlY}, ${endX} ${controlY}, ${endX} ${endY}`;
+                }
+
+                path.setAttribute('d', dAttr);
+                path.setAttribute('class', 'route-wire');
+                path.setAttribute('stroke', '#00BFFF');
+                path.setAttribute('stroke-width', '6');
+                path.setAttribute('fill', 'none');
+                path.style.zIndex = '100';
+                path.style.strokeDasharray = '10';
+                path.style.animation = 'dash 1s linear infinite';
+                svg.appendChild(path);
+            }
+        }
     }
 };
