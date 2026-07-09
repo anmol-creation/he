@@ -65,41 +65,7 @@ window.MapControls = {
                 state.isDragging = false;
                 state.initialPinchDistance = null;
 
-                // Check for swipe gesture for node navigation
-                if (state.touchStartTime && !state.isMacroMode && state.focusedNodeId) {
-                    const touchDuration = Date.now() - state.touchStartTime;
-                    const endTouch = e.changedTouches[0];
-                    const deltaX = endTouch.clientX - state.touchStartX;
-                    const deltaY = endTouch.clientY - state.touchStartY;
 
-                    const absX = Math.abs(deltaX);
-                    const absY = Math.abs(deltaY);
-
-                    // Fast swipe (less than 300ms) and distance > 30px
-                    if (touchDuration < 300 && Math.max(absX, absY) > 30) {
-                        let direction = null;
-                        // Determine primary direction of swipe
-                        if (absX > absY) {
-                            direction = deltaX > 0 ? 'right' : 'left';
-                        } else {
-                            direction = deltaY > 0 ? 'down' : 'up';
-                        }
-
-                        // Inverse mapping for natural pan navigation (based on user request):
-                        // Swipe Down (finger moves top-to-bottom, deltaY > 0) -> Navigate Up (to parent)
-                        // Swipe Up (finger moves bottom-to-top, deltaY < 0) -> Navigate Down (to child)
-                        // Swipe Right (finger moves left-to-right, deltaX > 0) -> Navigate Left
-                        // Swipe Left (finger moves right-to-left, deltaX < 0) -> Navigate Right
-
-                        const actualDir = absX > absY
-                            ? (deltaX < 0 ? 'right' : 'left')
-                            : (deltaY < 0 ? 'down' : 'up');
-
-                        if (window.MapControls && window.MapControls.navigateDirection) {
-                            window.MapControls.navigateDirection(actualDir);
-                        }
-                    }
-                }
             }
         });
 
@@ -218,65 +184,4 @@ window.MapControls = {
         animate();
     },
 
-    navigateDirection(direction) {
-        const state = window.MapState;
-        if (!state.focusedNodeId || state.isMacroMode) return;
-
-        const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
-        const current = dataList.find(d => d.id === state.focusedNodeId);
-        if (!current) return;
-
-
-let bestCandidate = null;
-        let minScore = Infinity;
-
-        // Visual Line Based Navigation logic
-        const validCandidates = dataList.filter(n => {
-            if (n.id === current.id) return false;
-
-            // Connected by Parent line (up) or Child line (down)
-            if (current.parent === n.id || current.mother === n.id) return true;
-            if (n.parent === current.id || n.mother === current.id) return true;
-
-            // Connected by Spouse line
-            if (n.spouseOf === current.id || current.spouseOf === n.id) return true;
-
-            // Connected by Sibling line (same parent/mother visually shares the branch structure)
-            if (n.parent && current.parent && n.parent === current.parent) return true;
-            if (n.mother && current.mother && n.mother === current.mother) return true;
-            if (n.spouseOf && current.spouseOf && n.spouseOf === current.spouseOf) return true; // co-wives
-
-            return false;
-        });
-
-        for (const node of validCandidates) {
-
-            if (node.id === current.id) continue;
-
-            const dx = node.x - current.x;
-            const dy = node.y - current.y;
-
-            let isValidDirection = false;
-            if (direction === 'left' && dx < -10) isValidDirection = true;
-            else if (direction === 'right' && dx > 10) isValidDirection = true;
-            else if (direction === 'up' && dy < -10) isValidDirection = true;
-            else if (direction === 'down' && dy > 10) isValidDirection = true;
-
-            if (isValidDirection) {
-                let primaryDist = direction === 'left' || direction === 'right' ? Math.abs(dx) : Math.abs(dy);
-                let secondaryDist = direction === 'left' || direction === 'right' ? Math.abs(dy) : Math.abs(dx);
-
-                let score = primaryDist + (secondaryDist * 3);
-
-                if (score < minScore) {
-                    minScore = score;
-                    bestCandidate = node;
-                }
-            }
-        }
-
-        if (bestCandidate) {
-            this.focusOnNode(bestCandidate.id);
-        }
-    }
 };
