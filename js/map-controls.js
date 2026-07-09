@@ -2,6 +2,18 @@ window.MapControls = {
     setupEventListeners() {
         const state = window.MapState;
         const container = state.container;
+        let rafPending = false;
+
+        const requestTransformUpdate = () => {
+            if (!rafPending) {
+                rafPending = true;
+                requestAnimationFrame(() => {
+                    state.updateTransform();
+                    rafPending = false;
+                });
+            }
+        };
+
 
         container.addEventListener('touchstart', (e) => {
             if (e.touches.length === 1) {
@@ -31,7 +43,7 @@ window.MapControls = {
                 if (state.isDragging) {
                     state.translateX = e.touches[0].clientX - state.startX;
                     state.translateY = e.touches[0].clientY - state.startY;
-                    state.updateTransform();
+                    requestTransformUpdate();
                 }
             } else if (e.touches.length === 2 && state.initialPinchDistance) {
                 const currentDistance = Math.hypot(
@@ -44,7 +56,7 @@ window.MapControls = {
                 state.translateY = state.initialPinchCenterY - (state.initialPinchCenterY - state.translateY) * (newScale / state.scale);
 
                 state.scale = newScale;
-                state.updateTransform();
+                requestTransformUpdate();
             }
         }, {passive: false});
 
@@ -102,7 +114,7 @@ window.MapControls = {
             if (!state.isDragging) return;
             state.translateX = e.clientX - state.startX;
             state.translateY = e.clientY - state.startY;
-            state.updateTransform();
+            requestTransformUpdate();
         });
 
         window.addEventListener('mouseup', () => {
@@ -122,7 +134,7 @@ window.MapControls = {
             state.translateY = mouseY - (mouseY - state.translateY) * (newScale / state.scale);
 
             state.scale = newScale;
-            state.updateTransform();
+            requestTransformUpdate();
         }, { passive: false });
 
         const zoomLevels = [0.15, 0.4, 0.8, 1.2];
@@ -215,22 +227,24 @@ window.MapControls = {
         if (!current) return;
 
 
-        let bestCandidate = null;
+let bestCandidate = null;
         let minScore = Infinity;
 
-        // Filter strictly for direct family members
+        // Visual Line Based Navigation logic
         const validCandidates = dataList.filter(n => {
             if (n.id === current.id) return false;
 
-            // Is parent
+            // Connected by Parent line (up) or Child line (down)
             if (current.parent === n.id || current.mother === n.id) return true;
-            // Is child
             if (n.parent === current.id || n.mother === current.id) return true;
-            // Is spouse (current is husband, n is wife OR current is wife, n is husband)
+
+            // Connected by Spouse line
             if (n.spouseOf === current.id || current.spouseOf === n.id) return true;
-            // Is sibling (share same parent, ignoring nulls)
+
+            // Connected by Sibling line (same parent/mother visually shares the branch structure)
             if (n.parent && current.parent && n.parent === current.parent) return true;
             if (n.mother && current.mother && n.mother === current.mother) return true;
+            if (n.spouseOf && current.spouseOf && n.spouseOf === current.spouseOf) return true; // co-wives
 
             return false;
         });
