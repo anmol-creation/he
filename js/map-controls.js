@@ -73,16 +73,15 @@ window.MapControls = {
                             direction = deltaY > 0 ? 'down' : 'up';
                         }
 
-                        // Note: A left swipe on screen means the user wants to see what is on the right,
-                        // but intuitively "swiping left" means "go left". We will map:
-                        // swipe left (finger moves left, deltaX < 0) -> move focus left
-                        // swipe right (finger moves right, deltaX > 0) -> move focus right
-                        // swipe up (finger moves up, deltaY < 0) -> move focus up
-                        // swipe down (finger moves down, deltaY > 0) -> move focus down
+                        // Inverse mapping for natural pan navigation (based on user request):
+                        // Swipe Down (finger moves top-to-bottom, deltaY > 0) -> Navigate Up (to parent)
+                        // Swipe Up (finger moves bottom-to-top, deltaY < 0) -> Navigate Down (to child)
+                        // Swipe Right (finger moves left-to-right, deltaX > 0) -> Navigate Left
+                        // Swipe Left (finger moves right-to-left, deltaX < 0) -> Navigate Right
 
                         const actualDir = absX > absY
-                            ? (deltaX < 0 ? 'left' : 'right')
-                            : (deltaY < 0 ? 'up' : 'down');
+                            ? (deltaX < 0 ? 'right' : 'left')
+                            : (deltaY < 0 ? 'down' : 'up');
 
                         if (window.MapControls && window.MapControls.navigateDirection) {
                             window.MapControls.navigateDirection(actualDir);
@@ -192,11 +191,11 @@ window.MapControls = {
         const startTy = state.translateY;
 
         function animate() {
-            progress += 0.05;
+            progress += 0.15;
             if (progress > 1) progress = 1;
 
-            const easeOutQuad = t => t * (2 - t);
-            const p = easeOutQuad(progress);
+            const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+            const p = easeOutCubic(progress);
 
             state.translateX = startTx + (targetTranslateX - startTx) * p;
             state.translateY = startTy + (targetTranslateY - startTy) * p;
@@ -215,10 +214,29 @@ window.MapControls = {
         const current = dataList.find(d => d.id === state.focusedNodeId);
         if (!current) return;
 
+
         let bestCandidate = null;
         let minScore = Infinity;
 
-        for (const node of dataList) {
+        // Filter strictly for direct family members
+        const validCandidates = dataList.filter(n => {
+            if (n.id === current.id) return false;
+
+            // Is parent
+            if (current.parent === n.id || current.mother === n.id) return true;
+            // Is child
+            if (n.parent === current.id || n.mother === current.id) return true;
+            // Is spouse (current is husband, n is wife OR current is wife, n is husband)
+            if (n.spouseOf === current.id || current.spouseOf === n.id) return true;
+            // Is sibling (share same parent, ignoring nulls)
+            if (n.parent && current.parent && n.parent === current.parent) return true;
+            if (n.mother && current.mother && n.mother === current.mother) return true;
+
+            return false;
+        });
+
+        for (const node of validCandidates) {
+
             if (node.id === current.id) continue;
 
             const dx = node.x - current.x;
