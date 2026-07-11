@@ -4,7 +4,7 @@ const ASSETS_TO_CACHE = [
   '/index.html',
   '/manifest.json',
   '/css/global.css',
-  '/css/homepage.css',
+  '/css/home.css',
   '/js/data/historic-data.js',
   '/js/data/library-data.js',
   '/pages/itihas-puran.html',
