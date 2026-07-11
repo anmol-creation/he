@@ -76,9 +76,9 @@ window.MapControls = {
                     const absY = Math.abs(deltaY);
 
                     if (touchDuration < 300 && Math.max(absX, absY) > 30) {
-                        const actualDir = absX > absY
-                            ? (deltaX > 0 ? 'left' : 'right')
-                            : (deltaY > 0 ? 'up' : 'down');
+                        const actualDir = absX > absY ? (deltaX > 0 ? "left" : "right") : (deltaY > 0 ? "up" : "down");
+
+
 
                         if (window.MapControls && window.MapControls.navigateDirection) {
                             window.MapControls.navigateDirection(actualDir);

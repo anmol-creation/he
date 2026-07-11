@@ -242,8 +242,10 @@ window.MapRenderer = {
 
         // Draw thick route lines connecting the path sequentially
         for (let i = 0; i < pathArray.length - 1; i++) {
-            const fromNode = dataList.find(d => d.id === pathArray[i]);
-            const toNode = dataList.find(d => d.id === pathArray[i+1]);
+            const currentId = pathArray[i];
+            const nextId = pathArray[i+1];
+            const fromNode = dataList.find(d => d.id === currentId);
+            const toNode = dataList.find(d => d.id === nextId);
 
             if (fromNode && toNode) {
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
