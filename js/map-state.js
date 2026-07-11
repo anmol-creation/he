@@ -15,39 +15,57 @@ window.MapState = {
     MACRO_ZOOM_THRESHOLD: 0.5,
     container: null,
     canvas: null,
-    svg: null,
-    nodesContainer: null,
+    ctx: null,
     aside: null,
 
     initElements() {
         this.container = document.getElementById('map-container');
-        this.canvas = document.getElementById('map-canvas');
-        this.svg = document.getElementById('connection-lines');
-        this.nodesContainer = document.getElementById('nodes-container');
+        this.canvas = document.getElementById('main-canvas');
+        if (this.canvas) {
+            this.ctx = this.canvas.getContext('2d');
+            this.resizeCanvas();
+            window.addEventListener('resize', () => this.resizeCanvas());
+        }
         this.aside = document.getElementById('river-of-time');
     },
 
-    updateTransform() {
+    resizeCanvas() {
         if (!this.canvas) return;
-        this.canvas.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
+        const rect = this.container.getBoundingClientRect();
+        // Support high DPI displays
+        const dpr = window.devicePixelRatio || 1;
+        this.canvas.width = rect.width * dpr;
+        this.canvas.height = rect.height * dpr;
+        this.canvas.style.width = `${rect.width}px`;
+        this.canvas.style.height = `${rect.height}px`;
+        this.ctx.scale(dpr, dpr);
+        this.requestRedraw();
+    },
 
-        // Toggle Macro vs Micro mode based on scale
-        const nodes = document.querySelectorAll('.map-node');
+    requestRedraw() {
+        if (window.MapRenderer && window.MapRenderer.renderAll) {
+            window.MapRenderer.renderAll();
+        }
+    },
+
+    updateTransform() {
+        // Evaluate macro mode
         if (this.scale < this.MACRO_ZOOM_THRESHOLD) {
             if (!this.isMacroMode) {
                 this.isMacroMode = true;
-                nodes.forEach(n => n.classList.add('macro-mode'));
-                document.getElementById('focus-panel').classList.add('hidden');
+                document.getElementById('focus-panel')?.classList.add('hidden');
                 if (window.MapRenderer) window.MapRenderer.highlightRelatives(null);
             }
         } else {
             if (this.isMacroMode) {
                 this.isMacroMode = false;
-                nodes.forEach(n => n.classList.remove('macro-mode'));
                 if (this.focusedNodeId && window.MapRenderer) {
                     window.MapRenderer.highlightRelatives(this.focusedNodeId);
                 }
             }
         }
+
+        // Instead of CSS transform, trigger a canvas redraw
+        this.requestRedraw();
     }
 };
