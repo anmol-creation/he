@@ -21,19 +21,13 @@ function initMap() {
     }
 
     try {
-        const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
-
-        window.MapRenderer.renderNodes(dataList);
-        window.MapRenderer.drawConnections(dataList);
-        window.MapRenderer.drawTimeDividers();
-
         window.MapControls.setupEventListeners();
         window.MapUI.setupUI();
 
-        // Initial Focus
+        // Initial Focus (this will trigger the first requestRedraw)
         window.MapControls.focusOnNode('brahman');
     } catch(e) {
-        console.error("Rendering error:", e);
+        console.error("Initialization error:", e);
     }
 }
 

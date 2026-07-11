@@ -88,11 +88,44 @@ window.MapControls = {
             }
         });
 
+        // Handle Canvas Clicks to find Nodes
+        container.addEventListener('click', (e) => {
+            if (e.target.closest('#focus-panel') || e.target.closest('.floating-controls') || e.target.closest('.route-search-container')) return;
+            if (Math.abs(e.clientX - state.startX - state.translateX) > 5 || Math.abs(e.clientY - state.startY - state.translateY) > 5) return; // it was a drag
+
+            const rect = state.canvas.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const clickY = e.clientY - rect.top;
+
+            // Convert screen coordinates to canvas world coordinates
+            const worldX = (clickX - state.translateX) / state.scale;
+            const worldY = (clickY - state.translateY) / state.scale;
+
+            const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
+
+            // Reverse loop to pick topmost node (rendered last)
+            for (let i = dataList.length - 1; i >= 0; i--) {
+                const node = dataList[i];
+                const w = node.spouseOf ? 120 : 140; // Approx widths
+                const h = node.spouseOf ? 40 : 60; // Approx heights
+                // Nodes are centered on x,y
+                const x = node.x - w/2;
+                const y = node.y - h/2;
+
+                if (worldX >= x && worldX <= x + w && worldY >= y && worldY <= y + h) {
+                    this.focusOnNode(node.id);
+                    if (window.MapUI) window.MapUI.openPanel(node);
+                    return;
+                }
+            }
+        });
+
         container.addEventListener('mousedown', (e) => {
-            if (e.target.closest('.map-node') || e.target.closest('#focus-panel')) return;
+            if (e.target.closest('#focus-panel') || e.target.closest('.floating-controls') || e.target.closest('.route-search-container')) return;
             state.isDragging = true;
             state.startX = e.clientX - state.translateX;
             state.startY = e.clientY - state.translateY;
+            container.style.cursor = 'grabbing';
         });
 
         window.addEventListener('mousemove', (e) => {
@@ -104,6 +137,7 @@ window.MapControls = {
 
         window.addEventListener('mouseup', () => {
             state.isDragging = false;
+            container.style.cursor = 'grab';
         });
 
         container.addEventListener('wheel', (e) => {
