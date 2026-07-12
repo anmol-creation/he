@@ -18,6 +18,30 @@ window.MapUI = {
             });
         });
 
+        // Filter Dropdown UI Logic
+        const mapViewBtn = document.getElementById('map-view-btn');
+        const filterDropdown = document.getElementById('map-filter-dropdown');
+        const filterTransitionWires = document.getElementById('filter-transition-wires');
+
+        if (mapViewBtn && filterDropdown) {
+            mapViewBtn.addEventListener('click', () => {
+                const isVisible = filterDropdown.style.display === 'block';
+                filterDropdown.style.display = isVisible ? 'none' : 'block';
+            });
+        }
+
+        if (filterTransitionWires) {
+            // Set initial state matching MapState
+            filterTransitionWires.checked = window.MapState && window.MapState.showTransitionWires;
+
+            filterTransitionWires.addEventListener('change', (e) => {
+                if (window.MapState) {
+                    window.MapState.showTransitionWires = e.target.checked;
+                    window.MapState.requestRedraw();
+                }
+            });
+        }
+
 
         // Route UI Logic
         const routeToggleBtn = document.getElementById('route-toggle-btn');
@@ -144,6 +168,10 @@ window.MapUI = {
             if (!e.target.closest('.search-container')) {
                 const resultsContainer = document.getElementById('map-search-results');
                 if (resultsContainer) resultsContainer.style.display = 'none';
+            }
+            if (!e.target.closest('.filter-dropdown') && !e.target.closest('#map-view-btn')) {
+                const filterDropdown = document.getElementById('map-filter-dropdown');
+                if (filterDropdown) filterDropdown.style.display = 'none';
             }
         });
 
