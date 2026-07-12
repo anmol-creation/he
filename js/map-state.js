@@ -19,6 +19,7 @@ window.MapState = {
     aside: null,
     expandedClusters: new Set(), // Track which clusterNames are open
     showTransitionWires: false, // Filter: Hide Daughter->Wife lines by default
+    layoutMode: 'autoslip', // Default layout mode
 
     initElements() {
         this.container = document.getElementById('map-container');

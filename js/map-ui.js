@@ -42,6 +42,17 @@ window.MapUI = {
             });
         }
 
+        const layoutRadios = document.querySelectorAll('input[name="layout-mode"]');
+        layoutRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (window.MapState) {
+                    window.MapState.layoutMode = e.target.value;
+                    // Re-run the entire layout engine
+                    window.dispatchEvent(new Event('ClusterToggled'));
+                }
+            });
+        });
+
 
         // Route UI Logic
         const routeToggleBtn = document.getElementById('route-toggle-btn');
