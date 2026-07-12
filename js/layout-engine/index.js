@@ -1,8 +1,8 @@
 import { buildTree } from './tree-builder.js';
-import { calculateDepths, calculateAbsolutePositions } from './position-calculator.js';
-import { calculateIntrinsicWidths, calculateSubtreeLayout } from './contour-calculator.js';
+import { calculateDepths } from './position-calculator.js';
+import { runGraphPhysics } from './graph-physics.js';
 import { assignLineageColors } from './color-assigner.js';
-import { MIN_GAP_X } from './constants.js';
+import { NODE_HEIGHT, MIN_GAP_Y } from './constants.js';
 
 class LayoutEngine {
     constructor(data) {
@@ -14,7 +14,6 @@ class LayoutEngine {
 
     process() {
         buildTree(this.rawData, this.nodesMap, this.transitionWires);
-        calculateIntrinsicWidths(this.nodesMap);
 
         // Find root nodes (nodes without parents)
         const rootNodes = [];
@@ -24,45 +23,16 @@ class LayoutEngine {
             }
         });
 
-        // Calculate depths starting from roots
+        // Calculate depths (Y-axis Hierarchy remains strictly tied to lineage depth)
         rootNodes.forEach(rootId => calculateDepths(this.nodesMap, rootId, 0));
 
-        let currentRootX = 5000; // Starting point for the first root
-        let globalContour = { min: [], max: [] };
-
-        rootNodes.forEach((rootId, index) => {
-            calculateSubtreeLayout(this.nodesMap, rootId);
-            const rootNode = this.nodesMap.get(rootId);
-
-            if (index > 0) {
-                // Auto-slip roots against each other
-                let maxRequiredShift = 0;
-                for (let i = 0; i < rootNode.layout.contours.min.length; i++) {
-                    if (globalContour.max[i] !== undefined) {
-                        const shift = (globalContour.max[i] + MIN_GAP_X) - rootNode.layout.contours.min[i];
-                        if (shift > maxRequiredShift) maxRequiredShift = shift;
-                    }
-                }
-                currentRootX += maxRequiredShift;
-            }
-
-            // Merge root contour into global contour
-            for (let i = 0; i < rootNode.layout.contours.min.length; i++) {
-                const rMin = rootNode.layout.contours.min[i] + currentRootX;
-                const rMax = rootNode.layout.contours.max[i] + currentRootX;
-                if (globalContour.min[i] === undefined) {
-                    globalContour.min[i] = rMin;
-                    globalContour.max[i] = rMax;
-                } else {
-                    globalContour.min[i] = Math.min(globalContour.min[i], rMin);
-                    globalContour.max[i] = Math.max(globalContour.max[i], rMax);
-                }
-            }
-
-            // Calculate final absolute positions.
-            // We give startY = 0 for the absolute root to make rendering cleaner
-            calculateAbsolutePositions(this.nodesMap, rootId, currentRootX, 0);
+        // Assign static Y coordinates based on depth
+        this.nodesMap.forEach(node => {
+             node.y = 1000 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
         });
+
+        // Run Force-Directed Graph Engine to assign X coordinates
+        runGraphPhysics(this.nodesMap, rootNodes, 300);
 
         assignLineageColors(this.nodesMap);
 

@@ -65,7 +65,6 @@ window.MapControls = {
                 state.isDragging = false;
                 state.initialPinchDistance = null;
 
-                // Fast Swipe Navigation (Parents/Children/Siblings only)
                 if (state.touchStartTime && !state.isMacroMode && state.focusedNodeId) {
                     const touchDuration = Date.now() - state.touchStartTime;
                     const endTouch = e.changedTouches[0];
@@ -76,9 +75,7 @@ window.MapControls = {
                     const absY = Math.abs(deltaY);
 
                     if (touchDuration < 300 && Math.max(absX, absY) > 30) {
-                        const actualDir = absX > absY
-                            ? (deltaX > 0 ? 'left' : 'right')
-                            : (deltaY > 0 ? 'up' : 'down');
+                        const actualDir = absX > absY ? (deltaX > 0 ? 'left' : 'right') : (deltaY > 0 ? 'up' : 'down');
 
                         if (window.MapControls && window.MapControls.navigateDirection) {
                             window.MapControls.navigateDirection(actualDir);
@@ -88,31 +85,46 @@ window.MapControls = {
             }
         });
 
-        // Handle Canvas Clicks to find Nodes
         container.addEventListener('click', (e) => {
             if (e.target.closest('#focus-panel') || e.target.closest('.floating-controls') || e.target.closest('.route-search-container')) return;
-            if (Math.abs(e.clientX - state.startX - state.translateX) > 5 || Math.abs(e.clientY - state.startY - state.translateY) > 5) return; // it was a drag
+            if (Math.abs(e.clientX - state.startX - state.translateX) > 5 || Math.abs(e.clientY - state.startY - state.translateY) > 5) return;
 
             const rect = state.canvas.getBoundingClientRect();
             const clickX = e.clientX - rect.left;
             const clickY = e.clientY - rect.top;
 
-            // Convert screen coordinates to canvas world coordinates
             const worldX = (clickX - state.translateX) / state.scale;
             const worldY = (clickY - state.translateY) / state.scale;
 
             const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
 
-            // Reverse loop to pick topmost node (rendered last)
             for (let i = dataList.length - 1; i >= 0; i--) {
                 const node = dataList[i];
-                const w = node.spouseOf ? 120 : 140; // Approx widths
-                const h = node.spouseOf ? 40 : 60; // Approx heights
-                // Nodes are centered on x,y
+                const w = node.spouseOf ? 120 : 140;
+                const h = node.spouseOf ? 40 : 60;
                 const x = node.x - w/2;
                 const y = node.y - h/2;
 
                 if (worldX >= x && worldX <= x + w && worldY >= y && worldY <= y + h) {
+                    // Check if it's a cluster node being clicked
+                    if (node.isCluster) {
+                        if (state.expandedClusters.has(node.clusterName)) {
+                            state.expandedClusters.delete(node.clusterName);
+                        } else {
+                            state.expandedClusters.add(node.clusterName);
+                        }
+
+                        // Re-run the engine
+                        if (window.LayoutEngine && window.HistoricDB) {
+                            // Using the raw data, re-process everything
+                            // In real scenario, we should get raw from somewhere, but HistoricDB.getAll()
+                            // gives processed. We need the original raw data.
+                            // Since global historicData was replaced by processed, we should dispatch an event
+                            window.dispatchEvent(new Event('ClusterToggled'));
+                        }
+                        return;
+                    }
+
                     this.focusOnNode(node.id);
                     if (window.MapUI) window.MapUI.openPanel(node);
                     return;
@@ -175,10 +187,6 @@ window.MapControls = {
         });
     },
 
-
-
-
-
     navigateDirection(direction) {
         const state = window.MapState;
         if (!state.focusedNodeId || state.isMacroMode) return;
@@ -190,17 +198,11 @@ window.MapControls = {
         let bestCandidate = null;
         let minScore = Infinity;
 
-        // Visual Line Based Navigation Logic (Strictly structural/visual connections only, agnostic of relationship ID names)
         const validCandidates = dataList.filter(n => {
             if (n.id === current.id) return false;
 
-            // Check if there's a visual line connection (up/down/spouse)
-            // A node is visually connected downwards if its source/parent draws a line down to it
             const connectedDown = (n.parent === current.id || n.mother === current.id || n.spouseOf === current.id);
-            // A node is visually connected upwards if current draws a line up to it
             const connectedUp = (current.parent === n.id || current.mother === n.id || current.spouseOf === n.id);
-
-            // A node is visually a lateral sibling if they share the EXACT same visual origin line
             const connectedLateral = (
                 (n.parent && current.parent && n.parent === current.parent) ||
                 (n.mother && current.mother && n.mother === current.mother) ||
@@ -210,8 +212,6 @@ window.MapControls = {
             if (direction === 'up' && connectedUp) return true;
             if (direction === 'down' && connectedDown) return true;
             if ((direction === 'left' || direction === 'right') && (connectedLateral || connectedUp || connectedDown)) {
-                // Lateral movement can hop across siblings, or adjacent spouses, or anything on a similar Y-level
-                // that is structurally connected to the same cluster.
                 return true;
             }
 
@@ -224,17 +224,14 @@ window.MapControls = {
 
             let isValidDirection = false;
 
-            // Extremely strict spatial check based on the swipe direction
             if (direction === 'left' && dx < -10) isValidDirection = true;
             else if (direction === 'right' && dx > 10) isValidDirection = true;
             else if (direction === 'up' && dy < -10) isValidDirection = true;
             else if (direction === 'down' && dy > 10) isValidDirection = true;
 
-            // If they are on the exact same spot (like multiple proxy wives), allow it based on context
             if (Math.abs(dx) <= 10 && Math.abs(dy) <= 10) isValidDirection = true;
 
             if (isValidDirection) {
-                // Penalize perpendicular distance heavily to ensure straight lines are preferred
                 let primaryDist = direction === 'left' || direction === 'right' ? Math.abs(dx) : Math.abs(dy);
                 let secondaryDist = direction === 'left' || direction === 'right' ? Math.abs(dy) : Math.abs(dx);
 
@@ -298,7 +295,7 @@ window.MapControls = {
         const startTx = state.translateX;
         const startTy = state.translateY;
 
-        function animate() {
+        const animate = () => {
             progress += 0.15;
             if (progress > 1) progress = 1;
 
@@ -310,7 +307,7 @@ window.MapControls = {
             state.updateTransform();
 
             if (progress < 1) requestAnimationFrame(animate);
-        }
+        };
         animate();
     }
 };

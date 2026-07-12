@@ -10,25 +10,20 @@ window.MapRenderer = {
         const height = state.canvas.height;
         const dpr = window.devicePixelRatio || 1;
 
-        // Clear canvas
         ctx.clearRect(0, 0, width / dpr, height / dpr);
 
         ctx.save();
 
-        // Apply camera transforms
         ctx.translate(state.translateX, state.translateY);
         ctx.scale(state.scale, state.scale);
 
         const dataList = (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
 
         try {
-            // Draw time dividers first (background layer)
             this.drawTimeDividers(ctx, dataList);
 
-            // Calculate opacity based on highlight
             const relatives = this.getHighlightedRelatives(state.focusedNodeId, dataList);
 
-            // Ensure route path is prioritized for highlight if active
             let highlightSet = relatives;
             let isRouting = false;
             if (this.routePath && this.routePath.length > 0) {
@@ -36,17 +31,14 @@ window.MapRenderer = {
                 isRouting = true;
             }
 
-            // 1. Draw standard connections
             ctx.lineWidth = 4;
             ctx.lineCap = 'round';
             this.drawConnections(ctx, dataList, highlightSet, isRouting);
 
-            // 2. Draw route connections over everything else
             if (isRouting) {
                 this.drawRouteConnections(ctx, dataList, this.routePath);
             }
 
-            // 3. Draw nodes
             this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId);
         } finally {
             ctx.restore();
@@ -75,11 +67,8 @@ window.MapRenderer = {
         const drawnHusbandToWives = new Set();
 
         dataList.forEach(data => {
-            // Determine line opacity
             let opacity = 0.6;
             if (highlightSet) {
-                 // A connection is fully visible if BOTH ends are in the highlight set
-                 // For spouses:
                  if (data.spouseOf && highlightSet.has(data.id) && highlightSet.has(data.spouseOf)) {
                      opacity = 1;
                  } else if (data.parent) {
@@ -92,7 +81,7 @@ window.MapRenderer = {
                  } else {
                      opacity = 0.1;
                  }
-                 if (isRouting) opacity = 0.1; // Dim all normal lines if routing
+                 if (isRouting) opacity = 0.1;
             }
 
             ctx.globalAlpha = opacity;
@@ -105,7 +94,7 @@ window.MapRenderer = {
                     if (husband) {
                         const wives = dataList.filter(d => d.spouseOf === husbandId);
 
-                        ctx.strokeStyle = '#FF1493'; // Marriage color
+                        ctx.strokeStyle = '#FF1493';
 
                         wives.forEach(wife => {
                             const startX = husband.x;
@@ -167,7 +156,6 @@ window.MapRenderer = {
             }
         });
 
-        // Transition Wires
         if (window.transitionWires) {
             ctx.setLineDash([10, 10]);
             ctx.strokeStyle = 'red';
@@ -187,12 +175,12 @@ window.MapRenderer = {
                     ctx.stroke();
                 }
             });
-            ctx.setLineDash([]); // reset dash
+            ctx.setLineDash([]);
         }
     },
 
     drawNodes(ctx, dataList, highlightSet, isRouting, isMacroMode, focusedNodeId) {
-        dataList.forEach((data, index) => {
+        dataList.forEach((data) => {
             const isDaughter = data.id.endsWith('_daughter') || (data.gender === 'female' && !data.spouseOf);
             const isSpouse = !!data.spouseOf;
 
@@ -201,7 +189,6 @@ window.MapRenderer = {
             const x = data.x - w / 2;
             const y = data.y - h / 2;
 
-            // Opacity logic
             let opacity = 1;
             let isFocused = data.id === focusedNodeId;
             let isPathNode = highlightSet && highlightSet.has(data.id);
@@ -212,16 +199,14 @@ window.MapRenderer = {
             } else if (highlightSet && isPathNode && !isRouting) {
                 opacity = 1;
             } else if (!highlightSet && !isMacroMode) {
-                 opacity = 1; // default fallback if no focus somehow
+                 opacity = 1;
             }
 
             ctx.globalAlpha = opacity;
 
-            // Box styling
             const nodeColor = data.inheritedColor || '#FF6B35';
 
             if (isMacroMode) {
-                 // Macro Mode Rendering (Tiny Circles)
                  ctx.beginPath();
                  ctx.arc(data.x, data.y, 10, 0, Math.PI * 2);
                  ctx.fillStyle = isSpouse || isDaughter ? '#2a2025' : '#222';
@@ -230,21 +215,20 @@ window.MapRenderer = {
                  ctx.strokeStyle = isSpouse ? '#ff99cc' : isDaughter ? '#ffb6c1' : nodeColor;
                  ctx.stroke();
 
-                 // Title below circle
                  ctx.fillStyle = '#fff';
                  ctx.font = '12px Poppins';
                  ctx.textAlign = 'center';
                  ctx.textBaseline = 'top';
                  ctx.fillText(data.name, data.x, data.y + 15);
-                 return; // Skip standard node render
+                 return;
             }
 
-            // Glow / Focus Effect
             if (isFocused && !isRouting) {
                 ctx.shadowColor = '#FF6B35';
                 ctx.shadowBlur = 20;
             } else if (isRouting && isPathNode) {
-                const pathIndex = Array.from(highlightSet).indexOf(data.id);
+                const pathArray = Array.from(highlightSet);
+                const pathIndex = pathArray.indexOf(data.id);
                 if (pathIndex === 0) ctx.shadowColor = '#00FF00';
                 else if (pathIndex === highlightSet.size - 1) ctx.shadowColor = '#FF0000';
                 else ctx.shadowColor = '#00BFFF';
@@ -254,13 +238,11 @@ window.MapRenderer = {
                 ctx.shadowBlur = 15;
             }
 
-            // Draw Node Box
             ctx.fillStyle = isSpouse || isDaughter ? '#2a2025' : '#222';
             this.roundRect(ctx, x, y, w, h, isSpouse ? 20 : 12);
             ctx.fill();
 
-            // Draw Top Border
-            ctx.shadowBlur = 0; // Turn off glow for inner elements
+            ctx.shadowBlur = 0;
             ctx.lineWidth = isSpouse || isDaughter ? 3 : 4;
             ctx.strokeStyle = isSpouse ? '#ff99cc' : isDaughter ? '#ffb6c1' : nodeColor;
 
@@ -269,7 +251,6 @@ window.MapRenderer = {
             ctx.lineTo(x + w - (isSpouse ? 20 : 12), y);
             ctx.stroke();
 
-            // Text Rendering
             ctx.fillStyle = '#ffffff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
@@ -288,7 +269,6 @@ window.MapRenderer = {
                 }
             }
 
-            // Dot rendering
             ctx.beginPath();
             ctx.arc(x + w, y, 5, 0, Math.PI * 2);
             ctx.fillStyle = nodeColor;
@@ -316,14 +296,10 @@ window.MapRenderer = {
 
         dividers.forEach(div => {
             ctx.beginPath();
-            // Assuming max spread is between -50000 and 50000 roughly
             ctx.moveTo(-50000, div.y);
             ctx.lineTo(50000, div.y);
             ctx.stroke();
 
-            // To render text cleanly at fixed intervals, we skip text on canvas and keep HTML if preferred,
-            // but drawing text here keeps it bundled:
-            // Since canvas translates, finding a good X is tricky. Let's place it near x=0
             ctx.fillStyle = 'rgba(0,0,0,0.8)';
             ctx.fillRect(-50, div.y - 25, 100, 20);
             ctx.fillStyle = '#999';
@@ -345,7 +321,6 @@ window.MapRenderer = {
         ctx.shadowBlur = 10;
         ctx.setLineDash([15, 15]);
 
-        // Simple dash offset animation
         const time = Date.now();
         ctx.lineDashOffset = -((time / 20) % 30);
 
@@ -407,7 +382,6 @@ window.MapRenderer = {
         }
     },
 
-    // Helper method for rounded rectangles
     roundRect(ctx, x, y, width, height, radius) {
         ctx.beginPath();
         ctx.moveTo(x + radius, y);

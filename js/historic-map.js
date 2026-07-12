@@ -7,7 +7,12 @@ function initMap() {
 
     if (window.LayoutEngine && window.HistoricDB) {
         try {
-            const engine = new window.LayoutEngine(window.HistoricDB.getAll());
+            // Save raw data explicitly for re-processing
+            if (!window.rawHistoricData) {
+                window.rawHistoricData = [...window.HistoricDB.getAll()];
+            }
+
+            const engine = new window.LayoutEngine([...window.rawHistoricData]);
             const result = engine.process();
             const updatedData = result.nodes;
 
@@ -30,6 +35,19 @@ function initMap() {
         console.error("Initialization error:", e);
     }
 }
+
+window.addEventListener('ClusterToggled', () => {
+    if (window.LayoutEngine && window.rawHistoricData) {
+        const engine = new window.LayoutEngine([...window.rawHistoricData]);
+        const result = engine.process();
+        window.transitionWires = result.transitionWires;
+        window.historicData = result.nodes;
+        window.HistoricDB.getAll = () => result.nodes;
+        window.HistoricDB.getNode = (id) => result.nodes.find(d => d.id === id);
+
+        window.MapState.requestRedraw();
+    }
+});
 
 if (window.historicData || window.HistoricDB) {
     initMap();

@@ -1,63 +1,71 @@
-/**
- * Data preprocessing and Tree building logic.
- * Parses raw nodes, handles auto-duplication of daughters/wives, and sets up children/spouse arrays.
- */
-
 export function buildTree(rawData, nodesMap, transitionWires) {
-    // Pre-process: Auto-duplicate female nodes with BOTH parent and spouseOf
     const processedData = [];
+    const expandedClusters = window.MapState ? window.MapState.expandedClusters : new Set();
 
-    // Helper to check if a node exists in rawData
     const nodeExists = (id) => rawData.some(d => d.id === id);
 
+    // Group clusters
+    const clusterMap = new Map();
+
     rawData.forEach(node => {
+        // If node belongs to a cluster and it is NOT expanded, squash it
+        if (node.clusterName && !expandedClusters.has(node.clusterName)) {
+             if (!clusterMap.has(node.clusterName)) {
+                  clusterMap.set(node.clusterName, {
+                       id: `cluster_${node.clusterName.replace(/\s+/g, '_')}`,
+                       name: `${node.clusterName} ⊞`,
+                       subtitle: 'Click to expand',
+                       parent: node.parent, // Assume all items in cluster share the same parent/spouse origin logically
+                       spouseOf: node.spouseOf,
+                       isCluster: true,
+                       clusterName: node.clusterName,
+                       nodes: []
+                  });
+                  processedData.push(clusterMap.get(node.clusterName));
+             }
+             clusterMap.get(node.clusterName).nodes.push(node);
+             return; // Skip adding the actual node to processedData
+        }
+
         if (node.parent && node.spouseOf) {
             const parentFound = nodeExists(node.parent);
             const spouseFound = nodeExists(node.spouseOf);
 
             if (parentFound && spouseFound) {
-                // Rule 4: Auto Duplication
-
-                // Node A: Daughter Node (in father's tree)
                 const daughterNode = {
                     ...node,
                     id: `${node.id}_daughter`,
-                    spouseOf: null, // Remove husband link
+                    spouseOf: null,
                     subtitle: `${node.subtitle || ''} (Daughter)`.trim()
                 };
 
-                // Node B: Wife Node (next to husband)
                 const wifeNode = {
                     ...node,
-                    parent: null, // Remove father link
+                    parent: null,
                     subtitle: `${node.subtitle || ''} (Wife)`.trim()
                 };
 
                 processedData.push(daughterNode, wifeNode);
 
-                // Track for drawing dashed line from Daughter -> Wife
                 transitionWires.push({
                     from: daughterNode.id,
                     to: wifeNode.id
                 });
             } else if (spouseFound) {
-                // Parent missing, but spouse exists: treat purely as wife
                 console.warn(`[TreeBuilder Warning]: Female node '${node.id}' has a parent '${node.parent}' that does not exist in data. Defaulting to Wife-only node.`);
                 const wifeNode = {
                     ...node,
-                    parent: null // Strip invalid parent
+                    parent: null
                 };
                 processedData.push(wifeNode);
             } else if (parentFound) {
-                 // Spouse missing, but parent exists: treat purely as daughter
                  console.warn(`[TreeBuilder Warning]: Female node '${node.id}' has a spouse '${node.spouseOf}' that does not exist in data. Defaulting to Daughter-only node.`);
                  const daughterNode = {
                      ...node,
-                     spouseOf: null // Strip invalid spouse
+                     spouseOf: null
                  };
                  processedData.push(daughterNode);
             } else {
-                // Both missing
                 console.warn(`[TreeBuilder Warning]: Node '${node.id}' has an invalid parent and spouse. Adding to raw list to be caught by orphan logic.`);
                 processedData.push(node);
             }
@@ -66,7 +74,6 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         }
     });
 
-    // 1. Initialize nodes map using processed data
     processedData.forEach(node => {
         nodesMap.set(node.id, {
             ...node,
@@ -75,14 +82,13 @@ export function buildTree(rawData, nodesMap, transitionWires) {
             depth: 0,
             layout: {
                 x: 0,
-                width: 200, // NODE_WIDTH
+                width: 200,
                 contours: { min: [], max: [] },
                 isSpouse: !!node.spouseOf
             }
         });
     });
 
-    // Ensure "Unknown Origin" root node exists to catch orphans
     if (!nodesMap.has('unknown_origin')) {
         nodesMap.set('unknown_origin', {
             id: 'unknown_origin',
@@ -101,9 +107,8 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         });
     }
 
-    // 2. Build relationships
     nodesMap.forEach(node => {
-        if (node.id === 'unknown_origin') return; // Skip dummy node
+        if (node.id === 'unknown_origin') return;
 
         if (node.spouseOf) {
              if (nodesMap.has(node.spouseOf)) {
@@ -130,14 +135,12 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                 }
              } else {
                  console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing parent '${node.parent}'. Catching in Unknown Origin.`);
-                 // Re-route to Unknown Origin bucket
                  node.parent = 'unknown_origin';
                  nodesMap.get('unknown_origin').children.push(node.id);
              }
         }
     });
 
-    // Cleanup: If the unknown_origin bucket is empty, remove it to save space
     if (nodesMap.get('unknown_origin').children.length === 0) {
         nodesMap.delete('unknown_origin');
     }

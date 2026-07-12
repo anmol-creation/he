@@ -17,6 +17,7 @@ window.MapState = {
     canvas: null,
     ctx: null,
     aside: null,
+    expandedClusters: new Set(), // Track which clusterNames are open
 
     initElements() {
         this.container = document.getElementById('map-container');
@@ -32,7 +33,6 @@ window.MapState = {
     resizeCanvas() {
         if (!this.canvas) return;
         const rect = this.container.getBoundingClientRect();
-        // Support high DPI displays
         const dpr = window.devicePixelRatio || 1;
         this.canvas.width = rect.width * dpr;
         this.canvas.height = rect.height * dpr;
@@ -49,11 +49,11 @@ window.MapState = {
     },
 
     updateTransform() {
-        // Evaluate macro mode
         if (this.scale < this.MACRO_ZOOM_THRESHOLD) {
             if (!this.isMacroMode) {
                 this.isMacroMode = true;
-                document.getElementById('focus-panel')?.classList.add('hidden');
+                const panel = document.getElementById('focus-panel');
+                if (panel) panel.classList.add('hidden');
                 if (window.MapRenderer) window.MapRenderer.highlightRelatives(null);
             }
         } else {
@@ -65,7 +65,6 @@ window.MapState = {
             }
         }
 
-        // Instead of CSS transform, trigger a canvas redraw
         this.requestRedraw();
     }
 };
