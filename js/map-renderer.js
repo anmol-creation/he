@@ -114,9 +114,12 @@ window.MapRenderer = {
                                 ctx.lineTo(endX, endY);
                                 ctx.stroke();
                             } else {
+                                // Orthogonal rendering for wives (down, over, down)
                                 ctx.beginPath();
                                 ctx.moveTo(startX, startY);
-                                ctx.bezierCurveTo(startX, controlY, endX, controlY, endX, endY);
+                                ctx.lineTo(startX, controlY);
+                                ctx.lineTo(endX, controlY);
+                                ctx.lineTo(endX, endY);
                                 ctx.stroke();
                             }
                         });
@@ -148,9 +151,13 @@ window.MapRenderer = {
                     const controlY = startY + (endY - startY) / 2;
 
                     ctx.strokeStyle = data.inheritedColor || '#FF6B35';
+
+                    // Orthogonal routing for children (down, over, down)
                     ctx.beginPath();
                     ctx.moveTo(startX, startY);
-                    ctx.bezierCurveTo(startX, controlY, endX, controlY, endX, endY);
+                    ctx.lineTo(startX, controlY);
+                    ctx.lineTo(endX, controlY);
+                    ctx.lineTo(endX, endY);
                     ctx.stroke();
                 }
             }
@@ -171,7 +178,9 @@ window.MapRenderer = {
 
                     ctx.beginPath();
                     ctx.moveTo(startX, startY);
-                    ctx.bezierCurveTo(startX, midY, endX, midY, endX, endY);
+                    ctx.lineTo(startX, midY);
+                    ctx.lineTo(endX, midY);
+                    ctx.lineTo(endX, endY);
                     ctx.stroke();
                 }
             });
@@ -343,7 +352,9 @@ window.MapRenderer = {
                 } else {
                     const controlY = startY + (endY - startY) / 2;
                     ctx.moveTo(startX, startY);
-                    ctx.bezierCurveTo(startX, controlY, endX, controlY, endX, endY);
+                    ctx.lineTo(startX, controlY);
+                    ctx.lineTo(endX, controlY);
+                    ctx.lineTo(endX, endY);
                 }
                 ctx.stroke();
             }
