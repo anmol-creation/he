@@ -1,8 +1,9 @@
 import { buildTree } from './tree-builder.js';
-import { calculateDepths } from './position-calculator.js';
+import { calculateDepths, calculateAbsolutePositions } from './position-calculator.js';
+import { calculateIntrinsicWidths, calculateSubtreeLayout } from './contour-calculator.js';
 import { runHierarchicalLayout } from './hierarchical-layout.js';
 import { assignLineageColors } from './color-assigner.js';
-import { NODE_HEIGHT, MIN_GAP_Y } from './constants.js';
+import { NODE_HEIGHT, MIN_GAP_Y, MIN_GAP_X } from './constants.js';
 
 class LayoutEngine {
     constructor(data) {
@@ -26,13 +27,52 @@ class LayoutEngine {
         // Calculate depths (Y-axis Hierarchy remains strictly tied to lineage depth)
         rootNodes.forEach(rootId => calculateDepths(this.nodesMap, rootId, 0));
 
-        // Assign static Y coordinates based on depth
-        this.nodesMap.forEach(node => {
-             node.y = 1000 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
-        });
+        const mode = window.MapState ? window.MapState.layoutMode : 'autoslip';
 
-        // Run Hierarchical Layout Engine to assign X coordinates (Sugiyama)
-        runHierarchicalLayout(this.nodesMap, rootNodes);
+        if (mode === 'hierarchical') {
+            // Assign static Y coordinates based on depth
+            this.nodesMap.forEach(node => {
+                 node.y = 1000 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
+            });
+
+            // Run Hierarchical Layout Engine to assign X coordinates (Sugiyama)
+            runHierarchicalLayout(this.nodesMap, rootNodes);
+        } else {
+            // Run Original Auto-Slip Layout
+            calculateIntrinsicWidths(this.nodesMap);
+            let currentRootX = 5000;
+            let globalContour = { min: [], max: [] };
+
+            rootNodes.forEach((rootId, index) => {
+                calculateSubtreeLayout(this.nodesMap, rootId);
+                const rootNode = this.nodesMap.get(rootId);
+
+                if (index > 0) {
+                    let maxRequiredShift = 0;
+                    for (let i = 0; i < rootNode.layout.contours.min.length; i++) {
+                        if (globalContour.max[i] !== undefined) {
+                            const shift = (globalContour.max[i] + MIN_GAP_X) - rootNode.layout.contours.min[i];
+                            if (shift > maxRequiredShift) maxRequiredShift = shift;
+                        }
+                    }
+                    currentRootX += maxRequiredShift;
+                }
+
+                for (let i = 0; i < rootNode.layout.contours.min.length; i++) {
+                    const rMin = rootNode.layout.contours.min[i] + currentRootX;
+                    const rMax = rootNode.layout.contours.max[i] + currentRootX;
+                    if (globalContour.min[i] === undefined) {
+                        globalContour.min[i] = rMin;
+                        globalContour.max[i] = rMax;
+                    } else {
+                        globalContour.min[i] = Math.min(globalContour.min[i], rMin);
+                        globalContour.max[i] = Math.max(globalContour.max[i], rMax);
+                    }
+                }
+
+                calculateAbsolutePositions(this.nodesMap, rootId, currentRootX, 1000);
+            });
+        }
 
         assignLineageColors(this.nodesMap);
 

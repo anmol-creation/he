@@ -25,6 +25,16 @@
         <div style="position: relative;">
             <button id="map-view-btn" class="floating-btn" title="Map View / Filters">🗺️</button>
             <div id="map-filter-dropdown" class="filter-dropdown">
+                <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 5px;">Map Engine</div>
+                <label class="filter-option" style="margin-bottom: 5px;">
+                    <input type="radio" name="layout-mode" value="autoslip" checked>
+                    Auto-Slip Mode (Original)
+                </label>
+                <label class="filter-option" style="margin-bottom: 15px;">
+                    <input type="radio" name="layout-mode" value="hierarchical">
+                    Metro Mode (Hierarchical)
+                </label>
+                <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 5px;">Filters</div>
                 <label class="filter-option">
                     <input type="checkbox" id="filter-transition-wires">
                     Show Daughter to Wife Transitions (Red Lines)
