@@ -66,6 +66,17 @@ window.MapRenderer = {
     drawConnections(ctx, dataList, highlightSet, isRouting) {
         const drawnHusbandToWives = new Set();
 
+        // Simple hash function to generate a stable pseudo-random offset based on an ID string
+        // This ensures each parent gets their own dedicated horizontal "channel" (lane) to prevent overlapping lines
+        const getChannelOffset = (idStr) => {
+            let hash = 0;
+            for (let i = 0; i < idStr.length; i++) {
+                hash = idStr.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            // Map hash to a value between -30 and +30 pixels
+            return (Math.abs(hash) % 60) - 30;
+        };
+
         dataList.forEach(data => {
             let opacity = 0.6;
             if (highlightSet) {
@@ -102,7 +113,9 @@ window.MapRenderer = {
                             const endX = wife.x;
                             let endY = wife.y - 40;
 
-                            let controlY = startY + (endY - startY) / 2;
+                            // Add channel offset to separate different husband-wife lines
+                            let channelOffset = getChannelOffset(husbandId);
+                            let controlY = startY + (endY - startY) / 2 + (channelOffset * 0.5);
 
                             if (wives.length === 1 && husband.y === wife.y) {
                                 startY = husband.y;
@@ -121,6 +134,15 @@ window.MapRenderer = {
                                 ctx.lineTo(endX, controlY);
                                 ctx.lineTo(endX, endY);
                                 ctx.stroke();
+
+                                // Draw Arrowhead pointing down to wife
+                                ctx.beginPath();
+                                ctx.moveTo(endX, endY);
+                                ctx.lineTo(endX - 5, endY - 10);
+                                ctx.lineTo(endX + 5, endY - 10);
+                                ctx.closePath();
+                                ctx.fillStyle = ctx.strokeStyle;
+                                ctx.fill();
                             }
                         });
 
@@ -148,7 +170,10 @@ window.MapRenderer = {
                     const startY = sourceNode.y + 40;
                     const endX = data.x;
                     const endY = data.y - 40;
-                    const controlY = startY + (endY - startY) / 2;
+
+                    // Apply offset to horizontal channel based on parent ID
+                    const channelOffset = getChannelOffset(sourceNodeId);
+                    const controlY = startY + (endY - startY) / 2 + channelOffset;
 
                     ctx.strokeStyle = data.inheritedColor || '#FF6B35';
 
@@ -159,11 +184,20 @@ window.MapRenderer = {
                     ctx.lineTo(endX, controlY);
                     ctx.lineTo(endX, endY);
                     ctx.stroke();
+
+                    // Draw Arrowhead pointing down to child
+                    ctx.beginPath();
+                    ctx.moveTo(endX, endY);
+                    ctx.lineTo(endX - 5, endY - 10);
+                    ctx.lineTo(endX + 5, endY - 10);
+                    ctx.closePath();
+                    ctx.fillStyle = ctx.strokeStyle;
+                    ctx.fill();
                 }
             }
         });
 
-        if (window.transitionWires) {
+        if (window.transitionWires && window.MapState && window.MapState.showTransitionWires) {
             ctx.setLineDash([10, 10]);
             ctx.strokeStyle = 'red';
             window.transitionWires.forEach(wire => {

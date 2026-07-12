@@ -425,7 +425,8 @@ body, html {
     padding: 0;
 }
 
-.search-results-dropdown {
+.search-results-dropdown,
+.filter-dropdown {
     display: none;
     position: absolute;
     top: 50px;
@@ -438,6 +439,19 @@ body, html {
     overflow-y: auto;
     border: 1px solid rgba(255,255,255,0.1);
     width: 280px;
+}
+
+.filter-dropdown {
+    padding: 15px;
+    color: white;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
 /* Bottom Navigation Bar */
