@@ -1,6 +1,6 @@
 import { buildTree } from './tree-builder.js';
 import { calculateDepths } from './position-calculator.js';
-import { runGraphPhysics } from './graph-physics.js';
+import { runHierarchicalLayout } from './hierarchical-layout.js';
 import { assignLineageColors } from './color-assigner.js';
 import { NODE_HEIGHT, MIN_GAP_Y } from './constants.js';
 
@@ -31,8 +31,8 @@ class LayoutEngine {
              node.y = 1000 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
         });
 
-        // Run Force-Directed Graph Engine to assign X coordinates
-        runGraphPhysics(this.nodesMap, rootNodes, 300);
+        // Run Hierarchical Layout Engine to assign X coordinates (Sugiyama)
+        runHierarchicalLayout(this.nodesMap, rootNodes);
 
         assignLineageColors(this.nodesMap);
 
