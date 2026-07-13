@@ -300,8 +300,8 @@ export const brahmaBaseData = [
     { id: 'kirtimati', name: 'कीर्तिमती', subtitle: 'शुकदेव पुत्री', parent: 'shuka', mother: 'pivari', yug: 'dwapar', parichay: 'शुकदेव की पुत्री जिसका विवाह राजा अणुह से हुआ।' },
 
     // --- CHITRAGUPTA WIVES ---
-    { id: 'nandini_chitragupta', name: 'नंदिनी', subtitle: 'सूर्यदक्षिणा / चित्रगुप्त की पत्नी', parent: '', spouseOf: 'chitragupta', yug: 'satya' },
-    { id: 'iravati_chitragupta', name: 'इरावती', subtitle: 'शोभावती / चित्रगुप्त की पत्नी', parent: '', spouseOf: 'chitragupta', yug: 'satya' },
+    { id: 'nandini_chitragupta', name: 'नंदिनी', subtitle: 'सूर्यदक्षिणा / चित्रगुप्त की पत्नी', parent: '', spouseOf: 'chitragupta', yug: 'satya', clusterName: 'चित्रगुप्त की 2 पत्नियाँ' },
+    { id: 'iravati_chitragupta', name: 'इरावती', subtitle: 'शोभावती / चित्रगुप्त की पत्नी', parent: '', spouseOf: 'chitragupta', yug: 'satya', clusterName: 'चित्रगुप्त की 2 पत्नियाँ' },
 
     // --- SONS OF NANDINI ---
     { id: 'bhanu', name: 'भानु', subtitle: 'श्रीवास्तव कायस्थ वंश', parent: 'chitragupta', mother: 'nandini_chitragupta', yug: 'satya', parichay: 'इनके द्वारा श्रीवास्तव कायस्थ वंश की स्थापना हुई। श्रीवास्तव वंश आगे चलकर 2 वर्गों (खरे और दूसर) में विभाजित हुआ और इनकी कई अल (उप-शाखाएं/उपनाम) हैं, जैसे- वर्मा, सिन्हा, रायजादा, कानूनगो आदि।' },
@@ -366,19 +366,19 @@ export const brahmaBaseData = [
     { id: 'variyan', name: 'वरीयां', subtitle: 'पुलह पुत्र', parent: 'pulaha', mother: 'gati_pulaha', yug: 'satya' },
 
     // --- DHARMA DEVA LINEAGE (Sons of Brahma) ---
-    { id: 'murti_dharma', name: 'मूर्ति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'shraddha_dharma', name: 'श्रद्धा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'maitri_dharma', name: 'मैत्री', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'daya_dharma', name: 'दया', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'shanti_dharma', name: 'शान्ति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'tushti_dharma', name: 'तुष्टि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'pushti_dharma', name: 'पुष्टि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'kriya_dharma', name: 'क्रिया', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'unnati_dharma', name: 'उन्नति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'buddhi_dharma', name: 'बुद्धि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'medha_dharma', name: 'मेधा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'titiksha_dharma', name: 'तितिक्षा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
-    { id: 'hri_dharma', name: 'ह्री (लज्जा)', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya' },
+    { id: 'murti_dharma', name: 'मूर्ति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'shraddha_dharma', name: 'श्रद्धा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'maitri_dharma', name: 'मैत्री', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'daya_dharma', name: 'दया', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'shanti_dharma', name: 'शान्ति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'tushti_dharma', name: 'तुष्टि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'pushti_dharma', name: 'पुष्टि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'kriya_dharma', name: 'क्रिया', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'unnati_dharma', name: 'उन्नति', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'buddhi_dharma', name: 'बुद्धि', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'medha_dharma', name: 'मेधा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'titiksha_dharma', name: 'तितिक्षा', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
+    { id: 'hri_dharma', name: 'ह्री (लज्जा)', subtitle: 'दक्ष पुत्री / धर्म पत्नी', parent: 'daksha', spouseOf: 'dharma_deva', yug: 'satya', clusterName: 'धर्म की 13 पत्नियाँ (दक्ष पुत्रियां)' },
 
     { id: 'nara_narayana', name: 'नर-नारायण', subtitle: 'मूर्ति के पुत्र', parent: 'dharma_deva', mother: 'murti_dharma', yug: 'satya' },
     { id: 'shubha', name: 'शुभ', subtitle: 'श्रद्धा के पुत्र', parent: 'dharma_deva', mother: 'shraddha_dharma', yug: 'satya' },
