@@ -1,4 +1,8 @@
 export const vishnuBaseData = [
+    // Wives of Vishnu
+    { id: 'lakshmi', name: 'लक्ष्मी', subtitle: 'धन/समृद्धि की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa', clusterName: 'विष्णु की 3 पत्नियाँ' },
+    { id: 'bhoodevi', name: 'भूदेवी', subtitle: 'पृथ्वी की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa', clusterName: 'विष्णु की 3 पत्नियाँ' },
+    { id: 'nila_devi', name: 'नीला देवी', subtitle: 'विष्णु की तीसरी पत्नी (दक्षिण परंपरा)', spouseOf: 'vishnu', yug: 'pre-kalpa', clusterName: 'विष्णु की 3 पत्नियाँ' },
     // Note: Lakshmi is now defined in supreme.js at the Mahakalp level.
     // { id: 'lakshmi', name: 'लक्ष्मी', subtitle: 'धन/समृद्धि की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa' },
     { id: 'bhoodevi', name: 'भूदेवी', subtitle: 'पृथ्वी की देवी', spouseOf: 'vishnu', yug: 'mahakalp', timeScale: 'mahakalp' },

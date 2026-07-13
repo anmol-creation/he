@@ -106,23 +106,18 @@ window.MapControls = {
                 const y = node.y - h/2;
 
                 if (worldX >= x && worldX <= x + w && worldY >= y && worldY <= y + h) {
-                    // Check if it's a cluster node being clicked
-                    if (node.isCluster) {
+                    // Check if it's a cluster proxy node OR an expanded cluster member being clicked
+                    if (node.isCluster || (node.clusterName && state.expandedClusters.has(node.clusterName))) {
                         if (state.expandedClusters.has(node.clusterName)) {
                             state.expandedClusters.delete(node.clusterName);
                         } else {
                             state.expandedClusters.add(node.clusterName);
                         }
 
-                        // Re-run the engine
                         if (window.LayoutEngine && window.HistoricDB) {
-                            // Using the raw data, re-process everything
-                            // In real scenario, we should get raw from somewhere, but HistoricDB.getAll()
-                            // gives processed. We need the original raw data.
-                            // Since global historicData was replaced by processed, we should dispatch an event
                             window.dispatchEvent(new Event('ClusterToggled'));
                         }
-                        return;
+                        return; // Clicking toggles it, does not open info panel
                     }
 
                     this.focusOnNode(node.id);
