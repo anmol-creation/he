@@ -32,7 +32,7 @@ class LayoutEngine {
         if (mode === 'hierarchical') {
             // Assign static Y coordinates based on depth
             this.nodesMap.forEach(node => {
-                 node.y = 300 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y)); // Start closer to 0 for Sanatan
+                 node.y = 1000 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
             });
 
             // Run Hierarchical Layout Engine to assign X coordinates (Sugiyama)
@@ -70,7 +70,7 @@ class LayoutEngine {
                     }
                 }
 
-                calculateAbsolutePositions(this.nodesMap, rootId, currentRootX, 300); // Start closer to 0 for Sanatan
+                calculateAbsolutePositions(this.nodesMap, rootId, currentRootX, 1000);
             });
         }
 

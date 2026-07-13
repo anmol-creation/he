@@ -84,9 +84,15 @@ export function runHierarchicalLayout(nodesMap, rootNodes) {
              // Calculate ideal X based on parents
              let idealX = node.barycenter || currentX;
 
-             // If we are a spouse, we MUST be next to the husband (if same depth) or below him
-             // Actually, depth + 0.5 puts wives on a separate visual level in Y, so they don't overlap with husbands horizontally here
-             // But let's enforce minimum gap from the previous node
+             // If we are a spouse, we MUST strictly bind to the husband's position to prevent long horizontal lines
+             if (node.spouseOf && nodesMap.has(node.spouseOf)) {
+                 const husband = nodesMap.get(node.spouseOf);
+                 if (husband.x !== undefined) {
+                     idealX = husband.x + NODE_WIDTH + MIN_GAP_X;
+                 }
+             }
+
+             // Enforce minimum gap from the previous node in the same layer
              if (idealX < currentX) {
                  idealX = currentX;
              }

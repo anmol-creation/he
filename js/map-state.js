@@ -20,7 +20,6 @@ window.MapState = {
     expandedClusters: new Set(), // Track which clusterNames are open
     showTransitionWires: false, // Filter: Hide Daughter->Wife lines by default
     layoutMode: 'autoslip', // Default layout mode
-    activeKalpa: 'shveta_varaha', // Default Kalpa (51st)
 
     initElements() {
         this.container = document.getElementById('map-container');

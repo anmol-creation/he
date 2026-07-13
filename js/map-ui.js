@@ -30,56 +30,6 @@ window.MapUI = {
             });
         }
 
-        // Kalpa Switcher Logic (Injected inline safely within setupUI)
-        const kalpas = [
-            { id: 'padma', index: 50, title: 'Padma Kalpa' },
-            { id: 'shveta_varaha', index: 51, title: 'Shveta Varaha (Current)' },
-            { id: 'nilalohita', index: 52, title: 'Nilalohita Kalpa (Future)' }
-        ];
-
-        let currentKalpaIndex = 1; // Default to 51st
-
-        const prevKalpaBtn = document.getElementById('prev-kalpa-btn');
-        const nextKalpaBtn = document.getElementById('next-kalpa-btn');
-        const kalpaDisplay = document.getElementById('current-kalpa-display');
-
-        const updateKalpaUI = () => {
-            const current = kalpas[currentKalpaIndex];
-            window.MapState.activeKalpa = current.id;
-
-            if (kalpaDisplay) {
-                kalpaDisplay.innerHTML = `
-                    <div style="font-size: 0.9rem; color: #999;">${current.index}${current.index === 50 ? 'th' : current.index === 51 ? 'st' : 'nd'} Kalpa</div>
-                    <div style="font-size: 1.1rem; color: #FFD700;">${current.title}</div>
-                `;
-            }
-
-            if (prevKalpaBtn) prevKalpaBtn.style.opacity = currentKalpaIndex === 0 ? '0.3' : '1';
-            if (nextKalpaBtn) nextKalpaBtn.style.opacity = currentKalpaIndex === kalpas.length - 1 ? '0.3' : '1';
-
-            // Trigger full recalculation & re-render by dispatching event, so TreeBuilder uses raw data
-            window.dispatchEvent(new Event('ClusterToggled'));
-        };
-
-        if (prevKalpaBtn && nextKalpaBtn) {
-            prevKalpaBtn.addEventListener('click', () => {
-                if (currentKalpaIndex > 0) {
-                    currentKalpaIndex--;
-                    updateKalpaUI();
-                }
-            });
-
-            nextKalpaBtn.addEventListener('click', () => {
-                if (currentKalpaIndex < kalpas.length - 1) {
-                    currentKalpaIndex++;
-                    updateKalpaUI();
-                }
-            });
-
-            prevKalpaBtn.style.opacity = '1';
-            nextKalpaBtn.style.opacity = '1';
-        }
-
         if (filterTransitionWires) {
             // Set initial state matching MapState
             filterTransitionWires.checked = window.MapState && window.MapState.showTransitionWires;
