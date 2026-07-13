@@ -4,8 +4,9 @@ export function buildTree(rawData, nodesMap, transitionWires) {
 
     const nodeExists = (id) => rawData.some(d => d.id === id);
 
-    // Filter by Kalpa
+    // Filter by Kalpa and Manvantara
     const activeKalpa = window.MapState ? window.MapState.activeKalpa : 'shveta_varaha';
+    const activeManv = window.MapState ? window.MapState.activeManvantara : 7;
 
     // Group clusters
     const clusterMap = new Map();
@@ -14,11 +15,19 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         // Evaluate Kalpa Filter
         const timeScale = node.timeScale || '';
         const nodeKalpa = node.kalpa || 'shveta_varaha'; // Default normal nodes to current kalpa
+        const nodeManv = node.manvantara || 7; // Default unspecified normal lineages to 7th
 
         // Always show Sanatan and Mahakalp nodes. Otherwise, must match active Kalpa.
         if (timeScale !== 'sanatan' && timeScale !== 'mahakalp') {
             if (nodeKalpa !== activeKalpa) {
                 return; // Skip this node entirely from the layout
+            }
+
+            // If it belongs to this Kalpa, but is not cross-Manvantara (timeScale: kalpa), evaluate Manvantara
+            if (timeScale !== 'kalpa') {
+                if (nodeManv !== activeManv) {
+                    return; // Skip nodes that don't belong to the active Manvantara
+                }
             }
         }
 

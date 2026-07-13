@@ -80,6 +80,66 @@ window.MapUI = {
             nextKalpaBtn.style.opacity = '1';
         }
 
+        // Manvantara Switcher Logic
+        const manvantaras = [
+            { index: 1, title: 'Svayambhuva' },
+            { index: 2, title: 'Svarochisha' },
+            { index: 3, title: 'Uttama' },
+            { index: 4, title: 'Tamasa' },
+            { index: 5, title: 'Raivata' },
+            { index: 6, title: 'Chakshusha' },
+            { index: 7, title: 'Vaivasvata (Current)' },
+            { index: 8, title: 'Savarni' },
+            { index: 9, title: 'Daksha-savarni' },
+            { index: 10, title: 'Brahma-savarni' },
+            { index: 11, title: 'Dharma-savarni' },
+            { index: 12, title: 'Rudra-savarni' },
+            { index: 13, title: 'Raucya/Deva-savarni' },
+            { index: 14, title: 'Indra-savarni' }
+        ];
+
+        let currentManvIndex = 6; // Default to 7th
+
+        const prevManvBtn = document.getElementById('prev-manvantara-btn');
+        const nextManvBtn = document.getElementById('next-manvantara-btn');
+        const manvDisplay = document.getElementById('current-manvantara-display');
+
+        const updateManvUI = () => {
+            const current = manvantaras[currentManvIndex];
+            window.MapState.activeManvantara = current.index;
+
+            if (manvDisplay) {
+                manvDisplay.innerHTML = `
+                    <div style="font-size: 0.8rem; color: #999;">${current.index}${current.index === 1 ? 'st' : current.index === 2 ? 'nd' : current.index === 3 ? 'rd' : 'th'} Manvantara</div>
+                    <div style="font-size: 1rem; color: #00BFFF;">${current.title}</div>
+                `;
+            }
+
+            if (prevManvBtn) prevManvBtn.style.opacity = currentManvIndex === 0 ? '0.3' : '1';
+            if (nextManvBtn) nextManvBtn.style.opacity = currentManvIndex === manvantaras.length - 1 ? '0.3' : '1';
+
+            window.dispatchEvent(new Event('ClusterToggled'));
+        };
+
+        if (prevManvBtn && nextManvBtn) {
+            prevManvBtn.addEventListener('click', () => {
+                if (currentManvIndex > 0) {
+                    currentManvIndex--;
+                    updateManvUI();
+                }
+            });
+
+            nextManvBtn.addEventListener('click', () => {
+                if (currentManvIndex < manvantaras.length - 1) {
+                    currentManvIndex++;
+                    updateManvUI();
+                }
+            });
+
+            prevManvBtn.style.opacity = '1';
+            nextManvBtn.style.opacity = '1';
+        }
+
         if (filterTransitionWires) {
             // Set initial state matching MapState
             filterTransitionWires.checked = window.MapState && window.MapState.showTransitionWires;

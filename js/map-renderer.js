@@ -325,7 +325,7 @@ window.MapRenderer = {
     },
 
     drawTimeDividers(ctx, dataList) {
-        // Find dynamically where time zones should be placed based on top nodes
+        // We now draw visual "Swimlanes" / Boundaries between the Y-depths, rather than just lines above them.
         let sanatanY = 0;
         let mahakalpY = 300;
         let kalpY = 1000;
@@ -334,27 +334,50 @@ window.MapRenderer = {
 
         // Find Y of Parabrahman
         const brahman = nodes.find(n => n.id === 'brahman');
-        if (brahman) sanatanY = brahman.y - 100;
+        if (brahman) sanatanY = brahman.y;
 
         // Find Y of Brahma/Vishnu/Shiva
         const mahakalpNodes = nodes.filter(n => n.timeScale === 'mahakalp');
         if (mahakalpNodes.length > 0) {
-            mahakalpY = Math.min(...mahakalpNodes.map(n => n.y)) - 100;
+            mahakalpY = Math.min(...mahakalpNodes.map(n => n.y));
         }
 
-        // Find start of normal Kalp (children of Brahma)
+        // Find start of normal Kalp
         const kalpNodes = nodes.filter(n => !['sanatan', 'mahakalp'].includes(n.timeScale));
         if (kalpNodes.length > 0) {
-            // Pick nodes near the top that aren't sanatan/mahakalp
-            const topKalpY = Math.min(...kalpNodes.map(n => n.y));
-            kalpY = topKalpY - 100;
+            kalpY = Math.min(...kalpNodes.map(n => n.y));
         }
 
+        let manvantaraY = kalpY + 300; // default offset
+        const manvNodes = nodes.filter(n => n.depth >= 3);
+        if (manvNodes.length > 0) {
+            manvantaraY = Math.min(...manvNodes.map(n => n.y));
+        }
+
+        // Calculate the exact midpoint between the layers to draw the separating boundary lines
+        const sanatanBottomLine = sanatanY + ((mahakalpY - sanatanY) / 2);
+        const mahakalpBottomLine = mahakalpY + ((kalpY - mahakalpY) / 2);
+        const kalpBottomLine = kalpY + ((manvantaraY - kalpY) / 2);
+
         const dividers = [
-            { label: 'Sanatan (Eternal)', y: sanatanY, color: '#FFD700' },
-            { label: 'Maha-Kalpa', y: mahakalpY, color: '#FF8C00' },
-            { label: 'Kalpa / Yuga Cycle', y: kalpY, color: '#00BFFF' }
+            { label: 'Sanatan (Eternal) Zone ↑', y: sanatanBottomLine, color: '#FFD700' },
+            { label: 'Maha-Kalpa Zone ↑', y: mahakalpBottomLine, color: '#FF8C00' },
+            { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' }
         ];
+
+        // Update the position of the HTML kalpa switcher to sit right below the Mahakalp line
+        const kalpaSwitcher = document.getElementById('kalpa-switcher-container');
+        if (kalpaSwitcher && window.MapState.canvas) {
+            const state = window.MapState;
+            // The canvas Y coordinate of the Mahakalp line is mahakalpBottomLine.
+            // We want it visually 20px below this line in screen space.
+            const screenY = (mahakalpBottomLine * state.scale) + state.translateY + 20;
+
+            // Keep it fixed in the horizontal center of the screen, irrespective of canvas panning.
+            kalpaSwitcher.style.top = `${screenY}px`;
+            kalpaSwitcher.style.left = `50%`;
+            kalpaSwitcher.style.transform = `translateX(-50%)`;
+        }
 
         ctx.lineWidth = 3;
         ctx.setLineDash([10, 10]);
@@ -368,11 +391,15 @@ window.MapRenderer = {
             ctx.stroke();
 
             ctx.globalAlpha = 1;
-            ctx.fillStyle = 'rgba(17, 17, 17, 0.9)'; // Match body background
+            ctx.fillStyle = 'rgba(17, 17, 17, 0.9)';
             ctx.strokeStyle = div.color;
 
             ctx.beginPath();
-            ctx.roundRect(-80, div.y - 20, 160, 40, 8);
+            if (ctx.roundRect) {
+                ctx.roundRect(-100, div.y - 20, 200, 40, 8);
+            } else {
+                ctx.rect(-100, div.y - 20, 200, 40);
+            }
             ctx.fill();
             ctx.stroke();
 
