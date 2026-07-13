@@ -110,6 +110,11 @@ export function buildTree(rawData, nodesMap, transitionWires) {
     nodesMap.forEach(node => {
         if (node.id === 'unknown_origin') return;
 
+        // Important: A cluster node can have BOTH parent and spouseOf (unlike individual females which are duplicated).
+        // We must process both relationships for the proxy cluster node so it connects to the father and the husband simultaneously.
+
+        let hasParentProcessed = false;
+
         if (node.spouseOf) {
              if (nodesMap.has(node.spouseOf)) {
                 const partner = nodesMap.get(node.spouseOf);
@@ -117,7 +122,11 @@ export function buildTree(rawData, nodesMap, transitionWires) {
              } else {
                 console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing spouse '${node.spouseOf}'.`);
              }
-        } else if (node.parent) {
+        }
+
+        // Use standard "if" instead of "else if" for clusters so they can link to both sides.
+        // For normal nodes, they should only link to ONE side to maintain tree topology (unless duplicated).
+        if (node.parent && (!node.spouseOf || node.isCluster)) {
              if (nodesMap.has(node.parent)) {
                 let pushedToMother = false;
                 if (node.mother && nodesMap.has(node.mother)) {
