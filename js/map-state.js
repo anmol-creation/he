@@ -21,6 +21,7 @@ window.MapState = {
     showTransitionWires: false, // Filter: Hide Daughter->Wife lines by default
     layoutMode: 'autoslip', // Default layout mode
     activeKalpa: 'shveta_varaha', // Default Kalpa (51st)
+    activeManvantara: 7, // Default 7th Vaivasvata
 
     initElements() {
         this.container = document.getElementById('map-container');
