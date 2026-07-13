@@ -1,8 +1,8 @@
 export const brahmaBaseData = [
     // Wives of Brahma
-    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'satya' },
-    { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya' },
-    { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya' },
+    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'mahakalp', timeScale: 'mahakalp' },
+    { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'mahakalp', timeScale: 'mahakalp' },
+    { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'mahakalp', timeScale: 'mahakalp' },
 
     // Mind/Body-born creations
     { id: 'ribhu', name: 'ऋभु', subtitle: 'मानस पुत्र', parent: 'brahma', yug: 'satya' },

@@ -4,10 +4,24 @@ export function buildTree(rawData, nodesMap, transitionWires) {
 
     const nodeExists = (id) => rawData.some(d => d.id === id);
 
+    // Filter by Kalpa
+    const activeKalpa = window.MapState ? window.MapState.activeKalpa : 'shveta_varaha';
+
     // Group clusters
     const clusterMap = new Map();
 
     rawData.forEach(node => {
+        // Evaluate Kalpa Filter
+        const timeScale = node.timeScale || '';
+        const nodeKalpa = node.kalpa || 'shveta_varaha'; // Default normal nodes to current kalpa
+
+        // Always show Sanatan and Mahakalp nodes. Otherwise, must match active Kalpa.
+        if (timeScale !== 'sanatan' && timeScale !== 'mahakalp') {
+            if (nodeKalpa !== activeKalpa) {
+                return; // Skip this node entirely from the layout
+            }
+        }
+
         // If node belongs to a cluster and it is NOT expanded, squash it
         if (node.clusterName && !expandedClusters.has(node.clusterName)) {
              if (!clusterMap.has(node.clusterName)) {
