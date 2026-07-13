@@ -1,8 +1,8 @@
 export const brahmaBaseData = [
     // Wives of Brahma
-    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'satya' },
-    { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya' },
-    { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya' },
+    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'satya', clusterName: 'ब्रह्मा की 3 पत्नियाँ' },
+    { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya', clusterName: 'ब्रह्मा की 3 पत्नियाँ' },
+    { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya', clusterName: 'ब्रह्मा की 3 पत्नियाँ' },
 
     // Mind/Body-born creations
     { id: 'ribhu', name: 'ऋभु', subtitle: 'मानस पुत्र', parent: 'brahma', yug: 'satya' },
@@ -58,9 +58,9 @@ export const brahmaBaseData = [
     { id: 'kapila_avatar', name: 'कपिल मुनि', subtitle: 'विष्णु अवतार', parent: 'kardama_prajapati', mother: 'devahuti', yug: 'satya', parichay: 'सांख्य दर्शन के प्रणेता महान मुनि और विष्णु के अवतार।' },
 
     // --- MARICHI LINEAGE ---
-    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya' },
-    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya' },
-    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya' },
+    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की 3 पत्नियाँ' },
+    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की 3 पत्नियाँ' },
+    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की 3 पत्नियाँ' },
 
     // Marichi's children from Kala
     { id: 'purnima_marichi', name: 'पूर्णिमा', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'kala', yug: 'satya' },
@@ -78,14 +78,14 @@ export const brahmaBaseData = [
     { id: 'bhadraka_apsara', name: 'भद्रका', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' },
     // ----------------------
 
-    { id: 'anusuya', name: 'अनुसूया', subtitle: 'कर्दम पुत्री / अत्रि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'atri', yug: 'satya', parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।' },
+    { id: 'anusuya', name: 'अनुसूया', subtitle: 'कर्दम पुत्री / अत्रि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'atri', yug: 'satya', parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।', clusterName: 'अत्रि की पत्नियाँ' },
     { id: 'shanti', name: 'शांति', subtitle: 'कर्दम पुत्री / अथर्वा पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', yug: 'satya' },
 
     { id: 'prasuti', name: 'प्रसूति', subtitle: 'मनु पुत्री', parent: 'svayambhuva_manu', mother: 'shatarupa', spouseOf: 'daksha', yug: 'satya' },
 
     { id: 'uttanapada', name: 'उत्तानपाद', subtitle: 'मनु के पुत्र', parent: 'svayambhuva_manu', mother: 'shatarupa', yug: 'satya' },
-    { id: 'suniti', name: 'सुनीति', subtitle: 'उत्तानपाद पत्नी', parent: '', spouseOf: 'uttanapada', yug: 'satya' },
-    { id: 'suruchi', name: 'सुरुचि', subtitle: 'उत्तानपाद पत्नी', parent: '', spouseOf: 'uttanapada', yug: 'satya' },
+    { id: 'suniti', name: 'सुनीति', subtitle: 'उत्तानपाद पत्नी', parent: '', spouseOf: 'uttanapada', yug: 'satya', clusterName: 'उत्तानपाद की 2 पत्नियाँ' },
+    { id: 'suruchi', name: 'सुरुचि', subtitle: 'उत्तानपाद पत्नी', parent: '', spouseOf: 'uttanapada', yug: 'satya', clusterName: 'उत्तानपाद की 2 पत्नियाँ' },
     { id: 'uttama', name: 'उत्तम', subtitle: 'उत्तानपाद पुत्र', parent: 'uttanapada', mother: 'suruchi', yug: 'satya' },
     { id: 'dhruva', name: 'ध्रुव', subtitle: 'परम भक्त / ध्रुव तारा', parent: 'uttanapada', mother: 'suniti', yug: 'satya' },
     { id: 'shlishti', name: 'श्लिष्टि', subtitle: 'ध्रुव पुत्र', parent: 'dhruva', yug: 'satya' },
@@ -132,7 +132,7 @@ export const brahmaBaseData = [
     { id: 'brihaspati', name: 'बृहस्पति', subtitle: 'देवताओं के गुरु', parent: 'angiras', mother: 'shraddha', yug: 'satya' },
     { id: 'mamata', name: 'ममता', subtitle: 'उतथ्य की पत्नी', parent: '', spouseOf: 'utathya', yug: 'satya' },
     { id: 'dirghatamas', name: 'दीर्घतमस', subtitle: 'अंधे महर्षि', parent: 'utathya', mother: 'mamata', yug: 'treta', parichay: 'बृहस्पति के शाप के कारण ये जन्म से अंधे थे। बाद में इन्होने राजा बलि की पत्नी सुदेष्णा के गर्भ से ५ पुत्रों को जन्म दिया।' },
-    { id: 'pradveshi', name: 'प्रद्वेषी', subtitle: 'दीर्घतमस की प्रथम पत्नी', parent: '', spouseOf: 'dirghatamas', yug: 'treta' },
+    { id: 'pradveshi', name: 'प्रद्वेषी', subtitle: 'दीर्घतमस की प्रथम पत्नी', parent: '', spouseOf: 'dirghatamas', yug: 'treta', clusterName: 'दीर्घतमस की 3 पत्नियाँ' },
     { id: 'gautama', name: 'गौतम', subtitle: 'सप्तर्षि', parent: 'dirghatamas', mother: 'pradveshi', yug: 'treta' },
     { id: 'ahalya', name: 'अहल्या', subtitle: 'गौतम की पत्नी', parent: '', spouseOf: 'gautama', yug: 'treta' },
     { id: 'shatananda', name: 'शतानन्द', subtitle: 'गौतम-अहल्या पुत्र', parent: 'gautama', mother: 'ahalya', yug: 'treta', parichay: 'राजा जनक के राजपुरोहित।' },
@@ -143,7 +143,7 @@ export const brahmaBaseData = [
     { id: 'tara_brihaspati', name: 'तारा', subtitle: 'बृहस्पति की पत्नी', parent: '', spouseOf: 'brihaspati', yug: 'satya' },
     { id: 'kacha', name: 'कच', subtitle: 'बृहस्पति के पुत्र', parent: 'brihaspati', mother: 'tara_brihaspati', yug: 'satya', parichay: 'इन्होंने शुक्राचार्य से मृत-संजीवनी विद्या प्राप्त की थी।' },
     { id: 'bharadwaja', name: 'भारद्वाज', subtitle: 'सप्तर्षि / अंगिरस वंश', parent: 'brihaspati', mother: 'mamata', yug: 'treta', parichay: 'बृहस्पति और ममता के मिलन से उत्पन्न। बाद में राजा भरत ने इन्हें गोद लिया था।' },
-    { id: 'sudeshna', name: 'सुदेष्णा', subtitle: 'राजा बलि की पत्नी', parent: '', spouseOf: 'dirghatamas', yug: 'treta', parichay: 'राजा बलि की पत्नी, जिनके गर्भ से नियोग द्वारा दीर्घतमस ने 5 पुत्र उत्पन्न किए।' },
+    { id: 'sudeshna', name: 'सुदेष्णा', subtitle: 'राजा बलि की पत्नी', parent: '', spouseOf: 'dirghatamas', yug: 'treta', parichay: 'राजा बलि की पत्नी, जिनके गर्भ से नियोग द्वारा दीर्घतमस ने 5 पुत्र उत्पन्न किए।', clusterName: 'दीर्घतमस की 3 पत्नियाँ' },
     { id: 'anga', name: 'अंग', subtitle: 'अंग देश के संस्थापक', parent: 'dirghatamas', mother: 'sudeshna', yug: 'treta' },
     { id: 'dadhivahana', name: 'दधिवाहन', subtitle: 'अंग नरेश', parent: 'anga', yug: 'treta' },
     { id: 'khalapana', name: 'खलपान', subtitle: 'अंग नरेश', parent: 'dadhivahana', yug: 'treta' },
@@ -175,22 +175,22 @@ export const brahmaBaseData = [
     { id: 'pundra', name: 'पुण्ड्र', subtitle: 'पुण्ड्र के संस्थापक', parent: 'dirghatamas', mother: 'sudeshna', yug: 'treta' },
     { id: 'paundraka', name: 'पौंड्रक वासुदेव', subtitle: 'पुण्ड्र नरेश', parent: 'pundra', yug: 'dwapar', parichay: 'स्वयं को असली वासुदेव मानता था। श्रीकृष्ण ने इसका वध किया।' },
     { id: 'suhma', name: 'सुह्म', subtitle: 'सुह्म के संस्थापक', parent: 'dirghatamas', mother: 'sudeshna', yug: 'treta' },
-    { id: 'usij', name: 'उशिज', subtitle: 'दासी', parent: '', spouseOf: 'dirghatamas', yug: 'treta' },
+    { id: 'usij', name: 'उशिज', subtitle: 'दासी', parent: '', spouseOf: 'dirghatamas', yug: 'treta', clusterName: 'दीर्घतमस की 3 पत्नियाँ' },
     { id: 'kakshivan', name: 'कक्षीवान', subtitle: 'दीर्घतमस पुत्र', parent: 'dirghatamas', mother: 'usij', yug: 'treta' },
     { id: 'kakshivan_patni', name: 'राजा स्वनय की पुत्रियां', subtitle: 'कक्षीवान की पत्नियाँ', parent: '', spouseOf: 'kakshivan', yug: 'treta' },
     { id: 'ghosha', name: 'घोषाल / घोषा', subtitle: 'कक्षीवान पुत्री', parent: 'kakshivan', mother: 'kakshivan_patni', yug: 'treta', parichay: 'ऋग्वेद की ऋषिका। अश्विनी कुमारों ने इनका कुष्ठ रोग ठीक किया था।' },
     { id: 'sukirti', name: 'सुकीर्ति', subtitle: 'कक्षीवान पुत्र', parent: 'kakshivan', mother: 'kakshivan_patni', yug: 'treta' },
     { id: 'sabara', name: 'शबर', subtitle: 'कक्षीवान पुत्र', parent: 'kakshivan', mother: 'kakshivan_patni', yug: 'treta' },
     { id: 'garga', name: 'गर्ग', subtitle: 'भारद्वाज पुत्र', parent: 'bharadwaja', yug: 'dwapar', parichay: 'यादवों के कुलगुरु।' },
-    { id: 'ilavida', name: 'इड़विड़ा', subtitle: 'भारद्वाज पुत्री', parent: 'bharadwaja', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और कुबेर की माता।' },
+    { id: 'ilavida', name: 'इड़विड़ा', subtitle: 'भारद्वाज पुत्री', parent: 'bharadwaja', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और कुबेर की माता।', clusterName: 'विश्रवा की 4 पत्नियाँ' },
     { id: 'drona', name: 'द्रोणाचार्य', subtitle: 'कौरवों के गुरु', parent: 'bharadwaja', yug: 'dwapar' },
     { id: 'kripi', name: 'कृपी', subtitle: 'द्रोणाचार्य की पत्नी', parent: 'sharadvan', spouseOf: 'drona', yug: 'dwapar', parichay: 'शतानन्द के पुत्र शरद्वान की पुत्री और कृपाचार्य की जुड़वाँ बहन।' },
     { id: 'ashwatthama', name: 'अश्वत्थामा', subtitle: 'द्रोण पुत्र / चिरंजीवी', parent: 'drona', mother: 'kripi', yug: 'dwapar' },
     { id: 'havirbhu', name: 'हविर्भू', subtitle: 'कर्दम ऋषि पुत्री', parent: '', spouseOf: 'pulastya', yug: 'satya', parichay: 'पुलस्त्य ऋषि की पत्नी और विश्रवा की माता।' },
     { id: 'vishrava', name: 'विश्रवा', subtitle: 'पुलस्त्य पुत्र', parent: 'pulastya', mother: 'havirbhu', yug: 'treta' },
-    { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।' },
-    { id: 'pushpotkata', name: 'पुष्पोत्कटा', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और खर की माता।' },
-    { id: 'malini', name: 'मालिनी', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और दूषण की माता।' },
+    { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।', clusterName: 'विश्रवा की 4 पत्नियाँ' },
+    { id: 'pushpotkata', name: 'पुष्पोत्कटा', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और खर की माता।', clusterName: 'विश्रवा की 4 पत्नियाँ' },
+    { id: 'malini', name: 'मालिनी', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और दूषण की माता।', clusterName: 'विश्रवा की 4 पत्नियाँ' },
 
     // Kuber's family
     { id: 'kuber', name: 'कुबेर', subtitle: 'यक्षराज', parent: 'vishrava', mother: 'ilavida', yug: 'treta' },
@@ -210,8 +210,8 @@ export const brahmaBaseData = [
         'राम द्वारा युद्ध में मारे गए। (बालकाण्ड, सर्ग 1, श्लोक 81)'
       ]
     },
-    { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।' },
-    { id: 'dhanyamalini', name: 'धन्यमालिनी', subtitle: 'रावण की पत्नी', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।' },
+    { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।', clusterName: 'रावण की 2 पत्नियाँ' },
+    { id: 'dhanyamalini', name: 'धन्यमालिनी', subtitle: 'रावण की पत्नी', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।', clusterName: 'रावण की 2 पत्नियाँ' },
     { id: 'meghnad', name: 'इंद्रजीत (मेघनाद)', subtitle: 'रावण पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta' },
     { id: 'akshayakumara', name: 'अक्षयकुमार', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', parichay: 'अशोक वाटिका में हनुमान जी द्वारा वध किया गया।' },
     { id: 'atikaya', name: 'अतिकाय', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'dhanyamalini', yug: 'treta', parichay: 'रावण का बलवान पुत्र जिसे लक्ष्मण ने मारा।' },
@@ -233,8 +233,8 @@ export const brahmaBaseData = [
     { id: 'sarama', name: 'सरमा', subtitle: 'विभीषण की पत्नी', parent: '', spouseOf: 'vibhishana', yug: 'treta', parichay: 'विभीषण की धार्मिक पत्नी।' },
     { id: 'trijata', name: 'त्रिजटा', subtitle: 'विभीषण की पुत्री', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'अशोक वाटिका में माता सीता की स्नेही रक्षक।' },
     { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
-    { id: 'khyati', name: 'ख्याति', subtitle: 'दक्ष पुत्री', parent: 'daksha', spouseOf: 'bhrigu', yug: 'satya' },
-    { id: 'paulomi', name: 'पुलोमा', subtitle: 'भृगु पत्नी', parent: '', spouseOf: 'bhrigu', yug: 'satya', parichay: 'महर्षि भृगु की पत्नी और च्यवन ऋषि की माता।' },
+    { id: 'khyati', name: 'ख्याति', subtitle: 'दक्ष पुत्री', parent: 'daksha', spouseOf: 'bhrigu', yug: 'satya', clusterName: 'भृगु की 2 पत्नियाँ' },
+    { id: 'paulomi', name: 'पुलोमा', subtitle: 'भृगु पत्नी', parent: '', spouseOf: 'bhrigu', yug: 'satya', parichay: 'महर्षि भृगु की पत्नी और च्यवन ऋषि की माता।', clusterName: 'भृगु की 2 पत्नियाँ' },
     { id: 'dhata', name: 'धाता', subtitle: 'भृगु पुत्र', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
     { id: 'vidhata', name: 'विधाता', subtitle: 'भृगु पुत्र', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
 
@@ -357,8 +357,8 @@ export const brahmaBaseData = [
     { id: 'devadhar', name: 'देवधर', subtitle: 'हिमवान के पुत्र', parent: 'himavan', mother: 'bhujangakshi_himavan', yug: 'satya' },
 
     // --- PULAHA LINEAGE ---
-    { id: 'kshama_pulaha', name: 'क्षमा', subtitle: 'दक्ष पुत्री / पुलह पत्नी', parent: 'daksha', spouseOf: 'pulaha', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि पुलह की मुख्य पत्नी।' },
-    { id: 'gati_pulaha', name: 'गति', subtitle: 'कर्दम पुत्री / पुलह पत्नी', parent: '', spouseOf: 'pulaha', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि पुलह की पत्नी।' },
+    { id: 'kshama_pulaha', name: 'क्षमा', subtitle: 'दक्ष पुत्री / पुलह पत्नी', parent: 'daksha', spouseOf: 'pulaha', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि पुलह की मुख्य पत्नी।', clusterName: 'पुलह की 2 पत्नियाँ' },
+    { id: 'gati_pulaha', name: 'गति', subtitle: 'कर्दम पुत्री / पुलह पत्नी', parent: '', spouseOf: 'pulaha', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि पुलह की पत्नी।', clusterName: 'पुलह की 2 पत्नियाँ' },
     { id: 'kardama_pulaha_son', name: 'कर्दम (पुलह पुत्र)', subtitle: 'पुलह और क्षमा के पुत्र', parent: 'pulaha', mother: 'kshama_pulaha', yug: 'satya', parichay: 'विष्णु पुराण के अनुसार क्षमा और पुलह के पुत्र। (यह कर्दम प्रजापति से भिन्न हैं)' },
     { id: 'arvarivat', name: 'अर्वरिवत', subtitle: 'पुलह पुत्र', parent: 'pulaha', mother: 'kshama_pulaha', yug: 'satya' },
     { id: 'sahishnu', name: 'सहिष्णु', subtitle: 'पुलह पुत्र', parent: 'pulaha', yug: 'satya' },
@@ -430,8 +430,8 @@ export const brahmaBaseData = [
     { id: 'shalabha_species', name: 'शलभ (Locusts)', subtitle: 'कीट प्रजाति', parent: 'pulaha', yug: 'satya', parichay: 'टिड्डियों और इसी प्रकार के कीटों की उत्पत्ति भी पुलह वंश से मानी गई है।' },
 
     // --- KRATU LINEAGE ---
-    { id: 'sannati_kratu', name: 'सन्नति', subtitle: 'दक्ष पुत्री / क्रतु पत्नी', parent: 'daksha', spouseOf: 'kratu', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि क्रतु की पत्नी (विष्णु पुराण)।' },
-    { id: 'kriya_kratu', name: 'क्रिया', subtitle: 'कर्दम पुत्री / क्रतु पत्नी', parent: '', spouseOf: 'kratu', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि क्रतु की पत्नी (श्रीमद्भागवत)।' },
+    { id: 'sannati_kratu', name: 'सन्नति', subtitle: 'दक्ष पुत्री / क्रतु पत्नी', parent: 'daksha', spouseOf: 'kratu', yug: 'satya', parichay: 'दक्ष प्रजापति की पुत्री और महर्षि क्रतु की पत्नी (विष्णु पुराण)।', clusterName: 'क्रतु की 2 पत्नियाँ' },
+    { id: 'kriya_kratu', name: 'क्रिया', subtitle: 'कर्दम पुत्री / क्रतु पत्नी', parent: '', spouseOf: 'kratu', yug: 'satya', parichay: 'कर्दम ऋषि की पुत्री और महर्षि क्रतु की पत्नी (श्रीमद्भागवत)।', clusterName: 'क्रतु की 2 पत्नियाँ' },
     { id: 'valakhilya_rishis', name: 'बालखिल्य ऋषि (60,000)', subtitle: 'क्रतु पुत्र', parent: 'kratu', mother: 'sannati_kratu', yug: 'satya', parichay: 'महर्षि क्रतु के 60,000 पुत्र। ये आकार में अंगूठे के पोर जितने होते हैं और सदैव सूर्य देव के रथ के साथ चलते हुए उनकी स्तुति करते हैं।' },
 
     // --- OTHER BRAHMA CREATIONS ---

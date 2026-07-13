@@ -1,5 +1,5 @@
 export const chandravanshData = [
-    { id: 'anasuya', name: 'अनुसूया', subtitle: 'अत्रि पत्नी', parent: '', spouseOf: 'atri', yug: 'satya' },
+    { id: 'anasuya', name: 'अनुसूया', subtitle: 'अत्रि पत्नी', parent: '', spouseOf: 'atri', yug: 'satya', clusterName: 'अत्रि की पत्नियाँ' },
     { id: 'dattatreya', name: 'दत्तात्रेय', subtitle: 'विष्णु अंश', parent: 'atri', mother: 'anasuya', yug: 'satya' },
     { id: 'durvasa', name: 'दुर्वासा', subtitle: 'शिव अंश', parent: 'atri', mother: 'anasuya', yug: 'satya' },
     { id: 'chandra', name: 'चंद्र', subtitle: 'चंद्र देव', parent: 'atri', mother: 'anasuya', yug: 'satya' },

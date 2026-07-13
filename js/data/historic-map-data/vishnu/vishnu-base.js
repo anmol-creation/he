@@ -1,8 +1,8 @@
 export const vishnuBaseData = [
     // Wives of Vishnu
-    { id: 'lakshmi', name: 'लक्ष्मी', subtitle: 'धन/समृद्धि की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa' },
-    { id: 'bhoodevi', name: 'भूदेवी', subtitle: 'पृथ्वी की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa' },
-    { id: 'nila_devi', name: 'नीला देवी', subtitle: 'विष्णु की तीसरी पत्नी (दक्षिण परंपरा)', spouseOf: 'vishnu', yug: 'pre-kalpa' },
+    { id: 'lakshmi', name: 'लक्ष्मी', subtitle: 'धन/समृद्धि की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa', clusterName: 'विष्णु की 3 पत्नियाँ' },
+    { id: 'bhoodevi', name: 'भूदेवी', subtitle: 'पृथ्वी की देवी', spouseOf: 'vishnu', yug: 'pre-kalpa', clusterName: 'विष्णु की 3 पत्नियाँ' },
+    { id: 'nila_devi', name: 'नीला देवी', subtitle: 'विष्णु की तीसरी पत्नी (दक्षिण परंपरा)', spouseOf: 'vishnu', yug: 'pre-kalpa', clusterName: 'विष्णु की 3 पत्नियाँ' },
 
     // Female Avatar
     { id: 'mohini', name: 'मोहिनी', subtitle: 'विष्णु का स्त्री अवतार', parent: 'vishnu', yug: 'pre-kalpa' },
