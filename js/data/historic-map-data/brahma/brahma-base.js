@@ -3,6 +3,9 @@ export const brahmaBaseData = [
     { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'satya', clusterName: 'ब्रह्मा की 3 पत्नियाँ' },
     { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya', clusterName: 'ब्रह्मा की 3 पत्नियाँ' },
     { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'satya', clusterName: 'ब्रह्मा की 3 पत्नियाँ' },
+    { id: 'saraswati', name: 'सरस्वती', subtitle: 'ब्रह्मा की पत्नी / वाग्देवी', spouseOf: 'brahma', yug: 'mahakalp', timeScale: 'mahakalp' },
+    { id: 'savitri', name: 'सावित्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'mahakalp', timeScale: 'mahakalp' },
+    { id: 'gayatri', name: 'गायत्री', subtitle: 'ब्रह्मा की पत्नी', spouseOf: 'brahma', yug: 'mahakalp', timeScale: 'mahakalp' },
 
     // Mind/Body-born creations
     { id: 'ribhu', name: 'ऋभु', subtitle: 'मानस पुत्र', parent: 'brahma', yug: 'satya' },

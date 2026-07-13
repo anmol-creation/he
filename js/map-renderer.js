@@ -325,31 +325,62 @@ window.MapRenderer = {
     },
 
     drawTimeDividers(ctx, dataList) {
+        // Find dynamically where time zones should be placed based on top nodes
+        let sanatanY = 0;
+        let mahakalpY = 300;
+        let kalpY = 1000;
+
+        const nodes = Array.from(window.MapState.layoutEngine?.nodesMap?.values() || []);
+
+        // Find Y of Parabrahman
+        const brahman = nodes.find(n => n.id === 'brahman');
+        if (brahman) sanatanY = brahman.y - 100;
+
+        // Find Y of Brahma/Vishnu/Shiva
+        const mahakalpNodes = nodes.filter(n => n.timeScale === 'mahakalp');
+        if (mahakalpNodes.length > 0) {
+            mahakalpY = Math.min(...mahakalpNodes.map(n => n.y)) - 100;
+        }
+
+        // Find start of normal Kalp (children of Brahma)
+        const kalpNodes = nodes.filter(n => !['sanatan', 'mahakalp'].includes(n.timeScale));
+        if (kalpNodes.length > 0) {
+            // Pick nodes near the top that aren't sanatan/mahakalp
+            const topKalpY = Math.min(...kalpNodes.map(n => n.y));
+            kalpY = topKalpY - 100;
+        }
+
         const dividers = [
-            { label: 'Sanatan', y: 150 },
-            { label: 'Maha-Kalpa', y: 450 },
-            { label: 'Kalpa', y: 750 },
-            { label: 'Manvantara', y: 1050 }
+            { label: 'Sanatan (Eternal)', y: sanatanY, color: '#FFD700' },
+            { label: 'Maha-Kalpa', y: mahakalpY, color: '#FF8C00' },
+            { label: 'Kalpa / Yuga Cycle', y: kalpY, color: '#00BFFF' }
         ];
 
-        ctx.globalAlpha = 0.5;
-        ctx.strokeStyle = '#cccccc';
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 3;
         ctx.setLineDash([10, 10]);
 
         dividers.forEach(div => {
+            ctx.globalAlpha = 0.5;
+            ctx.strokeStyle = div.color;
             ctx.beginPath();
             ctx.moveTo(-50000, div.y);
             ctx.lineTo(50000, div.y);
             ctx.stroke();
 
-            ctx.fillStyle = 'rgba(0,0,0,0.8)';
-            ctx.fillRect(-50, div.y - 25, 100, 20);
-            ctx.fillStyle = '#999';
-            ctx.font = 'bold 12px Poppins';
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = 'rgba(17, 17, 17, 0.9)'; // Match body background
+            ctx.strokeStyle = div.color;
+
+            ctx.beginPath();
+            ctx.roundRect(-80, div.y - 20, 160, 40, 8);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = div.color;
+            ctx.font = 'bold 14px Poppins';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(div.label, 0, div.y - 15);
+            ctx.fillText(div.label, 0, div.y);
         });
 
         ctx.setLineDash([]);
