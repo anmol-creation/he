@@ -75,7 +75,7 @@ class LayoutEngine {
                     }
                 }
 
-                calculateAbsolutePositions(this.nodesMap, rootId, currentRootX, 300); // Start closer to 0 for Sanatan
+                calculateAbsolutePositions(this.nodesMap, rootId, currentRootX, 1000);
             });
         }
 

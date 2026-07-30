@@ -365,12 +365,12 @@ window.MapRenderer = {
             { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' }
         ];
 
-        ctx.lineWidth = 3;
+        ctx.globalAlpha = 0.5;
+        ctx.strokeStyle = '#cccccc';
+        ctx.lineWidth = 2;
         ctx.setLineDash([10, 10]);
 
         dividers.forEach(div => {
-            ctx.globalAlpha = 0.5;
-            ctx.strokeStyle = div.color;
             ctx.beginPath();
             ctx.moveTo(-50000, div.y);
             ctx.lineTo(50000, div.y);
@@ -393,7 +393,7 @@ window.MapRenderer = {
             ctx.font = 'bold 14px Poppins';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(div.label, 0, div.y);
+            ctx.fillText(div.label, 0, div.y - 15);
         });
 
         ctx.setLineDash([]);

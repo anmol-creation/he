@@ -68,12 +68,7 @@ export const kashyapData = [
 
     // Prahlada Lineage
     { id: 'vairochana', name: 'विरोचन', subtitle: 'प्रह्लाद पुत्र', parent: 'prahlada', yug: 'treta' },
-    { id: 'bali', name: 'बलि', subtitle: 'महान दैत्यराज', parent: 'vairochana', yug: 'treta' }, // Currently in Shveta Varaha
-    { id: 'bana', name: 'बाणासुर', subtitle: 'बलि पुत्र (सहस्त्रबाहु)', parent: 'bali', yug: 'dwapar' },
-
-    // Future Kalpa reference for Bali
-    { id: 'bali_future_indra', name: 'बलि (इन्द्र)', subtitle: 'आगामी कल्प के इन्द्र', parent: 'brahma', yug: 'satya', kalpa: 'nilalohita' },
-
+    { id: 'bali', name: 'बलि', subtitle: 'महान दैत्यराज', parent: 'vairochana', yug: 'treta' },
     { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' },
     { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' },
     { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },

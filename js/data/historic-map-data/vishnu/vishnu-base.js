@@ -11,7 +11,7 @@ export const vishnuBaseData = [
     { id: 'hayagriva_danava', name: 'हयग्रीव (दानव)', subtitle: 'पद्म कल्प का असुर', parent: 'brahma', yug: 'pre-kalpa', kalpa: 'padma' },
 
     // Female Avatar
-    { id: 'mohini', name: 'मोहिनी', subtitle: 'विष्णु का स्त्री अवतार', parent: 'vishnu', yug: 'satya' },
+    { id: 'mohini', name: 'मोहिनी', subtitle: 'विष्णु का स्त्री अवतार', parent: 'vishnu', yug: 'pre-kalpa' },
 
     // Direct Sons / Forms (Ayyappan is son of Shiva and Mohini)
     { id: 'ayyappan', name: 'अय्यप्पन', subtitle: 'हरिहरपुत्र', parent: 'shiva', mother: 'mohini', yug: 'pre-kalpa' },
