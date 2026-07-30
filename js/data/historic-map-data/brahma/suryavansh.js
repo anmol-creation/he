@@ -14,7 +14,19 @@ export const suryavanshData = [
     { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
 
     { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'ikshvaku', yug: 'treta' },
+    // Descendants of Ikshvaku
+    { id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'ikshvaku', yug: 'treta', parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
+    { id: 'nimi', name: 'निमि', subtitle: 'विदेह वंश संस्थापक', parent: 'ikshvaku', yug: 'treta', parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।' },
+    { id: 'danda', name: 'दण्ड', subtitle: 'इक्ष्वाकु पुत्र', parent: 'ikshvaku', yug: 'treta', parichay: 'दंडकारण्य वन का नाम इन्हीं के नाम पर पड़ा।' },
+
+    // Descendants of Sharyati
+    { id: 'sukanya', name: 'सुकन्या', subtitle: 'शर्याति पुत्री', parent: 'sharyati', yug: 'satya', parichay: 'इनका विवाह महर्षि च्यवन से हुआ था।' },
+    { id: 'anarta', name: 'आनर्त', subtitle: 'शर्याति पुत्र', parent: 'sharyati', yug: 'satya', parichay: 'इनके नाम पर आनर्त देश (आधुनिक गुजरात का भाग) का नाम पड़ा।' },
+
+    // Descendants of Nabhaga
+    { id: 'ambarisha', name: 'अम्बरीष', subtitle: 'महान विष्णु भक्त', parent: 'nabhaga', yug: 'satya', parichay: 'दुर्वासा ऋषि के श्राप से सुदर्शन चक्र ने इनकी रक्षा की थी।' },
+
+    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'vikukshi', yug: 'treta' },
     { id: 'bhagirath', name: 'भगीरथ', subtitle: 'गंगा को लाने वाले', parent: 'harishchandra', yug: 'treta' },
     { id: 'raghu', name: 'रघु', subtitle: 'रघुवंश के संस्थापक', parent: 'bhagirath', yug: 'treta' },
     { id: 'aja', name: 'अज', subtitle: 'रघु के पुत्र', parent: 'raghu', yug: 'treta' },
