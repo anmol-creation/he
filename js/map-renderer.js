@@ -325,11 +325,44 @@ window.MapRenderer = {
     },
 
     drawTimeDividers(ctx, dataList) {
+        // We now draw visual "Swimlanes" / Boundaries between the Y-depths, rather than just lines above them.
+        let sanatanY = 0;
+        let mahakalpY = 300;
+        let kalpY = 1000;
+
+        const nodes = Array.from(window.MapState.layoutEngine?.nodesMap?.values() || []);
+
+        // Find Y of Parabrahman
+        const brahman = nodes.find(n => n.id === 'brahman');
+        if (brahman) sanatanY = brahman.y;
+
+        // Find Y of Brahma/Vishnu/Shiva
+        const mahakalpNodes = nodes.filter(n => n.timeScale === 'mahakalp');
+        if (mahakalpNodes.length > 0) {
+            mahakalpY = Math.min(...mahakalpNodes.map(n => n.y));
+        }
+
+        // Find start of normal Kalp
+        const kalpNodes = nodes.filter(n => !['sanatan', 'mahakalp'].includes(n.timeScale));
+        if (kalpNodes.length > 0) {
+            kalpY = Math.min(...kalpNodes.map(n => n.y));
+        }
+
+        let manvantaraY = kalpY + 300; // default offset
+        const manvNodes = nodes.filter(n => n.depth >= 3);
+        if (manvNodes.length > 0) {
+            manvantaraY = Math.min(...manvNodes.map(n => n.y));
+        }
+
+        // Calculate the exact midpoint between the layers to draw the separating boundary lines
+        const sanatanBottomLine = sanatanY + ((mahakalpY - sanatanY) / 2);
+        const mahakalpBottomLine = mahakalpY + ((kalpY - mahakalpY) / 2);
+        const kalpBottomLine = kalpY + ((manvantaraY - kalpY) / 2);
+
         const dividers = [
-            { label: 'Sanatan', y: 150 },
-            { label: 'Maha-Kalpa', y: 450 },
-            { label: 'Kalpa', y: 750 },
-            { label: 'Manvantara', y: 1050 }
+            { label: 'Sanatan (Eternal) Zone ↑', y: sanatanBottomLine, color: '#FFD700' },
+            { label: 'Maha-Kalpa Zone ↑', y: mahakalpBottomLine, color: '#FF8C00' },
+            { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' }
         ];
 
         ctx.globalAlpha = 0.5;
@@ -343,10 +376,21 @@ window.MapRenderer = {
             ctx.lineTo(50000, div.y);
             ctx.stroke();
 
-            ctx.fillStyle = 'rgba(0,0,0,0.8)';
-            ctx.fillRect(-50, div.y - 25, 100, 20);
-            ctx.fillStyle = '#999';
-            ctx.font = 'bold 12px Poppins';
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = 'rgba(17, 17, 17, 0.9)';
+            ctx.strokeStyle = div.color;
+
+            ctx.beginPath();
+            if (ctx.roundRect) {
+                ctx.roundRect(-100, div.y - 20, 200, 40, 8);
+            } else {
+                ctx.rect(-100, div.y - 20, 200, 40);
+            }
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = div.color;
+            ctx.font = 'bold 14px Poppins';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillText(div.label, 0, div.y - 15);
@@ -354,6 +398,109 @@ window.MapRenderer = {
 
         ctx.setLineDash([]);
         ctx.globalAlpha = 1;
+
+        // Draw Switchers directly onto the canvas
+        if (window.MapState) {
+            window.MapState.switcherHitBoxes = []; // Reset hitboxes each render
+            const state = window.MapState;
+
+            // 1. Kalpa Switcher at Mahakalp Bottom Line
+            const kY = mahakalpBottomLine + 45; // Below the line
+            const kCurrent = state.kalpas[state.currentKalpaIndex];
+            const kSubText = `${kCurrent.index}${kCurrent.index === 50 ? 'th' : kCurrent.index === 51 ? 'st' : 'nd'} Kalpa`;
+
+            this.drawCanvasSwitcher(
+                ctx,
+                0, kY,
+                'kalpa',
+                kSubText,
+                kCurrent.title,
+                '#FFD700',
+                state.currentKalpaIndex > 0,
+                state.currentKalpaIndex < state.kalpas.length - 1
+            );
+
+            // 2. Manvantara Switcher at Kalpa Bottom Line
+            const mY = kalpBottomLine + 45; // Below the line
+            const mCurrent = state.manvantaras[state.currentManvIndex];
+            const mSubText = `${mCurrent.index}${mCurrent.index === 1 ? 'st' : mCurrent.index === 2 ? 'nd' : mCurrent.index === 3 ? 'rd' : 'th'} Manvantara`;
+
+            this.drawCanvasSwitcher(
+                ctx,
+                0, mY,
+                'manvantara',
+                mSubText,
+                mCurrent.title,
+                '#00BFFF',
+                state.currentManvIndex > 0,
+                state.currentManvIndex < state.manvantaras.length - 1
+            );
+        }
+    },
+
+    drawCanvasSwitcher(ctx, x, y, type, subText, mainText, color, hasPrev, hasNext) {
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        // Background box for switcher
+        const boxWidth = 260;
+        const boxHeight = 50;
+        ctx.fillStyle = 'rgba(17, 17, 17, 0.9)';
+        ctx.strokeStyle = '#444';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        if (ctx.roundRect) {
+            ctx.roundRect(x - boxWidth/2, y - boxHeight/2, boxWidth, boxHeight, 10);
+        } else {
+            ctx.rect(x - boxWidth/2, y - boxHeight/2, boxWidth, boxHeight);
+        }
+        ctx.fill();
+        ctx.stroke();
+
+        // Texts
+        ctx.fillStyle = '#999';
+        ctx.font = '12px Poppins';
+        ctx.fillText(subText, x, y - 8);
+
+        ctx.fillStyle = color;
+        ctx.font = 'bold 16px Poppins';
+        ctx.fillText(mainText, x, y + 10);
+
+        // Arrows
+        ctx.font = '18px Arial';
+
+        // Prev Arrow
+        const prevArrowX = x - boxWidth/2 + 20;
+        ctx.fillStyle = hasPrev ? color : 'rgba(255,255,255,0.2)';
+        ctx.fillText('◄', prevArrowX, y);
+
+        // Next Arrow
+        const nextArrowX = x + boxWidth/2 - 20;
+        ctx.fillStyle = hasNext ? color : 'rgba(255,255,255,0.2)';
+        ctx.fillText('►', nextArrowX, y);
+
+        // Store Hitboxes in MapState (for Canvas clicks)
+        if (window.MapState) {
+            window.MapState.switcherHitBoxes.push({
+                type: type,
+                action: 'prev',
+                x: prevArrowX - 15,
+                y: y - 15,
+                w: 30,
+                h: 30
+            });
+            window.MapState.switcherHitBoxes.push({
+                type: type,
+                action: 'next',
+                x: nextArrowX - 15,
+                y: y - 15,
+                w: 30,
+                h: 30
+            });
+        }
+
+        ctx.restore();
     },
 
     drawRouteConnections(ctx, dataList, pathArray) {

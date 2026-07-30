@@ -16,7 +16,32 @@ export const kashyapData = [
 
     // Aditi's Children
     { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
-    { id: 'sanjna_wife', name: 'संज्ञा', subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री', parent: '', spouseOf: 'surya', yug: 'satya' },
+    { id: 'sanjna_wife', name: 'संज्ञा', subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री', parent: '', spouseOf: 'surya', yug: 'satya', clusterName: 'सूर्यदेव की पत्नियाँ' },
+    { id: 'chhaya_wife', name: 'छाया', subtitle: 'सूर्य की पत्नी / संज्ञा की प्रतिरूप', parent: '', spouseOf: 'surya', yug: 'satya', clusterName: 'सूर्यदेव की पत्नियाँ' },
+    { id: 'kunti_surya_proxy', name: 'कुंती', subtitle: 'सूर्यदेव (आध्यात्मिक संबंध)', parent: '', spouseOf: 'surya', yug: 'dwapar', parichay: 'दुर्वासा मुनि के मंत्र प्रभाव से कुंती ने सूर्यदेव का आह्वान किया, जिससे कर्ण का जन्म हुआ।', clusterName: 'सूर्यदेव की पत्नियाँ' },
+
+    // Surya's Children from Sanjna
+    { id: 'yama', name: 'यम (धर्मराज)', subtitle: 'सूर्य पुत्र', parent: 'surya', mother: 'sanjna_wife', yug: 'satya', parichay: 'मृत्यु और न्याय के देवता।' },
+    { id: 'dhumorna_wife', name: 'धूमोर्णा', subtitle: 'यमराज की पत्नी', parent: '', spouseOf: 'yama', yug: 'satya', clusterName: 'यमराज की पत्नियाँ' },
+    { id: 'vijaya_yama_wife', name: 'विजया', subtitle: 'यमराज की पत्नी', parent: '', spouseOf: 'yama', yug: 'satya', clusterName: 'यमराज की पत्नियाँ' },
+    { id: 'katila', name: 'कटीला', subtitle: 'यमराज पुत्र', parent: 'yama', yug: 'satya' },
+
+    { id: 'yami', name: 'यमी (यमुना)', subtitle: 'सूर्य पुत्री', parent: 'surya', mother: 'sanjna_wife', yug: 'satya', parichay: 'यमराज की जुड़वां बहन, जो बाद में यमुना नदी बनीं।' },
+    { id: 'ashwini_kumar', name: 'अश्विनी कुमार', subtitle: 'नासत्य एवं दस्र', parent: 'surya', mother: 'sanjna_wife', yug: 'satya', parichay: 'देवताओं के वैद्य। इनका जन्म तब हुआ जब सूर्य और संज्ञा अश्व रूप में थे।' },
+    { id: 'jyotishmati_wife', name: 'ज्योतिष्मती', subtitle: 'अश्विनी कुमार की पत्नी', parent: '', spouseOf: 'ashwini_kumar', yug: 'satya' },
+    { id: 'revanta', name: 'रेवन्त', subtitle: 'सूर्य पुत्र', parent: 'surya', mother: 'sanjna_wife', yug: 'satya', parichay: 'युद्ध और अश्व-पालन के देवता। गुह्यकों के स्वामी।' },
+
+    // Surya's Children from Chhaya
+    { id: 'shani', name: 'शनि देव', subtitle: 'कर्मफल दाता', parent: 'surya', mother: 'chhaya_wife', yug: 'satya' },
+    { id: 'neela_wife', name: 'नीला', subtitle: 'शनि देव की पत्नी', parent: '', spouseOf: 'shani', yug: 'satya', clusterName: 'शनि देव की पत्नियाँ' },
+    { id: 'manda_wife', name: 'मंदा', subtitle: 'शनि देव की पत्नी', parent: '', spouseOf: 'shani', yug: 'satya', clusterName: 'शनि देव की पत्नियाँ' },
+    { id: 'dhamini_wife', name: 'दामिनी', subtitle: 'शनि देव की पत्नी', parent: '', spouseOf: 'shani', yug: 'satya', clusterName: 'शनि देव की पत्नियाँ' },
+    { id: 'gulikan', name: 'गुलिक', subtitle: 'शनि पुत्र', parent: 'shani', yug: 'satya' },
+    { id: 'kuligai', name: 'कुलिगई', subtitle: 'शनि पुत्री', parent: 'shani', yug: 'satya' },
+
+    { id: 'tapati', name: 'ताप्ती', subtitle: 'सूर्य पुत्री', parent: 'surya', mother: 'chhaya_wife', yug: 'satya', parichay: 'इनका विवाह कुरुवंश के राजा संवरण से हुआ।' },
+    { id: 'savarni_manu', name: 'सावर्णि मनु', subtitle: 'आगामी मनु', parent: 'surya', mother: 'chhaya_wife', yug: 'satya', parichay: 'आठवें मन्वंतर के मनु।' },
+    { id: 'vishti_bhadra', name: 'भद्रा (विष्टि)', subtitle: 'सूर्य पुत्री', parent: 'surya', mother: 'chhaya_wife', yug: 'satya', parichay: 'काल और समय से जुड़ी देवी।' },
 
     { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'shachi_indrani', name: 'शची (इंद्राणी)', subtitle: 'इंद्र की पत्नी', parent: 'puloman_danava', spouseOf: 'indra', yug: 'satya' },

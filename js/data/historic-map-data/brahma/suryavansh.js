@@ -1,7 +1,110 @@
 export const suryavanshData = [
     { id: 'vaivasvata_manu', name: 'वैवस्वत मनु', subtitle: 'वर्तमान मनु', parent: 'surya', yug: 'satya' },
-    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', yug: 'satya' },
-    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'ikshvaku', yug: 'treta' },
+    { id: 'shraddha_manu_wife', name: 'श्रद्धा', subtitle: 'मनु पत्नी', parent: '', spouseOf: 'vaivasvata_manu', yug: 'satya' },
+
+    // Manu's other children
+    { id: 'ila_manu_daughter', name: 'इला', subtitle: 'मनु पुत्री', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', parichay: 'इनका विवाह बुध से हुआ और इन्होंने चंद्रवंश की स्थापना की।' },
+    { id: 'nabhaga', name: 'नाभाग', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'dhrishta', name: 'धृष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'sharyati', name: 'शर्याति', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'narishyanta', name: 'नरिष्यंत', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'pramshu', name: 'प्रांशु', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'nabhanedishta', name: 'नाभानेदिष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'karusha', name: 'करुष', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+
+    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    // Descendants of Ikshvaku
+    { id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'ikshvaku', yug: 'treta', parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
+    { id: 'nimi', name: 'निमि', subtitle: 'विदेह वंश संस्थापक', parent: 'ikshvaku', yug: 'treta', parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।' },
+    { id: 'danda', name: 'दण्ड', subtitle: 'इक्ष्वाकु पुत्र', parent: 'ikshvaku', yug: 'treta', parichay: 'दंडकारण्य वन का नाम इन्हीं के नाम पर पड़ा।' },
+    // Vikukshi's immediate
+    { id: 'puranjaya', name: 'पुरंजय', subtitle: 'ककुत्स्थ / इन्द्रवाह', parent: 'vikukshi', yug: 'treta', parichay: 'इन्होंने देवासुर संग्राम में वृषभ रूपी इन्द्र पर बैठकर युद्ध किया था।' },
+    // Vikukshi to Harishchandra (Suryavansh main line)
+    { id: 'anena', name: 'अनेना', subtitle: 'पुरंजय पुत्र', parent: 'puranjaya', yug: 'treta' },
+    { id: 'prithu_surya', name: 'पृथु', subtitle: 'अनेना पुत्र', parent: 'anena', yug: 'treta' },
+    { id: 'vishvarandhi', name: 'विश्वरंधि', subtitle: 'पृथु पुत्र', parent: 'prithu_surya', yug: 'treta' },
+    { id: 'chandra_surya', name: 'चंद्र', subtitle: 'विश्वरंधि पुत्र', parent: 'vishvarandhi', yug: 'treta' },
+    { id: 'yuvanashva_1', name: 'युवनाश्व प्रथम', subtitle: 'चंद्र पुत्र', parent: 'chandra_surya', yug: 'treta' },
+    { id: 'shravasta', name: 'श्रावस्त', subtitle: 'श्रावस्ती के संस्थापक', parent: 'yuvanashva_1', yug: 'treta' },
+    { id: 'brihadashva', name: 'बृहदाश्व', subtitle: 'श्रावस्त पुत्र', parent: 'shravasta', yug: 'treta' },
+    { id: 'kuvalayashva', name: 'कुवलयाश्व', subtitle: 'धुंधुमार', parent: 'brihadashva', yug: 'treta', parichay: 'धुंधु नामक राक्षस का वध करने के कारण धुंधुमार कहलाए।' },
+    { id: 'dridhashva', name: 'दृढ़ाश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+    { id: 'pramoda', name: 'प्रमोद', subtitle: 'दृढ़ाश्व पुत्र', parent: 'dridhashva', yug: 'treta' },
+    { id: 'haryashva_1', name: 'हर्याश्व प्रथम', subtitle: 'प्रमोद पुत्र', parent: 'pramoda', yug: 'treta' },
+    { id: 'nikumbha', name: 'निकुंभ', subtitle: 'हर्याश्व पुत्र', parent: 'haryashva_1', yug: 'treta' },
+    { id: 'baharnashva', name: 'बहर्णाश्व', subtitle: 'निकुंभ पुत्र', parent: 'nikumbha', yug: 'treta' },
+    { id: 'krishashva', name: 'कृशाश्व', subtitle: 'बहर्णाश्व पुत्र', parent: 'baharnashva', yug: 'treta' },
+    { id: 'prasenajit_1', name: 'प्रसेनजित प्रथम', subtitle: 'कृशाश्व पुत्र', parent: 'krishashva', yug: 'treta' },
+    { id: 'yuvanashva_2', name: 'युवनाश्व द्वितीय', subtitle: 'प्रसेनजित पुत्र', parent: 'prasenajit_1', yug: 'treta' },
+    { id: 'mandhata', name: 'मान्धाता', subtitle: 'चक्रवर्ती सम्राट', parent: 'yuvanashva_2', yug: 'treta', parichay: 'इनका जन्म पिता युवनाश्व के गर्भ (ऋषियों के मन्त्रपूत जल पीने के कारण) से हुआ था। इन्द्र ने इन्हें अपनी उंगली चुसाकर पाला था।' },
+    { id: 'purukutsa', name: 'पुरुकुत्स', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', yug: 'treta' },
+    { id: 'trasadasyu', name: 'त्रासदस्यु', subtitle: 'पुरुकुत्स पुत्र', parent: 'purukutsa', yug: 'treta' },
+    { id: 'sambhuta', name: 'संभ्रुत', subtitle: 'त्रासदस्यु पुत्र', parent: 'trasadasyu', yug: 'treta' },
+    { id: 'anaranya_2', name: 'अनरण्य द्वितीय', subtitle: 'संभ्रुत पुत्र', parent: 'sambhuta', yug: 'treta' },
+    { id: 'prishadashva_2', name: 'पृषदाश्व', subtitle: 'अनरण्य पुत्र', parent: 'anaranya_2', yug: 'treta' },
+    { id: 'haryashva_2', name: 'हर्याश्व द्वितीय', subtitle: 'पृषदाश्व पुत्र', parent: 'prishadashva_2', yug: 'treta' },
+    { id: 'hastya', name: 'हस्त्य', subtitle: 'हर्याश्व पुत्र', parent: 'haryashva_2', yug: 'treta' },
+    { id: 'sumana', name: 'सुमन', subtitle: 'हस्त्य पुत्र', parent: 'hastya', yug: 'treta' },
+    { id: 'tridhanva', name: 'त्रिधन्वा', subtitle: 'सुमन पुत्र', parent: 'sumana', yug: 'treta' },
+    { id: 'trayaruni', name: 'त्रैयारुणि', subtitle: 'त्रिधन्वा पुत्र', parent: 'tridhanva', yug: 'treta' },
+    { id: 'trishanku', name: 'त्रिशंकु', subtitle: 'सत्यव्रत', parent: 'trayaruni', yug: 'treta', parichay: 'विश्वामित्र ने इन्हें सदेह स्वर्ग भेजा था, जहाँ से इन्द्र ने इन्हें उल्टा गिरा दिया। फिर विश्वामित्र ने इनके लिए अलग स्वर्ग (त्रिशंकु स्वर्ग) का निर्माण किया।' },
+
+
+    // Nimi's immediate
+    { id: 'mithi', name: 'मिथि', subtitle: 'विदेह / जनक', parent: 'nimi', yug: 'treta', parichay: 'ऋषियों द्वारा निमि के मृत शरीर के मंथन से उत्पन्न। इन्हीं के नाम पर मिथिला नगरी बसी।' },
+    // Nimi/Mithi to Seeradhwaja Janak (Videha/Mithila Lineage)
+    { id: 'udavasu', name: 'उदावसु', subtitle: 'मिथि पुत्र', parent: 'mithi', yug: 'treta' },
+    { id: 'nandivardhana', name: 'नन्दिवर्धन', subtitle: 'उदावसु पुत्र', parent: 'udavasu', yug: 'treta' },
+    { id: 'suketu', name: 'सुकेतु', subtitle: 'नन्दिवर्धन पुत्र', parent: 'nandivardhana', yug: 'treta' },
+    { id: 'devarata', name: 'देवरात', subtitle: 'सुकेतु पुत्र', parent: 'suketu', yug: 'treta', parichay: 'इन्हीं के पास देवराज इंद्र ने भगवान शिव का महान धनुष (पिनाक) धरोहर के रूप में रखा था।' },
+    { id: 'brihadratha', name: 'बृहद्रथ', subtitle: 'देवरात पुत्र', parent: 'devarata', yug: 'treta' },
+    { id: 'mahavirya', name: 'महावीर', subtitle: 'बृहद्रथ पुत्र', parent: 'brihadratha', yug: 'treta' },
+    { id: 'sudhriti', name: 'सुधृति', subtitle: 'महावीर पुत्र', parent: 'mahavirya', yug: 'treta' },
+    { id: 'dhrishtaketu', name: 'धृष्टकेतु', subtitle: 'सुधृति पुत्र', parent: 'sudhriti', yug: 'treta' },
+    { id: 'haryashva_nimi', name: 'हर्यश्व', subtitle: 'धृष्टकेतु पुत्र', parent: 'dhrishtaketu', yug: 'treta' },
+    { id: 'maru', name: 'मरु', subtitle: 'हर्यश्व पुत्र', parent: 'haryashva_nimi', yug: 'treta' },
+    { id: 'pratindhaka', name: 'प्रतीन्धक', subtitle: 'मरु पुत्र', parent: 'maru', yug: 'treta' },
+    { id: 'kirtiratha', name: 'कीर्तिरथ', subtitle: 'प्रतीन्धक पुत्र', parent: 'pratindhaka', yug: 'treta' },
+    { id: 'devamidha', name: 'देवमीढ', subtitle: 'कीर्तिरथ पुत्र', parent: 'kirtiratha', yug: 'treta' },
+    { id: 'vibudha', name: 'विबुध', subtitle: 'देवमीढ पुत्र', parent: 'devamidha', yug: 'treta' },
+    { id: 'mahidhrak', name: 'महिध्रक', subtitle: 'विबुध पुत्र', parent: 'vibudha', yug: 'treta' },
+    { id: 'kirtirata', name: 'कीर्तिरात', subtitle: 'महिध्रक पुत्र', parent: 'mahidhrak', yug: 'treta' },
+    { id: 'maharoma', name: 'महारोमा', subtitle: 'कीर्तिरात पुत्र', parent: 'kirtirata', yug: 'treta' },
+    { id: 'svarnaroma', name: 'स्वर्णरोमा', subtitle: 'महारोमा पुत्र', parent: 'maharoma', yug: 'treta' },
+    { id: 'hrasvaroma', name: 'ह्रस्वरोमा', subtitle: 'स्वर्णरोमा पुत्र', parent: 'svarnaroma', yug: 'treta' },
+    { id: 'seeradhwaja_janak', name: 'सीरध्वज जनक', subtitle: 'माता सीता के पिता', parent: 'hrasvaroma', yug: 'treta', parichay: 'विदेहराज सीरध्वज जनक। यज्ञ भूमि जोतते समय इन्हें सीता जी प्राप्त हुई थीं।' },
+    { id: 'sunayana', name: 'सुनयना', subtitle: 'जनक पत्नी', parent: '', spouseOf: 'seeradhwaja_janak', yug: 'treta' },
+    { id: 'urmila', name: 'उर्मिला', subtitle: 'लक्ष्मण पत्नी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'lakshman', yug: 'treta' },
+    { id: 'kushadhwaja', name: 'कुशध्वज', subtitle: 'जनक के भ्राता', parent: 'hrasvaroma', yug: 'treta' },
+    { id: 'mandavi', name: 'मांडवी', subtitle: 'भरत पत्नी', parent: 'kushadhwaja', spouseOf: 'bharat', yug: 'treta' },
+    { id: 'shrutakirti', name: 'श्रुतकीर्ति', subtitle: 'शत्रुघ्न पत्नी', parent: 'kushadhwaja', spouseOf: 'shatrughna', yug: 'treta' },
+
+
+    // Other sons of Ikshvaku
+    { id: 'vishal', name: 'विशाल', subtitle: 'वैशाली के संस्थापक', parent: 'ikshvaku', yug: 'treta' },
+    { id: 'hemachandra', name: 'हेमचन्द्र', subtitle: 'विशाल पुत्र', parent: 'vishal', yug: 'treta' },
+    // Vishal to Sumati (Vaishali Lineage)
+    { id: 'suchandra', name: 'सुचन्द्र', subtitle: 'हेमचन्द्र पुत्र', parent: 'hemachandra', yug: 'treta' },
+    { id: 'dhumrashva', name: 'धूम्राश्व', subtitle: 'सुचन्द्र पुत्र', parent: 'suchandra', yug: 'treta' },
+    { id: 'srinjaya', name: 'सृंजय', subtitle: 'धूम्राश्व पुत्र', parent: 'dhumrashva', yug: 'treta' },
+    { id: 'sahadeva_vishal', name: 'सहदेव', subtitle: 'सृंजय पुत्र', parent: 'srinjaya', yug: 'treta' },
+    { id: 'krishashva_vishal', name: 'कुशाश्व', subtitle: 'सहदेव पुत्र', parent: 'sahadeva_vishal', yug: 'treta' },
+    { id: 'somadatta', name: 'सोमदत्त', subtitle: 'कुशाश्व पुत्र', parent: 'krishashva_vishal', yug: 'treta' },
+    { id: 'kakutstha_vishal', name: 'ककुत्स्थ', subtitle: 'सोमदत्त पुत्र', parent: 'somadatta', yug: 'treta' },
+    { id: 'sumati', name: 'सुमति', subtitle: 'वैशाली नरेश', parent: 'kakutstha_vishal', yug: 'treta', parichay: 'इन्होंने विश्वामित्र के साथ आए राम और लक्ष्मण का वैशाली में स्वागत किया था।' },
+
+    { id: 'other_96_sons_ikshvaku', name: 'अन्य 96 पुत्र', subtitle: 'इक्ष्वाकु के पुत्र', parent: 'ikshvaku', yug: 'treta', parichay: 'इक्ष्वाकु के अन्य 96 पुत्र जिन्हें उत्तरापथ और दक्षिणापथ का शासक बनाया गया।', clusterName: 'इक्ष्वाकु के अन्य पुत्र' },
+
+
+    // Descendants of Sharyati
+    { id: 'sukanya', name: 'सुकन्या', subtitle: 'शर्याति पुत्री', parent: 'sharyati', yug: 'satya', parichay: 'इनका विवाह महर्षि च्यवन से हुआ था।' },
+    { id: 'anarta', name: 'आनर्त', subtitle: 'शर्याति पुत्र', parent: 'sharyati', yug: 'satya', parichay: 'इनके नाम पर आनर्त देश (आधुनिक गुजरात का भाग) का नाम पड़ा।' },
+
+    // Descendants of Nabhaga
+    { id: 'ambarisha', name: 'अम्बरीष', subtitle: 'महान विष्णु भक्त', parent: 'nabhaga', yug: 'satya', parichay: 'दुर्वासा ऋषि के श्राप से सुदर्शन चक्र ने इनकी रक्षा की थी।' },
+
+    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'trishanku', yug: 'treta' },
     { id: 'bhagirath', name: 'भगीरथ', subtitle: 'गंगा को लाने वाले', parent: 'harishchandra', yug: 'treta' },
     { id: 'raghu', name: 'रघु', subtitle: 'रघुवंश के संस्थापक', parent: 'bhagirath', yug: 'treta' },
     { id: 'aja', name: 'अज', subtitle: 'रघु के पुत्र', parent: 'raghu', yug: 'treta' },
@@ -13,11 +116,13 @@ export const suryavanshData = [
     { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta' },
     { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
     { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
-    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: '', spouseOf: 'ram', yug: 'treta' },
+    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
     { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta' },
     { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta' },
     { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'treta' },
     { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', parent: 'surya', yug: 'treta' },
+    { id: 'ruma_wife', name: 'रूमा', subtitle: 'सुग्रीव की पत्नी', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
+    { id: 'tara_wife', name: 'तारा', subtitle: 'सुग्रीव की पत्नी (बाली वध पश्चात्)', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
     { id: 'vali', name: 'बाली', subtitle: 'किष्किंधा नरेश', parent: 'indra', yug: 'treta' },
     { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', parent: 'arun', yug: 'treta' }
 ];

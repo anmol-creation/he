@@ -32,7 +32,12 @@ class LayoutEngine {
         if (mode === 'hierarchical') {
             // Assign static Y coordinates based on depth
             this.nodesMap.forEach(node => {
-                 node.y = 1000 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
+                 let timeZonePadding = 0;
+                 if (node.depth >= 1) timeZonePadding += 200;
+                 if (node.depth >= 2) timeZonePadding += 200;
+                 if (node.depth >= 3) timeZonePadding += 250;
+
+                 node.y = 300 + (node.depth * (NODE_HEIGHT + MIN_GAP_Y)) + timeZonePadding; // Start closer to 0 for Sanatan
             });
 
             // Run Hierarchical Layout Engine to assign X coordinates (Sugiyama)

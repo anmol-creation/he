@@ -20,6 +20,35 @@ window.MapState = {
     expandedClusters: new Set(), // Track which clusterNames are open
     showTransitionWires: false, // Filter: Hide Daughter->Wife lines by default
     layoutMode: 'autoslip', // Default layout mode
+    activeKalpa: 'shveta_varaha', // Default Kalpa (51st)
+    activeManvantara: 7, // Default 7th Vaivasvata
+
+    // Canvas-based Kalpa/Manvantara Switcher State
+    kalpas: [
+        { id: 'padma', index: 50, title: 'Padma Kalpa' },
+        { id: 'shveta_varaha', index: 51, title: 'Shveta Varaha (Current)' },
+        { id: 'nilalohita', index: 52, title: 'Nilalohita Kalpa (Future)' }
+    ],
+    currentKalpaIndex: 1,
+
+    manvantaras: [
+        { index: 1, title: 'Svayambhuva' },
+        { index: 2, title: 'Svarochisha' },
+        { index: 3, title: 'Uttama' },
+        { index: 4, title: 'Tamasa' },
+        { index: 5, title: 'Raivata' },
+        { index: 6, title: 'Chakshusha' },
+        { index: 7, title: 'Vaivasvata (Current)' },
+        { index: 8, title: 'Savarni' },
+        { index: 9, title: 'Daksha-savarni' },
+        { index: 10, title: 'Brahma-savarni' },
+        { index: 11, title: 'Dharma-savarni' },
+        { index: 12, title: 'Rudra-savarni' },
+        { index: 13, title: 'Raucya/Deva-savarni' },
+        { index: 14, title: 'Indra-savarni' }
+    ],
+    currentManvIndex: 6,
+    switcherHitBoxes: [], // Store { type, action, x, y, w, h }
 
     initElements() {
         this.container = document.getElementById('map-container');
@@ -48,6 +77,12 @@ window.MapState = {
         if (window.MapRenderer && window.MapRenderer.renderAll) {
             window.MapRenderer.renderAll();
         }
+    },
+
+    updateKalpaManvState() {
+        this.activeKalpa = this.kalpas[this.currentKalpaIndex].id;
+        this.activeManvantara = this.manvantaras[this.currentManvIndex].index;
+        window.dispatchEvent(new Event('ClusterToggled'));
     },
 
     updateTransform() {

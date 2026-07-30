@@ -16,7 +16,11 @@ export function calculateDepths(nodesMap, nodeId, currentDepth = 0) {
         if (spouseNode) {
             spouseNode.depth = currentDepth; // Same depth level visually initially
             spouseNode.children.forEach(childId => {
-                calculateDepths(nodesMap, childId, currentDepth + 1);
+                let childDepth = currentDepth + 1;
+                if (currentDepth === 1) childDepth = 2; // Force to Kalpa if parent in Mahakalp
+                const childNode = nodesMap.get(childId);
+                if (childNode && currentDepth === 2 && childNode.timeScale !== 'kalpa') childDepth = 3;
+                calculateDepths(nodesMap, childId, childDepth);
             });
         }
     } else if (node.spouses.length > 1) {
@@ -25,7 +29,11 @@ export function calculateDepths(nodesMap, nodeId, currentDepth = 0) {
             if (spouseNode) {
                 spouseNode.depth = currentDepth + 0.5; // Custom half-depth flag
                 spouseNode.children.forEach(childId => {
-                    calculateDepths(nodesMap, childId, currentDepth + 1);
+                    let childDepth = currentDepth + 1;
+                    if (currentDepth === 1) childDepth = 2;
+                    const childNode = nodesMap.get(childId);
+                    if (childNode && currentDepth === 2 && childNode.timeScale !== 'kalpa') childDepth = 3;
+                    calculateDepths(nodesMap, childId, childDepth);
                 });
             }
         });
@@ -33,11 +41,18 @@ export function calculateDepths(nodesMap, nodeId, currentDepth = 0) {
 
     // True Children are one full depth lower (if they belong to the father directly)
     node.children.forEach(childId => {
-        // If a child has a mother, it will also be processed through the mother's sub-tree
-        // if she is handled as a single wife. However, for multiple wives, their
-        // children need to sit below their respective mother's Y level.
-        // We'll manage actual vertical spacing via calculateAbsolutePositions, but keep depth base logic.
-        calculateDepths(nodesMap, childId, currentDepth + 1);
+        let childDepth = currentDepth + 1;
+        if (currentDepth === 1) childDepth = 2; // Force to Kalpa if parent in Mahakalp
+
+        // Similarly, ensure that Manvantara-specific lineages are pushed to depth 3 if they are directly connected to Kalpa entities
+        const childNode = nodesMap.get(childId);
+        if (childNode && currentDepth === 2 && childNode.timeScale !== 'kalpa') {
+             // If a child is NOT explicitly tagged as 'kalpa' (like eternal Manas Putras),
+             // but their parent is at depth 2 (Kalpa), they belong in a Manvantara (depth 3+)
+             childDepth = 3;
+        }
+
+        calculateDepths(nodesMap, childId, childDepth);
     });
 }
 
@@ -46,8 +61,19 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
     if (!node) return;
 
     node.x = absoluteX;
-    // Calculate Y strictly based on depth: startY + (depth * spacing)
-    node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
+
+    // Add extra vertical padding specifically between the Time Zones (Sanatan -> Mahakalp -> Kalpa)
+    // depth 0 is Sanatan (Parabrahman)
+    // depth 1 is Mahakalp (Trimurti)
+    // depth 2 is Kalpa (Narada, Sanatkumar, etc. who span entire Kalpas)
+    // depth 3+ is Manvantara
+    let timeZonePadding = 0;
+    if (node.depth >= 1) timeZonePadding += 200; // Gap between Sanatan and Mahakalp
+    if (node.depth >= 2) timeZonePadding += 200; // Gap between Mahakalp and Kalpa
+    if (node.depth >= 3) timeZonePadding += 250; // Gap between Kalpa and Manvantara
+
+    // Calculate Y strictly based on depth: startY + (depth * spacing) + extra padding
+    node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y)) + timeZonePadding;
 
     // Spouses absolute position
     if (node.spouses.length === 1) {
@@ -64,13 +90,16 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
             });
         }
     } else if (node.spouses.length > 1) {
-        // Multiple spouses: Below husband (depth + 0.5 roughly translated to Y offset)
+        // Multiple spouses: Below husband
+        // We use a small offset so they sit below the husband, but clearly ABOVE the children's depth.
+        // NODE_HEIGHT + MIN_GAP_Y is typically 300px total jump for children.
+        // 100px places them exactly mid-way as intended.
         node.spouses.forEach((spouseId) => {
             const spouseNode = nodesMap.get(spouseId);
             if (spouseNode) {
                 // Use the relative x calculated by the true auto-slip contour in contour-calculator.js
                 spouseNode.x = node.x + spouseNode.layout.x;
-                spouseNode.y = node.y + 150; // Y + 150px
+                spouseNode.y = node.y + 100; // Y + 100px (wives row)
 
                 spouseNode.children.forEach(childId => {
                     const childNode = nodesMap.get(childId);
