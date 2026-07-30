@@ -30,6 +30,9 @@ export const suryavanshData = [
     { id: 'brihadashva', name: 'बृहदाश्व', subtitle: 'श्रावस्त पुत्र', parent: 'shravasta', yug: 'treta' },
     { id: 'kuvalayashva', name: 'कुवलयाश्व', subtitle: 'धुंधुमार', parent: 'brihadashva', yug: 'treta', parichay: 'धुंधु नामक राक्षस का वध करने के कारण धुंधुमार कहलाए।' },
     { id: 'dridhashva', name: 'दृढ़ाश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+    { id: 'chandrashva', name: 'चन्द्राश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+    { id: 'kapilashva', name: 'कपिलाश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+
     { id: 'pramoda', name: 'प्रमोद', subtitle: 'दृढ़ाश्व पुत्र', parent: 'dridhashva', yug: 'treta' },
     { id: 'haryashva_1', name: 'हर्याश्व प्रथम', subtitle: 'प्रमोद पुत्र', parent: 'pramoda', yug: 'treta' },
     { id: 'nikumbha', name: 'निकुंभ', subtitle: 'हर्याश्व पुत्र', parent: 'haryashva_1', yug: 'treta' },
@@ -38,7 +41,12 @@ export const suryavanshData = [
     { id: 'prasenajit_1', name: 'प्रसेनजित प्रथम', subtitle: 'कृशाश्व पुत्र', parent: 'krishashva', yug: 'treta' },
     { id: 'yuvanashva_2', name: 'युवनाश्व द्वितीय', subtitle: 'प्रसेनजित पुत्र', parent: 'prasenajit_1', yug: 'treta' },
     { id: 'mandhata', name: 'मान्धाता', subtitle: 'चक्रवर्ती सम्राट', parent: 'yuvanashva_2', yug: 'treta', parichay: 'इनका जन्म पिता युवनाश्व के गर्भ (ऋषियों के मन्त्रपूत जल पीने के कारण) से हुआ था। इन्द्र ने इन्हें अपनी उंगली चुसाकर पाला था।' },
-    { id: 'purukutsa', name: 'पुरुकुत्स', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', yug: 'treta' },
+
+    { id: 'bindumati', name: 'बिंदुमती', subtitle: 'मान्धाता पत्नी', parent: '', spouseOf: 'mandhata', yug: 'treta', parichay: 'यादव नरेश शशबिंदु की पुत्री।' },
+    { id: 'muchukunda', name: 'मुचुकुन्द', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', mother: 'bindumati', yug: 'treta', parichay: 'महान योद्धा। इन्होंने देवासुर संग्राम में देवताओं का साथ दिया था। द्वापर युग में इन्होंने अपनी दृष्टि से कालयवन को भस्म किया था।' },
+    { id: 'ambarisha_mandhata', name: 'अम्बरीष', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', mother: 'bindumati', yug: 'treta' },
+
+    { id: 'purukutsa', name: 'पुरुकुत्स', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', mother: 'bindumati', yug: 'treta' },
     { id: 'trasadasyu', name: 'त्रासदस्यु', subtitle: 'पुरुकुत्स पुत्र', parent: 'purukutsa', yug: 'treta' },
     { id: 'sambhuta', name: 'संभ्रुत', subtitle: 'त्रासदस्यु पुत्र', parent: 'trasadasyu', yug: 'treta' },
     { id: 'anaranya_2', name: 'अनरण्य द्वितीय', subtitle: 'संभ्रुत पुत्र', parent: 'sambhuta', yug: 'treta' },
@@ -104,7 +112,10 @@ export const suryavanshData = [
     // Descendants of Nabhaga
     { id: 'ambarisha', name: 'अम्बरीष', subtitle: 'महान विष्णु भक्त', parent: 'nabhaga', yug: 'satya', parichay: 'दुर्वासा ऋषि के श्राप से सुदर्शन चक्र ने इनकी रक्षा की थी।' },
 
-    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'trishanku', yug: 'treta' },
+
+    { id: 'satyaratha', name: 'सत्यरथा', subtitle: 'त्रिशंकु पत्नी', parent: '', spouseOf: 'trishanku', yug: 'treta' },
+
+    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'trishanku', mother: 'satyaratha', yug: 'treta' },
     { id: 'bhagirath', name: 'भगीरथ', subtitle: 'गंगा को लाने वाले', parent: 'harishchandra', yug: 'treta' },
     { id: 'raghu', name: 'रघु', subtitle: 'रघुवंश के संस्थापक', parent: 'bhagirath', yug: 'treta' },
     { id: 'aja', name: 'अज', subtitle: 'रघु के पुत्र', parent: 'raghu', yug: 'treta' },
