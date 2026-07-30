@@ -47,6 +47,19 @@ export const chandravanshData = [
     { id: 'vatsa_kashi', name: 'वत्स', subtitle: 'प्रतर्दन पुत्र', parent: 'pratardana', yug: 'treta' },
     { id: 'alarka', name: 'अलर्क', subtitle: 'काशी नरेश', parent: 'vatsa_kashi', yug: 'treta', parichay: 'महान तपस्वी राजा जिसने 66,000 वर्ष तक राज किया और फिर दत्तात्रेय से ज्ञान प्राप्त कर मोक्ष पाया।' },
 
+    { id: 'sannati_kashi', name: 'सन्नति', subtitle: 'अलर्क पुत्र', parent: 'alarka', yug: 'treta' },
+    { id: 'sunitha_kashi', name: 'सुनीथ', subtitle: 'सन्नति पुत्र', parent: 'sannati_kashi', yug: 'treta' },
+    { id: 'suketu_kashi', name: 'सुकेतु', subtitle: 'सुनीथ पुत्र', parent: 'sunitha_kashi', yug: 'treta' },
+    { id: 'satyaketu_kashi', name: 'सत्यकेतु', subtitle: 'सुकेतु पुत्र', parent: 'suketu_kashi', yug: 'treta' },
+    { id: 'vibhu_kashi', name: 'विभु', subtitle: 'सत्यकेतु पुत्र', parent: 'satyaketu_kashi', yug: 'treta' },
+    { id: 'suvibhu_kashi', name: 'सुविभु', subtitle: 'विभु पुत्र', parent: 'vibhu_kashi', yug: 'treta' },
+    { id: 'sukumara_kashi', name: 'सुकुमार', subtitle: 'सुविभु पुत्र', parent: 'suvibhu_kashi', yug: 'treta' },
+    { id: 'dhrishtaketu_kashi', name: 'धृष्टकेतु', subtitle: 'सुकुमार पुत्र', parent: 'sukumara_kashi', yug: 'treta' },
+    { id: 'vainahotra', name: 'वैनहोत्र', subtitle: 'धृष्टकेतु पुत्र', parent: 'dhrishtaketu_kashi', yug: 'treta' },
+    { id: 'bharga_kashi', name: 'भर्ग', subtitle: 'वैनहोत्र पुत्र', parent: 'vainahotra', yug: 'treta' },
+    { id: 'vatsabhumi', name: 'वत्सभूमि', subtitle: 'भर्ग पुत्र', parent: 'bharga_kashi', yug: 'treta' },
+
+
     { id: 'rambha_ayu', name: 'रम्भ', subtitle: 'आयु के पुत्र', parent: 'ayu', mother: 'prabha', yug: 'satya' },
     { id: 'raji', name: 'रजि', subtitle: 'आयु के पुत्र', parent: 'ayu', mother: 'prabha', yug: 'satya' },
     { id: 'rajeya', name: 'रजेय (500 पुत्र)', subtitle: 'रजि के पुत्र', parent: 'raji', yug: 'satya', parichay: 'राजा रजि के 500 बलवान पुत्र। इन्होंने इंद्र से स्वर्ग छीन लिया था, जिसे बाद में बृहस्पति के छल से नष्ट किया गया।' },
@@ -91,6 +104,14 @@ export const chandravanshData = [
     { id: 'gadhi', name: 'गाधि', subtitle: 'कुशनाभ पुत्र', parent: 'kushanabha', yug: 'treta' },
     { id: 'satyavati_gadhi', name: 'सत्यवती', subtitle: 'गाधि पुत्री', parent: 'gadhi', spouseOf: 'ruchika', yug: 'treta', parichay: 'राजा गाधि की पुत्री, जिनका विवाह भृगुवंशी महर्षि ऋचीक से हुआ था। ये जमदग्नि की माता थीं।' },
     { id: 'vishwamitra', name: 'विश्वामित्र', subtitle: 'ब्रह्मर्षि', parent: 'gadhi', yug: 'treta', parichay: 'जन्म से क्षत्रिय राजा थे, परन्तु वशिष्ठ ऋषि से विवाद के बाद घोर तपस्या कर ब्रह्मर्षि का पद प्राप्त किया। गायत्री मंत्र के द्रष्टा।' },
+
+    { id: 'menaka_apsara', name: 'मेनका', subtitle: 'अप्सरा', parent: '', spouseOf: 'vishwamitra', yug: 'treta' },
+    { id: 'shakuntala_vishwamitra', name: 'शकुंतला', subtitle: 'विश्वामित्र पुत्री', parent: 'vishwamitra', mother: 'menaka_apsara', yug: 'treta', parichay: 'इनका विवाह पौरव वंशी राजा दुष्यंत से हुआ और इन्होने भरत को जन्म दिया।' },
+    { id: 'shunahshepa', name: 'शुनःशेप (देवरथ)', subtitle: 'दत्तक पुत्र', parent: 'vishwamitra', yug: 'treta', parichay: 'महर्षि ऋचीक के पुत्र जिन्हें हरिश्चंद्र के यज्ञ में बलि के लिए ख़रीदा गया था, पर विश्वामित्र ने इन्हें बचाया और अपना ज्येष्ठ पुत्र (देवरथ) बना लिया।' },
+    { id: 'madhucchandas', name: 'मधुच्छंदस', subtitle: 'विश्वामित्र पुत्र', parent: 'vishwamitra', yug: 'treta' },
+    { id: 'ashtaka', name: 'अष्टक', subtitle: 'विश्वामित्र पुत्र', parent: 'vishwamitra', yug: 'treta' },
+    { id: 'galava', name: 'गालव', subtitle: 'विश्वामित्र पुत्र / शिष्य', parent: 'vishwamitra', yug: 'treta' },
+
 
     // --- बाद के वंश (अस्थायी रूप से सुरक्षित रखे गए हैं) ---
     { id: 'shurasen', name: 'शूरसेन', subtitle: 'मथुरा नरेश', parent: 'yadu', yug: 'dwapar' },
