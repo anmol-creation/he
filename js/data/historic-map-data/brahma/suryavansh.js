@@ -30,6 +30,9 @@ export const suryavanshData = [
     { id: 'brihadashva', name: 'बृहदाश्व', subtitle: 'श्रावस्त पुत्र', parent: 'shravasta', yug: 'treta' },
     { id: 'kuvalayashva', name: 'कुवलयाश्व', subtitle: 'धुंधुमार', parent: 'brihadashva', yug: 'treta', parichay: 'धुंधु नामक राक्षस का वध करने के कारण धुंधुमार कहलाए।' },
     { id: 'dridhashva', name: 'दृढ़ाश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+    { id: 'chandrashva', name: 'चन्द्राश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+    { id: 'kapilashva', name: 'कपिलाश्व', subtitle: 'धुंधुमार पुत्र', parent: 'kuvalayashva', yug: 'treta' },
+
     { id: 'pramoda', name: 'प्रमोद', subtitle: 'दृढ़ाश्व पुत्र', parent: 'dridhashva', yug: 'treta' },
     { id: 'haryashva_1', name: 'हर्याश्व प्रथम', subtitle: 'प्रमोद पुत्र', parent: 'pramoda', yug: 'treta' },
     { id: 'nikumbha', name: 'निकुंभ', subtitle: 'हर्याश्व पुत्र', parent: 'haryashva_1', yug: 'treta' },
@@ -38,7 +41,12 @@ export const suryavanshData = [
     { id: 'prasenajit_1', name: 'प्रसेनजित प्रथम', subtitle: 'कृशाश्व पुत्र', parent: 'krishashva', yug: 'treta' },
     { id: 'yuvanashva_2', name: 'युवनाश्व द्वितीय', subtitle: 'प्रसेनजित पुत्र', parent: 'prasenajit_1', yug: 'treta' },
     { id: 'mandhata', name: 'मान्धाता', subtitle: 'चक्रवर्ती सम्राट', parent: 'yuvanashva_2', yug: 'treta', parichay: 'इनका जन्म पिता युवनाश्व के गर्भ (ऋषियों के मन्त्रपूत जल पीने के कारण) से हुआ था। इन्द्र ने इन्हें अपनी उंगली चुसाकर पाला था।' },
-    { id: 'purukutsa', name: 'पुरुकुत्स', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', yug: 'treta' },
+
+    { id: 'bindumati', name: 'बिंदुमती', subtitle: 'मान्धाता पत्नी', parent: '', spouseOf: 'mandhata', yug: 'treta', parichay: 'यादव नरेश शशबिंदु की पुत्री।' },
+    { id: 'muchukunda', name: 'मुचुकुन्द', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', mother: 'bindumati', yug: 'treta', parichay: 'महान योद्धा। इन्होंने देवासुर संग्राम में देवताओं का साथ दिया था। द्वापर युग में इन्होंने अपनी दृष्टि से कालयवन को भस्म किया था।' },
+    { id: 'ambarisha_mandhata', name: 'अम्बरीष', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', mother: 'bindumati', yug: 'treta' },
+
+    { id: 'purukutsa', name: 'पुरुकुत्स', subtitle: 'मान्धाता पुत्र', parent: 'mandhata', mother: 'bindumati', yug: 'treta' },
     { id: 'trasadasyu', name: 'त्रासदस्यु', subtitle: 'पुरुकुत्स पुत्र', parent: 'purukutsa', yug: 'treta' },
     { id: 'sambhuta', name: 'संभ्रुत', subtitle: 'त्रासदस्यु पुत्र', parent: 'trasadasyu', yug: 'treta' },
     { id: 'anaranya_2', name: 'अनरण्य द्वितीय', subtitle: 'संभ्रुत पुत्र', parent: 'sambhuta', yug: 'treta' },
@@ -104,11 +112,55 @@ export const suryavanshData = [
     // Descendants of Nabhaga
     { id: 'ambarisha', name: 'अम्बरीष', subtitle: 'महान विष्णु भक्त', parent: 'nabhaga', yug: 'satya', parichay: 'दुर्वासा ऋषि के श्राप से सुदर्शन चक्र ने इनकी रक्षा की थी।' },
 
-    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'trishanku', yug: 'treta' },
-    { id: 'bhagirath', name: 'भगीरथ', subtitle: 'गंगा को लाने वाले', parent: 'harishchandra', yug: 'treta' },
-    { id: 'raghu', name: 'रघु', subtitle: 'रघुवंश के संस्थापक', parent: 'bhagirath', yug: 'treta' },
+
+    { id: 'satyaratha', name: 'सत्यरथा', subtitle: 'त्रिशंकु पत्नी', parent: '', spouseOf: 'trishanku', yug: 'treta' },
+
+    { id: 'harishchandra', name: 'हरिश्चंद्र', subtitle: 'सत्यवादी', parent: 'trishanku', mother: 'satyaratha', yug: 'treta' },
+
+    // Harishchandra to Bhagirath Lineage
+    { id: 'taramati', name: 'तारामती (शैव्या)', subtitle: 'हरिश्चंद्र पत्नी', parent: '', spouseOf: 'harishchandra', yug: 'treta' },
+    { id: 'rohitashva', name: 'रोहिताश्व', subtitle: 'हरिश्चंद्र पुत्र', parent: 'harishchandra', mother: 'taramati', yug: 'treta' },
+    { id: 'harita', name: 'हरित', subtitle: 'रोहिताश्व पुत्र', parent: 'rohitashva', yug: 'treta' },
+    { id: 'chanchu', name: 'चंचु', subtitle: 'हरित पुत्र', parent: 'harita', yug: 'treta' },
+    { id: 'sudeva', name: 'सुदेव', subtitle: 'चंचु पुत्र', parent: 'chanchu', yug: 'treta' },
+    { id: 'ruruka', name: 'रुरुक', subtitle: 'सुदेव पुत्र', parent: 'sudeva', yug: 'treta' },
+    { id: 'vrika', name: 'वृक', subtitle: 'रुरुक पुत्र', parent: 'ruruka', yug: 'treta' },
+    { id: 'bahu', name: 'बाहु (बाहुक)', subtitle: 'वृक पुत्र', parent: 'vrika', yug: 'treta' },
+    { id: 'sagara', name: 'सगर', subtitle: 'चक्रवर्ती सम्राट', parent: 'bahu', yug: 'treta', parichay: 'सगर के अश्वमेध यज्ञ का घोड़ा इंद्र ने कपिल मुनि के आश्रम में बांध दिया था।' },
+    { id: 'sumati_sagara', name: 'सुमति', subtitle: 'सगर पत्नी', parent: '', spouseOf: 'sagara', yug: 'treta' },
+    { id: 'keshini', name: 'केशिनी', subtitle: 'सगर पत्नी', parent: '', spouseOf: 'sagara', yug: 'treta' },
+    { id: 'sagara_60000_sons', name: '60,000 पुत्र', subtitle: 'सगर पुत्र', parent: 'sagara', mother: 'sumati_sagara', yug: 'treta', parichay: 'सुमति के 60,000 पुत्र, जिन्हें कपिल मुनि ने भस्म कर दिया था।', clusterName: 'सगर के 60 हज़ार पुत्र' },
+    { id: 'asamanjas', name: 'असमंजस', subtitle: 'सगर पुत्र', parent: 'sagara', mother: 'keshini', yug: 'treta' },
+    { id: 'ambujakshi', name: 'अम्बुजाक्षी', subtitle: 'असमंजस पत्नी', parent: '', spouseOf: 'asamanjas', yug: 'treta' },
+    { id: 'anshuman', name: 'अंशुमान', subtitle: 'असमंजस पुत्र', parent: 'asamanjas', mother: 'ambujakshi', yug: 'treta' },
+    { id: 'dilipa_1', name: 'दिलीप प्रथम', subtitle: 'अंशुमान पुत्र', parent: 'anshuman', yug: 'treta' },
+
+    { id: 'bhagirath', name: 'भगीरथ', subtitle: 'गंगा को लाने वाले', parent: 'dilipa_1', yug: 'treta' },
+
+    // Bhagirath to Raghu Lineage
+    { id: 'shruta', name: 'श्रुत', subtitle: 'भगीरथ पुत्र', parent: 'bhagirath', yug: 'treta' },
+    { id: 'nabhaga_2', name: 'नाभाग (द्वितीय)', subtitle: 'श्रुत पुत्र', parent: 'shruta', yug: 'treta' },
+    { id: 'ambarisha_2', name: 'अम्बरीष (द्वितीय)', subtitle: 'नाभाग पुत्र', parent: 'nabhaga_2', yug: 'treta' },
+    { id: 'sindhudvipa', name: 'सिन्धुद्वीप', subtitle: 'अम्बरीष पुत्र', parent: 'ambarisha_2', yug: 'treta' },
+    { id: 'ayutayu', name: 'अयुतायु', subtitle: 'सिन्धुद्वीप पुत्र', parent: 'sindhudvipa', yug: 'treta' },
+    { id: 'rituparna', name: 'ऋतुपर्ण', subtitle: 'अयुतायु पुत्र', parent: 'ayutayu', yug: 'treta' },
+    { id: 'sarvakama', name: 'सर्वकाम', subtitle: 'ऋतुपर्ण पुत्र', parent: 'rituparna', yug: 'treta' },
+    { id: 'sudasa', name: 'सुदास', subtitle: 'सर्वकाम पुत्र', parent: 'sarvakama', yug: 'treta' },
+    { id: 'mitrasaha', name: 'मित्रसह (कल्माषपाद)', subtitle: 'सुदास पुत्र', parent: 'sudasa', yug: 'treta' },
+    { id: 'ashmaka', name: 'अश्मक', subtitle: 'मित्रसह पुत्र', parent: 'mitrasaha', yug: 'treta' },
+    { id: 'mulaka', name: 'मूलक', subtitle: 'अश्मक पुत्र', parent: 'ashmaka', yug: 'treta' },
+    { id: 'shataratha', name: 'शतरथ', subtitle: 'मूलक पुत्र', parent: 'mulaka', yug: 'treta' },
+    { id: 'vishvasaha', name: 'विश्वसह', subtitle: 'शतरथ पुत्र', parent: 'shataratha', yug: 'treta' },
+    { id: 'dilipa_2', name: 'दिलीप द्वितीय (खट्वांग)', subtitle: 'विश्वसह पुत्र', parent: 'vishvasaha', yug: 'treta' },
+    { id: 'dirghabahu', name: 'दीर्घबाहु', subtitle: 'दिलीप पुत्र', parent: 'dilipa_2', yug: 'treta' },
+
+    { id: 'raghu', name: 'रघु', subtitle: 'रघुवंश के संस्थापक', parent: 'dirghabahu', yug: 'treta' },
     { id: 'aja', name: 'अज', subtitle: 'रघु के पुत्र', parent: 'raghu', yug: 'treta' },
     { id: 'dasharath', name: 'दशरथ', subtitle: 'अयोध्या के चक्रवर्ती सम्राट', parent: 'aja', yug: 'treta' },
+
+    { id: 'indumati', name: 'इन्दुमती', subtitle: 'अज पत्नी', parent: '', spouseOf: 'aja', yug: 'treta' },
+    { id: 'shanta', name: 'शान्ता', subtitle: 'दशरथ पुत्री', parent: 'dasharath', yug: 'treta', parichay: 'दशरथ की पुत्री जिसे अंगदेश के राजा रोमपाद ने गोद लिया था। इनका विवाह ऋष्यशृंग मुनि से हुआ था।' },
+
     { id: 'kaushalya', name: 'कौशल्या', subtitle: 'राम की माता', parent: '', spouseOf: 'dasharath', yug: 'treta', clusterName: 'दशरथ की 3 पत्नियाँ' },
     { id: 'kaikeyi', name: 'कैकेयी', subtitle: 'भरत की माता', parent: '', spouseOf: 'dasharath', yug: 'treta', clusterName: 'दशरथ की 3 पत्नियाँ' },
     { id: 'sumitra', name: 'सुमित्रा', subtitle: 'लक्ष्मण/शत्रुघ्न की माता', parent: '', spouseOf: 'dasharath', yug: 'treta', clusterName: 'दशरथ की 3 पत्नियाँ' },
