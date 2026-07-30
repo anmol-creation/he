@@ -66,7 +66,7 @@ const vanshGotraData = {
                     "id": "suryavansh",
                     "name": "Suryavansh",
                     "rootAncestor": "Ikshvaku -> Manu -> Surya Dev -> Rishi Kashyap -> Brahma",
-                    "surnames": ["Kachhwaha", "Kushwaha", "Sisodia", "Guhilot", "Raghuvanshi", "Bargujar", "Sikarwar", "Bais", "Agarwal", "Rastogi", "Rohatgi", "Maheshwari"]
+                    "surnames": ["Kachhwaha", "Kushwaha", "Sisodia", "Guhilot", "Raghuvanshi", "Bargujar", "Sikarwar", "Bais", "Agarwal", "Kurmi", "Koeri", "Maurya", "Saini", "Lohana", "Leva Patidar", "Kadva Patidar", "Rastogi", "Rohatgi", "Maheshwari"]
                 },
                 {
                     "id": "chandravansh",

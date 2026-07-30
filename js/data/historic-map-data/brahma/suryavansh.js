@@ -169,13 +169,13 @@ export const suryavanshData = [
     { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
     { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
     { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
-    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta' },
+    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
 
     // Luv's descendants
-    { id: 'sarukman', name: 'सरूक्मान', subtitle: 'लव पुत्र', parent: 'luv', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी।' },
-    { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'सिसोदिया / राघव', parent: 'sarukman', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और सिसोदिया/गहलोत (मेवाड़) राजपूत लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
+    { id: 'sarukman', name: 'सरूक्मान', subtitle: 'लव पुत्र', parent: 'luv', yug: 'treta' },
+    { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'सिसोदिया / राघव', parent: 'sarukman', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और सिसोदिया/गहलोत (मेवाड़) राजपूत, लेवा पाटीदार लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
 
-    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta' },
+    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
 
     // Kush's descendants (to Mahabharat era)
     { id: 'kumudvati', name: 'कुमुद्वती', subtitle: 'कुश पत्नी', parent: '', spouseOf: 'kush', yug: 'treta', parichay: 'ये एक नागकन्या थीं।' },
@@ -206,6 +206,8 @@ export const suryavanshData = [
     { id: 'amarsha', name: 'अमर्ष', subtitle: 'सुसन्धि पुत्र', parent: 'susandhi', yug: 'dwapar' },
     { id: 'vishrutavant', name: 'विश्रुतवन्त्', subtitle: 'अमर्ष पुत्र', parent: 'amarsha', yug: 'dwapar' },
     { id: 'brihadbala', name: 'बृहद्बल', subtitle: 'महाभारत योद्धा', parent: 'vishrutavant', yug: 'dwapar', parichay: 'ये महाभारत युद्ध में कौरवों की ओर से लड़े थे और अभिमन्यु के हाथों वीरगति को प्राप्त हुए थे। कछवाहा राजपूत कुश के वंशज माने जाते हैं।' },
+    { id: 'raja_vallabh', name: 'महाराजा वल्लभ देव', subtitle: 'प्रतापनगर के राजा', parent: 'brihadbala', yug: 'dwapar', parichay: 'ये कुश की पीढ़ी में प्रतापनगर के सूर्यवंशी राजा थे। महाभारत युद्ध में पांडवों की ओर से लड़ते हुए वीरगति को प्राप्त हुए।' },
+    { id: 'maharaja_agrasen', name: 'महाराजा अग्रसेन', subtitle: 'अग्रवाल वंश संस्थापक', parent: 'raja_vallabh', yug: 'dwapar', parichay: 'इन्होंने अग्रोहा नगर की स्थापना की और 18 गोत्रों की शुरुआत की, जिससे अग्रवाल समाज का निर्माण हुआ।', clusterName: 'कुश के अन्य वंशज' },
 
     { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'treta' },
     { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', parent: 'surya', yug: 'treta' },
