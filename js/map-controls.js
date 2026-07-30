@@ -96,6 +96,37 @@ window.MapControls = {
             const worldX = (clickX - state.translateX) / state.scale;
             const worldY = (clickY - state.translateY) / state.scale;
 
+            // Check if switcher hitboxes were clicked
+            if (state.switcherHitBoxes && state.switcherHitBoxes.length > 0) {
+                for (const box of state.switcherHitBoxes) {
+                    if (worldX >= box.x && worldX <= box.x + box.w && worldY >= box.y && worldY <= box.y + box.h) {
+                        let changed = false;
+                        if (box.type === 'kalpa') {
+                            if (box.action === 'prev' && state.currentKalpaIndex > 0) {
+                                state.currentKalpaIndex--;
+                                changed = true;
+                            } else if (box.action === 'next' && state.currentKalpaIndex < state.kalpas.length - 1) {
+                                state.currentKalpaIndex++;
+                                changed = true;
+                            }
+                        } else if (box.type === 'manvantara') {
+                            if (box.action === 'prev' && state.currentManvIndex > 0) {
+                                state.currentManvIndex--;
+                                changed = true;
+                            } else if (box.action === 'next' && state.currentManvIndex < state.manvantaras.length - 1) {
+                                state.currentManvIndex++;
+                                changed = true;
+                            }
+                        }
+
+                        if (changed) {
+                            state.updateKalpaManvState();
+                        }
+                        return; // Stop event processing
+                    }
+                }
+            }
+
             const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
 
             for (let i = dataList.length - 1; i >= 0; i--) {
