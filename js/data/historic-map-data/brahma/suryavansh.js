@@ -21,8 +21,8 @@ export const suryavanshData = [
     // Vikukshi's immediate
     { id: 'puranjaya', name: 'पुरंजय', subtitle: 'ककुत्स्थ / इन्द्रवाह', parent: 'vikukshi', yug: 'treta', parichay: 'इन्होंने देवासुर संग्राम में वृषभ रूपी इन्द्र पर बैठकर युद्ध किया था।' },
     // Vikukshi to Harishchandra (Suryavansh main line)
-    { id: 'anena', name: 'अनेना', subtitle: 'पुरंजय पुत्र', parent: 'puranjaya', yug: 'treta' },
-    { id: 'prithu_surya', name: 'पृथु', subtitle: 'अनेना पुत्र', parent: 'anena', yug: 'treta' },
+    { id: 'anena_surya', name: 'अनेना', subtitle: 'पुरंजय पुत्र', parent: 'puranjaya', yug: 'treta' },
+    { id: 'prithu_surya', name: 'पृथु', subtitle: 'अनेना पुत्र', parent: 'anena_surya', yug: 'treta' },
     { id: 'vishvarandhi', name: 'विश्वरंधि', subtitle: 'पृथु पुत्र', parent: 'prithu_surya', yug: 'treta' },
     { id: 'chandra_surya', name: 'चंद्र', subtitle: 'विश्वरंधि पुत्र', parent: 'vishvarandhi', yug: 'treta' },
     { id: 'yuvanashva_1', name: 'युवनाश्व प्रथम', subtitle: 'चंद्र पुत्र', parent: 'chandra_surya', yug: 'treta' },
