@@ -44,13 +44,24 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                        clusterName: node.clusterName,
                        nodes: []
                   });
-                  processedData.push(clusterMap.get(node.clusterName));
+
+                  // For a spouse cluster proxy to attach correctly to husband, we need to treat it similar to a wife node
+                  // if it has both parent and spouse. If it only has spouse, it naturally attaches.
+                  // But we don't want to auto-duplicate the proxy node visually because it represents a group.
+                  // So we will just strip its parent if it has a spouse, to force it into the husband's line as a block.
+                  const proxyNode = clusterMap.get(node.clusterName);
+                  if (proxyNode.spouseOf && proxyNode.parent) {
+                      proxyNode.parent = null; // Forces it to render on husband's line
+                  }
+
+                  processedData.push(proxyNode);
              }
              clusterMap.get(node.clusterName).nodes.push(node);
              return; // Skip adding the actual node to processedData
         }
 
         if (node.parent && node.spouseOf) {
+            // When cluster is expanded, we still process the individual females so they might split into daughter/wife.
             const parentFound = nodeExists(node.parent);
             const spouseFound = nodeExists(node.spouseOf);
 
@@ -149,6 +160,7 @@ export function buildTree(rawData, nodesMap, transitionWires) {
 
         // Use standard "if" instead of "else if" for clusters so they can link to both sides.
         // For normal nodes, they should only link to ONE side to maintain tree topology (unless duplicated).
+        // Since we explicitly nulled the parent of a spousal proxy node above, it will safely skip this and only render as a spouse.
         if (node.parent && (!node.spouseOf || node.isCluster)) {
              if (nodesMap.has(node.parent)) {
                 let pushedToMother = false;

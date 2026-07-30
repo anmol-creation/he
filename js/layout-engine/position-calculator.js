@@ -90,13 +90,16 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
             });
         }
     } else if (node.spouses.length > 1) {
-        // Multiple spouses: Below husband (depth + 0.5 roughly translated to Y offset)
+        // Multiple spouses: Below husband
+        // We use a small offset so they sit below the husband, but clearly ABOVE the children's depth.
+        // NODE_HEIGHT + MIN_GAP_Y is typically 300px total jump for children.
+        // 100px places them exactly mid-way as intended.
         node.spouses.forEach((spouseId) => {
             const spouseNode = nodesMap.get(spouseId);
             if (spouseNode) {
                 // Use the relative x calculated by the true auto-slip contour in contour-calculator.js
                 spouseNode.x = node.x + spouseNode.layout.x;
-                spouseNode.y = node.y + 150; // Y + 150px
+                spouseNode.y = node.y + 100; // Y + 100px (wives row)
 
                 spouseNode.children.forEach(childId => {
                     const childNode = nodesMap.get(childId);
