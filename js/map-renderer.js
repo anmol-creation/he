@@ -365,20 +365,6 @@ window.MapRenderer = {
             { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' }
         ];
 
-        // Update the position of the HTML kalpa switcher to sit right below the Mahakalp line
-        const kalpaSwitcher = document.getElementById('kalpa-switcher-container');
-        if (kalpaSwitcher && window.MapState.canvas) {
-            const state = window.MapState;
-            // The canvas Y coordinate of the Mahakalp line is mahakalpBottomLine.
-            // We want it visually 20px below this line in screen space.
-            const screenY = (mahakalpBottomLine * state.scale) + state.translateY + 20;
-
-            // Keep it fixed in the horizontal center of the screen, irrespective of canvas panning.
-            kalpaSwitcher.style.top = `${screenY}px`;
-            kalpaSwitcher.style.left = `50%`;
-            kalpaSwitcher.style.transform = `translateX(-50%)`;
-        }
-
         ctx.lineWidth = 3;
         ctx.setLineDash([10, 10]);
 
@@ -412,6 +398,109 @@ window.MapRenderer = {
 
         ctx.setLineDash([]);
         ctx.globalAlpha = 1;
+
+        // Draw Switchers directly onto the canvas
+        if (window.MapState) {
+            window.MapState.switcherHitBoxes = []; // Reset hitboxes each render
+            const state = window.MapState;
+
+            // 1. Kalpa Switcher at Mahakalp Bottom Line
+            const kY = mahakalpBottomLine + 45; // Below the line
+            const kCurrent = state.kalpas[state.currentKalpaIndex];
+            const kSubText = `${kCurrent.index}${kCurrent.index === 50 ? 'th' : kCurrent.index === 51 ? 'st' : 'nd'} Kalpa`;
+
+            this.drawCanvasSwitcher(
+                ctx,
+                0, kY,
+                'kalpa',
+                kSubText,
+                kCurrent.title,
+                '#FFD700',
+                state.currentKalpaIndex > 0,
+                state.currentKalpaIndex < state.kalpas.length - 1
+            );
+
+            // 2. Manvantara Switcher at Kalpa Bottom Line
+            const mY = kalpBottomLine + 45; // Below the line
+            const mCurrent = state.manvantaras[state.currentManvIndex];
+            const mSubText = `${mCurrent.index}${mCurrent.index === 1 ? 'st' : mCurrent.index === 2 ? 'nd' : mCurrent.index === 3 ? 'rd' : 'th'} Manvantara`;
+
+            this.drawCanvasSwitcher(
+                ctx,
+                0, mY,
+                'manvantara',
+                mSubText,
+                mCurrent.title,
+                '#00BFFF',
+                state.currentManvIndex > 0,
+                state.currentManvIndex < state.manvantaras.length - 1
+            );
+        }
+    },
+
+    drawCanvasSwitcher(ctx, x, y, type, subText, mainText, color, hasPrev, hasNext) {
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        // Background box for switcher
+        const boxWidth = 260;
+        const boxHeight = 50;
+        ctx.fillStyle = 'rgba(17, 17, 17, 0.9)';
+        ctx.strokeStyle = '#444';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        if (ctx.roundRect) {
+            ctx.roundRect(x - boxWidth/2, y - boxHeight/2, boxWidth, boxHeight, 10);
+        } else {
+            ctx.rect(x - boxWidth/2, y - boxHeight/2, boxWidth, boxHeight);
+        }
+        ctx.fill();
+        ctx.stroke();
+
+        // Texts
+        ctx.fillStyle = '#999';
+        ctx.font = '12px Poppins';
+        ctx.fillText(subText, x, y - 8);
+
+        ctx.fillStyle = color;
+        ctx.font = 'bold 16px Poppins';
+        ctx.fillText(mainText, x, y + 10);
+
+        // Arrows
+        ctx.font = '18px Arial';
+
+        // Prev Arrow
+        const prevArrowX = x - boxWidth/2 + 20;
+        ctx.fillStyle = hasPrev ? color : 'rgba(255,255,255,0.2)';
+        ctx.fillText('◄', prevArrowX, y);
+
+        // Next Arrow
+        const nextArrowX = x + boxWidth/2 - 20;
+        ctx.fillStyle = hasNext ? color : 'rgba(255,255,255,0.2)';
+        ctx.fillText('►', nextArrowX, y);
+
+        // Store Hitboxes in MapState (for Canvas clicks)
+        if (window.MapState) {
+            window.MapState.switcherHitBoxes.push({
+                type: type,
+                action: 'prev',
+                x: prevArrowX - 15,
+                y: y - 15,
+                w: 30,
+                h: 30
+            });
+            window.MapState.switcherHitBoxes.push({
+                type: type,
+                action: 'next',
+                x: nextArrowX - 15,
+                y: y - 15,
+                w: 30,
+                h: 30
+            });
+        }
+
+        ctx.restore();
     },
 
     drawRouteConnections(ctx, dataList, pathArray) {
