@@ -261,15 +261,32 @@ export const suryavanshData = [
     { id: 'kuntal', name: 'कुंतल', subtitle: 'किल्हण पुत्र', parent: 'kilhan', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'junsi', name: 'जुंसी', subtitle: 'कुंतल पुत्र', parent: 'kuntal', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'udayakarna', name: 'उदयकर्ण', subtitle: 'जुंसी पुत्र', parent: 'junsi', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+
+    // Udayakarna's descendants forming sub-clans
+    { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र (मुख्य धारा)', parent: 'udayakarna', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'rao_balaji', name: 'राव बालाजी', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', parichay: 'आमेर नरेश उदयकर्ण के पुत्र। इनके वंशज "बालापोता" कहलाये।', clusterName: 'शेखावत वंश' },
+    { id: 'rao_mokal', name: 'राव मोकल', subtitle: 'राव बालाजी पुत्र', parent: 'rao_balaji', yug: 'kali', clusterName: 'शेखावत वंश' },
+    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'rao_mokal', yug: 'kali', parichay: 'इन्होंने 15वीं शताब्दी में आमेर से स्वतंत्र होकर अमरसर में अपना राज्य स्थापित किया। इन्हीं के नाम पर शेखावाटी क्षेत्र और "शेखावत" सरनेम/शाखा की शुरुआत हुई।', clusterName: 'शेखावत वंश' },
+
+    { id: 'rao_bar_singh', name: 'राव बार सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', clusterName: 'नरूका वंश' },
+    { id: 'rao_naru', name: 'राव नरू', subtitle: 'नरूका वंश के संस्थापक', parent: 'rao_bar_singh', yug: 'kali', parichay: 'राव बार सिंह के वंशज। इन्हीं के नाम से "नरूका" सरनेम/शाखा की शुरुआत हुई। अलवर का राजघराना नरूका शाखा से ही है।', clusterName: 'नरूका वंश' },
+
     { id: 'banbir', name: 'बनबीर', subtitle: 'नरसिंह पुत्र', parent: 'narsingh_deo', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनबीर पुत्र', parent: 'banbir', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'chandrasen_amber', name: 'चंद्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'prithviraj_singh_i', name: 'पृथ्वीराज सिंह प्रथम', subtitle: 'आमेर नरेश', parent: 'chandrasen_amber', yug: 'kali', parichay: 'इन्होंने राणा सांगा के साथ खानवा के युद्ध (1527) में बाबर के खिलाफ भाग लिया था।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'prithviraj_singh_i', name: 'पृथ्वीराज सिंह प्रथम', subtitle: 'आमेर नरेश', parent: 'chandrasen_amber', yug: 'kali', parichay: 'इन्होंने राणा सांगा के साथ खानवा के युद्ध (1527) में बाबर के खिलाफ भाग लिया था। इन्हीं के समय में कछवाहा वंश कई मुख्य शाखाओं में विभाजित हुआ जिन्हें "बारां कोठड़ी" कहा गया।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+
+    // Prithviraj Singh I's descendants forming sub-clans
     { id: 'puranmal', name: 'पूरनमल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'bhim_singh', name: 'भीम सिंह', subtitle: 'पूरनमल भ्राता', parent: 'prithviraj_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'ratan_singh', name: 'रतन सिंह', subtitle: 'भीम सिंह पुत्र', parent: 'bhim_singh', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र (मुख्य धारा)', parent: 'prithviraj_singh_i', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था। इनके वंशज आगे चलकर "राजावत" कहलाये।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+
+    { id: 'rao_gopal', name: 'राव गोपाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali', clusterName: 'नाथावत वंश' },
+    { id: 'rao_natha', name: 'राव नाथा', subtitle: 'नाथावत वंश के संस्थापक', parent: 'rao_gopal', yug: 'kali', parichay: 'इन्हीं के नाम से "नाथावत" सरनेम/शाखा की शुरुआत हुई। चौमूं के ठाकुर इसी वंश से हैं।', clusterName: 'नाथावत वंश' },
+
+    { id: 'rao_jagmal', name: 'राव जगमाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali', clusterName: 'खंगारोत वंश' },
+    { id: 'rao_khangar', name: 'राव खंगार', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'rao_jagmal', yug: 'kali', parichay: 'इन्हीं के नाम से "खंगारोत" सरनेम/शाखा की शुरुआत हुई।', clusterName: 'खंगारोत वंश' },
     { id: 'bhagwant_das', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'man_singh_i', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
