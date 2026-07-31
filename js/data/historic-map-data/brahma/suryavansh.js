@@ -175,6 +175,23 @@ export const suryavanshData = [
     { id: 'sarukman', name: 'सरूक्मान', subtitle: 'लव पुत्र', parent: 'luv', yug: 'treta' },
     { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'सिसोदिया / राघव', parent: 'sarukman', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और सिसोदिया/गहलोत (मेवाड़) राजपूत, लेवा पाटीदार लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
 
+    // Guhila / Sisodia Dynasty of Mewar (Descendants of Lava)
+    { id: 'kanaksen', name: 'कनकसेन', subtitle: 'वल्लभी के संस्थापक', parent: 'sarukman', yug: 'kali', parichay: 'लव के वंशज जो लवपुरी (लाहौर) से पलायन कर गुजरात (सौराष्ट्र) आ गए और वहां वल्लभी (Vallabhi) राज्य की स्थापना की।' },
+    { id: 'guhadatta_mewar', name: 'गुहादित्य (गुहिल)', subtitle: 'गुहिल वंश के संस्थापक', parent: 'kanaksen', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी।' },
+    { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
+    { id: 'rawal_ratan_singh', name: 'रावल रतन सिंह', subtitle: 'चित्तौड़ के रावल', parent: 'bappa_rawal', yug: 'kali', parichay: 'ये गुहिल वंश की रावल शाखा के अंतिम शासक थे। इन्होने अलाउद्दीन खिलजी के आक्रमण (1303 ई.) का डटकर सामना किया था। रानी पद्मिनी इन्ही की पत्नी थीं, जिन्होंने जौहर किया था।' },
+    { id: 'rana_hammir_sisodia', name: 'राणा हम्मीर', subtitle: 'सिसोदिया वंश के संस्थापक', parent: 'bappa_rawal', yug: 'kali', parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।' },
+    { id: 'rana_lakha', name: 'राणा लाखा', subtitle: 'मेवाड़ नरेश', parent: 'rana_hammir_sisodia', yug: 'kali', parichay: 'इन्हीं के समय में पिछोला झील का निर्माण हुआ और जावर में चांदी की खदानें मिली थीं।' },
+    { id: 'rana_mokal_mewar', name: 'राणा मोकल', subtitle: 'मेवाड़ नरेश', parent: 'rana_lakha', yug: 'kali' },
+    { id: 'rana_kumbha', name: 'राणा कुम्भा', subtitle: 'महान निर्माता और योद्धा', parent: 'rana_mokal_mewar', yug: 'kali', parichay: 'ये स्थापत्य कला के महान संरक्षक थे। इन्होने मेवाड़ में 32 किलों (जैसे कुम्भलगढ़) का निर्माण करवाया और मालवा-गुजरात की संयुक्त सेनाओं को हराया।' },
+    { id: 'rana_raimal', name: 'राणा रायमल', subtitle: 'मेवाड़ नरेश', parent: 'rana_kumbha', yug: 'kali' },
+    { id: 'rana_sanga', name: 'राणा सांगा (संग्राम सिंह)', subtitle: 'हिन्दूपत', parent: 'rana_raimal', yug: 'kali', parichay: 'ये एक महान शूरवीर थे जिनके शरीर पर 80 घाव थे। इन्होने खातोली और बाड़ी के युद्धों में इब्राहिम लोदी को हराया और खानवा के युद्ध (1527) में बाबर का सामना किया।' },
+    { id: 'rana_udai_singh_ii', name: 'राणा उदय सिंह (द्वितीय)', subtitle: 'उदयपुर के संस्थापक', parent: 'rana_sanga', yug: 'kali', parichay: 'इन्होंने 1559 ई. में उदयपुर शहर की स्थापना की थी।' },
+    { id: 'maharana_pratap', name: 'महाराणा प्रताप', subtitle: 'मेवाड़ के वीर शिरोमणि', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।' },
+    { id: 'amar_singh_mewar', name: 'महाराणा अमर सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'maharana_pratap', yug: 'kali', parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े।' },
+    { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।' },
+    { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।' },
+
     { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
 
     // Kush's descendants (to Mahabharat era)
