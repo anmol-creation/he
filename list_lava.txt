@@ -1,0 +1,17 @@
+Lava's lineage typically goes:
+Lava -> ... -> Kanaksen (migrated to Saurashtra/Gujarat) -> ... -> Guhadatta (Guhil, founder of Guhila dynasty of Mewar) -> Bappa Rawal -> ... -> Rana Hammir -> ... -> Maharana Pratap.
+
+Nodes to add for Lava's lineage:
+- `lava`: Son of Rama. Founded Lavapuri (Lahore).
+- `sumati_lava_wife`: Wife of Lava.
+- `kanaksen`: A descendant of Lava who migrated from Lavapuri to Saurashtra (Gujarat) and established a kingdom at Vallabhi.
+- `vijaysen`: Founder of Vijayapur (another descendant).
+- `shiladitya`: Last king of Vallabhi.
+- `guhadatta`: Son of Shiladitya and Pushpavati, founder of the Guhila dynasty in Mewar.
+- `bappa_rawal`: Founder of the Mewar State in Rajasthan, built the Eklingji temple.
+- `rana_hammir`: Founder of the Sisodia branch of Guhilas.
+- `rana_kumbha`: Builder of Kumbhalgarh.
+- `rana_sanga`: Great warrior of Mewar.
+- `maharana_pratap`: Famous Rajput king of Mewar who fought against the Mughals.
+- `maharana_amar_singh`: Son of Pratap.
+- `maharana_raj_singh`: Famous later king.
