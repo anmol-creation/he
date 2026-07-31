@@ -247,6 +247,21 @@ export const suryavanshData = [
     { id: 'suratha', name: 'सुरथ', subtitle: 'कुण्डक पुत्र', parent: 'kundaka', yug: 'kali' },
     { id: 'sumitra_king', name: 'सुमित्र', subtitle: 'इक्ष्वाकु वंश के अंतिम राजा', parent: 'suratha', yug: 'kali', parichay: 'पुराणों के अनुसार सुमित्र इक्ष्वाकु/सूर्यवंश के अंतिम प्रतापी राजा थे। नंद वंश के महापद्म नंद ने इन्हें पराजित कर कोशल को मगध साम्राज्य में मिला लिया था।' },
 
+    // Dogra / Jamwal Dynasty (Descendants of Ayodhya Kings in Jammu)
+    { id: 'agnigarbha_jammu', name: 'अग्निगर्भ', subtitle: 'जम्वाल वंश के आदि पुरुष', parent: 'sumitra_king', yug: 'kali', parichay: 'ये अयोध्या के सूर्यवंशी राजाओं (कुश के वंशज) के प्रतापी राजकुमार थे, जो अयोध्या से पलायन कर शिवालिक की पहाड़ियों में आ बसे। डोगरा इतिहास (गुलाबनामा) के अनुसार इन्होंने ही यहाँ अपना राज्य स्थापित किया।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'bahu_lochan', name: 'बाहु लोचन', subtitle: 'बाहु नगर के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'अग्निगर्भ के ज्येष्ठ पुत्र। इन्होंने तवी नदी के किनारे बाहु किला (Bahu Fort) बनवाया और बाहु नगर बसाया।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'jambu_lochan', name: 'जम्बू लोचन', subtitle: 'जम्मू के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'इन्होंने एक शेर और बकरी को एक ही घाट पर पानी पीते देखा, जिससे प्रभावित होकर इन्होंने जम्मू (Jambu) शहर की स्थापना की। इनके वंशज आगे चलकर "जम्वाल" या डोगरा राजपूत कहलाये।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'dhruv_dev', name: 'राजा ध्रुव देव', subtitle: 'जम्मू नरेश', parent: 'jambu_lochan', yug: 'kali', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'ranjit_dev', name: 'राजा रणजीत देव', subtitle: 'जम्मू नरेश', parent: 'dhruv_dev', yug: 'kali', parichay: 'ये जम्मू के अत्यंत प्रसिद्ध और न्यायप्रिय राजा थे, जिनके समय में जम्मू ने बहुत समृद्धि देखी।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'surat_singh', name: 'सूरत सिंह', subtitle: 'ध्रुव देव पुत्र', parent: 'dhruv_dev', yug: 'kali', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'zorawar_singh_jammu', name: 'ज़ोरावर सिंह', subtitle: 'सूरत सिंह पुत्र', parent: 'surat_singh', yug: 'kali', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'kishore_singh', name: 'किशोर सिंह', subtitle: 'ज़ोरावर सिंह पुत्र', parent: 'zorawar_singh_jammu', yug: 'kali', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'gulab_singh', name: 'महाराजा गुलाब सिंह', subtitle: 'J&K के संस्थापक', parent: 'kishore_singh', yug: 'kali', parichay: 'इन्होंने 1846 में अंग्रेजों के साथ अमृतसर की संधि करके जम्मू और कश्मीर (J&K) की एक स्वतंत्र और विशाल डोगरा रियासत की स्थापना की।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'ranbir_singh', name: 'महाराजा रणबीर सिंह', subtitle: 'J&K नरेश', parent: 'gulab_singh', yug: 'kali', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'pratap_singh_dogra', name: 'महाराजा प्रताप सिंह', subtitle: 'J&K नरेश', parent: 'ranbir_singh', yug: 'kali', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'hari_singh', name: 'महाराजा हरि सिंह', subtitle: 'J&K के अंतिम शासक', parent: 'ranbir_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर के अंतिम डोगरा महाराजा थे। इन्होंने ही 26 अक्टूबर 1947 को भारत संघ में J&K के विलय (Instrument of Accession) पर हस्ताक्षर किए थे।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+    { id: 'karan_singh', name: 'डॉ. कर्ण सिंह', subtitle: 'हरि सिंह पुत्र', parent: 'hari_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर रियासत के युवराज (Crown Prince) और भारत के एक प्रमुख राजनेता और विद्वान हैं।', clusterName: 'डोगरा (जम्मू) राजवंश' },
+
     // Kachhwaha Dynasty (Descendants of Sumitra/Kusha in Kali Yuga)
     { id: 'sodh_dev', name: 'सोढ़ देव', subtitle: 'नरवर के कच्छपघात राजा', parent: 'sumitra_king', yug: 'kali', parichay: 'सुमित्र के वंशजों ने कालान्तर में ग्वालियर और नरवर में कच्छपघात (कछवाहा) राज्य स्थापित किया। सोढ़ देव नरवर के शासक थे और इन्हीं के पुत्र ने राजस्थान में कछवाहा वंश की नींव रखी।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
     { id: 'dulha_rai', name: 'दुल्हराय (तेजकरण)', subtitle: 'कछवाहा वंश के संस्थापक', parent: 'sodh_dev', yug: 'kali', parichay: 'इन्होंने 1028 ई. के आसपास ढूँढाड़ क्षेत्र (दौसा) में कछवाहा वंश (आमेर) की स्थापना की।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
@@ -327,7 +342,7 @@ export const suryavanshData = [
             '18 यज्ञों का आयोजन किया। 18वें यज्ञ में पशुबलि को देखकर उनका हृदय द्रवित हो गया और उन्होंने अहिंसा का मार्ग अपनाते हुए पशुबलि पर पूर्ण प्रतिबंध लगा दिया।'
         ]
     },
-    { id: 'shursen', name: 'शूरसेन', subtitle: 'महाराजा वल्लभ देव के पुत्र', parent: 'raja_vallabh', mother: 'bhagwati_devi', yug: 'dwapar', parichay: 'महाराजा अग्रसेन के छोटे भाई।' },
+    { id: 'shursen', name: 'शूरसेन', subtitle: 'महाराजा वल्लभ देव के पुत्र', parent: 'raja_vallabh', mother: 'bhagwati_devi', yug: 'dwapar', parichay: 'महाराजा अग्रसेन के छोटे भाई। कुछ ऐतिहासिक और सामाजिक मान्यताओं के अनुसार अग्रहरि (Agrahari) वैश्य समाज की उत्पत्ति शूरसेन या इनके वंशजों से मानी जाती है, हालाँकि कुछ अग्रहरि स्वयं को सीधे महाराजा अग्रसेन का वंशज भी मानते हैं।' },
 
     // Agrasen's Wives and 18 Sons
     {

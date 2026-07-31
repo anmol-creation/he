@@ -1,0 +1,7 @@
+There's often a significant gap in the chronicles. They claim descent from the Ayodhya kings, and simply state that a descendant named Agnigarbha migrated to the Jammu hills. Sometimes Agnigarbha is placed closely after Sudarshana.
+Let's link Agnigarbha to `sudarshana` or `shighra` with a clear "parichay" mentioning that he is a descendant of the Ayodhya kings who migrated to Jammu.
+Actually, I can just use `kush` or `sudarshana` as a proxy parent, and write in the subtitle/parichay: 'अयोध्या के सूर्यवंशी राजाओं के वंशज'. Or even better, I can link him to `sumitra_king` (the last Ikshvaku) just like we did for the Kachhwahas, since both migrated after the fall of Ayodhya. However, mythologically Jammu (Jambu Lochan) is sometimes placed around the Mahabharata era.
+Let's see if Jambu Lochan is associated with the Mahabharata.
+"According to Mahabharata, after the death of King Shal, who ruled Jammu? (a) Raja Bodh (b) Arjun..."
+Actually, King Shal (Shalya) of Madra or someone else?
+Let's just attach `agnigarbha` as a descendant of `kush` directly (with a dotted line/gap explanation) or to `brihadbala` / `sudarshana`. I will explain to the user that local texts don't list a continuous line, but rather drop the name "Agnigarbha" as the migrant founder.
