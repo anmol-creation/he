@@ -87,6 +87,66 @@ export const chandravanshData = [
     { id: 'anu_yayati', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'yayati', mother: 'sharmishtha', yug: 'treta' },
     { id: 'puru', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'yayati', mother: 'sharmishtha', yug: 'treta' },
 
+    // --- तुर्वसु वंश ---
+    { id: 'vahni_turvasu', name: 'वह्नि', subtitle: 'तुर्वसु पुत्र', parent: 'turvasu', yug: 'treta' },
+    { id: 'garbha_turvasu', name: 'गर्भ', subtitle: 'वह्नि पुत्र', parent: 'vahni_turvasu', yug: 'treta' },
+    { id: 'gobhanu_turvasu', name: 'गोभानु', subtitle: 'गर्भ पुत्र', parent: 'garbha_turvasu', yug: 'treta' },
+    { id: 'trishanu_turvasu', name: 'त्रिशानु', subtitle: 'गोभानु पुत्र', parent: 'gobhanu_turvasu', yug: 'treta' },
+    { id: 'karandhama_turvasu', name: 'करन्धम', subtitle: 'त्रिशानु पुत्र', parent: 'trishanu_turvasu', yug: 'treta' },
+    { id: 'marutta_turvasu', name: 'मरुत्त', subtitle: 'करन्धम पुत्र', parent: 'karandhama_turvasu', yug: 'treta', parichay: 'तुर्वसु वंश के राजा मरुत्त, जिनके कोई पुत्र नहीं था। इन्होंने पौरव वंशीय दुष्यंत को गोद लिया था।' },
+    { id: 'dushyanta_turvasu', name: 'दुष्यंत (दत्तक)', subtitle: 'मरुत्त के दत्तक पुत्र', parent: 'marutta_turvasu', yug: 'treta', parichay: 'पौरव वंश के दुष्यंत जिन्हें मरुत्त ने गोद लिया। परन्तु ये पुनः पुरु वंश में लौट गए।' },
+    { id: 'varutha_turvasu', name: 'वरूथ', subtitle: 'दुष्यंत पुत्र', parent: 'dushyanta_turvasu', yug: 'treta' },
+    { id: 'andira_turvasu', name: 'आण्डीर', subtitle: 'वरूथ पुत्र', parent: 'varutha_turvasu', yug: 'treta' },
+    { id: 'pandya_turvasu', name: 'पाण्ड्य', subtitle: 'पाण्ड्य देश संस्थापक', parent: 'andira_turvasu', yug: 'treta', parichay: 'इन्होंने दक्षिण भारत में पाण्ड्य राजवंश की स्थापना की।' },
+    { id: 'kerala_turvasu', name: 'केरल', subtitle: 'केरल देश संस्थापक', parent: 'andira_turvasu', yug: 'treta', parichay: 'इन्होंने दक्षिण में केरल (चेर) राज्य की स्थापना की।' },
+    { id: 'chola_turvasu', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'andira_turvasu', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की।' },
+    { id: 'kulya_turvasu', name: 'कुल्य', subtitle: 'आण्डीर पुत्र', parent: 'andira_turvasu', yug: 'treta' },
+
+    // --- द्रुह्यु वंश ---
+    { id: 'babhru_druhyu', name: 'बभ्रु', subtitle: 'द्रुह्यु पुत्र', parent: 'druhyu', yug: 'treta' },
+    { id: 'setu_druhyu', name: 'सेतु', subtitle: 'बभ्रु पुत्र', parent: 'babhru_druhyu', yug: 'treta' },
+    { id: 'arabdha_druhyu', name: 'आरब्ध (आरद्वत)', subtitle: 'सेतु पुत्र', parent: 'setu_druhyu', yug: 'treta' },
+    { id: 'gandhara_druhyu', name: 'गान्धार', subtitle: 'गान्धार देश संस्थापक', parent: 'arabdha_druhyu', yug: 'treta', parichay: 'इन्हीं के नाम पर गान्धार (वर्तमान कंधार/अफगानिस्तान क्षेत्र) देश का नाम पड़ा।' },
+    { id: 'dharma_druhyu', name: 'धर्म', subtitle: 'गान्धार पुत्र', parent: 'gandhara_druhyu', yug: 'treta' },
+    { id: 'dhrita_druhyu', name: 'धृत', subtitle: 'धर्म पुत्र', parent: 'dharma_druhyu', yug: 'treta' },
+    { id: 'duryaman_druhyu', name: 'दुर्मन', subtitle: 'धृत पुत्र', parent: 'dhrita_druhyu', yug: 'treta' },
+    { id: 'prachetas_druhyu', name: 'प्रचेतस', subtitle: 'दुर्मन पुत्र', parent: 'duryaman_druhyu', yug: 'treta' },
+    { id: 'sons_of_prachetas', name: 'प्रचेतस के 100 पुत्र', subtitle: 'म्लेच्छों के राजा', parent: 'prachetas_druhyu', yug: 'treta', parichay: 'प्रचेतस के सौ पुत्र हुए, जो उत्तर दिशा में म्लेच्छों के राजा बने।' },
+
+    // --- अनु वंश ---
+    { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati', yug: 'treta' },
+    { id: 'chakshusha_anu', name: 'चाक्षुष', subtitle: 'अनु पुत्र', parent: 'anu_yayati', yug: 'treta' },
+    { id: 'paroksha_anu', name: 'परोक्ष', subtitle: 'अनु पुत्र', parent: 'anu_yayati', yug: 'treta' },
+    { id: 'kalanara_anu', name: 'कालानर', subtitle: 'सभानर पुत्र', parent: 'sabhanara_anu', yug: 'treta' },
+    { id: 'srijaya_anu', name: 'सृंजय', subtitle: 'कालानर पुत्र', parent: 'kalanara_anu', yug: 'treta' },
+    { id: 'janamejaya_anu', name: 'जनमेजय', subtitle: 'सृंजय पुत्र', parent: 'srijaya_anu', yug: 'treta' },
+    { id: 'mahashala_anu', name: 'महाशाल', subtitle: 'जनमेजय पुत्र', parent: 'janamejaya_anu', yug: 'treta' },
+    { id: 'mahamana_anu', name: 'महामना', subtitle: 'महाशाल पुत्र', parent: 'mahashala_anu', yug: 'treta' },
+
+    // अनु वंश -> उशीनर शाखा
+    { id: 'ushinara_anu', name: 'उशीनर', subtitle: 'महामना पुत्र', parent: 'mahamana_anu', yug: 'treta' },
+    { id: 'sibi_anu', name: 'शिबि', subtitle: 'महान दानी राजा', parent: 'ushinara_anu', yug: 'treta', parichay: 'राजा शिबि अपने त्याग और शरणागत की रक्षा के लिए प्रसिद्ध हैं। उन्होंने एक कबूतर की रक्षा के लिए बाज़ को अपना माँस काट कर दे दिया था।' },
+    { id: 'vrishadarbha_anu', name: 'वृषदर्भ', subtitle: 'शिबि पुत्र', parent: 'sibi_anu', yug: 'treta' },
+    { id: 'suvira_anu', name: 'सुवीर', subtitle: 'शिबि पुत्र (सौवीर)', parent: 'sibi_anu', yug: 'treta' },
+    { id: 'madra_anu', name: 'मद्र', subtitle: 'मद्र देश संस्थापक', parent: 'sibi_anu', yug: 'treta' },
+    { id: 'kekaya_anu', name: 'केकय', subtitle: 'केकय देश संस्थापक', parent: 'sibi_anu', yug: 'treta' },
+
+    // अनु वंश -> तितिक्षु (बलि) शाखा
+    { id: 'titikshu_anu', name: 'तितिक्षु', subtitle: 'महामना पुत्र', parent: 'mahamana_anu', yug: 'treta' },
+    { id: 'rushadratha_anu', name: 'रुशद्रथ', subtitle: 'तितिक्षु पुत्र', parent: 'titikshu_anu', yug: 'treta' },
+    { id: 'hema_anu', name: 'हेम', subtitle: 'रुशद्रथ पुत्र', parent: 'rushadratha_anu', yug: 'treta' },
+    { id: 'sutapas_anu', name: 'सुतपस', subtitle: 'हेम पुत्र', parent: 'hema_anu', yug: 'treta' },
+    { id: 'bali_anu', name: 'बलि', subtitle: 'सुतपस पुत्र', parent: 'sutapas_anu', yug: 'treta', parichay: 'अनु वंश के राजा बलि। महर्षि दीर्घतमा के नियोग से इनकी पत्नी सुदेष्णा के गर्भ से ५ महान पुत्र उत्पन्न हुए।' },
+    { id: 'sudeshna_bali_wife', name: 'सुदेष्णा', subtitle: 'राजा बलि की पत्नी', parent: '', spouseOf: 'bali_anu', yug: 'treta' },
+    { id: 'dirghatamas_rishi', name: 'दीर्घतमा (ऋषि)', subtitle: 'क्षेत्रज पुत्रों के जैविक पिता', parent: 'brihaspati', yug: 'treta', parichay: 'महर्षि बृहस्पति के पुत्र, जो जन्म से अंधे थे। राजा बलि की प्रार्थना पर इन्होंने रानी सुदेष्णा के गर्भ से ५ पुत्रों को जन्म दिया।' },
+
+    // बलि के ५ क्षेत्रज पुत्र (अंग, वंग, कलिंग, पुण्ड्र, सुह्म) - जैविक पिता दीर्घतमा, पालक/राजकीय पिता बलि
+    { id: 'anga_anu', name: 'अंग', subtitle: 'अंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife', yug: 'treta', parichay: 'इन्होंने अंग देश (वर्तमान भागलपुर, बिहार) की स्थापना की। कर्ण बाद में इसी अंग देश के राजा बने।' },
+    { id: 'vanga_anu', name: 'वंग', subtitle: 'वंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife', yug: 'treta', parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।' },
+    { id: 'kalinga_anu', name: 'कलिंग', subtitle: 'कलिंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife', yug: 'treta', parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की।' },
+    { id: 'pundra_anu', name: 'पुण्ड्र', subtitle: 'पुण्ड्र देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife', yug: 'treta' },
+    { id: 'suhma_anu', name: 'सुह्म', subtitle: 'सुह्म देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife', yug: 'treta' },
+
     // --- पुरुरवा के अन्य पुत्र (अमावसु / विजय वंश - कान्यकुब्ज/कन्नौज) ---
     { id: 'amavasu', name: 'अमावसु (विजय)', subtitle: 'कान्यकुब्ज के संस्थापक', parent: 'pururava', mother: 'urvashi', yug: 'satya' },
     { id: 'bhima_amavasu', name: 'भीम', subtitle: 'अमावसु पुत्र', parent: 'amavasu', yug: 'satya' },
