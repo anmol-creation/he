@@ -175,6 +175,23 @@ export const suryavanshData = [
     { id: 'sarukman', name: 'सरूक्मान', subtitle: 'लव पुत्र', parent: 'luv', yug: 'treta' },
     { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'सिसोदिया / राघव', parent: 'sarukman', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और सिसोदिया/गहलोत (मेवाड़) राजपूत, लेवा पाटीदार लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
 
+    // Guhila / Sisodia Dynasty of Mewar (Descendants of Lava)
+    { id: 'kanaksen', name: 'कनकसेन', subtitle: 'वल्लभी के संस्थापक', parent: 'sarukman', yug: 'kali', parichay: 'लव के वंशज जो लवपुरी (लाहौर) से पलायन कर गुजरात (सौराष्ट्र) आ गए और वहां वल्लभी (Vallabhi) राज्य की स्थापना की।' },
+    { id: 'guhadatta_mewar', name: 'गुहादित्य (गुहिल)', subtitle: 'गुहिल वंश के संस्थापक', parent: 'kanaksen', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी।' },
+    { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
+    { id: 'rawal_ratan_singh', name: 'रावल रतन सिंह', subtitle: 'चित्तौड़ के रावल', parent: 'bappa_rawal', yug: 'kali', parichay: 'ये गुहिल वंश की रावल शाखा के अंतिम शासक थे। इन्होने अलाउद्दीन खिलजी के आक्रमण (1303 ई.) का डटकर सामना किया था। रानी पद्मिनी इन्ही की पत्नी थीं, जिन्होंने जौहर किया था।' },
+    { id: 'rana_hammir_sisodia', name: 'राणा हम्मीर', subtitle: 'सिसोदिया वंश के संस्थापक', parent: 'bappa_rawal', yug: 'kali', parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।' },
+    { id: 'rana_lakha', name: 'राणा लाखा', subtitle: 'मेवाड़ नरेश', parent: 'rana_hammir_sisodia', yug: 'kali', parichay: 'इन्हीं के समय में पिछोला झील का निर्माण हुआ और जावर में चांदी की खदानें मिली थीं।' },
+    { id: 'rana_mokal_mewar', name: 'राणा मोकल', subtitle: 'मेवाड़ नरेश', parent: 'rana_lakha', yug: 'kali' },
+    { id: 'rana_kumbha', name: 'राणा कुम्भा', subtitle: 'महान निर्माता और योद्धा', parent: 'rana_mokal_mewar', yug: 'kali', parichay: 'ये स्थापत्य कला के महान संरक्षक थे। इन्होने मेवाड़ में 32 किलों (जैसे कुम्भलगढ़) का निर्माण करवाया और मालवा-गुजरात की संयुक्त सेनाओं को हराया।' },
+    { id: 'rana_raimal', name: 'राणा रायमल', subtitle: 'मेवाड़ नरेश', parent: 'rana_kumbha', yug: 'kali' },
+    { id: 'rana_sanga', name: 'राणा सांगा (संग्राम सिंह)', subtitle: 'हिन्दूपत', parent: 'rana_raimal', yug: 'kali', parichay: 'ये एक महान शूरवीर थे जिनके शरीर पर 80 घाव थे। इन्होने खातोली और बाड़ी के युद्धों में इब्राहिम लोदी को हराया और खानवा के युद्ध (1527) में बाबर का सामना किया।' },
+    { id: 'rana_udai_singh_ii', name: 'राणा उदय सिंह (द्वितीय)', subtitle: 'उदयपुर के संस्थापक', parent: 'rana_sanga', yug: 'kali', parichay: 'इन्होंने 1559 ई. में उदयपुर शहर की स्थापना की थी।' },
+    { id: 'maharana_pratap', name: 'महाराणा प्रताप', subtitle: 'मेवाड़ के वीर शिरोमणि', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।' },
+    { id: 'amar_singh_mewar', name: 'महाराणा अमर सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'maharana_pratap', yug: 'kali', parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े।' },
+    { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।' },
+    { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।' },
+
     { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
 
     // Kush's descendants (to Mahabharat era)
@@ -238,71 +255,116 @@ export const suryavanshData = [
     { id: 'rananjaya', name: 'रणञ्जय', subtitle: 'कृतञ्जय पुत्र', parent: 'kritanjaya', yug: 'kali' },
     { id: 'sanjaya_surya', name: 'सञ्जय', subtitle: 'रणञ्जय पुत्र', parent: 'rananjaya', yug: 'kali' },
     { id: 'shakya_king', name: 'शाक्य', subtitle: 'सञ्जय पुत्र', parent: 'sanjaya_surya', yug: 'kali', parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।' },
-    { id: 'shuddhodana', name: 'शुद्धोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali', parichay: 'गौतम बुद्ध के पिता। कपिलवस्तु के राजा।' },
-    { id: 'siddhartha_buddha', name: 'सिद्धार्थ (गौतम बुद्ध)', subtitle: 'शुद्धोदन पुत्र', parent: 'shuddhodana', yug: 'kali', parichay: 'बौद्ध धर्म के संस्थापक। हालाँकि बौद्ध ग्रंथ इनका वंश इक्ष्वाकु (ओक्काक) से जोड़ते हैं, लेकिन पुराणों में इन्हें सीधे इसी अयोध्या वंशावली में लिखा गया है।' },
-    { id: 'rahula', name: 'राहुल', subtitle: 'सिद्धार्थ पुत्र', parent: 'siddhartha_buddha', yug: 'kali' },
-    { id: 'prasenajit', name: 'प्रसेनजित', subtitle: 'राहुल पुत्र', parent: 'rahula', yug: 'kali', parichay: 'ये कोशल के एक प्रसिद्ध राजा थे और भगवान बुद्ध के समकालीन व अनुयायी थे।' },
+
+    // Shakya Siblings (Children of King Shakya / Sihahanu)
+    { id: 'shuddhodana', name: 'शुद्धोदन', subtitle: 'कपिलवस्तु के राजा', parent: 'shakya_king', yug: 'kali', parichay: 'गौतम बुद्ध के पिता।' },
+    { id: 'shuklodana', name: 'शुक्लोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali' },
+    { id: 'amitodana', name: 'अमितोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali', parichay: 'बुद्ध के चाचा और आनंद के पिता।' },
+    { id: 'amita_shakya', name: 'पमिता (अमिता)', subtitle: 'शाक्य पुत्री', parent: 'shakya_king', yug: 'kali', parichay: 'बुद्ध की बुआ, जिनका विवाह कोलिय वंश के राजा सुप्पबुद्ध से हुआ था। यशोधरा और देवदत्त इन्हीं की संतान थे।' },
+
+    { id: 'suppabuddha', name: 'सुप्पबुद्ध', subtitle: 'कोलिय राजा', parent: '', spouseOf: 'amita_shakya', yug: 'kali', parichay: 'कोलिय वंश के शासक। यशोधरा और देवदत्त के पिता।' },
+    { id: 'devadatta', name: 'देवदत्त', subtitle: 'सुप्पबुद्ध पुत्र', parent: 'suppabuddha', mother: 'amita_shakya', yug: 'kali', parichay: 'बुद्ध के चचेरे भाई (बुआ के बेटे)। ये बाद में बुद्ध से ईर्ष्या करने लगे थे और उन्होंने बौद्ध संघ को तोड़ने का प्रयास किया था।' },
+
+    { id: 'maya_devi', name: 'माया देवी', subtitle: 'शुद्धोदन पत्नी', parent: '', spouseOf: 'shuddhodana', yug: 'kali', parichay: 'गौतम बुद्ध की सगी माता, जिनका बुद्ध के जन्म के सात दिन बाद निधन हो गया था।' },
+    { id: 'mahapajapati_gotami', name: 'महाप्रजापति गौतमी', subtitle: 'शुद्धोदन पत्नी', parent: '', spouseOf: 'shuddhodana', yug: 'kali', parichay: 'गौतम बुद्ध की मौसी और सौतेली माता। ये पहली महिला थीं जिन्होंने बौद्ध संघ में भिक्षुणी के रूप में प्रवेश लिया था।' },
+
+    // Children of Shuddhodana
+    { id: 'siddhartha_buddha', name: 'सिद्धार्थ (गौतम बुद्ध)', subtitle: 'बौद्ध धर्म के संस्थापक', parent: 'shuddhodana', mother: 'maya_devi', yug: 'kali', parichay: 'हालाँकि बौद्ध ग्रंथ इनका वंश इक्ष्वाकु (ओक्काक) से जोड़ते हैं, लेकिन पुराणों में इन्हें सीधे इसी अयोध्या वंशावली में लिखा गया है। ज्ञान प्राप्ति के बाद ये बुद्ध कहलाये।' },
+    { id: 'nanda_shakya', name: 'नन्द', subtitle: 'शुद्धोदन पुत्र', parent: 'shuddhodana', mother: 'mahapajapati_gotami', yug: 'kali', parichay: 'गौतम बुद्ध के सौतेले भाई। बाद में इन्होंने भी बुद्ध से दीक्षा लेकर भिक्षु जीवन अपना लिया था।' },
+    { id: 'sundari_nanda', name: 'सुंदरी नंदा', subtitle: 'शुद्धोदन पुत्री', parent: 'shuddhodana', mother: 'mahapajapati_gotami', yug: 'kali', parichay: 'बुद्ध की सौतेली बहन।' },
+
+    // Family of Buddha
+    { id: 'yashodhara', name: 'यशोधरा', subtitle: 'गौतम बुद्ध की पत्नी', parent: 'suppabuddha', mother: 'amita_shakya', spouseOf: 'siddhartha_buddha', yug: 'kali', parichay: 'सिद्धार्थ (बुद्ध) की पत्नी और कोलिय राजा सुप्पबुद्ध की पुत्री। ये देवदत्त की सगी बहन थीं।' },
+    { id: 'rahula', name: 'राहुल', subtitle: 'सिद्धार्थ पुत्र', parent: 'siddhartha_buddha', mother: 'yashodhara', yug: 'kali', parichay: 'गौतम बुद्ध के इकलौते पुत्र, जो बाद में अपने पिता के शिष्य (भिक्षु) बन गए।' },
+
+    // Children of Amitodana (Buddha's cousins)
+    { id: 'ananda_shakya', name: 'आनंद', subtitle: 'अमितोदन पुत्र', parent: 'amitodana', yug: 'kali', parichay: 'गौतम बुद्ध के चचेरे भाई और उनके सबसे प्रिय व प्रमुख शिष्य। इन्होने ही बुद्ध के अधिकांश उपदेशों को कंठस्थ किया था।' },
+    { id: 'anuruddha', name: 'अनुरुद्ध', subtitle: 'अमितोदन पुत्र', parent: 'amitodana', yug: 'kali', parichay: 'बुद्ध के चचेरे भाई और प्रमुख भिक्षु।' },
+
+    { id: 'prasenajit', name: 'प्रसेनजित', subtitle: 'राहुल पुत्र', parent: 'rahula', yug: 'kali', parichay: 'पुराणों के अनुसार राहुल के पुत्र। (हालाँकि बौद्ध ग्रंथों में प्रसेनजित कोशल के एक समकालीन राजा थे)।' },
+
+    // Maurya Dynasty (Branched from Shakya/Ikshvaku line)
+    { id: 'moriya_clan', name: 'मोरिय (मौर्य) वंश', subtitle: 'शाक्य वंश की शाखा', parent: 'shakya_king', yug: 'kali', parichay: 'बौद्ध ग्रंथों (महावंश) के अनुसार, कोशल नरेश विडूडभ के आक्रमण से बचकर कुछ शाक्य हिमालय की तराई में पिप्पलीवन चले गए थे। मोरों (Peacocks) की अधिकता के कारण वे "मोरिय" या मौर्य कहलाये।' },
+    { id: 'chandragupta_maurya', name: 'चन्द्रगुप्त मौर्य', subtitle: 'मौर्य साम्राज्य के संस्थापक', parent: 'moriya_clan', yug: 'kali', parichay: 'इन्होंने चाणक्य की सहायता से नंद वंश का नाश किया और भारत के सबसे विशाल मौर्य साम्राज्य की स्थापना की। वर्तमान में "कुशवाहा, कोइरी, काछी, सैनी और शाक्य/मौर्य" कृषक समाज गर्व से इसी वंश (कुश->शाक्य->मौर्य) से अपनी उत्पत्ति मानते हैं।' },
+    { id: 'bindusara', name: 'बिन्दुसार', subtitle: 'चन्द्रगुप्त पुत्र', parent: 'chandragupta_maurya', yug: 'kali' },
+    { id: 'ashoka_great', name: 'सम्राट अशोक', subtitle: 'महान मौर्य सम्राट', parent: 'bindusara', yug: 'kali', parichay: 'ये भारत के सबसे महान सम्राटों में से एक थे। कलिंग युद्ध के बाद इन्होंने बौद्ध धर्म अपना लिया और शांति व धम्म का प्रचार किया।' },
+    { id: 'brihadratha_maurya', name: 'बृहद्रथ मौर्य', subtitle: 'अंतिम मौर्य सम्राट', parent: 'ashoka_great', yug: 'kali', parichay: 'ये अंतिम मौर्य सम्राट थे, जिनकी हत्या उनके सेनापति पुष्यमित्र शुंग ने की थी।' },
     { id: 'kshudraka', name: 'क्षुद्रक', subtitle: 'प्रसेनजित पुत्र', parent: 'prasenajit', yug: 'kali' },
     { id: 'kundaka', name: 'कुण्डक', subtitle: 'क्षुद्रक पुत्र', parent: 'kshudraka', yug: 'kali' },
     { id: 'suratha', name: 'सुरथ', subtitle: 'कुण्डक पुत्र', parent: 'kundaka', yug: 'kali' },
     { id: 'sumitra_king', name: 'सुमित्र', subtitle: 'इक्ष्वाकु वंश के अंतिम राजा', parent: 'suratha', yug: 'kali', parichay: 'पुराणों के अनुसार सुमित्र इक्ष्वाकु/सूर्यवंश के अंतिम प्रतापी राजा थे। नंद वंश के महापद्म नंद ने इन्हें पराजित कर कोशल को मगध साम्राज्य में मिला लिया था।' },
 
+    // Dogra / Jamwal Dynasty (Descendants of Ayodhya Kings in Jammu)
+    { id: 'agnigarbha_jammu', name: 'अग्निगर्भ', subtitle: 'जम्वाल वंश के आदि पुरुष', parent: 'sumitra_king', yug: 'kali', parichay: 'ये अयोध्या के सूर्यवंशी राजाओं (कुश के वंशज) के प्रतापी राजकुमार थे, जो अयोध्या से पलायन कर शिवालिक की पहाड़ियों में आ बसे। डोगरा इतिहास (गुलाबनामा) के अनुसार इन्होंने ही यहाँ अपना राज्य स्थापित किया।' },
+    { id: 'bahu_lochan', name: 'बाहु लोचन', subtitle: 'बाहु नगर के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'अग्निगर्भ के ज्येष्ठ पुत्र। इन्होंने तवी नदी के किनारे बाहु किला (Bahu Fort) बनवाया और बाहु नगर बसाया।' },
+    { id: 'jambu_lochan', name: 'जम्बू लोचन', subtitle: 'जम्मू के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'इन्होंने एक शेर और बकरी को एक ही घाट पर पानी पीते देखा, जिससे प्रभावित होकर इन्होंने जम्मू (Jambu) शहर की स्थापना की। इनके वंशज आगे चलकर "जम्वाल" या डोगरा राजपूत कहलाये।' },
+    { id: 'dhruv_dev', name: 'राजा ध्रुव देव', subtitle: 'जम्मू नरेश', parent: 'jambu_lochan', yug: 'kali' },
+    { id: 'ranjit_dev', name: 'राजा रणजीत देव', subtitle: 'जम्मू नरेश', parent: 'dhruv_dev', yug: 'kali', parichay: 'ये जम्मू के अत्यंत प्रसिद्ध और न्यायप्रिय राजा थे, जिनके समय में जम्मू ने बहुत समृद्धि देखी।' },
+    { id: 'surat_singh', name: 'सूरत सिंह', subtitle: 'ध्रुव देव पुत्र', parent: 'dhruv_dev', yug: 'kali' },
+    { id: 'zorawar_singh_jammu', name: 'ज़ोरावर सिंह', subtitle: 'सूरत सिंह पुत्र', parent: 'surat_singh', yug: 'kali' },
+    { id: 'kishore_singh', name: 'किशोर सिंह', subtitle: 'ज़ोरावर सिंह पुत्र', parent: 'zorawar_singh_jammu', yug: 'kali' },
+    { id: 'gulab_singh', name: 'महाराजा गुलाब सिंह', subtitle: 'J&K के संस्थापक', parent: 'kishore_singh', yug: 'kali', parichay: 'इन्होंने 1846 में अंग्रेजों के साथ अमृतसर की संधि करके जम्मू और कश्मीर (J&K) की एक स्वतंत्र और विशाल डोगरा रियासत की स्थापना की।' },
+    { id: 'ranbir_singh', name: 'महाराजा रणबीर सिंह', subtitle: 'J&K नरेश', parent: 'gulab_singh', yug: 'kali' },
+    { id: 'pratap_singh_dogra', name: 'महाराजा प्रताप सिंह', subtitle: 'J&K नरेश', parent: 'ranbir_singh', yug: 'kali' },
+    { id: 'hari_singh', name: 'महाराजा हरि सिंह', subtitle: 'J&K के अंतिम शासक', parent: 'ranbir_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर के अंतिम डोगरा महाराजा थे। इन्होंने ही 26 अक्टूबर 1947 को भारत संघ में J&K के विलय (Instrument of Accession) पर हस्ताक्षर किए थे।' },
+    { id: 'karan_singh', name: 'डॉ. कर्ण सिंह', subtitle: 'हरि सिंह पुत्र', parent: 'hari_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर रियासत के युवराज (Crown Prince) और भारत के एक प्रमुख राजनेता और विद्वान हैं।' },
+
     // Kachhwaha Dynasty (Descendants of Sumitra/Kusha in Kali Yuga)
-    { id: 'sodh_dev', name: 'सोढ़ देव', subtitle: 'नरवर के कच्छपघात राजा', parent: 'sumitra_king', yug: 'kali', parichay: 'सुमित्र के वंशजों ने कालान्तर में ग्वालियर और नरवर में कच्छपघात (कछवाहा) राज्य स्थापित किया। सोढ़ देव नरवर के शासक थे और इन्हीं के पुत्र ने राजस्थान में कछवाहा वंश की नींव रखी।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'dulha_rai', name: 'दुल्हराय (तेजकरण)', subtitle: 'कछवाहा वंश के संस्थापक', parent: 'sodh_dev', yug: 'kali', parichay: 'इन्होंने 1028 ई. के आसपास ढूँढाड़ क्षेत्र (दौसा) में कछवाहा वंश (आमेर) की स्थापना की।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'kakil_deo', name: 'काकिल देव', subtitle: 'दुल्हराय पुत्र', parent: 'dulha_rai', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'hanu_deo', name: 'हनु देव', subtitle: 'काकिल देव पुत्र', parent: 'kakil_deo', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'janad_deo', name: 'जान्हड़ देव', subtitle: 'हनु देव पुत्र', parent: 'hanu_deo', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'pajawan', name: 'पजवन (प्रद्युम्न)', subtitle: 'आमेर के प्रतापी शासक', parent: 'janad_deo', yug: 'kali', parichay: 'ये पृथ्वीराज चौहान के समकालीन थे और उनके बहनोई थे। इन्होंने तराइन के युद्ध और संयोगिता हरण में पृथ्वीराज का साथ दिया था।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'malesi', name: 'मलेसी', subtitle: 'पजवन पुत्र', parent: 'pajawan', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'bijal_deo', name: 'बीजल देव', subtitle: 'मलेसी पुत्र', parent: 'malesi', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'rajdeo', name: 'राजदेव', subtitle: 'बीजल देव पुत्र', parent: 'bijal_deo', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'kilhan', name: 'किल्हण', subtitle: 'राजदेव पुत्र', parent: 'rajdeo', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'kuntal', name: 'कुंतल', subtitle: 'किल्हण पुत्र', parent: 'kilhan', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'junsi', name: 'जुंसी', subtitle: 'कुंतल पुत्र', parent: 'kuntal', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'udayakarna_amber', name: 'उदयकर्ण', subtitle: 'जुंसी पुत्र', parent: 'junsi', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'sodh_dev', name: 'सोढ़ देव', subtitle: 'नरवर के कच्छपघात राजा', parent: 'sumitra_king', yug: 'kali', parichay: 'सुमित्र के वंशजों ने कालान्तर में ग्वालियर और नरवर में कच्छपघात (कछवाहा) राज्य स्थापित किया। सोढ़ देव नरवर के शासक थे और इन्हीं के पुत्र ने राजस्थान में कछवाहा वंश की नींव रखी।' },
+    { id: 'dulha_rai', name: 'दुल्हराय (तेजकरण)', subtitle: 'कछवाहा वंश के संस्थापक', parent: 'sodh_dev', yug: 'kali', parichay: 'इन्होंने 1028 ई. के आसपास ढूँढाड़ क्षेत्र (दौसा) में कछवाहा वंश (आमेर) की स्थापना की।' },
+    { id: 'kakil_deo', name: 'काकिल देव', subtitle: 'दुल्हराय पुत्र', parent: 'dulha_rai', yug: 'kali' },
+    { id: 'hanu_deo', name: 'हनु देव', subtitle: 'काकिल देव पुत्र', parent: 'kakil_deo', yug: 'kali' },
+    { id: 'janad_deo', name: 'जान्हड़ देव', subtitle: 'हनु देव पुत्र', parent: 'hanu_deo', yug: 'kali' },
+    { id: 'pajawan', name: 'पजवन (प्रद्युम्न)', subtitle: 'आमेर के प्रतापी शासक', parent: 'janad_deo', yug: 'kali', parichay: 'ये पृथ्वीराज चौहान के समकालीन थे और उनके बहनोई थे। इन्होंने तराइन के युद्ध और संयोगिता हरण में पृथ्वीराज का साथ दिया था।' },
+    { id: 'malesi', name: 'मलेसी', subtitle: 'पजवन पुत्र', parent: 'pajawan', yug: 'kali' },
+    { id: 'bijal_deo', name: 'बीजल देव', subtitle: 'मलेसी पुत्र', parent: 'malesi', yug: 'kali' },
+    { id: 'rajdeo', name: 'राजदेव', subtitle: 'बीजल देव पुत्र', parent: 'bijal_deo', yug: 'kali' },
+    { id: 'kilhan', name: 'किल्हण', subtitle: 'राजदेव पुत्र', parent: 'rajdeo', yug: 'kali' },
+    { id: 'kuntal', name: 'कुंतल', subtitle: 'किल्हण पुत्र', parent: 'kilhan', yug: 'kali' },
+    { id: 'junsi', name: 'जुंसी', subtitle: 'कुंतल पुत्र', parent: 'kuntal', yug: 'kali' },
+    { id: 'udayakarna', name: 'उदयकर्ण', subtitle: 'जुंसी पुत्र', parent: 'junsi', yug: 'kali' },
 
     // Udayakarna's descendants forming sub-clans
-    { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र (मुख्य धारा)', parent: 'udayakarna_amber', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'rao_balaji', name: 'राव बालाजी', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna_amber', yug: 'kali', parichay: 'आमेर नरेश उदयकर्ण के पुत्र। इनके वंशज "बालापोता" कहलाये।', clusterName: 'शेखावत वंश' },
-    { id: 'rao_mokal', name: 'राव मोकल', subtitle: 'राव बालाजी पुत्र', parent: 'rao_balaji', yug: 'kali', clusterName: 'शेखावत वंश' },
-    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'rao_mokal', yug: 'kali', parichay: 'इन्होंने 15वीं शताब्दी में आमेर से स्वतंत्र होकर अमरसर में अपना राज्य स्थापित किया। इन्हीं के नाम पर शेखावाटी क्षेत्र और "शेखावत" सरनेम/शाखा की शुरुआत हुई।', clusterName: 'शेखावत वंश' },
+    { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र (मुख्य धारा)', parent: 'udayakarna', yug: 'kali' },
+    { id: 'rao_balaji', name: 'राव बालाजी', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', parichay: 'आमेर नरेश उदयकर्ण के पुत्र। इनके वंशज "बालापोता" कहलाये।' },
+    { id: 'rao_mokal', name: 'राव मोकल', subtitle: 'राव बालाजी पुत्र', parent: 'rao_balaji', yug: 'kali' },
+    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'rao_mokal', yug: 'kali', parichay: 'इन्होंने 15वीं शताब्दी में आमेर से स्वतंत्र होकर अमरसर में अपना राज्य स्थापित किया। इन्हीं के नाम पर शेखावाटी क्षेत्र और "शेखावत" सरनेम/शाखा की शुरुआत हुई।' },
 
-    { id: 'rao_bar_singh', name: 'राव बार सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna_amber', yug: 'kali', clusterName: 'नरूका वंश' },
-    { id: 'rao_naru', name: 'राव नरू', subtitle: 'नरूका वंश के संस्थापक', parent: 'rao_bar_singh', yug: 'kali', parichay: 'राव बार सिंह के वंशज। इन्हीं के नाम से "नरूका" सरनेम/शाखा की शुरुआत हुई। अलवर का राजघराना नरूका शाखा से ही है।', clusterName: 'नरूका वंश' },
+    { id: 'rao_bar_singh', name: 'राव बार सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'rao_naru', name: 'राव नरू', subtitle: 'नरूका वंश के संस्थापक', parent: 'rao_bar_singh', yug: 'kali', parichay: 'राव बार सिंह के वंशज। इन्हीं के नाम से "नरूका" सरनेम/शाखा की शुरुआत हुई। अलवर का राजघराना नरूका शाखा से ही है।' },
 
-    { id: 'banbir', name: 'बनबीर', subtitle: 'नरसिंह पुत्र', parent: 'narsingh_deo', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनबीर पुत्र', parent: 'banbir', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'chandrasen_amber', name: 'चंद्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'prithviraj_singh_i_amber', name: 'पृथ्वीराज सिंह प्रथम', subtitle: 'आमेर नरेश', parent: 'chandrasen_amber', yug: 'kali', parichay: 'इन्होंने राणा सांगा के साथ खानवा के युद्ध (1527) में बाबर के खिलाफ भाग लिया था। इन्हीं के समय में कछवाहा वंश कई मुख्य शाखाओं में विभाजित हुआ जिन्हें "बारां कोठड़ी" कहा गया।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'banbir', name: 'बनबीर', subtitle: 'नरसिंह पुत्र', parent: 'narsingh_deo', yug: 'kali' },
+    { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनबीर पुत्र', parent: 'banbir', yug: 'kali' },
+    { id: 'chandrasen_amber', name: 'चंद्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali' },
+    { id: 'prithviraj_singh_i', name: 'पृथ्वीराज सिंह प्रथम', subtitle: 'आमेर नरेश', parent: 'chandrasen_amber', yug: 'kali', parichay: 'इन्होंने राणा सांगा के साथ खानवा के युद्ध (1527) में बाबर के खिलाफ भाग लिया था। इन्हीं के समय में कछवाहा वंश कई मुख्य शाखाओं में विभाजित हुआ जिन्हें "बारां कोठड़ी" कहा गया।' },
 
     // Prithviraj Singh I's descendants forming sub-clans
-    { id: 'puranmal', name: 'पूरनमल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i_amber', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'bhim_singh', name: 'भीम सिंह', subtitle: 'पूरनमल भ्राता', parent: 'prithviraj_singh_i_amber', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'ratan_singh', name: 'रतन सिंह', subtitle: 'भीम सिंह पुत्र', parent: 'bhim_singh', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र (मुख्य धारा)', parent: 'prithviraj_singh_i_amber', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था। इनके वंशज आगे चलकर "राजावत" कहलाये।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'puranmal', name: 'पूरनमल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali' },
+    { id: 'bhim_singh', name: 'भीम सिंह', subtitle: 'पूरनमल भ्राता', parent: 'prithviraj_singh_i', yug: 'kali' },
+    { id: 'ratan_singh', name: 'रतन सिंह', subtitle: 'भीम सिंह पुत्र', parent: 'bhim_singh', yug: 'kali' },
+    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र (मुख्य धारा)', parent: 'prithviraj_singh_i', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था। इनके वंशज आगे चलकर "राजावत" कहलाये।' },
 
-    { id: 'rao_gopal', name: 'राव गोपाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i_amber', yug: 'kali', clusterName: 'नाथावत वंश' },
-    { id: 'rao_natha', name: 'राव नाथा', subtitle: 'नाथावत वंश के संस्थापक', parent: 'rao_gopal', yug: 'kali', parichay: 'इन्हीं के नाम से "नाथावत" सरनेम/शाखा की शुरुआत हुई। चौमूं के ठाकुर इसी वंश से हैं।', clusterName: 'नाथावत वंश' },
+    { id: 'rao_gopal', name: 'राव गोपाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali' },
+    { id: 'rao_natha', name: 'राव नाथा', subtitle: 'नाथावत वंश के संस्थापक', parent: 'rao_gopal', yug: 'kali', parichay: 'इन्हीं के नाम से "नाथावत" सरनेम/शाखा की शुरुआत हुई। चौमूं के ठाकुर इसी वंश से हैं।' },
 
-    { id: 'rao_jagmal', name: 'राव जगमाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i_amber', yug: 'kali', clusterName: 'खंगारोत वंश' },
-    { id: 'rao_khangar', name: 'राव खंगार', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'rao_jagmal', yug: 'kali', parichay: 'इन्हीं के नाम से "खंगारोत" सरनेम/शाखा की शुरुआत हुई।', clusterName: 'खंगारोत वंश' },
-    { id: 'bhagwant_das', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'man_singh_i', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'maha_singh', name: 'महा सिंह', subtitle: 'मान सिंह पौत्र', parent: 'man_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'jai_singh_i', name: 'मिर्ज़ा राजा जय सिंह', subtitle: 'महा सिंह पुत्र', parent: 'maha_singh', yug: 'kali', parichay: 'इन्होंने मुग़ल बादशाहों (जहाँगीर, शाहजहां, औरंगज़ेब) के लिए कई युद्ध लड़े और छत्रपति शिवाजी महाराज के साथ पुरंदर की संधि की।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'ram_singh_i', name: 'राम सिंह प्रथम', subtitle: 'जय सिंह पुत्र', parent: 'jai_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'bishan_singh', name: 'बिशन सिंह', subtitle: 'राम सिंह पौत्र', parent: 'ram_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'sawai_jai_singh_ii', name: 'सवाई जय सिंह (द्वितीय)', subtitle: 'जयपुर के संस्थापक', parent: 'bishan_singh', yug: 'kali', parichay: 'ये एक महान खगोलशास्त्री और वास्तुकार थे। इन्होंने 1727 में जयपुर शहर बसाया और भारत में 5 जंतर मंतर (वेधशालाएं) बनवाईं।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'ishwari_singh', name: 'ईश्वरी सिंह', subtitle: 'सवाई जय सिंह पुत्र', parent: 'sawai_jai_singh_ii', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'madho_singh_i', name: 'माधो सिंह प्रथम', subtitle: 'सवाई जय सिंह पुत्र', parent: 'sawai_jai_singh_ii', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'prithvi_singh_ii', name: 'पृथ्वी सिंह द्वितीय', subtitle: 'माधो सिंह पुत्र', parent: 'madho_singh_i', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'pratap_singh_jaipur', name: 'प्रताप सिंह', subtitle: 'हवा महल के निर्माता', parent: 'madho_singh_i', yug: 'kali', parichay: 'इन्होंने 1799 में जयपुर का प्रसिद्ध "हवा महल" बनवाया था।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'jagat_singh_ii', name: 'जगत सिंह द्वितीय', subtitle: 'प्रताप सिंह पुत्र', parent: 'pratap_singh_jaipur', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'ram_singh_ii', name: 'राम सिंह द्वितीय', subtitle: 'जयपुर नरेश', parent: 'jagat_singh_ii', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'madho_singh_ii', name: 'माधो सिंह द्वितीय', subtitle: 'जयपुर नरेश', parent: 'ram_singh_ii', yug: 'kali', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
-    { id: 'man_singh_ii', name: 'सवाई मान सिंह (द्वितीय)', subtitle: 'जयपुर के अंतिम शासक', parent: 'madho_singh_ii', yug: 'kali', parichay: 'ये जयपुर रियासत के अंतिम शासक थे (1922-1947), जिनके बाद राजशाही का भारत संघ में विलय हो गया। ये एक प्रसिद्ध पोलो खिलाड़ी भी थे।', clusterName: 'आमेर-जयपुर कछवाहा वंश' },
+    { id: 'rao_jagmal', name: 'राव जगमाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali' },
+    { id: 'rao_khangar', name: 'राव खंगार', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'rao_jagmal', yug: 'kali', parichay: 'इन्हीं के नाम से "खंगारोत" सरनेम/शाखा की शुरुआत हुई।' },
+    { id: 'bhagwant_das', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali' },
+    { id: 'man_singh_i', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।' },
+    { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i', yug: 'kali' },
+    { id: 'maha_singh', name: 'महा सिंह', subtitle: 'मान सिंह पौत्र', parent: 'man_singh_i', yug: 'kali' },
+    { id: 'jai_singh_i', name: 'मिर्ज़ा राजा जय सिंह', subtitle: 'महा सिंह पुत्र', parent: 'maha_singh', yug: 'kali', parichay: 'इन्होंने मुग़ल बादशाहों (जहाँगीर, शाहजहां, औरंगज़ेब) के लिए कई युद्ध लड़े और छत्रपति शिवाजी महाराज के साथ पुरंदर की संधि की।' },
+    { id: 'ram_singh_i', name: 'राम सिंह प्रथम', subtitle: 'जय सिंह पुत्र', parent: 'jai_singh_i', yug: 'kali' },
+    { id: 'bishan_singh', name: 'बिशन सिंह', subtitle: 'राम सिंह पौत्र', parent: 'ram_singh_i', yug: 'kali' },
+    { id: 'sawai_jai_singh_ii', name: 'सवाई जय सिंह (द्वितीय)', subtitle: 'जयपुर के संस्थापक', parent: 'bishan_singh', yug: 'kali', parichay: 'ये एक महान खगोलशास्त्री और वास्तुकार थे। इन्होंने 1727 में जयपुर शहर बसाया और भारत में 5 जंतर मंतर (वेधशालाएं) बनवाईं।' },
+    { id: 'ishwari_singh', name: 'ईश्वरी सिंह', subtitle: 'सवाई जय सिंह पुत्र', parent: 'sawai_jai_singh_ii', yug: 'kali' },
+    { id: 'madho_singh_i', name: 'माधो सिंह प्रथम', subtitle: 'सवाई जय सिंह पुत्र', parent: 'sawai_jai_singh_ii', yug: 'kali' },
+    { id: 'prithvi_singh_ii', name: 'पृथ्वी सिंह द्वितीय', subtitle: 'माधो सिंह पुत्र', parent: 'madho_singh_i', yug: 'kali' },
+    { id: 'pratap_singh_jaipur', name: 'प्रताप सिंह', subtitle: 'हवा महल के निर्माता', parent: 'madho_singh_i', yug: 'kali', parichay: 'इन्होंने 1799 में जयपुर का प्रसिद्ध "हवा महल" बनवाया था।' },
+    { id: 'jagat_singh_ii', name: 'जगत सिंह द्वितीय', subtitle: 'प्रताप सिंह पुत्र', parent: 'pratap_singh_jaipur', yug: 'kali' },
+    { id: 'ram_singh_ii', name: 'राम सिंह द्वितीय', subtitle: 'जयपुर नरेश', parent: 'jagat_singh_ii', yug: 'kali' },
+    { id: 'madho_singh_ii', name: 'माधो सिंह द्वितीय', subtitle: 'जयपुर नरेश', parent: 'ram_singh_ii', yug: 'kali' },
+    { id: 'man_singh_ii', name: 'सवाई मान सिंह (द्वितीय)', subtitle: 'जयपुर के अंतिम शासक', parent: 'madho_singh_ii', yug: 'kali', parichay: 'ये जयपुर रियासत के अंतिम शासक थे (1922-1947), जिनके बाद राजशाही का भारत संघ में विलय हो गया। ये एक प्रसिद्ध पोलो खिलाड़ी भी थे।' },
 
     // Pratapnagar / Agroha Branch (Splits from Shighra)
     { id: 'mohandas', name: 'मोहनदास', subtitle: 'शीघ्र पुत्र', parent: 'shighra', yug: 'dwapar', parichay: 'ये भगवान विष्णु (रंगनाथ) के परम भक्त थे। इन्होंने कावेरी नदी के तट पर भगवान रंगनाथ के कई भव्य मंदिर बनवाए थे।' },
@@ -327,7 +389,7 @@ export const suryavanshData = [
             '18 यज्ञों का आयोजन किया। 18वें यज्ञ में पशुबलि को देखकर उनका हृदय द्रवित हो गया और उन्होंने अहिंसा का मार्ग अपनाते हुए पशुबलि पर पूर्ण प्रतिबंध लगा दिया।'
         ]
     },
-    { id: 'shursen', name: 'शूरसेन', subtitle: 'महाराजा वल्लभ देव के पुत्र', parent: 'raja_vallabh', mother: 'bhagwati_devi', yug: 'dwapar', parichay: 'महाराजा अग्रसेन के छोटे भाई।' },
+    { id: 'shursen', name: 'शूरसेन', subtitle: 'महाराजा वल्लभ देव के पुत्र', parent: 'raja_vallabh', mother: 'bhagwati_devi', yug: 'dwapar', parichay: 'महाराजा अग्रसेन के छोटे भाई। कुछ ऐतिहासिक और सामाजिक मान्यताओं के अनुसार अग्रहरि (Agrahari) वैश्य समाज की उत्पत्ति शूरसेन या इनके वंशजों से मानी जाती है, हालाँकि कुछ अग्रहरि स्वयं को सीधे महाराजा अग्रसेन का वंशज भी मानते हैं।' },
 
     // Agrasen's Wives and 18 Sons
     {
