@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Atlas | Hindu Encyclopedia</title>
+    <meta name="description" content="Interactive Geographic Map of Ancient Hindu Kingdoms and Dynasties">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        main {
+            height: calc(100vh - 60px); /* Subtract header height */
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            background: #111111;
+        }
+
+        /* Custom map controls overlay */
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(17, 17, 17, 0.9);
+            border: 1px solid var(--primary-saffron);
+            border-radius: 8px;
+            padding: 15px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            min-width: 250px;
+        }
+
+        .timeline-slider-container {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(17, 17, 17, 0.9);
+            border: 1px solid var(--primary-saffron);
+            border-radius: 30px;
+            padding: 15px 30px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .timeline-slider {
+            flex-grow: 1;
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .timeline-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-saffron);
+            cursor: pointer;
+        }
+
+        .timeline-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-saffron);
+            cursor: pointer;
+        }
+
+        .era-label {
+            color: var(--primary-saffron);
+            font-weight: 600;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        /* Tooltip styling for Leaflet */
+        .kingdom-tooltip {
+            background: rgba(17, 17, 17, 0.9);
+            border: 1px solid var(--primary-saffron);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Override leaflet default controls for dark theme */
+        .leaflet-control-zoom a {
+            background-color: #222 !important;
+            color: #fff !important;
+            border-color: #444 !important;
+        }
+        .leaflet-control-zoom a:hover {
+            background-color: #333 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content" style="width: 100%; justify-content: flex-start;">
+            <img src="../icons/logo.jpg" alt="Logo" class="site-logo" style="margin-right: 15px;">
+            <a href="itihas-puran.html">← इतिहास पुराण</a>
+            <span class="header-separator">|</span>
+            <span>ऐतिहासिक मानचित्र (Historical Atlas)</span>
+        </div>
+    </header>
+
+    <main>
+        <div id="map"></div>
+
+        <div class="map-overlay">
+            <h3 style="margin-top:0; color: var(--primary-saffron); margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">Layers & Filters</h3>
+
+            <div style="margin-bottom: 10px;">
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" id="layer-kingdoms" checked>
+                    Kingdom Borders
+                </label>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" id="layer-cities" checked>
+                    Major Cities / Capitals
+                </label>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" id="layer-terrain">
+                    Terrain Map (Physical)
+                </label>
+            </div>
+        </div>
+
+        <div class="timeline-slider-container">
+            <span class="era-label" id="start-era">Satya Yug</span>
+            <input type="range" min="1" max="4" value="3" class="timeline-slider" id="era-slider">
+            <span class="era-label" id="current-era-display">Dwapar Yug (Mahabharat)</span>
+        </div>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // --- Mock Data for Proof of Concept ---
+        // Coordinates are approximate mapping to real-world Indian geography
+
+        const eras = {
+            1: "Satya Yug",
+            2: "Treta Yug (Ramayan)",
+            3: "Dwapar Yug (Mahabharat)",
+            4: "Kali Yug (Ancient/Mauryan)"
+        };
+
+        // Mock GeoJSON for Kingdoms (Dwapar Yug)
+        const kingdomsData = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Kuru Kingdom",
+                        "ruler": "Yudhishthir / Duryodhan",
+                        "capital": "Hastinapur / Indraprastha",
+                        "color": "#FF6B35"
+                    },
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [[
+                            [76.0, 29.5], // Delhi area rough box
+                            [78.5, 29.5],
+                            [78.5, 27.5],
+                            [76.0, 27.5],
+                            [76.0, 29.5]
+                        ]]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Panchal Kingdom",
+                        "ruler": "King Drupad",
+                        "capital": "Kampilya / Ahichhatra",
+                        "color": "#4A90E2"
+                    },
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [[
+                            [78.5, 28.5],
+                            [80.5, 28.5],
+                            [80.5, 26.5],
+                            [78.5, 26.5],
+                            [78.5, 28.5]
+                        ]]
+                    }
+                }
+            ]
+        };
+
+        // Mock GeoJSON for Cities
+        const citiesData = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Indraprastha",
+                        "type": "Capital"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [77.2, 28.6] // Longitude, Latitude
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Hastinapur",
+                        "type": "Capital"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [78.0, 29.1]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Mathura",
+                        "type": "City"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [77.6, 27.4]
+                    }
+                }
+            ]
+        };
+
+        // --- Map Initialization ---
+
+        // Initialize map centered on Northern India
+        const map = L.map('map', {
+            zoomControl: false // Custom position later
+        }).setView([26.0, 80.0], 5);
+
+        L.control.zoom({
+            position: 'topleft'
+        }).addTo(map);
+
+        // Tile Layers
+        // Dark Base Map (CartoDB Dark Matter)
+        const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        });
+
+        // Terrain/Physical Base Map (Esri World Topo/Physical)
+        const terrainLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        // Add dark layer by default
+        darkLayer.addTo(map);
+
+        // Layer Groups
+        let kingdomsLayer;
+        let citiesLayer;
+
+        function renderMapData() {
+            // Remove existing layers if any
+            if(kingdomsLayer) map.removeLayer(kingdomsLayer);
+            if(citiesLayer) map.removeLayer(citiesLayer);
+
+            // Render Kingdoms (Polygons)
+            kingdomsLayer = L.geoJSON(kingdomsData, {
+                style: function (feature) {
+                    return {
+                        fillColor: feature.properties.color,
+                        weight: 2,
+                        opacity: 1,
+                        color: feature.properties.color,
+                        dashArray: '3',
+                        fillOpacity: 0.3
+                    };
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindTooltip(feature.properties.name, {
+                        permanent: true,
+                        direction: 'center',
+                        className: 'kingdom-tooltip'
+                    });
+
+                    layer.bindPopup(`
+                        <div style="color: black; font-family: 'Poppins', sans-serif;">
+                            <h3 style="margin-top:0; margin-bottom:5px;">${feature.properties.name}</h3>
+                            <p><strong>Capital:</strong> ${feature.properties.capital}</p>
+                            <p><strong>Ruler:</strong> ${feature.properties.ruler}</p>
+                        </div>
+                    `);
+                }
+            });
+
+            // Render Cities (Points)
+            citiesLayer = L.geoJSON(citiesData, {
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#fff",
+                        color: "#FF6B35",
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(`
+                        <div style="color: black; font-family: 'Poppins', sans-serif;">
+                            <strong>${feature.properties.name}</strong><br>
+                            ${feature.properties.type}
+                        </div>
+                    `);
+                }
+            });
+
+            // Add to map based on checkboxes
+            if(document.getElementById('layer-kingdoms').checked) kingdomsLayer.addTo(map);
+            if(document.getElementById('layer-cities').checked) citiesLayer.addTo(map);
+        }
+
+        // Initial render
+        renderMapData();
+
+        // --- Event Listeners ---
+
+        // Layer Toggles
+        document.getElementById('layer-kingdoms').addEventListener('change', function(e) {
+            if(e.target.checked) {
+                kingdomsLayer.addTo(map);
+            } else {
+                map.removeLayer(kingdomsLayer);
+            }
+        });
+
+        document.getElementById('layer-cities').addEventListener('change', function(e) {
+            if(e.target.checked) {
+                citiesLayer.addTo(map);
+            } else {
+                map.removeLayer(citiesLayer);
+            }
+        });
+
+        document.getElementById('layer-terrain').addEventListener('change', function(e) {
+            if(e.target.checked) {
+                map.removeLayer(darkLayer);
+                terrainLayer.addTo(map);
+            } else {
+                map.removeLayer(terrainLayer);
+                darkLayer.addTo(map);
+            }
+        });
+
+        // Timeline Slider
+        const eraSlider = document.getElementById('era-slider');
+        const eraDisplay = document.getElementById('current-era-display');
+
+        eraSlider.addEventListener('input', function(e) {
+            const eraId = e.target.value;
+            eraDisplay.textContent = eras[eraId];
+
+            // In the future: Fetch/Load different GeoJSON data based on eraId
+            // For now, it just updates the label.
+        });
+
+    </script>
+</body>
+</html>
