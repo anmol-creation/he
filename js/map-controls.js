@@ -137,6 +137,20 @@ window.MapControls = {
                 const y = node.y - h/2;
 
                 if (worldX >= x && worldX <= x + w && worldY >= y && worldY <= y + h) {
+                    // Check for Branch Proxy toggle
+                    if (node.isBranchProxy) {
+                         if (state.expandedBranches.has(node.id)) {
+                             state.expandedBranches.delete(node.id);
+                             // Clean up expanded state for its descendants as well if needed, but not strictly necessary since the root is gone.
+                         } else {
+                             state.expandedBranches.add(node.id);
+                         }
+                         if (window.LayoutEngine && window.HistoricDB) {
+                             window.dispatchEvent(new Event('ClusterToggled'));
+                         }
+                         return; // Don't open panel for proxy, just toggle
+                    }
+
                     // Check if it's a cluster proxy node OR an expanded cluster member being clicked
                     if (node.isCluster || (node.clusterName && state.expandedClusters.has(node.clusterName))) {
                         if (state.expandedClusters.has(node.clusterName)) {

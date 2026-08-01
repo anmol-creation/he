@@ -1,6 +1,7 @@
 export function buildTree(rawData, nodesMap, transitionWires) {
     const processedData = [];
     const expandedClusters = window.MapState ? window.MapState.expandedClusters : new Set();
+    const expandedBranches = window.MapState ? window.MapState.expandedBranches : new Set();
 
     const nodeExists = (id) => rawData.some(d => d.id === id);
 
@@ -10,6 +11,25 @@ export function buildTree(rawData, nodesMap, transitionWires) {
 
     // Group clusters
     const clusterMap = new Map();
+
+
+    // Optimize parent lookup to O(1)
+    const rawLookup = new Map();
+    rawData.forEach(d => rawLookup.set(d.id, d));
+
+    // Dynamically assign clusterName to top-level families to collapse them
+    rawData.forEach(node => {
+        if (!node.clusterName) {
+            let currentAnchor = node.parent || node.spouseOf;
+            while(currentAnchor) {
+                if (currentAnchor === 'brahma') { node.clusterName = 'संपूर्ण संसार (Brahma Lineage)'; break; }
+                if (currentAnchor === 'vishnu') { node.clusterName = 'विष्णु परिवार (Vishnu Lineage)'; break; }
+                if (currentAnchor === 'shiva') { node.clusterName = 'शिव परिवार (Shiva Lineage)'; break; }
+                const pData = rawLookup.get(currentAnchor);
+                currentAnchor = pData ? (pData.parent || pData.spouseOf) : null;
+            }
+        }
+    });
 
     rawData.forEach(node => {
         // Evaluate Kalpa Filter
@@ -31,16 +51,29 @@ export function buildTree(rawData, nodesMap, transitionWires) {
             }
         }
 
+
+
         // If node belongs to a cluster and it is NOT expanded, squash it
         if (node.clusterName && !expandedClusters.has(node.clusterName)) {
              if (!clusterMap.has(node.clusterName)) {
+
+                  // Determine root anchor for the dynamic proxy so it attaches to Brahma/Vishnu/Shiva
+                  let proxyParent = node.parent;
+                  let proxySpouse = node.spouseOf;
+                  let isProminent = false;
+                  if (node.clusterName.includes('Brahma Lineage')) { proxyParent = 'brahma'; proxySpouse = null; isProminent = true; }
+                  else if (node.clusterName.includes('Vishnu Lineage')) { proxyParent = 'vishnu'; proxySpouse = null; isProminent = true; }
+                  else if (node.clusterName.includes('Shiva Lineage')) { proxyParent = 'shiva'; proxySpouse = null; isProminent = true; }
+
                   clusterMap.set(node.clusterName, {
                        id: `cluster_${node.clusterName.replace(/\s+/g, '_')}`,
                        name: `${node.clusterName} ⊞`,
                        subtitle: 'Click to expand',
-                       parent: node.parent, // Assume all items in cluster share the same parent/spouse origin logically
-                       spouseOf: node.spouseOf,
+                       parent: proxyParent,
+                       spouseOf: proxySpouse,
                        isCluster: true,
+                       isProminent: isProminent,
+                       inheritedColor: proxyParent === 'brahma' ? '#F7931E' : (proxyParent === 'vishnu' ? '#3399FF' : (proxyParent === 'shiva' ? '#9933FF' : '#FF6B35')),
                        clusterName: node.clusterName,
                        nodes: []
                   });
