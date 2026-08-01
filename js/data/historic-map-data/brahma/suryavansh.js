@@ -172,23 +172,35 @@ export const suryavanshData = [
     { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
 
     // Luv's descendants
-    { id: 'sarukman', name: 'सरूक्मान', subtitle: 'लव पुत्र', parent: 'luv', yug: 'treta' },
-    { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'सिसोदिया / राघव', parent: 'sarukman', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और सिसोदिया/गहलोत (मेवाड़) राजपूत, लेवा पाटीदार लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
+    { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'राघव / बड़गुजर', parent: 'luv', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और लेवा पाटीदार लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
 
-    // Guhila / Sisodia Dynasty of Mewar (Descendants of Lava)
-    { id: 'kanaksen', name: 'कनकसेन', subtitle: 'वल्लभी के संस्थापक', parent: 'sarukman', yug: 'kali', parichay: 'लव के वंशज जो लवपुरी (लाहौर) से पलायन कर गुजरात (सौराष्ट्र) आ गए और वहां वल्लभी (Vallabhi) राज्य की स्थापना की।' },
-    { id: 'guhadatta_mewar', name: 'गुहादित्य (गुहिल)', subtitle: 'गुहिल वंश के संस्थापक', parent: 'kanaksen', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी।' },
+    // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
     { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
-    { id: 'rawal_ratan_singh', name: 'रावल रतन सिंह', subtitle: 'चित्तौड़ के रावल', parent: 'bappa_rawal', yug: 'kali', parichay: 'ये गुहिल वंश की रावल शाखा के अंतिम शासक थे। इन्होने अलाउद्दीन खिलजी के आक्रमण (1303 ई.) का डटकर सामना किया था। रानी पद्मिनी इन्ही की पत्नी थीं, जिन्होंने जौहर किया था।' },
-    { id: 'rana_hammir_sisodia', name: 'राणा हम्मीर', subtitle: 'सिसोदिया वंश के संस्थापक', parent: 'bappa_rawal', yug: 'kali', parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।' },
+    { id: 'rana_ranasimha', name: 'रावल रणसिंह (कर्ण सिंह)', subtitle: 'शाखाओं का विभाजन', parent: 'bappa_rawal', yug: 'kali', parichay: 'इनके समय में गुहिल वंश दो शाखाओं में बंट गया: 1. रावल शाखा (क्षेमसिंह) और 2. राणा/सिसोदिया शाखा (राहप)।' },
+
+    // Rawal Branch
+    { id: 'kshem_singh', name: 'रावल क्षेमसिंह', subtitle: 'रावल शाखा', parent: 'rana_ranasimha', yug: 'kali' },
+    { id: 'rawal_ratan_singh', name: 'रावल रतन सिंह', subtitle: 'चित्तौड़ के रावल', parent: 'kshem_singh', yug: 'kali', parichay: 'ये गुहिल वंश की रावल शाखा के अंतिम शासक थे। इन्होने अलाउद्दीन खिलजी के आक्रमण (1303 ई.) का डटकर सामना किया था। रानी पद्मिनी इन्ही की पत्नी थीं, जिन्होंने जौहर किया था।' },
+
+    // Sisodia Branch (Rana Branch)
+    { id: 'rahapa', name: 'राहप', subtitle: 'राणा/सिसोदिया शाखा के संस्थापक', parent: 'rana_ranasimha', yug: 'kali', parichay: 'इन्होंने सिसोदा ग्राम में जागीर स्थापित की, जिससे इनके वंशज "सिसोदिया" कहलाए और इन्होने "राणा" की उपाधि धारण की।' },
+    { id: 'rana_hammir_sisodia', name: 'राणा हम्मीर', subtitle: 'सिसोदिया वंश के संस्थापक', parent: 'rahapa', yug: 'kali', parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की पुनर्स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।' },
     { id: 'rana_lakha', name: 'राणा लाखा', subtitle: 'मेवाड़ नरेश', parent: 'rana_hammir_sisodia', yug: 'kali', parichay: 'इन्हीं के समय में पिछोला झील का निर्माण हुआ और जावर में चांदी की खदानें मिली थीं।' },
+
+    // Chundawat Branch
+    { id: 'rao_chunda', name: 'राव चूंडा', subtitle: 'मेवाड़ के भीष्म पितामह', parent: 'rana_lakha', yug: 'kali', parichay: 'इन्होंने अपने पिता के लिए मेवाड़ के सिंहासन का त्याग किया था। इनके वंशज "चूंडावत" (Chundawat) कहलाते हैं, जो मेवाड़ के प्रथम श्रेणी के सामंत थे।' },
+
     { id: 'rana_mokal_mewar', name: 'राणा मोकल', subtitle: 'मेवाड़ नरेश', parent: 'rana_lakha', yug: 'kali' },
     { id: 'rana_kumbha', name: 'राणा कुम्भा', subtitle: 'महान निर्माता और योद्धा', parent: 'rana_mokal_mewar', yug: 'kali', parichay: 'ये स्थापत्य कला के महान संरक्षक थे। इन्होने मेवाड़ में 32 किलों (जैसे कुम्भलगढ़) का निर्माण करवाया और मालवा-गुजरात की संयुक्त सेनाओं को हराया।' },
     { id: 'rana_raimal', name: 'राणा रायमल', subtitle: 'मेवाड़ नरेश', parent: 'rana_kumbha', yug: 'kali' },
     { id: 'rana_sanga', name: 'राणा सांगा (संग्राम सिंह)', subtitle: 'हिन्दूपत', parent: 'rana_raimal', yug: 'kali', parichay: 'ये एक महान शूरवीर थे जिनके शरीर पर 80 घाव थे। इन्होने खातोली और बाड़ी के युद्धों में इब्राहिम लोदी को हराया और खानवा के युद्ध (1527) में बाबर का सामना किया।' },
     { id: 'rana_udai_singh_ii', name: 'राणा उदय सिंह (द्वितीय)', subtitle: 'उदयपुर के संस्थापक', parent: 'rana_sanga', yug: 'kali', parichay: 'इन्होंने 1559 ई. में उदयपुर शहर की स्थापना की थी।' },
+
+    // Shaktawat Branch
+    { id: 'shakti_singh', name: 'शक्ति सिंह', subtitle: 'शक्तावत वंश के संस्थापक', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'महाराणा प्रताप के भाई। इनके वंशज "शक्तावत" (Shaktawat) कहलाए।' },
+
     { id: 'maharana_pratap', name: 'महाराणा प्रताप', subtitle: 'मेवाड़ के वीर शिरोमणि', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।' },
-    { id: 'amar_singh_mewar', name: 'महाराणा अमर सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'maharana_pratap', yug: 'kali', parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े।' },
+    { id: 'amar_singh_mewar', name: 'महाराणा अमर सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'maharana_pratap', yug: 'kali', parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े। इनके बाद के शासकों के वंशज "राणावत" (Ranawat) भी कहलाये।' },
     { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।' },
     { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।' },
 
@@ -294,6 +306,17 @@ export const suryavanshData = [
     { id: 'suratha', name: 'सुरथ', subtitle: 'कुण्डक पुत्र', parent: 'kundaka', yug: 'kali' },
     { id: 'sumitra_king', name: 'सुमित्र', subtitle: 'इक्ष्वाकु वंश के अंतिम राजा', parent: 'suratha', yug: 'kali', parichay: 'पुराणों के अनुसार सुमित्र इक्ष्वाकु/सूर्यवंश के अंतिम प्रतापी राजा थे। नंद वंश के महापद्म नंद ने इन्हें पराजित कर कोशल को मगध साम्राज्य में मिला लिया था।' },
 
+    // Descendants of Sumitra leading to Mewar (According to Raj Prashasti)
+    { id: 'vajranabh', name: 'वज्रनाभ', subtitle: 'सुमित्र पुत्र', parent: 'sumitra_king', yug: 'kali' },
+    { id: 'maharathi', name: 'महारथी', subtitle: 'वज्रनाभ पुत्र', parent: 'vajranabh', yug: 'kali' },
+    { id: 'atirathi', name: 'अतिरथी', subtitle: 'महारथी पुत्र', parent: 'maharathi', yug: 'kali' },
+    { id: 'achalasen', name: 'अचलसेन', subtitle: 'अतिरथी पुत्र', parent: 'atirathi', yug: 'kali' },
+
+    // Guhila / Sisodia Dynasty of Mewar (Origin Debate: Luv vs Kusha)
+    { id: 'kanaksen', name: 'कनकसेन', subtitle: 'वल्लभी के संस्थापक', parent: 'achalasen', yug: 'kali', parichay: 'ऐतिहासिक डिबेट: कर्नल टॉड के अनुसार कनकसेन लव के वंशज थे जो लाहौर से गुजरात आये। लेकिन मेवाड़ के आधिकारिक "राज प्रशस्ति" शिलालेख के अनुसार, कनकसेन कुश के वंशज राजा सुमित्र की लाइन (सुमित्र -> वज्रनाभ -> महारथी -> अतिरथी -> अचलसेन -> कनकसेन) से आते हैं। इन्होंने सौराष्ट्र में वल्लभी (Vallabhi) राज्य की स्थापना की।' },
+    { id: 'shiladitya_vallabhi', name: 'शीलादित्य', subtitle: 'वल्लभी के अंतिम शासक', parent: 'kanaksen', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा थे। अरब आक्रमण के समय वल्लभी के पतन के बाद इनकी रानी पुष्पावती ने एक गुफा में पुत्र को जन्म दिया।' },
+    { id: 'guhadatta_mewar', name: 'गुहादित्य (गुहिल)', subtitle: 'गुहिल वंश के संस्थापक', parent: 'shiladitya_vallabhi', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। गुफा में जन्म लेने के कारण इनका नाम गुहादित्य पड़ा। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी। इनके वंशज आगे चलकर गुहिल या गहलोत कहलाए।' },
+
     // Dogra / Jamwal Dynasty (Descendants of Ayodhya Kings in Jammu)
     { id: 'agnigarbha_jammu', name: 'अग्निगर्भ', subtitle: 'जम्वाल वंश के आदि पुरुष', parent: 'sumitra_king', yug: 'kali', parichay: 'ये अयोध्या के सूर्यवंशी राजाओं (कुश के वंशज) के प्रतापी राजकुमार थे, जो अयोध्या से पलायन कर शिवालिक की पहाड़ियों में आ बसे। डोगरा इतिहास (गुलाबनामा) के अनुसार इन्होंने ही यहाँ अपना राज्य स्थापित किया।' },
     { id: 'bahu_lochan', name: 'बाहु लोचन', subtitle: 'बाहु नगर के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'अग्निगर्भ के ज्येष्ठ पुत्र। इन्होंने तवी नदी के किनारे बाहु किला (Bahu Fort) बनवाया और बाहु नगर बसाया।' },
@@ -325,6 +348,28 @@ export const suryavanshData = [
     { id: 'udayakarna', name: 'उदयकर्ण', subtitle: 'जुंसी पुत्र', parent: 'junsi', yug: 'kali' },
 
     // Udayakarna's descendants forming sub-clans
+    { id: 'bar_singh_amer', name: 'बर सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'naru_singh', name: 'राव नरू', subtitle: 'नरूका वंश के संस्थापक', parent: 'bar_singh_amer', yug: 'kali', parichay: 'इनके वंशज "नरूका" (Naruka) कहलाए। अलवर का राजघराना नरूका कछवाहों का ही है।' },
+
+    { id: 'baloji', name: 'बालाजी (राव बाला)', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'mokal_singh', name: 'मोकल सिंह', subtitle: 'बालाजी पुत्र', parent: 'baloji', yug: 'kali' },
+    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'mokal_singh', yug: 'kali', parichay: 'इनके नाम पर शेखावाटी क्षेत्र का नाम पड़ा और इनके वंशज "शेखावत" (Shekhawat) कहलाये, जो राजस्थान का एक बहुत बड़ा और वीर राजपूत समाज है।' },
+
+    { id: 'banbir_singh', name: 'बनवीर सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनवीर पुत्र', parent: 'banbir_singh', yug: 'kali' },
+    { id: 'chandrasen_amer', name: 'चन्द्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali' },
+    { id: 'prithviraj_amer', name: 'राजा पृथ्वीराज सिंह', subtitle: 'आमेर नरेश', parent: 'chandrasen_amer', yug: 'kali', parichay: 'ये राणा सांगा के समकालीन थे और खानवा के युद्ध में उनकी ओर से लड़े थे। इनके 12 पुत्रों से आमेर के "बारह कोटड़ी" (12 Kotri) सामंत व्यवस्था की शुरुआत हुई।' },
+
+    // Prithviraj's descendants (12 Kotri branches)
+    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'आमेर नरेश', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'bhagwant_das', name: 'राजा भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali' },
+    { id: 'man_singh_i', name: 'राजा मान सिंह प्रथम', subtitle: 'राजावत वंश के संस्थापक', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये अकबर के प्रमुख सेनापति और नवरत्नों में से एक थे। इनके वंशज मुख्य रूप से "राजावत" (Rajawat) कहलाते हैं, जो जयपुर राजघराने का मुख्य गोत्र है।' },
+
+    { id: 'gopal_singh', name: 'गोपाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'nathaji', name: 'नाथा जी', subtitle: 'नाथावत वंश के संस्थापक', parent: 'gopal_singh', yug: 'kali', parichay: 'इनके वंशज "नाथावत" (Nathawat) कहलाये, जो कछवाहों की एक प्रमुख शाखा है।' },
+
+    { id: 'jagmal_singh', name: 'जगमाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'khangarji', name: 'खंगार जी', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'jagmal_singh', yug: 'kali', parichay: 'इनके वंशज "खंगारोत" (Khangarot) कहलाये।' },
     { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र (मुख्य धारा)', parent: 'udayakarna', yug: 'kali' },
     { id: 'rao_balaji', name: 'राव बालाजी', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', parichay: 'आमेर नरेश उदयकर्ण के पुत्र। इनके वंशज "बालापोता" कहलाये।' },
     { id: 'rao_mokal', name: 'राव मोकल', subtitle: 'राव बालाजी पुत्र', parent: 'rao_balaji', yug: 'kali' },
