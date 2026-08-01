@@ -181,7 +181,7 @@ window.MapControls = {
         container.addEventListener('wheel', (e) => {
             e.preventDefault();
             const zoomFactor = Math.exp(e.deltaY * -0.002);
-            const newScale = Math.min(Math.max(0.1, state.scale * zoomFactor), 2.5);
+            const newScale = Math.min(Math.max(0.02, state.scale * zoomFactor), 2.5);
 
             const rect = container.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
@@ -194,7 +194,7 @@ window.MapControls = {
             requestTransformUpdate();
         }, { passive: false });
 
-        const zoomLevels = [0.15, 0.4, 0.8, 1.2];
+        const zoomLevels = [0.02, 0.08, 0.2, 0.4, 0.8];
 
         document.getElementById('zoom-in-btn').addEventListener('click', () => {
             let currentLevelIdx = zoomLevels.findIndex(l => l >= state.scale) || 0;
