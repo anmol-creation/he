@@ -35,8 +35,8 @@ export const suryavanshData = [
 
     { id: 'pramoda', name: 'प्रमोद', subtitle: 'दृढ़ाश्व पुत्र', parent: 'dridhashva', yug: 'treta' },
     { id: 'haryashva_1', name: 'हर्याश्व प्रथम', subtitle: 'प्रमोद पुत्र', parent: 'pramoda', yug: 'treta' },
-    { id: 'nikumbha', name: 'निकुंभ', subtitle: 'हर्याश्व पुत्र', parent: 'haryashva_1', yug: 'treta' },
-    { id: 'baharnashva', name: 'बहर्णाश्व', subtitle: 'निकुंभ पुत्र', parent: 'nikumbha', yug: 'treta' },
+    { id: 'nikumbha_surya', name: 'निकुंभ', subtitle: 'हर्याश्व पुत्र', parent: 'haryashva_1', yug: 'treta' },
+    { id: 'baharnashva', name: 'बहर्णाश्व', subtitle: 'निकुंभ पुत्र', parent: 'nikumbha_surya', yug: 'treta' },
     { id: 'krishashva', name: 'कृशाश्व', subtitle: 'बहर्णाश्व पुत्र', parent: 'baharnashva', yug: 'treta' },
     { id: 'prasenajit_1', name: 'प्रसेनजित प्रथम', subtitle: 'कृशाश्व पुत्र', parent: 'krishashva', yug: 'treta' },
     { id: 'yuvanashva_2', name: 'युवनाश्व द्वितीय', subtitle: 'प्रसेनजित पुत्र', parent: 'prasenajit_1', yug: 'treta' },
@@ -106,7 +106,7 @@ export const suryavanshData = [
 
 
     // Descendants of Sharyati
-    { id: 'sukanya', name: 'सुकन्या', subtitle: 'शर्याति पुत्री', parent: 'sharyati', yug: 'satya', parichay: 'इनका विवाह महर्षि च्यवन से हुआ था।' },
+    { id: 'sukanya_surya', name: 'सुकन्या', subtitle: 'शर्याति पुत्री', parent: 'sharyati', yug: 'satya', parichay: 'इनका विवाह महर्षि च्यवन से हुआ था।' },
     { id: 'anarta', name: 'आनर्त', subtitle: 'शर्याति पुत्र', parent: 'sharyati', yug: 'satya', parichay: 'इनके नाम पर आनर्त देश (आधुनिक गुजरात का भाग) का नाम पड़ा।' },
 
     // Descendants of Nabhaga
@@ -420,9 +420,9 @@ export const suryavanshData = [
     { id: 'prithviraj_amer', name: 'राजा पृथ्वीराज सिंह', subtitle: 'आमेर नरेश', parent: 'chandrasen_amer', yug: 'kali', parichay: 'ये राणा सांगा के समकालीन थे और खानवा के युद्ध में उनकी ओर से लड़े थे। इनके 12 पुत्रों से आमेर के "बारह कोटड़ी" (12 Kotri) सामंत व्यवस्था की शुरुआत हुई।' },
 
     // Prithviraj's descendants (12 Kotri branches)
-    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'आमेर नरेश', parent: 'prithviraj_amer', yug: 'kali' },
-    { id: 'bhagwant_das', name: 'राजा भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali' },
-    { id: 'man_singh_i', name: 'राजा मान सिंह प्रथम', subtitle: 'राजावत वंश के संस्थापक', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये अकबर के प्रमुख सेनापति और नवरत्नों में से एक थे। इनके वंशज मुख्य रूप से "राजावत" (Rajawat) कहलाते हैं, जो जयपुर राजघराने का मुख्य गोत्र है।' },
+    { id: 'bharmal_amer_dup', name: 'राजा भारमल', subtitle: 'आमेर नरेश', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'bhagwant_das_amer_dup', name: 'राजा भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal_amer_dup', yug: 'kali' },
+    { id: 'man_singh_i_amer_dup', name: 'राजा मान सिंह प्रथम', subtitle: 'राजावत वंश के संस्थापक', parent: 'bhagwant_das_amer_dup', yug: 'kali', parichay: 'ये अकबर के प्रमुख सेनापति और नवरत्नों में से एक थे। इनके वंशज मुख्य रूप से "राजावत" (Rajawat) कहलाते हैं, जो जयपुर राजघराने का मुख्य गोत्र है।' },
 
     { id: 'gopal_singh', name: 'गोपाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
     { id: 'nathaji', name: 'नाथा जी', subtitle: 'नाथावत वंश के संस्थापक', parent: 'gopal_singh', yug: 'kali', parichay: 'इनके वंशज "नाथावत" (Nathawat) कहलाये, जो कछवाहों की एक प्रमुख शाखा है।' },
@@ -452,11 +452,11 @@ export const suryavanshData = [
     { id: 'rao_natha', name: 'राव नाथा', subtitle: 'नाथावत वंश के संस्थापक', parent: 'rao_gopal', yug: 'kali', parichay: 'इन्हीं के नाम से "नाथावत" सरनेम/शाखा की शुरुआत हुई। चौमूं के ठाकुर इसी वंश से हैं।' },
 
     { id: 'rao_jagmal', name: 'राव जगमाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali' },
-    { id: 'rao_khangar', name: 'राव खंगार', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'rao_jagmal', yug: 'kali', parichay: 'इन्हीं के नाम से "खंगारोत" सरनेम/शाखा की शुरुआत हुई।' },
-    { id: 'bhagwant_das', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali' },
-    { id: 'man_singh_i', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।' },
-    { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i', yug: 'kali' },
-    { id: 'maha_singh', name: 'महा सिंह', subtitle: 'मान सिंह पौत्र', parent: 'man_singh_i', yug: 'kali' },
+    { id: 'bharmal_kachhwaha', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र (मुख्य धारा)', parent: 'prithviraj_singh_i', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था। इनके वंशज आगे चलकर "राजावत" कहलाये।' },
+    { id: 'bhagwant_das_kachhwaha', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal_kachhwaha', yug: 'kali' },
+    { id: 'man_singh_i_kachhwaha', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das_kachhwaha', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।' },
+    { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i_kachhwaha', yug: 'kali' },
+    { id: 'maha_singh', name: 'महा सिंह', subtitle: 'मान सिंह पौत्र', parent: 'man_singh_i_kachhwaha', yug: 'kali' },
     { id: 'jai_singh_i', name: 'मिर्ज़ा राजा जय सिंह', subtitle: 'महा सिंह पुत्र', parent: 'maha_singh', yug: 'kali', parichay: 'इन्होंने मुग़ल बादशाहों (जहाँगीर, शाहजहां, औरंगज़ेब) के लिए कई युद्ध लड़े और छत्रपति शिवाजी महाराज के साथ पुरंदर की संधि की।' },
     { id: 'ram_singh_i', name: 'राम सिंह प्रथम', subtitle: 'जय सिंह पुत्र', parent: 'jai_singh_i', yug: 'kali' },
     { id: 'bishan_singh', name: 'बिशन सिंह', subtitle: 'राम सिंह पौत्र', parent: 'ram_singh_i', yug: 'kali' },
