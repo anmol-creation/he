@@ -166,13 +166,32 @@ export const suryavanshData = [
     { id: 'sumitra', name: 'सुमित्रा', subtitle: 'लक्ष्मण/शत्रुघ्न की माता', parent: '', spouseOf: 'dasharath', yug: 'treta', clusterName: 'दशरथ की 3 पत्नियाँ' },
     { id: 'ram', name: 'राम', subtitle: 'मर्यादा पुरुषोत्तम', parent: 'dasharath', mother: 'kaushalya', yug: 'treta' },
     { id: 'bharat', name: 'भरत', subtitle: 'आदर्श भ्राता', parent: 'dasharath', mother: 'kaikeyi', yug: 'treta' },
+    { id: 'taksha', name: 'तक्ष', subtitle: 'तक्षशिला के राजा', parent: 'bharat', mother: 'mandavi', yug: 'treta', parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।' },
+    { id: 'pushkala', name: 'पुष्कल', subtitle: 'पुष्कलावती के राजा', parent: 'bharat', mother: 'mandavi', yug: 'treta', parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।' },
+
     { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'angada_lakshman', name: 'अंगद', subtitle: 'कारुपथ के राजा', parent: 'lakshman', mother: 'urmila', yug: 'treta', parichay: 'भगवान राम ने अंगद को कारुपथ राज्य का राजा बनाया था।' },
+    { id: 'chandraketu', name: 'चन्द्रकेतु', subtitle: 'चन्द्रकांति (मालवा) के राजा', parent: 'lakshman', mother: 'urmila', yug: 'treta', parichay: 'भगवान राम ने चन्द्रकेतु को चन्द्रकांति राज्य का राजा बनाया था।' },
+    // Lakshman's descendants (Pratihara Rajput claim)
+    { id: 'pratihara_lakshman_proxy', name: 'प्रतिहार / बड़गूजर', subtitle: 'लक्ष्मण के वंशज (ऐतिहासिक मत)', parent: 'lakshman', yug: 'kali', parichay: 'गुर्जर-प्रतिहार राजवंश स्वयं को लक्ष्मण का वंशज मानता है (क्योंकि लक्ष्मण ने राम के लिए द्वारपाल/प्रतिहार का कार्य किया था)। राजौरगढ़ के 959 ई. के शिलालेख के अनुसार, इतिहासकार बड़गूजरों को भी प्रतिहारों की ही एक शाखा मानते हैं। अग्निवंश उत्पत्ति से अलग, यह ঐতিহাসিক मत है।' },
+
     { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'subahu_shatrughna', name: 'सुबाहु', subtitle: 'मथुरा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'लवणासुर का वध करने के बाद शत्रुघ्न ने शूरसेन (मथुरा) पर अधिकार किया और सुबाहु को वहां का राजा बनाया।' },
+    { id: 'shatrughati', name: 'शत्रुघाती', subtitle: 'विदिशा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'शत्रुघ्न के द्वितीय पुत्र, जिन्हें विदिशा का राजा बनाया गया था।' },
     { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
     { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
 
-    // Luv's descendants
-    { id: 'luv_vanshaj_proxy', name: 'लव के वंशज', subtitle: 'राघव / बड़गुजर', parent: 'luv', yug: 'kali', parichay: 'राघव, बड़गुजर, सिकरवार, और लेवा पाटीदार लव के वंशज माने जाते हैं।', clusterName: 'लव के वंशज' },
+    // Luv's descendants (Bargujar, Raghav, Sikarwar, Lohana, Leva Patidar)
+    { id: 'leva_patidar', name: 'लेवा पाटीदार / कुर्मी', subtitle: 'लव के वंशज', parent: 'luv', yug: 'kali', parichay: 'लव की राजधानी लवपुरी (लाहौर) से पलायन कर गुजरात व भारत के अन्य हिस्सों में बसे लेवा पाटीदार (पटेल) और कुर्मी समाज स्वयं को लव का वंशज मानते हैं।' },
+    { id: 'lohana_rajput', name: 'लोहाणा समाज', subtitle: 'सिंध-गुजरात के क्षत्रिय/वैश्य', parent: 'luv', yug: 'kali', parichay: 'लोहाणा समाज लवपुरी (लाहौर) के पतन के बाद सिंध और गुजरात में बसा। वे स्वयं को लव का वंशज मानते हैं।' },
+
+    // Bargujar / Raghav lineage
+    { id: 'bargujar_adi', name: 'बड़गूजर (राघव) वंश', subtitle: 'लव के सूर्यवंशी वंशज', parent: 'luv', yug: 'kali', parichay: 'पारंपरिक चारण-भाट वंशावलियों के अनुसार बड़गूजर/राघव विशुद्ध सूर्यवंशी हैं जिनका उद्गम लव से होता है। (हालाँकि, कुछ शिलालेख इन्हें लक्ष्मण के वंशज प्रतिहारों की शाखा मानते हैं)।' },
+    { id: 'raja_bagh_singh', name: 'राजा बाघ सिंह', subtitle: 'बड़गूजर राजा', parent: 'bargujar_adi', yug: 'kali', parichay: 'इन्होंने राजस्थान में बाघधरा (BaghDhara) बसाया।' },
+    { id: 'raja_pratap_singh_bargujar', name: 'राजा प्रताप सिंह बड़गूजर', subtitle: 'पृथ्वीराज चौहान के सेनापति', parent: 'raja_bagh_singh', yug: 'kali', parichay: 'ये पृथ्वीराज चौहान के समकालीन और उनके सेनापतियों में से एक माने जाते हैं, जिन्होंने मुस्लिम आक्रमणकारियों से भयानक युद्ध किया।' },
+    { id: 'sikarwar_rajput', name: 'सिकरवार वंश', subtitle: 'बड़गूजरों की शाखा', parent: 'raja_pratap_singh_bargujar', yug: 'kali', parichay: 'मुस्लिम आक्रमणकारियों के भारी नरसंहार से बचने और अपनी अधीनता स्वीकार न करने के संकल्प के कारण, बड़गूजरों के ही एक समूह ने अपना नाम बदलकर "सिकरवार" रख लिया था।' },
+    { id: 'raja_anup_singh', name: 'राजा अनूप सिंह', subtitle: 'अनूपशहर के संस्थापक', parent: 'raja_pratap_singh_bargujar', yug: 'kali', parichay: 'इन्होंने उत्तर प्रदेश में "अनूपशहर" बसाया और वहां बड़गूजरों की एक बड़ी रियासत कायम की।' },
+    { id: 'bahadur_singh_bargujar', name: 'बहादुर सिंह बड़गूजर', subtitle: 'घासेरा के शासक', parent: 'raja_anup_singh', yug: 'kali', parichay: 'इन्होंने 18वीं सदी में घासेरा (Ghasera) पर राज किया और मुगलों/जाटों से युद्ध किया।' },
 
     // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
     { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
