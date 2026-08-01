@@ -169,6 +169,9 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+    <!-- Load India Border Data -->
+    <script src="../js/data/geo/india_border.js"></script>
+
     <script>
         // --- Mock Data for Proof of Concept ---
         // Coordinates are approximate mapping to real-world Indian geography
@@ -357,8 +360,51 @@
             if(document.getElementById('layer-cities').checked) citiesLayer.addTo(map);
         }
 
+        let indiaBorderLayer;
+
+        function renderIndiaBorder() {
+            if (typeof indiaBorderData !== 'undefined') {
+                indiaBorderLayer = L.geoJSON(indiaBorderData, {
+                    style: {
+                        color: "#ffffff",
+                        weight: 2,
+                        opacity: 0.8,
+                        fillOpacity: 0.05,
+                        fillColor: "#ffffff",
+                        dashArray: '5, 5'
+                    },
+                    interactive: false // Don't block clicks on kingdoms underneath
+                });
+
+                // Add border layer checkbox dynamically
+                const overlayContainer = document.querySelector('.map-overlay');
+                const borderDiv = document.createElement('div');
+                borderDiv.style.marginBottom = '10px';
+                borderDiv.innerHTML = `
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #fff;">
+                        <input type="checkbox" id="layer-india-border" checked>
+                        Modern India Border
+                    </label>
+                `;
+                overlayContainer.insertBefore(borderDiv, overlayContainer.children[1]); // Insert after heading
+
+                // Event listener for the new checkbox
+                document.getElementById('layer-india-border').addEventListener('change', function(e) {
+                    if(e.target.checked) {
+                        indiaBorderLayer.addTo(map);
+                    } else {
+                        map.removeLayer(indiaBorderLayer);
+                    }
+                });
+
+                // Add to map by default
+                indiaBorderLayer.addTo(map);
+            }
+        }
+
         // Initial render
         renderMapData();
+        renderIndiaBorder();
 
         // --- Event Listeners ---
 
