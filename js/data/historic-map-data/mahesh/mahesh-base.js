@@ -2,7 +2,7 @@ export const maheshBaseData = [
     { id: 'sati', name: 'सती', subtitle: 'दक्ष पुत्री', parent: 'daksha', spouseOf: 'shiva', yug: 'satya', clusterName: 'शिव की पत्नियाँ' },
     { id: 'parvati', name: 'पार्वती', subtitle: 'शैलपुत्री / शक्ति', parent: '', spouseOf: 'shiva', yug: 'satya', clusterName: 'शिव की पत्नियाँ' },
     { id: 'kartikeya', name: 'कार्तिकेय', subtitle: 'देव सेनापति', parent: 'shiva', mother: 'parvati', yug: 'satya' },
-    { id: 'devasena', name: 'देवसेना', subtitle: 'कार्तिकेय पत्नी', parent: '', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ' },
+    { id: 'devasena_indra', name: 'देवसेना', subtitle: 'कार्तिकेय पत्नी', parent: '', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ' },
     { id: 'valli', name: 'वल्ली', subtitle: 'कार्तिकेय पत्नी', parent: '', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ' },
     { id: 'ganesha', name: 'गणेश', subtitle: 'प्रथम पूज्य', parent: 'shiva', mother: 'parvati', yug: 'satya' },
     { id: 'riddhi', name: 'रिद्धि', subtitle: 'गणेश पत्नी', parent: '', spouseOf: 'ganesha', yug: 'satya', clusterName: 'गणेश की पत्नियाँ' },
