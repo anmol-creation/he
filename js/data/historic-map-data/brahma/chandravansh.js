@@ -390,6 +390,87 @@ export const chandravanshData = [
     { id: 'shantasena_subahu', name: 'शान्तसेन', subtitle: 'सुबाहु पुत्र', parent: 'subahu_pratibahu', yug: 'kali' },
     { id: 'shatasena_shantasena', name: 'शतसेन', subtitle: 'शान्तसेन पुत्र', parent: 'shantasena_subahu', yug: 'kali' },
 
+    // --- यदुवंश (कलियुग - मध्यकालीन और आधुनिक राजवंश) ---
+    // ऐतिहासिक अंतराल (Historical Gap) के बाद के मुख्य राजवंश
+    { id: 'yaduvansh_medieval_link', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'shatasena_shantasena', yug: 'kali', parichay: 'पुराणों में वर्णित शतसेन के बाद और मध्यकालीन राजवंशों के उदय के बीच कई शताब्दियों का अंतराल है।' },
+
+    // --- जादौन (करौली) और भाटी (जैसलमेर) का मूल ---
+    { id: 'dharmapala_yaduvanshi', name: 'धर्मपाल', subtitle: 'जादौन / भाटी मूल', parent: 'yaduvansh_medieval_link', yug: 'kali' },
+
+    // --- भाटी राजवंश (जैसलमेर) ---
+    { id: 'bhatti_rao', name: 'भट्टी (भाटी)', subtitle: 'भाटी वंश के संस्थापक', parent: 'dharmapala_yaduvanshi', yug: 'kali' },
+    { id: 'mangal_rao_bhati', name: 'मंगल राव', subtitle: 'भाटी नरेश', parent: 'bhatti_rao', yug: 'kali' },
+    { id: 'majam_rao_bhati', name: 'मजम राव', subtitle: 'भाटी नरेश', parent: 'mangal_rao_bhati', yug: 'kali' },
+    { id: 'kehar_1_bhati', name: 'केहर (प्रथम)', subtitle: 'भाटी नरेश', parent: 'majam_rao_bhati', yug: 'kali' },
+    { id: 'tano_bhati', name: 'तणू', subtitle: 'तणोट के संस्थापक', parent: 'kehar_1_bhati', yug: 'kali' },
+    { id: 'biji_ray_bhati', name: 'बिजी राय', subtitle: 'भाटी नरेश', parent: 'tano_bhati', yug: 'kali' },
+    { id: 'deoraj_bhati', name: 'देवराज (रावल)', subtitle: 'देरावर के संस्थापक', parent: 'biji_ray_bhati', yug: 'kali' },
+    { id: 'mund_bhati', name: 'मुंड', subtitle: 'भाटी नरेश', parent: 'deoraj_bhati', yug: 'kali' },
+    { id: 'bachera_bhati', name: 'बचेरा', subtitle: 'भाटी नरेश', parent: 'mund_bhati', yug: 'kali' },
+    { id: 'dusaj_bhati', name: 'दुसज', subtitle: 'भाटी नरेश', parent: 'bachera_bhati', yug: 'kali' },
+    { id: 'jaisal_bhati', name: 'रावल जैसल', subtitle: 'जैसलमेर के संस्थापक', parent: 'dusaj_bhati', yug: 'kali', parichay: '1156 ईस्वी में इन्होंने जैसलमेर शहर और किले की स्थापना की।' },
+    { id: 'salivahan_bhati', name: 'शालिवाहन', subtitle: 'जैसलमेर नरेश', parent: 'jaisal_bhati', yug: 'kali' },
+    { id: 'kelan_bhati', name: 'केलण', subtitle: 'जैसलमेर नरेश', parent: 'salivahan_bhati', yug: 'kali' },
+    { id: 'chachigdeo_bhati', name: 'चाचिगदेव', subtitle: 'जैसलमेर नरेश', parent: 'kelan_bhati', yug: 'kali' },
+    { id: 'karan_bhati', name: 'कर्ण', subtitle: 'जैसलमेर नरेश', parent: 'chachigdeo_bhati', yug: 'kali' },
+    { id: 'lakhsen_bhati', name: 'लाखसेन', subtitle: 'जैसलमेर नरेश', parent: 'karan_bhati', yug: 'kali' },
+    { id: 'punpal_bhati', name: 'पुनपाल', subtitle: 'जैसलमेर नरेश', parent: 'lakhsen_bhati', yug: 'kali' },
+    { id: 'jait_singh_bhati', name: 'जैत सिंह', subtitle: 'जैसलमेर नरेश', parent: 'punpal_bhati', yug: 'kali' },
+    { id: 'mularaja_bhati', name: 'मूलराज', subtitle: 'जैसलमेर नरेश', parent: 'jait_singh_bhati', yug: 'kali' },
+    { id: 'ratan_singh_bhati', name: 'रतन सिंह', subtitle: 'जैसलमेर नरेश', parent: 'mularaja_bhati', yug: 'kali' },
+
+    // जाडेजा (कच्छ/जामनगर) - भाटी/यदुवंश की शाखा
+    { id: 'lakho_jadani', name: 'लाखो जादाणी', subtitle: 'जाडेजा वंश के मूल', parent: 'mangal_rao_bhati', yug: 'kali', parichay: 'सिंध से कच्छ की ओर प्रवास किया। इन्हें जाडेजा (जादा के वंशज) कहा गया।' },
+    { id: 'jam_raval_jadeja', name: 'जाम रावल', subtitle: 'नवानगर के संस्थापक', parent: 'lakho_jadani', yug: 'kali', parichay: '1540 ईस्वी में इन्होंने नवानगर (वर्तमान जामनगर) की स्थापना की।' },
+
+    // --- जादौन राजवंश (बयाना / करौली) ---
+    { id: 'vijaypala_jadon', name: 'विजयपाल', subtitle: 'बयाना के संस्थापक', parent: 'dharmapala_yaduvanshi', yug: 'kali', parichay: '1040 ईस्वी में बयाना (विजयमंदिरगढ़) पर राज किया। जादौन राजवंश के प्रमुख।' },
+    { id: 'tahanpala_jadon', name: 'तिहनपाल', subtitle: 'तिहनगढ़ के संस्थापक', parent: 'vijaypala_jadon', yug: 'kali' },
+    { id: 'dharmapala_2_jadon', name: 'धर्मपाल (द्वितीय)', subtitle: 'जादौन नरेश', parent: 'tahanpala_jadon', yug: 'kali' },
+    { id: 'kuntalpala_jadon', name: 'कुंतलपाल', subtitle: 'जादौन नरेश', parent: 'dharmapala_2_jadon', yug: 'kali' },
+    { id: 'asala_jadon', name: 'असाल', subtitle: 'जादौन नरेश', parent: 'kuntalpala_jadon', yug: 'kali' },
+    { id: 'gokul_deva_jadon', name: 'गोकुल देव', subtitle: 'जादौन नरेश', parent: 'asala_jadon', yug: 'kali' },
+    { id: 'arjunpala_jadon', name: 'अर्जुनपाल', subtitle: 'करौली के संस्थापक', parent: 'gokul_deva_jadon', yug: 'kali', parichay: '1348 ईस्वी में कल्याणपुरी (आधुनिक करौली) की स्थापना की।' },
+    { id: 'vikramaditya_jadon', name: 'विक्रमादित्य', subtitle: 'करौली नरेश', parent: 'arjunpala_jadon', yug: 'kali' },
+    { id: 'abhaychand_jadon', name: 'अभयचंद', subtitle: 'करौली नरेश', parent: 'vikramaditya_jadon', yug: 'kali' },
+    { id: 'prithvipala_jadon', name: 'पृथ्वीपाल', subtitle: 'करौली नरेश', parent: 'abhaychand_jadon', yug: 'kali' },
+    { id: 'pratap_singh_jadon', name: 'प्रताप सिंह', subtitle: 'करौली नरेश', parent: 'prithvipala_jadon', yug: 'kali' },
+    { id: 'gopal_singh_jadon', name: 'गोपाल सिंह', subtitle: 'करौली नरेश', parent: 'pratap_singh_jadon', yug: 'kali' },
+    { id: 'bhanwar_pal_jadon', name: 'भंवर पाल', subtitle: 'करौली नरेश', parent: 'gopal_singh_jadon', yug: 'kali' },
+
+    // --- सेउण (देवगिरि यादव राजवंश) ---
+    { id: 'dridhaprahara_seuna', name: 'दृढप्रहार', subtitle: 'देवगिरि यादव संस्थापक', parent: 'yaduvansh_medieval_link', yug: 'kali', parichay: '9वीं सदी में सेउण राजवंश की नींव रखी।' },
+    { id: 'seunachandra', name: 'सेउणचन्द्र', subtitle: 'देवगिरि यादव नरेश', parent: 'dridhaprahara_seuna', yug: 'kali' },
+    { id: 'dhadiyappa', name: 'धाडियप्प', subtitle: 'देवगिरि यादव नरेश', parent: 'seunachandra', yug: 'kali' },
+    { id: 'bhilamma_1', name: 'भिल्लम (प्रथम)', subtitle: 'देवगिरि यादव नरेश', parent: 'dhadiyappa', yug: 'kali' },
+    { id: 'rajagi', name: 'राजगी', subtitle: 'देवगिरि यादव नरेश', parent: 'bhilamma_1', yug: 'kali' },
+    { id: 'vadugi_1', name: 'वदुगी (प्रथम)', subtitle: 'देवगिरि यादव नरेश', parent: 'rajagi', yug: 'kali' },
+    { id: 'vesugi_1', name: 'वेसुगी (प्रथम)', subtitle: 'देवगिरि यादव नरेश', parent: 'vadugi_1', yug: 'kali' },
+    { id: 'bhilamma_2', name: 'भिल्लम (द्वितीय)', subtitle: 'देवगिरि यादव नरेश', parent: 'vesugi_1', yug: 'kali' },
+    { id: 'vesugi_2', name: 'वेसुगी (द्वितीय)', subtitle: 'देवगिरि यादव नरेश', parent: 'bhilamma_2', yug: 'kali' },
+    { id: 'bhilamma_3', name: 'भिल्लम (तृतीय)', subtitle: 'देवगिरि यादव नरेश', parent: 'vesugi_2', yug: 'kali' },
+    { id: 'vadugi_2', name: 'वदुगी (द्वितीय)', subtitle: 'देवगिरि यादव नरेश', parent: 'bhilamma_3', yug: 'kali' },
+    { id: 'seunachandra_2', name: 'सेउणचन्द्र (द्वितीय)', subtitle: 'देवगिरि यादव नरेश', parent: 'vadugi_2', yug: 'kali' },
+    { id: 'singhana_1', name: 'सिंघण (प्रथम)', subtitle: 'देवगिरि यादव नरेश', parent: 'seunachandra_2', yug: 'kali' },
+    { id: 'mallugi', name: 'मल्लुगी', subtitle: 'देवगिरि यादव नरेश', parent: 'singhana_1', yug: 'kali' },
+    { id: 'bhilamma_5', name: 'भिल्लम (पंचम)', subtitle: 'देवगिरि सम्राट', parent: 'mallugi', yug: 'kali', parichay: 'इन्होंने देवगिरि (दौलताबाद) को अपनी राजधानी बनाया और एक महान साम्राज्य स्थापित किया।' },
+    { id: 'jaitugi_1', name: 'जैतुगी (प्रथम)', subtitle: 'देवगिरि सम्राट', parent: 'bhilamma_5', yug: 'kali' },
+    { id: 'singhana_2', name: 'सिंघण (द्वितीय)', subtitle: 'देवगिरि सम्राट', parent: 'jaitugi_1', yug: 'kali' },
+    { id: 'krishna_seuna', name: 'कृष्ण (कान्हण)', subtitle: 'देवगिरि सम्राट', parent: 'singhana_2', yug: 'kali' },
+    { id: 'mahadeva_seuna', name: 'महादेव', subtitle: 'देवगिरि सम्राट', parent: 'krishna_seuna', yug: 'kali' },
+    { id: 'ramachandra_seuna', name: 'रामचन्द्र', subtitle: 'देवगिरि सम्राट', parent: 'mahadeva_seuna', yug: 'kali', parichay: 'इनके शासनकाल में अलाउद्दीन खिलजी ने देवगिरि पर आक्रमण किया।' },
+    { id: 'shankaradeva_seuna', name: 'शंकरदेव', subtitle: 'अंतिम देवगिरि नरेश', parent: 'ramachandra_seuna', yug: 'kali' },
+
+    // --- अहीरवाल (रेवाड़ी) राजवंश ---
+    { id: 'ahura_nandaram', name: 'राव नन्दराम', subtitle: 'रेवाड़ी रियासत (अहीरवाल)', parent: 'yaduvansh_medieval_link', yug: 'kali', parichay: 'रेवाड़ी (हरियाणा) में अहीरवाल रियासत के संस्थापक। स्वयं को यदुवंशी मानते हैं।' },
+    { id: 'rao_balkishan', name: 'राव बालकिशन', subtitle: 'रेवाड़ी नरेश', parent: 'ahura_nandaram', yug: 'kali' },
+    { id: 'rao_gujarmal', name: 'राव गूजरमल', subtitle: 'रेवाड़ी नरेश', parent: 'rao_balkishan', yug: 'kali' },
+    { id: 'rao_bhavani_singh', name: 'राव भवानी सिंह', subtitle: 'रेवाड़ी नरेश', parent: 'rao_gujarmal', yug: 'kali' },
+    { id: 'rao_ram_singh', name: 'राव राम सिंह', subtitle: 'रेवाड़ी नरेश', parent: 'rao_bhavani_singh', yug: 'kali' },
+    { id: 'rao_puran_singh', name: 'राव पूरण सिंह', subtitle: 'रेवाड़ी नरेश', parent: 'rao_ram_singh', yug: 'kali' },
+    { id: 'rao_tula_ram', name: 'राव तुला राम', subtitle: '1857 के स्वतंत्रता सेनानी', parent: 'rao_puran_singh', yug: 'kali', parichay: '1857 की क्रांति में अहीरवाल क्षेत्र का नेतृत्व किया और अंग्रेजों से लोहा लिया।' },
+
+
     // --- बाद के वंश (अस्थायी रूप से सुरक्षित रखे गए हैं) ---
 
 
