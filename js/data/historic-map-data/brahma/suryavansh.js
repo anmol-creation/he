@@ -332,6 +332,46 @@ export const suryavanshData = [
     { id: 'hari_singh', name: 'महाराजा हरि सिंह', subtitle: 'J&K के अंतिम शासक', parent: 'ranbir_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर के अंतिम डोगरा महाराजा थे। इन्होंने ही 26 अक्टूबर 1947 को भारत संघ में J&K के विलय (Instrument of Accession) पर हस्ताक्षर किए थे।' },
     { id: 'karan_singh', name: 'डॉ. कर्ण सिंह', subtitle: 'हरि सिंह पुत्र', parent: 'hari_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर रियासत के युवराज (Crown Prince) और भारत के एक प्रमुख राजनेता और विद्वान हैं।' },
 
+    // Rathore / Gahadavala Dynasty (Descendants of Sumitra/Kusha leading to Kannauj and Marwar)
+    { id: 'yashovigraha', name: 'यशोविग्रह', subtitle: 'गहरवार वंश के आदि पुरुष', parent: 'sumitra_king', yug: 'kali', parichay: 'सुमित्र की वंशावली में आगे चलकर यशोविग्रह हुए, जिनके वंशजों ने कन्नौज में गहरवार/राठौड़ वंश की स्थापना की।' },
+    { id: 'mahichandra', name: 'महीचन्द्र', subtitle: 'यशोविग्रह पुत्र', parent: 'yashovigraha', yug: 'kali' },
+    { id: 'chandradeva_kannauj', name: 'चन्द्रदेव', subtitle: 'कन्नौज के संस्थापक राजा', parent: 'mahichandra', yug: 'kali', parichay: 'इन्होंने 1090 ई. के आसपास कन्नौज और वाराणसी में एक स्वतंत्र और विशाल गहरवार साम्राज्य की स्थापना की।' },
+    { id: 'madanapala_kannauj', name: 'मदनपाल', subtitle: 'चन्द्रदेव पुत्र', parent: 'chandradeva_kannauj', yug: 'kali' },
+    { id: 'govindachandra_kannauj', name: 'गोविन्दचन्द्र', subtitle: 'कन्नौज के प्रतापी सम्राट', parent: 'madanapala_kannauj', yug: 'kali', parichay: 'ये गहरवार वंश के सबसे प्रतापी और शक्तिशाली सम्राट थे (इन्होंने 1114-1155 तक राज किया)।' },
+    { id: 'vijayachandra_kannauj', name: 'विजयचन्द्र', subtitle: 'गोविन्दचन्द्र पुत्र', parent: 'govindachandra_kannauj', yug: 'kali' },
+    { id: 'jaichand', name: 'जयचन्द्र (जयचंद)', subtitle: 'कन्नौज के सम्राट', parent: 'vijayachandra_kannauj', yug: 'kali', parichay: 'ये कन्नौज के प्रतापी हिन्दू सम्राट थे, जो 1194 ई. में मोहम्मद गौरी के साथ "चंदावर के युद्ध" में वीरगति को प्राप्त हुए।' },
+
+    // Rathores of Marwar (Jodhpur)
+    { id: 'harishchandra_rathore', name: 'हरिश्चंद्र', subtitle: 'जयचंद पुत्र', parent: 'jaichand', yug: 'kali' },
+    { id: 'setram_rathore', name: 'सेतराम', subtitle: 'हरिश्चंद्र पुत्र', parent: 'harishchandra_rathore', yug: 'kali' },
+    { id: 'rao_siha', name: 'राव सीहा', subtitle: 'मारवाड़ राठौड़ वंश संस्थापक', parent: 'setram_rathore', yug: 'kali', parichay: 'कन्नौज के पतन के बाद ये 13वीं सदी में मारवाड़ (राजस्थान) आये। ये राठौड़ वंश (मारवाड़) के मूल पुरुष माने जाते हैं।' },
+    { id: 'rao_asthan', name: 'राव आस्थान', subtitle: 'राव सीहा पुत्र', parent: 'rao_siha', yug: 'kali' },
+    { id: 'rao_duhad', name: 'राव दुहड़', subtitle: 'राव आस्थान पुत्र', parent: 'rao_asthan', yug: 'kali', parichay: 'इन्होने राठौड़ों की कुलदेवी "नागणेची माता" की मूर्ति कर्नाटक से लाकर स्थापित की।' },
+    { id: 'rao_raipal', name: 'राव रायपाल', subtitle: 'राव दुहड़ पुत्र', parent: 'rao_duhad', yug: 'kali' },
+    { id: 'rao_kanhapal', name: 'राव कान्हपाल', subtitle: 'राव रायपाल पुत्र', parent: 'rao_raipal', yug: 'kali' },
+    { id: 'rao_jalansi', name: 'राव जलंसी', subtitle: 'राव कान्हपाल पुत्र', parent: 'rao_kanhapal', yug: 'kali' },
+    { id: 'rao_chhada', name: 'राव छाड़ा', subtitle: 'राव जलंसी पुत्र', parent: 'rao_jalansi', yug: 'kali' },
+    { id: 'rao_tida', name: 'राव तीड़ा', subtitle: 'राव छाड़ा पुत्र', parent: 'rao_chhada', yug: 'kali' },
+    { id: 'rao_salkha', name: 'राव सलखा', subtitle: 'राव तीड़ा पुत्र', parent: 'rao_tida', yug: 'kali' },
+    { id: 'rao_chunda_marwar', name: 'राव चूंडा (मारवाड़)', subtitle: 'सलखा पुत्र', parent: 'rao_salkha', yug: 'kali', parichay: 'इन्होने मंडोर को राठौड़ों की राजधानी बनाया।' },
+    { id: 'rao_ranmal_marwar', name: 'राव रणमल', subtitle: 'राव चूंडा पुत्र', parent: 'rao_chunda_marwar', yug: 'kali', parichay: 'इनका मेवाड़ की राजनीति में बड़ा हस्तक्षेप था। इनकी बहन हंसाबाई का विवाह राणा लाखा से हुआ था।' },
+    { id: 'rao_jodha', name: 'राव जोधा', subtitle: 'जोधपुर के संस्थापक', parent: 'rao_ranmal_marwar', yug: 'kali', parichay: 'इन्होंने 1459 ई. में जोधपुर (Jodhpur) शहर की स्थापना की और मेहरानगढ़ किला बनवाया।' },
+
+    // Major Branches from Rao Jodha
+    { id: 'rao_bika', name: 'राव बीका', subtitle: 'बीकानेर के संस्थापक', parent: 'rao_jodha', yug: 'kali', parichay: 'ये राव जोधा के पुत्र थे। इन्होंने 1488 ई. में बीकानेर (Bikaner) शहर और राठौड़ों के एक नए राज्य की स्थापना की।' },
+    { id: 'rao_duda', name: 'राव दूदा', subtitle: 'मेड़तिया राठौड़ संस्थापक', parent: 'rao_jodha', yug: 'kali', parichay: 'इन्होंने मेड़ता (Merta) पर अधिकार किया। इनके वंशज "मेड़तिया राठौड़" कहलाये। प्रसिद्ध भक्त मीरा बाई इन्हीं राव दूदा की पोती थीं।' },
+
+    // Main Marwar Line (from Jodha)
+    { id: 'rao_suja', name: 'राव सूजा', subtitle: 'राव जोधा पुत्र', parent: 'rao_jodha', yug: 'kali' },
+    { id: 'rao_ganga', name: 'राव गांगा', subtitle: 'जोधपुर नरेश', parent: 'rao_suja', yug: 'kali' },
+    { id: 'rao_maldeo', name: 'राव मालदेव', subtitle: 'हशमत वाला शासक', parent: 'rao_ganga', yug: 'kali', parichay: 'इनके समय में मारवाड़ का सर्वाधिक विस्तार हुआ। इन्होंने शेरशाह सूरी से गिरी-सुमेल का प्रसिद्ध युद्ध লড়াই लड़ा।' },
+    { id: 'rao_chandrasen', name: 'राव चन्द्रसेन', subtitle: 'मारवाड़ का प्रताप', parent: 'rao_maldeo', yug: 'kali', parichay: 'इन्हें "मारवाड़ का प्रताप" कहा जाता है क्योंकि इन्होंने जीवन भर मुगलों से संघर्ष किया और अकबर की अधीनता स्वीकार नहीं की।' },
+    { id: 'mota_raja_udai_singh', name: 'मोटा राजा उदय सिंह', subtitle: 'जोधपुर नरेश', parent: 'rao_maldeo', yug: 'kali' },
+    { id: 'sawai_raja_sur_singh', name: 'सवाई राजा सूर सिंह', subtitle: 'उदय सिंह पुत्र', parent: 'mota_raja_udai_singh', yug: 'kali' },
+    { id: 'maharaja_gaj_singh_marwar', name: 'महाराजा गज सिंह', subtitle: 'सूर सिंह पुत्र', parent: 'sawai_raja_sur_singh', yug: 'kali' },
+    { id: 'maharaja_jaswant_singh_1', name: 'महाराजा जसवंत सिंह प्रथम', subtitle: 'जोधपुर नरेश', parent: 'maharaja_gaj_singh_marwar', yug: 'kali', parichay: 'ये औरंगजेब के समय के प्रमुख राजपूत राजा थे।' },
+    { id: 'maharaja_ajit_singh', name: 'महाराजा अजीत सिंह', subtitle: 'जोधपुर नरेश', parent: 'maharaja_jaswant_singh_1', yug: 'kali', parichay: 'जसवंत सिंह की मृत्यु के बाद वीर दुर्गादास राठौड़ ने इन्हें मुगलों से बचाकर मारवाड़ की गद्दी पर बिठाया।' },
+
     // Kachhwaha Dynasty (Descendants of Sumitra/Kusha in Kali Yuga)
     { id: 'sodh_dev', name: 'सोढ़ देव', subtitle: 'नरवर के कच्छपघात राजा', parent: 'sumitra_king', yug: 'kali', parichay: 'सुमित्र के वंशजों ने कालान्तर में ग्वालियर और नरवर में कच्छपघात (कछवाहा) राज्य स्थापित किया। सोढ़ देव नरवर के शासक थे और इन्हीं के पुत्र ने राजस्थान में कछवाहा वंश की नींव रखी।' },
     { id: 'dulha_rai', name: 'दुल्हराय (तेजकरण)', subtitle: 'कछवाहा वंश के संस्थापक', parent: 'sodh_dev', yug: 'kali', parichay: 'इन्होंने 1028 ई. के आसपास ढूँढाड़ क्षेत्र (दौसा) में कछवाहा वंश (आमेर) की स्थापना की।' },
