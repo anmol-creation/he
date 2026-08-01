@@ -348,6 +348,28 @@ export const suryavanshData = [
     { id: 'udayakarna', name: 'उदयकर्ण', subtitle: 'जुंसी पुत्र', parent: 'junsi', yug: 'kali' },
 
     // Udayakarna's descendants forming sub-clans
+    { id: 'bar_singh_amer', name: 'बर सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'naru_singh', name: 'राव नरू', subtitle: 'नरूका वंश के संस्थापक', parent: 'bar_singh_amer', yug: 'kali', parichay: 'इनके वंशज "नरूका" (Naruka) कहलाए। अलवर का राजघराना नरूका कछवाहों का ही है।' },
+
+    { id: 'baloji', name: 'बालाजी (राव बाला)', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'mokal_singh', name: 'मोकल सिंह', subtitle: 'बालाजी पुत्र', parent: 'baloji', yug: 'kali' },
+    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'mokal_singh', yug: 'kali', parichay: 'इनके नाम पर शेखावाटी क्षेत्र का नाम पड़ा और इनके वंशज "शेखावत" (Shekhawat) कहलाये, जो राजस्थान का एक बहुत बड़ा और वीर राजपूत समाज है।' },
+
+    { id: 'banbir_singh', name: 'बनवीर सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
+    { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनवीर पुत्र', parent: 'banbir_singh', yug: 'kali' },
+    { id: 'chandrasen_amer', name: 'चन्द्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali' },
+    { id: 'prithviraj_amer', name: 'राजा पृथ्वीराज सिंह', subtitle: 'आमेर नरेश', parent: 'chandrasen_amer', yug: 'kali', parichay: 'ये राणा सांगा के समकालीन थे और खानवा के युद्ध में उनकी ओर से लड़े थे। इनके 12 पुत्रों से आमेर के "बारह कोटड़ी" (12 Kotri) सामंत व्यवस्था की शुरुआत हुई।' },
+
+    // Prithviraj's descendants (12 Kotri branches)
+    { id: 'bharmal', name: 'राजा भारमल', subtitle: 'आमेर नरेश', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'bhagwant_das', name: 'राजा भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal', yug: 'kali' },
+    { id: 'man_singh_i', name: 'राजा मान सिंह प्रथम', subtitle: 'राजावत वंश के संस्थापक', parent: 'bhagwant_das', yug: 'kali', parichay: 'ये अकबर के प्रमुख सेनापति और नवरत्नों में से एक थे। इनके वंशज मुख्य रूप से "राजावत" (Rajawat) कहलाते हैं, जो जयपुर राजघराने का मुख्य गोत्र है।' },
+
+    { id: 'gopal_singh', name: 'गोपाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'nathaji', name: 'नाथा जी', subtitle: 'नाथावत वंश के संस्थापक', parent: 'gopal_singh', yug: 'kali', parichay: 'इनके वंशज "नाथावत" (Nathawat) कहलाये, जो कछवाहों की एक प्रमुख शाखा है।' },
+
+    { id: 'jagmal_singh', name: 'जगमाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
+    { id: 'khangarji', name: 'खंगार जी', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'jagmal_singh', yug: 'kali', parichay: 'इनके वंशज "खंगारोत" (Khangarot) कहलाये।' },
     { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र (मुख्य धारा)', parent: 'udayakarna', yug: 'kali' },
     { id: 'rao_balaji', name: 'राव बालाजी', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', parichay: 'आमेर नरेश उदयकर्ण के पुत्र। इनके वंशज "बालापोता" कहलाये।' },
     { id: 'rao_mokal', name: 'राव मोकल', subtitle: 'राव बालाजी पुत्र', parent: 'rao_balaji', yug: 'kali' },
