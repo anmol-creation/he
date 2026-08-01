@@ -220,13 +220,177 @@ export const chandravanshData = [
     { id: 'galava', name: 'गालव', subtitle: 'विश्वामित्र पुत्र / शिष्य', parent: 'vishwamitra', yug: 'treta' },
 
 
+
+    // --- यदुवंश (यदु के पुत्र) ---
+    { id: 'sahasrajit_yadu', name: 'सहस्रजित', subtitle: 'यदु पुत्र (हैहय वंश के मूल)', parent: 'yadu', yug: 'treta' },
+    { id: 'kroshtu_yadu', name: 'क्रोष्टु', subtitle: 'यदु पुत्र (वृष्णि/अंधक वंश के मूल)', parent: 'yadu', yug: 'treta' },
+    { id: 'nala_yadu', name: 'नल', subtitle: 'यदु पुत्र', parent: 'yadu', yug: 'treta' },
+    { id: 'ripu_yadu', name: 'रिपु', subtitle: 'यदु पुत्र', parent: 'yadu', yug: 'treta' },
+
+    // --- हैहय वंश (सहस्रजित की शाखा) ---
+    { id: 'shatajit_haihaya', name: 'शतजित', subtitle: 'सहस्रजित पुत्र', parent: 'sahasrajit_yadu', yug: 'treta' },
+    { id: 'haihaya', name: 'हैहय', subtitle: 'हैहय वंश के संस्थापक', parent: 'shatajit_haihaya', yug: 'treta' },
+    { id: 'dharma_haihaya', name: 'धर्म', subtitle: 'हैहय पुत्र', parent: 'haihaya', yug: 'treta' },
+    { id: 'netra_haihaya', name: 'नेत्र', subtitle: 'धर्म पुत्र', parent: 'dharma_haihaya', yug: 'treta' },
+    { id: 'kunti_haihaya', name: 'कुंती', subtitle: 'नेत्र पुत्र', parent: 'netra_haihaya', yug: 'treta' },
+    { id: 'sohanji_haihaya', name: 'सोहंजि', subtitle: 'कुंती पुत्र', parent: 'kunti_haihaya', yug: 'treta' },
+    { id: 'mahishman_haihaya', name: 'महिष्मान', subtitle: 'महिष्मती के संस्थापक', parent: 'sohanji_haihaya', yug: 'treta', parichay: 'इन्होंने नर्मदा तट पर महिष्मती नगरी बसाई थी।' },
+    { id: 'bhadrasen_haihaya', name: 'भद्रसेन', subtitle: 'महिष्मान पुत्र', parent: 'mahishman_haihaya', yug: 'treta' },
+    { id: 'durdama_haihaya', name: 'दुर्दाम', subtitle: 'भद्रसेन पुत्र', parent: 'bhadrasen_haihaya', yug: 'treta' },
+    { id: 'dhanaka_haihaya', name: 'धनक', subtitle: 'दुर्दाम पुत्र', parent: 'durdama_haihaya', yug: 'treta' },
+    { id: 'kritavirya_haihaya', name: 'कृतवीर्य', subtitle: 'धनक पुत्र', parent: 'dhanaka_haihaya', yug: 'treta' },
+    { id: 'kritagni_haihaya', name: 'कृताग्नि', subtitle: 'धनक पुत्र', parent: 'dhanaka_haihaya', yug: 'treta' },
+    { id: 'kritavarma_haihaya', name: 'कृतवर्मा', subtitle: 'धनक पुत्र', parent: 'dhanaka_haihaya', yug: 'treta' },
+    { id: 'kritauja_haihaya', name: 'कृतौजा', subtitle: 'धनक पुत्र', parent: 'dhanaka_haihaya', yug: 'treta' },
+    { id: 'kartavirya_arjuna', name: 'कार्तवीर्य अर्जुन', subtitle: 'सहस्रबाहु', parent: 'kritavirya_haihaya', yug: 'treta', parichay: 'दत्तात्रेय के वरदान से इन्हें 1000 भुजाएं प्राप्त थीं। इनका वध भगवान परशुराम ने किया था।' },
+    { id: 'jayadhvaja_haihaya', name: 'जयध्वज', subtitle: 'कार्तवीर्य पुत्र', parent: 'kartavirya_arjuna', yug: 'treta' },
+    { id: 'shurasena_haihaya', name: 'शूरसेन', subtitle: 'कार्तवीर्य पुत्र', parent: 'kartavirya_arjuna', yug: 'treta' },
+    { id: 'vrishabha_haihaya', name: 'वृषभ', subtitle: 'कार्तवीर्य पुत्र', parent: 'kartavirya_arjuna', yug: 'treta' },
+    { id: 'madhu_haihaya', name: 'मधु', subtitle: 'कार्तवीर्य पुत्र', parent: 'kartavirya_arjuna', yug: 'treta' },
+    { id: 'urjita_haihaya', name: 'ऊर्जित', subtitle: 'कार्तवीर्य पुत्र', parent: 'kartavirya_arjuna', yug: 'treta' },
+    { id: 'talajangha_haihaya', name: 'तालजंघ', subtitle: 'जयध्वज पुत्र', parent: 'jayadhvaja_haihaya', yug: 'treta' },
+    { id: 'vitihotra_haihaya', name: 'वीतिहोत्र', subtitle: 'तालजंघ पुत्र', parent: 'talajangha_haihaya', yug: 'treta' },
+
+    // --- वृष्णि / अंधक वंश (क्रोष्टु की शाखा) ---
+    { id: 'vrijinivan_yadu', name: 'वृजिनिवान', subtitle: 'क्रोष्टु पुत्र', parent: 'kroshtu_yadu', yug: 'treta' },
+    { id: 'svahi_yadu', name: 'स्वाहि', subtitle: 'वृजिनिवान पुत्र', parent: 'vrijinivan_yadu', yug: 'treta' },
+    { id: 'rushadgu_yadu', name: 'रुशद्गु', subtitle: 'स्वाहि पुत्र', parent: 'svahi_yadu', yug: 'treta' },
+    { id: 'chitraratha_yadu', name: 'चित्ररथ', subtitle: 'रुशद्गु पुत्र', parent: 'rushadgu_yadu', yug: 'treta' },
+    { id: 'shashabindu_yadu', name: 'शशबिंदु', subtitle: 'महान चक्रवर्ती सम्राट', parent: 'chitraratha_yadu', yug: 'treta' },
+    { id: 'prithushravas_yadu', name: 'पृथुश्रवस', subtitle: 'शशबिंदु पुत्र', parent: 'shashabindu_yadu', yug: 'treta' },
+    { id: 'antara_yadu', name: 'अन्तर', subtitle: 'पृथुश्रवस पुत्र', parent: 'prithushravas_yadu', yug: 'treta' },
+    { id: 'suyajna_yadu', name: 'सुयज्ञ', subtitle: 'अन्तर पुत्र', parent: 'antara_yadu', yug: 'treta' },
+    { id: 'ushanas_yadu', name: 'उशनस', subtitle: 'सुयज्ञ पुत्र', parent: 'suyajna_yadu', yug: 'treta' },
+    { id: 'shineyu_yadu', name: 'शिनेयु', subtitle: 'उशनस पुत्र', parent: 'ushanas_yadu', yug: 'treta' },
+    { id: 'marutta_yadu', name: 'मरुत्त', subtitle: 'शिनेयु पुत्र', parent: 'shineyu_yadu', yug: 'treta' },
+    { id: 'kambalabarhis_yadu', name: 'कम्बलवर्हिष', subtitle: 'मरुत्त पुत्र', parent: 'marutta_yadu', yug: 'treta' },
+    { id: 'rukmakavacha_yadu', name: 'रुक्मकवच', subtitle: 'कम्बलवर्हिष पुत्र', parent: 'kambalabarhis_yadu', yug: 'treta' },
+    { id: 'parajit_yadu', name: 'पराजित', subtitle: 'रुक्मकवच पुत्र', parent: 'rukmakavacha_yadu', yug: 'treta' },
+    { id: 'jyamagha_yadu', name: 'ज्याघम', subtitle: 'पराजित पुत्र', parent: 'parajit_yadu', yug: 'treta' },
+    { id: 'shaibya_jyamagha', name: 'शैव्या', subtitle: 'ज्याघम की पत्नी', parent: '', spouseOf: 'jyamagha_yadu', yug: 'treta' },
+
+    // --- विदर्भ वंश ---
+    { id: 'vidarbha_yadu', name: 'विदर्भ', subtitle: 'विदर्भ देश के संस्थापक', parent: 'jyamagha_yadu', mother: 'shaibya_jyamagha', yug: 'treta' },
+    { id: 'kratha_yadu', name: 'क्रथ', subtitle: 'विदर्भ पुत्र', parent: 'vidarbha_yadu', yug: 'treta' },
+    { id: 'kaushika_yadu', name: 'कौशिक', subtitle: 'विदर्भ पुत्र', parent: 'vidarbha_yadu', yug: 'treta' },
+    { id: 'romapada_yadu', name: 'रोमपाद', subtitle: 'विदर्भ पुत्र', parent: 'vidarbha_yadu', yug: 'treta' },
+    { id: 'kunti_kratha', name: 'कुंती', subtitle: 'क्रथ पुत्र', parent: 'kratha_yadu', yug: 'treta' },
+    { id: 'vrishni_kratha', name: 'वृष्णि (प्रथम)', subtitle: 'कुंती पुत्र', parent: 'kunti_kratha', yug: 'treta' },
+    { id: 'nirvriti_yadu', name: 'निर्वृति', subtitle: 'वृष्णि पुत्र', parent: 'vrishni_kratha', yug: 'treta' },
+    { id: 'dasharha_yadu', name: 'दशार्ह', subtitle: 'निर्वृति पुत्र', parent: 'nirvriti_yadu', yug: 'treta' },
+    { id: 'vyoman_yadu', name: 'व्योमन', subtitle: 'दशार्ह पुत्र', parent: 'dasharha_yadu', yug: 'treta' },
+    { id: 'jimuta_yadu', name: 'जीमूत', subtitle: 'व्योमन पुत्र', parent: 'vyoman_yadu', yug: 'treta' },
+    { id: 'vikriti_yadu', name: 'विकृति', subtitle: 'जीमूत पुत्र', parent: 'jimuta_yadu', yug: 'treta' },
+    { id: 'bhimaratha_yadu', name: 'भीमरथ', subtitle: 'विकृति पुत्र', parent: 'vikriti_yadu', yug: 'dwapar' },
+    { id: 'navaratha_yadu', name: 'नवरथ', subtitle: 'भीमरथ पुत्र', parent: 'bhimaratha_yadu', yug: 'dwapar' },
+    { id: 'dasharatha_yadu', name: 'दशरथ', subtitle: 'नवरथ पुत्र', parent: 'navaratha_yadu', yug: 'dwapar' },
+    { id: 'shakuni_yadu', name: 'शकुनि', subtitle: 'दशरथ पुत्र', parent: 'dasharatha_yadu', yug: 'dwapar' },
+    { id: 'karambhi_yadu', name: 'करम्भी', subtitle: 'शकुनि पुत्र', parent: 'shakuni_yadu', yug: 'dwapar' },
+    { id: 'devarata_yadu', name: 'देवरथ', subtitle: 'करम्भी पुत्र', parent: 'karambhi_yadu', yug: 'dwapar' },
+    { id: 'devakshatra_yadu', name: 'देवक्षत्र', subtitle: 'देवरथ पुत्र', parent: 'devarata_yadu', yug: 'dwapar' },
+    { id: 'madhu_yadu', name: 'मधु', subtitle: 'देवक्षत्र पुत्र', parent: 'devakshatra_yadu', yug: 'dwapar' },
+    { id: 'kuruvasa_yadu', name: 'कुरुवश', subtitle: 'मधु पुत्र', parent: 'madhu_yadu', yug: 'dwapar' },
+    { id: 'anu_yadu', name: 'अनु', subtitle: 'कुरुवश पुत्र', parent: 'kuruvasa_yadu', yug: 'dwapar' },
+    { id: 'puruhotra_yadu', name: 'पुरुहोत्र', subtitle: 'अनु पुत्र', parent: 'anu_yadu', yug: 'dwapar' },
+    { id: 'ayu_yadu', name: 'आयु', subtitle: 'पुरुहोत्र पुत्र', parent: 'puruhotra_yadu', yug: 'dwapar' },
+    { id: 'satvata_yadu', name: 'सात्वत', subtitle: 'सात्वत वंश के मूल', parent: 'ayu_yadu', yug: 'dwapar' },
+
+    // --- सात्वत वंश ---
+    { id: 'bhajina_satvata', name: 'भजिन', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
+    { id: 'bhajamana_satvata', name: 'भजमान', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
+    { id: 'divya_satvata', name: 'दिव्य', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
+    { id: 'andhaka_satvata', name: 'अंधक', subtitle: 'अंधक वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' },
+    { id: 'devavridha_satvata', name: 'देववृध', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
+    { id: 'mahabhoja_satvata', name: 'महाभोज', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
+    { id: 'vrishni_satvata', name: 'वृष्णि (द्वितीय)', subtitle: 'वृष्णि वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' },
+
+    // --- अंधक वंश (उग्रसेन, कंस) ---
+    { id: 'kukura_andhaka', name: 'कुकुर', subtitle: 'अंधक पुत्र', parent: 'andhaka_satvata', yug: 'dwapar' },
+    { id: 'bhajamana_andhaka', name: 'भजमान', subtitle: 'अंधक पुत्र', parent: 'andhaka_satvata', yug: 'dwapar' },
+    { id: 'shuchi_andhaka', name: 'शुचि', subtitle: 'अंधक पुत्र', parent: 'andhaka_satvata', yug: 'dwapar' },
+    { id: 'kambalabarhisha_andhaka', name: 'कम्बलवर्हिष', subtitle: 'अंधक पुत्र', parent: 'andhaka_satvata', yug: 'dwapar' },
+    { id: 'vahni_kukura', name: 'वह्नि', subtitle: 'कुकुर पुत्र', parent: 'kukura_andhaka', yug: 'dwapar' },
+    { id: 'viloma_kukura', name: 'विलोमा', subtitle: 'वह्नि पुत्र', parent: 'vahni_kukura', yug: 'dwapar' },
+    { id: 'kapotaroma_kukura', name: 'कपोतरोमा', subtitle: 'विलोमा पुत्र', parent: 'viloma_kukura', yug: 'dwapar' },
+    { id: 'tumburu_kukura', name: 'तुम्बुरु', subtitle: 'कपोतरोमा पुत्र', parent: 'kapotaroma_kukura', yug: 'dwapar' },
+    { id: 'dundubhi_kukura', name: 'दुन्दुभि', subtitle: 'तुम्बुरु पुत्र', parent: 'tumburu_kukura', yug: 'dwapar' },
+    { id: 'daridra_kukura', name: 'दरिद्र', subtitle: 'दुन्दुभि पुत्र', parent: 'dundubhi_kukura', yug: 'dwapar' },
+    { id: 'vasu_kukura', name: 'वसु', subtitle: 'दरिद्र पुत्र', parent: 'daridra_kukura', yug: 'dwapar' },
+    { id: 'ahuka_kukura', name: 'आहुक', subtitle: 'वसु पुत्र', parent: 'vasu_kukura', yug: 'dwapar' },
+    { id: 'devaka_kukura', name: 'देवक', subtitle: 'देवकी के पिता', parent: 'ahuka_kukura', yug: 'dwapar' },
+    { id: 'ugrasen_kukura', name: 'उग्रसेन', subtitle: 'मथुरा नरेश', parent: 'ahuka_kukura', yug: 'dwapar' },
+    { id: 'kamsa_ugrasen', name: 'कंस', subtitle: 'उग्रसेन पुत्र', parent: 'ugrasen_kukura', yug: 'dwapar' },
+    { id: 'devaki_devaka', name: 'देवकी', subtitle: 'देवक पुत्री', parent: 'devaka_kukura', spouseOf: 'vasudev', yug: 'dwapar' },
+
+    // --- सत्राजित (सत्यभामा के पिता) - अंधक वंश की भजमान शाखा से ---
+    { id: 'viduratha_bhajamana', name: 'विदूरथ', subtitle: 'भजमान (अंधक) पुत्र', parent: 'bhajamana_andhaka', yug: 'dwapar' },
+    { id: 'shura_viduratha', name: 'शूर', subtitle: 'विदूरथ पुत्र', parent: 'viduratha_bhajamana', yug: 'dwapar' },
+    { id: 'shini_shura', name: 'शिनि', subtitle: 'शूर पुत्र', parent: 'shura_viduratha', yug: 'dwapar' },
+    { id: 'svayambhoja_shini', name: 'स्वयंभोज', subtitle: 'शिनि पुत्र', parent: 'shini_shura', yug: 'dwapar' },
+    { id: 'hridika_svayambhoja', name: 'हृदिक', subtitle: 'स्वयंभोज पुत्र', parent: 'svayambhoja_shini', yug: 'dwapar' },
+    { id: 'devamidha_hridika', name: 'देवमीढ', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja', yug: 'dwapar' },
+    { id: 'shatadhanva_hridika', name: 'शतधन्वा', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja', yug: 'dwapar' },
+    { id: 'kritavarma_hridika', name: 'कृतवर्मा', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja', yug: 'dwapar' },
+    { id: 'anamitra_hridika', name: 'अनमित्र', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja', yug: 'dwapar' },
+    { id: 'nighna_anamitra', name: 'निघ्न', subtitle: 'अनमित्र पुत्र', parent: 'anamitra_hridika', yug: 'dwapar' },
+    { id: 'satrajit_nighna', name: 'सत्राजित', subtitle: 'निघ्न पुत्र (स्यमंतक मणि धारक)', parent: 'nighna_anamitra', yug: 'dwapar' },
+    { id: 'prasena_nighna', name: 'प्रसेन', subtitle: 'निघ्न पुत्र', parent: 'nighna_anamitra', yug: 'dwapar' },
+
+    // --- वृष्णि वंश (वसुदेव - कृष्ण) ---
+    { id: 'shvaphalaka_vrishni', name: 'श्वफल्क', subtitle: 'वृष्णि वंश', parent: 'vrishni_satvata', yug: 'dwapar' }, // Note: actual lineage from vrishni can be debated, using simplified line
+    { id: 'devamidhusha_vrishni', name: 'देवमीढुष', subtitle: 'वृष्णि पुत्र', parent: 'vrishni_satvata', yug: 'dwapar' },
+    { id: 'shurasen', name: 'शूरसेन (शूर)', subtitle: 'देवमीढुष पुत्र', parent: 'devamidhusha_vrishni', yug: 'dwapar' },
+    { id: 'marisha_shurasen', name: 'मारिषा', subtitle: 'शूरसेन पत्नी', parent: '', spouseOf: 'shurasen', yug: 'dwapar' },
+
+    // शूरसेन के पुत्र-पुत्रियां
+    { id: 'vasudev', name: 'वसुदेव (आनकदुन्दुभि)', subtitle: 'कृष्ण के पिता', parent: 'shurasen', mother: 'marisha_shurasen', yug: 'dwapar' },
+    { id: 'kunti', name: 'पृथा (कुंती)', subtitle: 'शूरसेन पुत्री', parent: 'shurasen', mother: 'marisha_shurasen', spouseOf: 'pandu', yug: 'dwapar', parichay: 'इन्हें कुंतीभोज ने गोद लिया था। इनका विवाह पांडु से हुआ।' },
+    { id: 'shrutasrava', name: 'श्रुतश्रवा', subtitle: 'शूरसेन पुत्री', parent: 'shurasen', mother: 'marisha_shurasen', spouseOf: 'damaghosha', yug: 'dwapar', parichay: 'चेदि नरेश दमघोष की पत्नी और शिशुपाल की माता।' },
+
+    // नन्द बाबा (गोकुल)
+    { id: 'parjanya_gopa', name: 'पर्जन्य', subtitle: 'गोप', parent: '', yug: 'dwapar', clusterName: 'नन्द परिवार' },
+    { id: 'nanda', name: 'नंद बाबा', subtitle: 'कृष्ण के पालक पिता', parent: 'parjanya_gopa', yug: 'dwapar', clusterName: 'नन्द परिवार' },
+    { id: 'yashoda', name: 'यशोदा', subtitle: 'कृष्ण की पालक माता', parent: '', spouseOf: 'nanda', yug: 'dwapar', clusterName: 'नन्द परिवार' },
+
+    // वसुदेव की पत्नियां
+    { id: 'rohini_vasudev', name: 'रोहिणी', subtitle: 'वसुदेव पत्नी', parent: '', spouseOf: 'vasudev', yug: 'dwapar', clusterName: 'वसुदेव की पत्नियाँ' },
+
+    // वसुदेव के पुत्र
+    { id: 'balram', name: 'बलराम (संकर्षण)', subtitle: 'शेषनाग अवतार', parent: 'vasudev', mother: 'rohini_vasudev', yug: 'dwapar' },
+    { id: 'revati_balram', name: 'रेवती', subtitle: 'बलराम पत्नी', parent: '', spouseOf: 'balram', yug: 'dwapar' },
+
+    { id: 'krishna', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev', mother: 'devaki_devaka', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।' },
+    { id: 'subhadra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev', mother: 'rohini_vasudev', spouseOf: 'arjun', yug: 'dwapar' },
+
+    // --- श्रीकृष्ण का परिवार ---
+    // अष्टभार्या
+    { id: 'rukmini_krishna', name: 'रुक्मिणी', subtitle: 'श्रीकृष्ण की प्रथम पत्नी (लक्ष्मी अवतार)', parent: 'bhishmaka', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'satyabhama_krishna', name: 'सत्यभामा', subtitle: 'श्रीकृष्ण की पत्नी (भूदेवी)', parent: 'satrajit_nighna', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'jambavati', name: 'जाम्बवती', subtitle: 'श्रीकृष्ण की पत्नी', parent: 'jambavan', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या', parichay: 'जाम्बवान की पुत्री।' },
+    { id: 'kalindi_krishna', name: 'कालिंदी', subtitle: 'श्रीकृष्ण की पत्नी', parent: 'surya', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'mitravinda_krishna', name: 'मित्रविन्दा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'nagnajiti_krishna', name: 'नग्नजिती (सत्या)', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'bhadra_krishna', name: 'भद्रा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'lakshmana_krishna', name: 'लक्ष्मणा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+
+    // श्रीकृष्ण के पुत्र (प्रद्युम्न, साम्ब आदि)
+    { id: 'pradyumna', name: 'प्रद्युम्न', subtitle: 'कामदेव अवतार', parent: 'krishna', mother: 'rukmini_krishna', yug: 'dwapar' },
+    { id: 'charudeshna', name: 'चारुदेष्ण', subtitle: 'कृष्ण पुत्र', parent: 'krishna', mother: 'rukmini_krishna', yug: 'dwapar' },
+    { id: 'samba_krishna', name: 'साम्ब', subtitle: 'कृष्ण पुत्र', parent: 'krishna', mother: 'jambavati', yug: 'dwapar' },
+
+    // प्रद्युम्न का वंश
+    { id: 'rukmavati_pradyumna', name: 'रुक्मवती', subtitle: 'रुक्मी पुत्री', parent: 'rukmi_vidarbha', spouseOf: 'pradyumna', yug: 'dwapar' },
+    { id: 'aniruddha', name: 'अनिरुद्ध', subtitle: 'प्रद्युम्न पुत्र', parent: 'pradyumna', mother: 'rukmavati_pradyumna', yug: 'dwapar' },
+    { id: 'rochana_aniruddha', name: 'रोचना', subtitle: 'रुक्मी की पौत्री', parent: '', spouseOf: 'aniruddha', yug: 'dwapar' },
+
+    // कलियुग के यादव (वज्रनाभ आदि)
+    { id: 'vajranabha', name: 'वज्रनाभ', subtitle: 'मथुरा नरेश', parent: 'aniruddha', mother: 'rochana_aniruddha', yug: 'kali', parichay: 'यदुवंश के नाश के बाद अर्जुन ने इन्हें मथुरा (इन्द्रप्रस्थ मंडल) का राजा बनाया था।' },
+    { id: 'pratibahu_vajranabha', name: 'प्रतिबाहु', subtitle: 'वज्रनाभ पुत्र', parent: 'vajranabha', yug: 'kali' },
+    { id: 'subahu_pratibahu', name: 'सुबाहु', subtitle: 'प्रतिबाहु पुत्र', parent: 'pratibahu_vajranabha', yug: 'kali' },
+    { id: 'shantasena_subahu', name: 'शान्तसेन', subtitle: 'सुबाहु पुत्र', parent: 'subahu_pratibahu', yug: 'kali' },
+    { id: 'shatasena_shantasena', name: 'शतसेन', subtitle: 'शान्तसेन पुत्र', parent: 'shantasena_subahu', yug: 'kali' },
+
     // --- बाद के वंश (अस्थायी रूप से सुरक्षित रखे गए हैं) ---
-    { id: 'shurasen', name: 'शूरसेन', subtitle: 'मथुरा नरेश', parent: 'yadu', yug: 'dwapar' },
-    { id: 'vasudev', name: 'वसुदेव', subtitle: 'कृष्ण के पिता', parent: 'shurasen', yug: 'dwapar' },
-    { id: 'nanda', name: 'नंद बाबा', subtitle: 'पालक पिता', parent: 'shurasen', yug: 'dwapar' },
-    { id: 'krishna', name: 'कृष्ण', subtitle: 'पूर्णावतार', parent: 'vasudev', yug: 'dwapar' },
-    { id: 'jambavati', name: 'जाम्बवती', subtitle: 'श्रीकृष्ण की पत्नी', parent: 'jambavan', spouseOf: 'krishna', yug: 'dwapar', parichay: 'जाम्बवान की पुत्री और श्रीकृष्ण की अष्टभार्याओं में से एक।' },
-    { id: 'balram', name: 'बलराम', subtitle: 'शेषनाग अवतार', parent: 'vasudev', yug: 'dwapar' },
     { id: 'dushyant', name: 'दुष्यंत', subtitle: 'पुरु वंश', parent: 'puru', yug: 'treta' },
     { id: 'bharat_kuru', name: 'भरत', subtitle: 'चक्रवर्ती सम्राट', parent: 'dushyant', yug: 'treta' },
     { id: 'kuru', name: 'कुरु', subtitle: 'कुरुवंश के संस्थापक', parent: 'bharat_kuru', yug: 'dwapar' },
@@ -243,4 +407,11 @@ export const chandravanshData = [
     { id: 'sahadev', name: 'सहदेव', subtitle: 'अश्विनी कुमार पुत्र', parent: 'pandu', yug: 'dwapar' },
     { id: 'abhimanyu', name: 'अभिमन्यु', subtitle: 'अर्जुन पुत्र', parent: 'arjun', yug: 'dwapar' },
     { id: 'parikshit', name: 'परीक्षित', subtitle: 'अभिमन्यु पुत्र', parent: 'abhimanyu', yug: 'kali' },
+
+    // --- संदर्भ के लिए अन्य राजवंश/पात्र (यदुवंश से जुड़े) ---
+    { id: 'bhishmaka', name: 'भीष्मक', subtitle: 'विदर्भ नरेश', parent: '', yug: 'dwapar' },
+    { id: 'rukmi_vidarbha', name: 'रुक्मी', subtitle: 'रुक्मिणी का भाई', parent: 'bhishmaka', yug: 'dwapar' },
+    { id: 'damaghosha', name: 'दमघोष', subtitle: 'चेदि नरेश', parent: '', yug: 'dwapar' },
+    { id: 'shishupala', name: 'शिशुपाल', subtitle: 'चेदि नरेश', parent: 'damaghosha', mother: 'shrutasrava', yug: 'dwapar' },
+
 ];
