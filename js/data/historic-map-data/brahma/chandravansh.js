@@ -863,6 +863,87 @@ export const chandravanshData = [
     { id: 'niramitra_kali', name: 'निरमित्र', subtitle: 'खण्डपाणि पुत्र', parent: 'khandapani_chandra', yug: 'kali' },
     { id: 'kshemaka_chandra', name: 'क्षेमक', subtitle: 'अंतिम कुरु राजा', parent: 'niramitra_kali', yug: 'kali', parichay: 'ये कुरु वंश के अंतिम राजा थे। इनके बाद कलियुग में यह राजवंश समाप्त हो गया।' },
 
+    // --- तोमर / तंवर राजवंश (कलियुग - कुरु वंश की शाखा) ---
+    // क्षेमक के बाद ऐतिहासिक अंतराल (Historical Gap) और दिल्ली/ग्वालियर के तोमर
+    { id: 'tomar_medieval_link', name: 'ऐतिहासिक अंतराल (तोमर)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'kshemaka_chandra', yug: 'kali', parichay: 'क्षेमक (अंतिम कुरु राजा) के बाद उनके वंशज दक्षिण (गोदावरी क्षेत्र) चले गए थे, जो बाद में तोमर राजपूतों के रूप में दिल्ली लौटे।' },
+
+    // दिल्ली के तोमर नरेश
+    { id: 'tungpal_tomar', name: 'तुंगपाल (बिलनदेव)', subtitle: 'तोमर वंश मूल', parent: 'tomar_medieval_link', yug: 'kali' },
+    { id: 'anangpal_1_tomar', name: 'अनंगपाल तोमर (प्रथम)', subtitle: 'दिल्ली के संस्थापक', parent: 'tungpal_tomar', yug: 'kali', parichay: 'इन्होंने 736 ईस्वी में इंद्रप्रस्थ के प्राचीन खंडहरों पर फिर से ढिल्लिका (दिल्ली) शहर की स्थापना की।' },
+    { id: 'vasudeva_tomar', name: 'वासुदेव', subtitle: 'दिल्ली नरेश', parent: 'anangpal_1_tomar', yug: 'kali' },
+    { id: 'ganggeya_tomar', name: 'गांगेय', subtitle: 'दिल्ली नरेश', parent: 'vasudeva_tomar', yug: 'kali' },
+    { id: 'prithvimal_tomar', name: 'पृथ्वीमल', subtitle: 'दिल्ली नरेश', parent: 'ganggeya_tomar', yug: 'kali' },
+    { id: 'jayadeva_tomar', name: 'जयदेव', subtitle: 'दिल्ली नरेश', parent: 'prithvimal_tomar', yug: 'kali' },
+    { id: 'nirapal_tomar', name: 'नीरपाल', subtitle: 'दिल्ली नरेश', parent: 'jayadeva_tomar', yug: 'kali' },
+    { id: 'udayaraja_tomar', name: 'उदयराज', subtitle: 'दिल्ली नरेश', parent: 'nirapal_tomar', yug: 'kali' },
+    { id: 'vacharaja_tomar', name: 'वछराज', subtitle: 'दिल्ली नरेश', parent: 'udayaraja_tomar', yug: 'kali' },
+    { id: 'virapala_tomar', name: 'वीरपाल', subtitle: 'दिल्ली नरेश', parent: 'vacharaja_tomar', yug: 'kali' },
+    { id: 'anangpal_2_tomar', name: 'अनंगपाल तोमर (द्वितीय)', subtitle: 'महान दिल्ली सम्राट', parent: 'virapala_tomar', yug: 'kali', parichay: 'इन्होंने लाल कोट (Qutub Minar क्षेत्र) बनवाया और महरौली का लौह स्तंभ स्थापित किया। इन्होंने अजमेर के चौहान राजा सोमेश्वर को अपनी पुत्री ब्याही, जिससे पृथ्वीराज चौहान का जन्म हुआ।' },
+
+    // ग्वालियर के तोमर
+    { id: 'veer_singh_dev_tomar', name: 'वीर सिंह देव', subtitle: 'ग्वालियर तोमर संस्थापक', parent: 'anangpal_2_tomar', yug: 'kali', parichay: 'दिल्ली छूटने के बाद 1394 ईस्वी में इन्होंने ग्वालियर पर तोमर साम्राज्य की नींव रखी।' },
+    { id: 'uddharan_dev_tomar', name: 'उद्धरण देव', subtitle: 'ग्वालियर नरेश', parent: 'veer_singh_dev_tomar', yug: 'kali' },
+    { id: 'viram_dev_tomar', name: 'वीरम देव', subtitle: 'ग्वालियर नरेश', parent: 'uddharan_dev_tomar', yug: 'kali' },
+    { id: 'ganpati_dev_tomar', name: 'गणपति देव', subtitle: 'ग्वालियर नरेश', parent: 'viram_dev_tomar', yug: 'kali' },
+    { id: 'dungar_singh_tomar', name: 'डूंगर सिंह', subtitle: 'ग्वालियर नरेश', parent: 'ganpati_dev_tomar', yug: 'kali' },
+    { id: 'kirti_singh_tomar', name: 'कीर्ति सिंह', subtitle: 'ग्वालियर नरेश', parent: 'dungar_singh_tomar', yug: 'kali' },
+    { id: 'kalyan_malla_tomar', name: 'कल्याण मल्ल', subtitle: 'ग्वालियर नरेश', parent: 'kirti_singh_tomar', yug: 'kali' },
+    { id: 'man_singh_tomar', name: 'राजा मान सिंह तोमर', subtitle: 'ग्वालियर के महान सम्राट', parent: 'kalyan_malla_tomar', yug: 'kali', parichay: 'इन्होंने ग्वालियर का प्रसिद्ध किला और गूजरी महल बनवाया। ये संगीत के महान संरक्षक थे (ध्रुपद)।' },
+    { id: 'vikramaditya_tomar', name: 'विक्रमादित्य तोमर', subtitle: 'ग्वालियर के अंतिम नरेश', parent: 'man_singh_tomar', yug: 'kali', parichay: 'ये पानीपत के प्रथम युद्ध (1526) में इब्राहिम लोदी की ओर से लड़ते हुए बाबर के खिलाफ मारे गए।' },
+
+    // --- कटोच राजवंश (त्रिगर्त / कांगड़ा - चंद्रवंश की शाखा) ---
+    // भूमिचंद को चंद्रवंशी माना जाता है, जिन्होंने त्रिगर्त राज्य की स्थापना की
+    { id: 'bhumichand_katoch', name: 'भूमिचंद', subtitle: 'त्रिगर्त के संस्थापक', parent: 'pururava_chandra', yug: 'satya', parichay: 'इन्हें चंद्रवंश/सोमवंश का माना जाता है जिन्होंने कांगड़ा (त्रिगर्त) राज्य की स्थापना की।' },
+    { id: 'susharma_chandra_katoch', name: 'सुशर्मा चन्द्र', subtitle: 'त्रिगर्त नरेश (महाभारत काल)', parent: 'bhumichand_katoch', yug: 'dwapar', parichay: 'इन्होंने कांगड़ा के किले का निर्माण करवाया। महाभारत युद्ध में इन्होंने कौरवों का साथ दिया और विराट नगर पर आक्रमण किया था।' },
+
+    { id: 'katoch_medieval_link', name: 'ऐतिहासिक अंतराल (कटोच)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'susharma_chandra_katoch', yug: 'kali', parichay: 'सुशर्मा चन्द्र के बाद कांगड़ा रियासत के कई राजा हुए (जैसे रूप चन्द्र, जय चन्द्र)।' },
+
+    // मध्यकालीन एवं आधुनिक कांगड़ा के कटोच राजा
+    { id: 'rup_chandra_katoch', name: 'रूप चन्द्र', subtitle: 'कांगड़ा नरेश', parent: 'katoch_medieval_link', yug: 'kali', parichay: 'इन्होंने 1360 ई. के आसपास शासन किया और दिल्ली तक लूटमार की।' },
+    { id: 'sangara_chandra_katoch', name: 'संगारा चन्द्र', subtitle: 'कांगड़ा नरेश', parent: 'rup_chandra_katoch', yug: 'kali' },
+    { id: 'megh_chandra_katoch', name: 'मेघ चन्द्र', subtitle: 'कांगड़ा नरेश', parent: 'sangara_chandra_katoch', yug: 'kali' },
+    { id: 'hari_chandra_katoch', name: 'हरि चन्द्र', subtitle: 'गुलेर राज्य संस्थापक', parent: 'megh_chandra_katoch', yug: 'kali', parichay: 'हरि चन्द्र के शिकार में खो जाने पर उनके भाई करम चन्द्र को राजा बना दिया गया। हरि चन्द्र ने लौटकर गुलेर राज्य बसाया।' },
+    { id: 'karam_chandra_katoch', name: 'करम चन्द्र', subtitle: 'कांगड़ा नरेश', parent: 'megh_chandra_katoch', yug: 'kali' },
+    { id: 'sansar_chand_1_katoch', name: 'संसार चन्द (प्रथम)', subtitle: 'कांगड़ा नरेश', parent: 'karam_chandra_katoch', yug: 'kali' },
+    { id: 'gurcharan_chand_katoch', name: 'गुरचरण चन्द', subtitle: 'कांगड़ा नरेश', parent: 'sansar_chand_1_katoch', yug: 'kali' },
+    { id: 'bidhi_chand_katoch', name: 'बिधि चन्द', subtitle: 'कांगड़ा नरेश', parent: 'gurcharan_chand_katoch', yug: 'kali' },
+    { id: 'trilok_chand_katoch', name: 'त्रिलोक चन्द', subtitle: 'कांगड़ा नरेश', parent: 'bidhi_chand_katoch', yug: 'kali' },
+    { id: 'hari_chand_2_katoch', name: 'हरि चन्द (द्वितीय)', subtitle: 'कांगड़ा नरेश', parent: 'trilok_chand_katoch', yug: 'kali' },
+    { id: 'chander_bhan_chand_katoch', name: 'चन्द्रभान चन्द', subtitle: 'कांगड़ा नरेश', parent: 'hari_chand_2_katoch', yug: 'kali' },
+    { id: 'vijay_ram_chand_katoch', name: 'विजय राम चन्द', subtitle: 'कांगड़ा नरेश', parent: 'chander_bhan_chand_katoch', yug: 'kali' },
+    { id: 'udai_ram_chand_katoch', name: 'उदय राम चन्द', subtitle: 'कांगड़ा नरेश', parent: 'vijay_ram_chand_katoch', yug: 'kali' },
+    { id: 'pirthi_chand_katoch', name: 'पृथ्वी चन्द', subtitle: 'कांगड़ा नरेश', parent: 'udai_ram_chand_katoch', yug: 'kali' },
+    { id: 'hamir_chand_katoch', name: 'हमीर चन्द', subtitle: 'कांगड़ा नरेश', parent: 'pirthi_chand_katoch', yug: 'kali' },
+    { id: 'abhai_chand_katoch', name: 'अभय चन्द', subtitle: 'कांगड़ा नरेश', parent: 'hamir_chand_katoch', yug: 'kali' },
+    { id: 'ghamand_chand_katoch', name: 'घमंड चन्द', subtitle: 'कांगड़ा नरेश', parent: 'abhai_chand_katoch', yug: 'kali', parichay: 'इन्होंने अहमद शाह अब्दाली के समय कांगड़ा का शासन संभाला।' },
+    { id: 'tegh_chand_katoch', name: 'तेग चन्द', subtitle: 'कांगड़ा नरेश', parent: 'ghamand_chand_katoch', yug: 'kali' },
+    { id: 'sansar_chand_2_katoch', name: 'महाराजा संसार चन्द (द्वितीय)', subtitle: 'कांगड़ा के महान सम्राट', parent: 'tegh_chand_katoch', yug: 'kali', parichay: 'इन्हें कांगड़ा का स्वर्ण युग लाने का श्रेय है। इन्होंने कांगड़ा चित्रकला (Kangra Paintings) को संरक्षण दिया और महाराजा रणजीत सिंह के साथ संधियां कीं।' },
+
+
+    // --- कलचुरी / हैहय राजवंश (त्रिपुरी शाखा) ---
+    // यदु -> सहस्रजित -> हैहय -> कार्तवीर्य अर्जुन -> वीतिहोत्र के आगे का वंश
+    { id: 'kalchuri_medieval_link', name: 'ऐतिहासिक अंतराल (कलचुरी)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'vitihotra_haihaya', yug: 'kali', parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।' },
+
+    { id: 'vamaraja_kalchuri', name: 'वामराज', subtitle: 'कलचुरी वंश मूल', parent: 'kalchuri_medieval_link', yug: 'kali' },
+    { id: 'shankaragana_1_kalchuri', name: 'शंकरगण (प्रथम)', subtitle: 'कलचुरी नरेश', parent: 'vamaraja_kalchuri', yug: 'kali' },
+    { id: 'kokalla_1_kalchuri', name: 'कोकल्ल (प्रथम)', subtitle: 'त्रिपुरी शाखा के संस्थापक', parent: 'shankaragana_1_kalchuri', yug: 'kali', parichay: '845 ईस्वी में इन्होंने त्रिपुरी (वर्तमान जबलपुर) को अपनी राजधानी बनाया और कलचुरी वंश की स्थापना की।' },
+    { id: 'shankaragana_2_kalchuri', name: 'शंकरगण (द्वितीय) मुग्धतुंग', subtitle: 'त्रिपुरी नरेश', parent: 'kokalla_1_kalchuri', yug: 'kali' },
+    { id: 'balaharsha_kalchuri', name: 'बालहर्ष', subtitle: 'त्रिपुरी नरेश', parent: 'shankaragana_2_kalchuri', yug: 'kali' },
+    { id: 'yuvarajadeva_1_kalchuri', name: 'युवराजदेव (प्रथम) केयूरवर्ष', subtitle: 'त्रिपुरी नरेश', parent: 'shankaragana_2_kalchuri', yug: 'kali' },
+    { id: 'lakshmanaraja_2_kalchuri', name: 'लक्ष्मणराज (द्वितीय)', subtitle: 'त्रिपुरी नरेश', parent: 'yuvarajadeva_1_kalchuri', yug: 'kali' },
+    { id: 'shankaragana_3_kalchuri', name: 'शंकरगण (तृतीय)', subtitle: 'त्रिपुरी नरेश', parent: 'lakshmanaraja_2_kalchuri', yug: 'kali' },
+    { id: 'yuvarajadeva_2_kalchuri', name: 'युवराजदेव (द्वितीय)', subtitle: 'त्रिपुरी नरेश', parent: 'lakshmanaraja_2_kalchuri', yug: 'kali' },
+    { id: 'kokalla_2_kalchuri', name: 'कोकल्ल (द्वितीय)', subtitle: 'त्रिपुरी नरेश', parent: 'yuvarajadeva_2_kalchuri', yug: 'kali' },
+    { id: 'gangeyadeva_kalchuri', name: 'गांगेयदेव (विक्रमादित्य)', subtitle: 'महान कलचुरी सम्राट', parent: 'kokalla_2_kalchuri', yug: 'kali', parichay: 'ये एक प्रतापी राजा थे जिन्होंने विक्रमादित्य की उपाधि धारण की और सोने, चांदी व तांबे के सिक्के चलवाए।' },
+    { id: 'lakshmikarna_kalchuri', name: 'लक्ष्मीकर्ण (कर्णदेव)', subtitle: 'चक्रवर्ती सम्राट', parent: 'gangeyadeva_kalchuri', yug: 'kali', parichay: 'इनके शासनकाल में कलचुरी साम्राज्य अपने चरम पर था। इन्होंने मालवा के राजा भोज को पराजित किया था।' },
+    { id: 'yashahkarna_kalchuri', name: 'यशःकर्ण', subtitle: 'त्रिपुरी नरेश', parent: 'lakshmikarna_kalchuri', yug: 'kali' },
+    { id: 'gayakarna_kalchuri', name: 'गयाकर्ण', subtitle: 'त्रिपुरी नरेश', parent: 'yashahkarna_kalchuri', yug: 'kali' },
+    { id: 'narasimha_kalchuri', name: 'नरसिंह', subtitle: 'त्रिपुरी नरेश', parent: 'gayakarna_kalchuri', yug: 'kali' },
+    { id: 'jayasimha_kalchuri', name: 'जयसिंह', subtitle: 'त्रिपुरी नरेश', parent: 'gayakarna_kalchuri', yug: 'kali' },
+    { id: 'vijayasimha_kalchuri', name: 'विजयसिंह', subtitle: 'अंतिम त्रिपुरी नरेश', parent: 'jayasimha_kalchuri', yug: 'kali', parichay: 'ये त्रिपुरी शाखा के अंतिम ज्ञात शासक थे, जिनके बाद कलचुरी साम्राज्य का पतन हो गया।' },
+
+
+
     // --- संदर्भ के लिए अन्य राजवंश/पात्र (यदुवंश से जुड़े) ---
     { id: 'bhishmaka_chandra', name: 'भीष्मक', subtitle: 'विदर्भ नरेश', parent: '', yug: 'dwapar' },
     { id: 'rukmi_vidarbha_chandra', name: 'रुक्मी', subtitle: 'रुक्मिणी का भाई', parent: 'bhishmaka_chandra', yug: 'dwapar' },
