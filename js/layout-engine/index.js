@@ -79,9 +79,41 @@ class LayoutEngine {
             });
         }
 
+
         assignLineageColors(this.nodesMap);
 
+        // Calculate Vansh Bounding Boxes
+        const vanshBounds = new Map();
+
+        // Custom mapping logic (ideally driven by data `vansh` attribute)
+        // Here we rely on inheritedColor as a proxy for lineage for now
+        this.nodesMap.forEach(node => {
+            if (!node.inheritedColor) return;
+            const vanshId = node.inheritedColor; // Grouping by inherited color as a fallback for vansh
+
+            if (!vanshBounds.has(vanshId)) {
+                vanshBounds.set(vanshId, {
+                    minX: Infinity, minY: Infinity,
+                    maxX: -Infinity, maxY: -Infinity,
+                    nodes: 0
+                });
+            }
+
+            const b = vanshBounds.get(vanshId);
+            b.minX = Math.min(b.minX, node.x);
+            b.minY = Math.min(b.minY, node.y);
+            b.maxX = Math.max(b.maxX, node.x);
+            b.maxY = Math.max(b.maxY, node.y);
+            b.nodes++;
+        });
+
+        this.vanshBounds = Array.from(vanshBounds.entries()).map(([color, bounds]) => ({
+            id: color, // Treat color as lineage ID for now
+            ...bounds
+        })).filter(b => b.nodes > 2); // Only large clusters get borders
+
         // Extract the updated data
+
         const finalNodes = Array.from(this.nodesMap.values()).map(node => {
             const { layout, children, spouses, depth, contours, ...originalNode } = node;
             return originalNode;
@@ -90,6 +122,7 @@ class LayoutEngine {
         return {
             nodes: finalNodes,
             transitionWires: this.transitionWires,
+            vanshBounds: this.vanshBounds,
             pathFinder: new window.PathFinder(finalNodes) // we will make PathFinder global
         };
     }
