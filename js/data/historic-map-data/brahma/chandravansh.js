@@ -348,7 +348,7 @@ export const chandravanshData = [
     { id: 'shrutasrava_chandra', name: 'श्रुतश्रवा', subtitle: 'शूरसेन पुत्री', parent: 'shurasen_chandra', mother: 'marisha_shurasen_chandra', spouseOf: 'damaghosha_chandra', yug: 'dwapar', parichay: 'चेदि नरेश दमघोष की पत्नी और शिशुपाल की माता।' },
 
     // नन्द बाबा (गोकुल)
-    { id: 'parjanya_gopa_chandra', name: 'पर्जन्य', subtitle: 'गोप', parent: '', yug: 'dwapar', clusterName: 'नन्द परिवार' },
+    { id: 'parjanya_gopa_chandra', name: 'पर्जन्य', subtitle: 'गोप', parent: 'devamidhusha_vrishni', yug: 'dwapar', clusterName: 'नन्द परिवार' },
     { id: 'nanda_chandra', name: 'नंद बाबा', subtitle: 'कृष्ण के पालक पिता', parent: 'parjanya_gopa_chandra', yug: 'dwapar', clusterName: 'नन्द परिवार' },
     { id: 'yashoda_chandra', name: 'यशोदा', subtitle: 'कृष्ण की पालक माता', parent: '', spouseOf: 'nanda_chandra', yug: 'dwapar', clusterName: 'नन्द परिवार' },
 
@@ -945,9 +945,9 @@ export const chandravanshData = [
 
 
     // --- संदर्भ के लिए अन्य राजवंश/पात्र (यदुवंश से जुड़े) ---
-    { id: 'bhishmaka_chandra', name: 'भीष्मक', subtitle: 'विदर्भ नरेश', parent: '', yug: 'dwapar' },
+    { id: 'bhishmaka_chandra', name: 'भीष्मक', subtitle: 'विदर्भ नरेश', parent: 'kratha_yadu', yug: 'dwapar' },
     { id: 'rukmi_vidarbha_chandra', name: 'रुक्मी', subtitle: 'रुक्मिणी का भाई', parent: 'bhishmaka_chandra', yug: 'dwapar' },
-    { id: 'damaghosha_chandra', name: 'दमघोष', subtitle: 'चेदि नरेश', parent: '', yug: 'dwapar' },
+    { id: 'damaghosha_chandra', name: 'दमघोष', subtitle: 'चेदि नरेश', parent: 'kratha_yadu', yug: 'dwapar' },
     { id: 'shishupala_chandra', name: 'शिशुपाल', subtitle: 'चेदि नरेश', parent: 'damaghosha_chandra', mother: 'shrutasrava_chandra', yug: 'dwapar' },
 
 ];
