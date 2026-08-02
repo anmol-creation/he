@@ -17,6 +17,8 @@ window.MapRenderer = {
         ctx.translate(state.translateX, state.translateY);
         ctx.scale(state.scale, state.scale);
 
+        if (state) state.clusterHitBoxes = []; // Reset hitboxes each render
+
         const dataList = (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
 
         try {
@@ -248,7 +250,6 @@ window.MapRenderer = {
             ctx.globalAlpha = opacity;
 
             const nodeColor = data.inheritedColor || '#FF6B35';
-
             if (isMacroMode) {
                  ctx.beginPath();
                  ctx.arc(data.x, data.y, 10, 0, Math.PI * 2);
@@ -319,6 +320,61 @@ window.MapRenderer = {
             ctx.lineWidth = 1;
             ctx.strokeStyle = '#fff';
             ctx.stroke();
+
+            // Draw Cluster Toggle Icons
+            if (!isMacroMode && opacity > 0.2) { // Only draw if visible
+                const state = window.MapState;
+                let drawIcon = null;
+                let iconText = '';
+                let iconColor = '';
+
+                // If it's a proxy node (or the dynamically created cluster node) and the cluster is collapsed
+                if (data.clusterName && (data.isProxy || data.isCluster) && (!state.expandedClusters || !state.expandedClusters.has(data.clusterName))) {
+                    drawIcon = true;
+                    iconText = '+';
+                    iconColor = '#4CAF50'; // Green plus
+                }
+                // If it's part of an expanded cluster (including proxy if it remains visible)
+                else if (data.clusterName && state.expandedClusters && state.expandedClusters.has(data.clusterName)) {
+                    drawIcon = true;
+                    iconText = '×';
+                    iconColor = '#f44336'; // Red cross
+                }
+
+                if (drawIcon) {
+                    const iconRadius = 12;
+                    // Move icon slightly outside the top-right corner to be visible
+                    const iconX = x + w + 15;
+                    const iconY = y - 15;
+
+                    ctx.beginPath();
+                    ctx.arc(iconX, iconY, iconRadius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#111'; // Dark background
+                    ctx.fill();
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = iconColor;
+                    ctx.stroke();
+
+                    ctx.fillStyle = iconColor;
+                    ctx.font = 'bold 16px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    // Fine-tune vertical alignment for cross vs plus
+                    const textYOffset = iconText === '+' ? 1 : 0;
+                    ctx.fillText(iconText, iconX, iconY + textYOffset);
+
+                    // Register hitbox for click detection
+                    if (!state.clusterHitBoxes) state.clusterHitBoxes = [];
+                    state.clusterHitBoxes.push({
+                        clusterName: data.clusterName,
+                        x: iconX - iconRadius,
+                        y: iconY - iconRadius,
+                        w: iconRadius * 2,
+                        h: iconRadius * 2,
+                        action: iconText === '+' ? 'expand' : 'collapse'
+                    });
+                }
+            }
         });
 
         ctx.globalAlpha = 1;

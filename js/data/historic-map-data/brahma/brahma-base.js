@@ -36,7 +36,7 @@ export const brahmaBaseData = [
     { id: 'jambavan', name: 'जाम्बवान', subtitle: 'ब्रह्मा की जम्हाई से', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'sukumaran', name: 'सुकुमारन', subtitle: 'जाम्बवान के पुत्र', parent: 'jambavan', yug: 'dwapar', timeScale: 'kalpa' },
     { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
-    { id: 'kayastha_vansh', name: 'कायस्थ वंश', subtitle: 'चित्रगुप्त का वंश', parent: 'chitragupta', yug: 'satya', clusterName: 'चित्रगुप्त (कायस्थ) वंश' },
+    { id: 'kayastha_vansh', name: 'कायस्थ वंश', subtitle: 'चित्रगुप्त का वंश', parent: 'chitragupta', yug: 'satya', clusterName: 'चित्रगुप्त (कायस्थ) वंश', isProxy: true },
     { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'angiras', name: 'अंगिरस', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'pulastya', name: 'पुलस्त्य', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },

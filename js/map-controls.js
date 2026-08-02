@@ -96,6 +96,24 @@ window.MapControls = {
             const worldX = (clickX - state.translateX) / state.scale;
             const worldY = (clickY - state.translateY) / state.scale;
 
+            // Check if cluster toggle hitboxes were clicked (+ / × icons)
+            if (state.clusterHitBoxes && state.clusterHitBoxes.length > 0) {
+                for (let i = state.clusterHitBoxes.length - 1; i >= 0; i--) {
+                    const box = state.clusterHitBoxes[i];
+                    if (worldX >= box.x && worldX <= box.x + box.w && worldY >= box.y && worldY <= box.y + box.h) {
+                        if (box.action === 'expand') {
+                            state.expandedClusters.add(box.clusterName);
+                        } else {
+                            state.expandedClusters.delete(box.clusterName);
+                        }
+                        if (window.LayoutEngine && window.HistoricDB) {
+                            window.dispatchEvent(new Event('ClusterToggled'));
+                        }
+                        return; // Stop event processing
+                    }
+                }
+            }
+
             // Check if switcher hitboxes were clicked
             if (state.switcherHitBoxes && state.switcherHitBoxes.length > 0) {
                 for (const box of state.switcherHitBoxes) {
@@ -137,20 +155,7 @@ window.MapControls = {
                 const y = node.y - h/2;
 
                 if (worldX >= x && worldX <= x + w && worldY >= y && worldY <= y + h) {
-                    // Check if it's a cluster proxy node OR an expanded cluster member being clicked
-                    if (node.isCluster || (node.clusterName && state.expandedClusters.has(node.clusterName))) {
-                        if (state.expandedClusters.has(node.clusterName)) {
-                            state.expandedClusters.delete(node.clusterName);
-                        } else {
-                            state.expandedClusters.add(node.clusterName);
-                        }
-
-                        if (window.LayoutEngine && window.HistoricDB) {
-                            window.dispatchEvent(new Event('ClusterToggled'));
-                        }
-                        return; // Clicking toggles it, does not open info panel
-                    }
-
+                    // Main node body clicked - only open panel and focus
                     this.focusOnNode(node.id);
                     if (window.MapUI) window.MapUI.openPanel(node);
                     return;
