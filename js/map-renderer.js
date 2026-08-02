@@ -33,70 +33,16 @@ window.MapRenderer = {
 
             ctx.lineWidth = 4;
             ctx.lineCap = 'round';
-            if (!state.isMacroMode) {
-                this.drawConnections(ctx, dataList, highlightSet, isRouting);
-            } else {
-                // In macro mode, only draw minimal connections or skip them to avoid clutter
-                // We'll skip them entirely in favor of bounds + prominent nodes
-            }
+            this.drawConnections(ctx, dataList, highlightSet, isRouting);
 
             if (isRouting) {
                 this.drawRouteConnections(ctx, dataList, this.routePath);
-            }
-
-            if (state.isMacroMode && window.vanshBounds) {
-                this.drawVanshBounds(ctx, window.vanshBounds);
             }
 
             this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId);
         } finally {
             ctx.restore();
         }
-    },
-
-
-    drawVanshBounds(ctx, boundsList) {
-        // Draw regions for macro mode
-        boundsList.forEach(bounds => {
-            const width = bounds.maxX - bounds.minX + 400; // Add padding
-            const height = bounds.maxY - bounds.minY + 400;
-            const x = bounds.minX - 200;
-            const y = bounds.minY - 200;
-
-            ctx.globalAlpha = 0.1;
-            ctx.fillStyle = bounds.id; // Using color as ID for now
-            ctx.beginPath();
-            if (ctx.roundRect) {
-                ctx.roundRect(x, y, width, height, 50);
-            } else {
-                ctx.rect(x, y, width, height);
-            }
-            ctx.fill();
-
-            ctx.globalAlpha = 0.8;
-            ctx.lineWidth = 4;
-            ctx.strokeStyle = bounds.id;
-            ctx.stroke();
-
-            // Draw Vansh Name
-            ctx.globalAlpha = 1;
-            ctx.fillStyle = bounds.id;
-            // Dynamically scale text up based on zoom out to remain readable
-            const scaleFactor = window.MapState ? (1 / window.MapState.scale) : 3;
-            ctx.font = `bold ${Math.floor(60 * scaleFactor)}px Poppins`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-
-            let name = "Lineage";
-            if (bounds.id === '#FF9900') name = "SURYAVANSH (सूर्यवंश)";
-            else if (bounds.id === '#4169E1') name = "CHANDRAVANSH (चंद्रवंश)";
-            else if (bounds.id === '#F7931E') name = "BRAHMA LINEAGE (ब्रह्मा वंश)";
-            else if (bounds.id === '#3399FF') name = "VISHNU LINEAGE (विष्णु वंश)";
-            else if (bounds.id === '#9933FF') name = "MAHESH LINEAGE (महेश वंश)";
-            else name = "LINEAGE (वंश)";
-
-            ctx.fillText(name, x + width/2, y + 100);
-        });
     },
 
     getHighlightedRelatives(centerNodeId, dataList) {
@@ -303,32 +249,20 @@ window.MapRenderer = {
 
             const nodeColor = data.inheritedColor || '#FF6B35';
 
-            // We should ensure only main prominent nodes show large, others are dots or hidden
-            if (isMacroMode && !data.isProminent) {
-                 // Option to draw a tiny dot instead of completely hiding, to give a heat-map feel,
-                 // but hiding keeps it cleaner as requested. We'll stick to hiding them.
-                 return;
-            } else if (isMacroMode && data.isProminent) {
-                 // Render prominent nodes larger in macro mode
-                 // Scale node size up based on zoom level to remain readable
-                 const scaleFactor = window.MapState ? (1 / window.MapState.scale) : 3;
-                 const macroW = 120 * scaleFactor;
-                 const macroH = 50 * scaleFactor;
-                 const mx = data.x - macroW / 2;
-                 const my = data.y - macroH / 2;
-
-                 ctx.fillStyle = '#111';
-                 this.roundRect(ctx, mx, my, macroW, macroH, 15 * scaleFactor);
+            if (isMacroMode) {
+                 ctx.beginPath();
+                 ctx.arc(data.x, data.y, 10, 0, Math.PI * 2);
+                 ctx.fillStyle = isSpouse || isDaughter ? '#2a2025' : '#222';
                  ctx.fill();
-                 ctx.lineWidth = 4 * scaleFactor;
-                 ctx.strokeStyle = nodeColor;
+                 ctx.lineWidth = 2;
+                 ctx.strokeStyle = isSpouse ? '#ff99cc' : isDaughter ? '#ffb6c1' : nodeColor;
                  ctx.stroke();
 
-                 ctx.fillStyle = '#ffffff';
+                 ctx.fillStyle = '#fff';
+                 ctx.font = '12px Poppins';
                  ctx.textAlign = 'center';
-                 ctx.textBaseline = 'middle';
-                 ctx.font = `bold ${Math.floor(16 * scaleFactor)}px Poppins`;
-                 ctx.fillText(data.name, data.x, data.y);
+                 ctx.textBaseline = 'top';
+                 ctx.fillText(data.name, data.x, data.y + 15);
                  return;
             }
 
