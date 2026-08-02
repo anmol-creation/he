@@ -507,9 +507,6 @@ window.MapRenderer = {
             window.MapState.switcherHitBoxes = []; // Reset hitboxes each render
             const state = window.MapState;
 
-            // To keep the switcher exactly centered on the screen regardless of pan
-            const screenCenterX = ((state.canvas.width / (window.devicePixelRatio || 1)) / 2 - state.translateX) / state.scale;
-
             // 1. Kalpa Switcher at Mahakalp Bottom Line
             const kY = mahakalpBottomLine + 45; // Below the line
             const kCurrent = state.kalpas[state.currentKalpaIndex];
@@ -517,7 +514,7 @@ window.MapRenderer = {
 
             this.drawCanvasSwitcher(
                 ctx,
-                screenCenterX, kY,
+                0, kY,
                 'kalpa',
                 kSubText,
                 kCurrent.title,
@@ -533,7 +530,7 @@ window.MapRenderer = {
 
             this.drawCanvasSwitcher(
                 ctx,
-                screenCenterX, mY,
+                0, mY,
                 'manvantara',
                 mSubText,
                 mCurrent.title,

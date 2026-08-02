@@ -114,18 +114,8 @@ class LayoutEngine {
 
         // Extract the updated data
 
-        let minGlobalX = Infinity, maxGlobalX = -Infinity, minGlobalY = Infinity, maxGlobalY = -Infinity;
-
         const finalNodes = Array.from(this.nodesMap.values()).map(node => {
             const { layout, children, spouses, depth, contours, ...originalNode } = node;
-
-            if (originalNode.x !== undefined) {
-                 minGlobalX = Math.min(minGlobalX, originalNode.x);
-                 maxGlobalX = Math.max(maxGlobalX, originalNode.x);
-                 minGlobalY = Math.min(minGlobalY, originalNode.y);
-                 maxGlobalY = Math.max(maxGlobalY, originalNode.y);
-            }
-
             return originalNode;
         });
 
@@ -133,7 +123,6 @@ class LayoutEngine {
             nodes: finalNodes,
             transitionWires: this.transitionWires,
             vanshBounds: this.vanshBounds,
-            globalBounds: { minX: minGlobalX, maxX: maxGlobalX, minY: minGlobalY, maxY: maxGlobalY },
             pathFinder: new window.PathFinder(finalNodes) // we will make PathFinder global
         };
     }

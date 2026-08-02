@@ -103,23 +103,6 @@ window.MapState = {
             }
         }
 
-        // Apply Viewport Pan Constraints
-        if (window.mapGlobalBounds && this.container) {
-            const padding = 500; // Allow 500px of scrolling past the edges for safety
-            const rect = this.container.getBoundingClientRect();
-
-            // Scaled bounds in screen coordinates
-            const maxTx = - (window.mapGlobalBounds.minX * this.scale) + (rect.width / 2) + padding;
-            const minTx = - (window.mapGlobalBounds.maxX * this.scale) + (rect.width / 2) - padding;
-            const maxTy = - (window.mapGlobalBounds.minY * this.scale) + (rect.height / 2) + padding;
-            const minTy = - (window.mapGlobalBounds.maxY * this.scale) + (rect.height / 2) - padding;
-
-            if (this.translateX > maxTx) this.translateX = maxTx;
-            if (this.translateX < minTx) this.translateX = minTx;
-            if (this.translateY > maxTy) this.translateY = maxTy;
-            if (this.translateY < minTy) this.translateY = minTy;
-        }
-
         this.requestRedraw();
     }
 };
