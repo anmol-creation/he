@@ -33,7 +33,12 @@ window.MapRenderer = {
 
             ctx.lineWidth = 4;
             ctx.lineCap = 'round';
-            this.drawConnections(ctx, dataList, highlightSet, isRouting);
+            if (!state.isMacroMode) {
+                this.drawConnections(ctx, dataList, highlightSet, isRouting);
+            } else {
+                // In macro mode, only draw minimal connections or skip them to avoid clutter
+                // We'll skip them entirely in favor of bounds + prominent nodes
+            }
 
             if (isRouting) {
                 this.drawRouteConnections(ctx, dataList, this.routePath);
@@ -42,14 +47,68 @@ window.MapRenderer = {
             // Multi-Tier LOD
             // WORLD_MODE: scale < 0.08
             // VANSH_MODE: scale >= 0.08 and scale < 0.3
+            const isWorldMode = state.scale < 0.08;
+            const isVanshMode = state.scale >= 0.08 && state.isMacroMode;
 
+            if (isVanshMode && window.vanshBounds) {
+                // To keep the world mode extremely clean, maybe we shouldn't draw bounds in world mode.
+                // But World Mode is scale < 0.08, VanshMode is >= 0.08 && < 0.3. This is correct.
+                this.drawVanshBounds(ctx, window.vanshBounds);
+            }
 
-            this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId);
+            this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId, isWorldMode);
         } finally {
             ctx.restore();
         }
     },
 
+
+    drawVanshBounds(ctx, boundsList) {
+        // Draw regions for macro mode
+        boundsList.forEach(bounds => {
+            // We scale padding so it looks consistent at zoom outs.
+            const currentScale = window.MapState ? window.MapState.scale : 0.3;
+            const pad = 200 / currentScale; // Adaptive padding
+            const width = (bounds.maxX - bounds.minX) + pad * 2;
+            const height = (bounds.maxY - bounds.minY) + pad * 2;
+            const x = bounds.minX - pad;
+            const y = bounds.minY - pad;
+
+            ctx.globalAlpha = 0.1;
+            ctx.fillStyle = bounds.id; // Using color as ID for now
+            ctx.beginPath();
+            if (ctx.roundRect) {
+                ctx.roundRect(x, y, width, height, 50);
+            } else {
+                ctx.rect(x, y, width, height);
+            }
+            ctx.fill();
+
+            ctx.globalAlpha = 0.8;
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = bounds.id;
+            ctx.stroke();
+
+            // Draw Vansh Name
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = bounds.id;
+            // Dynamically scale text up based on zoom out to remain readable
+            const scaleFactor = Math.min(60, 1 / currentScale);
+            ctx.font = `bold ${Math.floor(60 * scaleFactor)}px Poppins`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            let name = "Lineage";
+            if (bounds.id === '#FF9900') name = "SURYAVANSH (सूर्यवंश)";
+            else if (bounds.id === '#4169E1') name = "CHANDRAVANSH (चंद्रवंश)";
+            else if (bounds.id === '#F7931E') name = "BRAHMA LINEAGE (ब्रह्मा वंश)";
+            else if (bounds.id === '#3399FF') name = "VISHNU LINEAGE (विष्णु वंश)";
+            else if (bounds.id === '#9933FF') name = "MAHESH LINEAGE (महेश वंश)";
+            else name = "LINEAGE (वंश)";
+
+            ctx.fillText(name, x + width/2, y + 100);
+        });
+    },
 
     getHighlightedRelatives(centerNodeId, dataList) {
         if (!centerNodeId || window.MapState.isMacroMode) return null;
@@ -228,7 +287,7 @@ window.MapRenderer = {
         }
     },
 
-    drawNodes(ctx, dataList, highlightSet, isRouting, isMacroMode, focusedNodeId) {
+    drawNodes(ctx, dataList, highlightSet, isRouting, isMacroMode, focusedNodeId, isWorldMode) {
         dataList.forEach((data) => {
             const isDaughter = data.id.endsWith('_daughter') || (data.gender === 'female' && !data.spouseOf);
             const isSpouse = !!data.spouseOf;
@@ -256,6 +315,15 @@ window.MapRenderer = {
             const nodeColor = data.inheritedColor || '#FF6B35';
 
             // Multi-tier LOD rendering for nodes
+            if (isWorldMode) {
+                // In world mode, ONLY show extreme top level prominent nodes (e.g., Brahma, Vishnu, Mahesh, Brahman)
+                // We'll use depth <= 1 and isProminent as a heuristic for "World Level" entities.
+                if (!data.isProminent || data.depth > 1) return;
+            } else if (isMacroMode) {
+                // In Vansh mode (macro mode but not world mode), show prominent ancestors
+                if (!data.isProminent) return;
+            }
+
             if (isMacroMode) {
                  // Render prominent nodes larger in macro mode
                  // Scale node size up based on zoom level to remain readable

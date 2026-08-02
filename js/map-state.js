@@ -17,8 +17,7 @@ window.MapState = {
     canvas: null,
     ctx: null,
     aside: null,
-    expandedClusters: new Set(),
-    expandedBranches: new Set(), // Track which clusterNames are open
+    expandedClusters: new Set(), // Track which clusterNames are open
     showTransitionWires: false, // Filter: Hide Daughter->Wife lines by default
     layoutMode: 'autoslip', // Default layout mode
     activeKalpa: 'shveta_varaha', // Default Kalpa (51st)
