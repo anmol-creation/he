@@ -17,7 +17,6 @@ function initMap() {
             const updatedData = result.nodes;
 
             window.transitionWires = result.transitionWires;
-            window.vanshBounds = result.vanshBounds;
             window.historicData = updatedData;
             window.HistoricDB.getAll = () => updatedData;
             window.HistoricDB.getNode = (id) => updatedData.find(d => d.id === id);

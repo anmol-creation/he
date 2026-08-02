@@ -12,7 +12,7 @@ window.MapState = {
     initialPinchCenterY: 0,
     isMacroMode: false,
     focusedNodeId: 'brahman',
-    MACRO_ZOOM_THRESHOLD: 0.3,
+    MACRO_ZOOM_THRESHOLD: 0.5,
     container: null,
     canvas: null,
     ctx: null,
