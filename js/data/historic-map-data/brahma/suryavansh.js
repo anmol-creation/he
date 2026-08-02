@@ -196,7 +196,7 @@ export const suryavanshData = [
     // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
     { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
     { id: 'rana_ranasimha', name: 'रावल रणसिंह (कर्ण सिंह)', subtitle: 'शाखाओं का विभाजन', parent: 'bappa_rawal', yug: 'kali', parichay: 'इनके समय में गुहिल वंश दो शाखाओं में बंट गया: 1. रावल शाखा (क्षेमसिंह) और 2. राणा/सिसोदिया शाखा (राहप)।' },
-    { id: 'mewar_dynasty', name: 'गुहिल / सिसोदिया वंश', subtitle: 'मेवाड़ राजवंश', parent: 'rana_ranasimha', yug: 'kali', clusterName: 'गुहिल (सिसोदिया) वंश' },
+    { id: 'mewar_dynasty', name: 'गुहिल / सिसोदिया वंश', subtitle: 'मेवाड़ राजवंश', parent: 'rana_ranasimha', yug: 'kali', clusterName: 'गुहिल (सिसोदिया) वंश', isProxy: true },
 
     // Rawal Branch
     { id: 'kshem_singh', name: 'रावल क्षेमसिंह', subtitle: 'रावल शाखा', parent: 'rana_ranasimha', yug: 'kali', clusterName: 'गुहिल (सिसोदिया) वंश' },
@@ -370,7 +370,7 @@ export const suryavanshData = [
     { id: 'harishchandra_rathore', name: 'हरिश्चंद्र', subtitle: 'जयचंद पुत्र', parent: 'jaichand', yug: 'kali', clusterName: 'गहरवार वंश' },
     { id: 'setram_rathore', name: 'सेतराम', subtitle: 'हरिश्चंद्र पुत्र', parent: 'harishchandra_rathore', yug: 'kali', clusterName: 'गहरवार वंश' },
     { id: 'rao_siha', name: 'राव सीहा', subtitle: 'मारवाड़ राठौड़ वंश संस्थापक', parent: 'setram_rathore', yug: 'kali', parichay: 'कन्नौज के पतन के बाद ये 13वीं सदी में मारवाड़ (राजस्थान) आये। ये राठौड़ वंश (मारवाड़) के मूल पुरुष माने जाते हैं।', clusterName: 'राठौड़ राजपूत वंश' },
-    { id: 'rathore_dynasty', name: 'मारवाड़ के राठौड़', subtitle: 'राठौड़ राजवंश', parent: 'rao_siha', yug: 'kali', clusterName: 'राठौड़ राजपूत वंश' },
+    { id: 'rathore_dynasty', name: 'मारवाड़ के राठौड़', subtitle: 'राठौड़ राजवंश', parent: 'rao_siha', yug: 'kali', clusterName: 'राठौड़ राजपूत वंश', isProxy: true },
     { id: 'rao_asthan', name: 'राव आस्थान', subtitle: 'राव सीहा पुत्र', parent: 'rao_siha', yug: 'kali' },
     { id: 'rao_duhad', name: 'राव दुहड़', subtitle: 'राव आस्थान पुत्र', parent: 'rao_asthan', yug: 'kali', parichay: 'इन्होने राठौड़ों की कुलदेवी "नागणेची माता" की मूर्ति कर्नाटक से लाकर स्थापित की।' },
     { id: 'rao_raipal', name: 'राव रायपाल', subtitle: 'राव दुहड़ पुत्र', parent: 'rao_duhad', yug: 'kali' },
@@ -453,7 +453,8 @@ export const suryavanshData = [
     { id: 'nathaji', name: 'नाथा जी', subtitle: 'नाथावत वंश के संस्थापक', parent: 'nathawat_dynasty_proxy', yug: 'kali', parichay: 'इनके वंशज "नाथावत" (Nathawat) कहलाये, जो कछवाहों की एक प्रमुख शाखा है।', clusterName: 'नाथावत वंश' },
 
     { id: 'jagmal_singh', name: 'जगमाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
-    { id: 'khangarji', name: 'खंगार जी', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'jagmal_singh', yug: 'kali', parichay: 'इनके वंशज "खंगारोत" (Khangarot) कहलाये।' },
+    { id: 'khangarot_dynasty_proxy', name: 'खंगारोत वंश', subtitle: 'खंगार जी के वंशज', parent: 'jagmal_singh', yug: 'kali', isProxy: true, clusterName: 'खंगारोत वंश' },
+    { id: 'khangarji', name: 'खंगार जी', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'khangarot_dynasty_proxy', yug: 'kali', parichay: 'इनके वंशज "खंगारोत" (Khangarot) कहलाये।', clusterName: 'खंगारोत वंश' },
     { id: 'narsingh_deo', name: 'नरसिंह', subtitle: 'उदयकर्ण पुत्र (मुख्य धारा)', parent: 'udayakarna', yug: 'kali' },
     { id: 'rao_balaji', name: 'राव बालाजी', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali', parichay: 'आमेर नरेश उदयकर्ण के पुत्र। इनके वंशज "बालापोता" कहलाये।' },
     { id: 'rao_mokal', name: 'राव मोकल', subtitle: 'राव बालाजी पुत्र', parent: 'rao_balaji', yug: 'kali' },

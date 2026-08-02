@@ -399,7 +399,7 @@ export const chandravanshData = [
 
     // --- भाटी राजवंश (जैसलमेर) ---
     { id: 'bhatti_rao_chandra', name: 'भट्टी (भाटी)', subtitle: 'भाटी वंश के संस्थापक', parent: 'dharmapala_yaduvanshi_chandra', yug: 'kali' },
-    { id: 'bhati_dynasty_proxy', name: 'भाटी वंश', subtitle: 'जैसलमेर राजवंश', parent: 'bhatti_rao_chandra', yug: 'kali', clusterName: 'भाटी वंश' },
+    { id: 'bhati_dynasty_proxy', name: 'भाटी वंश', subtitle: 'जैसलमेर राजवंश', parent: 'bhatti_rao_chandra', yug: 'kali', clusterName: 'भाटी वंश', isProxy: true },
     { id: 'mangal_rao_bhati', name: 'मंगल राव', subtitle: 'भाटी नरेश', parent: 'bhatti_rao_chandra', yug: 'kali', clusterName: 'भाटी वंश' },
     { id: 'majam_rao_bhati', name: 'मजम राव', subtitle: 'भाटी नरेश', parent: 'mangal_rao_bhati', yug: 'kali', clusterName: 'भाटी वंश' },
     { id: 'kehar_1_bhati', name: 'केहर (प्रथम)', subtitle: 'भाटी नरेश', parent: 'majam_rao_bhati', yug: 'kali', clusterName: 'भाटी वंश' },
@@ -421,7 +421,7 @@ export const chandravanshData = [
     { id: 'ratan_singh_bhati', name: 'रतन सिंह', subtitle: 'जैसलमेर नरेश', parent: 'mularaja_bhati', yug: 'kali', clusterName: 'भाटी वंश' },
 
     // जाडेजा (कच्छ/जामनगर) - भाटी/यदुवंश की शाखा
-    { id: 'jadeja_dynasty_proxy', name: 'जाडेजा वंश', subtitle: 'कच्छ/जामनगर राजवंश', parent: 'mangal_rao_bhati', yug: 'kali', clusterName: 'जाडेजा वंश' },
+    { id: 'jadeja_dynasty_proxy', name: 'जाडेजा वंश', subtitle: 'कच्छ/जामनगर राजवंश', parent: 'mangal_rao_bhati', yug: 'kali', clusterName: 'जाडेजा वंश', isProxy: true },
     { id: 'lakho_jadani_chandra', name: 'लाखो जादाणी', subtitle: 'जाडेजा वंश के मूल', parent: 'mangal_rao_bhati', yug: 'kali', parichay: 'सिंध से कच्छ की ओर प्रवास किया। इन्हें जाडेजा (जादा के वंशज) कहा गया।', clusterName: 'जाडेजा वंश' },
     { id: 'jam_raval_jadeja_chandra', name: 'जाम रावल', subtitle: 'नवानगर के संस्थापक', parent: 'lakho_jadani_chandra', yug: 'kali', parichay: '1540 ईस्वी में इन्होंने नवानगर (वर्तमान जामनगर) की स्थापना की।', clusterName: 'जाडेजा वंश' },
 
@@ -442,7 +442,7 @@ export const chandravanshData = [
     { id: 'bhanwar_pal_jadon', name: 'भंवर पाल', subtitle: 'करौली नरेश', parent: 'gopal_singh_jadon', yug: 'kali', clusterName: 'जादौन वंश' },
 
     // --- सेउण (देवगिरि यादव राजवंश) ---
-    { id: 'seuna_dynasty_proxy', name: 'सेउण (यादव) वंश', subtitle: 'देवगिरि राजवंश', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', clusterName: 'सेउण (देवगिरि यादव) वंश' },
+    { id: 'seuna_dynasty_proxy', name: 'सेउण (यादव) वंश', subtitle: 'देवगिरि राजवंश', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', clusterName: 'सेउण (देवगिरि यादव) वंश', isProxy: true },
     { id: 'dridhaprahara_seuna', name: 'दृढप्रहार', subtitle: 'देवगिरि यादव संस्थापक', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: '9वीं सदी में सेउण राजवंश की नींव रखी।', clusterName: 'सेउण (देवगिरि यादव) वंश' },
     { id: 'seunachandra_chandra', name: 'सेउणचन्द्र', subtitle: 'देवगिरि यादव नरेश', parent: 'dridhaprahara_seuna', yug: 'kali', clusterName: 'सेउण (देवगिरि यादव) वंश' },
     { id: 'dhadiyappa_chandra', name: 'धाडियप्प', subtitle: 'देवगिरि यादव नरेश', parent: 'seunachandra_chandra', yug: 'kali', clusterName: 'सेउण (देवगिरि यादव) वंश' },
@@ -872,7 +872,7 @@ export const chandravanshData = [
     { id: 'tomar_medieval_link', name: 'ऐतिहासिक अंतराल (तोमर)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'kshemaka_chandra', yug: 'kali', parichay: 'क्षेमक (अंतिम कुरु राजा) के बाद उनके वंशज दक्षिण (गोदावरी क्षेत्र) चले गए थे, जो बाद में तोमर राजपूतों के रूप में दिल्ली लौटे।' },
 
     // दिल्ली के तोमर नरेश
-    { id: 'tomar_dynasty_proxy', name: 'तोमर वंश', subtitle: 'दिल्ली/ग्वालियर राजवंश', parent: 'tomar_medieval_link', yug: 'kali', clusterName: 'तोमर वंश' },
+    { id: 'tomar_dynasty_proxy', name: 'तोमर वंश', subtitle: 'दिल्ली/ग्वालियर राजवंश', parent: 'tomar_medieval_link', yug: 'kali', clusterName: 'तोमर वंश', isProxy: true },
     { id: 'tungpal_tomar', name: 'तुंगपाल (बिलनदेव)', subtitle: 'तोमर वंश मूल', parent: 'tomar_medieval_link', yug: 'kali', clusterName: 'तोमर वंश' },
     { id: 'anangpal_1_tomar', name: 'अनंगपाल तोमर (प्रथम)', subtitle: 'दिल्ली के संस्थापक', parent: 'tungpal_tomar', yug: 'kali', parichay: 'इन्होंने 736 ईस्वी में इंद्रप्रस्थ के प्राचीन खंडहरों पर फिर से ढिल्लिका (दिल्ली) शहर की स्थापना की।', clusterName: 'तोमर वंश' },
     { id: 'vasudeva_tomar', name: 'वासुदेव', subtitle: 'दिल्ली नरेश', parent: 'anangpal_1_tomar', yug: 'kali', clusterName: 'तोमर वंश' },
@@ -929,7 +929,7 @@ export const chandravanshData = [
     // यदु -> सहस्रजित -> हैहय -> कार्तवीर्य अर्जुन -> वीतिहोत्र के आगे का वंश
     { id: 'kalchuri_medieval_link', name: 'ऐतिहासिक अंतराल (कलचुरी)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'vitihotra_haihaya', yug: 'kali', parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।' },
 
-    { id: 'kalchuri_dynasty_proxy', name: 'कलचुरी वंश', subtitle: 'त्रिपुरी राजवंश', parent: 'kalchuri_medieval_link', yug: 'kali', clusterName: 'कलचुरी वंश' },
+    { id: 'kalchuri_dynasty_proxy', name: 'कलचुरी वंश', subtitle: 'त्रिपुरी राजवंश', parent: 'kalchuri_medieval_link', yug: 'kali', clusterName: 'कलचुरी वंश', isProxy: true },
     { id: 'vamaraja_kalchuri', name: 'वामराज', subtitle: 'कलचुरी वंश मूल', parent: 'kalchuri_medieval_link', yug: 'kali', clusterName: 'कलचुरी वंश' },
     { id: 'shankaragana_1_kalchuri', name: 'शंकरगण (प्रथम)', subtitle: 'कलचुरी नरेश', parent: 'vamaraja_kalchuri', yug: 'kali', clusterName: 'कलचुरी वंश' },
     { id: 'kokalla_1_kalchuri', name: 'कोकल्ल (प्रथम)', subtitle: 'त्रिपुरी शाखा के संस्थापक', parent: 'shankaragana_1_kalchuri', yug: 'kali', parichay: '845 ईस्वी में इन्होंने त्रिपुरी (वर्तमान जबलपुर) को अपनी राजधानी बनाया और कलचुरी वंश की स्थापना की।', clusterName: 'कलचुरी वंश' },
