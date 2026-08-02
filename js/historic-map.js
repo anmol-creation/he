@@ -18,6 +18,7 @@ function initMap() {
 
             window.transitionWires = result.transitionWires;
             window.vanshBounds = result.vanshBounds;
+            window.mapGlobalBounds = result.globalBounds;
             window.historicData = updatedData;
             window.HistoricDB.getAll = () => updatedData;
             window.HistoricDB.getNode = (id) => updatedData.find(d => d.id === id);
@@ -42,11 +43,12 @@ window.addEventListener('ClusterToggled', () => {
         const engine = new window.LayoutEngine([...window.rawHistoricData]);
         const result = engine.process();
         window.transitionWires = result.transitionWires;
+        window.mapGlobalBounds = result.globalBounds;
         window.historicData = result.nodes;
         window.HistoricDB.getAll = () => result.nodes;
         window.HistoricDB.getNode = (id) => result.nodes.find(d => d.id === id);
 
-        window.MapState.requestRedraw();
+        window.MapState.updateTransform(); // Re-constrain bounds if shrunk
     }
 });
 
