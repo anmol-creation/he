@@ -123,6 +123,16 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         });
     });
 
+    // Pre-populate spouses so we know exactly how many wives a husband has before assigning children
+    processedData.forEach(node => {
+        if (node.spouseOf && nodesMap.has(node.spouseOf)) {
+            const partner = nodesMap.get(node.spouseOf);
+            if (!partner.spouses.includes(node.id)) {
+                partner.spouses.push(node.id);
+            }
+        }
+    });
+
     if (!nodesMap.has('unknown_origin')) {
         nodesMap.set('unknown_origin', {
             id: 'unknown_origin',
@@ -150,10 +160,7 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         let hasParentProcessed = false;
 
         if (node.spouseOf) {
-             if (nodesMap.has(node.spouseOf)) {
-                const partner = nodesMap.get(node.spouseOf);
-                partner.spouses.push(node.id);
-             } else {
+             if (!nodesMap.has(node.spouseOf)) {
                 console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing spouse '${node.spouseOf}'.`);
              }
         }
@@ -163,16 +170,22 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         // Since we explicitly nulled the parent of a spousal proxy node above, it will safely skip this and only render as a spouse.
         if (node.parent && (!node.spouseOf || node.isCluster)) {
              if (nodesMap.has(node.parent)) {
+                const parentNode = nodesMap.get(node.parent);
                 let pushedToMother = false;
-                if (node.mother && nodesMap.has(node.mother)) {
+
+                // User requirement: Only route lines from the mother if the father has MULTIPLE wives.
+                // If the father only has 1 wife (or 0 currently registered), the line must come from the father.
+                const hasMultipleWives = parentNode.spouses && parentNode.spouses.length > 1;
+
+                if (node.mother && nodesMap.has(node.mother) && hasMultipleWives) {
                     const motherNode = nodesMap.get(node.mother);
                     if (motherNode) {
                         motherNode.children.push(node.id);
                         pushedToMother = true;
                     }
                 }
+
                 if (!pushedToMother) {
-                    const parentNode = nodesMap.get(node.parent);
                     if (parentNode) {
                         parentNode.children.push(node.id);
                     }
