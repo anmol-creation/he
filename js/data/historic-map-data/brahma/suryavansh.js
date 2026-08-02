@@ -341,7 +341,7 @@ export const suryavanshData = [
     { id: 'guhadatta_mewar', name: 'गुहादित्य (गुहिल)', subtitle: 'गुहिल वंश के संस्थापक', parent: 'shiladitya_vallabhi', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। गुफा में जन्म लेने के कारण इनका नाम गुहादित्य पड़ा। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी। इनके वंशज आगे चलकर गुहिल या गहलोत कहलाए।' },
 
     // Dogra / Jamwal Dynasty (Descendants of Ayodhya Kings in Jammu)
-    { id: 'jamval_dynasty_proxy', name: 'जम्वाल (डोगरा) वंश', subtitle: 'अग्निगर्भ के वंशज', parent: 'sumitra_king', yug: 'kali', isProxy: true, clusterName: 'जम्वाल (डोगरा) वंश' },
+    { id: 'jamval_dynasty_proxy', name: 'जम्वाल (डोगरा) वंश', subtitle: 'अग्निगर्भ के वंशज', parent: 'sumitra_king', yug: 'kali', isProxy: true, clusterName: 'जम्वाल (डोगरा) वंश', lineLabel: 'जम्वाल वंश' },
     { id: 'agnigarbha_jammu', name: 'अग्निगर्भ', subtitle: 'जम्वाल वंश के आदि पुरुष', parent: 'jamval_dynasty_proxy', yug: 'kali', parichay: 'ये अयोध्या के सूर्यवंशी राजाओं (कुश के वंशज) के प्रतापी राजकुमार थे, जो अयोध्या से पलायन कर शिवालिक की पहाड़ियों में आ बसे। डोगरा इतिहास (गुलाबनामा) के अनुसार इन्होंने ही यहाँ अपना राज्य स्थापित किया।', clusterName: 'जम्वाल (डोगरा) वंश' },
     { id: 'bahu_lochan', name: 'बाहु लोचन', subtitle: 'बाहु नगर के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'अग्निगर्भ के ज्येष्ठ पुत्र। इन्होंने तवी नदी के किनारे बाहु किला (Bahu Fort) बनवाया और बाहु नगर बसाया।' },
     { id: 'jambu_lochan', name: 'जम्बू लोचन', subtitle: 'जम्मू के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'इन्होंने एक शेर और बकरी को एक ही घाट पर पानी पीते देखा, जिससे प्रभावित होकर इन्होंने जम्मू (Jambu) शहर की स्थापना की। इनके वंशज आगे चलकर "जम्वाल" या डोगरा राजपूत कहलाये।', clusterName: 'जम्वाल (डोगरा) वंश' },
@@ -357,7 +357,7 @@ export const suryavanshData = [
     { id: 'karan_singh', name: 'डॉ. कर्ण सिंह', subtitle: 'हरि सिंह पुत्र', parent: 'hari_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर रियासत के युवराज (Crown Prince) और भारत के एक प्रमुख राजनेता और विद्वान हैं।' },
 
     // Rathore / Gahadavala Dynasty (Descendants of Sumitra/Kusha leading to Kannauj and Marwar)
-    { id: 'gaharwar_dynasty_proxy', name: 'गहरवार वंश', subtitle: 'यशोविग्रह वंश', parent: 'sumitra_king', yug: 'kali', isProxy: true, clusterName: 'गहरवार वंश' },
+    { id: 'gaharwar_dynasty_proxy', name: 'गहरवार वंश', subtitle: 'यशोविग्रह वंश', parent: 'sumitra_king', yug: 'kali', isProxy: true, clusterName: 'गहरवार वंश', lineLabel: 'गहरवार वंश' },
     { id: 'yashovigraha', name: 'यशोविग्रह', subtitle: 'गहरवार वंश के आदि पुरुष', parent: 'gaharwar_dynasty_proxy', yug: 'kali', parichay: 'सुमित्र की वंशावली में आगे चलकर यशोविग्रह हुए, जिनके वंशजों ने कन्नौज में गहरवार/राठौड़ वंश की स्थापना की।', clusterName: 'गहरवार वंश' },
     { id: 'mahichandra', name: 'महीचन्द्र', subtitle: 'यशोविग्रह पुत्र', parent: 'yashovigraha', yug: 'kali', clusterName: 'गहरवार वंश' },
     { id: 'chandradeva_kannauj', name: 'चन्द्रदेव', subtitle: 'कन्नौज के संस्थापक राजा', parent: 'mahichandra', yug: 'kali', parichay: 'इन्होंने 1090 ई. के आसपास कन्नौज और वाराणसी में एक स्वतंत्र और विशाल गहरवार साम्राज्य की स्थापना की।', clusterName: 'गहरवार वंश' },

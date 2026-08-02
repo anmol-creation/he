@@ -81,11 +81,11 @@ export const chandravanshData = [
     { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: '', spouseOf: 'yayati_chandra', yug: 'satya' },
 
     // --- ययाति के पुत्र ---
-    { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta' },
-    { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta' },
-    { id: 'druhyu_chandra', name: 'द्रुह्यु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra', mother: 'sharmishtha_chandra', yug: 'treta' },
-    { id: 'anu_yayati_chandra', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra', mother: 'sharmishtha_chandra', yug: 'treta' },
-    { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'sharmishtha_chandra', yug: 'treta' },
+    { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश' },
+    { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'तुर्वसु वंश' },
+    { id: 'druhyu_chandra', name: 'द्रुह्यु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'द्रुह्यु वंश' },
+    { id: 'anu_yayati_chandra', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'अनु वंश' },
+    { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'पुरुवंश' },
 
     // --- तुर्वसु वंश ---
     { id: 'vahni_turvasu_chandra', name: 'वह्नि', subtitle: 'तुर्वसु पुत्र', parent: 'turvasu_chandra', yug: 'treta' },
