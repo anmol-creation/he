@@ -131,16 +131,8 @@ window.MapControls = {
 
             for (let i = dataList.length - 1; i >= 0; i--) {
                 const node = dataList[i];
-                let w = node.spouseOf ? 120 : 140;
-                let h = node.spouseOf ? 40 : 60;
-
-                // Account for macro mode scaling
-                if (state.isMacroMode && (['brahman', 'brahma', 'vishnu', 'shiva'].includes(node.id) || node.isCluster)) {
-                    const scaleFactor = Math.min(30, 1 / state.scale);
-                    w = 120 * scaleFactor;
-                    h = 50 * scaleFactor;
-                }
-
+                const w = node.spouseOf ? 120 : 140;
+                const h = node.spouseOf ? 40 : 60;
                 const x = node.x - w/2;
                 const y = node.y - h/2;
 
@@ -159,21 +151,12 @@ window.MapControls = {
                          return; // Don't open panel for proxy, just toggle
                     }
 
-                    // Check if it's a cluster proxy node OR a prominent member of an expanded cluster (to collapse)
-                    let associatedCluster = null;
-                    if (node.id === 'brahma') associatedCluster = 'संपूर्ण संसार (Brahma Lineage)';
-                    else if (node.id === 'vishnu') associatedCluster = 'विष्णु परिवार (Vishnu Lineage)';
-                    else if (node.id === 'shiva') associatedCluster = 'शिव परिवार (Shiva Lineage)';
-
-                    let isExpandedProminent = associatedCluster && state.expandedClusters.has(associatedCluster);
-
-                    if (node.isCluster || isExpandedProminent) {
-                        let targetClusterName = node.clusterName || associatedCluster;
-
-                        if (state.expandedClusters.has(targetClusterName)) {
-                            state.expandedClusters.delete(targetClusterName);
+                    // Check if it's a cluster proxy node OR an expanded cluster member being clicked
+                    if (node.isCluster || (node.clusterName && state.expandedClusters.has(node.clusterName))) {
+                        if (state.expandedClusters.has(node.clusterName)) {
+                            state.expandedClusters.delete(node.clusterName);
                         } else {
-                            state.expandedClusters.add(targetClusterName);
+                            state.expandedClusters.add(node.clusterName);
                         }
 
                         if (window.LayoutEngine && window.HistoricDB) {
