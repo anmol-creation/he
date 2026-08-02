@@ -257,41 +257,36 @@ window.MapRenderer = {
 
             // Multi-tier LOD rendering for nodes
             if (isMacroMode) {
-                 const isTopRoot = ['brahman', 'brahma', 'vishnu', 'shiva'].includes(data.id);
-                 if (isTopRoot || data.isCluster) {
-                     const currentScale = window.MapState ? window.MapState.scale : 0.3;
-                     const scaleFactor = Math.min(30, 1 / currentScale);
-                     const macroW = 120 * scaleFactor;
-                     const macroH = 50 * scaleFactor;
-                     const mx = data.x - macroW / 2;
-                     const my = data.y - macroH / 2;
+                 // Render prominent nodes larger in macro mode
+                 // Scale node size up based on zoom level to remain readable
+                 // Clamp the scale factor so nodes don't become infinitely large at extreme zoom outs
+                 const currentScale = window.MapState ? window.MapState.scale : 0.3;
+                 // At 0.02 scale, 1/0.02 is 50. This is fine, they will appear normal size on screen.
+                 const scaleFactor = Math.min(60, 1 / currentScale);
+                 const macroW = 120 * scaleFactor;
+                 const macroH = 50 * scaleFactor;
+                 const mx = data.x - macroW / 2;
+                 const my = data.y - macroH / 2;
 
-                     ctx.fillStyle = '#111';
-                     ctx.beginPath();
-                     if (ctx.roundRect) {
-                         ctx.roundRect(mx, my, macroW, macroH, 15 * scaleFactor);
-                     } else {
-                         ctx.rect(mx, my, macroW, macroH);
-                     }
-                     ctx.fill();
-                     ctx.lineWidth = 4 * scaleFactor;
-                     ctx.strokeStyle = nodeColor;
-                     ctx.stroke();
-
-                     ctx.fillStyle = '#ffffff';
-                     ctx.textAlign = 'center';
-                     ctx.textBaseline = 'middle';
-                     ctx.font = `bold ${Math.floor(16 * scaleFactor)}px Poppins`;
-                     ctx.fillText(data.name, data.x, data.y);
+                 ctx.fillStyle = '#111';
+                 ctx.beginPath();
+                 if (ctx.roundRect) {
+                     ctx.roundRect(mx, my, macroW, macroH, 15 * scaleFactor);
                  } else {
-                     ctx.beginPath();
-                     ctx.arc(data.x, data.y, 10, 0, Math.PI * 2);
-                     ctx.fillStyle = nodeColor;
-                     ctx.fill();
+                     ctx.rect(mx, my, macroW, macroH);
                  }
-            }
+                 ctx.fill();
+                 ctx.lineWidth = 4 * scaleFactor;
+                 ctx.strokeStyle = nodeColor;
+                 ctx.stroke();
 
-            if (!isMacroMode) {
+                 ctx.fillStyle = '#ffffff';
+                 ctx.textAlign = 'center';
+                 ctx.textBaseline = 'middle';
+                 ctx.font = `bold ${Math.floor(16 * scaleFactor)}px Poppins`;
+                 ctx.fillText(data.name, data.x, data.y);
+                 return;
+            }
 
             if (isFocused && !isRouting) {
                 ctx.shadowColor = '#FF6B35';
@@ -346,82 +341,6 @@ window.MapRenderer = {
             ctx.lineWidth = 1;
             ctx.strokeStyle = '#fff';
             ctx.stroke();
-            } // end if (!isMacroMode)
-
-            // Render Toggle Icon for Clusters / Branches (render this in both macro and micro mode)
-            let drawToggle = false;
-            let toggleText = '+';
-
-            if (data.isCluster || data.isBranchProxy) {
-                drawToggle = true;
-                toggleText = '+';
-            } else if (['brahma', 'vishnu', 'shiva'].includes(data.id) && window.MapState && window.MapState.expandedClusters) {
-                let clusterName = null;
-                if (data.id === 'brahma') clusterName = 'संपूर्ण संसार (Brahma Lineage)';
-                else if (data.id === 'vishnu') clusterName = 'विष्णु परिवार (Vishnu Lineage)';
-                else if (data.id === 'shiva') clusterName = 'शिव परिवार (Shiva Lineage)';
-
-                if (clusterName && window.MapState.expandedClusters.has(clusterName)) {
-                    drawToggle = true;
-                    toggleText = '-';
-                }
-            } else if (data.children && data.children.length > 5 && window.MapState && window.MapState.expandedBranches && window.MapState.expandedBranches.has(data.id)) {
-                 drawToggle = true;
-                 toggleText = '-';
-            }
-
-            if (drawToggle) {
-                 const currentScale = window.MapState ? window.MapState.scale : 0.3;
-                 let scaleFactor = 1;
-                 let boxW = w;
-                 let boxH = h;
-                 let boxX = x;
-                 let boxY = y;
-
-                 if (isMacroMode && (['brahman', 'brahma', 'vishnu', 'shiva'].includes(data.id) || data.isCluster)) {
-                     scaleFactor = Math.min(10, 1 / currentScale);
-                     boxW = 120 * scaleFactor;
-                     boxH = 50 * scaleFactor;
-                     boxX = data.x - boxW / 2;
-                     boxY = data.y - boxH / 2;
-
-                     if (data.isCluster) {
-                          ctx.fillStyle = '#111';
-                          ctx.beginPath();
-                          if (ctx.roundRect) {
-                              ctx.roundRect(boxX, boxY, boxW, boxH, 15 * scaleFactor);
-                          } else {
-                              ctx.rect(boxX, boxY, boxW, boxH);
-                          }
-                          ctx.fill();
-                          ctx.lineWidth = 4 * scaleFactor;
-                          ctx.strokeStyle = nodeColor;
-                          ctx.stroke();
-
-                          ctx.fillStyle = '#ffffff';
-                          ctx.textAlign = 'center';
-                          ctx.textBaseline = 'middle';
-                          ctx.font = `bold ${Math.floor(16 * scaleFactor)}px Poppins`;
-                          ctx.fillText(data.name, data.x, data.y);
-                     }
-                 }
-
-                 ctx.fillStyle = '#111';
-                 ctx.beginPath();
-                 const iconSize = 20 * scaleFactor;
-                 const iconX = boxX + boxW - iconSize - (10 * scaleFactor);
-                 const iconY = boxY + boxH - (iconSize * 0.75); // positioned slightly overlapping bottom right
-
-                 ctx.roundRect ? ctx.roundRect(iconX, iconY, iconSize, iconSize, 4 * scaleFactor) : ctx.rect(iconX, iconY, iconSize, iconSize);
-                 ctx.fill();
-                 ctx.lineWidth = 2 * scaleFactor;
-                 ctx.strokeStyle = nodeColor;
-                 ctx.stroke();
-
-                 ctx.fillStyle = '#fff';
-                 ctx.font = `bold ${Math.floor(16 * scaleFactor)}px Courier New`;
-                 ctx.fillText(toggleText, iconX + (iconSize/2), iconY + (iconSize/2));
-            }
         });
 
         ctx.globalAlpha = 1;
