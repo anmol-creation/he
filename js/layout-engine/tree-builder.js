@@ -195,23 +195,7 @@ export function buildTree(rawData, nodesMap, transitionWires) {
         // For normal nodes, they should only link to ONE side to maintain tree topology (unless duplicated).
         // Since we explicitly nulled the parent of a spousal proxy node above, it will safely skip this and only render as a spouse.
         if (node.parent && (!node.spouseOf || node.isCluster)) {
-             let resolvedParentId = node.parent;
-
-             // If parent is hidden inside a cluster proxy, remap to that proxy
-             if (!nodesMap.has(resolvedParentId)) {
-                 const parentNodeInRaw = rawData.find(d => d.id === resolvedParentId);
-                 if (parentNodeInRaw && parentNodeInRaw.clusterName) {
-                     const proxyId = `cluster_${parentNodeInRaw.clusterName.replace(/\s+/g, '_')}`;
-                     if (nodesMap.has(proxyId)) {
-                         resolvedParentId = proxyId;
-                     }
-                 }
-             }
-
-             if (nodesMap.has(resolvedParentId)) {
-                // Keep the structural parent pointing to the proxy so layout engine renders it correctly
-                node.parent = resolvedParentId;
-
+             if (nodesMap.has(node.parent)) {
                 let pushedToMother = false;
                 if (node.mother && nodesMap.has(node.mother)) {
                     const motherNode = nodesMap.get(node.mother);
@@ -221,7 +205,7 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                     }
                 }
                 if (!pushedToMother) {
-                    const parentNode = nodesMap.get(resolvedParentId);
+                    const parentNode = nodesMap.get(node.parent);
                     if (parentNode) {
                         parentNode.children.push(node.id);
                     }
