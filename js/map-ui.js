@@ -85,7 +85,7 @@ window.MapUI = {
                 errorMsg.style.display = 'none';
 
                 if (start && end && window.PathFinder) {
-                    const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
+                    const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
                     const pf = new window.PathFinder(dataList);
                     const path = pf.findShortestPath(start, end);
 
@@ -129,7 +129,7 @@ window.MapUI = {
         }
 
         // Search Logic
-        document.getElementById('map-search-input')?.addEventListener('input', (e) => {
+                document.getElementById('map-search-input')?.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
             const resultsContainer = document.getElementById('map-search-results');
 
@@ -138,7 +138,7 @@ window.MapUI = {
                 return;
             }
 
-            const dataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
+            const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
             const matches = dataList.filter(d =>
                 (d.name && d.name.toLowerCase().includes(query)) ||
                 (d.id && d.id.toLowerCase().includes(query)) ||
@@ -161,12 +161,29 @@ window.MapUI = {
                         document.getElementById('map-search-input').value = ev.currentTarget.querySelector('div').innerText;
                         resultsContainer.style.display = 'none';
 
-                        document.querySelectorAll('.map-node').forEach(n => n.style.opacity = '1');
-                        document.querySelectorAll('.connection-line').forEach(l => l.style.opacity = '1');
+                        const rawNode = dataList.find(d => d.id === id);
 
-                        if (window.MapControls) window.MapControls.focusOnNode(id);
-                        const nodeData = dataList.find(d => d.id === id);
-                        if (nodeData) this.openPanel(nodeData);
+                        if (rawNode && rawNode.clusterName && window.MapState) {
+                            if (!window.MapState.expandedClusters.has(rawNode.clusterName)) {
+                                window.MapState.expandedClusters.add(rawNode.clusterName);
+                                window.dispatchEvent(new Event('ClusterToggled'));
+                            }
+                        }
+
+                        // Need to give DOM/layout time to update if cluster was toggled,
+                        // but focusOnNode can be called immediately as it looks for the new layout.
+                        // Actually, focusOnNode relies on window.HistoricDB.getAll() being updated.
+                        setTimeout(() => {
+                            document.querySelectorAll('.map-node').forEach(n => n.style.opacity = '1');
+                            document.querySelectorAll('.connection-line').forEach(l => l.style.opacity = '1');
+
+                            if (window.MapControls) window.MapControls.focusOnNode(id);
+
+                            // Re-fetch from updated HistoricDB to get latest properties if needed for panel
+                            const updatedDataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
+                            const nodeData = updatedDataList.find(d => d.id === id) || rawNode;
+                            if (nodeData) this.openPanel(nodeData);
+                        }, 50); // slight delay to ensure event is processed
                     });
                 });
             } else {
@@ -174,6 +191,7 @@ window.MapUI = {
                 resultsContainer.style.display = 'block';
             }
         });
+
 
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.search-container')) {
