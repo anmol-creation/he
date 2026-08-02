@@ -44,19 +44,11 @@ window.MapRenderer = {
                 this.drawRouteConnections(ctx, dataList, this.routePath);
             }
 
-            // Multi-Tier LOD
-            // WORLD_MODE: scale < 0.08
-            // VANSH_MODE: scale >= 0.08 and scale < 0.3
-            const isWorldMode = state.scale < 0.08;
-            const isVanshMode = state.scale >= 0.08 && state.isMacroMode;
-
-            if (isVanshMode && window.vanshBounds) {
-                // To keep the world mode extremely clean, maybe we shouldn't draw bounds in world mode.
-                // But World Mode is scale < 0.08, VanshMode is >= 0.08 && < 0.3. This is correct.
+            if (state.isMacroMode && window.vanshBounds) {
                 this.drawVanshBounds(ctx, window.vanshBounds);
             }
 
-            this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId, isWorldMode);
+            this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId);
         } finally {
             ctx.restore();
         }
@@ -66,13 +58,10 @@ window.MapRenderer = {
     drawVanshBounds(ctx, boundsList) {
         // Draw regions for macro mode
         boundsList.forEach(bounds => {
-            // We scale padding so it looks consistent at zoom outs.
-            const currentScale = window.MapState ? window.MapState.scale : 0.3;
-            const pad = 200 / currentScale; // Adaptive padding
-            const width = (bounds.maxX - bounds.minX) + pad * 2;
-            const height = (bounds.maxY - bounds.minY) + pad * 2;
-            const x = bounds.minX - pad;
-            const y = bounds.minY - pad;
+            const width = bounds.maxX - bounds.minX + 400; // Add padding
+            const height = bounds.maxY - bounds.minY + 400;
+            const x = bounds.minX - 200;
+            const y = bounds.minY - 200;
 
             ctx.globalAlpha = 0.1;
             ctx.fillStyle = bounds.id; // Using color as ID for now
@@ -93,7 +82,7 @@ window.MapRenderer = {
             ctx.globalAlpha = 1;
             ctx.fillStyle = bounds.id;
             // Dynamically scale text up based on zoom out to remain readable
-            const scaleFactor = Math.min(60, 1 / currentScale);
+            const scaleFactor = window.MapState ? (1 / window.MapState.scale) : 3;
             ctx.font = `bold ${Math.floor(60 * scaleFactor)}px Poppins`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
@@ -287,7 +276,7 @@ window.MapRenderer = {
         }
     },
 
-    drawNodes(ctx, dataList, highlightSet, isRouting, isMacroMode, focusedNodeId, isWorldMode) {
+    drawNodes(ctx, dataList, highlightSet, isRouting, isMacroMode, focusedNodeId) {
         dataList.forEach((data) => {
             const isDaughter = data.id.endsWith('_daughter') || (data.gender === 'female' && !data.spouseOf);
             const isSpouse = !!data.spouseOf;
@@ -314,35 +303,22 @@ window.MapRenderer = {
 
             const nodeColor = data.inheritedColor || '#FF6B35';
 
-            // Multi-tier LOD rendering for nodes
-            if (isWorldMode) {
-                // In world mode, ONLY show extreme top level prominent nodes (e.g., Brahma, Vishnu, Mahesh, Brahman)
-                // We'll use depth <= 1 and isProminent as a heuristic for "World Level" entities.
-                if (!data.isProminent || data.depth > 1) return;
-            } else if (isMacroMode) {
-                // In Vansh mode (macro mode but not world mode), show prominent ancestors
-                if (!data.isProminent) return;
-            }
-
-            if (isMacroMode) {
+            // We should ensure only main prominent nodes show large, others are dots or hidden
+            if (isMacroMode && !data.isProminent) {
+                 // Option to draw a tiny dot instead of completely hiding, to give a heat-map feel,
+                 // but hiding keeps it cleaner as requested. We'll stick to hiding them.
+                 return;
+            } else if (isMacroMode && data.isProminent) {
                  // Render prominent nodes larger in macro mode
                  // Scale node size up based on zoom level to remain readable
-                 // Clamp the scale factor so nodes don't become infinitely large at extreme zoom outs
-                 const currentScale = window.MapState ? window.MapState.scale : 0.3;
-                 // At 0.02 scale, 1/0.02 is 50. This is fine, they will appear normal size on screen.
-                 const scaleFactor = Math.min(60, 1 / currentScale);
+                 const scaleFactor = window.MapState ? (1 / window.MapState.scale) : 3;
                  const macroW = 120 * scaleFactor;
                  const macroH = 50 * scaleFactor;
                  const mx = data.x - macroW / 2;
                  const my = data.y - macroH / 2;
 
                  ctx.fillStyle = '#111';
-                 ctx.beginPath();
-                 if (ctx.roundRect) {
-                     ctx.roundRect(mx, my, macroW, macroH, 15 * scaleFactor);
-                 } else {
-                     ctx.rect(mx, my, macroW, macroH);
-                 }
+                 this.roundRect(ctx, mx, my, macroW, macroH, 15 * scaleFactor);
                  ctx.fill();
                  ctx.lineWidth = 4 * scaleFactor;
                  ctx.strokeStyle = nodeColor;
