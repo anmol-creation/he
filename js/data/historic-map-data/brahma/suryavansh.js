@@ -196,10 +196,11 @@ export const suryavanshData = [
     // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
     { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
     { id: 'rana_ranasimha', name: 'रावल रणसिंह (कर्ण सिंह)', subtitle: 'शाखाओं का विभाजन', parent: 'bappa_rawal', yug: 'kali', parichay: 'इनके समय में गुहिल वंश दो शाखाओं में बंट गया: 1. रावल शाखा (क्षेमसिंह) और 2. राणा/सिसोदिया शाखा (राहप)।' },
+    { id: 'mewar_dynasty', name: 'गुहिल / सिसोदिया वंश', subtitle: 'मेवाड़ राजवंश', parent: 'rana_ranasimha', yug: 'kali', clusterName: 'गुहिल (सिसोदिया) वंश' },
 
     // Rawal Branch
-    { id: 'kshem_singh', name: 'रावल क्षेमसिंह', subtitle: 'रावल शाखा', parent: 'rana_ranasimha', yug: 'kali' },
-    { id: 'rawal_ratan_singh', name: 'रावल रतन सिंह', subtitle: 'चित्तौड़ के रावल', parent: 'kshem_singh', yug: 'kali', parichay: 'ये गुहिल वंश की रावल शाखा के अंतिम शासक थे। इन्होने अलाउद्दीन खिलजी के आक्रमण (1303 ई.) का डटकर सामना किया था। रानी पद्मिनी इन्ही की पत्नी थीं, जिन्होंने जौहर किया था।' },
+    { id: 'kshem_singh', name: 'रावल क्षेमसिंह', subtitle: 'रावल शाखा', parent: 'rana_ranasimha', yug: 'kali', clusterName: 'गुहिल (सिसोदिया) वंश' },
+    { id: 'rawal_ratan_singh', name: 'रावल रतन सिंह', subtitle: 'चित्तौड़ के रावल', parent: 'kshem_singh', yug: 'kali', parichay: 'ये गुहिल वंश की रावल शाखा के अंतिम शासक थे। इन्होने अलाउद्दीन खिलजी के आक्रमण (1303 ई.) का डटकर सामना किया था। रानी पद्मिनी इन्ही की पत्नी थीं, जिन्होंने जौहर किया था।', clusterName: 'गुहिल (सिसोदिया) वंश' },
 
     // Sisodia Branch (Rana Branch)
     { id: 'rahapa', name: 'राहप', subtitle: 'राणा/सिसोदिया शाखा के संस्थापक', parent: 'rana_ranasimha', yug: 'kali', parichay: 'इन्होंने सिसोदा ग्राम में जागीर स्थापित की, जिससे इनके वंशज "सिसोदिया" कहलाए और इन्होने "राणा" की उपाधि धारण की।' },
@@ -207,7 +208,8 @@ export const suryavanshData = [
     { id: 'rana_lakha', name: 'राणा लाखा', subtitle: 'मेवाड़ नरेश', parent: 'rana_hammir_sisodia', yug: 'kali', parichay: 'इन्हीं के समय में पिछोला झील का निर्माण हुआ और जावर में चांदी की खदानें मिली थीं।' },
 
     // Chundawat Branch
-    { id: 'rao_chunda', name: 'राव चूंडा', subtitle: 'मेवाड़ के भीष्म पितामह', parent: 'rana_lakha', yug: 'kali', parichay: 'इन्होंने अपने पिता के लिए मेवाड़ के सिंहासन का त्याग किया था। इनके वंशज "चूंडावत" (Chundawat) कहलाते हैं, जो मेवाड़ के प्रथम श्रेणी के सामंत थे।' },
+    { id: 'chundawat_dynasty_proxy', name: 'चूंडावत वंश', subtitle: 'राव चूंडा के वंशज', parent: 'rana_lakha', yug: 'kali', parichay: 'मेवाड़ के प्रथम श्रेणी के सामंत (राव चूंडा के वंशज)।', isProxy: true, clusterName: 'चूंडावत वंश' },
+    { id: 'rao_chunda', name: 'राव चूंडा', subtitle: 'मेवाड़ के भीष्म पितामह', parent: 'chundawat_dynasty_proxy', yug: 'kali', parichay: 'इन्होंने अपने पिता के लिए मेवाड़ के सिंहासन का त्याग किया था। इनके वंशज "चूंडावत" (Chundawat) कहलाते हैं, जो मेवाड़ के प्रथम श्रेणी के सामंत थे।', clusterName: 'चूंडावत वंश' },
 
     { id: 'rana_mokal_mewar', name: 'राणा मोकल', subtitle: 'मेवाड़ नरेश', parent: 'rana_lakha', yug: 'kali' },
     { id: 'rana_kumbha', name: 'राणा कुम्भा', subtitle: 'महान निर्माता और योद्धा', parent: 'rana_mokal_mewar', yug: 'kali', parichay: 'ये स्थापत्य कला के महान संरक्षक थे। इन्होने मेवाड़ में 32 किलों (जैसे कुम्भलगढ़) का निर्माण करवाया और मालवा-गुजरात की संयुक्त सेनाओं को हराया।' },
@@ -216,12 +218,13 @@ export const suryavanshData = [
     { id: 'rana_udai_singh_ii', name: 'राणा उदय सिंह (द्वितीय)', subtitle: 'उदयपुर के संस्थापक', parent: 'rana_sanga', yug: 'kali', parichay: 'इन्होंने 1559 ई. में उदयपुर शहर की स्थापना की थी।' },
 
     // Shaktawat Branch
-    { id: 'shakti_singh', name: 'शक्ति सिंह', subtitle: 'शक्तावत वंश के संस्थापक', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'महाराणा प्रताप के भाई। इनके वंशज "शक्तावत" (Shaktawat) कहलाए।' },
+    { id: 'shakti_singh', name: 'शक्ति सिंह', subtitle: 'शक्तावत वंश के संस्थापक', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'महाराणा प्रताप के भाई। इनके वंशज \"शक्तावत\" (Shaktawat) कहलाए।' },
+    { id: 'shaktawat_dynasty', name: 'शक्तावत वंश', subtitle: 'सिसोदिया शाखा', parent: 'shakti_singh', yug: 'kali', clusterName: 'शक्तावत वंश' },
 
-    { id: 'maharana_pratap', name: 'महाराणा प्रताप', subtitle: 'मेवाड़ के वीर शिरोमणि', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।' },
-    { id: 'amar_singh_mewar', name: 'महाराणा अमर सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'maharana_pratap', yug: 'kali', parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े। इनके बाद के शासकों के वंशज "राणावत" (Ranawat) भी कहलाये।' },
-    { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।' },
-    { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।' },
+    { id: 'maharana_pratap', name: 'महाराणा प्रताप', subtitle: 'मेवाड़ के वीर शिरोमणि', parent: 'rana_udai_singh_ii', yug: 'kali', parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।', clusterName: 'गुहिल (सिसोदिया) वंश' },
+    { id: 'amar_singh_mewar', name: 'महाराणा अमर सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'maharana_pratap', yug: 'kali', parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े। इनके बाद के शासकों के वंशज \"राणावत\" (Ranawat) भी कहलाये।', clusterName: 'गुहिल (सिसोदिया) वंश' },
+    { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।', clusterName: 'गुहिल (सिसोदिया) वंश' },
+    { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।', clusterName: 'गुहिल (सिसोदिया) वंश' },
 
     { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
 
@@ -285,39 +288,40 @@ export const suryavanshData = [
     { id: 'kritanjaya', name: 'कृतञ्जय', subtitle: 'धर्मिन् पुत्र', parent: 'dharmin', yug: 'kali' },
     { id: 'rananjaya', name: 'रणञ्जय', subtitle: 'कृतञ्जय पुत्र', parent: 'kritanjaya', yug: 'kali' },
     { id: 'sanjaya_surya', name: 'सञ्जय', subtitle: 'रणञ्जय पुत्र', parent: 'rananjaya', yug: 'kali' },
-    { id: 'shakya_king', name: 'शाक्य', subtitle: 'सञ्जय पुत्र', parent: 'sanjaya_surya', yug: 'kali', parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।' },
+    { id: 'shakya_dynasty_proxy', name: 'शाक्य वंश', subtitle: 'सञ्जय के वंशज', parent: 'sanjaya_surya', yug: 'kali', parichay: 'शाक्य वंश के प्रवर्तक, जिसमें गौतम बुद्ध का जन्म हुआ।', isProxy: true, clusterName: 'शाक्य वंश' },
+    { id: 'shakya_king', name: 'शाक्य', subtitle: 'सञ्जय पुत्र', parent: 'shakya_dynasty_proxy', yug: 'kali', parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।', clusterName: 'शाक्य वंश' },
 
     // Shakya Siblings (Children of King Shakya / Sihahanu)
-    { id: 'shuddhodana', name: 'शुद्धोदन', subtitle: 'कपिलवस्तु के राजा', parent: 'shakya_king', yug: 'kali', parichay: 'गौतम बुद्ध के पिता।' },
-    { id: 'shuklodana', name: 'शुक्लोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali' },
-    { id: 'amitodana', name: 'अमितोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali', parichay: 'बुद्ध के चाचा और आनंद के पिता।' },
-    { id: 'amita_shakya', name: 'पमिता (अमिता)', subtitle: 'शाक्य पुत्री', parent: 'shakya_king', yug: 'kali', parichay: 'बुद्ध की बुआ, जिनका विवाह कोलिय वंश के राजा सुप्पबुद्ध से हुआ था। यशोधरा और देवदत्त इन्हीं की संतान थे।' },
+    { id: 'shuddhodana', name: 'शुद्धोदन', subtitle: 'कपिलवस्तु के राजा', parent: 'shakya_king', yug: 'kali', parichay: 'गौतम बुद्ध के पिता।', clusterName: 'शाक्य वंश' },
+    { id: 'shuklodana', name: 'शुक्लोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali', clusterName: 'शाक्य वंश' },
+    { id: 'amitodana', name: 'अमितोदन', subtitle: 'शाक्य पुत्र', parent: 'shakya_king', yug: 'kali', parichay: 'बुद्ध के चाचा और आनंद के पिता।', clusterName: 'शाक्य वंश' },
+    { id: 'amita_shakya', name: 'पमिता (अमिता)', subtitle: 'शाक्य पुत्री', parent: 'shakya_king', yug: 'kali', parichay: 'बुद्ध की बुआ, जिनका विवाह कोलिय वंश के राजा सुप्पबुद्ध से हुआ था। यशोधरा और देवदत्त इन्हीं की संतान थे।', clusterName: 'शाक्य वंश' },
 
-    { id: 'suppabuddha', name: 'सुप्पबुद्ध', subtitle: 'कोलिय राजा', parent: '', spouseOf: 'amita_shakya', yug: 'kali', parichay: 'कोलिय वंश के शासक। यशोधरा और देवदत्त के पिता।' },
-    { id: 'devadatta', name: 'देवदत्त', subtitle: 'सुप्पबुद्ध पुत्र', parent: 'suppabuddha', mother: 'amita_shakya', yug: 'kali', parichay: 'बुद्ध के चचेरे भाई (बुआ के बेटे)। ये बाद में बुद्ध से ईर्ष्या करने लगे थे और उन्होंने बौद्ध संघ को तोड़ने का प्रयास किया था।' },
+    { id: 'suppabuddha', name: 'सुप्पबुद्ध', subtitle: 'कोलिय राजा', parent: '', spouseOf: 'amita_shakya', yug: 'kali', parichay: 'कोलिय वंश के शासक। यशोधरा और देवदत्त के पिता।', clusterName: 'शाक्य वंश' },
+    { id: 'devadatta', name: 'देवदत्त', subtitle: 'सुप्पबुद्ध पुत्र', parent: 'suppabuddha', mother: 'amita_shakya', yug: 'kali', parichay: 'बुद्ध के चचेरे भाई (बुआ के बेटे)। ये बाद में बुद्ध से ईर्ष्या करने लगे थे और उन्होंने बौद्ध संघ को तोड़ने का प्रयास किया था।', clusterName: 'शाक्य वंश' },
 
-    { id: 'maya_devi', name: 'माया देवी', subtitle: 'शुद्धोदन पत्नी', parent: '', spouseOf: 'shuddhodana', yug: 'kali', parichay: 'गौतम बुद्ध की सगी माता, जिनका बुद्ध के जन्म के सात दिन बाद निधन हो गया था।' },
+    { id: 'maya_devi', name: 'माया देवी', subtitle: 'शुद्धोदन पत्नी', parent: '', spouseOf: 'shuddhodana', yug: 'kali', parichay: 'गौतम बुद्ध की सगी माता, जिनका बुद्ध के जन्म के सात दिन बाद निधन हो गया था।', clusterName: 'शाक्य वंश' },
     { id: 'mahapajapati_gotami', name: 'महाप्रजापति गौतमी', subtitle: 'शुद्धोदन पत्नी', parent: '', spouseOf: 'shuddhodana', yug: 'kali', parichay: 'गौतम बुद्ध की मौसी और सौतेली माता। ये पहली महिला थीं जिन्होंने बौद्ध संघ में भिक्षुणी के रूप में प्रवेश लिया था।' },
 
     // Children of Shuddhodana
-    { id: 'siddhartha_buddha', name: 'सिद्धार्थ (गौतम बुद्ध)', subtitle: 'बौद्ध धर्म के संस्थापक', parent: 'shuddhodana', mother: 'maya_devi', yug: 'kali', parichay: 'हालाँकि बौद्ध ग्रंथ इनका वंश इक्ष्वाकु (ओक्काक) से जोड़ते हैं, लेकिन पुराणों में इन्हें सीधे इसी अयोध्या वंशावली में लिखा गया है। ज्ञान प्राप्ति के बाद ये बुद्ध कहलाये।' },
-    { id: 'nanda_shakya', name: 'नन्द', subtitle: 'शुद्धोदन पुत्र', parent: 'shuddhodana', mother: 'mahapajapati_gotami', yug: 'kali', parichay: 'गौतम बुद्ध के सौतेले भाई। बाद में इन्होंने भी बुद्ध से दीक्षा लेकर भिक्षु जीवन अपना लिया था।' },
-    { id: 'sundari_nanda', name: 'सुंदरी नंदा', subtitle: 'शुद्धोदन पुत्री', parent: 'shuddhodana', mother: 'mahapajapati_gotami', yug: 'kali', parichay: 'बुद्ध की सौतेली बहन।' },
+    { id: 'siddhartha_buddha', name: 'सिद्धार्थ (गौतम बुद्ध)', subtitle: 'बौद्ध धर्म के संस्थापक', parent: 'shuddhodana', mother: 'maya_devi', yug: 'kali', parichay: 'हालाँकि बौद्ध ग्रंथ इनका वंश इक्ष्वाकु (ओक्काक) से जोड़ते हैं, लेकिन पुराणों में इन्हें सीधे इसी अयोध्या वंशावली में लिखा गया है। ज्ञान प्राप्ति के बाद ये बुद्ध कहलाये।', clusterName: 'शाक्य वंश' },
+    { id: 'nanda_shakya', name: 'नन्द', subtitle: 'शुद्धोदन पुत्र', parent: 'shuddhodana', mother: 'mahapajapati_gotami', yug: 'kali', parichay: 'गौतम बुद्ध के सौतेले भाई। बाद में इन्होंने भी बुद्ध से दीक्षा लेकर भिक्षु जीवन अपना लिया था।', clusterName: 'शाक्य वंश' },
+    { id: 'sundari_nanda', name: 'सुंदरी नंदा', subtitle: 'शुद्धोदन पुत्री', parent: 'shuddhodana', mother: 'mahapajapati_gotami', yug: 'kali', parichay: 'बुद्ध की सौतेली बहन।', clusterName: 'शाक्य वंश' },
 
     // Family of Buddha
-    { id: 'yashodhara', name: 'यशोधरा', subtitle: 'गौतम बुद्ध की पत्नी', parent: 'suppabuddha', mother: 'amita_shakya', spouseOf: 'siddhartha_buddha', yug: 'kali', parichay: 'सिद्धार्थ (बुद्ध) की पत्नी और कोलिय राजा सुप्पबुद्ध की पुत्री। ये देवदत्त की सगी बहन थीं।' },
-    { id: 'rahula', name: 'राहुल', subtitle: 'सिद्धार्थ पुत्र', parent: 'siddhartha_buddha', mother: 'yashodhara', yug: 'kali', parichay: 'गौतम बुद्ध के इकलौते पुत्र, जो बाद में अपने पिता के शिष्य (भिक्षु) बन गए।' },
+    { id: 'yashodhara', name: 'यशोधरा', subtitle: 'गौतम बुद्ध की पत्नी', parent: 'suppabuddha', mother: 'amita_shakya', spouseOf: 'siddhartha_buddha', yug: 'kali', parichay: 'सिद्धार्थ (बुद्ध) की पत्नी और कोलिय राजा सुप्पबुद्ध की पुत्री। ये देवदत्त की सगी बहन थीं।', clusterName: 'शाक्य वंश' },
+    { id: 'rahula', name: 'राहुल', subtitle: 'सिद्धार्थ पुत्र', parent: 'siddhartha_buddha', mother: 'yashodhara', yug: 'kali', parichay: 'गौतम बुद्ध के इकलौते पुत्र, जो बाद में अपने पिता के शिष्य (भिक्षु) बन गए।', clusterName: 'शाक्य वंश' },
 
     // Children of Amitodana (Buddha's cousins)
-    { id: 'ananda_shakya', name: 'आनंद', subtitle: 'अमितोदन पुत्र', parent: 'amitodana', yug: 'kali', parichay: 'गौतम बुद्ध के चचेरे भाई और उनके सबसे प्रिय व प्रमुख शिष्य। इन्होने ही बुद्ध के अधिकांश उपदेशों को कंठस्थ किया था।' },
-    { id: 'anuruddha', name: 'अनुरुद्ध', subtitle: 'अमितोदन पुत्र', parent: 'amitodana', yug: 'kali', parichay: 'बुद्ध के चचेरे भाई और प्रमुख भिक्षु।' },
+    { id: 'ananda_shakya', name: 'आनंद', subtitle: 'अमितोदन पुत्र', parent: 'amitodana', yug: 'kali', parichay: 'गौतम बुद्ध के चचेरे भाई और उनके सबसे प्रिय व प्रमुख शिष्य। इन्होने ही बुद्ध के अधिकांश उपदेशों को कंठस्थ किया था।', clusterName: 'शाक्य वंश' },
+    { id: 'anuruddha', name: 'अनुरुद्ध', subtitle: 'अमितोदन पुत्र', parent: 'amitodana', yug: 'kali', parichay: 'बुद्ध के चचेरे भाई और प्रमुख भिक्षु।', clusterName: 'शाक्य वंश' },
 
-    { id: 'prasenajit', name: 'प्रसेनजित', subtitle: 'राहुल पुत्र', parent: 'rahula', yug: 'kali', parichay: 'पुराणों के अनुसार राहुल के पुत्र। (हालाँकि बौद्ध ग्रंथों में प्रसेनजित कोशल के एक समकालीन राजा थे)।' },
+    { id: 'prasenajit', name: 'प्रसेनजित', subtitle: 'राहुल पुत्र', parent: 'rahula', yug: 'kali', parichay: 'पुराणों के अनुसार राहुल के पुत्र। (हालाँकि बौद्ध ग्रंथों में प्रसेनजित कोशल के एक समकालीन राजा थे)।', clusterName: 'शाक्य वंश' },
 
     // Maurya Dynasty (Branched from Shakya/Ikshvaku line)
-    { id: 'moriya_clan', name: 'मोरिय (मौर्य) वंश', subtitle: 'शाक्य वंश की शाखा', parent: 'shakya_king', yug: 'kali', parichay: 'बौद्ध ग्रंथों (महावंश) के अनुसार, कोशल नरेश विडूडभ के आक्रमण से बचकर कुछ शाक्य हिमालय की तराई में पिप्पलीवन चले गए थे। मोरों (Peacocks) की अधिकता के कारण वे "मोरिय" या मौर्य कहलाये।' },
+    { id: 'moriya_clan', name: 'मोरिय (मौर्य) वंश', subtitle: 'शाक्य वंश की शाखा', parent: 'shakya_king', yug: 'kali', parichay: 'बौद्ध ग्रंथों (महावंश) के अनुसार, कोशल नरेश विडूडभ के आक्रमण से बचकर कुछ शाक्य हिमालय की तराई में पिप्पलीवन चले गए थे। मोरों (Peacocks) की अधिकता के कारण वे \"मोरिय\" या मौर्य कहलाये।', clusterName: 'शाक्य वंश' },
     { id: 'chandragupta_maurya', name: 'चन्द्रगुप्त मौर्य', subtitle: 'मौर्य साम्राज्य के संस्थापक', parent: 'moriya_clan', yug: 'kali', parichay: 'इन्होंने चाणक्य की सहायता से नंद वंश का नाश किया और भारत के सबसे विशाल मौर्य साम्राज्य की स्थापना की। वर्तमान में "कुशवाहा, कोइरी, काछी, सैनी और शाक्य/मौर्य" कृषक समाज गर्व से इसी वंश (कुश->शाक्य->मौर्य) से अपनी उत्पत्ति मानते हैं।' },
-    { id: 'bindusara', name: 'बिन्दुसार', subtitle: 'चन्द्रगुप्त पुत्र', parent: 'chandragupta_maurya', yug: 'kali' },
+    { id: 'bindusara', name: 'बिन्दुसार', subtitle: 'चन्द्रगुप्त पुत्र', parent: 'chandragupta_maurya', yug: 'kali', clusterName: 'शाक्य वंश' },
     { id: 'ashoka_great', name: 'सम्राट अशोक', subtitle: 'महान मौर्य सम्राट', parent: 'bindusara', yug: 'kali', parichay: 'ये भारत के सबसे महान सम्राटों में से एक थे। कलिंग युद्ध के बाद इन्होंने बौद्ध धर्म अपना लिया और शांति व धम्म का प्रचार किया।' },
     { id: 'brihadratha_maurya', name: 'बृहद्रथ मौर्य', subtitle: 'अंतिम मौर्य सम्राट', parent: 'ashoka_great', yug: 'kali', parichay: 'ये अंतिम मौर्य सम्राट थे, जिनकी हत्या उनके सेनापति पुष्यमित्र शुंग ने की थी।' },
     { id: 'kshudraka', name: 'क्षुद्रक', subtitle: 'प्रसेनजित पुत्र', parent: 'prasenajit', yug: 'kali' },
@@ -337,10 +341,11 @@ export const suryavanshData = [
     { id: 'guhadatta_mewar', name: 'गुहादित्य (गुहिल)', subtitle: 'गुहिल वंश के संस्थापक', parent: 'shiladitya_vallabhi', yug: 'kali', parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। गुफा में जन्म लेने के कारण इनका नाम गुहादित्य पड़ा। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी। इनके वंशज आगे चलकर गुहिल या गहलोत कहलाए।' },
 
     // Dogra / Jamwal Dynasty (Descendants of Ayodhya Kings in Jammu)
-    { id: 'agnigarbha_jammu', name: 'अग्निगर्भ', subtitle: 'जम्वाल वंश के आदि पुरुष', parent: 'sumitra_king', yug: 'kali', parichay: 'ये अयोध्या के सूर्यवंशी राजाओं (कुश के वंशज) के प्रतापी राजकुमार थे, जो अयोध्या से पलायन कर शिवालिक की पहाड़ियों में आ बसे। डोगरा इतिहास (गुलाबनामा) के अनुसार इन्होंने ही यहाँ अपना राज्य स्थापित किया।' },
+    { id: 'jamval_dynasty_proxy', name: 'जम्वाल (डोगरा) वंश', subtitle: 'अग्निगर्भ के वंशज', parent: 'sumitra_king', yug: 'kali', isProxy: true, clusterName: 'जम्वाल (डोगरा) वंश' },
+    { id: 'agnigarbha_jammu', name: 'अग्निगर्भ', subtitle: 'जम्वाल वंश के आदि पुरुष', parent: 'jamval_dynasty_proxy', yug: 'kali', parichay: 'ये अयोध्या के सूर्यवंशी राजाओं (कुश के वंशज) के प्रतापी राजकुमार थे, जो अयोध्या से पलायन कर शिवालिक की पहाड़ियों में आ बसे। डोगरा इतिहास (गुलाबनामा) के अनुसार इन्होंने ही यहाँ अपना राज्य स्थापित किया।', clusterName: 'जम्वाल (डोगरा) वंश' },
     { id: 'bahu_lochan', name: 'बाहु लोचन', subtitle: 'बाहु नगर के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'अग्निगर्भ के ज्येष्ठ पुत्र। इन्होंने तवी नदी के किनारे बाहु किला (Bahu Fort) बनवाया और बाहु नगर बसाया।' },
-    { id: 'jambu_lochan', name: 'जम्बू लोचन', subtitle: 'जम्मू के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'इन्होंने एक शेर और बकरी को एक ही घाट पर पानी पीते देखा, जिससे प्रभावित होकर इन्होंने जम्मू (Jambu) शहर की स्थापना की। इनके वंशज आगे चलकर "जम्वाल" या डोगरा राजपूत कहलाये।' },
-    { id: 'dhruv_dev', name: 'राजा ध्रुव देव', subtitle: 'जम्मू नरेश', parent: 'jambu_lochan', yug: 'kali' },
+    { id: 'jambu_lochan', name: 'जम्बू लोचन', subtitle: 'जम्मू के संस्थापक', parent: 'agnigarbha_jammu', yug: 'kali', parichay: 'इन्होंने एक शेर और बकरी को एक ही घाट पर पानी पीते देखा, जिससे प्रभावित होकर इन्होंने जम्मू (Jambu) शहर की स्थापना की। इनके वंशज आगे चलकर "जम्वाल" या डोगरा राजपूत कहलाये।', clusterName: 'जम्वाल (डोगरा) वंश' },
+    { id: 'dhruv_dev', name: 'राजा ध्रुव देव', subtitle: 'जम्मू नरेश', parent: 'jambu_lochan', yug: 'kali', clusterName: 'जम्वाल (डोगरा) वंश' },
     { id: 'ranjit_dev', name: 'राजा रणजीत देव', subtitle: 'जम्मू नरेश', parent: 'dhruv_dev', yug: 'kali', parichay: 'ये जम्मू के अत्यंत प्रसिद्ध और न्यायप्रिय राजा थे, जिनके समय में जम्मू ने बहुत समृद्धि देखी।' },
     { id: 'surat_singh', name: 'सूरत सिंह', subtitle: 'ध्रुव देव पुत्र', parent: 'dhruv_dev', yug: 'kali' },
     { id: 'zorawar_singh_jammu', name: 'ज़ोरावर सिंह', subtitle: 'सूरत सिंह पुत्र', parent: 'surat_singh', yug: 'kali' },
@@ -352,18 +357,20 @@ export const suryavanshData = [
     { id: 'karan_singh', name: 'डॉ. कर्ण सिंह', subtitle: 'हरि सिंह पुत्र', parent: 'hari_singh', yug: 'kali', parichay: 'ये जम्मू और कश्मीर रियासत के युवराज (Crown Prince) और भारत के एक प्रमुख राजनेता और विद्वान हैं।' },
 
     // Rathore / Gahadavala Dynasty (Descendants of Sumitra/Kusha leading to Kannauj and Marwar)
-    { id: 'yashovigraha', name: 'यशोविग्रह', subtitle: 'गहरवार वंश के आदि पुरुष', parent: 'sumitra_king', yug: 'kali', parichay: 'सुमित्र की वंशावली में आगे चलकर यशोविग्रह हुए, जिनके वंशजों ने कन्नौज में गहरवार/राठौड़ वंश की स्थापना की।' },
-    { id: 'mahichandra', name: 'महीचन्द्र', subtitle: 'यशोविग्रह पुत्र', parent: 'yashovigraha', yug: 'kali' },
-    { id: 'chandradeva_kannauj', name: 'चन्द्रदेव', subtitle: 'कन्नौज के संस्थापक राजा', parent: 'mahichandra', yug: 'kali', parichay: 'इन्होंने 1090 ई. के आसपास कन्नौज और वाराणसी में एक स्वतंत्र और विशाल गहरवार साम्राज्य की स्थापना की।' },
-    { id: 'madanapala_kannauj', name: 'मदनपाल', subtitle: 'चन्द्रदेव पुत्र', parent: 'chandradeva_kannauj', yug: 'kali' },
-    { id: 'govindachandra_kannauj', name: 'गोविन्दचन्द्र', subtitle: 'कन्नौज के प्रतापी सम्राट', parent: 'madanapala_kannauj', yug: 'kali', parichay: 'ये गहरवार वंश के सबसे प्रतापी और शक्तिशाली सम्राट थे (इन्होंने 1114-1155 तक राज किया)।' },
-    { id: 'vijayachandra_kannauj', name: 'विजयचन्द्र', subtitle: 'गोविन्दचन्द्र पुत्र', parent: 'govindachandra_kannauj', yug: 'kali' },
+    { id: 'gaharwar_dynasty_proxy', name: 'गहरवार वंश', subtitle: 'यशोविग्रह वंश', parent: 'sumitra_king', yug: 'kali', isProxy: true, clusterName: 'गहरवार वंश' },
+    { id: 'yashovigraha', name: 'यशोविग्रह', subtitle: 'गहरवार वंश के आदि पुरुष', parent: 'gaharwar_dynasty_proxy', yug: 'kali', parichay: 'सुमित्र की वंशावली में आगे चलकर यशोविग्रह हुए, जिनके वंशजों ने कन्नौज में गहरवार/राठौड़ वंश की स्थापना की।', clusterName: 'गहरवार वंश' },
+    { id: 'mahichandra', name: 'महीचन्द्र', subtitle: 'यशोविग्रह पुत्र', parent: 'yashovigraha', yug: 'kali', clusterName: 'गहरवार वंश' },
+    { id: 'chandradeva_kannauj', name: 'चन्द्रदेव', subtitle: 'कन्नौज के संस्थापक राजा', parent: 'mahichandra', yug: 'kali', parichay: 'इन्होंने 1090 ई. के आसपास कन्नौज और वाराणसी में एक स्वतंत्र और विशाल गहरवार साम्राज्य की स्थापना की।', clusterName: 'गहरवार वंश' },
+    { id: 'madanapala_kannauj', name: 'मदनपाल', subtitle: 'चन्द्रदेव पुत्र', parent: 'chandradeva_kannauj', yug: 'kali', clusterName: 'गहरवार वंश' },
+    { id: 'govindachandra_kannauj', name: 'गोविन्दचन्द्र', subtitle: 'कन्नौज के प्रतापी सम्राट', parent: 'madanapala_kannauj', yug: 'kali', parichay: 'ये गहरवार वंश के सबसे प्रतापी और शक्तिशाली सम्राट थे (इन्होंने 1114-1155 तक राज किया)।', clusterName: 'गहरवार वंश' },
+    { id: 'vijayachandra_kannauj', name: 'विजयचन्द्र', subtitle: 'गोविन्दचन्द्र पुत्र', parent: 'govindachandra_kannauj', yug: 'kali', clusterName: 'गहरवार वंश' },
     { id: 'jaichand', name: 'जयचन्द्र (जयचंद)', subtitle: 'कन्नौज के सम्राट', parent: 'vijayachandra_kannauj', yug: 'kali', parichay: 'ये कन्नौज के प्रतापी हिन्दू सम्राट थे, जो 1194 ई. में मोहम्मद गौरी के साथ "चंदावर के युद्ध" में वीरगति को प्राप्त हुए।' },
 
     // Rathores of Marwar (Jodhpur)
-    { id: 'harishchandra_rathore', name: 'हरिश्चंद्र', subtitle: 'जयचंद पुत्र', parent: 'jaichand', yug: 'kali' },
-    { id: 'setram_rathore', name: 'सेतराम', subtitle: 'हरिश्चंद्र पुत्र', parent: 'harishchandra_rathore', yug: 'kali' },
-    { id: 'rao_siha', name: 'राव सीहा', subtitle: 'मारवाड़ राठौड़ वंश संस्थापक', parent: 'setram_rathore', yug: 'kali', parichay: 'कन्नौज के पतन के बाद ये 13वीं सदी में मारवाड़ (राजस्थान) आये। ये राठौड़ वंश (मारवाड़) के मूल पुरुष माने जाते हैं।' },
+    { id: 'harishchandra_rathore', name: 'हरिश्चंद्र', subtitle: 'जयचंद पुत्र', parent: 'jaichand', yug: 'kali', clusterName: 'गहरवार वंश' },
+    { id: 'setram_rathore', name: 'सेतराम', subtitle: 'हरिश्चंद्र पुत्र', parent: 'harishchandra_rathore', yug: 'kali', clusterName: 'गहरवार वंश' },
+    { id: 'rao_siha', name: 'राव सीहा', subtitle: 'मारवाड़ राठौड़ वंश संस्थापक', parent: 'setram_rathore', yug: 'kali', parichay: 'कन्नौज के पतन के बाद ये 13वीं सदी में मारवाड़ (राजस्थान) आये। ये राठौड़ वंश (मारवाड़) के मूल पुरुष माने जाते हैं।', clusterName: 'राठौड़ राजपूत वंश' },
+    { id: 'rathore_dynasty', name: 'मारवाड़ के राठौड़', subtitle: 'राठौड़ राजवंश', parent: 'rao_siha', yug: 'kali', clusterName: 'राठौड़ राजपूत वंश' },
     { id: 'rao_asthan', name: 'राव आस्थान', subtitle: 'राव सीहा पुत्र', parent: 'rao_siha', yug: 'kali' },
     { id: 'rao_duhad', name: 'राव दुहड़', subtitle: 'राव आस्थान पुत्र', parent: 'rao_asthan', yug: 'kali', parichay: 'इन्होने राठौड़ों की कुलदेवी "नागणेची माता" की मूर्ति कर्नाटक से लाकर स्थापित की।' },
     { id: 'rao_raipal', name: 'राव रायपाल', subtitle: 'राव दुहड़ पुत्र', parent: 'rao_duhad', yug: 'kali' },
@@ -393,17 +400,18 @@ export const suryavanshData = [
 
     // Bais Rajput Dynasty (Suryavanshi lineage tracing from Shalivahana and Harshavardhana)
     { id: 'shalivahana', name: 'सम्राट शालिवाहन', subtitle: 'शक संवत के प्रवर्तक', parent: 'sumitra_king', yug: 'kali', parichay: 'इन्होंने 78 ईसवी में उज्जैन के राजा विक्रमादित्य के वंशजों (या शकों) को हराकर "शालिवाहन शक" (Saka Era) की शुरुआत की। बैस (Bais) राजपूत विशुद्ध सूर्यवंशी हैं जो इन्हीं सम्राट शालिवाहन से अपनी उत्पत्ति मानते हैं।' },
-    { id: 'pushyabhuti', name: 'पुष्यभूति', subtitle: 'वर्धन वंश के संस्थापक', parent: 'shalivahana', yug: 'kali', parichay: 'शालिवाहन के वंश में आगे चलकर पुष्यभूति हुए जिन्होंने हरियाणा (थानेश्वर) में वर्धन/पुष्यभूति वंश की नींव रखी। अलेक्जेंडर कनिंघम के अनुसार यही बैस राजपूतों का मूल वंश था।' },
-    { id: 'nara_vardhana', name: 'नर वर्धन', subtitle: 'पुष्यभूति वंश', parent: 'pushyabhuti', yug: 'kali' },
-    { id: 'rajya_vardhana_i', name: 'राज्य वर्धन प्रथम', subtitle: 'पुष्यभूति वंश', parent: 'nara_vardhana', yug: 'kali' },
-    { id: 'aditya_vardhana', name: 'आदित्य वर्धन', subtitle: 'पुष्यभूति वंश', parent: 'rajya_vardhana_i', yug: 'kali' },
-    { id: 'prabhakara_vardhana', name: 'प्रभाकर वर्धन', subtitle: 'थानेश्वर के महाराजाधिराज', parent: 'aditya_vardhana', yug: 'kali', parichay: 'ये इस वंश के सबसे पहले स्वतंत्र और प्रतापी राजा थे।' },
-    { id: 'harshavardhana', name: 'सम्राट हर्षवर्धन', subtitle: 'उत्तर भारत के महान सम्राट', parent: 'prabhakara_vardhana', yug: 'kali', parichay: 'ये प्राचीन भारत (606-647 ई.) के अंतिम महान हिन्दू सम्राटों में से एक थे। बाणभट्ट के "हर्षचरित" में इन्हें सूर्यवंशी (बैस) क्षत्रिय बताया गया है। इन्होंने कन्नौज को अपनी राजधानी बनाया था।' },
+    { id: 'vardhan_dynasty_proxy', name: 'वर्धन वंश', subtitle: 'पुष्यभूति वंश', parent: 'shalivahana', yug: 'kali', parichay: 'वर्धन (पुष्यभूति) वंश और बैस राजपूत।', isProxy: true, clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'pushyabhuti', name: 'पुष्यभूति', subtitle: 'वर्धन वंश के संस्थापक', parent: 'vardhan_dynasty_proxy', yug: 'kali', parichay: 'शालिवाहन के वंश में आगे चलकर पुष्यभूति हुए जिन्होंने हरियाणा (थानेश्वर) में वर्धन/पुष्यभूति वंश की नींव रखी। अलेक्जेंडर कनिंघम के अनुसार यही बैस राजपूतों का मूल वंश था।', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'nara_vardhana', name: 'नर वर्धन', subtitle: 'पुष्यभूति वंश', parent: 'pushyabhuti', yug: 'kali', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'rajya_vardhana_i', name: 'राज्य वर्धन प्रथम', subtitle: 'पुष्यभूति वंश', parent: 'nara_vardhana', yug: 'kali', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'aditya_vardhana', name: 'आदित्य वर्धन', subtitle: 'पुष्यभूति वंश', parent: 'rajya_vardhana_i', yug: 'kali', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'prabhakara_vardhana', name: 'प्रभाकर वर्धन', subtitle: 'थानेश्वर के महाराजाधिराज', parent: 'aditya_vardhana', yug: 'kali', parichay: 'ये इस वंश के सबसे पहले स्वतंत्र और प्रतापी राजा थे।', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'harshavardhana', name: 'सम्राट हर्षवर्धन', subtitle: 'उत्तर भारत के महान सम्राट', parent: 'prabhakara_vardhana', yug: 'kali', parichay: 'ये प्राचीन भारत (606-647 ई.) के अंतिम महान हिन्दू सम्राटों में से एक थे। बाणभट्ट के \"हर्षचरित\" में इन्हें सूर्यवंशी (बैस) क्षत्रिय बताया गया है। इन्होंने कन्नौज को अपनी राजधानी बनाया था।', clusterName: 'वर्धन (पुष्यभूति) वंश' },
 
     // Baiswara (Awadh) Branch
-    { id: 'abhaychand_bais', name: 'राजा अभयचंद बैस', subtitle: 'बैसवाड़ा के संस्थापक', parent: 'harshavardhana', yug: 'kali', parichay: 'हर्षवर्धन के वंशजों में अभयचंद ने 13वीं सदी के आसपास अवध क्षेत्र (वर्तमान यूपी) में प्रवेश किया, भर जाति के राजाओं को हराया और "बैसवाड़ा" (Baiswara) राज्य की स्थापना की।' },
-    { id: 'raja_tilokchand', name: 'राजा त्रिलोकचंद', subtitle: 'त्रिलोकचंदी बैस के प्रवर्तक', parent: 'abhaychand_bais', yug: 'kali', parichay: 'ये बैसवाड़ा के सबसे प्रतापी राजा थे। इन्हीं के नाम से बैसों की सबसे ऊंची "त्रिलोकचंदी बैस" शाखा चलती है।' },
-    { id: 'raja_devaraya', name: 'राजा देवरय', subtitle: 'डौंडिया खेड़ा के संस्थापक', parent: 'raja_tilokchand', yug: 'kali', parichay: 'राजा त्रिलोकचंद के पौत्र, जिन्होंने डौंडिया खेड़ा (Daundia Khera) को अपनी नई राजधानी बनाया।' },
+    { id: 'abhaychand_bais', name: 'राजा अभयचंद बैस', subtitle: 'बैसवाड़ा के संस्थापक', parent: 'harshavardhana', yug: 'kali', parichay: 'हर्षवर्धन के वंशजों में अभयचंद ने 13वीं सदी के आसपास अवध क्षेत्र (वर्तमान यूपी) में प्रवेश किया, भर जाति के राजाओं को हराया और \"बैसवाड़ा\" (Baiswara) राज्य की स्थापना की।', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'raja_tilokchand', name: 'राजा त्रिलोकचंद', subtitle: 'त्रिलोकचंदी बैस के प्रवर्तक', parent: 'abhaychand_bais', yug: 'kali', parichay: 'ये बैसवाड़ा के सबसे प्रतापी राजा थे। इन्हीं के नाम से बैसों की सबसे ऊंची \"त्रिलोकचंदी बैस\" शाखा चलती है।', clusterName: 'वर्धन (पुष्यभूति) वंश' },
+    { id: 'raja_devaraya', name: 'राजा देवरय', subtitle: 'डौंडिया खेड़ा के संस्थापक', parent: 'raja_tilokchand', yug: 'kali', parichay: 'राजा त्रिलोकचंद के पौत्र, जिन्होंने डौंडिया खेड़ा (Daundia Khera) को अपनी नई राजधानी बनाया।', clusterName: 'वर्धन (पुष्यभूति) वंश' },
     { id: 'rana_beni_madhav', name: 'राणा बेनी माधव', subtitle: '1857 के शूरवीर', parent: 'raja_devaraya', yug: 'kali', parichay: 'ये डौंडिया खेड़ा के बैस शासक थे जिन्होंने 1857 की क्रांति में अवध (रायबरेली/उन्नाव) क्षेत्र में अंग्रेजों के खिलाफ भयंकर युद्ध किया था।' },
 
     // Kachhwaha Dynasty (Descendants of Sumitra/Kusha in Kali Yuga)
@@ -427,7 +435,8 @@ export const suryavanshData = [
 
     { id: 'baloji', name: 'बालाजी (राव बाला)', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
     { id: 'mokal_singh', name: 'मोकल सिंह', subtitle: 'बालाजी पुत्र', parent: 'baloji', yug: 'kali' },
-    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'mokal_singh', yug: 'kali', parichay: 'इनके नाम पर शेखावाटी क्षेत्र का नाम पड़ा और इनके वंशज "शेखावत" (Shekhawat) कहलाये, जो राजस्थान का एक बहुत बड़ा और वीर राजपूत समाज है।' },
+    { id: 'shekhawat_dynasty_proxy', name: 'शेखावत वंश', subtitle: 'राव शेखा के वंशज', parent: 'mokal_singh', yug: 'kali', parichay: 'कछवाहा राजपूतों की सबसे बड़ी शाखाओं में से एक।', isProxy: true, clusterName: 'शेखावत वंश' },
+    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'shekhawat_dynasty_proxy', yug: 'kali', parichay: 'इनके नाम पर शेखावाटी क्षेत्र का नाम पड़ा और इनके वंशज "शेखावत" (Shekhawat) कहलाये, जो राजस्थान का एक बहुत बड़ा और वीर राजपूत समाज है।', clusterName: 'शेखावत वंश' },
 
     { id: 'banbir_singh', name: 'बनवीर सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
     { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनवीर पुत्र', parent: 'banbir_singh', yug: 'kali' },
@@ -440,7 +449,8 @@ export const suryavanshData = [
     { id: 'man_singh_i_amer_dup', name: 'राजा मान सिंह प्रथम', subtitle: 'राजावत वंश के संस्थापक', parent: 'bhagwant_das_amer_dup', yug: 'kali', parichay: 'ये अकबर के प्रमुख सेनापति और नवरत्नों में से एक थे। इनके वंशज मुख्य रूप से "राजावत" (Rajawat) कहलाते हैं, जो जयपुर राजघराने का मुख्य गोत्र है।' },
 
     { id: 'gopal_singh', name: 'गोपाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
-    { id: 'nathaji', name: 'नाथा जी', subtitle: 'नाथावत वंश के संस्थापक', parent: 'gopal_singh', yug: 'kali', parichay: 'इनके वंशज "नाथावत" (Nathawat) कहलाये, जो कछवाहों की एक प्रमुख शाखा है।' },
+    { id: 'nathawat_dynasty_proxy', name: 'नाथावत वंश', subtitle: 'नाथा जी के वंशज', parent: 'gopal_singh', yug: 'kali', parichay: 'कछवाहा राजपूतों की एक प्रमुख शाखा।', isProxy: true, clusterName: 'नाथावत वंश' },
+    { id: 'nathaji', name: 'नाथा जी', subtitle: 'नाथावत वंश के संस्थापक', parent: 'nathawat_dynasty_proxy', yug: 'kali', parichay: 'इनके वंशज "नाथावत" (Nathawat) कहलाये, जो कछवाहों की एक प्रमुख शाखा है।', clusterName: 'नाथावत वंश' },
 
     { id: 'jagmal_singh', name: 'जगमाल सिंह', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_amer', yug: 'kali' },
     { id: 'khangarji', name: 'खंगार जी', subtitle: 'खंगारोत वंश के संस्थापक', parent: 'jagmal_singh', yug: 'kali', parichay: 'इनके वंशज "खंगारोत" (Khangarot) कहलाये।' },
@@ -467,14 +477,15 @@ export const suryavanshData = [
     { id: 'rao_natha', name: 'राव नाथा', subtitle: 'नाथावत वंश के संस्थापक', parent: 'rao_gopal', yug: 'kali', parichay: 'इन्हीं के नाम से "नाथावत" सरनेम/शाखा की शुरुआत हुई। चौमूं के ठाकुर इसी वंश से हैं।' },
 
     { id: 'rao_jagmal', name: 'राव जगमाल', subtitle: 'पृथ्वीराज पुत्र', parent: 'prithviraj_singh_i', yug: 'kali' },
-    { id: 'bharmal_kachhwaha', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र (मुख्य धारा)', parent: 'prithviraj_singh_i', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था। इनके वंशज आगे चलकर "राजावत" कहलाये।' },
-    { id: 'bhagwant_das_kachhwaha', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal_kachhwaha', yug: 'kali' },
-    { id: 'man_singh_i_kachhwaha', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das_kachhwaha', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।' },
-    { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i_kachhwaha', yug: 'kali' },
-    { id: 'maha_singh', name: 'महा सिंह', subtitle: 'मान सिंह पौत्र', parent: 'man_singh_i_kachhwaha', yug: 'kali' },
-    { id: 'jai_singh_i', name: 'मिर्ज़ा राजा जय सिंह', subtitle: 'महा सिंह पुत्र', parent: 'maha_singh', yug: 'kali', parichay: 'इन्होंने मुग़ल बादशाहों (जहाँगीर, शाहजहां, औरंगज़ेब) के लिए कई युद्ध लड़े और छत्रपति शिवाजी महाराज के साथ पुरंदर की संधि की।' },
-    { id: 'ram_singh_i', name: 'राम सिंह प्रथम', subtitle: 'जय सिंह पुत्र', parent: 'jai_singh_i', yug: 'kali' },
-    { id: 'bishan_singh', name: 'बिशन सिंह', subtitle: 'राम सिंह पौत्र', parent: 'ram_singh_i', yug: 'kali' },
+    { id: 'bharmal_kachhwaha', name: 'राजा भारमल', subtitle: 'पृथ्वीराज पुत्र (मुख्य धारा)', parent: 'prithviraj_singh_i', yug: 'kali', parichay: 'ये मुगलों (अकबर) के साथ संधि करने वाले पहले राजपूत शासक थे। इन्होंने अपनी पुत्री जोधा बाई (हरका बाई) का विवाह अकबर से किया था। इनके वंशज आगे चलकर \"राजावत\" कहलाये।', clusterName: 'कछवाहा वंश' },
+    { id: 'rajawat_dynasty', name: 'राजावत वंश', subtitle: 'जयपुर राजवंश', parent: 'bharmal_kachhwaha', yug: 'kali', clusterName: 'राजावत वंश' },
+    { id: 'bhagwant_das_kachhwaha', name: 'भगवंत दास', subtitle: 'भारमल पुत्र', parent: 'bharmal_kachhwaha', yug: 'kali', clusterName: 'राजावत वंश' },
+    { id: 'man_singh_i_kachhwaha', name: 'मान सिंह प्रथम', subtitle: 'अकबर के सेनापति', parent: 'bhagwant_das_kachhwaha', yug: 'kali', parichay: 'ये मुग़ल साम्राज्य के सबसे प्रमुख सेनापतियों (नवरत्नों) में से एक थे। इन्होंने हल्दीघाटी के युद्ध में महाराणा प्रताप के खिलाफ मुग़ल सेना का नेतृत्व किया था।', clusterName: 'राजावत वंश' },
+    { id: 'bhao_singh', name: 'भाव सिंह', subtitle: 'मान सिंह पुत्र', parent: 'man_singh_i_kachhwaha', yug: 'kali', clusterName: 'राजावत वंश' },
+    { id: 'maha_singh', name: 'महा सिंह', subtitle: 'मान सिंह पौत्र', parent: 'man_singh_i_kachhwaha', yug: 'kali', clusterName: 'राजावत वंश' },
+    { id: 'jai_singh_i', name: 'मिर्ज़ा राजा जय सिंह', subtitle: 'महा सिंह पुत्र', parent: 'maha_singh', yug: 'kali', parichay: 'इन्होंने मुग़ल बादशाहों (जहाँगीर, शाहजहां, औरंगज़ेब) के लिए कई युद्ध लड़े और छत्रपति शिवाजी महाराज के साथ पुरंदर की संधि की।', clusterName: 'राजावत वंश' },
+    { id: 'ram_singh_i', name: 'राम सिंह प्रथम', subtitle: 'जय सिंह पुत्र', parent: 'jai_singh_i', yug: 'kali', clusterName: 'राजावत वंश' },
+    { id: 'bishan_singh', name: 'बिशन सिंह', subtitle: 'राम सिंह पौत्र', parent: 'ram_singh_i', yug: 'kali', clusterName: 'राजावत वंश' },
     { id: 'sawai_jai_singh_ii', name: 'सवाई जय सिंह (द्वितीय)', subtitle: 'जयपुर के संस्थापक', parent: 'bishan_singh', yug: 'kali', parichay: 'ये एक महान खगोलशास्त्री और वास्तुकार थे। इन्होंने 1727 में जयपुर शहर बसाया और भारत में 5 जंतर मंतर (वेधशालाएं) बनवाईं।' },
     { id: 'ishwari_singh', name: 'ईश्वरी सिंह', subtitle: 'सवाई जय सिंह पुत्र', parent: 'sawai_jai_singh_ii', yug: 'kali' },
     { id: 'madho_singh_i', name: 'माधो सिंह प्रथम', subtitle: 'सवाई जय सिंह पुत्र', parent: 'sawai_jai_singh_ii', yug: 'kali' },
