@@ -65,6 +65,43 @@ window.MapRenderer = {
         return relatives;
     },
 
+
+    getVisibleMidpoint(x1, y1, x2, y2, state, dpr) {
+        // Viewport boundaries in world coordinates
+        const padding = 50; // Keep text slightly away from the exact screen edge
+        const viewMinX = (-state.translateX / state.scale) + padding;
+        const viewMinY = (-state.translateY / state.scale) + padding;
+        const viewMaxX = ((state.canvas.width / dpr - state.translateX) / state.scale) - padding;
+        const viewMaxY = ((state.canvas.height / dpr - state.translateY) / state.scale) - padding;
+
+        // Clip line segment to viewport bounds
+        let startX = x1, startY = y1, endX = x2, endY = y2;
+
+        const isHorizontal = Math.abs(y1 - y2) < 0.1;
+        const isVertical = Math.abs(x1 - x2) < 0.1;
+
+        if (isHorizontal) {
+            if (y1 < viewMinY || y1 > viewMaxY) return null; // Line is horizontally outside view
+            startX = Math.max(Math.min(x1, x2), viewMinX);
+            endX = Math.min(Math.max(x1, x2), viewMaxX);
+            if (startX > endX) return null; // Entirely outside
+        } else if (isVertical) {
+            if (x1 < viewMinX || x1 > viewMaxX) return null; // Line is vertically outside view
+            startY = Math.max(Math.min(y1, y2), viewMinY);
+            endY = Math.min(Math.max(y1, y2), viewMaxY);
+            if (startY > endY) return null; // Entirely outside
+        } else {
+            return null; // For simplicity, we only handle orthogonal lines which our layout uses
+        }
+
+        // Return midpoint of the VISIBLE segment
+        return {
+            x: startX + (endX - startX) / 2,
+            y: startY + (endY - startY) / 2,
+            length: isHorizontal ? (endX - startX) : (endY - startY)
+        };
+    },
+
     drawConnections(ctx, dataList, highlightSet, isRouting) {
         const drawnHusbandToWives = new Set();
 
@@ -186,6 +223,57 @@ window.MapRenderer = {
                     ctx.lineTo(endX, controlY);
                     ctx.lineTo(endX, endY);
                     ctx.stroke();
+
+                    if (data.lineLabel) {
+                        const state = window.MapState;
+                        const dpr = window.devicePixelRatio || 1;
+
+                        // We have 3 segments:
+                        // 1. (startX, startY) to (startX, controlY) - Vertical
+                        // 2. (startX, controlY) to (endX, controlY) - Horizontal
+                        // 3. (endX, controlY) to (endX, endY) - Vertical
+
+                        let bestMid = null;
+                        let maxLen = -1;
+
+                        const segments = [
+                            this.getVisibleMidpoint(startX, startY, startX, controlY, state, dpr),
+                            this.getVisibleMidpoint(startX, controlY, endX, controlY, state, dpr),
+                            this.getVisibleMidpoint(endX, controlY, endX, endY, state, dpr)
+                        ];
+
+                        segments.forEach(seg => {
+                            if (seg && seg.length > maxLen) {
+                                maxLen = seg.length;
+                                bestMid = seg;
+                            }
+                        });
+
+                        if (bestMid && maxLen > 40) { // Only draw if we have enough visible space
+                            ctx.save();
+                            ctx.fillStyle = 'rgba(17, 17, 17, 1)'; // Solid background
+
+                            ctx.font = 'bold 12px Poppins';
+                            const textMetrics = ctx.measureText(data.lineLabel);
+                            const tW = textMetrics.width + 12;
+                            const tH = 20;
+
+                            // Draw background box
+                            this.roundRect(ctx, bestMid.x - tW/2, bestMid.y - tH/2, tW, tH, 4);
+                            ctx.fill();
+
+                            ctx.strokeStyle = ctx.strokeStyle;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+
+                            ctx.fillStyle = '#ffffff'; // white text for readability
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText(data.lineLabel, bestMid.x, bestMid.y);
+
+                            ctx.restore();
+                        }
+                    }
 
                     // Draw Arrowhead pointing down to child
                     ctx.beginPath();
