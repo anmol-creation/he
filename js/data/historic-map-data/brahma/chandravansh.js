@@ -79,8 +79,8 @@ export const chandravanshData = [
     { id: 'kriti_chandra', name: 'कृति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
 
     // --- ययाति की पत्नियां ---
-    { id: 'devayani_yayati_chandra', name: 'देवयानी', subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)', parent: 'shukracharya', spouseOf: 'yayati_chandra', yug: 'satya' },
-    { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: '', spouseOf: 'yayati_chandra', yug: 'satya' },
+    { id: 'devayani_yayati_chandra', name: 'देवयानी', subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)', parent: 'shukracharya', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
+    { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: '', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
 
     // --- ययाति के पुत्र ---
         { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश' },

@@ -23,10 +23,11 @@ export const brahmaBaseData = [
     { id: 'sankalpa', name: 'संकल्प', subtitle: 'इच्छा से उत्पन्न', parent: 'brahma', yug: 'satya' },
 
     // Personifications / Veda
-    { id: 'rigveda', name: 'ऋग्वेद', subtitle: 'पूर्व मुख से', parent: 'brahma', yug: 'satya' },
-    { id: 'yajurveda', name: 'यजुर्वेद', subtitle: 'दक्षिण मुख से', parent: 'brahma', yug: 'satya' },
-    { id: 'samaveda', name: 'सामवेद', subtitle: 'पश्चिम मुख से', parent: 'brahma', yug: 'satya' },
-    { id: 'atharvaveda', name: 'अथर्ववेद', subtitle: 'उत्तर मुख से', parent: 'brahma', yug: 'satya' },
+        { id: 'char_veda_proxy', name: 'चार वेद', subtitle: 'ब्रह्मा के मुखों से उत्पन्न', parent: 'brahma', yug: 'satya', clusterName: 'चार वेद', isProxy: true },
+    { id: 'rigveda', name: 'ऋग्वेद', subtitle: 'पूर्व मुख से', parent: 'brahma', yug: 'satya', clusterName: 'चार वेद' },
+    { id: 'yajurveda', name: 'यजुर्वेद', subtitle: 'दक्षिण मुख से', parent: 'brahma', yug: 'satya', clusterName: 'चार वेद' },
+    { id: 'samaveda', name: 'सामवेद', subtitle: 'पश्चिम मुख से', parent: 'brahma', yug: 'satya', clusterName: 'चार वेद' },
+    { id: 'atharvaveda', name: 'अथर्ववेद', subtitle: 'उत्तर मुख से', parent: 'brahma', yug: 'satya', clusterName: 'चार वेद' },
 
         { id: 'char_kumar_proxy', name: 'चार कुमार', subtitle: 'ब्रह्मा के मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa', clusterName: 'चार कुमार', isProxy: true },
     { id: 'sanak', name: 'सनक', subtitle: 'सनत कुमार', parent: 'brahma', yug: 'satya', timeScale: 'kalpa', clusterName: 'चार कुमार' },
