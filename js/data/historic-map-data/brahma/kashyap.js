@@ -1,5 +1,5 @@
 export const kashyapData = [
-    { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya' },
+    { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
     { id: 'aditi', name: 'अदिति', subtitle: 'देवताओं की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'diti', name: 'दिति', subtitle: 'दैत्यों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'danu', name: 'दनु', subtitle: 'दानवों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
