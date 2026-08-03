@@ -15,7 +15,8 @@ export const suryavanshData = [
 
     { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
     // Descendants of Ikshvaku
-    { id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'ikshvaku', yug: 'treta', parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
+        { id: 'suryavansh_proxy', name: 'सूर्यवंश', subtitle: 'इक्ष्वाकु के वंशज', parent: 'ikshvaku', yug: 'satya', clusterName: 'सूर्यवंश', isProxy: true },
+{ id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'suryavansh_proxy', yug: 'treta', parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
     { id: 'nimi', name: 'निमि', subtitle: 'विदेह वंश संस्थापक', parent: 'ikshvaku', yug: 'treta', parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।' },
     { id: 'danda', name: 'दण्ड', subtitle: 'इक्ष्वाकु पुत्र', parent: 'ikshvaku', yug: 'treta', parichay: 'दंडकारण्य वन का नाम इन्हीं के नाम पर पड़ा।' },
     // Vikukshi's immediate

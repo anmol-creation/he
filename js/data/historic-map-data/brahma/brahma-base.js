@@ -204,8 +204,9 @@ export const brahmaBaseData = [
     { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
     { id: 'khyati', name: 'ख्याति', subtitle: 'दक्ष पुत्री', parent: 'daksha', spouseOf: 'bhrigu', yug: 'satya', clusterName: 'भृगु की 2 पत्नियाँ' },
     { id: 'paulomi', name: 'पुलोमा', subtitle: 'भृगु पत्नी', parent: '', spouseOf: 'bhrigu', yug: 'satya', parichay: 'महर्षि भृगु की पत्नी और च्यवन ऋषि की माता।', clusterName: 'भृगु की 2 पत्नियाँ' },
-    { id: 'dhata', name: 'धाता', subtitle: 'भृगु पुत्र', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
-    { id: 'vidhata', name: 'विधाता', subtitle: 'भृगु पुत्र', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
+        { id: 'bhrigu_dynasty_proxy', name: 'भार्गव (भृगु) वंश', subtitle: 'भृगु के वंशज', parent: 'bhrigu', yug: 'satya', clusterName: 'भार्गव (भृगु) वंश', isProxy: true },
+    { id: 'dhata', name: 'धाता', subtitle: 'भृगु पुत्र', parent: 'bhrigu_dynasty_proxy', clusterName: 'भार्गव (भृगु) वंश', mother: 'khyati', yug: 'satya' },
+    { id: 'vidhata', name: 'विधाता', subtitle: 'भृगु पुत्र', parent: 'bhrigu_dynasty_proxy', clusterName: 'भार्गव (भृगु) वंश', mother: 'khyati', yug: 'satya' },
 
     // Markandeya's Lineage
     { id: 'ayati', name: 'आयति', subtitle: 'धाता पत्नी', parent: '', spouseOf: 'dhata', yug: 'satya' },
@@ -220,12 +221,12 @@ export const brahmaBaseData = [
     { id: 'rajavan', name: 'राजवान', subtitle: 'द्युतिमान पुत्र', parent: 'dyutiman', yug: 'satya' },
 
     // Dadhichi
-    { id: 'dadhichi', name: 'दधीचि', subtitle: 'भृगु पुत्र', parent: 'bhrigu', yug: 'satya', parichay: 'महान शिव भक्त ऋषि जिन्होंने वृत्रासुर के वध हेतु वज्र बनाने के लिए अपनी अस्थियों का दान किया था।' },
+    { id: 'dadhichi', name: 'दधीचि', subtitle: 'भृगु पुत्र', parent: 'bhrigu_dynasty_proxy', clusterName: 'भार्गव (भृगु) वंश', yug: 'satya', parichay: 'महान शिव भक्त ऋषि जिन्होंने वृत्रासुर के वध हेतु वज्र बनाने के लिए अपनी अस्थियों का दान किया था।' },
     { id: 'pippalada', name: 'पिप्पलाद', subtitle: 'दधीचि पुत्र', parent: 'dadhichi', yug: 'satya', parichay: 'दधीचि के पुत्र और प्रश्न उपनिषद के मुख्य ऋषि। इन्होने ही नवग्रहों में शनि देव को दंडित किया था।' },
     { id: 'padma_pippalada', name: 'पद्मा', subtitle: 'अनरण्य पुत्री', parent: '', spouseOf: 'pippalada', yug: 'satya', parichay: 'इक्ष्वाकु वंशी राजा अनरण्य की पुत्री और महर्षि पिप्पलाद की पत्नी।' },
 
     // Shukracharya & his family
-    { id: 'shukracharya', name: 'शुक्राचार्य', subtitle: 'दैत्यों के गुरु', parent: 'bhrigu', mother: 'khyati', yug: 'satya' },
+    { id: 'shukracharya', name: 'शुक्राचार्य', subtitle: 'दैत्यों के गुरु', parent: 'bhrigu_dynasty_proxy', clusterName: 'भार्गव (भृगु) वंश', mother: 'khyati', yug: 'satya' },
     { id: 'jayanti', name: 'जयन्ती', subtitle: 'इंद्र पुत्री / शुक्र पत्नी', parent: 'indra', spouseOf: 'shukracharya', yug: 'satya' },
     { id: 'devayani', name: 'देवयानी', subtitle: 'शुक्राचार्य पुत्री', parent: 'shukracharya', mother: 'jayanti', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री, जिनका विवाह राजा ययाति से हुआ।' },
     { id: 'araj', name: 'अरज', subtitle: 'शुक्राचार्य पुत्री', parent: 'shukracharya', yug: 'satya', parichay: 'शुक्राचार्य की पुत्री जिसे राजा दंड ने अपमानित किया था, जिसके कारण दंडकारण्य वन बना।' },
@@ -233,7 +234,7 @@ export const brahmaBaseData = [
     { id: 'marka', name: 'मर्क', subtitle: 'शुक्राचार्य पुत्र', parent: 'shukracharya', yug: 'satya', parichay: 'हिरण्यकशिपु के गुरु-पुत्र, जो प्रह्लाद को पढ़ाते थे।' },
 
     // Chyavana & his family
-    { id: 'chyavana', name: 'च्यवन', subtitle: 'भृगु पुत्र', parent: 'bhrigu', mother: 'paulomi', yug: 'satya', parichay: 'च्यवनप्राश के आविष्कारक और महान ऋषि।' },
+    { id: 'chyavana', name: 'च्यवन', subtitle: 'भृगु पुत्र', parent: 'bhrigu_dynasty_proxy', clusterName: 'भार्गव (भृगु) वंश', mother: 'paulomi', yug: 'satya', parichay: 'च्यवनप्राश के आविष्कारक और महान ऋषि।' },
     { id: 'sukanya', name: 'सुकन्या', subtitle: 'शर्याति पुत्री', parent: '', spouseOf: 'chyavana', yug: 'satya', parichay: 'राजा शर्याति की पुत्री और च्यवन ऋषि की परम पतिव्रता पत्नी।' },
     { id: 'pramati', name: 'प्रमति', subtitle: 'च्यवन पुत्र', parent: 'chyavana', mother: 'sukanya', yug: 'satya' },
 
@@ -364,24 +365,25 @@ export const brahmaBaseData = [
     { id: 'prashraya', name: 'प्रश्रय', subtitle: 'ह्री के पुत्र', parent: 'dharma_deva', mother: 'hri_dharma', yug: 'satya' },
 
     // --- ADHARMA LINEAGE ---
-    { id: 'mrisha_adharma', name: 'मृषा', subtitle: 'अधर्म की पत्नी', spouseOf: 'adharma', yug: 'satya' },
-    { id: 'dambha', name: 'दम्भ', subtitle: 'अधर्म पुत्र', parent: 'adharma', mother: 'mrisha_adharma', yug: 'satya' },
-    { id: 'maya_adharma', name: 'माया', subtitle: 'अधर्म पुत्री', parent: 'adharma', mother: 'mrisha_adharma', yug: 'satya' },
+        { id: 'adharma_dynasty_proxy', name: 'अधर्म वंश', subtitle: 'अधर्म के वंशज', parent: 'adharma', yug: 'satya', clusterName: 'अधर्म वंश', isProxy: true },
+    { id: 'mrisha_adharma', name: 'मृषा', subtitle: 'अधर्म की पत्नी', spouseOf: 'adharma', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'dambha', name: 'दम्भ', subtitle: 'अधर्म पुत्र',parent: 'adharma_dynasty_proxy', mother: 'mrisha_adharma', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'maya_adharma', name: 'माया', subtitle: 'अधर्म पुत्री',parent: 'adharma_dynasty_proxy', mother: 'mrisha_adharma', yug: 'satya' , clusterName: 'अधर्म वंश' },
     { id: 'maya_spouse', name: 'माया', subtitle: 'दम्भ की पत्नी', spouseOf: 'dambha', yug: 'satya' }, // incest representation
-    { id: 'lobha_adharma', name: 'लोभ', subtitle: 'दम्भ पुत्र', parent: 'dambha', mother: 'maya_spouse', yug: 'satya' },
+    { id: 'lobha_adharma', name: 'लोभ', subtitle: 'दम्भ पुत्र', parent: 'dambha', mother: 'maya_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
     { id: 'nikriti', name: 'निकृति', subtitle: 'दम्भ पुत्री', parent: 'dambha', mother: 'maya_spouse', yug: 'satya' },
-    { id: 'nikriti_spouse', name: 'निकृति', subtitle: 'लोभ की पत्नी', spouseOf: 'lobha_adharma', yug: 'satya' },
-    { id: 'krodha_adharma', name: 'क्रोध', subtitle: 'लोभ पुत्र', parent: 'lobha_adharma', mother: 'nikriti_spouse', yug: 'satya' },
-    { id: 'hinsa', name: 'हिंसा', subtitle: 'लोभ पुत्री', parent: 'lobha_adharma', mother: 'nikriti_spouse', yug: 'satya' },
-    { id: 'hinsa_spouse', name: 'हिंसा', subtitle: 'क्रोध की पत्नी', spouseOf: 'krodha_adharma', yug: 'satya' },
-    { id: 'kali', name: 'कलि', subtitle: 'क्रोध पुत्र', parent: 'krodha_adharma', mother: 'hinsa_spouse', yug: 'satya' },
-    { id: 'durukti', name: 'दुरुक्ति', subtitle: 'क्रोध पुत्री', parent: 'krodha_adharma', mother: 'hinsa_spouse', yug: 'satya' },
+    { id: 'nikriti_spouse', name: 'निकृति', subtitle: 'लोभ की पत्नी', spouseOf: 'lobha_adharma', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'krodha_adharma', name: 'क्रोध', subtitle: 'लोभ पुत्र', parent: 'lobha_adharma', mother: 'nikriti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'hinsa', name: 'हिंसा', subtitle: 'लोभ पुत्री', parent: 'lobha_adharma', mother: 'nikriti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'hinsa_spouse', name: 'हिंसा', subtitle: 'क्रोध की पत्नी', spouseOf: 'krodha_adharma', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'kali', name: 'कलि', subtitle: 'क्रोध पुत्र', parent: 'krodha_adharma', mother: 'hinsa_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'durukti', name: 'दुरुक्ति', subtitle: 'क्रोध पुत्री', parent: 'krodha_adharma', mother: 'hinsa_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
     { id: 'durukti_spouse', name: 'दुरुक्ति', subtitle: 'कलि की पत्नी', spouseOf: 'kali', yug: 'satya' },
-    { id: 'mrityu_adharma', name: 'मृत्यु', subtitle: 'कलि पुत्र', parent: 'kali', mother: 'durukti_spouse', yug: 'satya' },
+    { id: 'mrityu_adharma', name: 'मृत्यु', subtitle: 'कलि पुत्र', parent: 'kali', mother: 'durukti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
     { id: 'bhiti', name: 'भीति', subtitle: 'कलि पुत्री', parent: 'kali', mother: 'durukti_spouse', yug: 'satya' },
-    { id: 'bhiti_spouse', name: 'भीति', subtitle: 'मृत्यु की पत्नी', spouseOf: 'mrityu_adharma', yug: 'satya' },
-    { id: 'niraya', name: 'निरय', subtitle: 'मृत्यु पुत्र', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' },
-    { id: 'yatana', name: 'यातना', subtitle: 'मृत्यु पुत्री', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' },
+    { id: 'bhiti_spouse', name: 'भीति', subtitle: 'मृत्यु की पत्नी', spouseOf: 'mrityu_adharma', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'niraya', name: 'निरय', subtitle: 'मृत्यु पुत्र', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
+    { id: 'yatana', name: 'यातना', subtitle: 'मृत्यु पुत्री', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
 
     // --- KAMADEVA LINEAGE (Son of Brahma) ---
     { id: 'rati', name: 'रति', subtitle: 'कामदेव पत्नी / दक्ष पुत्री', parent: 'daksha', spouseOf: 'kamadeva', yug: 'satya' },

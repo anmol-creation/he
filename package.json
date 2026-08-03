@@ -1,7 +1,9 @@
 {
-  "scripts": {"test": "playwright test"},
+  "scripts": {
+    "test": "playwright test"
+  },
   "devDependencies": {
     "jsdom": "^29.1.1",
-    "playwright": "^1.59.1"
+    "playwright": "^1.62.1"
   }
 }
