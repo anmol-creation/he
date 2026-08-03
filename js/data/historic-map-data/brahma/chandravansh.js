@@ -68,7 +68,7 @@ export const chandravanshData = [
     { id: 'anena_chandra', name: 'अनेना', subtitle: 'आयु के पुत्र', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' },
 
     // --- नहुष की पत्नी ---
-    { id: 'ashokasundari_chandra', name: 'अशोकसुंदरी', subtitle: 'नहुष की पत्नी (शिव-पार्वती पुत्री)', parent: 'shiva', spouseOf: 'nahusha_chandra', yug: 'satya' },
+    { id: 'ashokasundari_chandra', name: 'अशोकसुंदरी', subtitle: 'नहुष की पत्नी (शिव-पार्वती पुत्री)', parent: 'shiva_parivar_proxy', mother: 'parvati', spouseOf: 'nahusha_chandra', yug: 'satya', clusterName: 'शिव परिवार' },
 
     // --- नहुष के पुत्र (यति, ययाति, संयाति, अयाति, वियति, कृति) ---
     { id: 'yati_chandra', name: 'यति', subtitle: 'नहुष के पुत्र (संन्यासी)', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
@@ -83,7 +83,8 @@ export const chandravanshData = [
     { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: '', spouseOf: 'yayati_chandra', yug: 'satya' },
 
     // --- ययाति के पुत्र ---
-    { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश' },
+        { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश' },
+    { id: 'yadu_vansh_proxy', name: 'यदु वंश', subtitle: 'यदु के वंशज', parent: 'yadu_chandra', yug: 'treta', clusterName: 'यदु वंश', isProxy: true },
         { id: 'turvasu_dynasty_proxy', name: 'तुर्वसु वंश', subtitle: 'तुर्वसु के वंशज', parent: 'yayati_chandra', yug: 'treta', clusterName: 'तुर्वसु वंश', isProxy: true },
     { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'turvasu_dynasty_proxy', clusterName: 'तुर्वसु वंश', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'तुर्वसु वंश' },
         { id: 'druhyu_dynasty_proxy', name: 'द्रुह्यु वंश', subtitle: 'द्रुह्यु के वंशज', parent: 'yayati_chandra', yug: 'treta', clusterName: 'द्रुह्यु वंश', isProxy: true },
@@ -201,37 +202,38 @@ export const chandravanshData = [
     { id: 'banasena_karna_chandra', name: 'बाणसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar' },
 
     // --- पुरुरवा के अन्य पुत्र (अमावसु / विजय वंश - कान्यकुब्ज/कन्नौज) ---
-    { id: 'amavasu_chandra', name: 'अमावसु (विजय)', subtitle: 'कान्यकुब्ज के संस्थापक',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
-    { id: 'bhima_amavasu_chandra', name: 'भीम', subtitle: 'अमावसु पुत्र', parent: 'amavasu_chandra', yug: 'satya' },
-    { id: 'kanchana_chandra', name: 'कांचन', subtitle: 'भीम पुत्र', parent: 'bhima_amavasu_chandra', yug: 'satya' },
-    { id: 'suhotra_amavasu_chandra', name: 'सुहोत्र', subtitle: 'कांचन पुत्र', parent: 'kanchana_chandra', yug: 'satya' },
-    { id: 'jahnu_chandra', name: 'जह्नु', subtitle: 'जाह्नवी (गंगा) के पिता', parent: 'suhotra_amavasu_chandra', yug: 'satya', parichay: 'इन्होंने अपने तपोबल से संपूर्ण गंगा को पी लिया था, बाद में भगीरथ के प्रार्थना करने पर कान से निकाला। इसलिए गंगा को जाह्नवी कहा गया।' },
-    { id: 'sunaha_chandra', name: 'सुनह', subtitle: 'जह्नु पुत्र', parent: 'jahnu_chandra', yug: 'satya' },
-    { id: 'ajaka_chandra', name: 'अजक', subtitle: 'सुनह पुत्र', parent: 'sunaha_chandra', yug: 'satya' },
-    { id: 'balakashva_chandra', name: 'बलाकश्व', subtitle: 'अजक पुत्र', parent: 'ajaka_chandra', yug: 'satya' },
-    { id: 'kusha_amavasu_chandra', name: 'कुश', subtitle: 'बलाकश्व पुत्र', parent: 'balakashva_chandra', yug: 'satya' },
-    { id: 'kushanabha_chandra', name: 'कुशनाभ', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' },
-    { id: 'kushamba_chandra', name: 'कुशाम्ब', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' },
-    { id: 'amurtarajas_chandra', name: 'अमूर्तरजस', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' },
-    { id: 'vasu_amavasu_chandra', name: 'वसु', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' },
-    { id: 'gadhi_chandra', name: 'गाधि', subtitle: 'कुशनाभ पुत्र', parent: 'kushanabha_chandra', yug: 'treta' },
-    { id: 'satyavati_gadhi_chandra', name: 'सत्यवती', subtitle: 'गाधि पुत्री', parent: 'gadhi_chandra', spouseOf: 'ruchika', yug: 'treta', parichay: 'राजा गाधि की पुत्री, जिनका विवाह भृगुवंशी महर्षि ऋचीक से हुआ था। ये जमदग्नि की माता थीं।' },
-    { id: 'vishwamitra_chandra', name: 'विश्वामित्र', subtitle: 'ब्रह्मर्षि', parent: 'gadhi_chandra', yug: 'treta', parichay: 'जन्म से क्षत्रिय राजा थे, परन्तु वशिष्ठ ऋषि से विवाद के बाद घोर तपस्या कर ब्रह्मर्षि का पद प्राप्त किया। गायत्री मंत्र के द्रष्टा।' },
+        { id: 'amavasu_vansh_proxy', name: 'अमावसु (विजय) वंश', subtitle: 'अमावसु के वंशज', parent: 'chandravansh_dynasty_proxy', yug: 'satya', clusterName: 'अमावसु (विजय) वंश', isProxy: true },
+    { id: 'amavasu_chandra', name: 'अमावसु (विजय)', subtitle: 'कान्यकुब्ज के संस्थापक',parent: 'amavasu_vansh_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'bhima_amavasu_chandra', name: 'भीम', subtitle: 'अमावसु पुत्र', parent: 'amavasu_vansh_proxy', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'kanchana_chandra', name: 'कांचन', subtitle: 'भीम पुत्र', parent: 'bhima_amavasu_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'suhotra_amavasu_chandra', name: 'सुहोत्र', subtitle: 'कांचन पुत्र', parent: 'kanchana_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'jahnu_chandra', name: 'जह्नु', subtitle: 'जाह्नवी (गंगा) के पिता', parent: 'suhotra_amavasu_chandra', yug: 'satya', parichay: 'इन्होंने अपने तपोबल से संपूर्ण गंगा को पी लिया था, बाद में भगीरथ के प्रार्थना करने पर कान से निकाला। इसलिए गंगा को जाह्नवी कहा गया।' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'sunaha_chandra', name: 'सुनह', subtitle: 'जह्नु पुत्र', parent: 'jahnu_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'ajaka_chandra', name: 'अजक', subtitle: 'सुनह पुत्र', parent: 'sunaha_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'balakashva_chandra', name: 'बलाकश्व', subtitle: 'अजक पुत्र', parent: 'ajaka_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'kusha_amavasu_chandra', name: 'कुश', subtitle: 'बलाकश्व पुत्र', parent: 'balakashva_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'kushanabha_chandra', name: 'कुशनाभ', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'kushamba_chandra', name: 'कुशाम्ब', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'amurtarajas_chandra', name: 'अमूर्तरजस', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'vasu_amavasu_chandra', name: 'वसु', subtitle: 'कुश पुत्र', parent: 'kusha_amavasu_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'gadhi_chandra', name: 'गाधि', subtitle: 'कुशनाभ पुत्र', parent: 'kushanabha_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'satyavati_gadhi_chandra', name: 'सत्यवती', subtitle: 'गाधि पुत्री', parent: 'gadhi_chandra', spouseOf: 'ruchika', yug: 'treta', parichay: 'राजा गाधि की पुत्री, जिनका विवाह भृगुवंशी महर्षि ऋचीक से हुआ था। ये जमदग्नि की माता थीं।' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'vishwamitra_chandra', name: 'विश्वामित्र', subtitle: 'ब्रह्मर्षि', parent: 'gadhi_chandra', yug: 'treta', parichay: 'जन्म से क्षत्रिय राजा थे, परन्तु वशिष्ठ ऋषि से विवाद के बाद घोर तपस्या कर ब्रह्मर्षि का पद प्राप्त किया। गायत्री मंत्र के द्रष्टा।' , clusterName: 'अमावसु (विजय) वंश' },
 
-    { id: 'menaka_apsara_chandra', name: 'मेनका', subtitle: 'अप्सरा', parent: '', spouseOf: 'vishwamitra_chandra', yug: 'treta' },
-    { id: 'shakuntala_vishwamitra_chandra', name: 'शकुंतला', subtitle: 'विश्वामित्र पुत्री', parent: 'vishwamitra_chandra', mother: 'menaka_apsara_chandra', yug: 'treta', parichay: 'इनका विवाह पौरव वंशी राजा दुष्यंत से हुआ और इन्होने भरत को जन्म दिया।' },
-    { id: 'shunahshepa_chandra', name: 'शुनःशेप (देवरथ)', subtitle: 'दत्तक पुत्र', parent: 'vishwamitra_chandra', yug: 'treta', parichay: 'महर्षि ऋचीक के पुत्र जिन्हें हरिश्चंद्र के यज्ञ में बलि के लिए ख़रीदा गया था, पर विश्वामित्र ने इन्हें बचाया और अपना ज्येष्ठ पुत्र (देवरथ) बना लिया।' },
-    { id: 'madhucchandas_chandra', name: 'मधुच्छंदस', subtitle: 'विश्वामित्र पुत्र', parent: 'vishwamitra_chandra', yug: 'treta' },
-    { id: 'ashtaka_chandra', name: 'अष्टक', subtitle: 'विश्वामित्र पुत्र', parent: 'vishwamitra_chandra', yug: 'treta' },
-    { id: 'galava_chandra', name: 'गालव', subtitle: 'विश्वामित्र पुत्र / शिष्य', parent: 'vishwamitra_chandra', yug: 'treta' },
+    { id: 'menaka_apsara_chandra', name: 'मेनका', subtitle: 'अप्सरा', parent: '', spouseOf: 'vishwamitra_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'shakuntala_vishwamitra_chandra', name: 'शकुंतला', subtitle: 'विश्वामित्र पुत्री', parent: 'vishwamitra_chandra', mother: 'menaka_apsara_chandra', yug: 'treta', parichay: 'इनका विवाह पौरव वंशी राजा दुष्यंत से हुआ और इन्होने भरत को जन्म दिया।' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'shunahshepa_chandra', name: 'शुनःशेप (देवरथ)', subtitle: 'दत्तक पुत्र', parent: 'vishwamitra_chandra', yug: 'treta', parichay: 'महर्षि ऋचीक के पुत्र जिन्हें हरिश्चंद्र के यज्ञ में बलि के लिए ख़रीदा गया था, पर विश्वामित्र ने इन्हें बचाया और अपना ज्येष्ठ पुत्र (देवरथ) बना लिया।' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'madhucchandas_chandra', name: 'मधुच्छंदस', subtitle: 'विश्वामित्र पुत्र', parent: 'vishwamitra_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'ashtaka_chandra', name: 'अष्टक', subtitle: 'विश्वामित्र पुत्र', parent: 'vishwamitra_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
+    { id: 'galava_chandra', name: 'गालव', subtitle: 'विश्वामित्र पुत्र / शिष्य', parent: 'vishwamitra_chandra', yug: 'treta' , clusterName: 'अमावसु (विजय) वंश' },
 
 
 
     // --- यदुवंश (यदु के पुत्र) ---
-    { id: 'sahasrajit_yadu', name: 'सहस्रजित', subtitle: 'यदु पुत्र (हैहय वंश के मूल)', parent: 'yadu_chandra', yug: 'treta' },
-    { id: 'kroshtu_yadu', name: 'क्रोष्टु', subtitle: 'यदु पुत्र (वृष्णि/अंधक वंश के मूल)', parent: 'yadu_chandra', yug: 'treta' },
-    { id: 'nala_yadu', name: 'नल', subtitle: 'यदु पुत्र', parent: 'yadu_chandra', yug: 'treta' },
-    { id: 'ripu_yadu', name: 'रिपु', subtitle: 'यदु पुत्र', parent: 'yadu_chandra', yug: 'treta' },
+    { id: 'sahasrajit_yadu', name: 'सहस्रजित', subtitle: 'यदु पुत्र (हैहय वंश के मूल)', parent: 'yadu_vansh_proxy', yug: 'treta' , clusterName: 'यदु वंश' },
+    { id: 'kroshtu_yadu', name: 'क्रोष्टु', subtitle: 'यदु पुत्र (वृष्णि/अंधक वंश के मूल)', parent: 'yadu_vansh_proxy', yug: 'treta' , clusterName: 'यदु वंश' },
+    { id: 'nala_yadu', name: 'नल', subtitle: 'यदु पुत्र', parent: 'yadu_vansh_proxy', yug: 'treta' , clusterName: 'यदु वंश' },
+    { id: 'ripu_yadu', name: 'रिपु', subtitle: 'यदु पुत्र', parent: 'yadu_vansh_proxy', yug: 'treta' , clusterName: 'यदु वंश' },
 
     // --- हैहय वंश (सहस्रजित की शाखा) ---
     { id: 'shatajit_haihaya', name: 'शतजित', subtitle: 'सहस्रजित पुत्र', parent: 'sahasrajit_yadu', yug: 'treta' },
