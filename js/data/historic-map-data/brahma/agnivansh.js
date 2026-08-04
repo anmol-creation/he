@@ -87,5 +87,31 @@ export const agnivanshData = [
     { id: 'govindaraja_4_chauhan', name: 'गोविंदराज (चतुर्थ)', subtitle: 'रणथंभौर चौहान वंश के संस्थापक', parent: 'prithviraj_3_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश', parichay: 'पृथ्वीराज के पुत्र, जिन्होंने रणथंभौर जाकर एक नए चौहान राज्य की नींव रखी।' },
 
     // Proxy Node for Chauhan
-    { id: 'chauhan_dynasty_proxy', name: 'चौहान (चाहमान) वंश', subtitle: 'वासुदेव से पृथ्वीराज तक', isProxy: true, parent: 'chahamana_hero', clusterName: 'चौहान (चाहमान) वंश', yug: 'kaliyug' }
+    { id: 'chauhan_dynasty_proxy', name: 'चौहान (चाहमान) वंश', subtitle: 'वासुदेव से पृथ्वीराज तक', isProxy: true, parent: 'chahamana_hero', clusterName: 'चौहान (चाहमान) वंश', yug: 'kaliyug' },
+
+    // ----------------------------------------------------
+    // GURJARA-PRATIHARA DYNASTY OF KANNAUJ
+    // ----------------------------------------------------
+    { id: 'nagabhata_1_pratihara', name: 'नागभट्ट (प्रथम)', subtitle: 'प्रतिहार साम्राज्य के संस्थापक', parent: 'pratihara', yug: 'kaliyug', isProminent: true, parichay: 'इन्होंने अरब आक्रमणकारी जुनैद की सेना को बुरी तरह हराकर सिंध तक खदेड़ दिया था। इन्हें भारत की ढाल (Shield of India) कहा जाता है।' },
+    { id: 'kakutstha_pratihara', name: 'ककुत्स्थ', subtitle: 'नागभट्ट के भतीजे', parent: 'nagabhata_1_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'devaraja_pratihara', name: 'देवराज', subtitle: 'ककुत्स्थ के भाई', parent: 'nagabhata_1_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'vatsaraja_pratihara', name: 'वत्सराज', subtitle: 'देवराज के पुत्र', parent: 'devaraja_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश', parichay: 'इन्होंने साम्राज्य का विस्तार किया और बंगाल के पाल वंश (धर्मपाल) को हराया। कन्नौज के लिए त्रिपक्षीय संघर्ष की शुरुआत इन्हीं के समय हुई।' },
+    { id: 'nagabhata_2_pratihara', name: 'नागभट्ट (द्वितीय)', subtitle: 'कन्नौज के विजेता', parent: 'vatsaraja_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश', parichay: 'इन्होंने कन्नौज को जीतकर उसे प्रतिहार साम्राज्य की राजधानी बनाया।' },
+    { id: 'ramabhadra_pratihara', name: 'रामभद्र', subtitle: 'नागभट्ट द्वितीय के पुत्र', parent: 'nagabhata_2_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'mihira_bhoja_pratihara', name: 'सम्राट मिहिर भोज', subtitle: 'महानतम प्रतिहार सम्राट', parent: 'ramabhadra_pratihara', yug: 'kaliyug', isProminent: true, parichay: 'गुर्जर-प्रतिहार वंश के सबसे महान और प्रतापी सम्राट (836–885 ई.)। इन्होंने 'आदिवराह' की उपाधि धारण की थी। अरब यात्री सुलेमान ने इन्हें इस्लाम का सबसे बड़ा दुश्मन बताया था।' },
+    { id: 'mahendrapala_1_pratihara', name: 'महेन्द्रपाल (प्रथम)', subtitle: 'मिहिर भोज के पुत्र', parent: 'mihira_bhoja_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश', parichay: 'प्रसिद्ध संस्कृत कवि और नाटककार 'राजशेखर' इनके दरबार के राजगुरु थे।' },
+    { id: 'bhoja_2_pratihara', name: 'भोज (द्वितीय)', subtitle: 'महेन्द्रपाल के पुत्र', parent: 'mahendrapala_1_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'mahipala_1_pratihara', name: 'महीपाल (प्रथम)', subtitle: 'महेन्द्रपाल के पुत्र', parent: 'mahendrapala_1_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'mahendrapala_2_pratihara', name: 'महेन्द्रपाल (द्वितीय)', subtitle: 'महीपाल के पुत्र', parent: 'mahipala_1_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'devapala_pratihara_kannauj', name: 'देवपाल', subtitle: 'महीपाल के पुत्र', parent: 'mahipala_1_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'vinayakapala_pratihara', name: 'विनायकपाल', subtitle: 'प्रतिहार राजा', parent: 'devapala_pratihara_kannauj', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'mahipala_2_pratihara', name: 'महीपाल (द्वितीय)', subtitle: 'प्रतिहार राजा', parent: 'vinayakapala_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'vijayapala_pratihara', name: 'विजयपाल', subtitle: 'प्रतिहार राजा', parent: 'mahipala_2_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'rajyapala_pratihara', name: 'राज्यपाल', subtitle: 'महमूद गजनवी के समकालीन', parent: 'vijayapala_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश', parichay: 'इनके समय (1018 ई.) में महमूद गजनवी ने कन्नौज पर आक्रमण किया था। बिना लड़े भागने के कारण चंदेल शासक विद्याधर ने इनकी हत्या कर दी।' },
+    { id: 'trilochanapala_pratihara', name: 'त्रिलोचनपाल', subtitle: 'राज्यपाल के पुत्र', parent: 'rajyapala_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश' },
+    { id: 'yasahpala_pratihara', name: 'यशपाल', subtitle: 'अंतिम प्रतिहार शासक', parent: 'trilochanapala_pratihara', yug: 'kaliyug', clusterName: 'प्रतिहार वंश', parichay: 'प्रतिहार वंश के अंतिम ज्ञात शासक (लगभग 1036 ई.)। इसके बाद गहड़वालों ने कन्नौज पर अधिकार कर लिया।' },
+
+    // Proxy Node for Pratihara
+    { id: 'pratihara_dynasty_proxy', name: 'गुर्जर-प्रतिहार वंश', subtitle: 'ककुत्स्थ से यशपाल तक', isProxy: true, parent: 'nagabhata_1_pratihara', clusterName: 'प्रतिहार वंश', yug: 'kaliyug' }
+
 ];
