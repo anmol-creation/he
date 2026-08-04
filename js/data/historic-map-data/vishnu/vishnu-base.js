@@ -18,14 +18,16 @@ export const vishnuBaseData = [
     { id: 'kama_pradyumna', name: 'कामदेव / प्रद्युम्न', subtitle: 'विष्णु/कृष्ण पुत्र', parent: 'vishnu', mother: 'lakshmi', yug: 'pre-kalpa', parichay: 'विष्णु और लक्ष्मी के पुत्र रूप में कामदेव। (द्वापर में यही प्रद्युम्न बने)।' },
 
     // Dashavatara (The 10 Primary Avatars)
-    { id: 'matsya_avatar', name: 'मत्स्य', subtitle: 'प्रथम अवतार (मछली)', parent: 'vishnu', yug: 'satya' },
-    { id: 'kurma_avatar', name: 'कूर्म', subtitle: 'द्वितीय अवतार (कछुआ)', parent: 'vishnu', yug: 'satya' },
-    { id: 'varaha_avatar', name: 'वराह', subtitle: 'तृतीय अवतार (सूअर)', parent: 'vishnu', yug: 'satya' },
-    { id: 'narasimha_avatar', name: 'नरसिंह', subtitle: 'चतुर्थ अवतार', parent: 'vishnu', yug: 'satya' },
-    { id: 'vamana_avatar', name: 'वामन', subtitle: 'पंचम अवतार', parent: 'vishnu', yug: 'treta' },
-    { id: 'parashurama_avatar', name: 'परशुराम', subtitle: 'षष्ठ अवतार', parent: 'vishnu', yug: 'treta' },
-    { id: 'rama_avatar', name: 'राम', subtitle: 'सप्तम अवतार', parent: 'vishnu', yug: 'treta' },
-    { id: 'krishna_avatar', name: 'कृष्ण', subtitle: 'अष्टम अवतार', parent: 'vishnu', yug: 'dwapar' },
-    { id: 'buddha_avatar', name: 'बुद्ध', subtitle: 'नवम अवतार', parent: 'vishnu', yug: 'kali' },
-    { id: 'kalki_avatar', name: 'कल्कि', subtitle: 'दशम अवतार (भविष्य)', parent: 'vishnu', yug: 'kali' },
+
+    { id: 'vishnu_avatars_proxy', name: 'दशावतार (विष्णु)', subtitle: 'विष्णु के दस प्रमुख अवतार', isProxy: true, parent: 'vishnu', clusterName: 'दशावतार (विष्णु)', timeScale: 'kalpa' },
+    { id: 'matsya_avatar', name: 'मत्स्य', subtitle: 'प्रथम अवतार (मछली)', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'kurma_avatar', name: 'कूर्म', subtitle: 'द्वितीय अवतार (कछुआ)', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'varaha_avatar', name: 'वराह', subtitle: 'तृतीय अवतार (सूअर)', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'narasimha_avatar', name: 'नरसिंह', subtitle: 'चतुर्थ अवतार', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'vamana_avatar', name: 'वामन', subtitle: 'पंचम अवतार', parent: 'vishnu', yug: 'treta' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'parashurama_avatar', name: 'परशुराम', subtitle: 'षष्ठ अवतार', parent: 'vishnu', yug: 'treta' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'rama_avatar', name: 'राम', subtitle: 'सप्तम अवतार', parent: 'vishnu', yug: 'treta' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'krishna_avatar', name: 'कृष्ण', subtitle: 'अष्टम अवतार', parent: 'vishnu', yug: 'dwapar' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'buddha_avatar', name: 'बुद्ध', subtitle: 'नवम अवतार', parent: 'vishnu', yug: 'kali' , clusterName: 'दशावतार (विष्णु)' },
+    { id: 'kalki_avatar', name: 'कल्कि', subtitle: 'दशम अवतार (भविष्य)', parent: 'vishnu', yug: 'kali' , clusterName: 'दशावतार (विष्णु)' },
 ];

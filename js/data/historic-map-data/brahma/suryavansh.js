@@ -4,14 +4,16 @@ export const suryavanshData = [
 
     // Manu's other children
     { id: 'ila_manu_daughter', name: 'इला', subtitle: 'मनु पुत्री', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', parichay: 'इनका विवाह बुध से हुआ और इन्होंने चंद्रवंश की स्थापना की।' },
-    { id: 'nabhaga', name: 'नाभाग', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'dhrishta', name: 'धृष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'sharyati', name: 'शर्याति', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'narishyanta', name: 'नरिष्यंत', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'pramshu', name: 'प्रांशु', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'nabhanedishta', name: 'नाभानेदिष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'karusha', name: 'करुष', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
-    { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+
+    { id: 'manu_other_sons_proxy', name: 'मनु के अन्य पुत्र', subtitle: 'इक्ष्वाकु के अतिरिक्त अन्य पुत्र', isProxy: true, parent: 'vaivasvata_manu', clusterName: 'मनु के अन्य पुत्र', yug: 'satya' },
+    { id: 'nabhaga', name: 'नाभाग', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'dhrishta', name: 'धृष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'sharyati', name: 'शर्याति', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'narishyanta', name: 'नरिष्यंत', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'pramshu', name: 'प्रांशु', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'nabhanedishta', name: 'नाभानेदिष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'karusha', name: 'करुष', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
 
     { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
     // Descendants of Ikshvaku
@@ -561,7 +563,7 @@ export const suryavanshData = [
     { id: 'narsev', name: 'नरसेव', subtitle: 'नांगल गोत्र', parent: 'agrawal_dynasty_proxy', mother: 'madhavi_agrasen', yug: 'dwapar', parichay: 'नांगल गोत्र के प्रवर्तक। गुरु: नागेंद्र।', clusterName: 'अग्रवाल वंश' },
 
     { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'treta' },
-    { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', parent: 'surya', yug: 'treta' },
+    { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', parent: 'surya', yug: 'treta' , clusterName: 'सूर्य की अन्य संतति' },
     { id: 'ruma_wife', name: 'रूमा', subtitle: 'सुग्रीव की पत्नी', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
     { id: 'tara_wife', name: 'तारा', subtitle: 'सुग्रीव की पत्नी (बाली वध पश्चात्)', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
     { id: 'vali', name: 'बाली', subtitle: 'किष्किंधा नरेश', parent: 'indra', yug: 'treta' },
