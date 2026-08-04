@@ -422,7 +422,7 @@ export const brahmaBaseData = [
     { id: 'apantaratamas', name: 'अपान्तरतमा', subtitle: 'वाणी से उत्पन्न मानस पुत्र', parent: 'brahma', yug: 'satya', parichay: 'ब्रह्मा जी की वाणी से उत्पन्न मानस पुत्र (बाद में वेदव्यास बने)।' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
 
 
-    { id: 'brahma_other_creations_proxy', name: 'ब्रह्मा की अन्य सृष्टियाँ', subtitle: 'मानस एवं वैचारिक सृष्टियाँ', isProxy: true, parent: 'brahma', clusterName: 'ब्रह्मा की अन्य सृष्टियाँ', timeScale: 'kalpa' },
+    { id: 'brahma_other_creations_proxy', name: 'ब्रह्मा की अन्य सृष्टियाँ', subtitle: 'मानस एवं वैचारिक सृष्टियाँ', isProxy: true, parent: 'brahma', clusterName: 'ब्रह्मा की अन्य सृष्टियाँ', timeScale: 'kalpa', yug: 'satya' },
     { id: 'char_varna_proxy', name: 'चार वर्ण', subtitle: 'ब्रह्मा द्वारा उत्पन्न', parent: 'brahma', yug: 'satya', clusterName: 'चार वर्ण', isProxy: true },
     { id: 'brahmana_varna', name: 'ब्राह्मण (वर्ण)', subtitle: 'मुख से उत्पन्न', parent: 'brahma', yug: 'satya', clusterName: 'चार वर्ण' },
     { id: 'kshatriya_varna', name: 'क्षत्रिय (वर्ण)', subtitle: 'भुजाओं से उत्पन्न', parent: 'brahma', yug: 'satya', clusterName: 'चार वर्ण' },

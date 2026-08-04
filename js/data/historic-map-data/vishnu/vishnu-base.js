@@ -19,7 +19,7 @@ export const vishnuBaseData = [
 
     // Dashavatara (The 10 Primary Avatars)
 
-    { id: 'vishnu_avatars_proxy', name: 'दशावतार (विष्णु)', subtitle: 'विष्णु के दस प्रमुख अवतार', isProxy: true, parent: 'vishnu', clusterName: 'दशावतार (विष्णु)', timeScale: 'kalpa' },
+    { id: 'vishnu_avatars_proxy', name: 'दशावतार (विष्णु)', subtitle: 'विष्णु के दस प्रमुख अवतार', isProxy: true, parent: 'vishnu', clusterName: 'दशावतार (विष्णु)', timeScale: 'kalpa', yug: 'satya' },
     { id: 'matsya_avatar', name: 'मत्स्य', subtitle: 'प्रथम अवतार (मछली)', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
     { id: 'kurma_avatar', name: 'कूर्म', subtitle: 'द्वितीय अवतार (कछुआ)', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
     { id: 'varaha_avatar', name: 'वराह', subtitle: 'तृतीय अवतार (सूअर)', parent: 'vishnu', yug: 'satya' , clusterName: 'दशावतार (विष्णु)' },
