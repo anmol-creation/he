@@ -71,12 +71,14 @@ export const chandravanshData = [
     { id: 'ashokasundari_chandra', name: 'अशोकसुंदरी', subtitle: 'नहुष की पत्नी (शिव-पार्वती पुत्री)', parent: 'shiva_parivar_proxy', mother: 'parvati', spouseOf: 'nahusha_chandra', yug: 'satya', clusterName: 'शिव परिवार' },
 
     // --- नहुष के पुत्र (यति, ययाति, संयाति, अयाति, वियति, कृति) ---
-    { id: 'yati_chandra', name: 'यति', subtitle: 'नहुष के पुत्र (संन्यासी)', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
+
+    { id: 'nahusha_sons_proxy', name: 'नहुष के अन्य पुत्र', subtitle: 'ययाति के अतिरिक्त ५ पुत्र', isProxy: true, parent: 'nahusha_chandra', clusterName: 'नहुष के पुत्र', yug: 'treta' },
+    { id: 'yati_chandra', name: 'यति', subtitle: 'नहुष के पुत्र (संन्यासी)', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , clusterName: 'नहुष के पुत्र' },
     { id: 'yayati_chandra', name: 'ययाति', subtitle: 'महान सम्राट', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
     { id: 'sanyati_chandra', name: 'संयाति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
     { id: 'ayati_nahusha_chandra', name: 'अयाति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
-    { id: 'viyati_chandra', name: 'वियति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
-    { id: 'kriti_chandra', name: 'कृति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' },
+    { id: 'viyati_chandra', name: 'वियति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , clusterName: 'नहुष के पुत्र' },
+    { id: 'kriti_chandra', name: 'कृति', subtitle: 'नहुष के पुत्र', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , clusterName: 'नहुष के पुत्र' },
 
     // --- ययाति की पत्नियां ---
     { id: 'devayani_yayati_chandra', name: 'देवयानी', subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)', parent: 'shukracharya', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
@@ -192,14 +194,16 @@ export const chandravanshData = [
     { id: 'karna_chandra', name: 'कर्ण', subtitle: 'अंगराज / सूर्य पुत्र', parent: 'adhiratha_anu', mother: 'radha_karna_chandra', yug: 'dwapar', parichay: 'जैविक माता-पिता कुंती और सूर्यदेव। पालक माता-पिता राधा और अधिरथ। दुर्योधन ने इन्हें अंग देश का राजा बनाया।' },
     { id: 'vrushali_chandra', name: 'वृषाली', subtitle: 'कर्ण की प्रथम पत्नी', parent: '', spouseOf: 'karna_chandra', yug: 'dwapar', clusterName: 'कर्ण की पत्नियाँ' },
     { id: 'supriya_chandra', name: 'सुप्रिया', subtitle: 'कर्ण की द्वितीय पत्नी', parent: '', spouseOf: 'karna_chandra', yug: 'dwapar', clusterName: 'कर्ण की पत्नियाँ' },
-    { id: 'vrishasena_karna_chandra', name: 'वृषसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' },
-    { id: 'chitrasena_karna_chandra', name: 'चित्रसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' },
-    { id: 'satyasena_karna_chandra', name: 'सत्यसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' },
-    { id: 'sushena_karna_chandra', name: 'सुषेण', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' },
-    { id: 'shatrunjaya_karna_chandra', name: 'शत्रुंजय', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' },
-    { id: 'dvipata_karna_chandra', name: 'द्विपात', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' },
-    { id: 'prasena_karna_chandra', name: 'प्रसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar' },
-    { id: 'banasena_karna_chandra', name: 'बाणसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar' },
+
+    { id: 'karna_sons_proxy', name: 'कर्ण के पुत्र', subtitle: 'वृषसेन आदि 9 पुत्र', isProxy: true, parent: 'karna_chandra', clusterName: 'कर्ण के पुत्र', yug: 'dwapar' },
+    { id: 'vrishasena_karna_chandra', name: 'वृषसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'chitrasena_karna_chandra', name: 'चित्रसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'satyasena_karna_chandra', name: 'सत्यसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'sushena_karna_chandra', name: 'सुषेण', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'shatrunjaya_karna_chandra', name: 'शत्रुंजय', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'dvipata_karna_chandra', name: 'द्विपात', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'prasena_karna_chandra', name: 'प्रसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
+    { id: 'banasena_karna_chandra', name: 'बाणसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
 
     // --- पुरुरवा के अन्य पुत्र (अमावसु / विजय वंश - कान्यकुब्ज/कन्नौज) ---
         { id: 'amavasu_vansh_proxy', name: 'अमावसु (विजय) वंश', subtitle: 'अमावसु के वंशज', parent: 'chandravansh_dynasty_proxy', yug: 'satya', clusterName: 'अमावसु (विजय) वंश', isProxy: true },
@@ -305,13 +309,15 @@ export const chandravanshData = [
     { id: 'satvata_yadu', name: 'सात्वत', subtitle: 'सात्वत वंश के मूल', parent: 'ayu_yadu', yug: 'dwapar' },
 
     // --- सात्वत वंश ---
-    { id: 'bhajina_satvata', name: 'भजिन', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
-    { id: 'bhajamana_satvata', name: 'भजमान', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
-    { id: 'divya_satvata', name: 'दिव्य', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
-    { id: 'andhaka_satvata', name: 'अंधक', subtitle: 'अंधक वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' },
-    { id: 'devavridha_satvata', name: 'देववृध', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
-    { id: 'mahabhoja_satvata', name: 'महाभोज', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' },
-    { id: 'vrishni_satvata', name: 'वृष्णि (द्वितीय)', subtitle: 'वृष्णि वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' },
+
+    { id: 'satvata_sons_proxy', name: 'सात्वत के पुत्र', subtitle: 'अंधक, वृष्णि आदि 7 पुत्र', isProxy: true, parent: 'satvata_yadu', clusterName: 'सात्वत के पुत्र', yug: 'dwapar' },
+    { id: 'bhajina_satvata', name: 'भजिन', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'bhajamana_satvata', name: 'भजमान', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'divya_satvata', name: 'दिव्य', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'andhaka_satvata', name: 'अंधक', subtitle: 'अंधक वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'devavridha_satvata', name: 'देववृध', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'mahabhoja_satvata', name: 'महाभोज', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'vrishni_satvata', name: 'वृष्णि (द्वितीय)', subtitle: 'वृष्णि वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
 
     // --- अंधक वंश (उग्रसेन, कंस) ---
     { id: 'kukura_andhaka', name: 'कुकुर', subtitle: 'अंधक पुत्र', parent: 'andhaka_satvata', yug: 'dwapar' },
@@ -562,14 +568,14 @@ export const chandravanshData = [
     { id: 'keshini_ajamidha_chandra', name: 'केशिनी', subtitle: 'अजमीढ पत्नी', parent: '', spouseOf: 'ajamidha_2_chandra', yug: 'treta' },
 
     // केशिनी के पुत्र
-    { id: 'jahnu_puru', name: 'जह्नु', subtitle: 'केशिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'keshini_ajamidha_chandra', yug: 'treta' },
-    { id: 'vraja_chandra', name: 'व्रज', subtitle: 'केशिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'keshini_ajamidha_chandra', yug: 'treta' },
-    { id: 'rupina_chandra', name: 'रुपिण', subtitle: 'केशिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'keshini_ajamidha_chandra', yug: 'treta' },
+    { id: 'jahnu_puru', name: 'जह्नु', subtitle: 'केशिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'keshini_ajamidha_chandra', yug: 'treta' , clusterName: 'अजमीढ़ के अन्य पुत्र' },
+    { id: 'vraja_chandra', name: 'व्रज', subtitle: 'केशिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'keshini_ajamidha_chandra', yug: 'treta' , clusterName: 'अजमीढ़ के अन्य पुत्र' },
+    { id: 'rupina_chandra', name: 'रुपिण', subtitle: 'केशिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'keshini_ajamidha_chandra', yug: 'treta' , clusterName: 'अजमीढ़ के अन्य पुत्र' },
 
     // --- पांचाल वंश (नीली से) ---
     { id: 'nila_panchal', name: 'नील', subtitle: 'नीली पुत्र', parent: 'ajamidha_2_chandra', mother: 'nili_ajamidha_chandra', yug: 'treta' },
-    { id: 'dushyanta_panchal', name: 'दुष्यंत (पांचाल)', subtitle: 'नीली पुत्र', parent: 'ajamidha_2_chandra', mother: 'nili_ajamidha_chandra', yug: 'treta' },
-    { id: 'parameshthin_chandra', name: 'परमेष्ठिन्', subtitle: 'नीली पुत्र', parent: 'ajamidha_2_chandra', mother: 'nili_ajamidha_chandra', yug: 'treta' },
+    { id: 'dushyanta_panchal', name: 'दुष्यंत (पांचाल)', subtitle: 'नीली पुत्र', parent: 'ajamidha_2_chandra', mother: 'nili_ajamidha_chandra', yug: 'treta' , clusterName: 'अजमीढ़ के अन्य पुत्र' },
+    { id: 'parameshthin_chandra', name: 'परमेष्ठिन्', subtitle: 'नीली पुत्र', parent: 'ajamidha_2_chandra', mother: 'nili_ajamidha_chandra', yug: 'treta' , clusterName: 'अजमीढ़ के अन्य पुत्र' },
 
     { id: 'shanti_panchal', name: 'शान्ति', subtitle: 'नील पुत्र', parent: 'nila_panchal', yug: 'treta' },
     { id: 'sushanti_panchal', name: 'सुशान्ति', subtitle: 'शान्ति पुत्र', parent: 'shanti_panchal', yug: 'treta' },
@@ -606,9 +612,11 @@ export const chandravanshData = [
 
 
     // --- कुरु वंश मुख्य धारा (धूमिनी से) ---
+
+    { id: 'ajamidha_sons_proxy', name: 'अजमीढ़ के अन्य पुत्र', subtitle: 'ऋक्ष, नील आदि', isProxy: true, parent: 'ajamidha_2_chandra', clusterName: 'अजमीढ़ के अन्य पुत्र', yug: 'treta' },
     { id: 'riksha_2_chandra', name: 'ऋक्ष (कुरु वंश)', subtitle: 'धूमिनी पुत्र', parent: 'ajamidha_2_chandra', mother: 'dhumini_ajamidha_chandra', yug: 'treta' },
     { id: 'samvarana_chandra', name: 'संवरण', subtitle: 'ऋक्ष पुत्र', parent: 'riksha_2_chandra', yug: 'treta' },
-    { id: 'tapati_chandra', name: 'तपती', subtitle: 'संवरण पत्नी (सूर्य पुत्री)', parent: 'surya', spouseOf: 'samvarana_chandra', yug: 'treta' },
+    { id: 'tapati_chandra', name: 'तपती', subtitle: 'संवरण पत्नी (सूर्य पुत्री)', parent: 'surya', spouseOf: 'samvarana_chandra', yug: 'treta' , clusterName: 'सूर्य की अन्य संतति' },
 
     { id: 'kuru_chandra', name: 'कुरु', subtitle: 'कुरुक्षेत्र / कुरुवंश के संस्थापक', parent: 'samvarana_chandra', mother: 'tapati_chandra', yug: 'dwapar' },
     { id: 'shubhangi_kuru', name: 'शुभांगी', subtitle: 'कुरु पत्नी', parent: '', spouseOf: 'kuru_chandra', yug: 'dwapar' },
