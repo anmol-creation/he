@@ -41,5 +41,51 @@ export const agnivanshData = [
     { id: 'bhoja_successors_proxy', name: 'राजा भोज के उत्तराधिकारी', subtitle: 'परमार वंश के परवर्ती शासक (1305 AD तक)', isProxy: true, parent: 'bhoja_paramara', clusterName: 'राजा भोज के उत्तराधिकारी', yug: 'kaliyug' },
 
     { id: 'chalukya', name: 'चालुक्य', subtitle: 'तृतीय अग्निवंशी', parent: 'abu_yagya', yug: 'kaliyug', parichay: 'अग्निकुंड से प्रकट होने वाले तृतीय वीर, जिन्होंने चालुक्य (सोलंकी) वंश की स्थापना की।' },
-    { id: 'chauhan', name: 'चौहान', subtitle: 'चतुर्थ अग्निवंशी', parent: 'abu_yagya', yug: 'kaliyug', parichay: 'अग्निकुंड से सबसे अंत में चार भुजाओं के साथ प्रकट होने वाले वीर, जिन्होंने चौहान (चाहमान) वंश की स्थापना की। पृथ्वीराज चौहान इसी वंश में हुए।' }
+    { id: 'chauhan', name: 'चौहान', subtitle: 'चतुर्थ अग्निवंशी', parent: 'abu_yagya', yug: 'kaliyug', parichay: 'अग्निकुंड से सबसे अंत में चार भुजाओं के साथ प्रकट होने वाले वीर, जिन्होंने चौहान (चाहमान) वंश की स्थापना की। पृथ्वीराज चौहान इसी वंश में हुए।' },
+
+    // ----------------------------------------------------
+    // CHALUKYA (SOLANKI) DYNASTY OF GUJARAT
+    // ----------------------------------------------------
+    { id: 'chalukya_hero', name: 'वीर चुलुक्य', subtitle: 'वंश के मूल पुरुष', parent: 'chalukya', yug: 'kaliyug', parichay: 'अग्निकुंड (या ब्रह्मा जी के चुलुक) से उत्पन्न मूल पुरुष, जिनसे चालुक्य/सोलंकी वंश चला।' },
+    { id: 'mularaja_1_chalukya', name: 'मूलराज (प्रथम)', subtitle: 'गुजरात सोलंकी वंश के संस्थापक (940 ई.)', parent: 'chalukya_hero', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश', parichay: 'इन्होंने अन्हिलवाड़ा (पाटन) को राजधानी बनाकर गुजरात में चालुक्य वंश की स्वतंत्र सत्ता स्थापित की।' },
+    { id: 'chamundaraja_chalukya', name: 'चामुंडराज', subtitle: 'मूलराज के पुत्र', parent: 'mularaja_1_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'vallabharaja_chalukya', name: 'वल्लभराज', subtitle: 'चामुंडराज के पुत्र', parent: 'chamundaraja_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'durlabharaja_chalukya', name: 'दुर्लभराज', subtitle: 'चामुंडराज के पुत्र', parent: 'chamundaraja_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'nagaraja_chalukya', name: 'नागराज', subtitle: 'चामुंडराज के पुत्र', parent: 'chamundaraja_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'bhima_1_chalukya', name: 'भीमदेव (प्रथम)', subtitle: 'सोलंकी सम्राट', parent: 'nagaraja_chalukya', yug: 'kaliyug', isProminent: true, parichay: 'इनके शासनकाल (1025 ई.) में महमूद गजनवी ने सोमनाथ मंदिर पर आक्रमण किया था। भीमदेव ने मोढेरा का सूर्य मंदिर बनवाया।' },
+    { id: 'udayamati_queen', name: 'रानी उदयमती', subtitle: 'रानी की वाव की निर्मात्री', parent: '', spouseOf: 'bhima_1_chalukya', yug: 'kaliyug', parichay: 'इन्होंने अपने पति भीमदेव की याद में पाटन में विश्व प्रसिद्ध "रानी की वाव" (Stepwell) का निर्माण करवाया था।' },
+    { id: 'karna_1_chalukya', name: 'कर्णदेव (प्रथम)', subtitle: 'भीमदेव के पुत्र', parent: 'bhima_1_chalukya', mother: 'udayamati_queen', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश', parichay: 'इन्होंने कर्णावती (आधुनिक अहमदाबाद) नगर बसाया।' },
+    { id: 'jayasimha_siddharaja', name: 'जयसिंह सिद्धराज', subtitle: 'सोलंकी वंश का स्वर्ण काल', parent: 'karna_1_chalukya', yug: 'kaliyug', isProminent: true, parichay: 'गुजरात के सबसे महान और प्रतापी सम्राट (1092–1142)। इन्होंने \'अवंतिनाथ\' की उपाधि धारण की और साम्राज्य का अत्यधिक विस्तार किया।' },
+    { id: 'tribhuvanapala_chalukya', name: 'त्रिभुवनपाल', subtitle: 'कुमारपाल के पिता', parent: 'karna_1_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'kumarapala_chalukya', name: 'कुमारपाल', subtitle: 'सोलंकी सम्राट', parent: 'tribhuvanapala_chalukya', yug: 'kaliyug', parichay: 'जैन आचार्य हेमचंद्र के अनुयायी। इनके समय में जैन धर्म का गुजरात में बहुत प्रसार हुआ।' },
+    { id: 'ajayapala_chalukya', name: 'अजयपाल', subtitle: 'कुमारपाल के भतीजे', parent: 'kumarapala_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'mularaja_2_chalukya', name: 'मूलराज (द्वितीय)', subtitle: 'अजयपाल के पुत्र', parent: 'ajayapala_chalukya', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+    { id: 'naiki_devi_queen', name: 'राजमाता नायकी देवी', subtitle: 'मुहम्मद गौरी को हराने वाली', parent: '', spouseOf: 'ajayapala_chalukya', yug: 'kaliyug', parichay: 'बालक मूलराज द्वितीय की संरक्षिका (Regent)। 1178 ई. में \'कसाह्रदा के युद्ध\' में इन्होंने मुहम्मद गौरी को युद्धभूमि में इतनी बुरी तरह हराया कि गौरी कई सालों तक भारत की तरफ नहीं लौटा।' },
+    { id: 'bhima_2_chalukya', name: 'भीमदेव (द्वितीय)', subtitle: 'अजयपाल के पुत्र', parent: 'ajayapala_chalukya', mother: 'naiki_devi_queen', yug: 'kaliyug', clusterName: 'चालुक्य (सोलंकी) वंश' },
+
+    // Proxy Node for Chalukya
+    { id: 'chalukya_dynasty_proxy', name: 'चालुक्य (सोलंकी) वंश', subtitle: 'मूलराज से भीमदेव द्वितीय तक', isProxy: true, parent: 'chalukya_hero', clusterName: 'चालुक्य (सोलंकी) वंश', yug: 'kaliyug' },
+
+
+    // ----------------------------------------------------
+    // CHAHAMANA (CHAUHAN) DYNASTY OF SHAKAMBHARI / AJMER
+    // ----------------------------------------------------
+    { id: 'chahamana_hero', name: 'वीर चाहमान', subtitle: 'वंश के मूल पुरुष', parent: 'chauhan', yug: 'kaliyug', parichay: 'अग्निकुंड से अंतिम रूप में चार भुजाओं के साथ उत्पन्न मूल पुरुष, जिनसे चौहान (चाहमान) वंश चला।' },
+    { id: 'vasudeva_chauhan', name: 'वासुदेव चौहान', subtitle: 'सांभर राज्य के संस्थापक (551 ई.)', parent: 'chahamana_hero', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश', parichay: 'चौहान वंश के प्रथम ऐतिहासिक राजा। इन्होंने नागौर (अहिच्छत्रपुर) को राजधानी बनाया और सांभर झील का निर्माण करवाया।' },
+    { id: 'samantaraja_chauhan', name: 'सामंतराज', subtitle: 'वासुदेव के उत्तराधिकारी', parent: 'vasudeva_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश' },
+    { id: 'govindaraja_1_chauhan', name: 'गोविंदराज (प्रथम)', subtitle: 'चौहान राजा', parent: 'samantaraja_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश' },
+    { id: 'simharaja_chauhan', name: 'सिंहराज', subtitle: 'प्रथम \'महाराजाधिराज\'', parent: 'govindaraja_1_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश', parichay: 'गुर्जर-प्रतिहारों की अधीनता त्यागकर चौहानों को एक स्वतंत्र शक्ति बनाया।' },
+    { id: 'vigraharaja_2_chauhan', name: 'विग्रहराज (द्वितीय)', subtitle: 'सिंहराज के पुत्र', parent: 'simharaja_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश' },
+    { id: 'ajayaraja_2_chauhan', name: 'अजयराज (द्वितीय)', subtitle: 'अजमेर के संस्थापक (1113 ई.)', parent: 'vigraharaja_2_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश', parichay: 'इन्होंने \'अजयमेरु\' (अजमेर) नगर बसाया और उसे चौहान साम्राज्य की नई राजधानी बनाया।' },
+    { id: 'arnoraja_chauhan', name: 'अर्णोराज (आनाजी)', subtitle: 'महान चौहान राजा', parent: 'ajayaraja_2_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश', parichay: 'तुर्कों को हराकर अजमेर में आनासागर झील का निर्माण करवाया।' },
+    { id: 'jagaddeva_chauhan', name: 'जगद्देव', subtitle: 'अर्णोराज के पुत्र', parent: 'arnoraja_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश' },
+    { id: 'vigraharaja_4_chauhan', name: 'विग्रहराज चतुर्थ (बीसलदेव)', subtitle: 'चौहान वंश का स्वर्ण काल', parent: 'arnoraja_chauhan', yug: 'kaliyug', isProminent: true, parichay: 'इनका शासनकाल सपादलक्ष चौहानों का \'स्वर्ण काल\' माना जाता है। तोमरों से दिल्ली छीनी। ये \'हरिकेलि नाटक\' के रचयिता और एक महान विद्वान थे।' },
+    { id: 'someshvara_chauhan', name: 'सोमेश्वर', subtitle: 'अर्णोराज के पुत्र', parent: 'arnoraja_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश' },
+    { id: 'karpuradevi_queen', name: 'रानी कर्पूरी देवी', subtitle: 'पृथ्वीराज की माता', parent: '', spouseOf: 'someshvara_chauhan', yug: 'kaliyug', parichay: 'कलचुरी राजकुमारी। पति की मृत्यु के बाद बालक पृथ्वीराज की संरक्षिका बनीं और कुशलता से राज्य संभाला।' },
+    { id: 'prithviraj_3_chauhan', name: 'सम्राट पृथ्वीराज चौहान', subtitle: 'अंतिम महान हिंदू सम्राट', parent: 'someshvara_chauhan', mother: 'karpuradevi_queen', yug: 'kaliyug', isProminent: true, parichay: 'भारत के सबसे प्रसिद्ध शूरवीर। तराइन के प्रथम युद्ध (1191) में मुहम्मद गौरी को हराया। तराइन के द्वितीय युद्ध (1192) में वीरगति को प्राप्त हुए।' },
+    { id: 'hariraja_chauhan', name: 'हरिराज', subtitle: 'पृथ्वीराज के भाई', parent: 'someshvara_chauhan', mother: 'karpuradevi_queen', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश' },
+    { id: 'govindaraja_4_chauhan', name: 'गोविंदराज (चतुर्थ)', subtitle: 'रणथंभौर चौहान वंश के संस्थापक', parent: 'prithviraj_3_chauhan', yug: 'kaliyug', clusterName: 'चौहान (चाहमान) वंश', parichay: 'पृथ्वीराज के पुत्र, जिन्होंने रणथंभौर जाकर एक नए चौहान राज्य की नींव रखी।' },
+
+    // Proxy Node for Chauhan
+    { id: 'chauhan_dynasty_proxy', name: 'चौहान (चाहमान) वंश', subtitle: 'वासुदेव से पृथ्वीराज तक', isProxy: true, parent: 'chahamana_hero', clusterName: 'चौहान (चाहमान) वंश', yug: 'kaliyug' }
 ];
