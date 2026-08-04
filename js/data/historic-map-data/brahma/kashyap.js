@@ -1,6 +1,6 @@
 export const kashyapData = [
 
-    { id: 'kashyap_other_creations_proxy', name: 'कश्यप की अन्य संतति', subtitle: 'नाग, गंधर्व, दैत्य, यक्ष', isProxy: true, parent: 'kashyap', clusterName: 'कश्यप की अन्य संतति', timeScale: 'kalpa' },
+    { id: 'kashyap_other_creations_proxy', name: 'कश्यप की अन्य संतति', subtitle: 'नाग, गंधर्व, दैत्य, यक्ष', isProxy: true, parent: 'kashyap', clusterName: 'कश्यप की अन्य संतति', timeScale: 'kalpa', yug: 'satya' },
     { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
     { id: 'aditi', name: 'अदिति', subtitle: 'देवताओं की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'diti', name: 'दिति', subtitle: 'दैत्यों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
