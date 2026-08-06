@@ -104,12 +104,13 @@ export const chandravanshData = [
     { id: 'karandhama_turvasu_chandra', name: 'करन्धम', subtitle: 'त्रिशानु पुत्र', parent: 'trishanu_turvasu_chandra', yug: 'treta' },
     { id: 'marutta_turvasu_chandra', name: 'मरुत्त', subtitle: 'करन्धम पुत्र', parent: 'karandhama_turvasu_chandra', yug: 'treta', parichay: 'तुर्वसु वंश के राजा मरुत्त, जिनके कोई पुत्र नहीं था। इन्होंने पौरव वंशीय दुष्यंत को गोद लिया था।' },
     { id: 'dushyanta_turvasu_chandra', name: 'दुष्यंत (दत्तक)', subtitle: 'मरुत्त के दत्तक पुत्र', parent: 'marutta_turvasu_chandra', yug: 'treta', parichay: 'पौरव वंश के दुष्यंत जिन्हें मरुत्त ने गोद लिया। परन्तु ये पुनः पुरु वंश में लौट गए।' },
-    { id: 'varutha_turvasu_chandra', name: 'वरूथ', subtitle: 'दुष्यंत पुत्र', parent: 'dushyanta_turvasu_chandra', yug: 'treta' },
-    { id: 'andira_turvasu_chandra', name: 'आण्डीर', subtitle: 'वरूथ पुत्र', parent: 'varutha_turvasu_chandra', yug: 'treta' },
-    { id: 'pandya_turvasu_chandra', name: 'पाण्ड्य', subtitle: 'पाण्ड्य देश संस्थापक', parent: 'andira_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण भारत में पाण्ड्य राजवंश की स्थापना की।' },
-    { id: 'kerala_turvasu_chandra', name: 'केरल', subtitle: 'केरल देश संस्थापक', parent: 'andira_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में केरल (चेर) राज्य की स्थापना की।' },
-    { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'andira_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की।' },
-    { id: 'kulya_turvasu_chandra', name: 'कुल्य', subtitle: 'आण्डीर पुत्र', parent: 'andira_turvasu_chandra', yug: 'treta' },
+    { id: 'sharutthama_turvasu_chandra', name: 'शरुत्थाम', subtitle: 'दुष्यंत पुत्र', parent: 'dushyanta_turvasu_chandra', yug: 'treta' },
+    { id: 'akrida_turvasu_chandra', name: 'आक्रीड', subtitle: 'शरुत्थाम पुत्र', parent: 'sharutthama_turvasu_chandra', yug: 'treta' },
+    { id: 'pandya_turvasu_chandra', name: 'पाण्ड्य', subtitle: 'पाण्ड्य देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण भारत में पाण्ड्य राजवंश की स्थापना की।' },
+    { id: 'kerala_turvasu_chandra', name: 'केरल', subtitle: 'केरल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में केरल (चेर) राज्य की स्थापना की।' },
+    { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की।' },
+    { id: 'kola_turvasu_chandra', name: 'कोल', subtitle: 'कोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta' },
+
 
     // --- द्रुह्यु वंश ---
     { id: 'babhru_druhyu_chandra', name: 'बभ्रु', subtitle: 'द्रुह्यु पुत्र', parent: 'druhyu_chandra', yug: 'treta' },
@@ -120,7 +121,18 @@ export const chandravanshData = [
     { id: 'dhrita_druhyu_chandra', name: 'धृत', subtitle: 'धर्म पुत्र', parent: 'dharma_druhyu_chandra', yug: 'treta' },
     { id: 'duryaman_druhyu_chandra', name: 'दुर्मन', subtitle: 'धृत पुत्र', parent: 'dhrita_druhyu_chandra', yug: 'treta' },
     { id: 'prachetas_druhyu_chandra', name: 'प्रचेतस', subtitle: 'दुर्मन पुत्र', parent: 'duryaman_druhyu_chandra', yug: 'treta' },
-    { id: 'sons_of_prachetas_chandra', name: 'प्रचेतस के 100 पुत्र', subtitle: 'म्लेच्छों के राजा', parent: 'prachetas_druhyu_chandra', yug: 'treta', parichay: 'प्रचेतस के सौ पुत्र हुए, जो उत्तर दिशा में म्लेच्छों के राजा बने।' },
+        { id: 'suchetas_druhyu_chandra', name: 'सुचेतस', subtitle: 'प्रचेतस के पुत्र', parent: 'prachetas_druhyu_chandra', yug: 'treta', parichay: 'इनके समेत प्रचेतस के 100 पुत्र हुए जो उत्तर दिशा में म्लेच्छ देशों के राजा बने।' },
+    // --- दक्षिण एवं पूर्वी राजवंश (Proxies) ---
+    { id: 'mleccha_kings_proxy', name: 'म्लेच्छ राजवंश', subtitle: 'सुचेतस व अन्य भाइयों के वंश', parent: 'suchetas_druhyu_chandra', yug: 'treta', clusterName: 'म्लेच्छ राजवंश', isProxy: true },
+    { id: 'pandya_dynasty_proxy', name: 'पाण्ड्य वंश', subtitle: 'मदुरै राजवंश', parent: 'pandya_turvasu_chandra', yug: 'treta', clusterName: 'पाण्ड्य वंश', isProxy: true },
+    { id: 'chola_dynasty_proxy', name: 'चोल वंश', subtitle: 'कावेरी राजवंश', parent: 'chola_turvasu_chandra', yug: 'treta', clusterName: 'चोल वंश', isProxy: true },
+    { id: 'kerala_dynasty_proxy', name: 'चेर (केरल) वंश', subtitle: 'मालाबार राजवंश', parent: 'kerala_turvasu_chandra', yug: 'treta', clusterName: 'चेर वंश', isProxy: true },
+    { id: 'kola_dynasty_proxy', name: 'कोल वंश', subtitle: 'कोल राजवंश', parent: 'kola_turvasu_chandra', yug: 'treta', clusterName: 'कोल वंश', isProxy: true },
+    { id: 'kalinga_dynasty_proxy', name: 'कलिंग वंश', subtitle: 'कलिंग राजवंश', parent: 'kalinga_anu', yug: 'treta', clusterName: 'कलिंग वंश', isProxy: true },
+    { id: 'vanga_dynasty_proxy', name: 'वंग वंश', subtitle: 'बंगाल राजवंश', parent: 'vanga_anu', yug: 'treta', clusterName: 'वंग वंश', isProxy: true },
+    { id: 'pundra_dynasty_proxy', name: 'पुण्ड्र वंश', subtitle: 'पुण्ड्र राजवंश', parent: 'pundra_anu', yug: 'treta', clusterName: 'पुण्ड्र वंश', isProxy: true },
+    { id: 'suhma_dynasty_proxy', name: 'सुह्म वंश', subtitle: 'सुह्म राजवंश', parent: 'suhma_anu', yug: 'treta', clusterName: 'सुह्म वंश', isProxy: true },
+
 
     // --- अनु वंश ---
     { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta' },
