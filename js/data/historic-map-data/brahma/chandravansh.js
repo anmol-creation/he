@@ -132,12 +132,19 @@ export const chandravanshData = [
     { id: 'vanga_dynasty_proxy', name: 'वंग वंश', subtitle: 'बंगाल राजवंश', parent: 'vanga_anu', yug: 'treta', clusterName: 'वंग वंश', isProxy: true },
     { id: 'pundra_dynasty_proxy', name: 'पुण्ड्र वंश', subtitle: 'पुण्ड्र राजवंश', parent: 'pundra_anu', yug: 'treta', clusterName: 'पुण्ड्र वंश', isProxy: true },
     { id: 'suhma_dynasty_proxy', name: 'सुह्म वंश', subtitle: 'सुह्म राजवंश', parent: 'suhma_anu', yug: 'treta', clusterName: 'सुह्म वंश', isProxy: true },
+    // --- महाभारत कालीन परवर्ती राजा (अज्ञात पीढ़ियों के बाद) ---
+    { id: 'paundraka_vasudeva_chandra', name: 'पौण्ड्रक वासुदेव', subtitle: 'पुण्ड्र नरेश', parent: 'pundra_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत काल में पुण्ड्र देश का राजा, जो स्वयं को असली वासुदेव (कृष्ण) मानता था।', clusterName: 'पुण्ड्र वंश' },
+    { id: 'chitrangada_kalinga_chandra', name: 'चित्रांगद', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'दुर्योधन की पत्नी भानुमती के पिता।', clusterName: 'कलिंग वंश' },
+    { id: 'shrutayush_kalinga_chandra', name: 'श्रुतायु', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत युद्ध में कौरवों की ओर से लड़े और अर्जुन द्वारा वीरगति को प्राप्त हुए।', clusterName: 'कलिंग वंश' },
+    { id: 'malayadhwaja_pandya_chandra', name: 'मलयध्वज', subtitle: 'पाण्ड्य नरेश', parent: 'pandya_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत युद्ध में पांडवों की ओर से लड़े महान योद्धा।', clusterName: 'पाण्ड्य वंश' },
+
+
 
 
     // --- अनु वंश ---
     { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta' },
-    { id: 'chakshusha_anu', name: 'चाक्षुष', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta' },
-    { id: 'paroksha_anu', name: 'परोक्ष', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta' },
+    { id: 'chakshusha_anu', name: 'चाक्षुष', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।' },
+    { id: 'paroksha_anu', name: 'परोक्ष (परमेक्षु)', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।' },
     { id: 'kalanara_anu', name: 'कालानर', subtitle: 'सभानर पुत्र', parent: 'sabhanara_anu', yug: 'treta' },
     { id: 'srijaya_anu', name: 'सृंजय', subtitle: 'कालानर पुत्र', parent: 'kalanara_anu', yug: 'treta' },
     { id: 'janamejaya_anu', name: 'जनमेजय', subtitle: 'सृंजय पुत्र', parent: 'srijaya_anu', yug: 'treta' },
