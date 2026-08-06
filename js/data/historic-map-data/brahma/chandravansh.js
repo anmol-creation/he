@@ -384,6 +384,12 @@ export const chandravanshData = [
     { id: 'shvaphalaka_vrishni', name: 'श्वफल्क', subtitle: 'वृष्णि वंश', parent: 'vrishni_dynasty_proxy', clusterName: 'वृष्णि वंश', yug: 'dwapar' },
     { id: 'akrura_chandra', name: 'अक्रूर', subtitle: 'श्वफल्क पुत्र', parent: 'shvaphalaka_vrishni', yug: 'dwapar', clusterName: 'वृष्णि वंश', parichay: 'श्रीकृष्ण के चाचा, जो कृष्ण और बलराम को गोकुल से मथुरा लाए थे। ये स्यमंतक मणि के धारक भी रहे।' },
 
+    { id: 'ugraseni_chandra', name: 'उग्रसेनी', subtitle: 'उग्रसेन पुत्री / अक्रूर पत्नी', parent: 'ugrasen_kukura', spouseOf: 'akrura_chandra', yug: 'dwapar' },
+    { id: 'sudeva_akrura_chandra', name: 'सुदेव', subtitle: 'अक्रूर पुत्र', parent: 'akrura_chandra', mother: 'ugraseni_chandra', yug: 'dwapar' },
+    { id: 'upadeva_akrura_chandra', name: 'उपदेव', subtitle: 'अक्रूर पुत्र', parent: 'akrura_chandra', mother: 'ugraseni_chandra', yug: 'dwapar' },
+    { id: 'varshney_dynasty_proxy', name: 'वार्ष्णेय (बारहसैनी) वंश', subtitle: 'अक्रूर के वंशज', parent: 'sudeva_akrura_chandra', yug: 'kali', clusterName: 'वार्ष्णेय वंश', isProxy: true, parichay: 'आधुनिक वार्ष्णेय समाज (बारहसैनी) स्वयं को अक्रूर जी का वंशज मानता है। यह मुख्य रूप से मथुरा, अलीगढ़ और पश्चिमी उत्तर प्रदेश में निवास करते हैं।' },
+
+
     { id: 'devamidhusha_vrishni', name: 'देवमीढुष', subtitle: 'वृष्णि पुत्र', parent: 'vrishni_dynasty_proxy', clusterName: 'वृष्णि वंश', yug: 'dwapar' },
     { id: 'shurasen_chandra', name: 'शूरसेन (शूर)', subtitle: 'देवमीढुष पुत्र', parent: 'devamidhusha_vrishni', yug: 'dwapar' , clusterName: 'वृष्णि वंश' },
     { id: 'marisha_shurasen_chandra', name: 'मारिषा', subtitle: 'शूरसेन पत्नी', parent: '', spouseOf: 'shurasen_chandra', yug: 'dwapar' , clusterName: 'वृष्णि वंश' },
