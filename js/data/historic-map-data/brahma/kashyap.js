@@ -75,8 +75,8 @@ export const kashyapData = [
     { id: 'bali', name: 'बलि', subtitle: 'महान दैत्यराज', parent: 'vairochana', yug: 'treta' },
     { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'arun', name: 'अरुण', subtitle: 'सूर्य के सारथी (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
+    { id: 'arun', name: 'अरुण', subtitle: 'सूर्य के सारथी (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
 
     // Other Wives' Descendants
     { id: 'kamadhenu', name: 'कामधेनु', subtitle: 'दिव्य गौ (सुरभि पुत्री)', parent: 'kashyap', mother: 'surabhi', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },

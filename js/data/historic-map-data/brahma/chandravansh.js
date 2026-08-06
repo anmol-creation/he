@@ -1,6 +1,6 @@
 export const chandravanshData = [
     // --- अत्रि और उनकी पत्नी ---
-    { id: 'anasuya_chandra', name: 'अनुसूया', subtitle: 'अत्रि पत्नी', parent: 'kardama_prajapati', spouseOf: 'atri', yug: 'satya', clusterName: 'अत्रि की पत्नियाँ' },
+    { id: 'anasuya_chandra', name: 'अनुसूया', subtitle: 'अत्रि पत्नी', parent: 'kardam_prajapati', spouseOf: 'atri', yug: 'satya', clusterName: 'अत्रि की पत्नियाँ' },
 
     // --- अत्रि के पुत्र ---
         { id: 'atri_dynasty_proxy', name: 'आत्रेय वंश', subtitle: 'अत्रि के वंशज', parent: 'atri', yug: 'satya', clusterName: 'आत्रेय वंश', isProxy: true },
@@ -16,20 +16,20 @@ export const chandravanshData = [
     { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra', yug: 'satya' },
 
     // --- बुध की पत्नी ---
-    { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya' },
+    { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', parent: 'vaivasvat_manu', spouseOf: 'budh_chandra', yug: 'satya' },
 
     // --- पुरुरवा ---
     { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra', mother: 'ila_chandra', yug: 'satya' },
     { id: 'urvashi_chandra', name: 'उर्वशी', subtitle: 'पुरुरवा की पत्नी (अप्सरा)', parent: '', spouseOf: 'pururava_chandra', yug: 'satya' },
 
     // --- पुरुरवा के पुत्र (आयु, श्रुतायु, सत्यायु, रय, विजय, जय) ---
-        { id: 'chandravansh_dynasty_proxy', name: 'चंद्रवंश', subtitle: 'पुरुरवा के वंशज', parent: 'pururava_chandra', yug: 'satya', clusterName: 'चंद्रवंश (मुख्य शाखा)', isProxy: true },
-    { id: 'ayu_chandra', name: 'आयु', subtitle: 'पुरुरवा के ज्येष्ठ पुत्र',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
-    { id: 'shrutayu_chandra', name: 'श्रुतायु', subtitle: 'पुरुरवा के पुत्र',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
-    { id: 'satyayu_chandra', name: 'सत्यायु', subtitle: 'पुरुरवा के पुत्र',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
-    { id: 'raya_chandra', name: 'रय', subtitle: 'पुरुरवा के पुत्र',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
-    { id: 'vijaya_chandra', name: 'विजय', subtitle: 'पुरुरवा के पुत्र',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
-    { id: 'jaya_chandra', name: 'जय', subtitle: 'पुरुरवा के पुत्र',parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
+        { id: 'chandravansh_dynasty_proxy', name: 'पुरुरवा के अन्य पुत्र', subtitle: 'श्रुतायु आदि', parent: 'pururava_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', isProxy: true },
+    { id: 'ayu_chandra', name: 'आयु', subtitle: 'पुरुरवा के ज्येष्ठ पुत्र', parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya' },
+    { id: 'shrutayu_chandra', name: 'श्रुतायु', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'satyayu_chandra', name: 'सत्यायु', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'raya_chandra', name: 'रय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'vijaya_chandra', name: 'विजय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'jaya_chandra', name: 'जय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
 
     // --- आयु की पत्नी ---
     { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी', parent: '', spouseOf: 'ayu_chandra', yug: 'satya' },
@@ -225,7 +225,7 @@ export const chandravanshData = [
     { id: 'banasena_karna_chandra', name: 'बाणसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar' , clusterName: 'कर्ण के पुत्र' },
 
     // --- पुरुरवा के अन्य पुत्र (अमावसु / विजय वंश - कान्यकुब्ज/कन्नौज) ---
-        { id: 'amavasu_vansh_proxy', name: 'अमावसु (विजय) वंश', subtitle: 'अमावसु के वंशज', parent: 'chandravansh_dynasty_proxy', yug: 'satya', clusterName: 'अमावसु (विजय) वंश', isProxy: true },
+        { id: 'amavasu_vansh_proxy', name: 'अमावसु (विजय) वंश', subtitle: 'अमावसु के वंशज', parent: 'pururava_chandra', yug: 'satya', clusterName: 'अमावसु (विजय) वंश', isProxy: true },
     { id: 'amavasu_chandra', name: 'अमावसु (विजय)', subtitle: 'कान्यकुब्ज के संस्थापक',parent: 'amavasu_vansh_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
     { id: 'bhima_amavasu_chandra', name: 'भीम', subtitle: 'अमावसु पुत्र', parent: 'amavasu_vansh_proxy', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
     { id: 'kanchana_chandra', name: 'कांचन', subtitle: 'भीम पुत्र', parent: 'bhima_amavasu_chandra', yug: 'satya' , clusterName: 'अमावसु (विजय) वंश' },
@@ -736,8 +736,17 @@ export const chandravanshData = [
     { id: 'vidur_chandra', name: 'विदुर', subtitle: 'धर्मराज अवतार', parent: 'vichitravirya_chandra', mother: 'parishrami_dasi_chandra', yug: 'dwapar' },
     { id: 'sulabha_vidur_chandra', name: 'सुलभा', subtitle: 'विदुर पत्नी', parent: '', spouseOf: 'vidur_chandra', yug: 'dwapar' },
 
+
+    { id: 'other_dynasties_proxy', name: 'अन्य राजवंश', subtitle: 'विवाह सम्बन्धित', parent: 'brahma', yug: 'dwapar', clusterName: 'अन्य राजवंश (इन-लॉ)', isProxy: true, timeScale: 'kalpa' },
+    // --- अन्य राज्यों के मूल नरेश (इन-लॉ) ---
+    { id: 'virata_matsya', name: 'विराट', subtitle: 'मत्स्य नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
+    { id: 'shalya_madra_king', name: 'शल्य', subtitle: 'मद्र नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
+    { id: 'subala_gandhara_king', name: 'सुबल', subtitle: 'गांधार नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
+    { id: 'kauravya_naga_king', name: 'कौरव्य', subtitle: 'नाग नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
+    { id: 'chitravahana_manipur', name: 'चित्रवाहन', subtitle: 'मणिपुर नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
+
     // --- धृतराष्ट्र का परिवार (कौरव) ---
-    { id: 'gandhari_chandra', name: 'गांधारी', subtitle: 'धृतराष्ट्र की पत्नी', parent: '', spouseOf: 'dhritarashtra_chandra', yug: 'dwapar' },
+    { id: 'gandhari_chandra', name: 'गांधारी', subtitle: 'धृतराष्ट्र की पत्नी', parent: 'subala_gandhara_king', spouseOf: 'dhritarashtra_chandra', yug: 'dwapar' },
     { id: 'vaishya_dasi_dhrita_chandra', name: 'वैश्या दासी', subtitle: 'धृतराष्ट्र की दासी', parent: '', spouseOf: 'dhritarashtra_chandra', yug: 'dwapar' },
 
     { id: 'duryodhan_chandra', name: 'दुर्योधन', subtitle: 'कौरव ज्येष्ठ', parent: 'dhritarashtra_chandra', mother: 'gandhari_chandra', yug: 'dwapar' },
@@ -750,6 +759,7 @@ export const chandravanshData = [
     { id: 'yuyutsu_chandra', name: 'युयुत्सु', subtitle: 'धृतराष्ट्र पुत्र (दासी से)',parent: 'dhritarashtra_chandra', clusterName: 'कौरव (धृतराष्ट्र) वंश', mother: 'vaishya_dasi_dhrita_chandra', yug: 'dwapar' },
     { id: 'dushala_chandra', name: 'दुश्शला', subtitle: 'कौरवों की इकलौती बहन',parent: 'dhritarashtra_chandra', clusterName: 'कौरव (धृतराष्ट्र) वंश', mother: 'gandhari_chandra', spouseOf: 'jayadratha', yug: 'dwapar' },
 
+{ id: 'kaurav_proxy', name: 'अन्य कौरव', subtitle: 'धृतराष्ट्र के 96 पुत्र', parent: 'dhritarashtra_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)', isProxy: true },
     { id: 'kaurava_bro_1_chandra', name: 'दुस्सह', subtitle: 'कौरव', parent: 'kaurav_proxy', mother: 'gandhari_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)' },
     { id: 'kaurava_bro_2_chandra', name: 'जलसन्ध', subtitle: 'कौरव', parent: 'kaurav_proxy', mother: 'gandhari_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)' },
     { id: 'kaurava_bro_3_chandra', name: 'सम', subtitle: 'कौरव', parent: 'kaurav_proxy', mother: 'gandhari_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)' },
@@ -847,7 +857,7 @@ export const chandravanshData = [
     { id: 'kaurava_bro_95_chandra', name: 'विरजा', subtitle: 'कौरव', parent: 'kaurav_proxy', mother: 'gandhari_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)' },
     { id: 'kaurava_bro_96_chandra', name: 'वीर्यवान', subtitle: 'कौरव', parent: 'kaurav_proxy', mother: 'gandhari_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)' },
 
-    { id: 'vridhakshetra_sindhu', name: 'वृद्धक्षत्र', subtitle: 'सिन्धु नरेश', parent: '', yug: 'dwapar' },
+    { id: 'vridhakshetra_sindhu', name: 'वृद्धक्षत्र', subtitle: 'सिन्धु नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
     { id: 'jayadratha', name: 'जयद्रथ', subtitle: 'सिन्धु नरेश', parent: 'vridhakshetra_sindhu', yug: 'dwapar', parichay: 'कौरवों के बहनोई और सिन्धु नरेश। दुर्योधन की बहन दुश्शला के पति।' },
     { id: 'bharmaketu_chandra', name: 'भरमकेतु (दुर्मषण)', subtitle: 'दुशासन पुत्र', parent: 'dushasan_chandra', yug: 'dwapar' },
 
@@ -858,7 +868,6 @@ export const chandravanshData = [
     { id: 'dahir_of_sindh', name: 'राजा दाहीर', subtitle: 'सिंध के अंतिम हिंदू नरेश', parent: 'chach_of_alor', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'सिंध के महान राजा जो 712 ईस्वी में मुहम्मद बिन कासिम के अरब आक्रमण से लड़ते हुए वीरगति को प्राप्त हुए।' },
 
 
-        { id: 'kaurav_proxy', name: 'अन्य कौरव', subtitle: 'धृतराष्ट्र के 96 पुत्र', parent: 'dhritarashtra_chandra', yug: 'dwapar', clusterName: 'अन्य कौरव (96)', isProxy: true },
 
     // --- पाण्डु का परिवार (पांडव) ---
     { id: 'madri_chandra', name: 'माद्री', subtitle: 'पाण्डु पत्नी', parent: '', spouseOf: 'pandu_chandra', yug: 'dwapar' },
@@ -885,8 +894,8 @@ export const chandravanshData = [
 
     // अर्जुन
     { id: 'arjun_chandra', name: 'अर्जुन (पार्थ)', subtitle: 'इंद्र पुत्र / पांडव',parent: 'pandu_dynasty_proxy', clusterName: 'पाण्डव (पाण्डु) वंश', mother: 'kunti_chandra', yug: 'dwapar' },
-    { id: 'ulupi_chandra', name: 'उलूपी', subtitle: 'नाग कन्या / अर्जुन पत्नी', parent: '', spouseOf: 'arjun_chandra', yug: 'dwapar' },
-    { id: 'chitrangada_wife_chandra', name: 'चित्रांगदा', subtitle: 'मणिपुर पुत्री / अर्जुन पत्नी', parent: '', spouseOf: 'arjun_chandra', yug: 'dwapar' },
+    { id: 'ulupi_chandra', name: 'उलूपी', subtitle: 'नाग कन्या / अर्जुन पत्नी', parent: 'kauravya_naga_king', spouseOf: 'arjun_chandra', yug: 'dwapar' },
+    { id: 'chitrangada_wife_chandra', name: 'चित्रांगदा', subtitle: 'मणिपुर पुत्री / अर्जुन पत्नी', parent: 'chitravahana_manipur', spouseOf: 'arjun_chandra', yug: 'dwapar' },
     { id: 'shrutakarma_chandra', name: 'श्रुतकर्मा', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
     { id: 'abhimanyu_chandra', name: 'अभिमन्यु', subtitle: 'अर्जुन-सुभद्रा पुत्र', parent: 'arjun_chandra', mother: 'subhadra_chandra', yug: 'dwapar' },
     { id: 'iravan_chandra', name: 'इरावन', subtitle: 'अर्जुन पुत्र', parent: 'arjun_chandra', mother: 'ulupi_chandra', yug: 'dwapar' },
@@ -900,12 +909,12 @@ export const chandravanshData = [
 
     // सहदेव
     { id: 'sahadev_chandra', name: 'सहदेव', subtitle: 'अश्विनी कुमार पुत्र',parent: 'pandu_dynasty_proxy', clusterName: 'पाण्डव (पाण्डु) वंश', mother: 'madri_chandra', yug: 'dwapar' },
-    { id: 'vijaya_sahadev_chandra', name: 'विजया', subtitle: 'मद्र पुत्री / सहदेव पत्नी', parent: '', spouseOf: 'sahadev_chandra', yug: 'dwapar' },
+    { id: 'vijaya_sahadev_chandra', name: 'विजया', subtitle: 'मद्र पुत्री / सहदेव पत्नी', parent: 'shalya_madra', spouseOf: 'sahadev_chandra', yug: 'dwapar' },
     { id: 'shrutasena_upa_chandra', name: 'श्रुतसेन', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
     { id: 'suhotra_sahadev_chandra', name: 'सुहोत्र', subtitle: 'सहदेव पुत्र', parent: 'sahadev_chandra', mother: 'vijaya_sahadev_chandra', yug: 'dwapar' },
 
     // --- कलियुग (परीक्षित से क्षेमक तक) ---
-    { id: 'uttara_abhimanyu_chandra', name: 'उत्तरा', subtitle: 'विराट पुत्री / अभिमन्यु पत्नी', parent: '', spouseOf: 'abhimanyu_chandra', yug: 'dwapar' },
+    { id: 'uttara_abhimanyu_chandra', name: 'उत्तरा', subtitle: 'विराट पुत्री / अभिमन्यु पत्नी', parent: 'virata', spouseOf: 'abhimanyu_chandra', yug: 'dwapar' },
     { id: 'parikshit_chandra', name: 'परीक्षित (द्वितीय)', subtitle: 'कलियुग के प्रथम कुरु राजा', parent: 'abhimanyu_chandra', mother: 'uttara_abhimanyu_chandra', yug: 'kali' },
     { id: 'madravati_parikshit_chandra', name: 'मद्रावती', subtitle: 'परीक्षित पत्नी', parent: '', spouseOf: 'parikshit_chandra', yug: 'kali' },
 
@@ -975,7 +984,7 @@ export const chandravanshData = [
 
     // --- कटोच राजवंश (त्रिगर्त / कांगड़ा - चंद्रवंश की शाखा) ---
     // भूमिचंद को चंद्रवंशी माना जाता है, जिन्होंने त्रिगर्त राज्य की स्थापना की
-    { id: 'bhumichand_katoch', name: 'भूमिचंद', subtitle: 'त्रिगर्त के संस्थापक',parent: 'chandravansh_dynasty_proxy', yug: 'satya', parichay: 'इन्हें चंद्रवंश/सोमवंश का माना जाता है जिन्होंने कांगड़ा (त्रिगर्त) राज्य की स्थापना की।' , clusterName: 'चंद्रवंश (मुख्य शाखा)' },
+    { id: 'bhumichand_katoch', name: 'भूमिचंद', subtitle: 'त्रिगर्त के संस्थापक',parent: 'chandravansh_dynasty_proxy', yug: 'satya', parichay: 'इन्हें चंद्रवंश/सोमवंश का माना जाता है जिन्होंने कांगड़ा (त्रिगर्त) राज्य की स्थापना की।' , clusterName: 'पुरुरवा के अन्य पुत्र' },
     { id: 'susharma_chandra_katoch', name: 'सुशर्मा चन्द्र', subtitle: 'त्रिगर्त नरेश (महाभारत काल)', parent: 'bhumichand_katoch', yug: 'dwapar', parichay: 'इन्होंने कांगड़ा के किले का निर्माण करवाया। महाभारत युद्ध में इन्होंने कौरवों का साथ दिया और विराट नगर पर आक्रमण किया था।' },
 
     { id: 'katoch_medieval_link', name: 'ऐतिहासिक अंतराल (कटोच)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'susharma_chandra_katoch', yug: 'kali', parichay: 'सुशर्मा चन्द्र के बाद कांगड़ा रियासत के कई राजा हुए (जैसे रूप चन्द्र, जय चन्द्र)।' },
