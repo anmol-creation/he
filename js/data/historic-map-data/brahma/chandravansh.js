@@ -336,6 +336,8 @@ export const chandravanshData = [
     { id: 'andhaka_satvata', name: 'अंधक', subtitle: 'अंधक वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
     { id: 'devavridha_satvata', name: 'देववृध', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
     { id: 'mahabhoja_satvata', name: 'महाभोज', subtitle: 'सात्वत पुत्र', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
+    { id: 'kuntibhoja_chandra', name: 'कुंतीभोज', subtitle: 'भोज नरेश', parent: 'mahabhoja_satvata', yug: 'dwapar', clusterName: 'सात्वत के पुत्र', parichay: 'भोज वंशीय नरेश जिन्होंने शूरसेन की पुत्री पृथा (कुंती) को गोद लिया था।' },
+
     { id: 'vrishni_satvata', name: 'वृष्णि (द्वितीय)', subtitle: 'वृष्णि वंश के मूल', parent: 'satvata_yadu', yug: 'dwapar' , clusterName: 'सात्वत के पुत्र' },
 
     // --- अंधक वंश (उग्रसेन, कंस) ---
@@ -367,13 +369,21 @@ export const chandravanshData = [
     { id: 'shatadhanva_hridika_chandra', name: 'शतधन्वा', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja_chandra', yug: 'dwapar' },
     { id: 'kritavarma_hridika_chandra', name: 'कृतवर्मा', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja_chandra', yug: 'dwapar' },
     { id: 'anamitra_hridika_chandra', name: 'अनमित्र', subtitle: 'हृदिक पुत्र', parent: 'hridika_svayambhoja_chandra', yug: 'dwapar' },
+    { id: 'shini_anamitra_chandra', name: 'शिनि', subtitle: 'अनमित्र पुत्र', parent: 'anamitra_hridika_chandra', yug: 'dwapar' },
+    { id: 'satyaka_chandra', name: 'सत्यक', subtitle: 'शिनि पुत्र', parent: 'shini_anamitra_chandra', yug: 'dwapar' },
+    { id: 'satyaki_chandra', name: 'सात्यकि (युयुधान)', subtitle: 'सत्यक पुत्र', parent: 'satyaka_chandra', yug: 'dwapar', parichay: 'वृष्णि वंशीय यादव वीर और अर्जुन के शिष्य। महाभारत में पांडवों की ओर से लड़े।' },
+    { id: 'asanga_satyaki_chandra', name: 'असंग', subtitle: 'सात्यकि पुत्र', parent: 'satyaki_chandra', yug: 'dwapar' },
+    { id: 'yugandhara_asanga_chandra', name: 'युगन्धर', subtitle: 'असंग पुत्र', parent: 'asanga_satyaki_chandra', yug: 'dwapar' },
+
     { id: 'nighna_anamitra_chandra', name: 'निघ्न', subtitle: 'अनमित्र पुत्र', parent: 'anamitra_hridika_chandra', yug: 'dwapar' },
     { id: 'satrajit_nighna_chandra', name: 'सत्राजित', subtitle: 'निघ्न पुत्र (स्यमंतक मणि धारक)', parent: 'nighna_anamitra_chandra', yug: 'dwapar' },
     { id: 'prasena_nighna_chandra', name: 'प्रसेन', subtitle: 'निघ्न पुत्र', parent: 'nighna_anamitra_chandra', yug: 'dwapar' },
 
     // --- वृष्णि वंश (वसुदेव - कृष्ण) ---
         { id: 'vrishni_dynasty_proxy', name: 'वृष्णि वंश', subtitle: 'वृष्णि के वंशज', parent: 'vrishni_satvata', yug: 'dwapar', clusterName: 'वृष्णि वंश', isProxy: true },
-    { id: 'shvaphalaka_vrishni', name: 'श्वफल्क', subtitle: 'वृष्णि वंश', parent: 'vrishni_dynasty_proxy', clusterName: 'वृष्णि वंश', yug: 'dwapar' }, // Note: actual lineage from vrishni can be debated, using simplified line
+    { id: 'shvaphalaka_vrishni', name: 'श्वफल्क', subtitle: 'वृष्णि वंश', parent: 'vrishni_dynasty_proxy', clusterName: 'वृष्णि वंश', yug: 'dwapar' },
+    { id: 'akrura_chandra', name: 'अक्रूर', subtitle: 'श्वफल्क पुत्र', parent: 'shvaphalaka_vrishni', yug: 'dwapar', clusterName: 'वृष्णि वंश', parichay: 'श्रीकृष्ण के चाचा, जो कृष्ण और बलराम को गोकुल से मथुरा लाए थे। ये स्यमंतक मणि के धारक भी रहे।' },
+
     { id: 'devamidhusha_vrishni', name: 'देवमीढुष', subtitle: 'वृष्णि पुत्र', parent: 'vrishni_dynasty_proxy', clusterName: 'वृष्णि वंश', yug: 'dwapar' },
     { id: 'shurasen_chandra', name: 'शूरसेन (शूर)', subtitle: 'देवमीढुष पुत्र', parent: 'devamidhusha_vrishni', yug: 'dwapar' , clusterName: 'वृष्णि वंश' },
     { id: 'marisha_shurasen_chandra', name: 'मारिषा', subtitle: 'शूरसेन पत्नी', parent: '', spouseOf: 'shurasen_chandra', yug: 'dwapar' , clusterName: 'वृष्णि वंश' },
