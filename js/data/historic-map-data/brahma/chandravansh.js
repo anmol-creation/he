@@ -293,6 +293,18 @@ export const chandravanshData = [
     { id: 'talajangha_haihaya', name: 'तालजंघ', subtitle: 'जयध्वज पुत्र', parent: 'jayadhvaja_haihaya', yug: 'treta' },
     { id: 'vitihotra_haihaya', name: 'वीतिहोत्र', subtitle: 'तालजंघ पुत्र', parent: 'talajangha_haihaya', yug: 'treta' },
 
+    { id: 'avanti_haihaya', name: 'अवन्ति', subtitle: 'तालजंघ पुत्र', parent: 'talajangha_haihaya', yug: 'treta', parichay: 'इनके नाम पर मालवा क्षेत्र का नाम अवन्ति (उज्जैन) पड़ा।' },
+    { id: 'bhoja_haihaya', name: 'भोज (हैहय)', subtitle: 'तालजंघ पुत्र', parent: 'talajangha_haihaya', yug: 'treta' },
+    { id: 'toundikera_haihaya', name: 'तुण्डिकेर', subtitle: 'तालजंघ पुत्र', parent: 'talajangha_haihaya', yug: 'treta' },
+    { id: 'sujata_haihaya', name: 'सुजात', subtitle: 'तालजंघ पुत्र', parent: 'talajangha_haihaya', yug: 'treta' },
+
+    { id: 'ananta_haihaya', name: 'अनन्त', subtitle: 'वीतिहोत्र पुत्र', parent: 'vitihotra_haihaya', yug: 'treta' },
+    { id: 'durjaya_haihaya', name: 'दुर्जय', subtitle: 'अनन्त पुत्र', parent: 'ananta_haihaya', yug: 'treta' },
+    { id: 'supratika_haihaya', name: 'सुप्रतीक', subtitle: 'दुर्जय पुत्र', parent: 'durjaya_haihaya', yug: 'treta' },
+
+    { id: 'vrishni_haihaya', name: 'वृष्णि (हैहय)', subtitle: 'मधु के वंशज', parent: 'madhu_haihaya', yug: 'treta', parichay: 'हैहय वंश के मधु के वंशज। (यदुवंश में एक अन्य वृष्णि क्रोष्टु शाखा में भी थे)।' },
+
+
     // --- वृष्णि / अंधक वंश (क्रोष्टु की शाखा) ---
     { id: 'vrijinivan_yadu', name: 'वृजिनिवान', subtitle: 'क्रोष्टु पुत्र', parent: 'kroshtu_yadu', yug: 'treta' },
     { id: 'svahi_yadu', name: 'स्वाहि', subtitle: 'वृजिनिवान पुत्र', parent: 'vrijinivan_yadu', yug: 'treta' },
@@ -1014,7 +1026,7 @@ export const chandravanshData = [
 
     // --- कलचुरी / हैहय राजवंश (त्रिपुरी शाखा) ---
     // यदु -> सहस्रजित -> हैहय -> कार्तवीर्य अर्जुन -> वीतिहोत्र के आगे का वंश
-    { id: 'kalchuri_medieval_link', name: 'ऐतिहासिक अंतराल (कलचुरी)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'vitihotra_haihaya', yug: 'kali', parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।' },
+    { id: 'kalchuri_medieval_link', name: 'ऐतिहासिक अंतराल (कलचुरी)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'supratika_haihaya', yug: 'kali', parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।' },
 
     { id: 'kalchuri_dynasty_proxy', name: 'कलचुरी वंश', subtitle: 'त्रिपुरी राजवंश', parent: 'kalchuri_medieval_link', yug: 'kali', clusterName: 'कलचुरी वंश', isProxy: true },
     { id: 'vamaraja_kalchuri', name: 'वामराज', subtitle: 'कलचुरी वंश मूल', parent: 'kalchuri_medieval_link', yug: 'kali', clusterName: 'कलचुरी वंश' },
