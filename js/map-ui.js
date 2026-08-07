@@ -166,25 +166,46 @@ window.MapUI = {
                         if (rawNode && window.MapState) {
                             let didExpand = false;
 
-                            // 1. Expand the node's own cluster if it has one (like a proxy node itself)
-                            if (rawNode.clusterName && !window.MapState.expandedClusters.has(rawNode.clusterName)) {
-                                window.MapState.expandedClusters.add(rawNode.clusterName);
-                                didExpand = true;
+                            // To ensure we ONLY open the specific lineage path for the searched node
+                            // and collapse any OTHER clusters that were previously opened (if the user wants a clean view),
+                            // we can optionally clear expandedClusters first, but usually users want to keep their existing map state.
+                            // However, based on the user's feedback: "lekin uske ass pas wale ya wo cluster open nhi hone cahiye jo uski lineage m ho ya na ho leki agar wo direct unke ander se na nikle"
+                            // This implies the user WANTS to close all other clusters that are NOT in the direct lineage of the searched node!
+
+                            // Let's find all clusters in the direct lineage of the searched node.
+                            const requiredClusters = new Set();
+
+                            if (rawNode.clusterName) {
+                                requiredClusters.add(rawNode.clusterName);
                             }
 
-                            // 2. Trace upwards and expand all ancestor clusters so this node becomes visible
                             let currentNode = rawNode;
-                            let maxDepth = 100; // prevent infinite loops
+                            let maxDepth = 100;
                             while (currentNode && currentNode.parent && maxDepth > 0) {
                                 maxDepth--;
                                 const parentNode = dataList.find(d => d.id === currentNode.parent);
                                 if (!parentNode) break;
 
-                                if (parentNode.clusterName && !window.MapState.expandedClusters.has(parentNode.clusterName)) {
-                                    window.MapState.expandedClusters.add(parentNode.clusterName);
-                                    didExpand = true;
+                                if (parentNode.clusterName) {
+                                    requiredClusters.add(parentNode.clusterName);
                                 }
                                 currentNode = parentNode;
+                            }
+
+                            // Collapse all currently expanded clusters that are NOT in the required lineage
+                            for (const clusterName of window.MapState.expandedClusters) {
+                                if (!requiredClusters.has(clusterName)) {
+                                    window.MapState.expandedClusters.delete(clusterName);
+                                    didExpand = true; // State changed, need redraw
+                                }
+                            }
+
+                            // Expand the required clusters
+                            for (const clusterName of requiredClusters) {
+                                if (!window.MapState.expandedClusters.has(clusterName)) {
+                                    window.MapState.expandedClusters.add(clusterName);
+                                    didExpand = true; // State changed, need redraw
+                                }
                             }
 
                             if (didExpand) {
