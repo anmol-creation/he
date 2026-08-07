@@ -436,16 +436,19 @@ export const chandravanshData = [
     { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।' , clusterName: 'वृष्णि वंश' },
     { id: 'subhadra_chandra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', spouseOf: 'arjun_chandra', yug: 'dwapar' },
 
+
     // --- श्रीकृष्ण का परिवार ---
     // अष्टभार्या
-    { id: 'rukmini_krishna_chandra', name: 'रुक्मिणी', subtitle: 'श्रीकृष्ण की प्रथम पत्नी (लक्ष्मी अवतार)', parent: 'bhishmaka_chandra', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
-    { id: 'satyabhama_krishna_chandra', name: 'सत्यभामा', subtitle: 'श्रीकृष्ण की पत्नी (भूदेवी)', parent: 'satrajit_nighna_chandra', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
+    { id: 'krishna_wives_proxy', name: 'अष्टभार्या', subtitle: 'श्रीकृष्ण की 8 पटरानियां', parent: 'other_dynasties_proxy', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या', isProxy: true },
+
+    { id: 'rukmini_krishna_chandra', name: 'रुक्मिणी', subtitle: 'श्रीकृष्ण की प्रथम पत्नी (लक्ष्मी अवतार)', parent: 'bhishmaka_chandra', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'satyabhama_krishna_chandra', name: 'सत्यभामा', subtitle: 'श्रीकृष्ण की पत्नी (भूदेवी)', parent: 'satrajit_nighna_chandra', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
     { id: 'jambavati_chandra', name: 'जाम्बवती', subtitle: 'श्रीकृष्ण की पत्नी', parent: 'jambavan', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या', parichay: 'जाम्बवान की पुत्री।' },
-    { id: 'kalindi_krishna_chandra', name: 'कालिंदी', subtitle: 'श्रीकृष्ण की पत्नी', parent: 'surya', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
-    { id: 'mitravinda_krishna_chandra', name: 'मित्रविन्दा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
-    { id: 'nagnajiti_krishna_chandra', name: 'नग्नजिती (सत्या)', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
-    { id: 'bhadra_krishna_chandra', name: 'भद्रा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
-    { id: 'lakshmana_krishna_chandra', name: 'लक्ष्मणा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'वृष्णि वंश' },
+    { id: 'kalindi_krishna_chandra', name: 'कालिंदी', subtitle: 'श्रीकृष्ण की पत्नी', parent: 'surya', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'mitravinda_krishna_chandra', name: 'मित्रविन्दा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'nagnajiti_krishna_chandra', name: 'नग्नजिती (सत्या)', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'bhadra_krishna_chandra', name: 'भद्रा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
+    { id: 'lakshmana_krishna_chandra', name: 'लक्ष्मणा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
 
     // श्रीकृष्ण के पुत्र (प्रद्युम्न, साम्ब आदि)
     { id: 'pradyumna_chandra', name: 'प्रद्युम्न', subtitle: 'कामदेव अवतार', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar' , clusterName: 'वृष्णि वंश' },
