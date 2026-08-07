@@ -163,9 +163,31 @@ window.MapUI = {
 
                         const rawNode = dataList.find(d => d.id === id);
 
-                        if (rawNode && rawNode.clusterName && window.MapState) {
-                            if (!window.MapState.expandedClusters.has(rawNode.clusterName)) {
+                        if (rawNode && window.MapState) {
+                            let didExpand = false;
+
+                            // 1. Expand the node's own cluster if it has one (like a proxy node itself)
+                            if (rawNode.clusterName && !window.MapState.expandedClusters.has(rawNode.clusterName)) {
                                 window.MapState.expandedClusters.add(rawNode.clusterName);
+                                didExpand = true;
+                            }
+
+                            // 2. Trace upwards and expand all ancestor clusters so this node becomes visible
+                            let currentNode = rawNode;
+                            let maxDepth = 100; // prevent infinite loops
+                            while (currentNode && currentNode.parent && maxDepth > 0) {
+                                maxDepth--;
+                                const parentNode = dataList.find(d => d.id === currentNode.parent);
+                                if (!parentNode) break;
+
+                                if (parentNode.clusterName && !window.MapState.expandedClusters.has(parentNode.clusterName)) {
+                                    window.MapState.expandedClusters.add(parentNode.clusterName);
+                                    didExpand = true;
+                                }
+                                currentNode = parentNode;
+                            }
+
+                            if (didExpand) {
                                 window.dispatchEvent(new Event('ClusterToggled'));
                             }
                         }
