@@ -53,8 +53,66 @@ export const kashyapData = [
     { id: 'devasena_indra', name: 'देवसेना', subtitle: 'इंद्र पुत्री', parent: 'indra', mother: 'shachi_indrani', yug: 'satya', parichay: 'इंद्र की पुत्री, जिनका विवाह भगवान कार्तिकेय से हुआ।' },
     { id: 'midhusha', name: 'मीढुष', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya' },
 
-    { id: 'vayu', name: 'वायु', subtitle: 'पवन देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
-    { id: 'upendra_vamana', name: 'उपेन्द्र (वामन)', subtitle: 'विष्णु अवतार (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'treta', parichay: 'अदिति के पुत्र के रूप में भगवान विष्णु का वामन अवतार।' },
+    // --- 12 Adityas (Sons of Aditi) ---
+    // 1. Surya (Vivasvan) - Already defined above
+    // 2. Indra (Shakra) - Already defined above
+
+    // 3. Upendra (Vamana/Vishnu)
+    { id: 'upendra_vamana', name: 'उपेन्द्र (वामन)', subtitle: 'विष्णु अवतार / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'treta', parichay: 'अदिति के पुत्र के रूप में भगवान विष्णु का वामन अवतार।' },
+    { id: 'kirti_vamana_wife', name: 'कीर्ति', subtitle: 'वामन की पत्नी', parent: '', spouseOf: 'upendra_vamana', yug: 'treta', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'brihatshloka', name: 'बृहत्श्लोक', subtitle: 'उपेन्द्र पुत्र', parent: 'upendra_vamana', mother: 'kirti_vamana_wife', yug: 'treta', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 4. Varuna
+    { id: 'varuna_aditya', name: 'वरुण', subtitle: 'जल के देवता / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'charshani_varuna_wife', name: 'चर्षाणी (वारुणी)', subtitle: 'वरुण की पत्नी', parent: '', spouseOf: 'varuna_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'bhrigu_reborn', name: 'महर्षि भृगु', subtitle: 'वरुण पुत्र (पुनर्जन्म)', parent: 'varuna_aditya', mother: 'charshani_varuna_wife', yug: 'satya', parichay: 'दक्ष यज्ञ में भस्म होने के बाद भृगु ने वरुण और चर्षाणी के पुत्र के रूप में पुनर्जन्म लिया था।', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'valmiki_reborn', name: 'वाल्मीकि', subtitle: 'वरुण पुत्र (पुनर्जन्म)', parent: 'varuna_aditya', mother: 'charshani_varuna_wife', yug: 'treta', parichay: 'रामायण के रचयिता, जो वरुण के पुत्र रूप में भी जन्मे।', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 5. Mitra
+    { id: 'mitra_aditya', name: 'मित्र', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'revati_mitra_wife', name: 'रेवती', subtitle: 'मित्र की पत्नी', parent: '', spouseOf: 'mitra_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'utsarga_mitra', name: 'उत्सर्ग', subtitle: 'मित्र पुत्र', parent: 'mitra_aditya', mother: 'revati_mitra_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'arishta_mitra', name: 'अरिष्ट', subtitle: 'मित्र पुत्र', parent: 'mitra_aditya', mother: 'revati_mitra_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'pippala_mitra', name: 'पिप्पल', subtitle: 'मित्र पुत्र', parent: 'mitra_aditya', mother: 'revati_mitra_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 6. Aryama
+    { id: 'aryama_aditya', name: 'अर्यमा', subtitle: 'पितरों के देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'matrika_aryama_wife', name: 'मातृका', subtitle: 'अर्यमा की पत्नी', parent: '', spouseOf: 'aryama_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'charshani_aryama', name: 'चर्षाणि (मानव)', subtitle: 'अर्यमा पुत्र', parent: 'aryama_aditya', mother: 'matrika_aryama_wife', yug: 'satya', parichay: 'इनसे मानव जाति का एक विद्वान वर्ग उत्पन्न हुआ।', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 7. Tvashta (Tvashtri)
+    { id: 'tvashta_aditya', name: 'त्वष्टा', subtitle: 'शिल्पकार / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'rachana_tvashta_wife', name: 'रचना', subtitle: 'दैत्यपुत्री / पत्नी', parent: '', spouseOf: 'tvashta_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'vishvarupa_trishira', name: 'विश्वरूप (त्रिशिरा)', subtitle: 'त्वष्टा पुत्र', parent: 'tvashta_aditya', mother: 'rachana_tvashta_wife', yug: 'satya', parichay: 'त्वष्टा के इस त्रिमुखी पुत्र का देवराज इंद्र ने वध कर दिया था, जिससे वृत्रासुर की उत्पत्ति हुई।', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 8. Dhata (Dhatri)
+    { id: 'dhata_aditya', name: 'धाता', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'ayati_dhata_wife', name: 'आयती', subtitle: 'धाता की पत्नी', parent: '', spouseOf: 'dhata_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'prana_dhata', name: 'प्राण', subtitle: 'धाता पुत्र', parent: 'dhata_aditya', mother: 'ayati_dhata_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 9. Bhaga
+    { id: 'bhaga_aditya', name: 'भग', subtitle: 'धन-समृद्धि के देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'siddhi_bhaga_wife', name: 'सिद्धि', subtitle: 'भग की पत्नी', parent: '', spouseOf: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'mahima_bhaga', name: 'महिमा', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'vibhu_bhaga', name: 'विभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'prabhu_bhaga', name: 'प्रभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'ashish_bhaga', name: 'आशिष', subtitle: 'भग पुत्री', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 10. Pusha (Pushan)
+    { id: 'pusha_aditya', name: 'पूषा', subtitle: 'मार्गदर्शक देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', parichay: 'दक्ष यज्ञ विध्वंस के समय भगवान शिव/वीरभद्र ने इनके दाँत तोड़ दिए थे। इनकी कोई संतान नहीं बताई गई है।', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 11. Anshu (Anshuman)
+    { id: 'anshu_aditya', name: 'अंश', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // 12. Savita (Savitr)
+    { id: 'savita_aditya', name: 'सविता (सवितृ)', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'prishni_savita_wife', name: 'पृश्नि', subtitle: 'सविता की पत्नी', parent: '', spouseOf: 'savita_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'savitri_savita', name: 'सावित्री', subtitle: 'सविता पुत्री', parent: 'savita_aditya', mother: 'prishni_savita_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'vyahriti_savita', name: 'व्याहृति', subtitle: 'सविता पुत्री', parent: 'savita_aditya', mother: 'prishni_savita_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'trayi_savita', name: 'त्रयी', subtitle: 'सविता पुत्री (अग्निहोत्र)', parent: 'savita_aditya', mother: 'prishni_savita_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+
+    // --- Vayu (Moved from Aditi to other creations) ---
+    { id: 'vayu', name: 'वायु', subtitle: 'पवन देव', parent: 'brahma_other_creations_proxy', yug: 'satya', clusterName: 'ब्रह्मा की अन्य सृष्टियां' },
 
     // Diti's Children
     { id: 'hiranyakashipu', name: 'हिरण्यकशिपु', subtitle: 'दैत्यराज (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
