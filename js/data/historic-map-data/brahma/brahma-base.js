@@ -61,25 +61,25 @@ export const brahmaBaseData = [
     { id: 'kapila_avatar', name: 'कपिल मुनि', subtitle: 'विष्णु अवतार', parent: 'kardama_prajapati', mother: 'devahuti', yug: 'satya', parichay: 'सांख्य दर्शन के प्रणेता महान मुनि और विष्णु के अवतार।' },
 
     // --- MARICHI LINEAGE ---
-        { id: 'marichi_vansh_proxy', name: 'मरीचि वंश', subtitle: 'मरीचि के वंशज', parent: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश', isProxy: true },
-    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
-    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
-    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
+        { id: 'marichi_wives_proxy', name: 'मरीचि की पत्नियाँ', subtitle: 'मरीचि के वंशज', parent: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ', isProxy: true },
+    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' },
 
     // Marichi's children from Kala
-    { id: 'purnima_marichi', name: 'पूर्णिमा', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'kala', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'viraja_purnima', name: 'विरज', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'vishvaga_purnima', name: 'विश्वग', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'devakulya_purnima', name: 'देवकुल्या', subtitle: 'पूर्णिमा पुत्री', parent: 'purnima_marichi', yug: 'satya', parichay: 'पूर्णिमा की पुत्री जो बाद में नदी रूप (गंगा) में परिणत हुईं।' , clusterName: 'मरीचि वंश' },
+    { id: 'purnima_marichi', name: 'पूर्णिमा', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'kala', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'viraja_purnima', name: 'विरज', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'vishvaga_purnima', name: 'विश्वग', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'devakulya_purnima', name: 'देवकुल्या', subtitle: 'पूर्णिमा पुत्री', parent: 'purnima_marichi', yug: 'satya', parichay: 'पूर्णिमा की पुत्री जो बाद में नदी रूप (गंगा) में परिणत हुईं।' , clusterName: 'मरीचि की पत्नियाँ' },
 
     // Marichi's child from Sambhuti
-    { id: 'paurnamasa_marichi', name: 'पौर्णमास', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'sambhuti_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
+    { id: 'paurnamasa_marichi', name: 'पौर्णमास', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'sambhuti_marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
 
     // Marichi's Apsara Daughters
-    { id: 'sulochna_apsara', name: 'सुलोचना', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'vishalakshi_apsara', name: 'विशालाक्षी', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'suvarna_apsara', name: 'सुवर्णा', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'bhadraka_apsara', name: 'भद्रका', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
+    { id: 'sulochna_apsara', name: 'सुलोचना', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'vishalakshi_apsara', name: 'विशालाक्षी', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'suvarna_apsara', name: 'सुवर्णा', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
+    { id: 'bhadraka_apsara', name: 'भद्रका', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि की पत्नियाँ' },
     // ----------------------
 
     { id: 'anusuya', name: 'अनुसूया', subtitle: 'कर्दम पुत्री / अत्रि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'atri', yug: 'satya', parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।', clusterName: 'अत्रि की पत्नियाँ' },
@@ -184,12 +184,13 @@ export const brahmaBaseData = [
       events: [
         'मारीच की सहायता से राम-लक्ष्मण को आश्रम से दूर कर सीता का अपहरण किया और जटायु का वध किया। (बालकाण्ड, सर्ग 1, श्लोक 49-52)',
         'राम द्वारा युद्ध में मारे गए। (बालकाण्ड, सर्ग 1, श्लोक 81)'
-      ]
+      ],
+      clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
     },
     { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'dhanyamalini', name: 'धन्यमालिनी', subtitle: 'रावण की पत्नी', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'meghnad', name: 'इंद्रजीत (मेघनाद)', subtitle: 'रावण पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-    { id: 'akshayakumara', name: 'अक्षयकुमार', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', parichay: 'अशोक वाटिका में हनुमान जी द्वारा वध किया गया।' },
+    { id: 'akshayakumara', name: 'अक्षयकुमार', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', parichay: 'अशोक वाटिका में हनुमान जी द्वारा वध किया गया।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'atikaya', name: 'अतिकाय', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'dhanyamalini', yug: 'treta', parichay: 'रावण का बलवान पुत्र जिसे लक्ष्मण ने मारा।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'trishira', name: 'त्रिशिरा', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'dhanyamalini', yug: 'treta', parichay: 'रावण का एक और पुत्र। (खर-दूषण का सेनापति त्रिशिरा अलग था)', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'narantaka', name: 'नरान्तक', subtitle: 'रावण का पुत्र', parent: 'ravana', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
@@ -261,18 +262,21 @@ export const brahmaBaseData = [
     { id: 'vasu_rishi', name: 'वसु', subtitle: 'जमदग्नि पुत्र', parent: 'jamadagni', yug: 'treta' },
     { id: 'vishwavasu', name: 'विश्वावसु', subtitle: 'जमदग्नि पुत्र', parent: 'jamadagni', yug: 'treta' },
     { id: 'parashurama', name: 'परशुराम', subtitle: 'विष्णु अवतार', parent: 'jamadagni', yug: 'treta' },
-    { id: 'arundhati', name: 'अरुंधती', subtitle: 'वशिष्ठ पत्नी', parent: '', spouseOf: 'vashistha', yug: 'satya' },
-    { id: 'shakti', name: 'शक्ति', subtitle: 'वशिष्ठ पुत्र', parent: 'vashistha', mother: 'arundhati', yug: 'satya' },
-    { id: 'adrishyanti', name: 'अदृश्यन्ती', subtitle: 'शक्ति पत्नी', parent: '', spouseOf: 'shakti', yug: 'satya', parichay: 'महर्षि शक्ति की पत्नी और पराशर की माता।' },
-    { id: 'parashar', name: 'पराशर', subtitle: 'महान ऋषि', parent: 'shakti', mother: 'adrishyanti', yug: 'treta' },
-    { id: 'satyavati', name: 'सत्यवती', subtitle: 'मत्स्यगंधा', parent: '', spouseOf: 'parashar', yug: 'treta', parichay: 'निषादराज की पुत्री। पराशर ऋषि के आशीर्वाद से इन्होने वेद व्यास को जन्म दिया। बाद में शांतनु से विवाह किया।' },
-    { id: 'vyasa', name: 'वेद व्यास', subtitle: 'महाभारत रचयिता', parent: 'parashar', mother: 'satyavati', yug: 'dwapar' },
-    { id: 'shuka', name: 'शुकदेव', subtitle: 'व्यास पुत्र', parent: 'vyasa', yug: 'dwapar' },
-    { id: 'pivari', name: 'पिबरी', subtitle: 'शुकदेव पत्नी', parent: '', spouseOf: 'shuka', yug: 'dwapar', parichay: 'शुकदेव मुनि की पत्नी और पितरों की मानसी पुत्री।' },
-    { id: 'krishna_shuka', name: 'कृष्ण (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
-    { id: 'gaura', name: 'गौर', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
-    { id: 'prabhu', name: 'प्रभु', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
-    { id: 'shambhu_shuka', name: 'शम्भु (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
+
+    // --- VASHISTHA LINEAGE ---
+    { id: 'vashistha_vansh_proxy', name: 'वशिष्ठ वंश', subtitle: 'अरुंधती, व्यास आदि', parent: 'vashistha', yug: 'treta', clusterName: 'वशिष्ठ वंश', isProxy: true },
+{ id: 'arundhati', name: 'अरुंधती', subtitle: 'वशिष्ठ पत्नी', parent: '', spouseOf: 'vashistha', yug: 'satya', clusterName: 'वशिष्ठ वंश' },
+    { id: 'shakti', name: 'शक्ति', subtitle: 'वशिष्ठ पुत्र', parent: 'vashistha', mother: 'arundhati', yug: 'satya', clusterName: 'वशिष्ठ वंश' },
+    { id: 'adrishyanti', name: 'अदृश्यन्ती', subtitle: 'शक्ति पत्नी', parent: '', spouseOf: 'shakti', yug: 'satya', parichay: 'महर्षि शक्ति की पत्नी और पराशर की माता।', clusterName: 'वशिष्ठ वंश' },
+    { id: 'parashar', name: 'पराशर', subtitle: 'महान ऋषि', parent: 'shakti', mother: 'adrishyanti', yug: 'treta', clusterName: 'वशिष्ठ वंश' },
+    { id: 'satyavati', name: 'सत्यवती', subtitle: 'मत्स्यगंधा', parent: '', spouseOf: 'parashar', yug: 'treta', parichay: 'निषादराज की पुत्री। पराशर ऋषि के आशीर्वाद से इन्होने वेद व्यास को जन्म दिया। बाद में शांतनु से विवाह किया।', clusterName: 'वशिष्ठ वंश' },
+    { id: 'vyasa', name: 'वेद व्यास', subtitle: 'महाभारत रचयिता', parent: 'parashar', mother: 'satyavati', yug: 'dwapar', clusterName: 'वशिष्ठ वंश' },
+    { id: 'shuka', name: 'शुकदेव', subtitle: 'व्यास पुत्र', parent: 'vyasa', yug: 'dwapar', clusterName: 'वशिष्ठ वंश' },
+    { id: 'pivari', name: 'पिबरी', subtitle: 'शुकदेव पत्नी', parent: '', spouseOf: 'shuka', yug: 'dwapar', parichay: 'शुकदेव मुनि की पत्नी और पितरों की मानसी पुत्री।', clusterName: 'वशिष्ठ वंश' },
+    { id: 'krishna_shuka', name: 'कृष्ण (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar', clusterName: 'वशिष्ठ वंश' },
+    { id: 'gaura', name: 'गौर', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar', clusterName: 'वशिष्ठ वंश' },
+    { id: 'prabhu', name: 'प्रभु', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar', clusterName: 'वशिष्ठ वंश' },
+    { id: 'shambhu_shuka', name: 'शम्भु (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar', clusterName: 'वशिष्ठ वंश' },
     { id: 'bhurishrava_shuka', name: 'भूरिश्रवा (शुक पुत्र)', subtitle: 'शुकदेव पुत्र', parent: 'shuka', mother: 'pivari', yug: 'dwapar' },
     { id: 'kirtimati', name: 'कीर्तिमती', subtitle: 'शुकदेव पुत्री', parent: 'shuka', mother: 'pivari', yug: 'dwapar', parichay: 'शुकदेव की पुत्री जिसका विवाह राजा अणुह से हुआ।' },
 
