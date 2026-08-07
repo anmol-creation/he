@@ -3,7 +3,6 @@ export const suryavanshData = [
     { id: 'shraddha_manu_wife', name: 'श्रद्धा', subtitle: 'मनु पत्नी', parent: '', spouseOf: 'vaivasvata_manu', yug: 'satya' },
 
     // Manu's other children
-    { id: 'ila_manu_daughter', name: 'इला', subtitle: 'मनु पुत्री', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', parichay: 'इनका विवाह बुध से हुआ और इन्होंने चंद्रवंश की स्थापना की।' },
 
     { id: 'manu_other_sons_proxy', name: 'मनु के अन्य पुत्र', subtitle: 'इक्ष्वाकु के अतिरिक्त अन्य पुत्र', isProxy: true, parent: 'vaivasvata_manu', clusterName: 'मनु के अन्य पुत्र', yug: 'satya' },
     { id: 'nabhaga', name: 'नाभाग', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
@@ -130,8 +129,9 @@ export const suryavanshData = [
     { id: 'vrika', name: 'वृक', subtitle: 'रुरुक पुत्र', parent: 'ruruka', yug: 'treta' },
     { id: 'bahu', name: 'बाहु (बाहुक)', subtitle: 'वृक पुत्र', parent: 'vrika', yug: 'treta' },
     { id: 'sagara', name: 'सगर', subtitle: 'चक्रवर्ती सम्राट', parent: 'bahu', yug: 'treta', parichay: 'सगर के अश्वमेध यज्ञ का घोड़ा इंद्र ने कपिल मुनि के आश्रम में बांध दिया था।' },
-    { id: 'sumati_sagara', name: 'सुमति', subtitle: 'सगर पत्नी', parent: '', spouseOf: 'sagara', yug: 'treta' },
-    { id: 'keshini', name: 'केशिनी', subtitle: 'सगर पत्नी', parent: '', spouseOf: 'sagara', yug: 'treta' },
+    { id: 'sagara_wives_proxy', name: 'सगर की पत्नियाँ', subtitle: 'सुमति व केशिनी', isProxy: true, parent: '', spouseOf: 'sagara', clusterName: 'सगर की पत्नियाँ', yug: 'treta' },
+    { id: 'sumati_sagara', name: 'सुमति', subtitle: 'सगर पत्नी', parent: '', spouseOf: 'sagara', yug: 'treta', clusterName: 'सगर की पत्नियाँ' },
+    { id: 'keshini', name: 'केशिनी', subtitle: 'सगर पत्नी', parent: '', spouseOf: 'sagara', yug: 'treta', clusterName: 'सगर की पत्नियाँ' },
     { id: 'sagara_60000_sons', name: '60,000 पुत्र', subtitle: 'सगर पुत्र', parent: 'sagara', mother: 'sumati_sagara', yug: 'treta', parichay: 'सुमति के 60,000 पुत्र, जिन्हें कपिल मुनि ने भस्म कर दिया था।', clusterName: 'सगर के 60 हज़ार पुत्र' },
     { id: 'asamanjas', name: 'असमंजस', subtitle: 'सगर पुत्र', parent: 'sagara', mother: 'keshini', yug: 'treta' },
     { id: 'ambujakshi', name: 'अम्बुजाक्षी', subtitle: 'असमंजस पत्नी', parent: '', spouseOf: 'asamanjas', yug: 'treta' },
