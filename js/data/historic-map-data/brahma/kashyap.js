@@ -16,6 +16,21 @@ export const kashyapData = [
     { id: 'arishta', name: 'अरिष्टा', subtitle: 'किन्नरों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'ila_wife', name: 'इला', subtitle: 'वृक्ष/लताओं की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
 
+
+    // --- द्वादश आदित्य (अदिति के १२ पुत्र) ---
+    // विवस्वान (सूर्य), इंद्र और उपेन्द्र (वामन) पहले से ही नीचे सूचीबद्ध हैं।
+    { id: 'dwadash_aditya_proxy', name: 'अन्य आदित्य', subtitle: 'द्वादश आदित्य', isProxy: true, parent: 'kashyap', clusterName: 'द्वादश आदित्य (अन्य)', yug: 'satya' },
+    { id: 'dhatri_aditya', name: 'धाता', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'aryaman_aditya', name: 'अर्यमा', subtitle: 'आदित्य (पितरों के अधिपति)', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'mitra_aditya', name: 'मित्र', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'varuna_aditya', name: 'वरुण', subtitle: 'आदित्य (जल के देवता)', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'anshuman_aditya', name: 'अंशुमान', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'bhaga_aditya', name: 'भग', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'pushan_aditya', name: 'पूषा', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'savitr_aditya', name: 'सविता', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    { id: 'tvashtar_aditya', name: 'त्वष्टा', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+    // ------------------------------------------
+
     // Aditi's Children
     { id: 'surya', name: 'विवस्वान (सूर्य)', subtitle: 'सूर्य देव (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
     { id: 'sanjna_wife', name: 'संज्ञा', subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री', parent: '', spouseOf: 'surya', yug: 'satya', clusterName: 'सूर्यदेव की पत्नियाँ' },
