@@ -3,7 +3,6 @@ export const maheshBaseData = [
     { id: 'parvati', name: 'पार्वती', subtitle: 'शैलपुत्री / शक्ति', parent: '', spouseOf: 'shiva', yug: 'satya', clusterName: 'शिव की पत्नियाँ' },
         { id: 'shiva_parivar_proxy', name: 'शिव परिवार', subtitle: 'महादेव का परिवार', parent: 'shiva', yug: 'satya', clusterName: 'शिव परिवार', isProxy: true },
     { id: 'kartikeya', name: 'कार्तिकेय', subtitle: 'देव सेनापति',parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', mother: 'parvati', yug: 'satya' },
-    { id: 'devasena_kartikeya_wife', name: 'देवसेना', subtitle: 'कार्तिकेय पत्नी', parent: '', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ' },
     { id: 'valli', name: 'वल्ली', subtitle: 'कार्तिकेय पत्नी', parent: '', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ' },
     { id: 'ganesha', name: 'गणेश', subtitle: 'प्रथम पूज्य',parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', mother: 'parvati', yug: 'satya' },
     { id: 'riddhi', name: 'रिद्धि', subtitle: 'गणेश पत्नी', parent: '', spouseOf: 'ganesha', yug: 'satya', clusterName: 'गणेश की पत्नियाँ' },
