@@ -48,9 +48,9 @@ export const kashyapData = [
     { id: 'vishti_bhadra', name: 'भद्रा (विष्टि)', subtitle: 'सूर्य पुत्री', parent: 'surya', mother: 'chhaya_wife', yug: 'satya', parichay: 'काल और समय से जुड़ी देवी।' , clusterName: 'सूर्य की अन्य संतति' },
 
     { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
-    { id: 'shachi_indrani', name: 'शची (इंद्राणी)', subtitle: 'इंद्र की पत्नी', parent: 'puloman_danava', spouseOf: 'indra', yug: 'satya' },
+    { id: 'shachi_indrani', name: 'शची (इंद्राणी)', subtitle: 'इंद्र की पत्नी', parent: '', spouseOf: 'indra', yug: 'satya' },
     { id: 'jayanta', name: 'जयंत', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya', parichay: 'देवराज इंद्र और शची के पुत्र (रामायण में काक रूप धारण किया था)।' },
-    { id: 'devasena_indra', name: 'देवसेना', subtitle: 'इंद्र पुत्री', parent: 'indra', mother: 'shachi_indrani', yug: 'satya', parichay: 'इंद्र की पुत्री, जिनका विवाह भगवान कार्तिकेय से हुआ।' },
+    { id: 'devasena_indra', name: 'देवसेना', subtitle: 'इंद्र पुत्री', parent: 'indra', mother: 'shachi_indrani', spouseOf: 'kartikeya', yug: 'satya', parichay: 'इंद्र की पुत्री, जिनका विवाह भगवान कार्तिकेय से हुआ।' },
     { id: 'midhusha', name: 'मीढुष', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya' },
 
     // --- 12 Adityas (Sons of Aditi) ---

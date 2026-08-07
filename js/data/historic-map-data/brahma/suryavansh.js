@@ -496,11 +496,11 @@ export const suryavanshData = [
     { id: 'baloji', name: 'बालाजी (राव बाला)', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
     { id: 'mokal_singh', name: 'मोकल सिंह', subtitle: 'बालाजी पुत्र', parent: 'baloji', yug: 'kali' },
     { id: 'shekhawat_dynasty_proxy', name: 'शेखावत वंश', subtitle: 'राव शेखा के वंशज', parent: 'mokal_singh', yug: 'kali', parichay: 'कछवाहा राजपूतों की सबसे बड़ी शाखाओं में से एक।', isProxy: true, clusterName: 'शेखावत वंश' },
-    { id: 'rao_shekha', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'shekhawat_dynasty_proxy', yug: 'kali', parichay: 'इनके नाम पर शेखावाटी क्षेत्र का नाम पड़ा और इनके वंशज "शेखावत" (Shekhawat) कहलाये, जो राजस्थान का एक बहुत बड़ा और वीर राजपूत समाज है।', clusterName: 'शेखावत वंश' },
+    { id: 'rao_shekha_proxy', name: 'राव शेखा', subtitle: 'शेखावत वंश के संस्थापक', parent: 'shekhawat_dynasty_proxy', yug: 'kali', parichay: 'इनके नाम पर शेखावाटी क्षेत्र का नाम पड़ा और इनके वंशज "शेखावत" (Shekhawat) कहलाये, जो राजस्थान का एक बहुत बड़ा और वीर राजपूत समाज है।', clusterName: 'शेखावत वंश' },
 
     { id: 'banbir_singh', name: 'बनवीर सिंह', subtitle: 'उदयकर्ण पुत्र', parent: 'udayakarna', yug: 'kali' },
-    { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनवीर पुत्र', parent: 'banbir_singh', yug: 'kali' },
-    { id: 'chandrasen_amer', name: 'चन्द्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali' },
+    { id: 'uddharan_1', name: 'उद्धरण', subtitle: 'बनवीर पुत्र', parent: 'banbir_singh', yug: 'kali' },
+    { id: 'chandrasen_amer', name: 'चन्द्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan_1', yug: 'kali' },
     { id: 'prithviraj_amer', name: 'राजा पृथ्वीराज सिंह', subtitle: 'आमेर नरेश', parent: 'chandrasen_amer', yug: 'kali', parichay: 'ये राणा सांगा के समकालीन थे और खानवा के युद्ध में उनकी ओर से लड़े थे। इनके 12 पुत्रों से आमेर के "बारह कोटड़ी" (12 Kotri) सामंत व्यवस्था की शुरुआत हुई।' },
 
     // Prithviraj's descendants (12 Kotri branches)
@@ -524,8 +524,8 @@ export const suryavanshData = [
     { id: 'rao_naru', name: 'राव नरू', subtitle: 'नरूका वंश के संस्थापक', parent: 'rao_bar_singh', yug: 'kali', parichay: 'राव बार सिंह के वंशज। इन्हीं के नाम से "नरूका" सरनेम/शाखा की शुरुआत हुई। अलवर का राजघराना नरूका शाखा से ही है।' },
 
     { id: 'banbir', name: 'बनबीर', subtitle: 'नरसिंह पुत्र', parent: 'narsingh_deo', yug: 'kali' },
-    { id: 'uddharan', name: 'उद्धरण', subtitle: 'बनबीर पुत्र', parent: 'banbir', yug: 'kali' },
-    { id: 'chandrasen_amber', name: 'चंद्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan', yug: 'kali' },
+    { id: 'uddharan_2', name: 'उद्धरण', subtitle: 'बनबीर पुत्र', parent: 'banbir', yug: 'kali' },
+    { id: 'chandrasen_amber', name: 'चंद्रसेन', subtitle: 'उद्धरण पुत्र', parent: 'uddharan_2', yug: 'kali' },
     { id: 'prithviraj_singh_i', name: 'पृथ्वीराज सिंह प्रथम', subtitle: 'आमेर नरेश', parent: 'chandrasen_amber', yug: 'kali', parichay: 'इन्होंने राणा सांगा के साथ खानवा के युद्ध (1527) में बाबर के खिलाफ भाग लिया था। इन्हीं के समय में कछवाहा वंश कई मुख्य शाखाओं में विभाजित हुआ जिन्हें "बारां कोठड़ी" कहा गया।' },
 
     // Prithviraj Singh I's descendants forming sub-clans
