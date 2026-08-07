@@ -11,7 +11,8 @@ export function buildTree(rawData, nodesMap, transitionWires) {
     // Group clusters
     const clusterMap = new Map();
 
-    rawData.forEach(node => {
+    rawData.forEach(originalNode => {
+        const node = { ...originalNode };
         // Evaluate Kalpa Filter
         const timeScale = node.timeScale || '';
         const nodeKalpa = node.kalpa || 'shveta_varaha'; // Default normal nodes to current kalpa
