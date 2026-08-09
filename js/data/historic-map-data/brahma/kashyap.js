@@ -10,7 +10,8 @@ export const kashyapData = [
     { id: 'surabhi', name: 'सुरभि', subtitle: 'गौवंश/रुद्रों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'tamra', name: 'ताम्रा', subtitle: 'पक्षियों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'krodhavasha', name: 'क्रोधवशा', subtitle: 'हिंसक जीवों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
-    { id: 'muni_wife', name: 'मुनि', subtitle: 'गंधर्वों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
+    { id: 'muni_wife', name: 'मुनि', subtitle: 'गंधर्वों/अप्सराओं की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
+    { id: 'pradha_wife', name: 'प्राधा', subtitle: 'अप्सराओं की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'surasa', name: 'सुरसा', subtitle: 'यातुधानों/नागों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'khasha', name: 'खशा', subtitle: 'यक्ष/राक्षसों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'arishta', name: 'अरिष्टा', subtitle: 'किन्नरों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
@@ -108,10 +109,10 @@ export const kashyapData = [
     // 9. Bhaga
     { id: 'bhaga_aditya', name: 'भग', subtitle: 'धन-समृद्धि के देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
     { id: 'siddhi_bhaga_wife', name: 'सिद्धि', subtitle: 'भग की पत्नी', parent: '', spouseOf: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'mahima_bhaga', name: 'महिमा', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'vibhu_bhaga', name: 'विभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'prabhu_bhaga', name: 'प्रभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'ashish_bhaga', name: 'आशिष', subtitle: 'भग पुत्री', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'mahima_bhaga', name: 'महिमा', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'vibhu_bhaga', name: 'विभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'prabhu_bhaga', name: 'प्रभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'ashish_bhaga', name: 'आशिष', subtitle: 'भग पुत्री', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
 
     // 10. Pusha (Pushan)
     { id: 'pusha_aditya', name: 'पूषा', subtitle: 'मार्गदर्शक देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', parichay: 'दक्ष यज्ञ विध्वंस के समय भगवान शिव/वीरभद्र ने इनके दाँत तोड़ दिए थे। इनकी कोई संतान नहीं बताई गई है।', clusterName: 'अन्य आदित्यों के परिवार' },
@@ -203,9 +204,9 @@ export const kashyapData = [
     // Other Wives' Descendants
     { id: 'kamadhenu', name: 'कामधेनु', subtitle: 'दिव्य गौ (सुरभि पुत्री)', parent: 'kashyap', mother: 'surabhi', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'nandini', name: 'नंदिनी', subtitle: 'दिव्य गौ', parent: 'kamadhenu', yug: 'satya' },
-    { id: 'birds_of_prey', name: 'श्येन (पक्षी)', subtitle: 'ताम्रा वंश', parent: 'kashyap', mother: 'tamra', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'violent_animals', name: 'हिंसक जंतु / मगर', subtitle: 'क्रोधवशा वंश', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'gandharvas', name: 'गंधर्व', subtitle: 'मुनि वंश', parent: 'kashyap', mother: 'muni_wife', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
+
+
+
     { id: 'yatudhanas', name: 'यातुधान (राक्षस)', subtitle: 'सुरसा वंश', parent: 'kashyap', mother: 'surasa', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'yakshas_rakshasas', name: 'यक्ष एवं राक्षस', subtitle: 'खशा वंश', parent: 'kashyap', mother: 'khasha', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'kinnaras', name: 'किन्नर', subtitle: 'अरिष्टा वंश', parent: 'kashyap', mother: 'arishta', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
@@ -213,4 +214,76 @@ export const kashyapData = [
     // Astika Muni (Nephew of Vasuki)
     { id: 'rishi_jaratkaru', name: 'महर्षि जरत्कारु', subtitle: 'यायावर वंश', parent: '', spouseOf: 'jaratkaru_naga_sister', yug: 'dwapar', parichay: 'एक कठोर तपस्वी महर्षि जिनका विवाह नागकन्या जरत्कारु से हुआ था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
     { id: 'rishi_astika', name: 'आस्तिक मुनि', subtitle: 'जरत्कारु पुत्र', parent: 'rishi_jaratkaru', mother: 'jaratkaru_naga_sister', yug: 'dwapar', parichay: 'इन्होंने ही अपने मामा वासुकी और अन्य नागों को राजा जनमेजय के सर्पसत्र यज्ञ से बचाया था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    // --- MUNI'S DESCENDANTS (Mauneyas - Gandharvas & Deva-Apsaras) ---
+    { id: 'bhimasena_gandharva', name: 'भीमसेन', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'ugrasena_gandharva', name: 'उग्रसेन', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'suparna_gandharva', name: 'सुपर्ण', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'varuna_gandharva', name: 'वरुण', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'gopati_gandharva', name: 'गोपति', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'dhritarashtra_gandharva', name: 'धृतराष्ट्र', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'suryavarcha_gandharva', name: 'सूर्यवर्चा', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'satyavak_gandharva', name: 'सत्यवाक', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'arkaparna_gandharva', name: 'अर्कपर्ण', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'prayuta_gandharva', name: 'प्रयुत', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'bhima_gandharva', name: 'भीम', subtitle: 'मौनयेय गंधर्व', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+    { id: 'chitraratha_gandharva', name: 'चित्ररथ', subtitle: 'गंधर्वराज', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', parichay: 'गंधर्वों के सबसे शक्तिशाली राजा और कुबेर के मित्र।', clusterName: 'मुनि वंश (मौनयेय गंधर्व)' },
+
+    // Deva Apsaras (Muni's Daughters)
+    { id: 'menaka_apsara_chandra', name: 'मेनका', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', parichay: 'जिन्होंने विश्वामित्र की तपस्या भंग की और शकुंतला को जन्म दिया।', spouseOf: 'vishwamitra_chandra' },
+    { id: 'sahajanya_apsara', name: 'सहजन्या', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'parnini_apsara', name: 'पर्णिनी', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'punjikasthala_apsara', name: 'पुंजिकस्थला', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', parichay: 'अपने अगले जन्म में यह अंजना बनीं, जो हनुमान जी की माता थीं।', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'ghritachi_apsara', name: 'घृताची', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'vishvachi_apsara', name: 'विश्वाची', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'anumlocha_apsara', name: 'अनुम्लोचा', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'pramlocha_apsara', name: 'प्रम्लोचा', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+    { id: 'manovati_apsara', name: 'मनोवती', subtitle: 'दैविक अप्सरा', parent: 'kashyap', mother: 'muni_wife', yug: 'satya', clusterName: 'मुनि वंश (दैविक अप्सराएं)' },
+
+    // --- PRADHA'S DESCENDANTS (Gandharvas & Laukika Apsaras) ---
+    { id: 'siddha_gandharva', name: 'सिद्ध', subtitle: 'गंधर्व', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (गंधर्व)' },
+    { id: 'purna_gandharva', name: 'पूर्ण', subtitle: 'गंधर्व', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (गंधर्व)' },
+    { id: 'barhi_gandharva', name: 'बर्हि', subtitle: 'गंधर्व', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (गंधर्व)' },
+    { id: 'vishvavasu_gandharva', name: 'विश्वावसु', subtitle: 'गंधर्व', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (गंधर्व)' },
+
+    // Laukika Apsaras
+    { id: 'alambusha_apsara', name: 'अलम्बुषा', subtitle: 'लौकिक अप्सरा', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (लौकिक अप्सराएं)' },
+    { id: 'mishrakeshi_apsara', name: 'मिश्रकेशी', subtitle: 'लौकिक अप्सरा', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (लौकिक अप्सराएं)' },
+    { id: 'vidyutparna_apsara', name: 'विद्युत्पर्णा', subtitle: 'लौकिक अप्सरा', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (लौकिक अप्सराएं)' },
+    { id: 'tilottama_apsara', name: 'तिलोत्तमा', subtitle: 'लौकिक अप्सरा', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', parichay: 'सुन्द और उपसुन्द का नाश करने के लिए विश्वकर्मा द्वारा रची गई।', clusterName: 'प्राधा वंश (लौकिक अप्सराएं)' },
+    { id: 'rambha_apsara', name: 'रंभा', subtitle: 'लौकिक अप्सरा', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', parichay: 'कुबेर पुत्र नलकूबर की पत्नी।', clusterName: 'प्राधा वंश (लौकिक अप्सराएं)' },
+    { id: 'manorama_apsara', name: 'मनोरमा', subtitle: 'लौकिक अप्सरा', parent: 'kashyap', mother: 'pradha_wife', yug: 'satya', clusterName: 'प्राधा वंश (लौकिक अप्सराएं)' },
+
+    // Other famous Gandharvas (From Arishta/Others)
+    { id: 'tumburu_gandharva', name: 'तुम्बुरु', subtitle: 'महान गायक गंधर्व', parent: 'kashyap', mother: 'arishta', yug: 'satya', clusterName: 'अरिष्टा वंश (गंधर्व)' },
+    { id: 'haha_gandharva', name: 'हाहा', subtitle: 'गायक गंधर्व', parent: 'kashyap', mother: 'arishta', yug: 'satya', clusterName: 'अरिष्टा वंश (गंधर्व)' },
+    { id: 'huhu_gandharva', name: 'हूहू (मगरमच्छ)', subtitle: 'गायक गंधर्व', parent: 'kashyap', mother: 'arishta', yug: 'satya', parichay: 'देवल ऋषि के शाप से मगरमच्छ बना (गजेंद्र मोक्ष)।', clusterName: 'अरिष्टा वंश (गंधर्व)' },
+
+    // --- KRODHAVASHA'S DESCENDANTS (10 Daughters - Animals) ---
+    { id: 'mrigi_animal', name: 'मृगी', subtitle: 'हिरणों की माता', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya', clusterName: 'क्रोधवशा वंश (पशु माताएं)' },
+    { id: 'mrigamanda_animal', name: 'मृगमंदा', subtitle: 'भालुओं की माता', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya', clusterName: 'क्रोधवशा वंश (पशु माताएं)' },
+    { id: 'hari_animal', name: 'हरि', subtitle: 'वानरों/शेरों की माता', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya', clusterName: 'क्रोधवशा वंश (पशु माताएं)' },
+    { id: 'bhadramana_animal', name: 'भद्रमना', subtitle: 'ऐरावत/देव-हाथियों की माता', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya', clusterName: 'क्रोधवशा वंश (पशु माताएं)' },
+    { id: 'matangi_animal', name: 'मातंगी', subtitle: 'हाथियों की माता', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya', clusterName: 'क्रोधवशा वंश (पशु माताएं)' },
+    { id: 'sharduli_animal', name: 'शार्दूली', subtitle: 'बाघ/तेंदुओं की माता', parent: 'kashyap', mother: 'krodhavasha', yug: 'satya', clusterName: 'क्रोधवशा वंश (पशु माताएं)' },
+
+    // Hari's lineage (Vanaras)
+    { id: 'riksharaja_vanara', name: 'ऋक्षराज', subtitle: 'वानरराज', parent: 'hari_animal', yug: 'treta', parichay: 'ब्रह्मा जी के तेज से जन्मा वानर, जो जादुई सरोवर में स्नान कर स्त्री बन गया, जिससे सूर्य और इंद्र आकर्षित हुए।' },
+    { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', parent: 'riksharaja_vanara', yug: 'treta', parichay: 'सूर्य के अंश से जन्मे वानर। (पिता: सूर्य)' },
+    { id: 'vali', name: 'बाली', subtitle: 'किष्किंधा नरेश', parent: 'riksharaja_vanara', yug: 'treta', parichay: 'इंद्र के अंश से जन्मे महान वानर। (पिता: इंद्र)' },
+
+    { id: 'ruma_wife', name: 'रूमा', subtitle: 'सुग्रीव की पत्नी', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
+    { id: 'tara_wife', name: 'तारा', subtitle: 'सुग्रीव की पत्नी', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
+
+    // --- TAMRA'S DESCENDANTS (5 Daughters - Birds) ---
+    { id: 'kraunchi_bird', name: 'क्रौंची', subtitle: 'उल्लुओं/क्रौंच की माता', parent: 'kashyap', mother: 'tamra', yug: 'satya', clusterName: 'ताम्रा वंश (पक्षी माताएं)' },
+    { id: 'bhasi_bird', name: 'भासी', subtitle: 'गिद्ध/चील की माता', parent: 'kashyap', mother: 'tamra', yug: 'satya', clusterName: 'ताम्रा वंश (पक्षी माताएं)' },
+    { id: 'syeni_bird', name: 'श्येनी', subtitle: 'बाज की माता', parent: 'kashyap', mother: 'tamra', yug: 'satya', clusterName: 'ताम्रा वंश (पक्षी माताएं)' },
+    { id: 'dhritarashtri_bird', name: 'धृतराष्ट्री', subtitle: 'हंसों की माता', parent: 'kashyap', mother: 'tamra', yug: 'satya', clusterName: 'ताम्रा वंश (पक्षी माताएं)' },
+    { id: 'suki_bird', name: 'शुकी', subtitle: 'तोतों की माता', parent: 'kashyap', mother: 'tamra', yug: 'satya', clusterName: 'ताम्रा वंश (पक्षी माताएं)' },
+
+    // --- SURABHI'S DESCENDANTS (Cows & Horses) ---
+    { id: 'rohini_cow', name: 'रोहिणी', subtitle: 'गायों की माता', parent: 'kashyap', mother: 'surabhi', yug: 'satya', clusterName: 'सुरभि वंश' },
+    { id: 'gandharvi_horse', name: 'गांधर्वी', subtitle: 'अश्वों (घोड़ों) की माता', parent: 'kashyap', mother: 'surabhi', yug: 'satya', clusterName: 'सुरभि वंश' },
+
 ];

@@ -616,9 +616,9 @@ export const suryavanshData = [
     { id: 'narsev', name: 'नरसेव', subtitle: 'नांगल गोत्र', parent: 'agrawal_dynasty_proxy', mother: 'madhavi_agrasen', yug: 'dwapar', parichay: 'नांगल गोत्र के प्रवर्तक। गुरु: नागेंद्र।', clusterName: 'अग्रवाल वंश' },
 
     { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'treta' },
-    { id: 'sugriva', name: 'सुग्रीव', subtitle: 'वानरराज', parent: 'surya', yug: 'treta' , clusterName: 'सूर्य की अन्य संतति' },
-    { id: 'ruma_wife', name: 'रूमा', subtitle: 'सुग्रीव की पत्नी', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
-    { id: 'tara_wife', name: 'तारा', subtitle: 'सुग्रीव की पत्नी (बाली वध पश्चात्)', parent: '', spouseOf: 'sugriva', yug: 'treta', clusterName: 'सुग्रीव की पत्नियाँ' },
-    { id: 'vali', name: 'बाली', subtitle: 'किष्किंधा नरेश', parent: 'indra', yug: 'treta' },
+
+
+
+
     { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', parent: 'arun', yug: 'treta' }
 ];
