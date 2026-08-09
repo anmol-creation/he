@@ -131,22 +131,40 @@ export const kashyapData = [
 
     // Diti's Children
     { id: 'hiranyakashipu', name: 'हिरण्यकशिपु', subtitle: 'दैत्यराज (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'sinhika', name: 'सिंहिका', subtitle: 'दिति पुत्री', parent: 'kashyap', mother: 'diti', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'viprachitti', name: 'विप्रचित्ति', subtitle: 'दानव / सिंहिका पति', parent: 'kashyap', mother: 'danu', spouseOf: 'sinhika', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' },
+    { id: 'andhakasura', name: 'अंधकासुर', subtitle: 'हिरण्याक्ष का दत्तक पुत्र', parent: 'hiranyaksha', yug: 'satya', parichay: 'मूलतः यह भगवान शिव और माता पार्वती के पसीने से जन्मा था, जिसे हिरण्याक्ष ने पाला। बाद में शिवजी ने इसका वध किया और इसे अपना गण बना लिया।' },
+    { id: 'utkacha', name: 'उत्कच', subtitle: 'हिरण्याक्ष पुत्र', parent: 'hiranyaksha', yug: 'satya', clusterName: 'हिरण्याक्ष के अन्य पुत्र' },
+    { id: 'shakuni_daitya', name: 'शकुनि (दैत्य)', subtitle: 'हिरण्याक्ष पुत्र', parent: 'hiranyaksha', yug: 'satya', clusterName: 'हिरण्याक्ष के अन्य पुत्र' },
+    { id: 'bhutasantapana', name: 'भूतसंतापन', subtitle: 'हिरण्याक्ष पुत्र', parent: 'hiranyaksha', yug: 'satya', clusterName: 'हिरण्याक्ष के अन्य पुत्र' },
+    { id: 'mahanabha', name: 'महानभ', subtitle: 'हिरण्याक्ष पुत्र', parent: 'hiranyaksha', yug: 'satya', clusterName: 'हिरण्याक्ष के अन्य पुत्र' },
+    { id: 'kalanabha', name: 'कालनाभ', subtitle: 'हिरण्याक्ष पुत्र', parent: 'hiranyaksha', yug: 'satya', clusterName: 'हिरण्याक्ष के अन्य पुत्र' },
+
+    { id: 'viprachitti', name: 'विप्रचित्ति', subtitle: 'दानव / सिंहिका पति', parent: 'kashyap', mother: 'danu', spouseOf: 'sinhika_daitya', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'hayagriva_danava_kashyap', name: 'हयग्रीव', subtitle: 'दानव (कश्यप-दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'rahu', name: 'राहु', subtitle: 'सिंहिका पुत्र', parent: 'viprachitti', mother: 'sinhika', yug: 'satya' },
+    { id: 'rahu', name: 'राहु (स्वर्भानु)', subtitle: 'सिंहिका पुत्र / ग्रह', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'समुद्र मंथन के समय अमृत पीने वाले दानव स्वर्भानु का सिर, जो राहु बना।' },
+    { id: 'ketu', name: 'केतु', subtitle: 'सिंहिका पुत्र / ग्रह', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'स्वर्भानु दानव का धड़, जिसे मोहिनी अवतार ने सुदर्शन चक्र से काटा था।' },
+    { id: 'ilvala', name: 'इल्वल', subtitle: 'सिंहिका पुत्र (दानव)', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'वातापी का भाई, जिसका वध महर्षि अगस्त्य ने किया था।' },
+    { id: 'vatapi', name: 'वातापी', subtitle: 'सिंहिका पुत्र (दानव)', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'इल्वल का भाई, जो मायावी था और जिसे महर्षि अगस्त्य ने पचा लिया था।' },
+    { id: 'namuchi', name: 'नमुचि', subtitle: 'महान दानव', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'एक अत्यंत शक्तिशाली दानव जिसका वध इंद्र ने समुद्र के झाग (फेन) से किया था।' },
     { id: 'marudgan', name: 'मरुद्गण', subtitle: 'दिति के 49 पुत्र', parent: 'kashyap', mother: 'diti', yug: 'satya', parichay: 'इंद्र ने इन्हें अपना भाई बना लिया था, ये हवाओं के देवता हैं।' , clusterName: 'कश्यप की अन्य संतति' },
 
+    { id: 'holika', name: 'होलिका', subtitle: 'दिति पुत्री / हिरण्यकशिपु की बहन', parent: 'kashyap', mother: 'diti', yug: 'satya', parichay: 'हिरण्यकशिपु की बहन जिसे अग्नि में न जलने का वरदान था, किन्तु प्रह्लाद को जलाने के प्रयास में वह स्वयं भस्म हो गई (होलिका दहन)।' , clusterName: 'कश्यप की अन्य संतति' },
+
     // Hiranyakashipu's Children
-    { id: 'prahlada', name: 'प्रह्लाद', subtitle: 'विष्णु भक्त', parent: 'hiranyakashipu', yug: 'satya' },
-    { id: 'anuhlad', name: 'अनुह्लाद', subtitle: 'हिरण्यकशिपु पुत्र', parent: 'hiranyakashipu', yug: 'satya' },
-    { id: 'sanhlad', name: 'संह्लाद', subtitle: 'हिरण्यकशिपु पुत्र', parent: 'hiranyakashipu', yug: 'satya' },
-    { id: 'hlad', name: 'ह्लाद', subtitle: 'हिरण्यकशिपु पुत्र', parent: 'hiranyakashipu', yug: 'satya' },
+    { id: 'kayadhu', name: 'कयाधु', subtitle: 'हिरण्यकशिपु की पत्नी', parent: '', spouseOf: 'hiranyakashipu', yug: 'satya', parichay: 'दानवराज जम्भ की पुत्री और विष्णुभक्त प्रह्लाद की माता।' },
+    { id: 'prahlada', name: 'प्रह्लाद', subtitle: 'विष्णु भक्त', parent: 'hiranyakashipu', mother: 'kayadhu', yug: 'satya' },
+    { id: 'sinhika_daitya', name: 'सिंहिका', subtitle: 'हिरण्यकशिपु की पुत्री', parent: 'hiranyakashipu', mother: 'kayadhu', yug: 'satya', parichay: 'हिरण्यकशिपु की पुत्री, जिसका विवाह महर्षि कश्यप और दनु के पुत्र विप्रचित्ति (दानव) से हुआ था। राहु इसी का पुत्र था।' },
+    { id: 'anuhlad', name: 'अनुह्लाद', subtitle: 'हिरण्यकशिपु पुत्र', parent: 'hiranyakashipu', mother: 'kayadhu', yug: 'satya' },
+    { id: 'sanhlad', name: 'संह्लाद', subtitle: 'हिरण्यकशिपु पुत्र', parent: 'hiranyakashipu', mother: 'kayadhu', yug: 'satya' },
+    { id: 'hlad', name: 'ह्लाद', subtitle: 'हिरण्यकशिपु पुत्र', parent: 'hiranyakashipu', mother: 'kayadhu', yug: 'satya' },
 
     // Prahlada Lineage
     { id: 'vairochana', name: 'विरोचन', subtitle: 'प्रह्लाद पुत्र', parent: 'prahlada', yug: 'treta' },
     { id: 'bali', name: 'बलि', subtitle: 'महान दैत्यराज', parent: 'vairochana', yug: 'treta' },
+    { id: 'vindhyavali', name: 'विंध्यावली (अश्ना)', subtitle: 'राजा बलि की पत्नी', parent: '', spouseOf: 'bali', yug: 'treta', parichay: 'दैत्यराज बलि की धर्मपत्नी, जो वामन अवतार के समय उनके साथ उपस्थित थीं।' },
+    { id: 'banasura', name: 'बाणासुर', subtitle: 'बलि का ज्येष्ठ पुत्र', parent: 'bali', mother: 'vindhyavali', yug: 'dwapar', parichay: 'राजा बलि का सबसे बड़ा और शक्तिशाली पुत्र, जिसके 1000 हाथ थे। यह भगवान शिव का परम भक्त था।' },
+    { id: 'kumbhanda', name: 'कुम्भाण्ड', subtitle: 'बलि का पुत्र', parent: 'bali', mother: 'vindhyavali', yug: 'dwapar', parichay: 'बलि के 100 पुत्रों में से एक (बाणासुर के अतिरिक्त अन्य 99 पुत्र)।', clusterName: 'बलि के अन्य पुत्र' },
+    { id: 'usha_banasura', name: 'उषा', subtitle: 'बाणासुर की पुत्री', parent: 'banasura', yug: 'dwapar', parichay: 'बाणासुर की पुत्री, जिसका विवाह भगवान श्रीकृष्ण के पौत्र अनिरुद्ध से हुआ था (उषा-अनिरुद्ध विवाह)।', spouseOf: 'aniruddha_chandra' },
     { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
