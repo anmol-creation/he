@@ -203,7 +203,7 @@ export const brahmaBaseData = [
       ],
       clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
     },
-    { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: 'maya_danava', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'dhanyamalini', name: 'धन्यमालिनी', subtitle: 'रावण की पत्नी', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'meghnad', name: 'इंद्रजीत (मेघनाद)', subtitle: 'रावण पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'akshayakumara', name: 'अक्षयकुमार', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', parichay: 'अशोक वाटिका में हनुमान जी द्वारा वध किया गया।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
