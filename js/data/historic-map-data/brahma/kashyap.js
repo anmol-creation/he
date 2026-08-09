@@ -134,6 +134,7 @@ export const kashyapData = [
     { id: 'hiranyaksha', name: 'हिरण्याक्ष', subtitle: 'दैत्य (दिति पुत्र)', parent: 'kashyap', mother: 'diti', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'sinhika', name: 'सिंहिका', subtitle: 'दिति पुत्री', parent: 'kashyap', mother: 'diti', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'viprachitti', name: 'विप्रचित्ति', subtitle: 'दानव / सिंहिका पति', parent: 'kashyap', mother: 'danu', spouseOf: 'sinhika', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'hayagriva_danava_kashyap', name: 'हयग्रीव', subtitle: 'दानव (कश्यप-दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', clusterName: 'कश्यप की अन्य संतति' },
     { id: 'rahu', name: 'राहु', subtitle: 'सिंहिका पुत्र', parent: 'viprachitti', mother: 'sinhika', yug: 'satya' },
     { id: 'marudgan', name: 'मरुद्गण', subtitle: 'दिति के 49 पुत्र', parent: 'kashyap', mother: 'diti', yug: 'satya', parichay: 'इंद्र ने इन्हें अपना भाई बना लिया था, ये हवाओं के देवता हैं।' , clusterName: 'कश्यप की अन्य संतति' },
 
