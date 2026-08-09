@@ -108,10 +108,10 @@ export const kashyapData = [
     // 9. Bhaga
     { id: 'bhaga_aditya', name: 'भग', subtitle: 'धन-समृद्धि के देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
     { id: 'siddhi_bhaga_wife', name: 'सिद्धि', subtitle: 'भग की पत्नी', parent: '', spouseOf: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'mahima_bhaga', name: 'महिमा', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'vibhu_bhaga', name: 'विभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'prabhu_bhaga', name: 'प्रभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
-    { id: 'ashish_bhaga', name: 'आशिष', subtitle: 'भग पुत्री', parent: 'bhaga_aditya', mother: 'siddhi_bhaga_wife', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'mahima_bhaga', name: 'महिमा', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'vibhu_bhaga', name: 'विभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'prabhu_bhaga', name: 'प्रभु', subtitle: 'भग पुत्र', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
+    { id: 'ashish_bhaga', name: 'आशिष', subtitle: 'भग पुत्री', parent: 'bhaga_aditya', yug: 'satya', clusterName: 'अन्य आदित्यों के परिवार' },
 
     // 10. Pusha (Pushan)
     { id: 'pusha_aditya', name: 'पूषा', subtitle: 'मार्गदर्शक देव / आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', parichay: 'दक्ष यज्ञ विध्वंस के समय भगवान शिव/वीरभद्र ने इनके दाँत तोड़ दिए थे। इनकी कोई संतान नहीं बताई गई है।', clusterName: 'अन्य आदित्यों के परिवार' },
