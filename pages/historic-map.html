@@ -107,6 +107,7 @@
             <div class="panel-dots" id="panel-dots"></div>
             <h2 id="panel-name">Name</h2>
             <p id="panel-subtitle" class="panel-subtitle">Subtitle</p>
+            <div id="panel-tags" class="panel-tags"></div>
         </div>
         <button id="panel-start-route-btn" class="panel-route-btn">🧭 Start Route from Here</button>
         <div class="panel-tabs">
@@ -117,9 +118,17 @@
         <div class="panel-content" id="panel-content-area">
             <!-- Dynamic Content -->
         </div>
+
+        <!-- Tooltip Modal for Tags -->
+        <div id="tag-tooltip" class="tag-tooltip hidden">
+            <div class="tooltip-arrow"></div>
+            <h4 id="tooltip-title">Tag Name</h4>
+            <p id="tooltip-desc">Description goes here.</p>
+        </div>
     </div>
 
     <!-- Data Files -->
+    <script type="module" src="../js/data/sanatan-glossary.js"></script>
     <script type="module" src="../js/data/historic-data.js"></script>
     <!-- Core Engine & Map Modules -->
     <script type="module" src="../js/layout-engine/index.js"></script>
