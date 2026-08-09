@@ -171,8 +171,32 @@ export const kashyapData = [
     { id: 'banasura', name: 'बाणासुर', subtitle: 'बलि का ज्येष्ठ पुत्र', parent: 'bali', mother: 'vindhyavali', yug: 'dwapar', parichay: 'राजा बलि का सबसे बड़ा और शक्तिशाली पुत्र, जिसके 1000 हाथ थे। यह भगवान शिव का परम भक्त था।' },
     { id: 'kumbhanda', name: 'कुम्भाण्ड', subtitle: 'बलि का पुत्र', parent: 'bali', mother: 'vindhyavali', yug: 'dwapar', parichay: 'बलि के 100 पुत्रों में से एक (बाणासुर के अतिरिक्त अन्य 99 पुत्र)।', clusterName: 'बलि के अन्य पुत्र' },
     { id: 'usha_banasura', name: 'उषा', subtitle: 'बाणासुर की पुत्री', parent: 'banasura', yug: 'dwapar', parichay: 'बाणासुर की पुत्री, जिसका विवाह भगवान श्रीकृष्ण के पौत्र अनिरुद्ध से हुआ था (उषा-अनिरुद्ध विवाह)।', spouseOf: 'aniruddha_chandra' },
-    { id: 'shesha', name: 'शेषनाग', subtitle: 'नाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
+    // Nagas (Sons of Kadru)
+    { id: 'shesha', name: 'शेषनाग (अनंत)', subtitle: 'नाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', parichay: 'सहस्र फनों वाले सर्पों के राजा, जो भगवान विष्णु की शय्या बने।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'nagalakshmi', name: 'नागलक्ष्मी', subtitle: 'शेषनाग की पत्नी', parent: '', spouseOf: 'shesha', yug: 'satya', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'vasuki', name: 'वासुकी', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', parichay: 'समुद्र मंथन में मेरु पर्वत को मथने के लिए रस्सी बने नागराज, जो शिव के गले में रहते हैं।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'shatashirsha_naga', name: 'शतशीर्षा', subtitle: 'वासुकी की पत्नी', parent: '', spouseOf: 'vasuki', yug: 'satya', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'jaratkaru_naga_sister', name: 'जरत्कारु (नागकन्या)', subtitle: 'वासुकी की बहन', parent: 'kashyap', mother: 'kadru', yug: 'satya', parichay: 'वासुकी की बहन, जिनका विवाह महर्षि जरत्कारु से हुआ था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'takshaka', name: 'तक्षक', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', parichay: 'महान नागराज जिसने श्रृंगी ऋषि के शाप के कारण राजा परीक्षित को डसा था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'ashvasena_naga', name: 'अश्वसेन', subtitle: 'तक्षक पुत्र', parent: 'takshaka', yug: 'dwapar', parichay: 'तक्षक का पुत्र। खांडव वन दहन के समय इसकी माता ने इसे निगल कर बचाया था, और अर्जुन ने इसकी माता का वध कर दिया था। बाद में इसने कुरुक्षेत्र युद्ध में अर्जुन से बदला लेने का प्रयास किया।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'karkotaka', name: 'कर्कोटक', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', parichay: 'एक शक्तिशाली नाग जिसका वर्णन राजा नल और दमयंती की कथा में मिलता है।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'kaliya_naga', name: 'कालिया नाग', subtitle: 'नागराज (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'dwapar', parichay: 'यमुना नदी में वास करने वाला विषैला नाग, जिसका भगवान श्रीकृष्ण ने मान मर्दन किया (कालिया दमन)।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'kaliya_patnis', name: 'नाग पत्नियाँ', subtitle: 'कालिया नाग की पत्नियाँ', parent: '', spouseOf: 'kaliya_naga', yug: 'dwapar', parichay: 'कालिया की पत्नियाँ जिन्होंने श्रीकृष्ण से अपने पति के प्राणों की भीख मांगी थी।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'padma_naga', name: 'पद्म', subtitle: 'अष्टनाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'mahapadma_naga', name: 'महापद्म', subtitle: 'अष्टनाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'shankha_naga', name: 'शंख (शंखपाल)', subtitle: 'अष्टनाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'kulika_naga', name: 'कुलिक', subtitle: 'अष्टनाग (कद्रू पुत्र)', parent: 'kashyap', mother: 'kadru', yug: 'satya', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'aryaka_naga', name: 'आर्यक', subtitle: 'पाताल के नागराज', parent: 'kashyap', mother: 'kadru', yug: 'satya', parichay: 'कुंती के पितामह शूरसेन के मामा। इन्होने ही भीम को पाताल में दस हजार हाथियों का बल देने वाला रस पिलाया था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'chikura_naga', name: 'चिकुर', subtitle: 'आर्यक पुत्र', parent: 'aryaka_naga', yug: 'satya', parichay: 'आर्यक का पुत्र जिसका वध गरुड़ ने कर दिया था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'sumukha_naga', name: 'सुमुख', subtitle: 'चिकुर पुत्र', parent: 'chikura_naga', yug: 'satya', parichay: 'आर्यक का पौत्र, जिसका विवाह देवराज इंद्र के सारथी मातलि की पुत्री गुणकेशी से हुआ था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+
+    { id: 'kauravya_naga_king', name: 'कौरव्य', subtitle: 'नागराज', parent: 'kashyap', mother: 'kadru', yug: 'dwapar', parichay: 'एक नागराज, जिनकी पुत्री उलूपी का विवाह अर्जुन से हुआ था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
     { id: 'garuda', name: 'गरुड़', subtitle: 'पक्षीराज (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
     { id: 'arun', name: 'अरुण', subtitle: 'सूर्य के सारथी (विनता पुत्र)', parent: 'kashyap', mother: 'vinata', yug: 'satya' },
 
@@ -185,5 +209,8 @@ export const kashyapData = [
     { id: 'yatudhanas', name: 'यातुधान (राक्षस)', subtitle: 'सुरसा वंश', parent: 'kashyap', mother: 'surasa', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'yakshas_rakshasas', name: 'यक्ष एवं राक्षस', subtitle: 'खशा वंश', parent: 'kashyap', mother: 'khasha', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'kinnaras', name: 'किन्नर', subtitle: 'अरिष्टा वंश', parent: 'kashyap', mother: 'arishta', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
-    { id: 'flora_trees', name: 'वृक्ष एवं लताएं', subtitle: 'इला वंश', parent: 'kashyap', mother: 'ila_wife', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' }
+    { id: 'flora_trees', name: 'वृक्ष एवं लताएं', subtitle: 'इला वंश', parent: 'kashyap', mother: 'ila_wife', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
+    // Astika Muni (Nephew of Vasuki)
+    { id: 'rishi_jaratkaru', name: 'महर्षि जरत्कारु', subtitle: 'यायावर वंश', parent: '', spouseOf: 'jaratkaru_naga_sister', yug: 'dwapar', parichay: 'एक कठोर तपस्वी महर्षि जिनका विवाह नागकन्या जरत्कारु से हुआ था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
+    { id: 'rishi_astika', name: 'आस्तिक मुनि', subtitle: 'जरत्कारु पुत्र', parent: 'rishi_jaratkaru', mother: 'jaratkaru_naga_sister', yug: 'dwapar', parichay: 'इन्होंने ही अपने मामा वासुकी और अन्य नागों को राजा जनमेजय के सर्पसत्र यज्ञ से बचाया था।', clusterName: 'नाग वंश (कद्रू के वंशज)' },
 ];
