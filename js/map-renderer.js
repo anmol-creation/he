@@ -225,54 +225,32 @@ window.MapRenderer = {
                     ctx.stroke();
 
                     if (data.lineLabel) {
-                        const state = window.MapState;
-                        const dpr = window.devicePixelRatio || 1;
+                        // Place label directly above the child node, on the final vertical segment
+                        const labelY = endY - 15;
+                        const labelX = endX;
 
-                        // We have 3 segments:
-                        // 1. (startX, startY) to (startX, controlY) - Vertical
-                        // 2. (startX, controlY) to (endX, controlY) - Horizontal
-                        // 3. (endX, controlY) to (endX, endY) - Vertical
+                        ctx.save();
+                        ctx.fillStyle = 'rgba(17, 17, 17, 1)'; // Solid background
 
-                        let bestMid = null;
-                        let maxLen = -1;
+                        ctx.font = 'bold 12px Poppins';
+                        const textMetrics = ctx.measureText(data.lineLabel);
+                        const tW = textMetrics.width + 12;
+                        const tH = 20;
 
-                        const segments = [
-                            this.getVisibleMidpoint(startX, startY, startX, controlY, state, dpr),
-                            this.getVisibleMidpoint(startX, controlY, endX, controlY, state, dpr),
-                            this.getVisibleMidpoint(endX, controlY, endX, endY, state, dpr)
-                        ];
+                        // Draw background box
+                        this.roundRect(ctx, labelX - tW/2, labelY - tH/2, tW, tH, 4);
+                        ctx.fill();
 
-                        segments.forEach(seg => {
-                            if (seg && seg.length > maxLen) {
-                                maxLen = seg.length;
-                                bestMid = seg;
-                            }
-                        });
+                        ctx.strokeStyle = ctx.strokeStyle;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
 
-                        if (bestMid && maxLen > 40) { // Only draw if we have enough visible space
-                            ctx.save();
-                            ctx.fillStyle = 'rgba(17, 17, 17, 1)'; // Solid background
+                        ctx.fillStyle = '#ffffff'; // white text for readability
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText(data.lineLabel, labelX, labelY);
 
-                            ctx.font = 'bold 12px Poppins';
-                            const textMetrics = ctx.measureText(data.lineLabel);
-                            const tW = textMetrics.width + 12;
-                            const tH = 20;
-
-                            // Draw background box
-                            this.roundRect(ctx, bestMid.x - tW/2, bestMid.y - tH/2, tW, tH, 4);
-                            ctx.fill();
-
-                            ctx.strokeStyle = ctx.strokeStyle;
-                            ctx.lineWidth = 1;
-                            ctx.stroke();
-
-                            ctx.fillStyle = '#ffffff'; // white text for readability
-                            ctx.textAlign = 'center';
-                            ctx.textBaseline = 'middle';
-                            ctx.fillText(data.lineLabel, bestMid.x, bestMid.y);
-
-                            ctx.restore();
-                        }
+                        ctx.restore();
                     }
 
                     // Draw Arrowhead pointing down to child
