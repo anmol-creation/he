@@ -776,8 +776,7 @@ export const chandravanshData = [
     { id: 'virata_matsya', name: 'विराट', subtitle: 'मत्स्य नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
     { id: 'shalya_madra_king', name: 'शल्य', subtitle: 'मद्र नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
     { id: 'subala_gandhara_king', name: 'सुबल', subtitle: 'गांधार नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
-    { id: 'kauravya_naga_king', name: 'कौरव्य', subtitle: 'नाग नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
-    { id: 'chitravahana_manipur', name: 'चित्रवाहन', subtitle: 'मणिपुर नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
+        { id: 'chitravahana_manipur', name: 'चित्रवाहन', subtitle: 'मणिपुर नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
 
     // --- धृतराष्ट्र का परिवार (कौरव) ---
     { id: 'gandhari_chandra', name: 'गांधारी', subtitle: 'धृतराष्ट्र की पत्नी', parent: 'subala_gandhara_king', spouseOf: 'dhritarashtra_chandra', yug: 'dwapar' },
