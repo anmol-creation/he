@@ -9,6 +9,7 @@ export const brahmaBaseData = [
     { id: 'hansa', name: 'हंस', subtitle: 'मानस पुत्र', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
     { id: 'atharva', name: 'अथर्वा', subtitle: 'ज्येष्ठ मानस पुत्र', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
     { id: 'dharma_deva', name: 'धर्म', subtitle: 'वक्षस्थल से उत्पन्न', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
+    { id: 'kamadeva', name: 'कामदेव', subtitle: 'हृदय से उत्पन्न', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
     { id: 'rudra_ekadash', name: 'रुद्र', subtitle: 'ललाट से उत्पन्न', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
     { id: 'adharma', name: 'अधर्म', subtitle: 'पीठ से उत्पन्न', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
     { id: 'lobha', name: 'लोभ', subtitle: 'निचले होंठ से उत्पन्न', parent: 'brahma', yug: 'satya' , clusterName: 'ब्रह्मा की अन्य सृष्टियाँ' },
@@ -413,6 +414,10 @@ export const brahmaBaseData = [
     { id: 'niraya', name: 'निरय', subtitle: 'मृत्यु पुत्र', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
     { id: 'yatana', name: 'यातना', subtitle: 'मृत्यु पुत्री', parent: 'mrityu_adharma', mother: 'bhiti_spouse', yug: 'satya' , clusterName: 'अधर्म वंश' },
 
+    // --- KAMADEVA LINEAGE (Son of Brahma) ---
+    { id: 'rati', name: 'रति', subtitle: 'कामदेव पत्नी / दक्ष पुत्री', parent: 'daksha', spouseOf: 'kamadeva', yug: 'satya' },
+    { id: 'harsha', name: 'हर्ष', subtitle: 'कामदेव पुत्र', parent: 'kamadeva', mother: 'rati', yug: 'satya' },
+    { id: 'yash_kamadeva', name: 'यश', subtitle: 'कामदेव पुत्र', parent: 'kamadeva', mother: 'rati', yug: 'satya' },
 
     // --- PULAHA'S FURTHER DESCENDANTS & SPECIES ---
     { id: 'kamadeva_rishi', name: 'कामदेव (ऋषि)', subtitle: 'सहिष्णु के पुत्र', parent: 'sahishnu', yug: 'satya', parichay: 'ऋषि सहिष्णु के पुत्र। (ये रति-पति कामदेव से अलग हैं)।' , clusterName: 'पुलह वंश' },
