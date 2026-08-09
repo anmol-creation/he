@@ -177,7 +177,7 @@ export const brahmaBaseData = [
     { id: 'ashwatthama', name: 'अश्वत्थामा', subtitle: 'द्रोण पुत्र / चिरंजीवी', parent: 'drona', mother: 'kripi', yug: 'dwapar', clusterName: 'अंगिरस वंश' },
 
     // --- PULASTYA LINEAGE ---
-    { id: 'pulastya_vansh_proxy', name: 'पुलस्त्य वंश', subtitle: 'कुबेर, रावण आदि', parent: '', spouseOf: 'pulastya', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)', isProxy: true },
+    { id: 'pulastya_vansh_proxy', name: 'पुलस्त्य वंश', subtitle: 'कुबेर, रावण आदि', parent: 'pulastya', spouseOf: 'pulastya', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)', isProxy: true },
     { id: 'havirbhu', name: 'हविर्भू', subtitle: 'कर्दम ऋषि पुत्री', parent: '', spouseOf: 'pulastya', yug: 'satya', parichay: 'पुलस्त्य ऋषि की पत्नी और विश्रवा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'vishrava', name: 'विश्रवा', subtitle: 'पुलस्त्य पुत्र', parent: 'pulastya', mother: 'havirbhu', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
