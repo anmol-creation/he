@@ -40,8 +40,7 @@ export const maheshBaseData = [
         abode: 'कैलाश / दक्षिण भारत',
         parichay: 'देवताओं के सेनापति, तारकासुर का वध करने वाले महादेव के ज्येष्ठ पुत्र।'
     },
-    { id: 'devasena', name: 'देवसेना', subtitle: 'कार्तिकेय पत्नी', parent: 'indra', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ', parichay: 'इंद्र की पुत्री।' },
-    { id: 'valli', name: 'वल्ली', subtitle: 'कार्तिकेय पत्नी', parent: 'unknown_origin', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ', parichay: 'शिकारी राजा नंबिराजन की दत्तक पुत्री।' },
+        { id: 'valli', name: 'वल्ली', subtitle: 'कार्तिकेय पत्नी', parent: 'unknown_origin', spouseOf: 'kartikeya', yug: 'satya', clusterName: 'कार्तिकेय की पत्नियाँ', parichay: 'शिकारी राजा नंबिराजन की दत्तक पुत्री।' },
     {
         id: 'ganesha',
         name: 'गणेश',
@@ -62,8 +61,7 @@ export const maheshBaseData = [
     { id: 'labh', name: 'लाभ', subtitle: 'गणेश पुत्र', parent: 'ganesha', mother: 'siddhi', yug: 'satya' },
     { id: 'santhoshi', name: 'संतोषी', subtitle: 'गणेश पुत्री (लोककथा)', parent: 'ganesha', yug: 'satya', parichay: 'लोक मान्यताओं के अनुसार श्री गणेश की पुत्री।' },
     { id: 'ashokasundari', name: 'अशोक सुंदरी', subtitle: 'शिव पुत्री', parent: 'shiva_parivar_proxy', mother: 'parvati', clusterName: 'शिव परिवार', yug: 'satya', parichay: 'कल्पवृक्ष से पार्वती जी का शोक दूर करने के लिए उत्पन्न।' },
-    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'अशोक सुंदरी के पति', spouseOf: 'ashokasundari', yug: 'treta', parichay: 'चंद्रवंशी राजा जो कुछ समय के लिए इंद्र भी बने।' }, // Reference point
-    { id: 'andhaka', name: 'अंधकासुर', subtitle: 'शिव पुत्र', parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', yug: 'satya', parichay: 'पार्वती जी द्वारा शिव जी के नेत्र बंद करने पर उत्पन्न पसीने से जन्मा, जिसे बाद में हिरण्याक्ष को गोद दे दिया गया।' },
+        { id: 'andhaka', name: 'अंधकासुर', subtitle: 'शिव पुत्र', parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', yug: 'satya', parichay: 'पार्वती जी द्वारा शिव जी के नेत्र बंद करने पर उत्पन्न पसीने से जन्मा, जिसे बाद में हिरण्याक्ष को गोद दे दिया गया।' },
     { id: 'jalandhara', name: 'जलंधर', subtitle: 'शिव पुत्र', parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', yug: 'satya', parichay: 'शिव के क्रोध की अग्नि से उत्पन्न शक्तिशाली असुर।' },
     { id: 'bhauma', name: 'भौम (मंगल)', subtitle: 'शिव पुत्र', parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', yug: 'satya', parichay: 'शिव के पसीने की बूंद से उत्पन्न।' },
     { id: 'sukesha', name: 'सुकेश', subtitle: 'शिव दत्तक पुत्र', parent: 'shiva_parivar_proxy', clusterName: 'शिव परिवार', yug: 'satya', parichay: 'राक्षस वंश का मूल, जिसे शिव-पार्वती ने गोद लिया था।' },

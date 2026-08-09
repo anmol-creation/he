@@ -179,8 +179,32 @@ export const brahmaBaseData = [
     // --- PULASTYA LINEAGE ---
     { id: 'pulastya_vansh_proxy', name: 'पुलस्त्य वंश', subtitle: 'कुबेर, रावण आदि', parent: '', spouseOf: 'pulastya', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)', isProxy: true },
     { id: 'havirbhu', name: 'हविर्भू', subtitle: 'कर्दम ऋषि पुत्री', parent: '', spouseOf: 'pulastya', yug: 'satya', parichay: 'पुलस्त्य ऋषि की पत्नी और विश्रवा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
+
+
+    // --- Other Yaksha Lineages ---
+    { id: 'suketu_yaksha', name: 'सुकेतु', subtitle: 'यक्षराज', parent: 'brahma_other_creations_proxy', yug: 'satya', parichay: 'एक अत्यंत बलवान यक्ष जिसने ब्रह्मा जी की घोर तपस्या की, जिससे उसे ताड़का नामक पुत्री प्राप्त हुई।', clusterName: 'यक्ष वंश' },
+    { id: 'tataka', name: 'ताड़का', subtitle: 'सुकेतु पुत्री (यक्षी)', parent: 'suketu_yaksha', yug: 'treta', parichay: 'जन्म से यक्षी, जिसमें 1000 हाथियों का बल था। अगस्त्य मुनि के शाप से यह राक्षसी बन गई। श्रीराम ने इसका वध किया था।', clusterName: 'यक्ष वंश' },
+    { id: 'sunda_asura', name: 'सुन्द', subtitle: 'ताड़का का पति', parent: '', spouseOf: 'tataka', yug: 'treta', parichay: 'एक असुर, जिसका वध अगस्त्य मुनि ने किया था।', clusterName: 'यक्ष वंश' },
+    { id: 'maricha', name: 'मारीच', subtitle: 'ताड़का का पुत्र', parent: 'sunda_asura', mother: 'tataka', yug: 'treta', parichay: 'अगस्त्य मुनि के शाप से राक्षस बना। रावण के कहने पर सीता हरण के समय इसने स्वर्ण मृग (सोने का हिरण) का रूप धरा था।', clusterName: 'यक्ष वंश' },
+    { id: 'subahu', name: 'सुबाहु', subtitle: 'ताड़का का पुत्र', parent: 'sunda_asura', mother: 'tataka', yug: 'treta', parichay: 'मारीच का भाई। विश्वामित्र के यज्ञ की रक्षा करते हुए श्रीराम ने इसका वध किया था।', clusterName: 'यक्ष वंश' },
+    { id: 'manibhadra_yaksha', name: 'मणिभद्र', subtitle: 'यक्ष सेनापति', parent: 'brahma_other_creations_proxy', yug: 'satya', parichay: 'कुबेर के मुख्य सेनापतियों में से एक और धन के रक्षक। प्राचीन काल से ही इनकी पूजा होती रही है।', clusterName: 'यक्ष वंश' },
+    { id: 'sthuna_yaksha', name: 'स्थूणाकर्ण (स्थूण)', subtitle: 'यक्ष', parent: 'brahma_other_creations_proxy', yug: 'dwapar', parichay: 'महाभारत का एक यक्ष, जिसने भीष्म से युद्ध करने के लिए अंबा (शिखंडी) को अपना पुरुषत्व दे दिया था।', clusterName: 'यक्ष वंश' },
+
+    // --- Original Rakshasa Lineage (Maternal Ancestors of Ravana) ---
+    { id: 'heti_rakshasa', name: 'हेति', subtitle: 'प्रथम राक्षस', parent: 'brahma', yug: 'satya', parichay: 'ब्रह्मा जी के जल से उत्पन्न प्रथम राक्षस, जो राक्षसों के आदि पुरुष हैं।', clusterName: 'मूल राक्षस वंश' },
+    { id: 'vidyutkesha_rakshasa', name: 'विद्युत्केश', subtitle: 'हेति का पुत्र', parent: 'heti_rakshasa', yug: 'satya', clusterName: 'मूल राक्षस वंश' },
+    { id: 'sukesha_rakshasa', name: 'सुकेश', subtitle: 'राक्षस राज', parent: 'vidyutkesha_rakshasa', yug: 'satya', parichay: 'विद्युत्केश का पुत्र, जिसे जन्मते ही त्याग दिया गया था, पर शिव-पार्वती ने इसे वरदान देकर अमर और शक्तिशाली बनाया।', clusterName: 'मूल राक्षस वंश' },
+
+    // Sukesha's 3 Sons
+    { id: 'malyavan_rakshasa', name: 'माल्यवान', subtitle: 'सुकेश पुत्र', parent: 'sukesha_rakshasa', yug: 'satya', parichay: 'सुकेश का ज्येष्ठ पुत्र, रावण का नाना (रिश्ते में)। राम-रावण युद्ध में इन्होने रावण को समझाने का प्रयास किया था।', clusterName: 'मूल राक्षस वंश' },
+    { id: 'sumali_rakshasa', name: 'सुमाली', subtitle: 'राक्षस राज (कैकेसी के पिता)', parent: 'sukesha_rakshasa', yug: 'satya', parichay: 'सुकेश का पुत्र और कैकेसी (रावण की माता) का पिता।', clusterName: 'मूल राक्षस वंश' },
+    { id: 'mali_rakshasa', name: 'माली', subtitle: 'सुकेश पुत्र', parent: 'sukesha_rakshasa', yug: 'satya', parichay: 'सुकेश का पुत्र, जिसे भगवान विष्णु ने युद्ध में मार दिया था।', clusterName: 'मूल राक्षस वंश' },
+
+    // Sumali's Prominent Children (Ravana's Maternal Uncles)
+    { id: 'sumali_sons_proxy', name: 'सुमाली के 10 पुत्र', subtitle: 'रावण के मामा', parent: 'sumali_rakshasa', yug: 'treta', parichay: 'सुमाली के प्रहस्त, अकम्पन, विकट, धूम्राक्ष आदि 10 पुत्र, जो रावण की सेना के मुख्य सेनापति थे।', clusterName: 'मूल राक्षस वंश' },
+
     { id: 'vishrava', name: 'विश्रवा', subtitle: 'पुलस्त्य पुत्र', parent: 'pulastya', mother: 'havirbhu', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-    { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: 'sumali_rakshasa', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'pushpotkata', name: 'पुष्पोत्कटा', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और खर की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'malini', name: 'मालिनी', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और दूषण की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
 
@@ -224,6 +248,23 @@ export const brahmaBaseData = [
       ]
     },
     { id: 'sarama', name: 'सरमा', subtitle: 'विभीषण की पत्नी', parent: '', spouseOf: 'vibhishana', yug: 'treta', parichay: 'विभीषण की धार्मिक पत्नी।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
+
+    // Ravana's missing relatives
+    { id: 'sulochana', name: 'सुलोचना (प्रमीला)', subtitle: 'मेघनाद पत्नी', parent: 'shesha', spouseOf: 'meghnad', yug: 'treta', parichay: 'नागराज शेषनाग की पुत्री, जो मेघनाद (इंद्रजीत) के वध के बाद सती हो गई थीं।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'vajrajwala', name: 'वज्रज्वाला', subtitle: 'कुम्भकर्ण की पत्नी', parent: 'vairochana', spouseOf: 'kumbhakarna', yug: 'treta', parichay: 'दैत्यराज बलि की बहन (विरोचन की पुत्री), जो कुम्भकर्ण की पत्नी थीं।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'karkati', name: 'कर्कटी', subtitle: 'कुम्भकर्ण की पत्नी', parent: '', spouseOf: 'kumbhakarna', yug: 'treta', parichay: 'सह्याद्रि पर्वत की राक्षसी।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'bhimasura', name: 'भीमासुर', subtitle: 'कुम्भकर्ण का पुत्र', parent: 'kumbhakarna', mother: 'karkati', yug: 'treta', parichay: 'कर्कटी से जन्मा पुत्र। इसी के वध के बाद भगवान शिव का "भीमाशंकर ज्योतिर्लिंग" स्थापित हुआ।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'vidyujjihva', name: 'विद्युज्जिह्व', subtitle: 'शूर्पणखा का पति', parent: '', spouseOf: 'shurpanakha', yug: 'treta', parichay: 'कालकेय दानव, जिसे रावण ने गलती से युद्ध में मार दिया था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'shamba', name: 'शंब', subtitle: 'शूर्पणखा का पुत्र', parent: 'vidyujjihva', mother: 'shurpanakha', yug: 'treta', parichay: 'दंडकारण्य में तपस्या करते समय इसे अनजाने में लक्ष्मण जी ने मार दिया था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'makaraksha', name: 'मकराक्ष', subtitle: 'खर का पुत्र', parent: 'khara', yug: 'treta', parichay: 'अपने पिता खर की मृत्यु का बदला लेने आया था, जिसे श्रीराम ने युद्ध में मारा।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'kumbhinasi', name: 'कुम्भीनसी', subtitle: 'रावण की बहन', parent: 'vishrava', mother: 'pushpotkata', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'madhu_asura', name: 'मधु (असुर)', subtitle: 'कुम्भीनसी का पति', parent: '', spouseOf: 'kumbhinasi', yug: 'treta', parichay: 'मधुवन का राजा, जिसे शिव से त्रिशूल प्राप्त था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'lavanasura', name: 'लवणासुर', subtitle: 'मधु-कुम्भीनसी का पुत्र', parent: 'madhu_asura', mother: 'kumbhinasi', yug: 'treta', parichay: 'मथुरा (मधुवन) का अत्याचारी राक्षस, जिसे श्रीराम के आदेश पर शत्रुघ्न ने मारा था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
     { id: 'trijata', name: 'त्रिजटा', subtitle: 'विभीषण की पुत्री', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'अशोक वाटिका में माता सीता की स्नेही रक्षक।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
     { id: 'khyati', name: 'ख्याति', subtitle: 'दक्ष पुत्री', parent: 'daksha', spouseOf: 'bhrigu', yug: 'satya', clusterName: 'भृगु की 2 पत्नियाँ' },

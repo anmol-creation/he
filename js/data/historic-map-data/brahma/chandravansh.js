@@ -35,7 +35,7 @@ export const chandravanshData = [
     { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी / स्वर्भानु पुत्री', parent: 'svarbhanu_danava', spouseOf: 'ayu_chandra', yug: 'satya' },
 
     // --- आयु के पुत्र (नहुष, क्षत्रवृद्ध, रम्भ, रजि, अनेना) ---
-    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' },
+    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र / अशोक सुंदरी पति', parent: 'ayu_chandra', mother: 'prabha_chandra', spouseOf: 'ashokasundari', yug: 'satya' },
     { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' },
     { id: 'sunahotra_kashi_chandra', name: 'सुनहोत्र', subtitle: 'क्षत्रवृद्ध पुत्र', parent: 'kshatravriddha_chandra', yug: 'satya' },
     { id: 'kashya', name: 'काश्य', subtitle: 'काशी के संस्थापक', parent: 'sunahotra_kashi_chandra', yug: 'satya' },
