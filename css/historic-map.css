@@ -571,3 +571,133 @@ body, html {
     background: var(--primary-saffron);
     color: var(--bg-start);
 }
+
+/* Info Box Additions */
+.panel-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.info-tag {
+    font-size: 0.75rem;
+    background: #333;
+    color: #ddd;
+    padding: 3px 8px;
+    border-radius: 12px;
+    border: 1px solid #555;
+    transition: all 0.2s;
+}
+
+.info-tag.clickable {
+    cursor: pointer;
+}
+
+.info-tag.clickable:hover {
+    background: #444;
+    border-color: var(--primary-saffron);
+    color: #fff;
+}
+
+/* Tooltip */
+.tag-tooltip {
+    position: fixed;
+    background: #111;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 220px;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.tag-tooltip.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.tag-tooltip h4 {
+    margin: 0 0 5px 0;
+    font-size: 0.85rem;
+    color: var(--primary-saffron);
+}
+
+.tag-tooltip p {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+/* Details Grid */
+.info-details-grid {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.detail-row {
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #999;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.detail-value {
+    color: #eee;
+}
+
+.family-link {
+    color: var(--primary-saffron);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.family-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.parichay-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.source-texts {
+    font-size: 0.8rem;
+    color: #aaa;
+    background: #2a2a2a;
+    padding: 8px;
+    border-radius: 6px;
+    border-left: 3px solid #555;
+}
+
+.read-full-btn {
+    display: inline-block;
+    background: #FF6B35;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255,107,53,0.3);
+    transition: all 0.3s;
+}
+
+.read-full-btn:hover {
+    background: #e55a2b;
+    box-shadow: 0 6px 14px rgba(255,107,53,0.5);
+}

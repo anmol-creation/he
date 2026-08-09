@@ -5,6 +5,28 @@ window.MapUI = {
             document.getElementById('focus-panel').classList.add('hidden');
         });
 
+        // Tooltip logic for tags
+        document.addEventListener('click', (e) => {
+            const tooltip = document.getElementById('tag-tooltip');
+            if (e.target.classList.contains('info-tag')) {
+                const tagText = e.target.textContent;
+                const desc = (window.sanatanGlossary && window.sanatanGlossary[tagText])
+                    ? window.sanatanGlossary[tagText]
+                    : "विस्तृत जानकारी उपलब्ध नहीं है।";
+
+                document.getElementById('tooltip-title').textContent = tagText;
+                document.getElementById('tooltip-desc').textContent = desc;
+
+                const rect = e.target.getBoundingClientRect();
+                tooltip.style.top = `${rect.bottom + 10}px`;
+                tooltip.style.left = `${rect.left}px`;
+                tooltip.classList.remove('hidden');
+                e.stopPropagation(); // prevent immediate closing
+            } else if (tooltip && !tooltip.classList.contains('hidden') && !e.target.closest('.tag-tooltip')) {
+                tooltip.classList.add('hidden');
+            }
+        });
+
         // Panel Tabs
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -12,9 +34,14 @@ window.MapUI = {
                 e.target.classList.add('active');
                 const tab = e.target.dataset.tab;
                 const contentArea = document.getElementById('panel-content-area');
-                if(tab === 'parichay') contentArea.innerHTML = '<p>विस्तृत परिचय यहाँ आएगा।</p>';
-                if(tab === 'jeevan') contentArea.innerHTML = '<p>जीवन की मुख्य घटनाएँ और टाइमलाइन।</p>';
-                if(tab === 'kathayein') contentArea.innerHTML = '<p>प्रचलित कथाएँ और प्रसंग।</p>';
+
+                if (window.MapUI && window.MapUI.currentPanelData) {
+                    window.MapUI.renderTabContent(tab, window.MapUI.currentPanelData, contentArea);
+                } else {
+                    if(tab === 'parichay') contentArea.innerHTML = '<p>विस्तृत परिचय यहाँ आएगा।</p>';
+                    if(tab === 'jeevan') contentArea.innerHTML = '<p>जीवन की मुख्य घटनाएँ और टाइमलाइन।</p>';
+                    if(tab === 'kathayein') contentArea.innerHTML = '<p>प्रचलित कथाएँ और प्रसंग।</p>';
+                }
             });
         });
 
@@ -272,6 +299,7 @@ window.MapUI = {
     },
 
     openPanel(data) {
+        this.currentPanelData = data;
         const panel = document.getElementById('focus-panel');
         document.getElementById('panel-name').textContent = data.name;
         document.getElementById('panel-subtitle').textContent = data.subtitle || '';
@@ -281,31 +309,129 @@ window.MapUI = {
         const nodeColor = data.inheritedColor || '#FF6B35';
         dotsContainer.innerHTML += `<div class="dot" style="background-color: ${nodeColor}"></div>`;
 
-        let parichayHtml = data.parichay ? `<p>${data.parichay}</p>` : '<p>विस्तृत परिचय उपलब्ध नहीं है।</p>';
+        // Render Tags
+        const tagsContainer = document.getElementById('panel-tags');
+        tagsContainer.innerHTML = '';
 
-        let vanshText = 'अन्य';
-        if(nodeColor === '#FF9900') vanshText = 'सूर्यवंश (Suryavansh)';
-        else if(nodeColor === '#4169E1') vanshText = 'चंद्रवंश (Chandravansh)';
-
-        let yugText = 'अज्ञात';
+        let yugText = 'अज्ञात काल';
         if(data.yug === 'satya') yugText = 'सत्य युग';
         else if(data.yug === 'treta') yugText = 'त्रेता युग';
         else if(data.yug === 'dwapar') yugText = 'द्वापर युग';
+        else if(data.yug === 'sanatan') yugText = 'सनातन';
 
-        document.getElementById('panel-content-area').innerHTML = `
-            <div style="margin-bottom: 15px;">
-                <span style="font-size:0.8rem; background:#333; padding:2px 8px; border-radius:10px; margin-right:5px;">${vanshText}</span>
-                <span style="font-size:0.8rem; background:#333; padding:2px 8px; border-radius:10px;">${yugText}</span>
-            </div>
-            ${parichayHtml}
+        let vanshText = 'अन्य';
+        if(nodeColor === '#FF9900') vanshText = 'सूर्यवंश';
+        else if(nodeColor === '#4169E1') vanshText = 'चंद्रवंश';
+        else if(data.clusterName) vanshText = data.clusterName;
 
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="itihas-book.html?entity=${data.id}" style="display:inline-block; background:#FF6B35; color:#fff; text-decoration:none; padding:10px 20px; border-radius:25px; font-weight:600; box-shadow:0 4px 10px rgba(255,107,53,0.3); transition:all 0.3s;">
-                    📖 Read Full Info
-                </a>
-            </div>
-        `;
+        let tagsHTML = `<span class="info-tag clickable">${yugText}</span><span class="info-tag clickable">${vanshText}</span>`;
+        if (data.tags && Array.isArray(data.tags)) {
+            // Avoid duplicate tags
+            data.tags.forEach(t => {
+                if(t !== yugText && t !== vanshText) {
+                    tagsHTML += `<span class="info-tag clickable">${t}</span>`;
+                }
+            });
+        }
+        tagsContainer.innerHTML = tagsHTML;
+
+        // Reset Tabs to Parichay
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.tab-btn[data-tab="parichay"]').classList.add('active');
+
+        const contentArea = document.getElementById('panel-content-area');
+        this.renderTabContent('parichay', data, contentArea);
 
         panel.classList.remove('hidden');
+    },
+
+    renderTabContent(tab, data, contentArea) {
+        if (tab === 'parichay') {
+            let detailsHtml = '<div class="info-details-grid">';
+
+            // Aliases
+            if (data.aliases && data.aliases.length > 0) {
+                detailsHtml += `<div class="detail-row"><span class="detail-label">अन्य नाम:</span> <span class="detail-value">${data.aliases.join(', ')}</span></div>`;
+            }
+
+            // Family Links (Clickable if they exist in DB)
+            const getLink = (idStr) => {
+                const node = window.HistoricDB ? window.HistoricDB.getNode(idStr) : null;
+                if(node) return `<a href="#" class="family-link" data-id="${idStr}">${node.name}</a>`;
+                return `<span class="detail-value">${idStr}</span>`;
+            };
+
+            if (data.parent) {
+                detailsHtml += `<div class="detail-row"><span class="detail-label">पिता:</span> ${getLink(data.parent)}</div>`;
+            }
+            if (data.mother) {
+                // If mother is a string like "मानस पुत्र", it won't resolve to a node, which is fine
+                detailsHtml += `<div class="detail-row"><span class="detail-label">माता:</span> ${getLink(data.mother)}</div>`;
+            }
+            if (data.spouse) {
+                const spouses = Array.isArray(data.spouse) ? data.spouse : [data.spouse];
+                const spouseLinks = spouses.map(s => getLink(s)).join(', ');
+                detailsHtml += `<div class="detail-row"><span class="detail-label">जीवनसाथी:</span> ${spouseLinks}</div>`;
+            }
+
+            // Attributes
+            if (data.weapons && data.weapons.length > 0) {
+                detailsHtml += `<div class="detail-row"><span class="detail-label">अस्त्र/शस्त्र:</span> <span class="detail-value">${data.weapons.join(', ')}</span></div>`;
+            }
+            if (data.mount) {
+                detailsHtml += `<div class="detail-row"><span class="detail-label">वाहन:</span> <span class="detail-value">${data.mount}</span></div>`;
+            }
+            if (data.abode) {
+                detailsHtml += `<div class="detail-row"><span class="detail-label">निवास:</span> <span class="detail-value">${data.abode}</span></div>`;
+            }
+
+            detailsHtml += '</div>'; // End grid
+
+            let parichayHtml = data.parichay ? `<p class="parichay-text">${data.parichay}</p>` : '<p class="parichay-text">विस्तृत परिचय उपलब्ध नहीं है।</p>';
+
+            let sourceHtml = '';
+            if (data.source_texts && data.source_texts.length > 0) {
+                sourceHtml = `<div class="source-texts"><span class="detail-label">ग्रंथ संदर्भ:</span> ${data.source_texts.join(', ')}</div>`;
+            }
+
+            contentArea.innerHTML = `
+                ${detailsHtml}
+                ${parichayHtml}
+                ${sourceHtml}
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="itihas-book.html?entity=${data.id}" class="read-full-btn">
+                        📖 Read Full Info
+                    </a>
+                </div>
+            `;
+
+            // Add click listeners to family links
+            contentArea.querySelectorAll('.family-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.target.dataset.id;
+                    if(window.MapControls && targetId) {
+                        window.MapControls.focusOnNode(targetId);
+                        const node = window.HistoricDB.getNode(targetId);
+                        if(node) this.openPanel(node);
+                    }
+                });
+            });
+
+        } else if (tab === 'jeevan') {
+            let eventsHtml = '';
+            if (data.events && data.events.length > 0) {
+                eventsHtml = '<ul class="timeline-list">';
+                data.events.forEach(ev => {
+                    eventsHtml += `<li>${ev}</li>`;
+                });
+                eventsHtml += '</ul>';
+            } else {
+                eventsHtml = '<p>जीवन की घटनाएँ उपलब्ध नहीं हैं।</p>';
+            }
+            contentArea.innerHTML = eventsHtml;
+        } else if (tab === 'kathayein') {
+            contentArea.innerHTML = '<p>प्रचलित कथाएँ जल्द ही जोड़ी जाएँगी।</p>';
+        }
     }
 };
