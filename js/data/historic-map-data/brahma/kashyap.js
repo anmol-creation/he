@@ -63,10 +63,10 @@ export const kashyapData = [
     { id: 'vishti_bhadra', name: 'भद्रा (विष्टि)', subtitle: 'सूर्य पुत्री', parent: 'surya', mother: 'chhaya_wife', yug: 'satya', parichay: 'काल और समय से जुड़ी देवी।' , clusterName: 'सूर्य की अन्य संतति' },
 
     { id: 'indra', name: 'इंद्र', subtitle: 'देवराज (अदिति पुत्र)', parent: 'kashyap', mother: 'aditi', yug: 'satya' },
-    { id: 'shachi_indrani', name: 'शची (इंद्राणी)', subtitle: 'इंद्र की पत्नी', parent: '', spouseOf: 'indra', yug: 'satya' },
-    { id: 'jayanta', name: 'जयंत', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya', parichay: 'देवराज इंद्र और शची के पुत्र (रामायण में काक रूप धारण किया था)।' },
-    { id: 'devasena_indra', name: 'देवसेना', subtitle: 'इंद्र पुत्री', parent: 'indra', mother: 'shachi_indrani', spouseOf: 'kartikeya', yug: 'satya', parichay: 'इंद्र की पुत्री, जिनका विवाह भगवान कार्तिकेय से हुआ।' },
-    { id: 'midhusha', name: 'मीढुष', subtitle: 'इंद्र पुत्र', parent: 'indra', mother: 'shachi_indrani', yug: 'satya' },
+    { id: 'shachi_indrani', name: 'शची (इंद्राणी)', subtitle: 'इंद्र की पत्नी / पुलोमा पुत्री', parent: 'puloman_danava', spouseOf: 'indra', yug: 'satya' },
+    { id: 'jayanta', name: 'जयंत', subtitle: 'इंद्र पुत्र', parent: 'indra', yug: 'satya', parichay: 'देवराज इंद्र और शची के पुत्र (रामायण में काक रूप धारण किया था)।' },
+    { id: 'devasena_indra', name: 'देवसेना', subtitle: 'इंद्र पुत्री', parent: 'indra', spouseOf: 'kartikeya', yug: 'satya', parichay: 'इंद्र की पुत्री, जिनका विवाह भगवान कार्तिकेय से हुआ।' },
+    { id: 'midhusha', name: 'मीढुष', subtitle: 'इंद्र पुत्र', parent: 'indra', yug: 'satya' },
 
     // --- 12 Adityas (Sons of Aditi) ---
     // 1. Surya (Vivasvan) - Already defined above
@@ -141,6 +141,12 @@ export const kashyapData = [
 
     { id: 'viprachitti', name: 'विप्रचित्ति', subtitle: 'दानव / सिंहिका पति', parent: 'kashyap', mother: 'danu', spouseOf: 'sinhika_daitya', yug: 'satya' , clusterName: 'कश्यप की अन्य संतति' },
     { id: 'hayagriva_danava_kashyap', name: 'हयग्रीव', subtitle: 'दानव (कश्यप-दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'puloman_danava', name: 'पुलोमा', subtitle: 'दानव (दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', parichay: 'एक शक्तिशाली दानव, जिसकी पुत्री शची का विवाह देवराज इंद्र से हुआ था।', clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'maya_danava', name: 'मय दानव (मयासुर)', subtitle: 'दानव वास्तुकार (दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', parichay: 'महान असुर वास्तुकार, मंदोदरी के पिता, और मायावी शक्तियों के स्वामी। इन्होने ही इंद्रप्रस्थ में मयसभा का निर्माण किया था।', clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'vrishaparva_danava', name: 'वृषपर्वा', subtitle: 'दानवराज (दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', parichay: 'एक दानवराज, जिनकी पुत्री शर्मिष्ठा का विवाह चंद्रवंशी राजा ययाति से हुआ था।', clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'svarbhanu_danava', name: 'स्वर्भानु', subtitle: 'दानव (दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', parichay: 'दानव, जिसकी पुत्री प्रभा का विवाह चंद्रवंशी आयु से हुआ था। (नोट: राहु को भी स्वर्भानु कहा जाता है, जो सिंहिका का पुत्र था)।', clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'rambha_danava', name: 'रंभ', subtitle: 'दानव (दनु पुत्र)', parent: 'kashyap', mother: 'danu', yug: 'satya', clusterName: 'कश्यप की अन्य संतति' },
+    { id: 'mahishasura', name: 'महिषासुर', subtitle: 'रंभ का पुत्र', parent: 'rambha_danava', yug: 'satya', parichay: 'एक अत्यंत शक्तिशाली भैंसे के स्वरूप वाला दानव, जिसका वध माता दुर्गा (महिषासुरमर्दिनी) ने किया था।', clusterName: 'कश्यप की अन्य संतति' },
     { id: 'rahu', name: 'राहु (स्वर्भानु)', subtitle: 'सिंहिका पुत्र / ग्रह', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'समुद्र मंथन के समय अमृत पीने वाले दानव स्वर्भानु का सिर, जो राहु बना।' },
     { id: 'ketu', name: 'केतु', subtitle: 'सिंहिका पुत्र / ग्रह', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'स्वर्भानु दानव का धड़, जिसे मोहिनी अवतार ने सुदर्शन चक्र से काटा था।' },
     { id: 'ilvala', name: 'इल्वल', subtitle: 'सिंहिका पुत्र (दानव)', parent: 'viprachitti', mother: 'sinhika_daitya', yug: 'satya', parichay: 'वातापी का भाई, जिसका वध महर्षि अगस्त्य ने किया था।' },

@@ -32,7 +32,7 @@ export const chandravanshData = [
     { id: 'jaya_chandra', name: 'जय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
 
     // --- आयु की पत्नी ---
-    { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी', parent: '', spouseOf: 'ayu_chandra', yug: 'satya' },
+    { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी / स्वर्भानु पुत्री', parent: 'svarbhanu_danava', spouseOf: 'ayu_chandra', yug: 'satya' },
 
     // --- आयु के पुत्र (नहुष, क्षत्रवृद्ध, रम्भ, रजि, अनेना) ---
     { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' },
@@ -82,7 +82,7 @@ export const chandravanshData = [
 
     // --- ययाति की पत्नियां ---
     { id: 'devayani_yayati_chandra', name: 'देवयानी', subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)', parent: 'shukracharya', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
-    { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: '', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
+    { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: 'vrishaparva_danava', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
 
     // --- ययाति के पुत्र ---
         { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश' },
