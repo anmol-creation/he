@@ -171,13 +171,13 @@ export const brahmaBaseData = [
     { id: 'sukirti', name: 'सुकीर्ति', subtitle: 'कक्षीवान पुत्र', parent: 'kakshivan', mother: 'kakshivan_patni', yug: 'treta', clusterName: 'अंगिरस वंश' },
     { id: 'sabara', name: 'शबर', subtitle: 'कक्षीवान पुत्र', parent: 'kakshivan', mother: 'kakshivan_patni', yug: 'treta', clusterName: 'अंगिरस वंश' },
     { id: 'garga', name: 'गर्ग', subtitle: 'भारद्वाज पुत्र', parent: 'bharadwaja', yug: 'dwapar', parichay: 'यादवों के कुलगुरु।', clusterName: 'अंगिरस वंश' },
-    { id: 'ilavida', name: 'इड़विड़ा', subtitle: 'भारद्वाज पुत्री', parent: 'bharadwaja', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और कुबेर की माता।', clusterName: 'विश्रवा की पत्नियां' },
+    { id: 'ilavida', name: 'इड़विड़ा', subtitle: 'भारद्वाज पुत्री', parent: 'bharadwaja', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और कुबेर की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'drona', name: 'द्रोणाचार्य', subtitle: 'कौरवों के गुरु', parent: 'bharadwaja', yug: 'dwapar', clusterName: 'अंगिरस वंश' },
     { id: 'kripi', name: 'कृपी', subtitle: 'द्रोणाचार्य की पत्नी', parent: 'sharadvan', spouseOf: 'drona', yug: 'dwapar', parichay: 'शतानन्द के पुत्र शरद्वान की पुत्री और कृपाचार्य की जुड़वाँ बहन।', clusterName: 'अंगिरस वंश' },
     { id: 'ashwatthama', name: 'अश्वत्थामा', subtitle: 'द्रोण पुत्र / चिरंजीवी', parent: 'drona', mother: 'kripi', yug: 'dwapar', clusterName: 'अंगिरस वंश' },
 
     // --- PULASTYA LINEAGE ---
-         { id: 'pulastya_vansh_proxy', name: 'पुलस्त्य वंश', subtitle: 'कुबेर, रावण आदि', parent: 'pulastya', spouseOf: '', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)', isProxy: true },
+    { id: 'pulastya_vansh_proxy', name: 'पुलस्त्य वंश', subtitle: 'कुबेर, रावण आदि', parent: '', spouseOf: 'pulastya', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)', isProxy: true },
     { id: 'havirbhu', name: 'हविर्भू', subtitle: 'कर्दम ऋषि पुत्री', parent: '', spouseOf: 'pulastya', yug: 'satya', parichay: 'पुलस्त्य ऋषि की पत्नी और विश्रवा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
 
 
@@ -207,17 +207,12 @@ export const brahmaBaseData = [
     { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: 'sumali_rakshasa', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'pushpotkata', name: 'पुष्पोत्कटा', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और खर की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'malini', name: 'मालिनी', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और दूषण की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
-    { id: 'vishrava', name: 'विश्रवा', subtitle: 'पुलस्त्य पुत्र', parent: 'pulastya', mother:['havirbhu'], yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-     { id: 'vishrava_wifes', name: 'विश्रवा की पत्नियां', subtitle: 'कुबेर, रावण आदि', parent: 'pulastya', spouseOf: '', yug: 'treta', clusterName: 'विश्रवा की पत्नियां', isProxy: true },
-    { id: 'kaikesi', name: 'कैकेसी', subtitle: 'सुमाली की पुत्री', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'राक्षस राज सुमाली की पुत्री और रावण, कुम्भकर्ण, विभीषण व शूर्पणखा की माता।', clusterName: 'विश्रवा की पत्नियां' },
-    { id: 'pushpotkata', name: 'पुष्पोत्कटा', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और खर की माता।', clusterName: 'विश्रवा की पत्नियां' },
-    { id: 'malini', name: 'मालिनी', subtitle: 'विश्रवा की पत्नी', parent: '', spouseOf: 'vishrava', yug: 'treta', parichay: 'विश्रवा की पत्नी और दूषण की माता।', clusterName: 'विश्रवा की पत्नियां' },
 
     // Kuber's family
     { id: 'kuber', name: 'कुबेर', subtitle: 'यक्षराज', parent: 'vishrava', mother: 'ilavida', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'bhadra', name: 'भद्रा', subtitle: 'कुबेर की पत्नी', parent: '', spouseOf: 'kuber', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-    { id: 'nalakubara', name: 'नलकूबर', subtitle: 'कुबेर पुत्र', parent: 'kuber', mother: ['bhadra'], yug: 'treta', parichay: 'नारद शाप से यमलार्जुन वृक्ष बना था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-    { id: 'manigriva', name: 'मणिग्रीव', subtitle: 'कुबेर पुत्र', parent: 'kuber', mother: ['bhadra'], yug: 'treta', parichay: 'नारद शाप से यमलार्जुन वृक्ष बना था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
+    { id: 'nalakubara', name: 'नलकूबर', subtitle: 'कुबेर पुत्र', parent: 'kuber', mother: 'bhadra', yug: 'treta', parichay: 'नारद शाप से यमलार्जुन वृक्ष बना था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
+    { id: 'manigriva', name: 'मणिग्रीव', subtitle: 'कुबेर पुत्र', parent: 'kuber', mother: 'bhadra', yug: 'treta', parichay: 'नारद शाप से यमलार्जुन वृक्ष बना था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
 
     // Siblings of Ravan
     { id: 'shurpanakha', name: 'शूर्पणखा', subtitle: 'रावण की बहन', parent: 'vishrava', mother: 'kaikesi', yug: 'treta', parichay: 'रावण की दुष्ट बहन जिसने राम-लक्ष्मण को उकसाया।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
@@ -232,10 +227,8 @@ export const brahmaBaseData = [
       ],
       clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
     },
-    
-     { id: 'ravana_wifes', name: 'रावण की पत्निया', subtitle: 'कुबेर, रावण आदि', parent: '', spouseOf: '', yug: 'treta', clusterName: 'रावण की पत्नियां', isProxy: true },
-    { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: 'maya_danava', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।', clusterName: 'रावण की पत्निया' },
-    { id: 'dhanyamalini', name: 'धन्यमालिनी', subtitle: 'रावण की पत्नी', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।', clusterName: 'रावण की पत्निया' },
+    { id: 'mandodari', name: 'मंदोदरी', subtitle: 'मयासुर पुत्री / पञ्चकन्या', parent: 'maya_danava', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की प्रधान रानी और मेघनाद की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'dhanyamalini', name: 'धन्यमालिनी', subtitle: 'रावण की पत्नी', parent: '', spouseOf: 'ravana', yug: 'treta', parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'meghnad', name: 'इंद्रजीत (मेघनाद)', subtitle: 'रावण पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'akshayakumara', name: 'अक्षयकुमार', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'mandodari', yug: 'treta', parichay: 'अशोक वाटिका में हनुमान जी द्वारा वध किया गया।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
     { id: 'atikaya', name: 'अतिकाय', subtitle: 'रावण का पुत्र', parent: 'ravana', mother: 'dhanyamalini', yug: 'treta', parichay: 'रावण का बलवान पुत्र जिसे लक्ष्मण ने मारा।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
@@ -255,8 +248,25 @@ export const brahmaBaseData = [
       ]
     },
     { id: 'sarama', name: 'सरमा', subtitle: 'विभीषण की पत्नी', parent: '', spouseOf: 'vibhishana', yug: 'treta', parichay: 'विभीषण की धार्मिक पत्नी।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-    { id: 'trijata', name: 'त्रिजटा', subtitle: 'विभीषण की पुत्री', parent: 'vibhishana', mother: ['sarama'], yug: 'treta', parichay: 'अशोक वाटिका में माता सीता की स्नेही रक्षक।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
-    { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', parent: 'vibhishana', mother: ['sarama'], yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
+
+    // Ravana's missing relatives
+    { id: 'sulochana', name: 'सुलोचना (प्रमीला)', subtitle: 'मेघनाद पत्नी', parent: 'shesha', spouseOf: 'meghnad', yug: 'treta', parichay: 'नागराज शेषनाग की पुत्री, जो मेघनाद (इंद्रजीत) के वध के बाद सती हो गई थीं।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'vajrajwala', name: 'वज्रज्वाला', subtitle: 'कुम्भकर्ण की पत्नी', parent: 'vairochana', spouseOf: 'kumbhakarna', yug: 'treta', parichay: 'दैत्यराज बलि की बहन (विरोचन की पुत्री), जो कुम्भकर्ण की पत्नी थीं।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'karkati', name: 'कर्कटी', subtitle: 'कुम्भकर्ण की पत्नी', parent: '', spouseOf: 'kumbhakarna', yug: 'treta', parichay: 'सह्याद्रि पर्वत की राक्षसी।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'bhimasura', name: 'भीमासुर', subtitle: 'कुम्भकर्ण का पुत्र', parent: 'kumbhakarna', mother: 'karkati', yug: 'treta', parichay: 'कर्कटी से जन्मा पुत्र। इसी के वध के बाद भगवान शिव का "भीमाशंकर ज्योतिर्लिंग" स्थापित हुआ।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'vidyujjihva', name: 'विद्युज्जिह्व', subtitle: 'शूर्पणखा का पति', parent: '', spouseOf: 'shurpanakha', yug: 'treta', parichay: 'कालकेय दानव, जिसे रावण ने गलती से युद्ध में मार दिया था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'shamba', name: 'शंब', subtitle: 'शूर्पणखा का पुत्र', parent: 'vidyujjihva', mother: 'shurpanakha', yug: 'treta', parichay: 'दंडकारण्य में तपस्या करते समय इसे अनजाने में लक्ष्मण जी ने मार दिया था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'makaraksha', name: 'मकराक्ष', subtitle: 'खर का पुत्र', parent: 'khara', yug: 'treta', parichay: 'अपने पिता खर की मृत्यु का बदला लेने आया था, जिसे श्रीराम ने युद्ध में मारा।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'kumbhinasi', name: 'कुम्भीनसी', subtitle: 'रावण की बहन', parent: 'vishrava', mother: 'pushpotkata', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'madhu_asura', name: 'मधु (असुर)', subtitle: 'कुम्भीनसी का पति', parent: '', spouseOf: 'kumbhinasi', yug: 'treta', parichay: 'मधुवन का राजा, जिसे शिव से त्रिशूल प्राप्त था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'lavanasura', name: 'लवणासुर', subtitle: 'मधु-कुम्भीनसी का पुत्र', parent: 'madhu_asura', mother: 'kumbhinasi', yug: 'treta', parichay: 'मथुरा (मधुवन) का अत्याचारी राक्षस, जिसे श्रीराम के आदेश पर शत्रुघ्न ने मारा था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+
+    { id: 'trijata', name: 'त्रिजटा', subtitle: 'विभीषण की पुत्री', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'अशोक वाटिका में माता सीता की स्नेही रक्षक।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
+    { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
     { id: 'khyati', name: 'ख्याति', subtitle: 'दक्ष पुत्री', parent: 'daksha', spouseOf: 'bhrigu', yug: 'satya', clusterName: 'भृगु की 2 पत्नियाँ' },
     { id: 'paulomi', name: 'पुलोमा', subtitle: 'भृगु पत्नी', parent: '', spouseOf: 'bhrigu', yug: 'satya', parichay: 'महर्षि भृगु की पत्नी और च्यवन ऋषि की माता।', clusterName: 'भृगु की 2 पत्नियाँ' },
         { id: 'bhrigu_dynasty_proxy', name: 'भार्गव (भृगु) वंश', subtitle: 'भृगु के वंशज', parent: 'bhrigu', yug: 'satya', clusterName: 'भार्गव (भृगु) वंश', isProxy: true },
