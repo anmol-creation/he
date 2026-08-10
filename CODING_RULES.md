@@ -10,8 +10,11 @@ These rules MUST be followed by all contributors and AI agents when working on t
 
 ## 2. Data Structure & Node IDs
 - **Global Uniqueness:** All entity `id` fields MUST be globally unique across the entire dataset. Append lineage-specific suffixes (e.g., `_surya`, `_chandra`, `_jadhav`) to prevent the layout engine from merging distinct family trees.
-- **Parental Routing:** Biological parents are strictly used for the tree hierarchy (`parent`, `mother`). Adoptive/foster parents go into the `parichay` text field.
-- **Direct Father Link:** To force a child's line to originate directly from the father (bypassing the mother node), explicitly omit or remove the `mother` attribute from the child's definition.
+- **Parental Routing & Completeness:** Biological parents (`parent` and `mother`) MUST always be preserved in the data structure for accurate Info Box display. Adoptive/foster parents go into the `parichay` text field.
+- **Dynamic Visual Edge Routing:** DO NOT remove the `mother` attribute to force the visual tree lineage line to originate from the father. Data must remain complete. The visual routing is dynamically handled by the Layout Engine:
+  - If a father has only 1 wife: Children's lines route directly from the Father.
+  - If a father has >1 wives (Cluster Closed): Children's lines route directly from the Father.
+  - If a father has >1 wives (Cluster Open): Children's lines route from their respective Mother nodes.
 
 ## 3. Clustering Logic
 - **Proxy Nodes:** To create a collapsed clan/dynasty cluster, use an ID suffix like `_proxy`, set `isProxy: true`, and provide a `clusterName`.
