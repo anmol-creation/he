@@ -28,3 +28,39 @@ In Sanatan texts, "Mleccha" is not a single family tree but a socio-cultural ter
 * **Assam (Kamarupa):** The ancient Varman kings (like Bhaskaravarman) traced their strict lineage to Naraka and Bhagadatta (son of Lord Vishnu's Varaha avatar and Bhumi).
 * **Tripura:** The royal chronicle 'Rajmala' traces the Tripuri kings to Druhyu (son of Yayati).
 * **Manipur:** Kings trace their lineage to Babruvahana, the son of Arjuna and the Naga princess Ulupi.
+
+---
+
+## Research: 16 Mahajanapadas & Early Magadha (6th Century BCE)
+**Date:** August 2026
+**Context:** Researching contemporary kingdoms during the era of Buddha and Mahavira, and tracing the shift of power in Magadha.
+
+### 16 Mahajanapadas
+Based on Buddhist texts (Anguttara Nikaya), Jain texts (Bhagavati Sutra), and Puranic/Epic cross-references, North India was divided into 16 major realms:
+1. **Magadha:** Capital Rajgir (Girivraja). Center of power.
+2. **Kosala:** Capital Shravasti/Ayodhya (Suryavansh/Ikshvaku lineage).
+3. **Kuru:** Capital Indraprastha/Hastinapur (Chandravansh).
+4. **Vajji (Vrijji):** Capital Vaishali. A confederacy of 8 clans, prominently the **Lichchhavis** and Jnatrikas.
+5. **Malla:** Capital Kushinagar/Pava (Gana-Sangha republic).
+6. **Avanti:** Capital Ujjayini (Ruled by the Pradyota Dynasty).
+7. **Vatsa:** Capital Kaushambi (Paurava/Chandravansh lineage).
+8. **Panchala, Kashi, Chedi, Matsya, Surasena, Ashmaka, Anga, Gandhara, Kamboja.**
+
+### Magadha Succession (The Break from Chandravansh)
+- **Brihadratha Dynasty (Chandravansh):** Founded by Brihadratha (son of Uparichara Vasu of Kuru lineage). Jarasandha was its greatest king. The last ruler was **Ripunjaya**.
+- **Pradyota Dynasty:** Ripunjaya's minister **Pulika** assassinated him and placed his own son **Pradyota** on the throne, breaking the continuous Chandravanshi bloodline in Magadha/Avanti.
+- **Haryanka Dynasty:** Bimbisara and Ajatashatru. (Buddhist texts claim they rose as chieftains).
+- **Shishunaga Dynasty:** Overthrew the Haryankas. The last king was **Mahanandin** (Kshatriya).
+- **Nanda Dynasty:** Founded by **Mahapadma Nanda**, the son of Mahanandin and a Shudra woman. Puranas describe him as the first non-Kshatriya (Shudra) emperor of Magadha and *'Sarva-Kshatrantaka'* (destroyer of all Kshatriyas). Overthrown by Chandragupta Maurya.
+
+### Gupta Empire Origins
+- **Varna Debate:** Widely considered **Vaishya** by historians due to the "Gupta" suffix (prescribed for Vaishyas in Dharmashastras). Some theories suggest a Brahmin origin (Dharana Gotra based on Prabhavatigupta's inscriptions), but Vaishya origin with strategic Kshatriya marriages (e.g., Chandragupta I marrying Lichchhavi princess Kumaradevi) is the most accepted.
+- **Lineage Approach:** Since they do not have a direct paternal link to Surya or Chandra Vansh in the Puranas (likely rising from Kushan vassals), they should be represented as a new independent lineage root (e.g., "Gupta Empire (Vaishya)") starting with Sri Gupta.
+
+## Research: Chhatrapati Shivaji Maharaj & Maratha Lineage
+**Date:** August 2026
+**Context:** Tracing the origins of the Bhonsle clan and Maratha Empire.
+
+- **Paternal Lineage (Suryavansh/Sisodia):** According to the genealogy prepared by Gaga Bhatt during Shivaji's coronation (and supported by Royal Maratha Bakhars), the Bhonsle clan descends from the **Sisodia Rajputs of Mewar**.
+- **The Link:** Following the 1303 siege of Chittorgarh where Rana Lakha (Lakshman Singh) and his sons perished, survivor **Rana Ajay Singh** passed the Mewar throne to his nephew Hammir. Ajay Singh's son, **Sajjan Singh (Sujansi)**, migrated to the Deccan and served the Bahmani sultans. His descendants eventually took the name "Bhonsle" (from the Bhosavat jagir or ancestor Bhosaji/Bhairav Singh), leading down to Babaji Bhonsle -> Maloji -> Shahaji -> Chhatrapati Shivaji Maharaj.
+- **Maternal Lineage (Chandravansh/Yadav):** Shivaji's mother, **Rajmata Jijabai**, belonged to the Jadhav family of Sindkhed Raja, who traced their ancestry to the **Seuna (Devagiri Yadav)** dynasty of the Chandravansh lineage.
