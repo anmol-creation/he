@@ -122,7 +122,7 @@ window.MapRenderer = {
                  if (data.spouseOf && highlightSet.has(data.id) && highlightSet.has(data.spouseOf)) {
                      opacity = 1;
                  } else if (data.parent) {
-                     let sourceId = data.mother || data.parent;
+                     let sourceId = data.renderParent || data.parent;
                      if (highlightSet.has(data.id) && highlightSet.has(sourceId)) {
                          opacity = 1;
                      } else {
@@ -198,10 +198,7 @@ window.MapRenderer = {
                     }
                 }
             } else if (data.parent) {
-                let sourceNodeId = data.parent;
-                if (data.mother && dataList.find(d => d.id === data.mother)) {
-                    sourceNodeId = data.mother;
-                }
+                let sourceNodeId = data.renderParent || data.parent;
                 const sourceNode = dataList.find(d => d.id === sourceNodeId);
 
                 if (sourceNode) {

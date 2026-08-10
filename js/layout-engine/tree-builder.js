@@ -208,6 +208,7 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                         if (!isAltClustered && nodesMap.has(visualAltParent)) {
                             // Alt Parent is physically rendered on canvas -> Route from her
                             nodesMap.get(visualAltParent).children.push(node.id);
+                            node.renderParent = visualAltParent;
                             pushedToAlternativeParent = true;
                         }
                     }
@@ -216,11 +217,13 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                 if (!pushedToAlternativeParent) {
                     if (parentNode) {
                         parentNode.children.push(node.id);
+                        node.renderParent = node.parent;
                     }
                 }
              } else {
                  console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing parent '${node.parent}'. Catching in Unknown Origin.`);
                  node.parent = 'unknown_origin';
+                 node.renderParent = 'unknown_origin';
                  nodesMap.get('unknown_origin').children.push(node.id);
              }
         }
