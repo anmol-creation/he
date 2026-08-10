@@ -171,6 +171,7 @@
 
     <!-- Load India Border Data -->
     <script src="../js/data/geo/india_border.js"></script>
+    <script src="../js/data/geo/mahajanapadas.js"></script>
 
     <script>
         // --- Mock Data for Proof of Concept ---
@@ -180,11 +181,12 @@
             1: "Satya Yug",
             2: "Treta Yug (Ramayan)",
             3: "Dwapar Yug (Mahabharat)",
-            4: "Kali Yug (Ancient/Mauryan)"
+            4: "Kali Yug (16 Mahajanapadas - 600 BCE)",
+            5: "Kali Yug (Mauryan Empire)"
         };
 
         // Mock GeoJSON for Kingdoms (Dwapar Yug)
-        const kingdomsData = {
+        let kingdomsData = {
             "type": "FeatureCollection",
             "features": [
                 {
@@ -439,12 +441,27 @@
         const eraSlider = document.getElementById('era-slider');
         const eraDisplay = document.getElementById('current-era-display');
 
+        // Initial setup for slider max value
+        eraSlider.max = 5;
+
+        // Store original dwapar data
+        const dwaparKingdoms = kingdomsData;
+
         eraSlider.addEventListener('input', function(e) {
             const eraId = e.target.value;
             eraDisplay.textContent = eras[eraId];
 
-            // In the future: Fetch/Load different GeoJSON data based on eraId
-            // For now, it just updates the label.
+            // Fetch/Load different GeoJSON data based on eraId
+            if (eraId == 4) {
+                if (typeof mahajanapadasData !== 'undefined') {
+                    kingdomsData = mahajanapadasData;
+                }
+            } else {
+                kingdomsData = dwaparKingdoms;
+            }
+
+            // Re-render map
+            renderMapData();
         });
 
     </script>
