@@ -701,3 +701,33 @@ body, html {
     background: #e55a2b;
     box-shadow: 0 6px 14px rgba(255,107,53,0.5);
 }
+.qa-alert {
+    background-color: #ffcccc;
+    color: #cc0000;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #cc0000;
+}
+.qa-alert.qa-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+.qa-mark-btn {
+    background: #ffc107;
+    border: none;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.qa-mark-btn.marked {
+    background: #dc3545;
+    color: white;
+}
