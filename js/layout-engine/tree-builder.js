@@ -207,11 +207,13 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                 if (!pushedToMother) {
                     if (parentNode) {
                         parentNode.children.push(node.id);
+                        node.renderParent = node.parent;
                     }
                 }
              } else {
                  console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing parent '${node.parent}'. Catching in Unknown Origin.`);
                  node.parent = 'unknown_origin';
+                 node.renderParent = 'unknown_origin';
                  nodesMap.get('unknown_origin').children.push(node.id);
              }
         }
