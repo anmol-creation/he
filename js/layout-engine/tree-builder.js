@@ -174,15 +174,26 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                 const parentNode = nodesMap.get(node.parent);
                 let pushedToMother = false;
 
-                // User requirement: Only route lines from the mother if the father has MULTIPLE wives.
-                // If the father only has 1 wife (or 0 currently registered), the line must come from the father.
+                // User requirement:
+                // 1. If 1 wife -> Route from father.
+                // 2. If >1 wives AND mother's cluster is collapsed (squashed into a proxy) -> Route from father.
+                // 3. If >1 wives AND mother is visible -> Route from mother.
+
                 const hasMultipleWives = parentNode.spouses && parentNode.spouses.length > 1;
 
                 if (node.mother && nodesMap.has(node.mother) && hasMultipleWives) {
-                    const motherNode = nodesMap.get(node.mother);
+                    const motherNode = rawData.find(d => d.id === node.mother); // Find raw original to check cluster state
+
                     if (motherNode) {
-                        motherNode.children.push(node.id);
-                        pushedToMother = true;
+                        // Check if the mother is part of a collapsed cluster.
+                        // If she is in a closed cluster, she won't be in nodesMap, OR she is represented by a proxy.
+                        const isMotherClustered = motherNode.clusterName && !expandedClusters.has(motherNode.clusterName);
+
+                        if (!isMotherClustered && nodesMap.has(node.mother)) {
+                            // Mother is physically rendered on canvas
+                            nodesMap.get(node.mother).children.push(node.id);
+                            pushedToMother = true;
+                        }
                     }
                 }
 
