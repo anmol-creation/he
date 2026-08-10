@@ -435,3 +435,27 @@ window.MapUI = {
         }
     }
 };
+
+// QA Mark Toggle Function attached to window so inline onclick works
+window.toggleQAMark = function(id) {
+    let markedNodes = JSON.parse(localStorage.getItem('qaMarkedNodes') || '[]');
+    if (markedNodes.includes(id)) {
+        markedNodes = markedNodes.filter(n => n !== id);
+    } else {
+        markedNodes.push(id);
+    }
+    localStorage.setItem('qaMarkedNodes', JSON.stringify(markedNodes));
+
+    // Refresh the mark button visually
+    const btn = document.querySelector('.qa-mark-btn');
+    if (btn) {
+        if (markedNodes.includes(id)) {
+            btn.classList.add('marked');
+            btn.innerText = 'Unmark for Deletion';
+        } else {
+            btn.classList.remove('marked');
+            btn.innerText = 'Mark Extra Node for Deletion';
+        }
+    }
+    console.log("[QA Tool] Marked Nodes for deletion:", markedNodes);
+};

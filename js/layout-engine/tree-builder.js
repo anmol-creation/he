@@ -13,6 +13,11 @@ export function buildTree(rawData, nodesMap, transitionWires) {
 
     rawData.forEach(originalNode => {
         const node = { ...originalNode };
+
+        // Define Visual Attributes (Backward Compatible)
+        const visualParent = node.parent_id_a || node.parent;
+        const visualSpouse = node.gender === 'male' ? null : node.spouseOf;
+
         // Evaluate Kalpa Filter
         const timeScale = node.timeScale || '';
         const nodeKalpa = node.kalpa || 'shveta_varaha'; // Default normal nodes to current kalpa
@@ -39,8 +44,9 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                        id: `cluster_${node.clusterName.replace(/\s+/g, '_')}`,
                        name: `${node.clusterName} ⊞`,
                        subtitle: 'Click to expand',
-                       parent: node.parent, // Assume all items in cluster share the same parent/spouse origin logically
-                       spouseOf: node.spouseOf,
+                       parent: visualParent, // Assume all items in cluster share the same parent/spouse origin logically
+                       spouseOf: node.spouseOf, // Keep original data
+                       visualSpouse: visualSpouse, // For layout engine
                        isCluster: true,
                        clusterName: node.clusterName,
                        nodes: []
@@ -51,7 +57,7 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                   // But we don't want to auto-duplicate the proxy node visually because it represents a group.
                   // So we will just strip its parent if it has a spouse, to force it into the husband's line as a block.
                   const proxyNode = clusterMap.get(node.clusterName);
-                  if (proxyNode.spouseOf && proxyNode.parent) {
+                  if (proxyNode.visualSpouse && proxyNode.parent) {
                       proxyNode.parent = null; // Forces it to render on husband's line
                   }
 
@@ -61,22 +67,27 @@ export function buildTree(rawData, nodesMap, transitionWires) {
              return; // Skip adding the actual node to processedData
         }
 
-        if (node.parent && node.spouseOf) {
+        // AUTO-DUPLICATION LOGIC for FEMALES ONLY
+        if (visualParent && visualSpouse && node.gender !== 'male') {
             // When cluster is expanded, we still process the individual females so they might split into daughter/wife.
-            const parentFound = nodeExists(node.parent);
-            const spouseFound = nodeExists(node.spouseOf);
+            const parentFound = nodeExists(visualParent);
+            const spouseFound = nodeExists(visualSpouse);
 
             if (parentFound && spouseFound) {
                 const daughterNode = {
                     ...node,
                     id: `${node.id}_daughter`,
-                    spouseOf: null,
+                    spouseOf: null, // Strip visual spouse so she stays a daughter
+                    parent_id_a: visualParent, // Ensure visual parent is set explicitly
+                    parent: visualParent,
                     subtitle: `${node.subtitle || ''} (Daughter)`.trim()
                 };
 
                 const wifeNode = {
                     ...node,
-                    parent: null,
+                    parent: null, // Strip visual parent so she stays a wife
+                    parent_id_a: null,
+                    spouseOf: visualSpouse,
                     subtitle: `${node.subtitle || ''} (Wife)`.trim()
                 };
 
@@ -87,24 +98,34 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                     to: wifeNode.id
                 });
             } else if (spouseFound) {
-                console.warn(`[TreeBuilder Warning]: Female node '${node.id}' has a parent '${node.parent}' that does not exist in data. Defaulting to Wife-only node.`);
+                console.warn(`[TreeBuilder Warning]: Female node '${node.id}' has a parent '${visualParent}' that does not exist in data. Defaulting to Wife-only node.`);
                 const wifeNode = {
                     ...node,
-                    parent: null
+                    parent: null,
+                    parent_id_a: null,
+                    spouseOf: visualSpouse
                 };
                 processedData.push(wifeNode);
             } else if (parentFound) {
-                 console.warn(`[TreeBuilder Warning]: Female node '${node.id}' has a spouse '${node.spouseOf}' that does not exist in data. Defaulting to Daughter-only node.`);
+                 console.warn(`[TreeBuilder Warning]: Female node '${node.id}' has a spouse '${visualSpouse}' that does not exist in data. Defaulting to Daughter-only node.`);
                  const daughterNode = {
                      ...node,
-                     spouseOf: null
+                     spouseOf: null,
+                     parent: visualParent,
+                     parent_id_a: visualParent
                  };
                  processedData.push(daughterNode);
             } else {
                 console.warn(`[TreeBuilder Warning]: Node '${node.id}' has an invalid parent and spouse. Adding to raw list to be caught by orphan logic.`);
+                node.parent = visualParent;
+                node.spouseOf = visualSpouse;
                 processedData.push(node);
             }
         } else {
+            // NORMAL NODE (Male, or Unmarried Female, or Wife without Father)
+            node.parent = visualParent;
+            // node.spouseOf remains intact for data/Info Box, but we add visualSpouse for rendering checks if needed.
+            node.visualSpouse = visualSpouse;
             processedData.push(node);
         }
     });
@@ -119,15 +140,15 @@ export function buildTree(rawData, nodesMap, transitionWires) {
                 x: 0,
                 width: 200,
                 contours: { min: [], max: [] },
-                isSpouse: !!node.spouseOf
+                isSpouse: !!node.visualSpouse
             }
         });
     });
 
     // Pre-populate spouses so we know exactly how many wives a husband has before assigning children
     processedData.forEach(node => {
-        if (node.spouseOf && nodesMap.has(node.spouseOf)) {
-            const partner = nodesMap.get(node.spouseOf);
+        if (node.visualSpouse && nodesMap.has(node.visualSpouse)) {
+            const partner = nodesMap.get(node.visualSpouse);
             if (!partner.spouses.includes(node.id)) {
                 partner.spouses.push(node.id);
             }
@@ -160,44 +181,39 @@ export function buildTree(rawData, nodesMap, transitionWires) {
 
         let hasParentProcessed = false;
 
-        if (node.spouseOf) {
-             if (!nodesMap.has(node.spouseOf)) {
-                console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing spouse '${node.spouseOf}'.`);
+        if (node.visualSpouse) {
+             if (!nodesMap.has(node.visualSpouse)) {
+                console.warn(`[TreeBuilder Warning]: Node '${node.id}' refers to missing spouse '${node.visualSpouse}'.`);
              }
         }
 
-        // Use standard "if" instead of "else if" for clusters so they can link to both sides.
-        // For normal nodes, they should only link to ONE side to maintain tree topology (unless duplicated).
-        // Since we explicitly nulled the parent of a spousal proxy node above, it will safely skip this and only render as a spouse.
-        if (node.parent && (!node.spouseOf || node.isCluster)) {
+        // Routing Children Vertically
+        if (node.parent && (!node.visualSpouse || node.isCluster)) {
              if (nodesMap.has(node.parent)) {
                 const parentNode = nodesMap.get(node.parent);
-                let pushedToMother = false;
+                let pushedToAlternativeParent = false;
 
-                // User requirement:
-                // 1. If 1 wife -> Route from father.
-                // 2. If >1 wives AND mother's cluster is collapsed (squashed into a proxy) -> Route from father.
-                // 3. If >1 wives AND mother is visible -> Route from mother.
-
+                // DYNAMIC EDGE ROUTING RULE:
+                // Use parent_id_b (or fallback to 'mother') if >1 wives AND alternative parent is visible
+                const visualAltParent = node.parent_id_b || node.mother;
                 const hasMultipleWives = parentNode.spouses && parentNode.spouses.length > 1;
 
-                if (node.mother && nodesMap.has(node.mother) && hasMultipleWives) {
-                    const motherNode = rawData.find(d => d.id === node.mother); // Find raw original to check cluster state
+                if (visualAltParent && nodesMap.has(visualAltParent) && hasMultipleWives) {
+                    const altNodeRaw = rawData.find(d => d.id === visualAltParent);
 
-                    if (motherNode) {
-                        // Check if the mother is part of a collapsed cluster.
-                        // If she is in a closed cluster, she won't be in nodesMap, OR she is represented by a proxy.
-                        const isMotherClustered = motherNode.clusterName && !expandedClusters.has(motherNode.clusterName);
+                    if (altNodeRaw) {
+                        // Check if the alt parent (mother) is part of a collapsed cluster.
+                        const isAltClustered = altNodeRaw.clusterName && !expandedClusters.has(altNodeRaw.clusterName);
 
-                        if (!isMotherClustered && nodesMap.has(node.mother)) {
-                            // Mother is physically rendered on canvas
-                            nodesMap.get(node.mother).children.push(node.id);
-                            pushedToMother = true;
+                        if (!isAltClustered && nodesMap.has(visualAltParent)) {
+                            // Alt Parent is physically rendered on canvas -> Route from her
+                            nodesMap.get(visualAltParent).children.push(node.id);
+                            pushedToAlternativeParent = true;
                         }
                     }
                 }
 
-                if (!pushedToMother) {
+                if (!pushedToAlternativeParent) {
                     if (parentNode) {
                         parentNode.children.push(node.id);
                     }
