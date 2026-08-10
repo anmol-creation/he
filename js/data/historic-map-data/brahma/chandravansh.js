@@ -519,6 +519,7 @@ export const chandravanshData = [
     { id: 'bhanwar_pal_jadon', name: 'भंवर पाल', subtitle: 'करौली नरेश', parent: 'gopal_singh_jadon', yug: 'kali', clusterName: 'जादौन वंश' },
 
     // --- सेउण (देवगिरि यादव राजवंश) ---
+    { id: 'jijabai_jadhav', name: 'राजमाता जीजाबाई', subtitle: 'शिवाजी की माता', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'सिंदखेड राजा के लखूजी जाधव (देवगिरि यादव वंश) की पुत्री और मराठा साम्राज्य के संस्थापक छत्रपति शिवाजी महाराज की माता। इन्होने शिवाजी को रामायण-महाभारत की कहानियाँ सुनाकर एक महान और धर्मनिष्ठ शासक बनाया।' },
     { id: 'seuna_dynasty_proxy', name: 'सेउण (यादव) वंश', subtitle: 'देवगिरि राजवंश', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', clusterName: 'सेउण (देवगिरि यादव) वंश', isProxy: true },
     { id: 'dridhaprahara_seuna', name: 'दृढप्रहार', subtitle: 'देवगिरि यादव संस्थापक', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: '9वीं सदी में सेउण राजवंश की नींव रखी।', clusterName: 'सेउण (देवगिरि यादव) वंश' },
     { id: 'seunachandra_chandra', name: 'सेउणचन्द्र', subtitle: 'देवगिरि यादव नरेश', parent: 'dridhaprahara_seuna', yug: 'kali', clusterName: 'सेउण (देवगिरि यादव) वंश' },
