@@ -117,51 +117,6 @@ export const chandravanshData = [
         { id: 'puru_dynasty_proxy', name: 'पुरु वंश', subtitle: 'पुरु के वंशज', parent: 'yayati_chandra', yug: 'treta', clusterName: 'पुरु वंश', isProxy: true },
     { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'puru_dynasty_proxy', clusterName: 'पुरु वंश', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'पुरुवंश' },
 
-    // --- अनु वंश (Anu Lineage - Anga, Vanga, Kalinga, Pundra, Suhma) ---
-    { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'kalanara_anu', name: 'कालानर', subtitle: 'सभानर पुत्र', parent: 'sabhanara_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'srinjaya_anu', name: 'सृंजय', subtitle: 'कालानर पुत्र', parent: 'kalanara_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'puranjaya_anu', name: 'पुरंजय', subtitle: 'सृंजय पुत्र', parent: 'srinjaya_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'janamejaya_anu', name: 'जनमेजय', subtitle: 'पुरंजय पुत्र', parent: 'puranjaya_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'mahashala_anu', name: 'महाशाल', subtitle: 'जनमेजय पुत्र', parent: 'janamejaya_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'mahamana_anu', name: 'महामना', subtitle: 'महाशाल पुत्र', parent: 'mahashala_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'titikshu_anu', name: 'तितिक्षु', subtitle: 'पूर्वी राज्यों के संस्थापक', parent: 'mahamana_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश', parichay: 'महामना के पुत्र जिन्होंने पूर्वी भारत की ओर जाकर अपना अलग राज्य स्थापित किया।' },
-    { id: 'kushadratha_anu', name: 'कुशधृत', subtitle: 'तितिक्षु पुत्र', parent: 'titikshu_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'homa_anu', name: 'होम', subtitle: 'कुशधृत पुत्र', parent: 'kushadratha_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'sutapas_anu', name: 'सुतपस', subtitle: 'होम पुत्र', parent: 'homa_anu', gender: 'male', yug: 'treta', clusterName: 'अनु वंश' },
-    { id: 'bali_anu', name: 'बलि', subtitle: 'सुतपस पुत्र', parent: 'sutapas_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'पूर्वी क्षेत्र के महान राजा बलि। इन्होंने ऋषि दीर्घतमस को अपनी पत्नी सुदेष्णा से नियोग द्वारा पुत्र उत्पन्न करने के लिए आमंत्रित किया था।' },
-    { id: 'sudeshna_bali_anu', name: 'सुदेष्णा', subtitle: 'राजा बलि की पत्नी', parent: 'bali_anu', gender: 'female', spouseOf: 'bali_anu', yug: 'dwapar', clusterName: 'अनु वंश' },
-
-    // बलि के ५ पुत्र (पूर्वी ५ राज्यों के संस्थापक) - ऋषि दीर्घतमस के नियोग से
-    { id: 'dirghatamas_rishi_bengal', name: 'ऋषि दीर्घतमस', subtitle: 'नियोग पिता', parent: 'bali_anu', gender: 'male', isProminent: true, yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'राजा बलि के आग्रह पर रानी सुदेष्णा से नियोग कर ५ पुत्रों को जन्म दिया।' },
-    { id: 'anga_anu', name: 'अंग', subtitle: 'अंग देश के संस्थापक', parent_id_a: 'bali_anu', parent_id_b: 'dirghatamas_rishi_bengal', mother: 'sudeshna_bali_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश' },
-    { id: 'vanga_anu', name: 'वंग', subtitle: 'वंग (बंगाल) के संस्थापक', parent_id_a: 'bali_anu', parent_id_b: 'dirghatamas_rishi_bengal', mother: 'sudeshna_bali_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'इन्हीं के नाम पर वंग राज्य (वर्तमान बंगाल) का नाम पड़ा।' },
-    { id: 'kalinga_anu', name: 'कलिंग', subtitle: 'कलिंग देश के संस्थापक', parent_id_a: 'bali_anu', parent_id_b: 'dirghatamas_rishi_bengal', mother: 'sudeshna_bali_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश' },
-    { id: 'pundra_anu', name: 'पुंड्र', subtitle: 'पुंड्र (North Bengal) के संस्थापक', parent_id_a: 'bali_anu', parent_id_b: 'dirghatamas_rishi_bengal', mother: 'sudeshna_bali_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश' },
-    { id: 'suhma_anu', name: 'सुह्म', subtitle: 'सुह्म देश के संस्थापक', parent_id_a: 'bali_anu', parent_id_b: 'dirghatamas_rishi_bengal', mother: 'sudeshna_bali_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश' },
-
-    // वंग (बंगाल) की आगे की वंशावली
-    { id: 'samudrasena_vanga', name: 'समुद्रसेन', subtitle: 'वंग के राजा (महाभारत काल)', parent: 'vanga_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'वंग देश के प्रतापी राजा जिन्हें महाभारत काल में भीम ने अपनी दिग्विजय यात्रा के दौरान पराजित किया था।' },
-    { id: 'chandrasena_vanga', name: 'चंद्रसेन', subtitle: 'वंग के राजा (महाभारत काल)', parent: 'samudrasena_vanga', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'समुद्रसेन के पुत्र या उत्तराधिकारी, जिन्हें भीम ने हराया था।' },
-    { id: 'suppadevi_vanga', name: 'सुप्पदेवी', subtitle: 'वंग की राजकुमारी', parent: 'chandrasena_vanga', gender: 'female', yug: 'kali', clusterName: 'अनु वंश', source_texts: ['महावंश'], parichay: 'बौद्ध ग्रंथ महावंश के अनुसार यह वंग के राजा और कलिंग की राजकुमारी की पुत्री थीं, जो बाद में एक सिंह के साथ भाग गई थीं।' },
-    { id: 'sinhabahu_vanga', name: 'सिंहबाहु', subtitle: 'सिंहपुर के संस्थापक', parent: 'suppadevi_vanga', gender: 'male', yug: 'kali', clusterName: 'अनु वंश', source_texts: ['महावंश'], parichay: 'सुप्पदेवी और एक सिंह का पुत्र। इसने कलिंग/राढ़ क्षेत्र में सिंहपुर नामक राज्य की स्थापना की।' },
-    { id: 'sinhasivali_vanga', name: 'सिंहसिवली', subtitle: 'सिंहबाहु की पत्नी / बहन', parent: 'suppadevi_vanga', gender: 'female', spouseOf: 'sinhabahu_vanga', yug: 'kali', clusterName: 'अनु वंश', source_texts: ['महावंश'] },
-
-    // श्रीलंका का सिंहली वंश (House of Vijaya) - वंग/अनु वंश की शाखा
-    { id: 'sinhalese_dynasty_proxy', name: 'सिंहली वंश (श्रीलंका)', subtitle: 'श्रीलंका के राजा', parent: 'sinhabahu_vanga', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', isProxy: true, tags: ['श्रीलंका', 'तांबपर्णी'] },
-    { id: 'vijaya_srilanka', name: 'राजकुमार विजय', subtitle: 'श्रीलंका के प्रथम राजा', parent: 'sinhalese_dynasty_proxy', mother: 'sinhasivali_vanga', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', source_texts: ['महावंश'], parichay: 'राजा सिंहबाहु का पुत्र। इसे इसके दुष्कर्मों के कारण वंग से निर्वासित कर दिया गया था। यह अपने 700 साथियों के साथ लंका (Tambapanni) पहुँचा और श्रीलंका के पहले सिंहली वंश की स्थापना की।' },
-    { id: 'sumitta_sinhapura', name: 'सुमित्त', subtitle: 'सिंहपुर के राजा', parent: 'sinhalese_dynasty_proxy', mother: 'sinhasivali_vanga', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', source_texts: ['महावंश'], parichay: 'विजय का भाई जो सिंहबाहु के बाद भारत में सिंहपुर का राजा बना।' },
-    { id: 'upatissa_srilanka', name: 'उपतिस्स (Regent)', subtitle: 'विजय के मंत्री', parent: 'sinhalese_dynasty_proxy', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', parichay: 'विजय का प्रमुख मंत्री, जिसने उपतिस्स नुवर की स्थापना की और विजय के उत्तराधिकारी के आने तक राज किया।' },
-    { id: 'panduvasdeva_srilanka', name: 'पंडुवासदेव', subtitle: 'श्रीलंका के राजा', parent: 'sumitta_sinhapura', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', source_texts: ['महावंश'], parichay: 'सुमित्त का पुत्र और विजय का भतीजा, जो भारत से आकर श्रीलंका का राजा बना।' },
-    { id: 'abhaya_srilanka', name: 'अभय', subtitle: 'श्रीलंका के राजा', parent: 'panduvasdeva_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)' },
-    { id: 'unmada_chitra_srilanka', name: 'उन्माद चित्रा', subtitle: 'पंडुवासदेव की पुत्री', parent: 'panduvasdeva_srilanka', gender: 'female', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)' },
-    { id: 'pandukabhaya_srilanka', name: 'पंडुकाभय', subtitle: 'अनुराधापुर के संस्थापक', parent: 'unmada_chitra_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', parichay: 'पंडुवासदेव का नाती। इसने अनुराधापुर नामक महान राजधानी बसाई।' },
-    { id: 'mutasiva_srilanka', name: 'मुतसिव', subtitle: 'श्रीलंका के राजा', parent: 'pandukabhaya_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', parichay: 'इन्होंने अनुराधापुर में महामेघवन पार्क बनवाया।' },
-    { id: 'devanampiya_tissa', name: 'देवानांप्रिय तिस्स', subtitle: 'श्रीलंका के राजा', parent: 'mutasiva_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', tags: ['बौद्ध धर्म', 'अशोक समकालीन'], parichay: 'सम्राट अशोक के समकालीन। इन्हीं के काल में अशोक पुत्र महिंदा ने श्रीलंका में बौद्ध धर्म का प्रचार किया और जया श्री महा बोधि वृक्ष लगाया।' },
-
-    // पुंड्र की वंशावली
-    { id: 'paundraka_vasudeva', name: 'पौंड्रक वासुदेव', subtitle: 'पुंड्र का राजा', parent: 'pundra_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', tags: ['पुंड्र', 'नकली वासुदेव'], parichay: 'पुंड्र और किरात देश का राजा। यह स्वयं को असली कृष्ण (वासुदेव) मानता था और उन्हीं की तरह सुदर्शन और शंख धारण करता था। यह जरासंध का मित्र था। अंततः भगवान कृष्ण ने इसका वध किया।' },
-
     // --- तुर्वसु वंश ---
     { id: 'vahni_turvasu_chandra', name: 'वह्नि', subtitle: 'तुर्वसु पुत्र', parent: 'turvasu_chandra', yug: 'treta' },
     { id: 'garbha_turvasu_chandra', name: 'गर्भ', subtitle: 'वह्नि पुत्र', parent: 'vahni_turvasu_chandra', yug: 'treta' },
@@ -226,19 +181,41 @@ export const chandravanshData = [
     { id: 'kekaya_anu', name: 'केकय', subtitle: 'केकय देश संस्थापक', parent: 'sibi_anu', yug: 'treta' },
 
     // अनु वंश -> तितिक्षु (बलि) शाखा
-    { id: 'titikshu_anu', name: 'तितिक्षु', subtitle: 'महामना पुत्र', parent: 'mahamana_anu', yug: 'treta' },
-    { id: 'rushadratha_anu', name: 'रुशद्रथ', subtitle: 'तितिक्षु पुत्र', parent: 'titikshu_anu', yug: 'treta' },
-    { id: 'hema_anu', name: 'हेम', subtitle: 'रुशद्रथ पुत्र', parent: 'rushadratha_anu', yug: 'treta' },
-    { id: 'sutapas_anu', name: 'सुतपस', subtitle: 'हेम पुत्र', parent: 'hema_anu', yug: 'treta' },
-    { id: 'bali_anu', name: 'बलि', subtitle: 'सुतपस पुत्र', parent: 'sutapas_anu', yug: 'treta', parichay: 'अनु वंश के राजा बलि। महर्षि दीर्घतमा के नियोग से इनकी पत्नी सुदेष्णा के गर्भ से ५ महान पुत्र उत्पन्न हुए।' },
-    { id: 'sudeshna_bali_wife_chandra', name: 'सुदेष्णा', subtitle: 'राजा बलि की पत्नी', parent: '', spouseOf: 'bali_anu', yug: 'treta' },
+    { id: 'titikshu_anu', name: 'तितिक्षु', subtitle: 'महामना पुत्र', parent: 'mahamana_anu', gender: 'male', yug: 'treta', parichay: 'महामना के पुत्र जिन्होंने पूर्वी भारत की ओर जाकर अपना अलग राज्य स्थापित किया।' },
+    { id: 'rushadratha_anu', name: 'रुशद्रथ', subtitle: 'तितिक्षु पुत्र', parent: 'titikshu_anu', gender: 'male', yug: 'treta' },
+    { id: 'hema_anu', name: 'हेम', subtitle: 'रुशद्रथ पुत्र', parent: 'rushadratha_anu', gender: 'male', yug: 'treta' },
+    { id: 'sutapas_anu', name: 'सुतपस', subtitle: 'हेम पुत्र', parent: 'hema_anu', gender: 'male', yug: 'treta' },
+    { id: 'bali_anu', name: 'बलि', subtitle: 'सुतपस पुत्र', parent: 'sutapas_anu', gender: 'male', yug: 'treta', parichay: 'अनु वंश के राजा बलि। महर्षि दीर्घतमा के नियोग से इनकी पत्नी सुदेष्णा के गर्भ से ५ महान पुत्र उत्पन्न हुए।' },
+    { id: 'sudeshna_bali_wife_chandra', name: 'सुदेष्णा', subtitle: 'राजा बलि की पत्नी', parent: 'bali_anu', gender: 'female', spouseOf: 'bali_anu', yug: 'treta' },
 
     // बलि के ५ क्षेत्रज पुत्र (अंग, वंग, कलिंग, पुण्ड्र, सुह्म) - जैविक पिता दीर्घतमा (brahma-base में), पालक/राजकीय पिता बलि
-    { id: 'anga_anu', name: 'अंग', subtitle: 'अंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', yug: 'treta', parichay: 'इन्होंने अंग देश (वर्तमान भागलपुर, बिहार) की स्थापना की। कर्ण बाद में इसी अंग देश के राजा बने।' },
-    { id: 'vanga_anu', name: 'वंग', subtitle: 'वंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', yug: 'treta', parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।' },
-    { id: 'kalinga_anu', name: 'कलिंग', subtitle: 'कलिंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', yug: 'treta', parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की।' },
-    { id: 'pundra_anu', name: 'पुण्ड्र', subtitle: 'पुण्ड्र देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', yug: 'treta' },
-    { id: 'suhma_anu', name: 'सुह्म', subtitle: 'सुह्म देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', yug: 'treta' },
+    { id: 'anga_anu', name: 'अंग', subtitle: 'अंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', gender: 'male', yug: 'treta', parichay: 'इन्होंने अंग देश (वर्तमान भागलपुर, बिहार) की स्थापना की। कर्ण बाद में इसी अंग देश के राजा बने। जैविक पिता: ऋषि दीर्घतमा।' },
+    { id: 'vanga_anu', name: 'वंग', subtitle: 'वंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', gender: 'male', yug: 'treta', parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की। जैविक पिता: ऋषि दीर्घतमा।' },
+    { id: 'kalinga_anu', name: 'कलिंग', subtitle: 'कलिंग देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', gender: 'male', yug: 'treta', parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की। जैविक पिता: ऋषि दीर्घतमा।' },
+    { id: 'pundra_anu', name: 'पुण्ड्र', subtitle: 'पुण्ड्र देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', gender: 'male', yug: 'treta', parichay: 'जैविक पिता: ऋषि दीर्घतमा।' },
+    { id: 'suhma_anu', name: 'सुह्म', subtitle: 'सुह्म देश संस्थापक', parent: 'bali_anu', mother: 'sudeshna_bali_wife_chandra', gender: 'male', yug: 'treta', parichay: 'जैविक पिता: ऋषि दीर्घतमा।' },
+
+    // वंग (बंगाल) की आगे की वंशावली
+    { id: 'samudrasena_vanga', name: 'समुद्रसेन', subtitle: 'वंग के राजा (महाभारत काल)', parent: 'vanga_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'वंग देश के प्रतापी राजा जिन्हें महाभारत काल में भीम ने अपनी दिग्विजय यात्रा के दौरान पराजित किया था।' },
+    { id: 'chandrasena_vanga', name: 'चंद्रसेन', subtitle: 'वंग के राजा (महाभारत काल)', parent: 'samudrasena_vanga', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', parichay: 'समुद्रसेन के पुत्र या उत्तराधिकारी, जिन्हें भीम ने हराया था।' },
+    { id: 'suppadevi_vanga', name: 'सुप्पदेवी', subtitle: 'वंग की राजकुमारी', parent: 'chandrasena_vanga', gender: 'female', yug: 'kali', clusterName: 'अनु वंश', source_texts: ['महावंश'], parichay: 'बौद्ध ग्रंथ महावंश के अनुसार यह वंग के राजा और कलिंग की राजकुमारी की पुत्री थीं, जो बाद में एक सिंह के साथ भाग गई थीं।' },
+    { id: 'sinhabahu_vanga', name: 'सिंहबाहु', subtitle: 'सिंहपुर के संस्थापक', parent: 'suppadevi_vanga', gender: 'male', yug: 'kali', clusterName: 'अनु वंश', source_texts: ['महावंश'], parichay: 'सुप्पदेवी और एक सिंह का पुत्र। इसने कलिंग/राढ़ क्षेत्र में सिंहपुर नामक राज्य की स्थापना की।' },
+    { id: 'sinhasivali_vanga', name: 'सिंहसिवली', subtitle: 'सिंहबाहु की पत्नी / बहन', parent: 'suppadevi_vanga', gender: 'female', spouseOf: 'sinhabahu_vanga', yug: 'kali', clusterName: 'अनु वंश', source_texts: ['महावंश'] },
+
+    // श्रीलंका का सिंहली वंश (House of Vijaya) - वंग/अनु वंश की शाखा
+    { id: 'sinhalese_dynasty_proxy', name: 'सिंहली वंश (श्रीलंका)', subtitle: 'श्रीलंका के राजा', parent: 'sinhabahu_vanga', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', isProxy: true, tags: ['श्रीलंका', 'तांबपर्णी'] },
+    { id: 'vijaya_srilanka', name: 'राजकुमार विजय', subtitle: 'श्रीलंका के प्रथम राजा', parent: 'sinhalese_dynasty_proxy', mother: 'sinhasivali_vanga', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', source_texts: ['महावंश'], parichay: 'राजा सिंहबाहु का पुत्र। इसे इसके दुष्कर्मों के कारण वंग से निर्वासित कर दिया गया था। यह अपने 700 साथियों के साथ लंका (Tambapanni) पहुँचा और श्रीलंका के पहले सिंहली वंश की स्थापना की।' },
+    { id: 'sumitta_sinhapura', name: 'सुमित्त', subtitle: 'सिंहपुर के राजा', parent: 'sinhalese_dynasty_proxy', mother: 'sinhasivali_vanga', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', source_texts: ['महावंश'], parichay: 'विजय का भाई जो सिंहबाहु के बाद भारत में सिंहपुर का राजा बना।' },
+    { id: 'upatissa_srilanka', name: 'उपतिस्स (Regent)', subtitle: 'विजय के मंत्री', parent: 'sinhalese_dynasty_proxy', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', parichay: 'विजय का प्रमुख मंत्री, जिसने उपतिस्स नुवर की स्थापना की और विजय के उत्तराधिकारी के आने तक राज किया।' },
+    { id: 'panduvasdeva_srilanka', name: 'पंडुवासदेव', subtitle: 'श्रीलंका के राजा', parent: 'sumitta_sinhapura', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', source_texts: ['महावंश'], parichay: 'सुमित्त का पुत्र और विजय का भतीजा, जो भारत से आकर श्रीलंका का राजा बना।' },
+    { id: 'abhaya_srilanka', name: 'अभय', subtitle: 'श्रीलंका के राजा', parent: 'panduvasdeva_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)' },
+    { id: 'unmada_chitra_srilanka', name: 'उन्माद चित्रा', subtitle: 'पंडुवासदेव की पुत्री', parent: 'panduvasdeva_srilanka', gender: 'female', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)' },
+    { id: 'pandukabhaya_srilanka', name: 'पंडुकाभय', subtitle: 'अनुराधापुर के संस्थापक', parent: 'unmada_chitra_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', parichay: 'पंडुवासदेव का नाती। इसने अनुराधापुर नामक महान राजधानी बसाई।' },
+    { id: 'mutasiva_srilanka', name: 'मुतसिव', subtitle: 'श्रीलंका के राजा', parent: 'pandukabhaya_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', parichay: 'इन्होंने अनुराधापुर में महामेघवन पार्क बनवाया।' },
+    { id: 'devanampiya_tissa', name: 'देवानांप्रिय तिस्स', subtitle: 'श्रीलंका के राजा', parent: 'mutasiva_srilanka', gender: 'male', yug: 'kali', clusterName: 'सिंहली वंश (श्रीलंका)', tags: ['बौद्ध धर्म', 'अशोक समकालीन'], parichay: 'सम्राट अशोक के समकालीन। इन्हीं के काल में अशोक पुत्र महिंदा ने श्रीलंका में बौद्ध धर्म का प्रचार किया और जया श्री महा बोधि वृक्ष लगाया।' },
+
+    // पुंड्र की वंशावली
+    { id: 'paundraka_vasudeva', name: 'पौंड्रक वासुदेव', subtitle: 'पुंड्र का राजा', parent: 'pundra_anu', gender: 'male', yug: 'dwapar', clusterName: 'अनु वंश', tags: ['पुंड्र', 'नकली वासुदेव'], parichay: 'पुंड्र और किरात देश का राजा। यह स्वयं को असली कृष्ण (वासुदेव) मानता था और उन्हीं की तरह सुदर्शन और शंख धारण करता था। यह जरासंध का मित्र था। अंततः भगवान कृष्ण ने इसका वध किया।' },
 
     // --- अंग वंश (अंग से रोमपाद और कर्ण तक) ---
     { id: 'dadhivahana_anu', name: 'दधिवाहन', subtitle: 'अंग नरेश', parent: 'anga_anu', yug: 'treta' },
