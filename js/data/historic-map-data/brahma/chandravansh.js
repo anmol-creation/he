@@ -41,6 +41,7 @@ export const chandravanshData = [
         subtitle: 'आयु के पुत्र / अशोक सुंदरी पति',
         parent: 'ayu_chandra',
         mother: 'prabha_chandra',
+        gender: 'male',
         spouseOf: 'ashokasundari_chandra',
         yug: 'satya',
         tags: ['सतयुग', 'चन्द्रवंश', 'सम्राट', 'अस्थायी इंद्र'],
