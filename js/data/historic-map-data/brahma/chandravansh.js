@@ -35,28 +35,7 @@ export const chandravanshData = [
     { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी / स्वर्भानु पुत्री', parent: 'svarbhanu_danava', spouseOf: 'ayu_chandra', yug: 'satya' },
 
     // --- आयु के पुत्र (नहुष, क्षत्रवृद्ध, रम्भ, रजि, अनेना) ---
-    {
-        id: 'nahusha_chandra',
-        name: 'नहुष',
-        subtitle: 'आयु के पुत्र / अशोक सुंदरी पति',
-        parent: 'ayu_chandra',
-        mother: 'prabha_chandra',
-        gender: 'male',
-        spouseOf: 'ashokasundari_chandra',
-        yug: 'satya',
-        tags: ['सतयुग', 'चन्द्रवंश', 'सम्राट', 'अस्थायी इंद्र'],
-        aliases: ['देवेन्द्र (अस्थायी)'],
-        mount: 'ऋषियों द्वारा उठाई गई पालकी',
-        abode: 'प्रतिष्ठानपुर, अमरावती (अस्थायी)',
-        source_texts: ['महाभारत', 'विष्णु पुराण', 'श्रीमद्भागवत पुराण'],
-        events: [
-            'अस्थायी रूप से स्वर्ग के इंद्र बने।',
-            'सप्तर्षियों से अपनी पालकी उठवाई।',
-            'महर्षि अगस्त्य द्वारा सर्प (अजगर) बनने का श्राप मिला।',
-            'द्वापर युग में युधिष्ठिर द्वारा प्रश्नों के सही उत्तर देने पर श्राप से मुक्ति मिली।'
-        ],
-        parichay: 'चन्द्रवंशी राजा आयु के पुत्र और महान सम्राट। जब वृत्रासुर वध के बाद इंद्र को ब्रह्महत्या का पाप लगा और वे अज्ञातवास में चले गए, तब देवताओं और ऋषियों ने नहुष को उनकी धर्मपरायणता के कारण स्वर्ग का इंद्र नियुक्त किया। सत्ता के अहंकार में आकर उन्होंने शची (इंद्राणी) की मांग की और सप्तर्षियों को अपनी पालकी उठाने के लिए मजबूर किया। महर्षि अगस्त्य के अपमान ("सर्प-सर्प" अर्थात् जल्दी चलो) के कारण उन्हें पृथ्वी पर अजगर बनने का श्राप मिला।'
-    },
+    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र / अशोक सुंदरी पति', parent: 'ayu_chandra', mother: 'prabha_chandra', spouseOf: 'ashokasundari', yug: 'satya' },
     { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' },
     { id: 'sunahotra_kashi_chandra', name: 'सुनहोत्र', subtitle: 'क्षत्रवृद्ध पुत्र', parent: 'kshatravriddha_chandra', yug: 'satya' },
     { id: 'kashya', name: 'काश्य', subtitle: 'काशी के संस्थापक', parent: 'sunahotra_kashi_chandra', yug: 'satya' },
@@ -917,10 +896,24 @@ export const chandravanshData = [
     { id: 'bharmaketu_chandra', name: 'भरमकेतु (दुर्मषण)', subtitle: 'दुशासन पुत्र', parent: 'dushasan_chandra', yug: 'dwapar' },
 
     // --- चच राजवंश - सिंध (मध्यकालीन सिन्धु नरेश) ---
-    { id: 'chach_dynasty_proxy', name: 'चच राजवंश', subtitle: 'सिंध राजवंश', parent: 'jayadratha', yug: 'kali', clusterName: 'चच वंश (सिंध)', isProxy: true, parichay: 'सिंधु के प्राचीन शासकों (जयद्रथ) के बाद मध्यकाल में यह सिंध का अंतिम हिंदू राजवंश था।' },
-    { id: 'chach_of_alor', name: 'चच', subtitle: 'चच वंश संस्थापक', parent: 'chach_dynasty_proxy', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'इन्होंने बौद्ध राय राजवंश के बाद सिंध में हिंदू साम्राज्य स्थापित किया।' },
-    { id: 'chandar_of_sindh', name: 'चंदर', subtitle: 'सिंध नरेश', parent: 'chach_of_alor', yug: 'kali', clusterName: 'चच वंश (सिंध)' },
-    { id: 'dahir_of_sindh', name: 'राजा दाहीर', subtitle: 'सिंध के अंतिम हिंदू नरेश', parent: 'chach_of_alor', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'सिंध के महान राजा जो 712 ईस्वी में मुहम्मद बिन कासिम के अरब आक्रमण से लड़ते हुए वीरगति को प्राप्त हुए।' },
+    { id: 'chach_dynasty_proxy', name: 'चच राजवंश', subtitle: 'सिंध राजवंश', parent: 'jayadratha', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)', isProxy: true, parichay: 'सिंधु के प्राचीन शासकों (जयद्रथ) के बाद मध्यकाल में यह सिंध का अंतिम हिंदू ब्राह्मण राजवंश था।' },
+    { id: 'rai_sahasi_ii', name: 'राय साहसी द्वितीय', subtitle: 'राय वंश', parent: 'chach_dynasty_proxy', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'सिंध के राय वंश (बौद्ध) के अंतिम राजा। इनकी मृत्यु के बाद चच ने साम्राज्य संभाला।' },
+    { id: 'rani_suhandi', name: 'रानी सुहानदी', subtitle: 'सिंध की रानी', parent: 'chach_dynasty_proxy', gender: 'female', spouseOf: 'chach_of_alor', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'राय साहसी द्वितीय की विधवा रानी, जिन्होंने बाद में चच से विवाह किया और चच राजवंश की स्थापना में मदद की।' },
+    { id: 'chach_of_alor', name: 'चच', subtitle: 'चच वंश संस्थापक', parent: 'chach_dynasty_proxy', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'इन्होंने बौद्ध राय राजवंश के बाद सिंध में हिंदू साम्राज्य स्थापित किया (631-671 AD)।' },
+    { id: 'chandar_of_sindh', name: 'चंदर', subtitle: 'सिंध नरेश', parent: 'chach_dynasty_proxy', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'चच के भाई और उनके उत्तराधिकारी, जिन्होंने सिंध पर कुछ समय राज किया।' },
+
+    // राजा दाहीर और उनका परिवार
+    { id: 'dahir_of_sindh', name: 'राजा दाहीर', subtitle: 'सिंध के अंतिम हिंदू नरेश', parent: 'chach_of_alor', mother: 'rani_suhandi', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'चच के पुत्र और सिंध के महान राजा, जो 712 ईस्वी में मुहम्मद बिन कासिम के अरब आक्रमण से लड़ते हुए वीरगति को प्राप्त हुए।' },
+    { id: 'rani_ladi', name: 'रानी लाडी', subtitle: 'दाहीर की पत्नी', parent: 'chach_dynasty_proxy', gender: 'female', spouseOf: 'dahir_of_sindh', yug: 'kali', clusterName: 'चच वंश (सिंध)' },
+    { id: 'rani_bai', name: 'रानी बाई', subtitle: 'दाहीर की पत्नी', parent: 'chach_dynasty_proxy', gender: 'female', spouseOf: 'dahir_of_sindh', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'अरबों से किले की रक्षा करते हुए इन्होंने अंत में अन्य राजपूत महिलाओं के साथ जौहर किया।' },
+
+    // दाहीर के बच्चे
+    { id: 'dharsiya_sindh', name: 'धर्सिया', subtitle: 'दाहीर का पुत्र', parent: 'dahir_of_sindh', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)' },
+    { id: 'jaisiah_sindh', name: 'जयसिंघ (जयसिंह)', subtitle: 'दाहीर का पुत्र', parent: 'dahir_of_sindh', mother: 'rani_ladi', gender: 'male', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'दाहीर का शूरवीर पुत्र जिसने अपने पिता की मृत्यु के बाद भी अरबों के खिलाफ कड़ा संघर्ष जारी रखा और ब्राह्मणों/राजपूतों को एकजुट किया।' },
+    { id: 'fufi_sindh', name: 'फूफी', subtitle: 'दाहीर की पुत्री', parent: 'dahir_of_sindh', gender: 'female', yug: 'kali', clusterName: 'चच वंश (सिंध)' },
+    { id: 'surya_devi_sindh', name: 'सूर्य देवी', subtitle: 'दाहीर की पुत्री', parent: 'dahir_of_sindh', gender: 'female', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'अरबों द्वारा बंदी बनाकर खलीफा के पास भेजी गई। चचनामा के अनुसार इन्होंने खलीफा को कासिम के खिलाफ भड़का कर अपने पिता का बदला लिया।' },
+    { id: 'premala_devi_sindh', name: 'परिमल देवी (प्रेमदा)', subtitle: 'दाहीर की पुत्री', parent: 'dahir_of_sindh', gender: 'female', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'अपनी बहन सूर्य देवी के साथ बंदी बनाकर दमिश्क भेजी गई थीं।' },
+    { id: 'jodha_devi_sindh', name: 'जोधा देवी', subtitle: 'दाहीर की पुत्री', parent: 'dahir_of_sindh', gender: 'female', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'कहा जाता है कि अरब आक्रमण के समय इन्होंने अपनी माता रानी बाई के साथ जौहर कर लिया था।' },
 
 
 

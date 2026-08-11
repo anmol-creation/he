@@ -14,15 +14,7 @@ This file tracks the future vision, planned features, and brainstorming ideas fo
 - All pieces on the board should be clickable to view their details or jump to their lineage tree.
 - **Benefit:** Allows users to see who existed at the same time (e.g., Ripunjaya vs Pradyota) without drawing messy cross-lineage lines on the map.
 
-### 2. Female Node Vansh Indicators
-**Concept:** Display the origin and destination Vansh (lineage) for female nodes directly on the canvas to better visualize marital alliances and cross-lineage connections.
-**Execution Idea:**
-- For female nodes acting as wives: Display the Vansh they came from (origin lineage) just below their node.
-- For female nodes acting as daughters: Display the Vansh they married into (destination lineage) just below their node.
-- This will require extracting or adding metadata regarding cross-lineage marriages in the dataset.
-- Render these labels dynamically on the canvas in `map-renderer.js` to ensure they are visible without opening the Info Box.
-
-### 3. Lineage Additions
+### 2. Lineage Additions
 - **Nanda Dynasty & Shishunaga:** Plan to add as a separate lineage root (Magadha Medieval Link), distinct from the Chandravansh Brihadratha line, reflecting the historical break/assassinations.
 - **Gupta Empire:** Plan to add as a new proxy/root ("Gupta Empire (Vaishya)") starting from Sri Gupta, linking to the Lichchhavi clan via Kumaradevi.
 
