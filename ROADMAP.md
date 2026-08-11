@@ -21,3 +21,8 @@ This file tracks the future vision, planned features, and brainstorming ideas fo
 ## Backlog / To-Do
 - Refine clustering logic for extremely large dynasties.
 - Add more ancient incident texts to the Digital Archives.
+
+### 3. UI/UX Improvements for Historic Map
+- **Dynamic Info Box on Swipe:** When navigating between nodes via swipe gestures (fast swipe up/down/left/right), if the side Info Box is currently open, it should automatically update its content to display the details of the newly focused node without requiring an extra click.
+- **Node Avatars/Images:** Add support for displaying character images or avatars inside the Info Box to make the historical figures more visually engaging.
+- **Line Label Collision Avoidance:** If multiple line labels (e.g., `lineLabel` property) are rendered on the same connecting edge, they should be positioned dynamically to prevent overlapping with each other.
