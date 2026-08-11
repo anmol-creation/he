@@ -35,7 +35,27 @@ export const chandravanshData = [
     { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी / स्वर्भानु पुत्री', parent: 'svarbhanu_danava', spouseOf: 'ayu_chandra', yug: 'satya' },
 
     // --- आयु के पुत्र (नहुष, क्षत्रवृद्ध, रम्भ, रजि, अनेना) ---
-    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र / अशोक सुंदरी पति', parent: 'ayu_chandra', mother: 'prabha_chandra', spouseOf: 'ashokasundari', yug: 'satya' },
+    {
+        id: 'nahusha_chandra',
+        name: 'नहुष',
+        subtitle: 'आयु के पुत्र / अशोक सुंदरी पति',
+        parent: 'ayu_chandra',
+        mother: 'prabha_chandra',
+        spouseOf: 'ashokasundari_chandra',
+        yug: 'satya',
+        tags: ['सतयुग', 'चन्द्रवंश', 'सम्राट', 'अस्थायी इंद्र'],
+        aliases: ['देवेन्द्र (अस्थायी)'],
+        mount: 'ऋषियों द्वारा उठाई गई पालकी',
+        abode: 'प्रतिष्ठानपुर, अमरावती (अस्थायी)',
+        source_texts: ['महाभारत', 'विष्णु पुराण', 'श्रीमद्भागवत पुराण'],
+        events: [
+            'अस्थायी रूप से स्वर्ग के इंद्र बने।',
+            'सप्तर्षियों से अपनी पालकी उठवाई।',
+            'महर्षि अगस्त्य द्वारा सर्प (अजगर) बनने का श्राप मिला।',
+            'द्वापर युग में युधिष्ठिर द्वारा प्रश्नों के सही उत्तर देने पर श्राप से मुक्ति मिली।'
+        ],
+        parichay: 'चन्द्रवंशी राजा आयु के पुत्र और महान सम्राट। जब वृत्रासुर वध के बाद इंद्र को ब्रह्महत्या का पाप लगा और वे अज्ञातवास में चले गए, तब देवताओं और ऋषियों ने नहुष को उनकी धर्मपरायणता के कारण स्वर्ग का इंद्र नियुक्त किया। सत्ता के अहंकार में आकर उन्होंने शची (इंद्राणी) की मांग की और सप्तर्षियों को अपनी पालकी उठाने के लिए मजबूर किया। महर्षि अगस्त्य के अपमान ("सर्प-सर्प" अर्थात् जल्दी चलो) के कारण उन्हें पृथ्वी पर अजगर बनने का श्राप मिला।'
+    },
     { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' },
     { id: 'sunahotra_kashi_chandra', name: 'सुनहोत्र', subtitle: 'क्षत्रवृद्ध पुत्र', parent: 'kshatravriddha_chandra', yug: 'satya' },
     { id: 'kashya', name: 'काश्य', subtitle: 'काशी के संस्थापक', parent: 'sunahotra_kashi_chandra', yug: 'satya' },
