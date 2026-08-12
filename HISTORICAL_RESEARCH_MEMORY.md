@@ -64,3 +64,49 @@ Based on Buddhist texts (Anguttara Nikaya), Jain texts (Bhagavati Sutra), and Pu
 - **Paternal Lineage (Suryavansh/Sisodia):** According to the genealogy prepared by Gaga Bhatt during Shivaji's coronation (and supported by Royal Maratha Bakhars), the Bhonsle clan descends from the **Sisodia Rajputs of Mewar**.
 - **The Link:** Following the 1303 siege of Chittorgarh where Rana Lakha (Lakshman Singh) and his sons perished, survivor **Rana Ajay Singh** passed the Mewar throne to his nephew Hammir. Ajay Singh's son, **Sajjan Singh (Sujansi)**, migrated to the Deccan and served the Bahmani sultans. His descendants eventually took the name "Bhonsle" (from the Bhosavat jagir or ancestor Bhosaji/Bhairav Singh), leading down to Babaji Bhonsle -> Maloji -> Shahaji -> Chhatrapati Shivaji Maharaj.
 - **Maternal Lineage (Chandravansh/Yadav):** Shivaji's mother, **Rajmata Jijabai**, belonged to the Jadhav family of Sindkhed Raja, who traced their ancestry to the **Seuna (Devagiri Yadav)** dynasty of the Chandravansh lineage.
+
+---
+
+## Research: Geopolitical Mapping Concept (bharatrajya.com Analysis)
+**Date:** August 2026
+**Context:** Analyzing `bharatrajya.com` as a reference for historical geopolitical mapping.
+* **Core Concept:** An interactive, timeline-based (year-by-year) geopolitical atlas of the Indian subcontinent showing kingdom borders and territorial changes.
+* **Features:**
+  - **Year Slider:** Users can drag to a specific year (e.g., 1700) to see exact borders.
+  - **Data Points:** Shows "Who Ruled" (empire names, square km area, percentage of landmass, and de-facto rulers).
+  - **Events:** Lists contemporary battles (e.g., Battle of Satara) and exact territory that changed hands that year.
+* **Sources & Bibliography Used by BharatRajya:**
+  - **R. C. Majumdar's 11-volume works:** "The History and Culture of the Indian People" is heavily cited as their primary foundation for setting the chronological framework and major borders.
+  - **Standard Historical Atlases:** Utilized to define district-level control and broad imperial boundaries over specific years.
+  - **Scholarly Histories:** References to dynastic texts and regional histories to identify specific de-facto rulers and local control (e.g., specific Maratha houses or regional Nawabs).
+  - **Wikipedia:** Mentioned as a supplementary source to fill in specific dates and general data points, acknowledging that community correction is part of their model.
+* **Project Comparison:** While our project (Sampurn Sanatan Itihas) focuses heavily on **Bloodlines/Lineage Trees (Vansh)** and Puranic relationships, `bharatrajya.com` strictly focuses on **Geopolitical Borders over time**. This concept could influence future enhancements to our `historical-atlas.html` to include timeline-based slider interactions.
+
+---
+
+## Research: Sources for Extracting Lineages and Family Trees
+**Date:** August 2026
+**Context:** Documenting traditional, administrative, and historical methods for tracing family trees, bloodlines, and relatives.
+
+### 1. Land & Revenue Records (Administrative)
+* **Khatauni (खतौनी) & Shajra (शजरा):** These are vital land revenue records used in India.
+  * **Khatauni:** A register of all persons cultivating or occupying land in a village. Because land passes down patrilineally, a Khatauni often lists the father's and grandfather's name of the landholder to establish ownership rights. By tracing historical Khataunis (going back to the British era or earlier in some states), one can reconstruct 3 to 5 generations of a family tree easily.
+  * **Shajra (Kistwar/Nasab):** Specifically, the *Shajra Nasab* is a genealogical tree prepared by the Patwari (village accountant) to determine succession of land ownership. This is literally a government-verified lineage tree of landowners in a village.
+
+### 2. Traditional Genealogists (Pilgrimage Records)
+* **Hindu Genealogy Registers at Tirtha Sthanas (Pandas):**
+  * Places like **Haridwar (Kusha Ghat), Varanasi (Kashi), Prayagraj (Allahabad), Kurukshetra, Gaya, and Trimbakeshwar** have families of priests (Pandas) who maintain *Bahi-Khatas* (genealogical registers).
+  * These registers are categorized by caste, gotra, and native district/village. They record every birth, marriage, and death when a family visits the pilgrimage site, often going back 10-15 generations (300-400 years).
+
+### 3. Royal & Caste Genealogists
+* **Charans and Bhats (चारण और भाट):** Traditional bards and genealogists, primarily in Rajasthan, Gujarat, and Madhya Pradesh. They maintained precise records of Rajput, Jat, and other Kshatriya lineages (*Vamshavalis*). Their records include not just names, but marriages, battles fought, and lands granted.
+* **Barots:** Similar to Charans, prevalent in Gujarat, keeping genealogical records of various communities.
+* **Panjis (पंजी):** Used in the Mithila region (Bihar). The *Panji Prabandh* are extensive genealogical records maintained by Panjikars, originally initiated in the 14th century by Raja Harisimhadeva to prevent incestuous marriages by tracking lineages strictly.
+
+### 4. Temple Inscriptions and Copper Plates
+* **Epigraphy:** Kings and wealthy merchants would donate to temples and record the grant on copper plates (*Tamra Patra*) or temple walls. These inscriptions almost always begin with a *Prashasti* (eulogy) that lists the donor's ancestors, often going back 3 to 7 generations to establish their legitimacy.
+
+### 5. Historical & Scriptural Texts
+* **The Puranas:** The primary source for ancient royal lineages (Suryavansh, Chandravansh). The *Bhavishya Purana* even attempts to track lineages into the medieval period.
+* **Bakhars & Tawarikhs:** Court chronicles. For example, Maratha *Bakhars* or Persian *Tawarikhs* (like Ain-i-Akbari) often list the ancestry of nobles and Mansabdars.
+* **Vamshavalis:** Specific dynastic chronicles (e.g., *Rajatarangini* for Kashmir, *Madala Panji* for the Jagannath Temple in Puri).
