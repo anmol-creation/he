@@ -27,3 +27,21 @@ This file tracks the future vision, planned features, and brainstorming ideas fo
 - **Dynamic Info Box on Swipe:** When navigating between nodes via swipe gestures (fast swipe up/down/left/right), if the side Info Box is currently open, it should automatically update its content to display the details of the newly focused node without requiring an extra click.
 - **Node Avatars/Images:** Add support for displaying character images or avatars inside the Info Box to make the historical figures more visually engaging.
 - **Line Label Collision Avoidance:** If multiple line labels (e.g., `lineLabel` property) are rendered on the same connecting edge, they should be positioned dynamically to prevent overlapping with each other.
+
+### 4. Cosmic & Historical Interactive Web Story (Visual Journey)
+**Concept:** A free, cinematic, interactive web experience (Scrollytelling) that visualizes the journey from the creation of the universe down to human history.
+**Narrative Flow (Sanatan/Puranic & Scientific Blend):**
+- **Phase 1: The Void:** Dark screen, singularity/Hiranyagarbha, Big Bang / Srishti initiation.
+- **Phase 2: Cosmos Formation:** Nebulas forming, stars lighting up, galaxies spinning, solar systems taking shape.
+- **Phase 3: Birth of Earth & Life:** Early Earth forming, oceans developing, origins of life (Matsya/Kurma symbolism or early micro-organisms), evolution to flora and fauna.
+- **Phase 4: Human Era:** Dawn of humanity, early civilizations, architectural marvels (temples, ancient cities).
+- **Phase 5: Macro to Micro:** Zooming into specific historical/Puranic events on Earth.
+**Execution Idea:**
+- **Medium:** Option A (Interactive Web Experience) utilizing HTML5, Canvas, and Three.js for 3D visuals.
+- **Interaction:** Scroll-based progression ("Scrollytelling") where the user's scroll drives the timeline, animations, and camera movements.
+- **Integration:** Can be hosted as a standalone cinematic page within the project, acting as an immersive prologue to the historic map or timelines.
+**Reference Inspiration (Interactive Web Links):**
+- [100,000 Stars (Chrome Experiment)](https://stars.chromeexperiments.com/) - 3D cosmic zoom experience.
+- [NASA Eyes on the Solar System](https://eyes.nasa.gov/) - Interactive 3D space exploration.
+- [Neal.fun - The Deep Sea](https://neal.fun/deep-sea/) - Great example of vertical scrollytelling depth.
+- [Three.js Examples](https://threejs.org/examples/) - The core 3D web technology we will use.
