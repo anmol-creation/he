@@ -5,6 +5,9 @@ This document explains the technical structure and separation of concerns in the
 ## Core Philosophy
 The project strictly separates **Data**, **State**, **Layout Calculation**, and **Rendering**. The historical database is completely decoupled from the UI logic.
 
+**"One Data, Multiple Views" (Single Source of Truth):**
+A foundational architectural principle is that all visual components—the Lineage Map, Geo Map, Heritage Sites Map, Incident Archives, and both modes of the 'Itihas Puran' Master Book—are powered by a single, centralized data layer. When a historical figure, location, or event is updated in the core dataset, it automatically propagates across all different UIs and visual representations.
+
 ## Directory Structure
 
 ### 1. Data Layer (`js/data/`)

@@ -2,6 +2,28 @@
 
 This file tracks the future vision, planned features, and brainstorming ideas for the Sampurn Sanatan Itihas project.
 
+## Core Project Vision & The 4 Pillars
+The overarching goal of this project is to present world history through the lens of Sanatan Dharma, breaking away from the limited 2000-year linear Western perspective. It is built on four core pillars:
+
+**1. The Lineage Map (Vansh Vriksha)**
+- Tracing historical figures from their origins (e.g., Brahma, Saptarishis) down through history.
+- **Future Feature:** Allow modern users to input and connect their own family trees to ancient lineages, making history deeply personal and identity-driven.
+
+**2. The Historical Geo Map (Bhugol)**
+- A geographical timeline tracking the borders, kings, and rulers of ancient India and the world across different eras (e.g., Mahajanapadas, Mauryas).
+
+**3. Cosmic & Historical Interactive Web Story (Srishti Katha)**
+- A cinematic, 3D interactive scrollytelling experience visualizing the creation of the universe down to human history, blending Puranic concepts (Hiranyagarbha, Dashavatar) with scientific evolution.
+
+**4. "Itihas Puran" - The Master Book (Chronological Rewrite)**
+- The ultimate goal: A completely synchronized, chronological text of history starting from the birth of the universe to the modern day.
+- Solves the problem of scattered historical events and the inadequate school education system that truncates Indian history.
+- **Dual-Mode Reading Experience:**
+  - **Type 1: The Chapter/Fact Mode (Granth Style):** A highly structured, factual approach. E.g., The Mewar Lineage where every king gets a dedicated, factual chapter focusing on their life, rule, and chronological events.
+  - **Type 2: The Epic Story Mode (Katha Style):** An immersive narrative with creative freedom (like reading the Ramayana, Mahabharata, or a historical novel). It fills the gaps where the visual 3D story can't fit long text, allowing users to deeply engage with the emotions, dialogues, and epic scale of the events.
+
+---
+
 ## Upcoming Features (Planned)
 
 ### 1. The "Samkalin Darbar" (Contemporary Chessboard View)
@@ -25,10 +47,21 @@ This file tracks the future vision, planned features, and brainstorming ideas fo
 ### 3. UI/UX Improvements for Historic Map
 - **Google Maps Style Search UI:** Redesign the search functionality to resemble Google Maps. Clicking the main search bar on the map should open a dedicated full-screen search view/overlay. This view will feature a prominent "Back" button at the top to return to the map, a search input, and a list of recent searches/categories or live search results below it.
 - **Dynamic Info Box on Swipe:** When navigating between nodes via swipe gestures (fast swipe up/down/left/right), if the side Info Box is currently open, it should automatically update its content to display the details of the newly focused node without requiring an extra click.
-- **Node Avatars/Images:** Add support for displaying character images or avatars inside the Info Box to make the historical figures more visually engaging.
 - **Line Label Collision Avoidance:** If multiple line labels (e.g., `lineLabel` property) are rendered on the same connecting edge, they should be positioned dynamically to prevent overlapping with each other.
 
-### 4. Cosmic & Historical Interactive Web Story (Visual Journey)
+### 4. Cinematic UI/UX Strategy (The "SCU" Approach)
+**Concept:** Treat the project like a "Sanatan Cinematic Universe" to make it engaging for modern audiences, drawing inspiration from GoT and MCU lore dashboards.
+**Design Principles to Implement:**
+- **Dark Theme Default:** A deep space/dark background to allow neon/glowing connection lines and node borders to pop out.
+- **Houses & Sigils (Vansh Banners):** Replace generic boxes with faction-based designs. E.g., Suryavansh uses golden sun motifs and colors, Chandravansh uses silver moon motifs.
+- **"Hero Card" Info Box:** The side panel should look like a character profile card, featuring a prominent avatar, glowing power/title tags (e.g., `[Maharathi]`), and a "Crossover/Appears In" section linking to major events (e.g., Ramayana, Kurukshetra War).
+- **Interactive Timeline Filters:** A cinematic slider at the bottom (by Yuga or Kalpa) that dims out non-relevant lineages and highlights only those active in that era, creating a time-travel visual effect.
+**Reference Inspiration (Cinematic Lore & Maps):**
+- [Quartermaester - Interactive GoT Map](https://quartermaester.info/) - Excellent reference for dark theme maps and faction tracking.
+- [Marvel Official Characters](https://www.marvel.com/characters) - The gold standard for "Hero Card" UI and timeline crossovers.
+- [The LotR Project](http://lotrproject.com/) - A great functional example of a massive fantasy lineage tree and geo-map.
+
+### 5. Cosmic & Historical Interactive Web Story (Visual Journey)
 **Concept:** A free, cinematic, interactive web experience (Scrollytelling) that visualizes the journey from the creation of the universe down to human history.
 **Narrative Flow (Sanatan/Puranic & Scientific Blend):**
 - **Phase 1: The Void:** Dark screen, singularity/Hiranyagarbha, Big Bang / Srishti initiation.
