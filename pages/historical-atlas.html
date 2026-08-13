@@ -172,13 +172,14 @@
     <!-- Load India Border Data -->
     <script src="../js/data/geo/india_border.js"></script>
     <script src="../js/data/geo/mahajanapadas.js"></script>
+    <script src="../js/data/geo/bharatavarsha.js"></script>
 
     <script>
         // --- Mock Data for Proof of Concept ---
         // Coordinates are approximate mapping to real-world Indian geography
 
         const eras = {
-            1: "Satya Yug",
+            1: "Satya Yug (Dawn of Manvantara)",
             2: "Treta Yug (Ramayan)",
             3: "Dwapar Yug (Mahabharat)",
             4: "Kali Yug (16 Mahajanapadas - 600 BCE)",
@@ -363,6 +364,7 @@
         }
 
         let indiaBorderLayer;
+        let bharatavarshaBorderLayer;
 
         function renderIndiaBorder() {
             if (typeof indiaBorderData !== 'undefined') {
@@ -401,6 +403,42 @@
 
                 // Add to map by default
                 indiaBorderLayer.addTo(map);
+            }
+
+            if (typeof bharatavarshaData !== 'undefined') {
+                bharatavarshaBorderLayer = L.geoJSON(bharatavarshaData, {
+                    style: {
+                        color: "#FFD700",
+                        weight: 3,
+                        opacity: 0.6,
+                        fillOpacity: 0.05,
+                        fillColor: "#FFD700",
+                        dashArray: '8, 8'
+                    },
+                    interactive: false
+                });
+
+                const overlayContainer = document.querySelector('.map-overlay');
+                const pBorderDiv = document.createElement('div');
+                pBorderDiv.style.marginBottom = '10px';
+                pBorderDiv.innerHTML = `
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #fff;">
+                        <input type="checkbox" id="layer-bharatavarsha-border" checked>
+                        Puranic Bharatavarsha
+                    </label>
+                `;
+                overlayContainer.insertBefore(pBorderDiv, overlayContainer.children[2]); // Insert after Modern India
+
+                document.getElementById('layer-bharatavarsha-border').addEventListener('change', function(e) {
+                    if(e.target.checked) {
+                        bharatavarshaBorderLayer.addTo(map);
+                    } else {
+                        map.removeLayer(bharatavarshaBorderLayer);
+                    }
+                });
+
+                // Add to map by default
+                bharatavarshaBorderLayer.addTo(map);
             }
         }
 
@@ -452,7 +490,11 @@
             eraDisplay.textContent = eras[eraId];
 
             // Fetch/Load different GeoJSON data based on eraId
-            if (eraId == 4) {
+            if (eraId == 1) {
+                if (typeof dawnOfManvantaraData !== 'undefined') {
+                    kingdomsData = dawnOfManvantaraData;
+                }
+            } else if (eraId == 4) {
                 if (typeof mahajanapadasData !== 'undefined') {
                     kingdomsData = mahajanapadasData;
                 }
