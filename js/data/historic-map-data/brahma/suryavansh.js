@@ -5,6 +5,12 @@ export const suryavanshData = [
     // Manu's other children
 
     { id: 'manu_other_sons_proxy', name: 'मनु के अन्य पुत्र', subtitle: 'इक्ष्वाकु के अतिरिक्त अन्य पुत्र', isProxy: true, parent: 'vaivasvata_manu', clusterName: 'मनु के अन्य पुत्र', yug: 'satya' },
+
+    { id: 'sudyumna_surya', name: 'सुद्युम्न (इला)', subtitle: 'इला का पुरुष रूप', gender: 'male', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'ये मनु की पुत्री इला का पुरुष रूप थे। पुरुष रूप में इन्होंने शासन किया और इनके 3 पुत्र हुए। (जब ये स्त्री रूप में होते थे, तब इन्होंने बुध से विवाह कर पुरुरवा को जन्म दिया जो चंद्रवंश के प्रवर्तक बने)।' },
+    { id: 'utkala_sudyumna', name: 'उत्कल', subtitle: 'सुद्युम्न पुत्र', gender: 'male', parent: 'sudyumna_surya', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'इन्होंने उत्कल (वर्तमान ओडिशा) क्षेत्र की स्थापना की और वहाँ शासन किया।' },
+    { id: 'gaya_sudyumna', name: 'गय', subtitle: 'सुद्युम्न पुत्र', gender: 'male', parent: 'sudyumna_surya', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'इन्होंने गय राज्य (वर्तमान बिहार में गया) की स्थापना की।' },
+    { id: 'vimala_sudyumna', name: 'विमल (विनताश्व)', subtitle: 'सुद्युम्न पुत्र', gender: 'male', parent: 'sudyumna_surya', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'इन्होंने उत्तर-पूर्वी दिशा के राज्यों पर शासन किया। कुछ पुराणों में इन्हें विनताश्व भी कहा गया है।' },
+
     { id: 'nabhaga', name: 'नाभाग', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
     { id: 'dhrishta', name: 'धृष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
     { id: 'sharyati', name: 'शर्याति', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
