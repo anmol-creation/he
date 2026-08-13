@@ -307,8 +307,9 @@ export const brahmaBaseData = [
     { id: 'apnavana', name: 'अप्नवान', subtitle: 'च्यवन वंश', parent: 'chyavana', yug: 'treta', parichay: 'भृगु वंश के ऋषि, जो महाभारत के अनुसार च्यवन के पुत्र और और्व के पिता थे।' },
     { id: 'ruru', name: 'रुरु', subtitle: 'प्रमति पुत्र', parent: 'pramati', yug: 'treta', parichay: 'च्यवन के पौत्र। इन्होने अपनी आधी आयु देकर अपनी पत्नी प्रमद्वरा को जीवित किया था।' },
     { id: 'pramadvara', name: 'प्रमद्वरा', subtitle: 'रुरु पत्नी', parent: '', spouseOf: 'ruru', yug: 'treta', parichay: 'मेनका अप्सरा की पुत्री और रुरु की पत्नी।' },
-    { id: 'shunaka', name: 'शुनक', subtitle: 'रुरु पुत्र', parent: 'ruru', mother: 'pramadvara', yug: 'treta' },
-    { id: 'shaunaka', name: 'शौनक', subtitle: 'महान कुलपति ऋषि', parent: 'shunaka', yug: 'dwapar', parichay: 'नैमिषारण्य के महान कुलपति। इन्हीं के आश्रम में सूत जी ने 18 पुराणों और महाभारत की कथा सुनाई थी।' },
+    { id: 'shunaka', name: 'शुनक', subtitle: 'रुरु पुत्र', gender: 'male', parent: 'ruru', mother: 'pramadvara', yug: 'treta' },
+    { id: 'gritsamada', name: 'गृत्समद', subtitle: 'शुनक के दत्तक पुत्र / ऋग्वेद के मन्त्रद्रष्टा', gender: 'male', parent: 'shunaka', yug: 'treta', parichay: 'ये मूल रूप से चन्द्रवंशी (क्षत्रवृद्ध या शुनहोत्र के पुत्र) थे, परन्तु बाद में भृगुवंशी शुनक द्वारा गोद लिए गए या तपस्या से ब्राह्मण बने। ऋग्वेद के द्वितीय मण्डल के अधिकांश सूक्त इन्हीं के द्वारा दृष्ट हैं।' },
+    { id: 'shaunaka', name: 'शौनक', subtitle: 'महान कुलपति ऋषि', gender: 'male', parent: 'shunaka', yug: 'dwapar', parichay: 'नैमिषारण्य के महान कुलपति। इन्हीं के आश्रम में सूत जी ने 18 पुराणों और महाभारत की कथा सुनाई थी। पुराणों में चन्द्रवंश के क्षत्रवृद्ध (या वीतहव्य) के पुत्र गृत्समद को भी भृगु वंश (शुनक) द्वारा गोद लिया गया माना जाता है, जिससे वे भार्गव शौनक कहलाए। प्रोजेक्ट नियमों के अनुसार स्थानान्तरित वंशजों को उनके अंतिम स्वीकृत गोत्र (भृगु) में ही रखा गया है।' },
 
     // Aurva line
     { id: 'aurva', name: 'और्व', subtitle: 'भृगु वंश', parent: 'pramati', yug: 'treta', parichay: 'भृगु वंश के महान ऋषि, जो अपनी माता की जांघ (ऊरु) से प्रकट हुए थे।' },
