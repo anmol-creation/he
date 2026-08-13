@@ -10,6 +10,13 @@ export const chandravanshData = [
 
     // --- चंद्र देव की पत्नियां ---
     { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी (बृहस्पति की पूर्व पत्नी)', parent: '', spouseOf: 'chandra_chandra', yug: 'satya' },
+    // --- चंद्र देव की अन्य पत्नी एवं दैवीय संतानें (अष्ट-वसु के रूप में) ---
+    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'चंद्र (सोम वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'chandra_chandra', yug: 'satya', parichay: 'महाभारत (आदि पर्व) के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) की पत्नी।' },
+    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'ये चंद्र देव और मनोहरा के दैवीय पुत्र हैं। महाभारत के समय देवर्षियों के कहने पर इन्होंने ही अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
+    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'prana_chandra', name: 'प्राण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'ramana_chandra', name: 'रमण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+
     // (दक्ष की 27 पुत्रियां भी चंद्र की पत्नियां हैं, उन्हें आवश्यकता अनुसार बाद में जोड़ा जा सकता है)
 
     // --- चंद्र देव के पुत्र ---
