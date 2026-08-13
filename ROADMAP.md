@@ -36,7 +36,15 @@ The overarching goal of this project is to present world history through the len
 - All pieces on the board should be clickable to view their details or jump to their lineage tree.
 - **Benefit:** Allows users to see who existed at the same time (e.g., Ripunjaya vs Pradyota) without drawing messy cross-lineage lines on the map.
 
-### 2. Lineage Additions
+### 2. Dynamic Alliance & Cross-Lineage View
+**Concept:** A way to visually merge two distinct bloodlines (e.g., different clans or Vanshas) based on matrimonial alliances, without causing "hairball" graph clutter.
+**Execution Idea:**
+- In the side Info Box (Hero Card), place a "View Alliance" button next to a spouse's name if they belong to a different major clan.
+- Clicking this triggers a dynamic layout render: The current tree shifts to one side, and the spouse's ancestral tree renders on the opposite side.
+- A single, prominent "Gathbandhan" bridge line connects the two spouses, hiding all other unrelated lineage noise.
+- **Benefit:** Allows users to explore how distinct clans merged over time through marriages (e.g., Rajput alliances, Kuru-Panchala) dynamically and cleanly.
+
+### 3. Lineage Additions
 - **Nanda Dynasty & Shishunaga:** Plan to add as a separate lineage root (Magadha Medieval Link), distinct from the Chandravansh Brihadratha line, reflecting the historical break/assassinations.
 - **Gupta Empire:** Plan to add as a new proxy/root ("Gupta Empire (Vaishya)") starting from Sri Gupta, linking to the Lichchhavi clan via Kumaradevi.
 
@@ -44,7 +52,7 @@ The overarching goal of this project is to present world history through the len
 - Refine clustering logic for extremely large dynasties.
 - Add more ancient incident texts to the Digital Archives.
 
-### 3. UI/UX Improvements for Historic Map
+### 4. UI/UX Improvements for Historic Map
 - **Google Maps Style Search UI:** Redesign the search functionality to resemble Google Maps. Clicking the main search bar on the map should open a dedicated full-screen search view/overlay. This view will feature a prominent "Back" button at the top to return to the map, a search input, and a list of recent searches/categories or live search results below it.
 - **Dynamic Info Box on Swipe:** When navigating between nodes via swipe gestures (fast swipe up/down/left/right), if the side Info Box is currently open, it should automatically update its content to display the details of the newly focused node without requiring an extra click.
 - **Line Label Collision Avoidance:** If multiple line labels (e.g., `lineLabel` property) are rendered on the same connecting edge, they should be positioned dynamically to prevent overlapping with each other.
@@ -56,12 +64,21 @@ The overarching goal of this project is to present world history through the len
 - **Houses & Sigils (Vansh Banners):** Replace generic boxes with faction-based designs. E.g., Suryavansh uses golden sun motifs and colors, Chandravansh uses silver moon motifs.
 - **"Hero Card" Info Box:** The side panel should look like a character profile card, featuring a prominent avatar, glowing power/title tags (e.g., `[Maharathi]`), and a "Crossover/Appears In" section linking to major events (e.g., Ramayana, Kurukshetra War).
 - **Interactive Timeline Filters:** A cinematic slider at the bottom (by Yuga or Kalpa) that dims out non-relevant lineages and highlights only those active in that era, creating a time-travel visual effect.
+- **"Expand All / Collapse All" Control:** Add a dedicated global button to easily expand or collapse all clusters on the map simultaneously for macro viewing.
+- **GoT-Style Banners for Collapsed Clusters:** Instead of just showing a basic node with a '+' icon when a lineage is collapsed, render a high-quality Vansh Banner (Flag). The banner will display the Vansh/Cluster Name and briefly list 2-3 prominent characters inside it, increasing visual appeal and context.
+- **Cultural UI for Marriage Connections (Gathbandhan):** To reflect the deep significance of marriage in Sanatan Dharma, replace the standard husband-wife connection lines with a culturally resonant design. The line connecting spouses should meet in the center with a visual icon of a "Gathbandhan" (wedding knot) or clasped hands, representing an eternal bond.
+- **Micro-Symbology (Vansh & Sub-clans):** While major Vanshas will have overarching banners (Sun/Moon), individual nodes or sub-clusters (Gotras/Surnames) should feature their own specific micro-symbols based on historical banners/flags to show the branching of clans.
+- **Varna/Karma Iconography:** To instantly convey a historical figure's societal role/duty without text clutter, nodes will display subtle corner icons based on Varna: a Book/Manuscript for Brahmins (knowledge/teaching), Weapons (Sword/Bow) for Kshatriyas (defense/ruling), Scales/Coins for Vaishyas (trade/agriculture), and Craft Tools/Service motifs for Shudras (service/arts/crafts).
+
+### 5.1 Mobile-First Responsiveness & Rendering Engine Upgrade
+- **Current Issue:** The application is currently locked into a desktop-first layout and the canvas rendering lacks the ultimate smoothness seen in premium reference sites (like the LotR project).
+- **Goal:** Overhaul the CSS for true mobile responsiveness across all devices. Re-evaluate the rendering pipeline (potentially migrating from raw Canvas 2D to an SVG-based layout engine like D3.js or a WebGL approach) to ensure 60fps buttery-smooth panning and zooming, regardless of the size of the family tree.
 **Reference Inspiration (Cinematic Lore & Maps):**
 - [Quartermaester - Interactive GoT Map](https://quartermaester.info/) - Excellent reference for dark theme maps and faction tracking.
 - [Marvel Official Characters](https://www.marvel.com/characters) - The gold standard for "Hero Card" UI and timeline crossovers.
 - [The LotR Project](http://lotrproject.com/) - A great functional example of a massive fantasy lineage tree and geo-map.
 
-### 5. Cosmic & Historical Interactive Web Story (Visual Journey)
+### 6. Cosmic & Historical Interactive Web Story (Visual Journey)
 **Concept:** A free, cinematic, interactive web experience (Scrollytelling) that visualizes the journey from the creation of the universe down to human history.
 **Narrative Flow (Sanatan/Puranic & Scientific Blend):**
 - **Phase 1: The Void:** Dark screen, singularity/Hiranyagarbha, Big Bang / Srishti initiation.
