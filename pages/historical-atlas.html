@@ -112,6 +112,28 @@
             font-weight: 600;
         }
 
+        .varsha-tooltip {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            opacity: 0.8;
+        }
+
+        .terrain-tooltip {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #ffaa00;
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
         /* Override leaflet default controls for dark theme */
         .leaflet-control-zoom a {
             background-color: #222 !important;
@@ -136,8 +158,18 @@
     <main>
         <div id="map"></div>
 
-        <div class="map-overlay">
-            <h3 style="margin-top:0; color: var(--primary-saffron); margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">Layers & Filters</h3>
+        <!-- Button to open the menu when it's closed -->
+        <button id="open-layers-btn" style="position: absolute; top: 20px; right: 20px; z-index: 1000; background: rgba(17, 17, 17, 0.9); border: 1px solid var(--primary-saffron); border-radius: 8px; padding: 10px; color: white; cursor: pointer; display: none; font-family: 'Poppins', sans-serif;">
+            <span style="font-size: 1.2rem; margin-right: 5px;">☰</span> Layers
+        </button>
+
+        <div class="map-overlay" id="layers-menu">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <h3 style="margin: 0; color: var(--primary-saffron);">Layers & Filters</h3>
+                <button id="close-layers-btn" style="background: none; border: none; color: white; cursor: pointer; font-size: 1.5rem; padding: 0; line-height: 1;">
+                    &times;
+                </button>
+            </div>
 
             <div style="margin-bottom: 10px;">
                 <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
@@ -161,8 +193,8 @@
 
         <div class="timeline-slider-container">
             <span class="era-label" id="start-era">Satya Yug</span>
-            <input type="range" min="1" max="4" value="3" class="timeline-slider" id="era-slider">
-            <span class="era-label" id="current-era-display">Dwapar Yug (Mahabharat)</span>
+            <input type="range" min="1" max="5" value="1" class="timeline-slider" id="era-slider">
+            <span class="era-label" id="current-era-display">Satya Yug (Dawn of Manvantara)</span>
         </div>
     </main>
 
@@ -174,6 +206,7 @@
     <script src="../js/data/geo/mahajanapadas.js"></script>
     <script src="../js/data/geo/bharatavarsha.js"></script>
     <script src="../js/data/geo/jambudweepa.js"></script>
+    <script src="../js/data/geo/terrain_features.js"></script>
 
     <script>
         // --- Mock Data for Proof of Concept ---
@@ -292,7 +325,7 @@
         });
 
         // Terrain/Physical Base Map (Esri World Topo/Physical)
-        const terrainLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        const terrainTileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         });
 
@@ -367,6 +400,7 @@
         let indiaBorderLayer;
         let bharatavarshaBorderLayer;
         let jambudweepaLayer;
+        let terrainFeaturesLayer;
 
         function renderIndiaBorder() {
             if (typeof indiaBorderData !== 'undefined') {
@@ -456,6 +490,12 @@
                         };
                     },
                     onEachFeature: function (feature, layer) {
+                        layer.bindTooltip(feature.properties.name, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'varsha-tooltip'
+                        });
+
                         layer.bindPopup(`
                             <div style="color: black; font-family: 'Poppins', sans-serif;">
                                 <h3 style="margin-top:0; margin-bottom:5px;">${feature.properties.name}</h3>
@@ -471,7 +511,7 @@
                 jBorderDiv.style.marginBottom = '10px';
                 jBorderDiv.innerHTML = `
                     <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #fff;">
-                        <input type="checkbox" id="layer-jambudweepa-border">
+                        <input type="checkbox" id="layer-jambudweepa-border" checked>
                         Puranic Jambudweepa (Global)
                     </label>
                 `;
@@ -484,6 +524,84 @@
                         map.removeLayer(jambudweepaLayer);
                     }
                 });
+
+                jambudweepaLayer.addTo(map);
+            }
+
+
+            // Adjust Terrain labels
+            if (terrainFeaturesLayer) {
+                terrainFeaturesLayer.eachLayer(function(layer) {
+                    if (layer.getTooltip()) {
+                        if (currentZoom >= 4) {
+                            layer.getTooltip().setOpacity(0.9);
+                        } else {
+                            layer.getTooltip().setOpacity(0);
+                        }
+                    }
+                });
+            }
+
+            // Terrain Layer (Mountains/Rivers)
+            if (typeof terrainData !== 'undefined') {
+                terrainFeaturesLayer = L.geoJSON(terrainData, {
+                    style: function (feature) {
+                        return {
+                            color: feature.properties.color,
+                            weight: feature.geometry.type === 'Point' ? 0 : 3,
+                            opacity: 0.9,
+                            dashArray: feature.properties.type === 'river' ? '10, 5' : ''
+                        };
+                    },
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            radius: 6,
+                            fillColor: feature.properties.color,
+                            color: "#fff",
+                            weight: 1,
+                            opacity: 1,
+                            fillOpacity: 0.8
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindTooltip(feature.properties.name, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'terrain-tooltip'
+                        });
+
+                        layer.bindPopup(`
+                            <div style="color: black; font-family: 'Poppins', sans-serif;">
+                                <h3 style="margin-top:0; margin-bottom:5px;">${feature.properties.name}</h3>
+                                <p><strong>Type:</strong> ${feature.properties.type.charAt(0).toUpperCase() + feature.properties.type.slice(1)}</p>
+                                <p><strong>Description:</strong> ${feature.properties.description}</p>
+                            </div>
+                        `);
+                    },
+                    interactive: true
+                });
+
+                const overlayContainer = document.querySelector('.map-overlay');
+                const tBorderDiv = document.createElement('div');
+                tBorderDiv.style.marginBottom = '10px';
+                tBorderDiv.innerHTML = `
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #fff;">
+                        <input type="checkbox" id="layer-terrain-features" checked>
+                        Mountains & Rivers
+                    </label>
+                `;
+                overlayContainer.insertBefore(tBorderDiv, overlayContainer.children[4]); // Insert after Jambudweepa
+
+                document.getElementById('layer-terrain-features').addEventListener('change', function(e) {
+                    if(e.target.checked) {
+                        terrainFeaturesLayer.addTo(map);
+                    } else {
+                        map.removeLayer(terrainFeaturesLayer);
+                    }
+                });
+
+                // Add to map by default
+                terrainFeaturesLayer.addTo(map);
             }
         }
 
@@ -492,6 +610,48 @@
         renderIndiaBorder();
 
         // --- Event Listeners ---
+
+        // Menu Toggle
+        document.getElementById('close-layers-btn').addEventListener('click', function() {
+            document.getElementById('layers-menu').style.display = 'none';
+            document.getElementById('open-layers-btn').style.display = 'block';
+        });
+
+        document.getElementById('open-layers-btn').addEventListener('click', function() {
+            document.getElementById('layers-menu').style.display = 'block';
+            document.getElementById('open-layers-btn').style.display = 'none';
+        });
+
+        // Zoom responsiveness for labels
+        map.on('zoomend', function() {
+            let currentZoom = map.getZoom();
+
+            // Adjust Varsha labels
+            if (jambudweepaLayer) {
+                jambudweepaLayer.eachLayer(function(layer) {
+                    if (layer.getTooltip()) {
+                        if (currentZoom >= 3 && currentZoom < 6) {
+                            layer.getTooltip().setOpacity(0.8);
+                        } else {
+                            layer.getTooltip().setOpacity(0); // Hide at very low/high zooms
+                        }
+                    }
+                });
+            }
+
+            // Adjust Kingdom labels
+            if (kingdomsLayer) {
+                kingdomsLayer.eachLayer(function(layer) {
+                    if (layer.getTooltip()) {
+                        if (currentZoom >= 5) {
+                            layer.getTooltip().setOpacity(1);
+                        } else {
+                            layer.getTooltip().setOpacity(0); // Hide kingdoms at macro zoom
+                        }
+                    }
+                });
+            }
+        });
 
         // Layer Toggles
         document.getElementById('layer-kingdoms').addEventListener('change', function(e) {
@@ -513,9 +673,9 @@
         document.getElementById('layer-terrain').addEventListener('change', function(e) {
             if(e.target.checked) {
                 map.removeLayer(darkLayer);
-                terrainLayer.addTo(map);
+                terrainTileLayer.addTo(map);
             } else {
-                map.removeLayer(terrainLayer);
+                map.removeLayer(terrainTileLayer);
                 darkLayer.addTo(map);
             }
         });
@@ -529,6 +689,12 @@
 
         // Store original dwapar data
         const dwaparKingdoms = kingdomsData;
+
+        // Initialize with Era 1 (Satya Yug) data if available
+        if (typeof dawnOfManvantaraData !== 'undefined') {
+            kingdomsData = dawnOfManvantaraData;
+            renderMapData(); // re-render with Era 1 data on load
+        }
 
         eraSlider.addEventListener('input', function(e) {
             const eraId = e.target.value;
