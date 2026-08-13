@@ -73,6 +73,15 @@ The overarching goal of this project is to present world history through the len
 ### 5.1 Mobile-First Responsiveness & Rendering Engine Upgrade
 - **Current Issue:** The application is currently locked into a desktop-first layout and the canvas rendering lacks the ultimate smoothness seen in premium reference sites (like the LotR project).
 - **Goal:** Overhaul the CSS for true mobile responsiveness across all devices. Re-evaluate the rendering pipeline (potentially migrating from raw Canvas 2D to an SVG-based layout engine like D3.js or a WebGL approach) to ensure 60fps buttery-smooth panning and zooming, regardless of the size of the family tree.
+
+### 5.2 Immersive Library Vibe (Homepage Theme Upgrade)
+- **Concept:** Transform the basic homepage portal into an immersive, video-game style main menu (like Assassin's Creed or God of War menus) acting as a "Sacred Ancient Vault" or "Digital Library".
+- **Design Elements (Cinematic Dark-Minimalism):**
+  - **Atmosphere:** Deep black background with subtle, slow-moving ambient glowing lights and an overlay of ancient paper/dust noise texture.
+  - **Typography:** Majestic serif titles (e.g., Cinzel) with copper/bhagwa glowing text shadows to convey ancient authority, paired with clean sans-serif (e.g., Inter) for readable sub-text.
+  - **Portals (Buttons):** Instead of standard buttons, use dark, minimalist, semi-transparent panels that "ignite" with a glowing box-shadow and subtle upward lift when hovered, feeling like opening a gateway.
+- **Implementation Note:** This approach prioritizes CSS-based environmental storytelling (gradients, box-shadows, keyframe animations) to keep the initial load lightweight and performant, avoiding heavy 3D assets while still achieving a cinematic feel.
+
 **Reference Inspiration (Cinematic Lore & Maps):**
 - [Quartermaester - Interactive GoT Map](https://quartermaester.info/) - Excellent reference for dark theme maps and faction tracking.
 - [Marvel Official Characters](https://www.marvel.com/characters) - The gold standard for "Hero Card" UI and timeline crossovers.

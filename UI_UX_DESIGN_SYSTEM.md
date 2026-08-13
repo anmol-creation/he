@@ -30,7 +30,9 @@ Used strictly on the Historic Map to differentiate bloodlines:
 
 ## 3. Typography (Fonts)
 *   **Headings & Titles (The Ancient Feel):** `Yatra One` (Google Fonts). Used for Page titles, Vansh banners, and major headers. Gives a Devanagari brush-stroke feel to English/Latin text.
+    *   *Alternative Idea (Cinematic Theme):* `Cinzel` (Google Fonts) for a majestic, ancient, and authoritative feel, often paired with glowing effects.
 *   **Body Text & UI Elements (The Modern Readability):** `Poppins` (Google Fonts). Used for Info boxes, book reading text, and buttons. Clean, geometric, and modern.
+    *   *Alternative Idea (Cinematic Theme):* `Inter` (Google Fonts) for highly legible, neutral sub-text that contrasts well with dramatic headers.
 
 ## 4. UI Component Library
 
