@@ -173,6 +173,7 @@
     <script src="../js/data/geo/india_border.js"></script>
     <script src="../js/data/geo/mahajanapadas.js"></script>
     <script src="../js/data/geo/bharatavarsha.js"></script>
+    <script src="../js/data/geo/jambudweepa.js"></script>
 
     <script>
         // --- Mock Data for Proof of Concept ---
@@ -365,6 +366,7 @@
 
         let indiaBorderLayer;
         let bharatavarshaBorderLayer;
+        let jambudweepaLayer;
 
         function renderIndiaBorder() {
             if (typeof indiaBorderData !== 'undefined') {
@@ -439,6 +441,49 @@
 
                 // Add to map by default
                 bharatavarshaBorderLayer.addTo(map);
+            }
+
+            if (typeof jambudweepaData !== 'undefined') {
+                jambudweepaLayer = L.geoJSON(jambudweepaData, {
+                    style: function (feature) {
+                        return {
+                            color: feature.properties.color,
+                            weight: 2,
+                            opacity: 0.8,
+                            fillOpacity: 0.1,
+                            fillColor: feature.properties.color,
+                            dashArray: '4, 4'
+                        };
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup(`
+                            <div style="color: black; font-family: 'Poppins', sans-serif;">
+                                <h3 style="margin-top:0; margin-bottom:5px;">${feature.properties.name}</h3>
+                                <p><strong>Description:</strong> ${feature.properties.description}</p>
+                            </div>
+                        `);
+                    },
+                    interactive: true
+                });
+
+                const overlayContainer = document.querySelector('.map-overlay');
+                const jBorderDiv = document.createElement('div');
+                jBorderDiv.style.marginBottom = '10px';
+                jBorderDiv.innerHTML = `
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #fff;">
+                        <input type="checkbox" id="layer-jambudweepa-border">
+                        Puranic Jambudweepa (Global)
+                    </label>
+                `;
+                overlayContainer.insertBefore(jBorderDiv, overlayContainer.children[3]); // Insert after Bharatavarsha
+
+                document.getElementById('layer-jambudweepa-border').addEventListener('change', function(e) {
+                    if(e.target.checked) {
+                        jambudweepaLayer.addTo(map);
+                    } else {
+                        map.removeLayer(jambudweepaLayer);
+                    }
+                });
             }
         }
 
