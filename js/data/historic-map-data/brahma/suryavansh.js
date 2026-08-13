@@ -13,6 +13,7 @@ export const suryavanshData = [
     { id: 'nabhanedishta', name: 'नाभानेदिष्ट', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', clusterName: 'मनु के अन्य पुत्र' },
     { id: 'karusha', name: 'करुष', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
     { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
+    { id: 'kavi_manu', name: 'कवि', subtitle: 'मनु पुत्र', gender: 'male', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'वैवस्वत मनु के पुत्र जिन्होंने सांसारिक मोह त्याग कर सन्यास ले लिया था।', source_texts: 'भागवत पुराण' },
 
     { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
     // Descendants of Ikshvaku
