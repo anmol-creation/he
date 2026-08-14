@@ -151,7 +151,7 @@ export const chandravanshData = [
     { id: 'akrida_turvasu_chandra', name: 'आक्रीड', subtitle: 'शरुत्थाम पुत्र', parent: 'sharutthama_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'pandya_turvasu_chandra', name: 'पाण्ड्य', subtitle: 'पाण्ड्य देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण भारत में पाण्ड्य राजवंश की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kerala_turvasu_chandra', name: 'केरल', subtitle: 'केरल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में केरल (चेर) राज्य की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की। (नोट: बाद के चोल अभिलेखों जैसे तिरुवालंगाडु में चोल सम्राटों ने अपनी वंशावली सूर्यवंशी राजा मान्धाता व शिबि से जोड़ी, जबकि पुराण इन्हें चंद्रवंशी तुर्वसु की वंशावली में रखते हैं।)', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kola_turvasu_chandra', name: 'कोल', subtitle: 'कोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
 
 
@@ -1128,6 +1128,67 @@ export const chandravanshData = [
     { id: 'vijayasimha_kalchuri', name: 'विजयसिंह', subtitle: 'अंतिम त्रिपुरी नरेश', parent: 'jayasimha_kalchuri', yug: 'kali', parichay: 'ये त्रिपुरी शाखा के अंतिम ज्ञात शासक थे, जिनके बाद कलचुरी साम्राज्य का पतन हो गया।', clusterName: 'नहुष चंद्रवंशी' },
 
 
+
+    // --- चोल राजवंश (कावेरी राजवंश) ---
+    // तुर्वसु वंश से उद्भव (अक्रीड के पुत्र चोल से)। मध्यकालीन चोल अभिलेखों (तिरुवालंगाडु) में इन्होंने अपना वंश सूर्यवंशी मान्धाता व शिबि से जोड़ा।
+
+    // प्रारंभिक चोल (संगम युग)
+    { id: 'early_chola_link', name: 'ऐतिहासिक अंतराल (संगम काल)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'chola_dynasty_proxy', yug: 'kali', parichay: 'पौराणिक चोल संस्थापक से लेकर संगम युग (लगभग 300 BCE - 200 CE) के बीच की अज्ञात पीढ़ियाँ।', clusterName: 'चोल राजवंश' },
+
+    { id: 'sibi_chakravarthi_chola', name: 'शिबि चक्रवर्ती (चोल उपाधि)', subtitle: 'चोलों के दावानल पूर्वज', parent: 'early_chola_link', yug: 'kali', parichay: 'चोल अभिलेखों और संगम साहित्य में चोल राजा स्वयं को महान दानी राजा शिबि (सेम्बियन) का वंशज मानते हैं।', clusterName: 'चोल राजवंश' },
+    { id: 'manu_needhi_cholan', name: 'मनु नीधि चोलन', subtitle: 'न्यायप्रिय राजा', parent: 'sibi_chakravarthi_chola', yug: 'kali', parichay: 'एक बछड़े को न्याय दिलाने के लिए इन्होंने अपने ही पुत्र को रथ के नीचे कुचलवा दिया था।', clusterName: 'चोल राजवंश' },
+    { id: 'ilamcetcenni', name: 'इलमचेतचेन्नी', subtitle: 'संगम चोल नरेश', parent: 'manu_needhi_cholan', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'karikala_chola_1', name: 'करिकाल चोल', subtitle: 'महान संगम नरेश', parent: 'ilamcetcenni', yug: 'kali', parichay: 'संगम काल के सबसे महान चोल राजा। इन्होंने कावेरी नदी पर कल्लनई बांध (Kallanai Dam) बनवाया था।', clusterName: 'चोल राजवंश' },
+    { id: 'nedunkilli', name: 'नेदुनकिल्ली', subtitle: 'संगम चोल नरेश', parent: 'karikala_chola_1', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'nalankilli', name: 'नलानकिल्ली', subtitle: 'संगम चोल नरेश', parent: 'karikala_chola_1', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'killivalavan', name: 'किल्लीवलवन', subtitle: 'संगम चोल नरेश', parent: 'nalankilli', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'kopperuncholan', name: 'कोप्पेरुंचोलन', subtitle: 'संगम चोल नरेश', parent: 'killivalavan', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'kocengannan', name: 'कोचेंगन्नान', subtitle: 'अंतिम महान संगम चोल', parent: 'kopperuncholan', yug: 'kali', parichay: 'प्रारंभिक चोलों के अंतिम प्रतापी राजा। इसके बाद कलाभ्र (Kalabhras) का अंधकार युग शुरू हुआ।', clusterName: 'चोल राजवंश' },
+    { id: 'perunarkilli', name: 'पेरुनारकिल्ली', subtitle: 'संगम चोल नरेश', parent: 'kocengannan', yug: 'kali', clusterName: 'चोल राजवंश' },
+
+    // मध्यकालीन चोल (Imperial Cholas)
+    { id: 'imperial_chola_link', name: 'ऐतिहासिक अंतराल (अंधकार युग)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'perunarkilli', yug: 'kali', parichay: 'कलाभ्र और पल्लवों के आधिपत्य के कारण लगभग 600 वर्षों का अंतराल।', clusterName: 'चोल राजवंश' },
+    { id: 'vijayalaya_chola', name: 'विजयालय चोल', subtitle: 'साम्राज्यवादी चोल संस्थापक', parent: 'imperial_chola_link', yug: 'kali', parichay: '848 ई. में मुत्तरैयार को हराकर तंजावुर पर कब्ज़ा किया और मध्यकालीन चोल साम्राज्य की नींव रखी।', clusterName: 'चोल राजवंश' },
+    { id: 'aditya_1_chola', name: 'आदित्य प्रथम', subtitle: 'विजयालय पुत्र', parent: 'vijayalaya_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'parantaka_1_chola', name: 'परान्तक प्रथम', subtitle: 'आदित्य प्रथम पुत्र', parent: 'aditya_1_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+
+    // परान्तक 1 के पुत्र
+    { id: 'rajaditya_chola', name: 'राजादित्य चोल', subtitle: 'परान्तक प्रथम पुत्र', parent: 'parantaka_1_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'gandaraditya_chola', name: 'गंडरादित्य', subtitle: 'परान्तक प्रथम पुत्र', parent: 'parantaka_1_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'arinjaya_chola', name: 'अरिंजय चोल', subtitle: 'परान्तक प्रथम पुत्र', parent: 'parantaka_1_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+
+    { id: 'uttama_chola', name: 'उत्तम चोल', subtitle: 'गंडरादित्य पुत्र', parent: 'gandaraditya_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+
+    { id: 'sundara_chola', name: 'सुंदर चोल (परान्तक द्वितीय)', subtitle: 'अरिंजय पुत्र', parent: 'arinjaya_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'vanavan_mahadevi', name: 'वनवन महादेवी', subtitle: 'सुंदर चोल की पत्नी', parent: '', spouseOf: 'sundara_chola', yug: 'kali' },
+
+    // सुंदर चोल की संतान
+    { id: 'aditya_2_karikala', name: 'आदित्य द्वितीय (करिकाल)', subtitle: 'सुंदर चोल पुत्र', parent: 'sundara_chola', mother: 'vanavan_mahadevi', yug: 'kali', parichay: 'राजकुमार रहते हुए ही इनकी हत्या कर दी गई थी।', clusterName: 'चोल राजवंश' },
+    { id: 'kundavai_pirattiyar', name: 'कुंदवई पिराट्टियार', subtitle: 'राजकुमारी', parent: 'sundara_chola', mother: 'vanavan_mahadevi', gender: 'female', yug: 'kali', parichay: 'राजराजा चोल की बड़ी बहन। ये एक महान कूटनीतिज्ञ थीं।', clusterName: 'चोल राजवंश' },
+
+    { id: 'rajaraja_1_chola', name: 'राजराजा चोल प्रथम', subtitle: 'राजराजा द ग्रेट', parent: 'sundara_chola', mother: 'vanavan_mahadevi', yug: 'kali', parichay: 'चोल साम्राज्य के सबसे महान सम्राट। इन्होंने तंजावुर का बृहदीश्वर मंदिर (Big Temple) बनवाया।', clusterName: 'चोल राजवंश' },
+    { id: 'tribhuvana_mahadevi', name: 'त्रिभुवन महादेवी', subtitle: 'राजराजा प्रथम की पत्नी', parent: '', spouseOf: 'rajaraja_1_chola', yug: 'kali' },
+
+    { id: 'rajendra_1_chola', name: 'राजेंद्र चोल प्रथम', subtitle: 'गंगईकोंडा चोल', parent: 'rajaraja_1_chola', mother: 'tribhuvana_mahadevi', yug: 'kali', parichay: 'इन्होंने चोल साम्राज्य का विस्तार दक्षिण-पूर्व एशिया (Srivijaya) और गंगा नदी तक किया।', clusterName: 'चोल राजवंश' },
+    { id: 'mukkokilan', name: 'मुक्कोकिलन', subtitle: 'राजेंद्र प्रथम की पत्नी', parent: '', spouseOf: 'rajendra_1_chola', yug: 'kali' },
+
+    // राजेंद्र प्रथम की संतानें
+    { id: 'rajadhiraja_1_chola', name: 'राजाधिराज चोल प्रथम', subtitle: 'राजेंद्र प्रथम पुत्र', parent: 'rajendra_1_chola', mother: 'mukkokilan', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'rajendra_2_chola', name: 'राजेंद्र चोल द्वितीय', subtitle: 'राजेंद्र प्रथम पुत्र', parent: 'rajendra_1_chola', mother: 'mukkokilan', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'virarajendra_chola', name: 'वीरराजेंद्र चोल', subtitle: 'राजेंद्र प्रथम पुत्र', parent: 'rajendra_1_chola', mother: 'mukkokilan', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'ammangadevi', name: 'अम्मंगादेवी', subtitle: 'राजेंद्र प्रथम की पुत्री', parent: 'rajendra_1_chola', mother: 'mukkokilan', gender: 'female', yug: 'kali', parichay: 'इनका विवाह वेंगी के पूर्वी चालुक्य राजा राजराज नरेंद्र से हुआ था।', clusterName: 'चोल राजवंश' },
+
+    { id: 'athirajendra_chola', name: 'अधिराजेंद्र चोल', subtitle: 'वीरराजेंद्र पुत्र', parent: 'virarajendra_chola', yug: 'kali', parichay: 'इनकी मृत्यु के साथ चोलों की पितृसत्तात्मक (Patrilineal) वंशावली समाप्त हो गई।', clusterName: 'चोल राजवंश' },
+
+    // उत्तरकालीन चोल (Later Cholas / Chalukya-Cholas) - अम्मंगादेवी के पुत्र
+    { id: 'kulothunga_1_chola', name: 'कुलोत्तुंग चोल प्रथम', subtitle: 'चालुक्य-चोल संस्थापक', parent: 'ammangadevi', yug: 'kali', parichay: 'राजेंद्र चोल प्रथम के नाती। इन्होंने वेंगी चालुक्य और चोल साम्राज्य का विलय किया।', clusterName: 'चोल राजवंश' },
+    { id: 'vikrama_chola', name: 'विक्रम चोल', subtitle: 'कुलोत्तुंग प्रथम पुत्र', parent: 'kulothunga_1_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'kulothunga_2_chola', name: 'कुलोत्तुंग चोल द्वितीय', subtitle: 'विक्रम चोल पुत्र', parent: 'vikrama_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'rajaraja_2_chola', name: 'राजराजा चोल द्वितीय', subtitle: 'कुलोत्तुंग द्वितीय पुत्र', parent: 'kulothunga_2_chola', yug: 'kali', parichay: 'इन्होंने दारासुरम का ऐरावतेश्वर मंदिर बनवाया था।', clusterName: 'चोल राजवंश' },
+    { id: 'rajadhiraja_2_chola', name: 'राजाधिराज चोल द्वितीय', subtitle: 'राजराजा द्वितीय के भतीजे', parent: 'rajaraja_2_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'kulothunga_3_chola', name: 'कुलोत्तुंग चोल तृतीय', subtitle: 'राजाधिराज द्वितीय पुत्र', parent: 'rajadhiraja_2_chola', yug: 'kali', parichay: 'उत्तरकालीन चोलों के सबसे शक्तिशाली सम्राट।', clusterName: 'चोल राजवंश' },
+    { id: 'rajaraja_3_chola', name: 'राजराजा चोल तृतीय', subtitle: 'कुलोत्तुंग तृतीय पुत्र', parent: 'kulothunga_3_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
+    { id: 'rajendra_3_chola', name: 'राजेंद्र चोल तृतीय', subtitle: 'अंतिम चोल सम्राट', parent: 'rajaraja_3_chola', yug: 'kali', parichay: 'चोल राजवंश के अंतिम ज्ञात शासक। 1279 ई. में पांड्यों द्वारा चोल साम्राज्य का अंत कर दिया गया।', clusterName: 'चोल राजवंश' },
 
     // --- संदर्भ के लिए अन्य राजवंश/पात्र (यदुवंश से जुड़े) ---
     { id: 'bhishmaka_chandra', name: 'भीष्मक', subtitle: 'विदर्भ नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
