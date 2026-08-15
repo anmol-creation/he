@@ -1132,6 +1132,41 @@ export const chandravanshData = [
     // --- चोल राजवंश (कावेरी राजवंश) ---
     // तुर्वसु वंश से उद्भव (अक्रीड के पुत्र चोल से)। मध्यकालीन चोल अभिलेखों (तिरुवालंगाडु) में इन्होंने अपना वंश सूर्यवंशी मान्धाता व शिबि से जोड़ा।
 
+
+    // --- प्रारंभिक चेर (केरल) राजवंश (संगम काल) ---
+    { id: 'early_chera_link', name: 'ऐतिहासिक अंतराल (संगम काल)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'kerala_dynasty_proxy', yug: 'kali', parichay: 'पौराणिक केरल संस्थापक से लेकर संगम युग के प्रथम ऐतिहासिक चेर राजा उदियन चेरलथन के बीच की अज्ञात पीढ़ियाँ। मूषिका वंश जैसे ग्रंथ इस बीच कई राजाओं (जैसे राम, नंदन, उग्रसेन) का वर्णन करते हैं।', clusterName: 'चेर (केरल) राजवंश' },
+
+    { id: 'uthiyan_cheralathan', name: 'उदियन चेरलथन', subtitle: 'प्रथम संगम चेर नरेश', parent: 'early_chera_link', yug: 'kali', parichay: 'इन्हें वनवरम्पन (देवताओं का प्रिय) भी कहा जाता था। कहा जाता है कि इन्होंने महाभारत युद्ध में कौरवों और पांडवों को भोजन (पेरुम चोत्रु) कराया था।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'veliyan_nallini', name: 'वेलियन नल्लिनी', subtitle: 'चेर महारानी', parent: 'uthiyan_cheralathan', spouseOf: 'uthiyan_cheralathan', gender: 'female', yug: 'kali', parichay: 'आय (Ay) राजवंश की राजकुमारी और उदियन चेरलथन की पत्नी।', clusterName: 'चेर (केरल) राजवंश' },
+
+    { id: 'nedum_cheralathan', name: 'नेदुम चेरलथन', subtitle: 'इमयावरम्पन', parent: 'uthiyan_cheralathan', mother: 'veliyan_nallini', yug: 'kali', parichay: 'इन्होंने हिमालय तक विजय प्राप्त की और चेर वंश का धनुष-बाण का चिह्न हिमालय पर अंकित किया।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'palyanai_chel_kelu_kuttuvan', name: 'पलयानई चेल केलु कुट्टुवन', subtitle: 'उदियन के पुत्र', parent: 'uthiyan_cheralathan', mother: 'veliyan_nallini', yug: 'kali', parichay: 'नेदुम चेरलथन के छोटे भाई, जिन्होंने कोंगर नाडु (कोंगु क्षेत्र) पर विजय प्राप्त की।', clusterName: 'चेर (केरल) राजवंश' },
+
+    { id: 'chola_princess_manikilli', name: 'चोल राजकुमारी मणिकिल्ली', subtitle: 'चेर महारानी', parent: 'nedum_cheralathan', spouseOf: 'nedum_cheralathan', gender: 'female', yug: 'kali', parichay: 'चोल राजवंश की राजकुमारी (संभवतः इलमचेतचेन्नी के परिवार से) और नेदुम चेरलथन की पत्नी।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'other_wife_nedum', name: 'अन्य चेर रानी', subtitle: 'नेदुम की पत्नी', parent: 'nedum_cheralathan', spouseOf: 'nedum_cheralathan', gender: 'female', yug: 'kali', clusterName: 'चेर (केरल) राजवंश' },
+
+    { id: 'narmudi_cheral', name: 'नार्मुडी चेरल', subtitle: 'नेदुम के पुत्र', parent: 'nedum_cheralathan', mother: 'other_wife_nedum', yug: 'kali', parichay: 'इन्होंने थगदुर के शासकों को हराया था।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'senguttuvan_chera', name: 'सेनगुट्टुवन (चेनकुट्टुवन)', subtitle: 'महान चेर नरेश', parent: 'nedum_cheralathan', mother: 'chola_princess_manikilli', yug: 'kali', parichay: 'कडल पिरकोट्टिय चेनकुट्टुवन। ये महान योद्धा थे। महाकाव्य शिलप्पादिकारम में कन्नगी की कहानी के समय यही राजा थे।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'ilango_adigal', name: 'इलंगो अडिगल', subtitle: 'शिलप्पादिकारम के रचयिता', parent: 'nedum_cheralathan', mother: 'chola_princess_manikilli', yug: 'kali', parichay: 'सेनगुट्टुवन के छोटे भाई। इन्होंने राजपाट त्याग कर जैन संन्यास लिया और महान तमिल महाकाव्य शिलप्पादिकारम की रचना की।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'adu_kottu_pattu_cheralathan', name: 'आडु कोट्टु पट्टु चेरलथन', subtitle: 'नेदुम के पुत्र', parent: 'nedum_cheralathan', mother: 'chola_princess_manikilli', yug: 'kali', parichay: 'सेनगुट्टुवन के बाद चेर शासक बने।', clusterName: 'चेर (केरल) राजवंश' },
+
+    // इरुम्पोरई शाखा (Irumporai Branch)
+    { id: 'anthuvan_cheral', name: 'अन्थुवन चेरल', subtitle: 'इरुम्पोरई शाखा के संस्थापक', parent: 'early_chera_link', yug: 'kali', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'chelva_kadumko_vali_athan', name: 'चेल्वा कडुमको वलि अथन', subtitle: 'चेर नरेश', parent: 'anthuvan_cheral', yug: 'kali', parichay: 'इन्होंने पंडार बंदरगाह पर नियंत्रण किया और चोल-पांड्य की संयुक्त सेना को हराया।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'perum_cheral_irumporai', name: 'पेरुम चेरल इरुम्पोरई', subtitle: 'महान चेर नरेश', parent: 'chelva_kadumko_vali_athan', yug: 'kali', parichay: 'थगदुर को जीतने वाले महान राजा।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'kudakko_illam_cheral_irumporai', name: 'कुडक्को इल्लम चेरल इरुम्पोरई', subtitle: 'चेर नरेश', parent: 'perum_cheral_irumporai', yug: 'kali', parichay: 'इन्होंने पाँच किले नष्ट किए और चोल राजा को हराया।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'kanaikkal_irumporai', name: 'कनैक्कल इरुम्पोरई', subtitle: 'संगम काल के अंतिम चेर', parent: 'kudakko_illam_cheral_irumporai', yug: 'kali', parichay: 'संगम काल के अंतिम प्रसिद्ध चेर राजा। चोल राजा कोचेनगणन के साथ युद्ध किया।', clusterName: 'चेर (केरल) राजवंश' },
+
+    // --- परवर्ती चेर / महोदयपुरम के पेरुमल (Later Cheras) ---
+    { id: 'later_chera_link', name: 'कलभ्र अंतराल (Kalabhra Interregnum)', subtitle: 'अंधकार युग', parent: 'kanaikkal_irumporai', yug: 'kali', parichay: 'संगम चेर और महोदयपुरम के पेरुमलों के बीच का समय जब दक्षिण भारत पर कलभ्रों का शासन था।', clusterName: 'चेर (केरल) राजवंश' },
+
+    { id: 'kulasekhara_alvar', name: 'कुलशेखर आलवार (स्थाणु रवि)', subtitle: 'प्रथम पेरुमल', parent: 'later_chera_link', yug: 'kali', parichay: 'पेरुमल वंश के संस्थापक। ये महान वैष्णव संत (आलवार) भी थे।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'rama_rajasekhara', name: 'राम राजशेखर (चेरामन पेरुमल)', subtitle: 'नयनार संत राजा', parent: 'kulasekhara_alvar', yug: 'kali', parichay: 'इन्हें चेरामन पेरुमल नयनार के रूप में जाना जाता है। ये महान शैव संत थे।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'sthanu_ravi_varma', name: 'स्थाणु रवि वर्मा', subtitle: 'पेरुमल नरेश', parent: 'rama_rajasekhara', yug: 'kali', parichay: 'इनके शासनकाल की सीरियन कॉपर प्लेट्स (Quilon) प्रसिद्ध हैं। इन्होंने अपनी बेटी का विवाह चोल राजा परान्तक प्रथम से किया था।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'goda_ravi', name: 'गोदा रवि', subtitle: 'पेरुमल नरेश', parent: 'sthanu_ravi_varma', yug: 'kali', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'bhaskara_ravi_varman', name: 'भास्कर रवि वर्मन', subtitle: 'मनुकुलादित्य', parent: 'goda_ravi', yug: 'kali', parichay: 'इनके शासनकाल की यहूदी ताम्रपत्र (Jewish copper plates of Cochin) ऐतिहासिक महत्व रखती हैं।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'rama_kulasekhara', name: 'राम कुलशेखर', subtitle: 'अंतिम महान पेरुमल', parent: 'bhaskara_ravi_varman', yug: 'kali', parichay: 'महोदयपुरम के पेरुमल वंश के अंतिम महान राजा।', clusterName: 'चेर (केरल) राजवंश' },
+
     // प्रारंभिक चोल (संगम युग)
     { id: 'early_chola_link', name: 'ऐतिहासिक अंतराल (संगम काल)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'chola_dynasty_proxy', yug: 'kali', parichay: 'पौराणिक चोल संस्थापक से लेकर संगम युग (लगभग 300 BCE - 200 CE) के बीच की अज्ञात पीढ़ियाँ।', clusterName: 'चोल राजवंश' },
 
