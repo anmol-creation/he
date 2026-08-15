@@ -277,6 +277,14 @@ window.MapControls = {
 
         if (bestCandidate) {
             this.focusOnNode(bestCandidate.id);
+
+            // Dynamic Info Box update if panel is already open
+            const panel = document.getElementById('focus-panel');
+            if (panel && !panel.classList.contains('hidden')) {
+                if (window.MapUI && window.MapUI.openPanel) {
+                    window.MapUI.openPanel(bestCandidate);
+                }
+            }
         }
     },
 
