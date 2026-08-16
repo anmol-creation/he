@@ -66,7 +66,6 @@ export const chandravanshData = [
     { id: 'sankriti_kusha_chandra', name: 'सङ्कृति', subtitle: 'जयसेन पुत्र', gender: 'male', parent: 'jayasena_kusha_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
     { id: 'jaya_sankriti_chandra', name: 'जय (क्षात्रधर्मा)', subtitle: 'सङ्कृति पुत्र', gender: 'male', parent: 'sankriti_kusha_chandra', yug: 'treta', parichay: 'यह महान महारथी थे, जिन्होंने क्षत्रियों के धर्म का पूरी निष्ठा से पालन किया।', clusterName: 'आयु चंद्रवंशी' },
 
-
     // --- काशी राजवंश (Kashi Dynasty) ---
     { id: 'kashi_dynasty_proxy', name: 'काशी राजवंश', subtitle: 'काश्य और उनके वंशज', isProxy: true, parent: 'sunahotra_kashi_chandra', clusterName: 'आयु चंद्रवंशी' },
     { id: 'kashya', name: 'काश्य', subtitle: 'काशी के संस्थापक', gender: 'male', parent: 'sunahotra_kashi_chandra', yug: 'satya', parichay: 'इन्हीं के नाम पर काशी (वाराणसी) नगर का नामकरण हुआ माना जाता है।', clusterName: 'आयु चंद्रवंशी' },
@@ -94,7 +93,6 @@ export const chandravanshData = [
     { id: 'vitihotra_kashi_chandra', name: 'वीतिहोत्र', subtitle: 'सुकुमार पुत्र', gender: 'male', parent: 'sukumara_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
     { id: 'bharga_kashi_chandra', name: 'भर्ग', subtitle: 'वीतिहोत्र पुत्र', gender: 'male', parent: 'vitihotra_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
     { id: 'bhargabhumi_chandra', name: 'भार्गभूमि', subtitle: 'भर्ग पुत्र', gender: 'male', parent: 'bharga_kashi_chandra', yug: 'treta', parichay: 'भर्ग से भार्गभूमि हुए। इन्हीं के वंशज आगे चलकर भार्गव (वत्स) कहलाए।', clusterName: 'आयु चंद्रवंशी' },
-
 
     { id: 'rambha_ayu_chandra', name: 'रम्भ', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
     { id: 'rambha_vansh_proxy', name: 'रम्भ वंश', subtitle: 'रम्भ के वंशज', isProxy: true, parent: 'rambha_ayu_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
@@ -154,7 +152,6 @@ export const chandravanshData = [
     { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की। (नोट: बाद के चोल अभिलेखों जैसे तिरुवालंगाडु में चोल सम्राटों ने अपनी वंशावली सूर्यवंशी राजा मान्धाता व शिबि से जोड़ी, जबकि पुराण इन्हें चंद्रवंशी तुर्वसु की वंशावली में रखते हैं।)', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kola_turvasu_chandra', name: 'कोल', subtitle: 'कोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
 
-
     // --- द्रुह्यु वंश ---
     { id: 'babhru_druhyu_chandra', name: 'बभ्रु', subtitle: 'द्रुह्यु पुत्र', parent: 'druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'setu_druhyu_chandra', name: 'सेतु', subtitle: 'बभ्रु पुत्र', parent: 'babhru_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -172,83 +169,19 @@ export const chandravanshData = [
     { id: 'kerala_dynasty_proxy', name: 'चेर (केरल) वंश', subtitle: 'मालाबार राजवंश', parent: 'kerala_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kola_dynasty_proxy', name: 'कोल वंश', subtitle: 'कोल राजवंश', parent: 'kola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
 
-    // --- पौराणिक एवं प्रारंभिक मूषिका (कोल) शासक (Mythological / Early Kings) ---
-    { id: 'rama_mushika', name: 'राम मूषिका', subtitle: 'मूषिका वंश संस्थापक', parent: 'kola_dynasty_proxy', yug: 'dwapar', parichay: '11वीं सदी के महाकाव्य मूषिका-वंश के अनुसार, ये इस राजवंश के संस्थापक थे।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'nandana_mushika', name: 'नंदन', subtitle: 'मूषिका नरेश', parent: 'rama_mushika', yug: 'kali', parichay: 'इन्हें संगम साहित्य के प्रसिद्ध शासक नन्नन के समतुल्य माना जाता है।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    // बीच की अज्ञात पीढ़ियाँ (नंदन से उग्रसेन 6वीं पीढ़ी)
-    { id: 'ugrasena_mushika', name: 'उग्रसेन', subtitle: 'मूषिका नरेश', parent: 'nandana_mushika', yug: 'kali', parichay: 'नंदन के 6वें उत्तराधिकारी, जिन्होंने केरल (चेर) राजाओं का आक्रमण विफल किया।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'chitrasena_mushika', name: 'चित्रसेन', subtitle: 'मूषिका नरेश', parent: 'ugrasena_mushika', yug: 'kali', parichay: 'पाण्ड्य राजा के साथ युद्ध में वीरगति को प्राप्त हुए।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'shatasoma_mushika', name: 'शतसोम', subtitle: 'मूषिका नरेश', parent: 'chitrasena_mushika', yug: 'kali', parichay: 'इन्होंने पाण्ड्य राजा को पराजित कर नया नगर बसाया।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'sharmadatta_mushika', name: 'शर्मदत्त', subtitle: 'मूषिका नरेश', parent: 'shatasoma_mushika', yug: 'kali', parichay: 'इन्हें भगवान शिव से दीर्घायु का वरदान प्राप्त हुआ था।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    { id: 'aryagupta_mushika', name: 'आर्यगुप्त', subtitle: 'मूषिका नरेश', parent: 'sharmadatta_mushika', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'achala_mushika', name: 'अचल', subtitle: 'मूषिका नरेश', parent: 'aryagupta_mushika', yug: 'kali', parichay: 'इन्होंने एझी (Eli) पर्वत पर अचलपट्टन नामक शहर बसाया।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'vikramasena_mushika', name: 'विक्रमसेन', subtitle: 'अचल के पुत्र', parent: 'achala_mushika', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'ashvasena_mushika', name: 'अश्वसेन', subtitle: 'मूषिका नरेश', parent: 'vikramasena_mushika', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'jayamanin_1', name: 'जयमनिन प्रथम', subtitle: 'मूषिका नरेश', parent: 'ashvasena_mushika', yug: 'kali', parichay: 'इन्होंने पाण्ड्य सेना की सहायता से अपना राज्य वापस प्राप्त किया था।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    // --- ऐतिहासिक संगम एझिमाला शासक (Sangam Ezhimala Kings) ---
-    { id: 'nannan_ezhimala', name: 'नन्नन (एझिमाला)', subtitle: 'संगम कोल नरेश', parent: 'jayamanin_1', yug: 'kali', parichay: 'संगम साहित्य के प्रसिद्ध शासक। इन्होंने चेर शासक नार्मुडी चेरल के खिलाफ युद्ध लड़ा था।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'nannan_2', name: 'नन्नन द्वितीय', subtitle: 'कोल नरेश', parent: 'nannan_ezhimala', yug: 'kali', parichay: 'लगभग 210 ई. में शासक।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    // --- मध्यकालीन मूषिका नरेश (Medieval Mushika / 10th-12th Century) ---
-    { id: 'kunchivarman', name: 'कुंचीवर्मन', subtitle: 'मूषिका नरेश', parent: 'nannan_2', yug: 'kali', parichay: 'इनकी पुत्री का विवाह केरल (चेर) राजा से हुआ था।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    { id: 'nandini_chedi', name: 'नंदिनी', subtitle: 'मूषिका महारानी', parent: 'kunchivarman', spouseOf: 'ishanavarman', gender: 'female', yug: 'kali', parichay: 'चेदि राजवंश की राजकुमारी।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'ishanavarman', name: 'ईशानवर्मन', subtitle: 'कुंचीवर्मन के पुत्र', parent: 'kunchivarman', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    { id: 'nrparama', name: 'नृपरम', subtitle: 'मूषिका नरेश', parent: 'ishanavarman', mother: 'nandini_chedi', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'chandravarman_mushika', name: 'चंद्रवर्मन', subtitle: 'शिशु राजा', parent: 'nrparama', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    { id: 'validhara_vikrama_rama', name: 'वलिधर विक्रम राम', subtitle: 'मूषिका नरेश', parent: 'chandravarman_mushika', yug: 'kali', parichay: '929 ई. के रामंथाली अभिलेख (Ramanthali inscription) में इनका उल्लेख है। इन्होंने पश्चिमी गंग वंश के आक्रमण को रोका।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'valabha_1', name: 'वलभ प्रथम', subtitle: 'शक्तिशाली योद्धा', parent: 'validhara_vikrama_rama', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'gambhira', name: 'गंभीर', subtitle: 'मूषिका नरेश', parent: 'valabha_1', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'jayamani_3', name: 'जयमनिन तृतीय', subtitle: 'गंभीर के भाई', parent: 'valabha_1', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'vallabha_2', name: 'वल्लभ द्वितीय', subtitle: 'मूषिका नरेश', parent: 'jayamani_3', yug: 'kali', parichay: 'इन्होंने चोलों के विरुद्ध केरल राजा की सैन्य सहायता की थी।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'shrikantha_kantan', name: 'श्रीकंठ (कंतन करिवर्मन)', subtitle: 'वल्लभ द्वितीय के भाई', parent: 'jayamani_3', yug: 'kali', parichay: 'लगभग 1020 ई. में शासक। मूषिका-वंश महाकाव्य इन्हीं के काल में लिखा गया था।', clusterName: 'कोल (मूषिका) राजवंश' },
-    { id: 'udaya_varma_mushika', name: 'उदय वर्मा', subtitle: 'मूषिका नरेश', parent: 'shrikantha_kantan', yug: 'kali', parichay: '12वीं शताब्दी के आरंभिक शासक।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-    // --- परवर्ती शासक (Later Era Kolathiri) ---
-    { id: 'kolathiri_dynasty', name: 'कोलथुनडु (कोलथिरी)', subtitle: 'कन्नूर के शासक', parent: 'udaya_varma_mushika', yug: 'kali', isProxy: true, parichay: '12वीं सदी के बाद मूषिका वंश कोलथिरी (Kolathiri) के नाम से जाना गया। इन्होंने उत्तरी मालाबार पर ब्रिटिश और टीपू सुल्तान के काल तक शासन किया।', clusterName: 'कोल (मूषिका) राजवंश' },
-
-
     { id: 'kalinga_dynasty_proxy', name: 'कलिंग वंश', subtitle: 'कलिंग राजवंश', parent: 'kalinga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'vanga_dynasty_proxy', name: 'वंग वंश', subtitle: 'बंगाल राजवंश', parent: 'vanga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- महाभारत कालीन वंग नरेश (Mahabharata Era) ---
+    { id: 'samudrasena_vanga', name: 'समुद्रसेन', subtitle: 'वंग नरेश', parent: 'vanga_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत काल में वंग देश (बंगाल) के शासक। ये कुरुक्षेत्र युद्ध में कौरवों की ओर से 10,000 हाथियों की सेना के साथ लड़े थे।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'chandrasena_vanga', name: 'चन्द्रसेन', subtitle: 'वंग नरेश', parent: 'samudrasena_vanga', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+
     { id: 'pundra_dynasty_proxy', name: 'पुण्ड्र वंश', subtitle: 'पुण्ड्र राजवंश', parent: 'pundra_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'suhma_dynasty_proxy', name: 'सुह्म वंश', subtitle: 'सुह्म राजवंश', parent: 'suhma_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     // --- महाभारत कालीन परवर्ती राजा (अज्ञात पीढ़ियों के बाद) ---
     { id: 'paundraka_vasudeva_chandra', name: 'पौण्ड्रक वासुदेव', subtitle: 'पुण्ड्र नरेश', parent: 'pundra_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत काल में पुण्ड्र देश का राजा, जो स्वयं को असली वासुदेव (कृष्ण) मानता था।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'chitrangada_kalinga_chandra', name: 'चित्रांगद', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'दुर्योधन की पत्नी भानुमती के पिता।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shrutayush_kalinga_chandra', name: 'श्रुतायु', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत युद्ध में कौरवों की ओर से लड़े और अर्जुन द्वारा वीरगति को प्राप्त हुए।', clusterName: 'नहुष चंद्रवंशी' },
-
-    // --- कलिंग राजवंश का ऐतिहासिक अंतराल ---
-    { id: 'kalinga_unknown_generations', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'shrutayush_kalinga_chandra', yug: 'kali', parichay: 'महाभारत काल के बाद कलिंग पर नन्दों और मौर्यों (अशोक) का आक्रमण हुआ। इसके बाद महामेघवाहन राजवंश ने कलिंग को फिर से स्वतंत्र और शक्तिशाली बनाया।', clusterName: 'कलिंग राजवंश' },
-
-    // --- महामेघवाहन राजवंश (चेदि वंश / 2nd-1st Century BCE) ---
-    { id: 'mahameghavahana_kalinga', name: 'महामेघवाहन', subtitle: 'राजवंश संस्थापक', parent: 'kalinga_unknown_generations', yug: 'kali', clusterName: 'कलिंग राजवंश' },
-    { id: 'khemaraja_kalinga', name: 'खेमराज', subtitle: 'कलिंग नरेश', parent: 'mahameghavahana_kalinga', yug: 'kali', clusterName: 'कलिंग राजवंश' },
-    { id: 'vriddharaja_kalinga', name: 'वृद्धराज', subtitle: 'कलिंग नरेश', parent: 'khemaraja_kalinga', yug: 'kali', clusterName: 'कलिंग राजवंश' },
-    { id: 'kharavela_kalinga', name: 'खारवेल', subtitle: 'चक्रवर्ती सम्राट', parent: 'vriddharaja_kalinga', yug: 'kali', parichay: 'कलिंग के सबसे महान सम्राट। उदयगिरी की हाथीगुम्फा (Hathigumpha) शिलालेख इन्हीं का है। इन्होंने मगध, सातवाहन और दक्षिण के राज्यों पर विजय प्राप्त की।', clusterName: 'कलिंग राजवंश' },
-    { id: 'sindhula_kharavela', name: 'सिंधुला', subtitle: 'कलिंग महारानी', parent: '', spouseOf: 'kharavela_kalinga', yug: 'kali', gender: 'female' },
-    { id: 'kudepasiri_kalinga', name: 'कुदेपासिरी', subtitle: 'खारवेल के उत्तराधिकारी', parent: 'kharavela_kalinga', mother: 'sindhula_kharavela', yug: 'kali', clusterName: 'कलिंग राजवंश' },
-
-    // --- पूर्वी गंग राजवंश (Eastern Ganga Dynasty / 5th-15th Century CE) ---
-    { id: 'kalinga_gap_2', name: 'ऐतिहासिक अंतराल (गंग वंश)', subtitle: 'विभिन्न राजवंश', parent: 'kudepasiri_kalinga', yug: 'kali', parichay: 'महामेघवाहनों के पतन के बाद शैलोद्भव, भौमकर और सोमवंशी राजाओं का काल रहा, जिसके बाद पूर्वी गंग राजवंश का उदय हुआ।', clusterName: 'कलिंग राजवंश' },
-    { id: 'indravarman_1_ganga', name: 'इन्द्रवर्मन प्रथम', subtitle: 'गंग वंश के संस्थापक', parent: 'kalinga_gap_2', yug: 'kali', parichay: 'पूर्वी गंग वंश के पहले स्वतंत्र शासक।', clusterName: 'कलिंग राजवंश' },
-
-    // (मध्यवर्ती गंग राजाओं का अंतराल)
-    { id: 'ganga_mid_kings_proxy', name: 'मध्यवर्ती गंग शासक', subtitle: 'गंग वंश', parent: 'indravarman_1_ganga', yug: 'kali', isProxy: true, clusterName: 'कलिंग राजवंश' },
-
-    { id: 'anantavarman_chodaganga', name: 'अनंतवर्मन चोडगंग', subtitle: 'महान गंग सम्राट', parent: 'ganga_mid_kings_proxy', yug: 'kali', parichay: 'गंग वंश के प्रतापी राजा। इन्होंने पुरी में भगवान जगन्नाथ के वर्तमान भव्य मंदिर का निर्माण शुरू करवाया था।', clusterName: 'कलिंग राजवंश' },
-    { id: 'anangabhima_deva_3', name: 'अनंगभीम देव तृतीय', subtitle: 'गंग सम्राट', parent: 'anantavarman_chodaganga', yug: 'kali', parichay: 'इन्होंने बंगाल के मुस्लिम आक्रमणकारियों को हराया और ओडिशा की रक्षा की।', clusterName: 'कलिंग राजवंश' },
-    { id: 'narasimhadeva_1', name: 'नरसिंह देव प्रथम', subtitle: 'कोणार्क निर्माता', parent: 'anangabhima_deva_3', yug: 'kali', parichay: 'महान योद्धा और निर्माता। इन्होंने प्रसिद्ध कोणार्क सूर्य मंदिर का निर्माण करवाया था।', clusterName: 'कलिंग राजवंश' },
-
-    // (अंतिम गंग राजा)
-    { id: 'ganga_late_kings_proxy', name: 'परवर्ती गंग शासक', subtitle: 'गंग वंश', parent: 'narasimhadeva_1', yug: 'kali', isProxy: true, clusterName: 'कलिंग राजवंश' },
-    { id: 'bhanu_deva_4', name: 'भानु देव चतुर्थ', subtitle: 'अंतिम गंग शासक', parent: 'ganga_late_kings_proxy', yug: 'kali', parichay: 'पूर्वी गंग राजवंश के अंतिम शासक, जिनके बाद सूर्यवंशी गजपति राजवंश की स्थापना हुई।', clusterName: 'कलिंग राजवंश' },
-
-
 
     // --- पौराणिक पाण्ड्य राजवंश (महाभारत काल) ---
     { id: 'kulashekara_pandya_myth', name: 'कुलशेखर पाण्ड्य (पौराणिक)', subtitle: 'पाण्ड्य नरेश', parent: 'pandya_dynasty_proxy', yug: 'dwapar', clusterName: 'पाण्ड्य राजवंश' },
@@ -324,12 +257,6 @@ export const chandravanshData = [
     { id: 'sadaavarman_adeevirama_pandya', name: 'सदावर्मन अदीविराम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'nelveli_maran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
     { id: 'varathuranga_pandya', name: 'वरथुरंग पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_adeevirama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
     { id: 'varagunarama_pandya', name: 'वरगुणराम पाण्ड्य', subtitle: 'अंतिम ज्ञात पाण्ड्य शासक', parent: 'varathuranga_pandya', yug: 'kali', parichay: 'तेनकासी पाण्ड्य वंश के अंतिम ज्ञात शासकों में से एक (1618 CE)।', clusterName: 'पाण्ड्य राजवंश' },
-
-
-
-
-
-
 
     // --- अनु वंश ---
     { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -452,9 +379,6 @@ export const chandravanshData = [
     { id: 'jaichand_gahadavala', name: 'जयचंद', subtitle: 'कन्नौज नरेश', parent: 'vijayachandra_gahadavala', yug: 'kali', clusterName: 'गाहड़वाल वंश', parichay: 'पृथ्वीराज चौहान के समकालीन कन्नौज के प्रतापी राजा। इनकी पुत्री संयोगिता थी।' },
     { id: 'harishchandra_gahadavala', name: 'हरिश्चन्द्र', subtitle: 'कन्नौज नरेश', parent: 'jaichand_gahadavala', yug: 'kali', clusterName: 'गाहड़वाल वंश' },
 
-
-
-
     // --- यदुवंश (यदु के पुत्र) ---
     { id: 'sahasrajit_yadu', name: 'सहस्रजित', subtitle: 'यदु पुत्र (हैहय वंश के मूल)', parent: 'yadu_vansh_proxy', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kroshtu_yadu', name: 'क्रोष्टु', subtitle: 'यदु पुत्र (वृष्णि/अंधक वंश के मूल)', parent: 'yadu_vansh_proxy', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -496,7 +420,6 @@ export const chandravanshData = [
     { id: 'supratika_haihaya', name: 'सुप्रतीक', subtitle: 'दुर्जय पुत्र', parent: 'durjaya_haihaya', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
 
     { id: 'vrishni_haihaya', name: 'वृष्णि (हैहय)', subtitle: 'मधु के वंशज', parent: 'madhu_haihaya', yug: 'treta', parichay: 'हैहय वंश के मधु के वंशज। (यदुवंश में एक अन्य वृष्णि क्रोष्टु शाखा में भी थे)।', clusterName: 'नहुष चंद्रवंशी' },
-
 
     // --- वृष्णि / अंधक वंश (क्रोष्टु की शाखा) ---
     { id: 'vrijinivan_yadu', name: 'वृजिनिवान', subtitle: 'क्रोष्टु पुत्र', parent: 'kroshtu_yadu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -604,7 +527,6 @@ export const chandravanshData = [
     { id: 'upadeva_akrura_chandra', name: 'उपदेव', subtitle: 'अक्रूर पुत्र', parent: 'akrura_chandra', mother: 'ugraseni_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'varshney_dynasty_proxy', name: 'वार्ष्णेय (बारहसैनी) वंश', subtitle: 'अक्रूर के वंशज', parent: 'sudeva_akrura_chandra', yug: 'kali', isProxy: true, parichay: 'आधुनिक वार्ष्णेय समाज (बारहसैनी) स्वयं को अक्रूर जी का वंशज मानता है। यह मुख्य रूप से मथुरा, अलीगढ़ और पश्चिमी उत्तर प्रदेश में निवास करते हैं।', clusterName: 'नहुष चंद्रवंशी' },
 
-
     { id: 'devamidhusha_vrishni', name: 'देवमीढुष', subtitle: 'वृष्णि पुत्र', parent: 'vrishni_dynasty_proxy', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shurasen_chandra', name: 'शूरसेन (शूर)', subtitle: 'देवमीढुष पुत्र', parent: 'devamidhusha_vrishni', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'marisha_shurasen_chandra', name: 'मारिषा', subtitle: 'शूरसेन पत्नी', parent: '', spouseOf: 'shurasen_chandra', yug: 'dwapar' , clusterName: 'वृष्णि वंश' },
@@ -628,7 +550,6 @@ export const chandravanshData = [
 
     { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'subhadra_chandra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', spouseOf: 'arjun_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
-
 
     // --- श्रीकृष्ण का परिवार ---
     // अष्टभार्या
@@ -745,9 +666,7 @@ export const chandravanshData = [
     { id: 'rao_puran_singh_chandra', name: 'राव पूरण सिंह', subtitle: 'रेवाड़ी नरेश', parent: 'rao_ram_singh_chandra', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'rao_tula_ram_chandra', name: 'राव तुला राम', subtitle: '1857 के स्वतंत्रता सेनानी', parent: 'rao_puran_singh_chandra', yug: 'kali', parichay: '1857 की क्रांति में अहीरवाल क्षेत्र का नेतृत्व किया और अंग्रेजों से लोहा लिया।', clusterName: 'नहुष चंद्रवंशी' },
 
-
     // --- बाद के वंश (अस्थायी रूप से सुरक्षित रखे गए हैं) ---
-
 
     // --- पुरु वंश (पुरु के पुत्र) ---
     { id: 'paushti_puru', name: 'पौष्टी', subtitle: 'पुरु की पत्नी', parent: '', spouseOf: 'puru_chandra', yug: 'treta' },
@@ -864,7 +783,6 @@ export const chandravanshData = [
     { id: 'yudhamanyu_chandra', name: 'युधामन्यु', subtitle: 'द्रुपद पुत्र', parent: 'drupada_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'uttamaujas_chandra', name: 'उत्तमौजस', subtitle: 'द्रुपद पुत्र', parent: 'drupada_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
-
     // --- कुरु वंश मुख्य धारा (धूमिनी से) ---
 
     { id: 'ajamidha_sons_proxy', name: 'अजमीढ़ के अन्य पुत्र', subtitle: 'ऋक्ष, नील आदि', isProxy: true, parent: 'ajamidha_2_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -964,7 +882,6 @@ export const chandravanshData = [
     { id: 'pandu_chandra', name: 'पाण्डु', subtitle: 'पांडवों के पिता', parent: 'vichitravirya_chandra', mother: 'ambalika_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'vidur_chandra', name: 'विदुर', subtitle: 'धर्मराज अवतार', parent: 'vichitravirya_chandra', mother: 'parishrami_dasi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'sulabha_vidur_chandra', name: 'सुलभा', subtitle: 'विदुर पत्नी', parent: '', spouseOf: 'vidur_chandra', yug: 'dwapar' },
-
 
     { id: 'other_dynasties_proxy', name: 'अन्य राजवंश', subtitle: 'विवाह सम्बन्धित', parent: 'brahma', yug: 'dwapar', clusterName: 'अन्य राजवंश (इन-लॉ)', isProxy: true, timeScale: 'kalpa' },
     // --- अन्य राज्यों के मूल नरेश (इन-लॉ) ---
@@ -1109,8 +1026,6 @@ export const chandravanshData = [
     { id: 'premala_devi_sindh', name: 'परिमल देवी (प्रेमदा)', subtitle: 'दाहीर की पुत्री', parent: 'dahir_of_sindh', gender: 'female', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'अपनी बहन सूर्य देवी के साथ बंदी बनाकर दमिश्क भेजी गई थीं।' },
     { id: 'jodha_devi_sindh', name: 'जोधा देवी', subtitle: 'दाहीर की पुत्री', parent: 'dahir_of_sindh', gender: 'female', yug: 'kali', clusterName: 'चच वंश (सिंध)', parichay: 'कहा जाता है कि अरब आक्रमण के समय इन्होंने अपनी माता रानी बाई के साथ जौहर कर लिया था।' },
 
-
-
     // --- पाण्डु का परिवार (पांडव) ---
     { id: 'madri_chandra', name: 'माद्री', subtitle: 'पाण्डु पत्नी', parent: '', spouseOf: 'pandu_chandra', yug: 'dwapar' },
 
@@ -1253,7 +1168,6 @@ export const chandravanshData = [
     { id: 'tegh_chand_katoch', name: 'तेग चन्द', subtitle: 'कांगड़ा नरेश', parent: 'ghamand_chand_katoch', yug: 'kali' , clusterName: 'कटोच (कांगड़ा) वंश' },
     { id: 'sansar_chand_2_katoch', name: 'महाराजा संसार चन्द (द्वितीय)', subtitle: 'कांगड़ा के महान सम्राट', parent: 'tegh_chand_katoch', yug: 'kali', parichay: 'इन्हें कांगड़ा का स्वर्ण युग लाने का श्रेय है। इन्होंने कांगड़ा चित्रकला (Kangra Paintings) को संरक्षण दिया और महाराजा रणजीत सिंह के साथ संधियां कीं।' , clusterName: 'कटोच (कांगड़ा) वंश' },
 
-
     // --- कलचुरी / हैहय राजवंश (त्रिपुरी शाखा) ---
     // यदु -> सहस्रजित -> हैहय -> कार्तवीर्य अर्जुन -> वीतिहोत्र के आगे का वंश
     { id: 'kalchuri_medieval_link', name: 'ऐतिहासिक अंतराल (कलचुरी)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'supratika_haihaya', yug: 'kali', parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।', clusterName: 'नहुष चंद्रवंशी' },
@@ -1277,11 +1191,8 @@ export const chandravanshData = [
     { id: 'jayasimha_kalchuri', name: 'जयसिंह', subtitle: 'त्रिपुरी नरेश', parent: 'gayakarna_kalchuri', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'vijayasimha_kalchuri', name: 'विजयसिंह', subtitle: 'अंतिम त्रिपुरी नरेश', parent: 'jayasimha_kalchuri', yug: 'kali', parichay: 'ये त्रिपुरी शाखा के अंतिम ज्ञात शासक थे, जिनके बाद कलचुरी साम्राज्य का पतन हो गया।', clusterName: 'नहुष चंद्रवंशी' },
 
-
-
     // --- चोल राजवंश (कावेरी राजवंश) ---
     // तुर्वसु वंश से उद्भव (अक्रीड के पुत्र चोल से)। मध्यकालीन चोल अभिलेखों (तिरुवालंगाडु) में इन्होंने अपना वंश सूर्यवंशी मान्धाता व शिबि से जोड़ा।
-
 
     // --- प्रारंभिक चेर (केरल) राजवंश (संगम काल) ---
     { id: 'early_chera_link', name: 'ऐतिहासिक अंतराल (संगम काल)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'kerala_dynasty_proxy', yug: 'kali', parichay: 'पौराणिक केरल संस्थापक से लेकर संगम युग के प्रथम ऐतिहासिक चेर राजा उदियन चेरलथन के बीच की अज्ञात पीढ़ियाँ। मूषिका वंश जैसे ग्रंथ इस बीच कई राजाओं (जैसे राम, नंदन, उग्रसेन) का वर्णन करते हैं।', clusterName: 'चेर (केरल) राजवंश' },
