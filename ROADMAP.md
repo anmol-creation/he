@@ -53,8 +53,6 @@ The overarching goal of this project is to present world history through the len
 - Add more ancient incident texts to the Digital Archives.
 
 ### 4. UI/UX Improvements for Historic Map
-- **Google Maps Style Search UI:** Redesign the search functionality to resemble Google Maps. Clicking the main search bar on the map should open a dedicated full-screen search view/overlay. This view will feature a prominent "Back" button at the top to return to the map, a search input, and a list of recent searches/categories or live search results below it.
-- **Dynamic Info Box on Swipe:** When navigating between nodes via swipe gestures (fast swipe up/down/left/right), if the side Info Box is currently open, it should automatically update its content to display the details of the newly focused node without requiring an extra click.
 - **Line Label Collision Avoidance:** If multiple line labels (e.g., `lineLabel` property) are rendered on the same connecting edge, they should be positioned dynamically to prevent overlapping with each other.
 
 ### 4. Cinematic UI/UX Strategy (The "SCU" Approach)
@@ -64,7 +62,6 @@ The overarching goal of this project is to present world history through the len
 - **Houses & Sigils (Vansh Banners):** Replace generic boxes with faction-based designs. E.g., Suryavansh uses golden sun motifs and colors, Chandravansh uses silver moon motifs.
 - **"Hero Card" Info Box:** The side panel should look like a character profile card, featuring a prominent avatar, glowing power/title tags (e.g., `[Maharathi]`), and a "Crossover/Appears In" section linking to major events (e.g., Ramayana, Kurukshetra War).
 - **Interactive Timeline Filters:** A cinematic slider at the bottom (by Yuga or Kalpa) that dims out non-relevant lineages and highlights only those active in that era, creating a time-travel visual effect.
-- **"Expand All / Collapse All" Control:** Add a dedicated global button to easily expand or collapse all clusters on the map simultaneously for macro viewing.
 - **GoT-Style Banners for Collapsed Clusters:** Instead of just showing a basic node with a '+' icon when a lineage is collapsed, render a high-quality Vansh Banner (Flag). The banner will display the Vansh/Cluster Name and briefly list 2-3 prominent characters inside it, increasing visual appeal and context.
 - **Cultural UI for Marriage Connections (Gathbandhan):** To reflect the deep significance of marriage in Sanatan Dharma, replace the standard husband-wife connection lines with a culturally resonant design. The line connecting spouses should meet in the center with a visual icon of a "Gathbandhan" (wedding knot) or clasped hands, representing an eternal bond.
 - **Micro-Symbology (Vansh & Sub-clans):** While major Vanshas will have overarching banners (Sun/Moon), individual nodes or sub-clusters (Gotras/Surnames) should feature their own specific micro-symbols based on historical banners/flags to show the branching of clans.

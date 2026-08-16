@@ -1,5 +1,35 @@
 window.MapUI = {
     setupUI() {
+        // Expand/Collapse All Clusters
+        const expandCollapseBtn = document.getElementById('expand-collapse-all-btn');
+        if (expandCollapseBtn) {
+            expandCollapseBtn.addEventListener('click', () => {
+                if (!window.rawHistoricData) return;
+
+                const allClusters = new Set();
+                window.rawHistoricData.forEach(d => {
+                    if (d.clusterName) allClusters.add(d.clusterName);
+                });
+
+                // If any cluster is NOT expanded, we expand all. Otherwise, collapse all.
+                let shouldExpandAll = false;
+                for (let c of allClusters) {
+                    if (!window.MapState.expandedClusters.has(c)) {
+                        shouldExpandAll = true;
+                        break;
+                    }
+                }
+
+                if (shouldExpandAll) {
+                    allClusters.forEach(c => window.MapState.expandedClusters.add(c));
+                } else {
+                    window.MapState.expandedClusters.clear();
+                }
+
+                window.dispatchEvent(new Event('ClusterToggled'));
+            });
+        }
+
         // Panel Close
         document.getElementById('close-panel').addEventListener('click', () => {
             document.getElementById('focus-panel').classList.add('hidden');
@@ -140,58 +170,88 @@ window.MapUI = {
             });
         }
 
-        // Search Toggle
+        // --- Full Screen Search UI (Google Maps Style) ---
         const searchToggleBtn = document.getElementById('search-toggle-btn');
+        const searchOverlay = document.getElementById('full-screen-search-overlay');
+        const closeSearchBtn = document.getElementById('close-search-btn');
         const searchInput = document.getElementById('map-search-input');
-        if (searchToggleBtn && searchInput) {
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        const recentSearchesContainer = document.getElementById('recent-searches-container');
+        const recentSearchesList = document.getElementById('recent-searches-list');
+        const searchResultsContainer = document.getElementById('map-search-results');
+
+        let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+
+        function renderRecentSearches() {
+            if (recentSearches.length === 0) {
+                recentSearchesContainer.style.display = 'none';
+                return;
+            }
+            recentSearchesContainer.style.display = 'block';
+            recentSearchesList.innerHTML = recentSearches.map(item => `
+                <div class="recent-search-item" data-id="${item.id}">
+                    <i class="fas fa-history"></i>
+                    <div>
+                        <div style="font-weight:600;">${item.name}</div>
+                        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5);">${item.subtitle || ''}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.querySelectorAll('.recent-search-item').forEach(el => {
+                el.addEventListener('click', (ev) => {
+                    const id = ev.currentTarget.dataset.id;
+                    handleSearchResultClick(id);
+                });
+            });
+        }
+
+        function saveRecentSearch(node) {
+            const searchItem = { id: node.id, name: node.name, subtitle: node.subtitle };
+            recentSearches = recentSearches.filter(s => s.id !== node.id);
+            recentSearches.unshift(searchItem);
+            if (recentSearches.length > 5) recentSearches.pop();
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+        }
+
+        if (searchToggleBtn && searchOverlay) {
             searchToggleBtn.addEventListener('click', () => {
-                searchInput.classList.toggle('collapsed');
-                if (!searchInput.classList.contains('collapsed')) {
-                    searchInput.focus();
-                } else {
-                    const res = document.getElementById('map-search-results');
-                    if (res) res.style.display = 'none';
+                searchOverlay.classList.remove('hidden');
+                searchInput.focus();
+                renderRecentSearches();
+                if (searchInput.value.trim() === '') {
+                    searchResultsContainer.style.display = 'none';
                 }
             });
         }
 
-        // Search Logic
-                document.getElementById('map-search-input')?.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('map-search-results');
+        if (closeSearchBtn) {
+            closeSearchBtn.addEventListener('click', () => {
+                searchOverlay.classList.add('hidden');
+            });
+        }
 
-            if (query.length < 2) {
-                resultsContainer.style.display = 'none';
-                return;
-            }
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                clearSearchBtn.classList.add('hidden');
+                searchResultsContainer.style.display = 'none';
+                renderRecentSearches();
+                searchInput.focus();
+            });
+        }
 
+        function handleSearchResultClick(id) {
             const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
-            const matches = dataList.filter(d =>
-                (d.name && d.name.toLowerCase().includes(query)) ||
-                (d.id && d.id.toLowerCase().includes(query)) ||
-                (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
-                (d.subtitle && d.subtitle.toLowerCase().includes(query))
-            ).slice(0, 10);
+            const rawNode = dataList.find(d => d.id === id);
 
-            if (matches.length > 0) {
-                resultsContainer.innerHTML = matches.map(m => `
-                    <div class="search-result-item" style="padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; text-align: left;" data-id="${m.id}">
-                        <div style="font-weight: 600; color: var(--text-dark);">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
-                        <div style="font-size: 0.8rem; color: #666;">${m.subtitle || ''}</div>
-                    </div>
-                `).join('');
-                resultsContainer.style.display = 'block';
+            if (rawNode) {
+                saveRecentSearch(rawNode);
+                searchInput.value = rawNode.name;
+                searchOverlay.classList.add('hidden');
 
-                document.querySelectorAll('.search-result-item').forEach(item => {
-                    item.addEventListener('click', (ev) => {
-                        const id = ev.currentTarget.dataset.id;
-                        document.getElementById('map-search-input').value = ev.currentTarget.querySelector('div').innerText;
-                        resultsContainer.style.display = 'none';
-
-                        const rawNode = dataList.find(d => d.id === id);
-
-                        if (rawNode && window.MapState) {
-                            let didExpand = false;
+                if (window.MapState) {
+                    let didExpand = false;
 
                             // To ensure we ONLY open the specific lineage path for the searched node
                             // and collapse any OTHER clusters that were previously opened (if the user wants a clean view),
@@ -244,9 +304,6 @@ window.MapUI = {
                         // but focusOnNode can be called immediately as it looks for the new layout.
                         // Actually, focusOnNode relies on window.HistoricDB.getAll() being updated.
                         setTimeout(() => {
-                            document.querySelectorAll('.map-node').forEach(n => n.style.opacity = '1');
-                            document.querySelectorAll('.connection-line').forEach(l => l.style.opacity = '1');
-
                             if (window.MapControls) window.MapControls.focusOnNode(id);
 
                             // Re-fetch from updated HistoricDB to get latest properties if needed for panel
@@ -254,20 +311,60 @@ window.MapUI = {
                             const nodeData = updatedDataList.find(d => d.id === id) || rawNode;
                             if (nodeData) this.openPanel(nodeData);
                         }, 50); // slight delay to ensure event is processed
+            }
+        }
+
+        searchInput?.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length > 0) {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+
+            if (query.length < 2) {
+                searchResultsContainer.style.display = 'none';
+                renderRecentSearches();
+                return;
+            }
+
+            recentSearchesContainer.style.display = 'none';
+
+            const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
+            const matches = dataList.filter(d =>
+                (d.name && d.name.toLowerCase().includes(query)) ||
+                (d.id && d.id.toLowerCase().includes(query)) ||
+                (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
+                (d.subtitle && d.subtitle.toLowerCase().includes(query))
+            ).slice(0, 10);
+
+            if (matches.length > 0) {
+                searchResultsContainer.innerHTML = matches.map(m => `
+                    <div class="search-result-item recent-search-item" data-id="${m.id}">
+                        <i class="fas fa-search"></i>
+                        <div>
+                            <div style="font-weight: 600;">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
+                            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">${m.subtitle || ''}</div>
+                        </div>
+                    </div>
+                `).join('');
+                searchResultsContainer.style.display = 'flex';
+
+                document.querySelectorAll('#map-search-results .search-result-item').forEach(item => {
+                    item.addEventListener('click', (ev) => {
+                        const id = ev.currentTarget.dataset.id;
+                        handleSearchResultClick(id);
                     });
                 });
             } else {
-                resultsContainer.innerHTML = '<div style="padding: 10px; color: #666; text-align: left;">No results found</div>';
-                resultsContainer.style.display = 'block';
+                searchResultsContainer.innerHTML = '<div style="padding: 10px; color: rgba(255,255,255,0.5);">No results found</div>';
+                searchResultsContainer.style.display = 'block';
             }
         });
 
 
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-container')) {
-                const resultsContainer = document.getElementById('map-search-results');
-                if (resultsContainer) resultsContainer.style.display = 'none';
-            }
             if (!e.target.closest('.filter-dropdown') && !e.target.closest('#map-view-btn')) {
                 const filterDropdown = document.getElementById('map-filter-dropdown');
                 if (filterDropdown) filterDropdown.style.display = 'none';

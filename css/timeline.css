@@ -82,11 +82,9 @@ main {
 }
 
 .historic-map-banner h2 {
-    font-size: 2.2rem;
-    font-family: 'Yatra One', cursive;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-    font-weight: normal;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
 }
 
 .historic-map-banner p {
