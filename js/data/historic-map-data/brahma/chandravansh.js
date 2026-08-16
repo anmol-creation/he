@@ -215,6 +215,39 @@ export const chandravanshData = [
 
     { id: 'kalinga_dynasty_proxy', name: 'कलिंग वंश', subtitle: 'कलिंग राजवंश', parent: 'kalinga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'vanga_dynasty_proxy', name: 'वंग वंश', subtitle: 'बंगाल राजवंश', parent: 'vanga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- महाभारत कालीन वंग नरेश (Mahabharata Era) ---
+    { id: 'samudrasena_vanga', name: 'समुद्रसेन', subtitle: 'वंग नरेश', parent: 'vanga_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत काल में वंग देश (बंगाल) के शासक। ये कुरुक्षेत्र युद्ध में कौरवों की ओर से 10,000 हाथियों की सेना के साथ लड़े थे।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'chandrasena_vanga', name: 'चन्द्रसेन', subtitle: 'वंग नरेश', parent: 'samudrasena_vanga', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- ऐतिहासिक अंतराल (Historical Gap) ---
+    { id: 'vanga_unknown_generations', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'chandrasena_vanga', yug: 'kali', parichay: 'महाभारत के बाद वंग पर मगध (नंद, मौर्य, गुप्त) का शासन रहा। गुप्त साम्राज्य के पतन के बाद गौड़ राजवंश का उदय हुआ।', clusterName: 'वंग राजवंश' },
+
+    // --- गौड़ राजवंश (Gauda Kingdom) ---
+    { id: 'shashanka_gauda', name: 'शशांक', subtitle: 'गौड़ नरेश', parent: 'vanga_unknown_generations', yug: 'kali', parichay: 'बंगाल के प्रथम प्रमुख स्वतंत्र सम्राट और कट्टर शिव भक्त। इन्होंने हर्षवर्धन के भाई राज्यवर्धन का वध किया था और बोधि वृक्ष को कटवाया था।', clusterName: 'वंग राजवंश' },
+    { id: 'manava_gauda', name: 'मानव', subtitle: 'शशांक के पुत्र', parent: 'shashanka_gauda', yug: 'kali', parichay: 'शशांक के उत्तराधिकारी, जिनका शासनकाल बहुत अल्प था। इसके बाद बंगाल में अराजकता (मात्स्य न्याय) फैल गई।', clusterName: 'वंग राजवंश' },
+
+    // --- पाल राजवंश (Pala Empire / 8th - 12th Century CE) ---
+    { id: 'gopala_1_pala', name: 'गोपाल प्रथम', subtitle: 'पाल वंश के संस्थापक', parent: 'manava_gauda', yug: 'kali', parichay: 'मात्स्य न्याय (अराजकता) समाप्त करने के लिए जनता/सरदारों द्वारा इन्हें राजा चुना गया। ये बौद्ध धर्म के अनुयायी थे।', clusterName: 'वंग राजवंश' },
+    { id: 'dharmapala_pala', name: 'धर्मपाल', subtitle: 'महान पाल सम्राट', parent: 'gopala_1_pala', yug: 'kali', parichay: 'इन्होंने विक्रमशिला और सोमपुर महाविहार जैसे महान बौद्ध विश्वविद्यालयों की स्थापना की।', clusterName: 'वंग राजवंश' },
+    { id: 'devapala_pala', name: 'देवपाल', subtitle: 'सबसे प्रतापी पाल सम्राट', parent: 'dharmapala_pala', yug: 'kali', parichay: 'पाल राजवंश के सबसे शक्तिशाली सम्राट, जिन्होंने असम (कामरूप) और ओडिशा (उत्कल) तक साम्राज्य का विस्तार किया।', clusterName: 'वंग राजवंश' },
+
+    // (मध्यवर्ती पाल राजाओं का प्रॉक्सी)
+    { id: 'pala_mid_kings_proxy', name: 'मध्यवर्ती पाल शासक', subtitle: 'पाल वंश', parent: 'devapala_pala', yug: 'kali', isProxy: true, clusterName: 'वंग राजवंश' },
+    { id: 'mahipala_1_pala', name: 'महीपाल प्रथम', subtitle: 'पाल साम्राज्य के द्वितीय संस्थापक', parent: 'pala_mid_kings_proxy', yug: 'kali', parichay: 'चोल सम्राट राजेन्द्र चोल के समकालीन। इन्होंने पाल साम्राज्य को पतन से बचाया।', clusterName: 'वंग राजवंश' },
+    { id: 'ramapala_pala', name: 'रामपाल', subtitle: 'अंतिम महान पाल सम्राट', parent: 'mahipala_1_pala', yug: 'kali', clusterName: 'वंग राजवंश' },
+    { id: 'govindapala_pala', name: 'गोविन्दपाल', subtitle: 'अंतिम पाल शासक', parent: 'ramapala_pala', yug: 'kali', clusterName: 'वंग राजवंश' },
+
+    // --- सेन राजवंश (Sena Dynasty / 11th - 13th Century CE) ---
+    { id: 'samanta_sena', name: 'सामंत सेन', subtitle: 'सेन वंश के संस्थापक', parent: 'govindapala_pala', yug: 'kali', parichay: 'पाल वंश के पतन के बाद बंगाल में सेन राजवंश की नींव रखी।', clusterName: 'वंग राजवंश' },
+    { id: 'hemanta_sena', name: 'हेमंत सेन', subtitle: 'सेन नरेश', parent: 'samanta_sena', yug: 'kali', clusterName: 'वंग राजवंश' },
+    { id: 'vijaya_sena', name: 'विजय सेन', subtitle: 'महान सेन सम्राट', parent: 'hemanta_sena', yug: 'kali', parichay: 'इन्होंने सेन साम्राज्य का सुदृढीकरण किया और बंगाल पर एकछत्र राज किया।', clusterName: 'वंग राजवंश' },
+    { id: 'ballala_sena', name: 'बल्लाल सेन', subtitle: 'सेन सम्राट', parent: 'vijaya_sena', yug: 'kali', parichay: 'बंगाल में \'कुलीन प्रथा\' (Kulinism) को लागू करने का श्रेय इन्हें दिया जाता है।', clusterName: 'वंग राजवंश' },
+    { id: 'lakshmana_sena', name: 'लक्ष्मण सेन', subtitle: 'अंतिम महान सेन सम्राट', parent: 'ballala_sena', yug: 'kali', parichay: 'इनके दरबार में महान कवि जयदेव (गीत गोविंद के रचयिता) रहते थे। बख्तियार खिलजी के आक्रमण के बाद इनका पतन हुआ।', clusterName: 'वंग राजवंश' },
+    { id: 'vishvarupa_sena', name: 'विश्वरूप सेन', subtitle: 'लक्ष्मण सेन के पुत्र', parent: 'lakshmana_sena', yug: 'kali', clusterName: 'वंग राजवंश' },
+    { id: 'keshava_sena', name: 'केशव सेन', subtitle: 'लक्ष्मण सेन के पुत्र', parent: 'lakshmana_sena', yug: 'kali', clusterName: 'वंग राजवंश' },
+
+
     { id: 'pundra_dynasty_proxy', name: 'पुण्ड्र वंश', subtitle: 'पुण्ड्र राजवंश', parent: 'pundra_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'suhma_dynasty_proxy', name: 'सुह्म वंश', subtitle: 'सुह्म राजवंश', parent: 'suhma_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     // --- महाभारत कालीन परवर्ती राजा (अज्ञात पीढ़ियों के बाद) ---
