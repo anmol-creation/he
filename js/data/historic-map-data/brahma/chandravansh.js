@@ -385,6 +385,9 @@ export const chandravanshData = [
     { id: 'dvipata_karna_chandra', name: 'द्विपात', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'vrushali_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'prasena_karna_chandra', name: 'प्रसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'banasena_karna_chandra', name: 'बाणसेन', subtitle: 'कर्ण पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vrishaketu_karna_chandra', name: 'वृषकेतु', subtitle: 'कर्ण के एकमात्र जीवित पुत्र', parent: 'karna_chandra', mother: 'supriya_chandra', yug: 'dwapar', parichay: 'महाभारत युद्ध के बाद कर्ण के एकमात्र जीवित पुत्र। युधिष्ठिर ने इन्हें अंग देश का राजा बनाया और अर्जुन ने इन्हें अस्त्र विद्या दी।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'anga_unknown_generations', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'vrishaketu_karna_chandra', yug: 'kali', parichay: 'वृषकेतु के बाद और बिंबिसार के समकालीन राजा ब्रह्मदत्त के बीच की अज्ञात पीढ़ियाँ।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'brahmadatta_anga', name: 'ब्रह्मदत्त', subtitle: 'अंतिम अंग नरेश', parent: 'anga_unknown_generations', yug: 'kali', parichay: 'छठी शताब्दी ईसा पूर्व के अंग राजा। इन्हें मगध के राजा बिंबिसार ने पराजित कर अंग देश को मगध साम्राज्य में मिला लिया था।', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- पुरुरवा के अन्य पुत्र (अमावसु / विजय वंश - कान्यकुब्ज/कन्नौज) ---
         { id: 'amavasu_vansh_proxy', name: 'कान्यकुब्ज राजवंश', subtitle: 'अमावसु के वंशज', parent: 'pururava_chandra', yug: 'satya', clusterName: 'कान्यकुब्ज राजवंश', isProxy: true },
