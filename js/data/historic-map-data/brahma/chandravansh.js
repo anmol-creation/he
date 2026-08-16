@@ -222,17 +222,45 @@ export const chandravanshData = [
     { id: 'chitrangada_kalinga_chandra', name: 'चित्रांगद', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'दुर्योधन की पत्नी भानुमती के पिता।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shrutayush_kalinga_chandra', name: 'श्रुतायु', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत युद्ध में कौरवों की ओर से लड़े और अर्जुन द्वारा वीरगति को प्राप्त हुए।', clusterName: 'नहुष चंद्रवंशी' },
 
+    // --- कलिंग राजवंश का ऐतिहासिक अंतराल ---
+    { id: 'kalinga_unknown_generations', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'shrutayush_kalinga_chandra', yug: 'kali', parichay: 'महाभारत काल के बाद कलिंग पर नन्दों और मौर्यों (अशोक) का आक्रमण हुआ। इसके बाद महामेघवाहन राजवंश ने कलिंग को फिर से स्वतंत्र और शक्तिशाली बनाया।', clusterName: 'कलिंग राजवंश' },
+
+    // --- महामेघवाहन राजवंश (चेदि वंश / 2nd-1st Century BCE) ---
+    { id: 'mahameghavahana_kalinga', name: 'महामेघवाहन', subtitle: 'राजवंश संस्थापक', parent: 'kalinga_unknown_generations', yug: 'kali', clusterName: 'कलिंग राजवंश' },
+    { id: 'khemaraja_kalinga', name: 'खेमराज', subtitle: 'कलिंग नरेश', parent: 'mahameghavahana_kalinga', yug: 'kali', clusterName: 'कलिंग राजवंश' },
+    { id: 'vriddharaja_kalinga', name: 'वृद्धराज', subtitle: 'कलिंग नरेश', parent: 'khemaraja_kalinga', yug: 'kali', clusterName: 'कलिंग राजवंश' },
+    { id: 'kharavela_kalinga', name: 'खारवेल', subtitle: 'चक्रवर्ती सम्राट', parent: 'vriddharaja_kalinga', yug: 'kali', parichay: 'कलिंग के सबसे महान सम्राट। उदयगिरी की हाथीगुम्फा (Hathigumpha) शिलालेख इन्हीं का है। इन्होंने मगध, सातवाहन और दक्षिण के राज्यों पर विजय प्राप्त की।', clusterName: 'कलिंग राजवंश' },
+    { id: 'sindhula_kharavela', name: 'सिंधुला', subtitle: 'कलिंग महारानी', parent: '', spouseOf: 'kharavela_kalinga', yug: 'kali', gender: 'female' },
+    { id: 'kudepasiri_kalinga', name: 'कुदेपासिरी', subtitle: 'खारवेल के उत्तराधिकारी', parent: 'kharavela_kalinga', mother: 'sindhula_kharavela', yug: 'kali', clusterName: 'कलिंग राजवंश' },
+
+    // --- पूर्वी गंग राजवंश (Eastern Ganga Dynasty / 5th-15th Century CE) ---
+    { id: 'kalinga_gap_2', name: 'ऐतिहासिक अंतराल (गंग वंश)', subtitle: 'विभिन्न राजवंश', parent: 'kudepasiri_kalinga', yug: 'kali', parichay: 'महामेघवाहनों के पतन के बाद शैलोद्भव, भौमकर और सोमवंशी राजाओं का काल रहा, जिसके बाद पूर्वी गंग राजवंश का उदय हुआ।', clusterName: 'कलिंग राजवंश' },
+    { id: 'indravarman_1_ganga', name: 'इन्द्रवर्मन प्रथम', subtitle: 'गंग वंश के संस्थापक', parent: 'kalinga_gap_2', yug: 'kali', parichay: 'पूर्वी गंग वंश के पहले स्वतंत्र शासक।', clusterName: 'कलिंग राजवंश' },
+
+    // (मध्यवर्ती गंग राजाओं का अंतराल)
+    { id: 'ganga_mid_kings_proxy', name: 'मध्यवर्ती गंग शासक', subtitle: 'गंग वंश', parent: 'indravarman_1_ganga', yug: 'kali', isProxy: true, clusterName: 'कलिंग राजवंश' },
+
+    { id: 'anantavarman_chodaganga', name: 'अनंतवर्मन चोडगंग', subtitle: 'महान गंग सम्राट', parent: 'ganga_mid_kings_proxy', yug: 'kali', parichay: 'गंग वंश के प्रतापी राजा। इन्होंने पुरी में भगवान जगन्नाथ के वर्तमान भव्य मंदिर का निर्माण शुरू करवाया था।', clusterName: 'कलिंग राजवंश' },
+    { id: 'anangabhima_deva_3', name: 'अनंगभीम देव तृतीय', subtitle: 'गंग सम्राट', parent: 'anantavarman_chodaganga', yug: 'kali', parichay: 'इन्होंने बंगाल के मुस्लिम आक्रमणकारियों को हराया और ओडिशा की रक्षा की।', clusterName: 'कलिंग राजवंश' },
+    { id: 'narasimhadeva_1', name: 'नरसिंह देव प्रथम', subtitle: 'कोणार्क निर्माता', parent: 'anangabhima_deva_3', yug: 'kali', parichay: 'महान योद्धा और निर्माता। इन्होंने प्रसिद्ध कोणार्क सूर्य मंदिर का निर्माण करवाया था।', clusterName: 'कलिंग राजवंश' },
+
+    // (अंतिम गंग राजा)
+    { id: 'ganga_late_kings_proxy', name: 'परवर्ती गंग शासक', subtitle: 'गंग वंश', parent: 'narasimhadeva_1', yug: 'kali', isProxy: true, clusterName: 'कलिंग राजवंश' },
+    { id: 'bhanu_deva_4', name: 'भानु देव चतुर्थ', subtitle: 'अंतिम गंग शासक', parent: 'ganga_late_kings_proxy', yug: 'kali', parichay: 'पूर्वी गंग राजवंश के अंतिम शासक, जिनके बाद सूर्यवंशी गजपति राजवंश की स्थापना हुई।', clusterName: 'कलिंग राजवंश' },
+
+
+
     // --- पौराणिक पाण्ड्य राजवंश (महाभारत काल) ---
     { id: 'kulashekara_pandya_myth', name: 'कुलशेखर पाण्ड्य (पौराणिक)', subtitle: 'पाण्ड्य नरेश', parent: 'pandya_dynasty_proxy', yug: 'dwapar', clusterName: 'पाण्ड्य राजवंश' },
 
     // मलयध्वज (पहले से موجود है, इसे अपडेट करेंगे)
     { id: 'malayadhwaja_pandya_chandra', name: 'मलयध्वज', subtitle: 'पाण्ड्य नरेश', parent: 'kulashekara_pandya_myth', yug: 'dwapar', parichay: 'महाभारत युद्ध में पांडवों की ओर से लड़े महान योद्धा।', clusterName: 'नहुष चंद्रवंशी' },
 
-    { id: 'kanchanamalai', name: 'कंचनमालई', subtitle: 'पाण्ड्य महारानी', parent: 'malayadhwaja_pandya_chandra', spouseOf: 'malayadhwaja_pandya_chandra', gender: 'female', yug: 'dwapar', parichay: 'राजा मलयध्वज पाण्ड्य की पत्नी।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'kanchanamalai', name: 'कंचनमालई', subtitle: 'पाण्ड्य महारानी', parent: '', spouseOf: 'malayadhwaja_pandya_chandra', gender: 'female', yug: 'dwapar', parichay: 'राजा मलयध्वज पाण्ड्य की पत्नी।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'meenakshi_tadaatagai', name: 'मीनाक्षी (तडातगई)', subtitle: 'मदुरै की योद्धा रानी (पार्वती अवतार)', parent: 'malayadhwaja_pandya_chandra', mother: 'kanchanamalai', gender: 'female', yug: 'dwapar', parichay: 'मलयध्वज की पुत्री। इन्हें देवी पार्वती का अवतार माना जाता है। मदुरै का प्रसिद्ध मीनाक्षी मंदिर इन्हीं को समर्पित है।', clusterName: 'नहुष चंद्रवंशी' },
 
     // शिव-सुंदरेश्वर के साथ विवाह
-    { id: 'sundareshwarar_shiva', name: 'सुंदरेश्वरर (शिव)', subtitle: 'मीनाक्षी के पति', parent: 'meenakshi_tadaatagai', spouseOf: 'meenakshi_tadaatagai', yug: 'dwapar', parichay: 'भगवान शिव का वह रूप जिन्होंने रानी मीनाक्षी से विवाह किया था।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'sundareshwarar_shiva', name: 'सुंदरेश्वरर (शिव)', subtitle: 'मीनाक्षी के पति', parent: '', spouseOf: 'meenakshi_tadaatagai', yug: 'dwapar', parichay: 'भगवान शिव का वह रूप जिन्होंने रानी मीनाक्षी से विवाह किया था।', clusterName: 'नहुष चंद्रवंशी' },
 
     { id: 'ugra_pandya', name: 'उग्र पाण्ड्य (सुब्रमण्य)', subtitle: 'मीनाक्षी-सुंदरेश्वरर के पुत्र', parent: 'sundareshwarar_shiva', mother: 'meenakshi_tadaatagai', yug: 'dwapar', parichay: 'मीनाक्षी और सुंदरेश्वरर (शिव) के पुत्र, जिन्हें कार्तिकेय (सुब्रमण्य) का अवतार माना जाता है।', clusterName: 'नहुष चंद्रवंशी' },
 
@@ -244,7 +272,7 @@ export const chandravanshData = [
     { id: 'koon_pandya', name: 'कून पाण्ड्य', subtitle: 'संगम पाण्ड्य नरेश', parent: 'mudattirumaran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
     { id: 'mudukudumi_peruvaluthi', name: 'मुदुकुडुमी पेरुवलुथि', subtitle: 'पलयागसलाई', parent: 'koon_pandya', yug: 'kali', parichay: 'इन्होंने कई वैदिक यज्ञ किए थे।', clusterName: 'पाण्ड्य राजवंश' },
     { id: 'nedunjeliyan_1', name: 'नेदुन्जेलियन प्रथम', subtitle: 'आर्य पदाई कडन्था', parent: 'mudukudumi_peruvaluthi', yug: 'kali', parichay: 'इनके काल में ही कोवलन और कन्नगी (शिलप्पादिकारम) की घटना हुई थी।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'kopperundevi', name: 'कोप्पेरुन्देवी', subtitle: 'पाण्ड्य महारानी', parent: 'nedunjeliyan_1', spouseOf: 'nedunjeliyan_1', gender: 'female', yug: 'kali', parichay: 'नेदुन्जेलियन प्रथम की पत्नी, जिन्होंने कोवलन की अन्यायपूर्ण मृत्यु के प्रायश्चित स्वरूप प्राण त्याग दिए थे।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kopperundevi', name: 'कोप्पेरुन्देवी', subtitle: 'पाण्ड्य महारानी', parent: '', spouseOf: 'nedunjeliyan_1', gender: 'female', yug: 'kali', parichay: 'नेदुन्जेलियन प्रथम की पत्नी, जिन्होंने कोवलन की अन्यायपूर्ण मृत्यु के प्रायश्चित स्वरूप प्राण त्याग दिए थे।', clusterName: 'पाण्ड्य राजवंश' },
 
     { id: 'nedunjeliyan_2', name: 'नेदुन्जेलियन द्वितीय', subtitle: 'तलैयालंगनाथु', parent: 'nedunjeliyan_1', mother: 'kopperundevi', yug: 'kali', parichay: 'इन्होंने तलैयालंगनम के युद्ध में चेर, चोल और पांच अन्य सरदारों के गुट को हराया था।', clusterName: 'पाण्ड्य राजवंश' },
     { id: 'nan_maran', name: 'नन मारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
@@ -1259,13 +1287,13 @@ export const chandravanshData = [
     { id: 'early_chera_link', name: 'ऐतिहासिक अंतराल (संगम काल)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'kerala_dynasty_proxy', yug: 'kali', parichay: 'पौराणिक केरल संस्थापक से लेकर संगम युग के प्रथम ऐतिहासिक चेर राजा उदियन चेरलथन के बीच की अज्ञात पीढ़ियाँ। मूषिका वंश जैसे ग्रंथ इस बीच कई राजाओं (जैसे राम, नंदन, उग्रसेन) का वर्णन करते हैं।', clusterName: 'चेर (केरल) राजवंश' },
 
     { id: 'uthiyan_cheralathan', name: 'उदियन चेरलथन', subtitle: 'प्रथम संगम चेर नरेश', parent: 'early_chera_link', yug: 'kali', parichay: 'इन्हें वनवरम्पन (देवताओं का प्रिय) भी कहा जाता था। कहा जाता है कि इन्होंने महाभारत युद्ध में कौरवों और पांडवों को भोजन (पेरुम चोत्रु) कराया था।', clusterName: 'चेर (केरल) राजवंश' },
-    { id: 'veliyan_nallini', name: 'वेलियन नल्लिनी', subtitle: 'चेर महारानी', parent: 'uthiyan_cheralathan', spouseOf: 'uthiyan_cheralathan', gender: 'female', yug: 'kali', parichay: 'आय (Ay) राजवंश की राजकुमारी और उदियन चेरलथन की पत्नी।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'veliyan_nallini', name: 'वेलियन नल्लिनी', subtitle: 'चेर महारानी', parent: '', spouseOf: 'uthiyan_cheralathan', gender: 'female', yug: 'kali', parichay: 'आय (Ay) राजवंश की राजकुमारी और उदियन चेरलथन की पत्नी।', clusterName: 'चेर (केरल) राजवंश' },
 
     { id: 'nedum_cheralathan', name: 'नेदुम चेरलथन', subtitle: 'इमयावरम्पन', parent: 'uthiyan_cheralathan', mother: 'veliyan_nallini', yug: 'kali', parichay: 'इन्होंने हिमालय तक विजय प्राप्त की और चेर वंश का धनुष-बाण का चिह्न हिमालय पर अंकित किया।', clusterName: 'चेर (केरल) राजवंश' },
     { id: 'palyanai_chel_kelu_kuttuvan', name: 'पलयानई चेल केलु कुट्टुवन', subtitle: 'उदियन के पुत्र', parent: 'uthiyan_cheralathan', mother: 'veliyan_nallini', yug: 'kali', parichay: 'नेदुम चेरलथन के छोटे भाई, जिन्होंने कोंगर नाडु (कोंगु क्षेत्र) पर विजय प्राप्त की।', clusterName: 'चेर (केरल) राजवंश' },
 
-    { id: 'chola_princess_manikilli', name: 'चोल राजकुमारी मणिकिल्ली', subtitle: 'चेर महारानी', parent: 'nedum_cheralathan', spouseOf: 'nedum_cheralathan', gender: 'female', yug: 'kali', parichay: 'चोल राजवंश की राजकुमारी (संभवतः इलमचेतचेन्नी के परिवार से) और नेदुम चेरलथन की पत्नी।', clusterName: 'चेर (केरल) राजवंश' },
-    { id: 'other_wife_nedum', name: 'अन्य चेर रानी', subtitle: 'नेदुम की पत्नी', parent: 'nedum_cheralathan', spouseOf: 'nedum_cheralathan', gender: 'female', yug: 'kali', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'chola_princess_manikilli', name: 'चोल राजकुमारी मणिकिल्ली', subtitle: 'चेर महारानी', parent: '', spouseOf: 'nedum_cheralathan', gender: 'female', yug: 'kali', parichay: 'चोल राजवंश की राजकुमारी (संभवतः इलमचेतचेन्नी के परिवार से) और नेदुम चेरलथन की पत्नी।', clusterName: 'चेर (केरल) राजवंश' },
+    { id: 'other_wife_nedum', name: 'अन्य चेर रानी', subtitle: 'नेदुम की पत्नी', parent: '', spouseOf: 'nedum_cheralathan', gender: 'female', yug: 'kali', clusterName: 'चेर (केरल) राजवंश' },
 
     { id: 'narmudi_cheral', name: 'नार्मुडी चेरल', subtitle: 'नेदुम के पुत्र', parent: 'nedum_cheralathan', mother: 'other_wife_nedum', yug: 'kali', parichay: 'इन्होंने थगदुर के शासकों को हराया था।', clusterName: 'चेर (केरल) राजवंश' },
     { id: 'senguttuvan_chera', name: 'सेनगुट्टुवन (चेनकुट्टुवन)', subtitle: 'महान चेर नरेश', parent: 'nedum_cheralathan', mother: 'chola_princess_manikilli', yug: 'kali', parichay: 'कडल पिरकोट्टिय चेनकुट्टुवन। ये महान योद्धा थे। महाकाव्य शिलप्पादिकारम में कन्नगी की कहानी के समय यही राजा थे।', clusterName: 'चेर (केरल) राजवंश' },
