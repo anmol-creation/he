@@ -59,15 +59,33 @@ body, html {
     width: 100vw;
     height: 100%;
     box-sizing: border-box;
-    padding: 2rem 15vw; /* Margins for readability */
-    background: linear-gradient(to bottom, #f5eedc 0%, #e8dcb5 100%);
-    overflow-y: auto;
+    /* Removed thick padding to allow edge-to-edge above the fold */
+    padding: 0;
+    background: #FAFAFA; /* Off-white minimalist background */
+    overflow-y: auto; /* Scroll down for details */
+    overflow-x: hidden;
     position: relative;
+
+    /* Optional slight parchment texture overlay via pseudo-element */
+    z-index: 1;
 
     /* Scrollbar */
     scrollbar-width: thin;
     scrollbar-color: var(--primary-saffron) transparent;
 }
+
+.sp-page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* A very subtle noise or ruled line texture can go here in future */
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 31px, rgba(0, 0, 0, 0.03) 31px, rgba(0, 0, 0, 0.03) 32px);
+    background-attachment: local; /* Scrolls with content */
+}
+
 
 .sp-page::-webkit-scrollbar {
     width: 6px;
@@ -79,15 +97,12 @@ body, html {
 
 /* Page Content Formatting */
 .page-inner-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.5);
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    min-height: calc(100% - 6rem);
+    /* Removed heavy box-shadow and white background to blend into the minimalist theme */
+    padding: 0;
     position: relative;
-    border: 1px solid rgba(212, 192, 152, 0.5);
+    min-height: 100%;
 }
 
 /* Cover Style */
@@ -146,41 +161,186 @@ body, html {
     background: rgba(255, 107, 53, 0.05);
 }
 
-/* Entity Style */
+/* Entity Style - New Character Layout */
 .sp-entity-page {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Above the fold section */
+.sp-above-fold {
+    height: calc(100vh - 60px); /* Fill the viewport minus header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.sp-hero-image-placeholder {
+    width: 250px;
+    height: 350px;
+    margin: 0 auto 2rem;
+    background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem; /* For emoji */
 }
 
 .sp-entity-name {
-    font-size: 3rem;
-    color: var(--primary-saffron);
-    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif; /* Fallback for modern feel */
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
 .sp-entity-subtitle {
-    font-size: 1.4rem;
-    color: #666;
-    margin-bottom: 2rem;
-    font-style: italic;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.sp-entity-details {
+.read-more-btn-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: 2px solid #2c3e50;
+    color: #2c3e50;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.read-more-btn:hover {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Below the fold section */
+.sp-below-fold {
+    padding: 4rem 2rem 6rem;
+    background: #FAFAFA; /* Matches body */
     text-align: left;
-    margin-top: 2rem;
+}
+
+.sp-quick-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 1rem;
+}
+
+.stat-pill {
+    font-size: 1rem;
+    color: #555;
+    background: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.stat-pill strong {
+    color: var(--primary-saffron);
+}
+
+.sp-narrative-text {
     font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+/* Drop cap for narrative */
+.sp-narrative-text > p:first-child::first-letter {
+    font-size: 4rem;
+    font-weight: bold;
+    float: left;
+    margin-right: 0.5rem;
+    line-height: 1;
+    color: var(--primary-saffron);
+}
+
+.sp-sambandh-widget {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.sp-sambandh-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-saffron);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.sambandh-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.sambandh-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.sambandh-label {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.sambandh-value {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
 }
 
 .sp-detail-row {
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
 }
 
 .sp-detail-label {
     font-weight: 600;
-    color: var(--text-dark);
-    display: inline-block;
-    width: 150px;
+    color: var(--primary-saffron);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
 }
 
 /* Navigation Overlays */

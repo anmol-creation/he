@@ -97,53 +97,92 @@ document.addEventListener('DOMContentLoaded', () => {
         let parentText = '';
         if (item.parent) {
             const parent = window.HistoricDB.getNode(item.parent);
-            if (parent) parentText = `<div class="sp-detail-row"><span class="sp-detail-label">वंशज:</span> <span class="sp-detail-value">${parent.name}</span></div>`;
+            if (parent) parentText = `<div class="sambandh-item"><span class="sambandh-label">पिता/माता (Parent)</span> <span class="sambandh-value" onclick="window.SinglePageBookApp.goToEntity('${parent.id}')" style="cursor:pointer; color:var(--primary-saffron);">${parent.name}</span></div>`;
         }
 
         let spouseText = '';
         if (item.spouseOf) {
             const spouse = window.HistoricDB.getNode(item.spouseOf);
-            if (spouse) spouseText = `<div class="sp-detail-row"><span class="sp-detail-label">पति/पत्नी:</span> <span class="sp-detail-value">${spouse.name}</span></div>`;
+            if (spouse) spouseText = `<div class="sambandh-item"><span class="sambandh-label">पति/पत्नी (Spouse)</span> <span class="sambandh-value" onclick="window.SinglePageBookApp.goToEntity('${spouse.id}')" style="cursor:pointer; color:var(--primary-saffron);">${spouse.name}</span></div>`;
         }
+
+        // Try to find children (nodes where parent == this item)
+        let children = window.HistoricDB.getAll().filter(n => n.parent === item.id);
+        let childrenText = '';
+        if (children.length > 0) {
+            const childrenLinks = children.map(c => `<span onclick="window.SinglePageBookApp.goToEntity('${c.id}')" style="cursor:pointer; color:var(--primary-saffron);">${c.name}</span>`).join(', ');
+            childrenText = `<div class="sambandh-item"><span class="sambandh-label">संतान (Children)</span> <span class="sambandh-value">${childrenLinks}</span></div>`;
+        }
+
+        const iconMap = {
+            'pre-kalpa': '✨',
+            'satya': '🌞',
+            'treta': '🏹',
+            'dwapar': '🦚',
+            'kali': '⚔️'
+        };
+        const mainIcon = iconMap[item.yug] || '🕉️';
 
         pagesData.push({
             type: 'entity',
             id: item.id,
             html: `
                 <div class="page-inner-content sp-entity-page">
-                    <h2 class="sp-entity-name">${item.name}</h2>
-                    <div class="sp-entity-subtitle">${item.subtitle || ''}</div>
+                    <!-- ABOVE THE FOLD -->
+                    <div class="sp-above-fold">
+                        <div class="sp-hero-image-placeholder">
+                            ${mainIcon}
+                        </div>
+                        <h2 class="sp-entity-name">${item.name}</h2>
+                        <div class="sp-entity-subtitle">${item.subtitle || ''}</div>
 
-                    <div style="font-size: 4rem; margin-bottom: 2rem; opacity: 0.8;">
-                        ${item.yug === 'pre-kalpa' ? '✨' : item.yug === 'satya' ? '🌞' : item.yug === 'treta' ? '🏹' : item.yug === 'dwapar' ? '🦚' : '⚔️'}
+                        <div class="read-more-btn-container">
+                            <button class="read-more-btn" onclick="this.closest('.sp-page').scrollBy({top: window.innerHeight * 0.8, behavior: 'smooth'})">
+                                📖 Read Full Story <span>↓</span>
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="sp-entity-details">
-                        <div class="sp-detail-row">
-                            <span class="sp-detail-label">युग:</span>
-                            <span class="sp-detail-value" style="text-transform: capitalize;">${item.yug || 'Unknown'}</span>
+                    <!-- BELOW THE FOLD -->
+                    <div class="sp-below-fold">
+                        <div class="sp-quick-stats">
+                            <div class="stat-pill">युग (Era): <strong style="text-transform: capitalize;">${item.yug || 'Unknown'}</strong></div>
+                            ${item.weapon ? `<div class="stat-pill">अस्त्र (Weapon): <strong>${item.weapon}</strong></div>` : ''}
+                            ${item.mount ? `<div class="stat-pill">वाहन (Mount): <strong>${item.mount}</strong></div>` : ''}
+                            ${item.abode ? `<div class="stat-pill">निवास (Abode): <strong>${item.abode}</strong></div>` : ''}
                         </div>
-                        ${parentText}
-                        ${spouseText}
-                        <div class="sp-detail-row">
-                            <span class="sp-detail-label">विवरण:</span>
-                            <span class="sp-detail-value">${item.parichay || 'सनातन धर्म के इतिहास में महत्वपूर्ण योगदान।'}</span>
+
+                        <div class="sp-narrative-text">
+                            <p>${item.parichay || 'सनातन धर्म के इतिहास में इनका महत्वपूर्ण स्थान है। इनके जीवन और कार्यों का वर्णन विभिन्न ग्रंथों में मिलता है।'}</p>
                         </div>
+
+                        ${(parentText || spouseText || childrenText) ? `
+                        <div class="sp-sambandh-widget">
+                            <h3 class="sp-sambandh-title">पारिवारिक संबंध (Family Relations)</h3>
+                            <div class="sambandh-grid">
+                                ${parentText}
+                                ${spouseText}
+                                ${childrenText}
+                            </div>
+                        </div>
+                        ` : ''}
+
                         ${item.events ? `
-                        <div class="sp-detail-row" style="margin-top: 1rem;">
-                            <span class="sp-detail-label">प्रमुख घटनाएँ:</span>
-                            <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0;">
-                                ${item.events.map(ev => `<li>${ev}</li>`).join('')}
+                        <div class="sp-detail-row" style="margin-top: 3rem;">
+                            <span class="sp-detail-label">प्रमुख घटनाएँ (Key Events)</span>
+                            <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; font-size: 1.1rem; line-height: 1.6;">
+                                ${item.events.map(ev => `<li style="margin-bottom:0.5rem;">${ev}</li>`).join('')}
                             </ul>
                         </div>` : ''}
+
                         ${item.kathayein ? `
-                        <div class="sp-detail-row" style="margin-top: 1rem;">
-                            <span class="sp-detail-label">कथाएँ व प्रसंग:</span>
+                        <div class="sp-detail-row" style="margin-top: 3rem;">
+                            <span class="sp-detail-label">कथाएँ व प्रसंग (Stories & Legends)</span>
                             ${item.kathayein.map(katha => `
-                                <div style="margin-top: 1rem; background: rgba(0,0,0,0.03); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-saffron);">
-                                    <strong style="display: block; color: var(--primary-saffron); margin-bottom: 0.5rem;">${katha.title}</strong>
-                                    <em style="display: block; font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Source: ${katha.source}</em>
-                                    <p style="white-space: pre-line; margin: 0; font-size: 0.95rem; line-height: 1.6;">${katha.content}</p>
+                                <div style="margin-top: 1.5rem; background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-saffron); box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+                                    <strong style="display: block; color: var(--primary-saffron); font-size: 1.2rem; margin-bottom: 0.5rem;">${katha.title}</strong>
+                                    <em style="display: block; font-size: 0.9rem; color: #888; margin-bottom: 1rem;">Source: ${katha.source}</em>
+                                    <p style="white-space: pre-line; margin: 0; font-size: 1.05rem; line-height: 1.7; color: #444;">${katha.content}</p>
                                 </div>
                             `).join('')}
                         </div>` : ''}
