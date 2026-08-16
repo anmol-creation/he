@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपूर्ण सनातन इतिहास | Historic Map</title>
+    <meta name="description" content="Interactive Infinite Canvas of Sanatan History">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/historic-map.css">
+<link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+    </head>
+<body>
+    <!-- Floating Controls (Top-Right) -->
+    <div id="floating-controls-top" class="floating-controls">
+        <div class="search-container floating-btn-group">
+            <button id="expand-collapse-all-btn" class="floating-btn" title="Expand/Collapse All Clusters" style="font-size: 1.4rem;">🗂️</button>
+            <button id="search-toggle-btn" class="floating-btn" title="Search">🔍</button>
+        </div>
+        <button id="route-toggle-btn" class="floating-btn" title="Lineage Route" style="border-radius:50%; background:rgba(34,34,34,0.9); color:white; width:45px; height:45px; border:1px solid rgba(255,255,255,0.1);">🧭</button>
+        <div style="position: relative;">
+            <button id="map-view-btn" class="floating-btn" title="Map View / Filters">🗺️</button>
+            <div id="map-filter-dropdown" class="filter-dropdown">
+                <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 5px;">Map Engine</div>
+                <label class="filter-option" style="margin-bottom: 5px;">
+                    <input type="radio" name="layout-mode" value="autoslip" checked>
+                    Auto-Slip Mode (Original)
+                </label>
+                <label class="filter-option" style="margin-bottom: 15px;">
+                    <input type="radio" name="layout-mode" value="hierarchical">
+                    Metro Mode (Hierarchical)
+                </label>
+                <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 5px;">Filters</div>
+                <label class="filter-option">
+                    <input type="checkbox" id="filter-transition-wires">
+                    Show Daughter to Wife Transitions (Red Lines)
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Route Search Box -->
+    <div id="route-search-box" class="route-search-container">
+        <div class="route-input-group">
+            <label>Start Node ID</label>
+            <input type="text" id="route-start-input" placeholder="e.g. ram">
+        </div>
+        <div class="route-input-group">
+            <label>End Node ID</label>
+            <input type="text" id="route-end-input" placeholder="e.g. brahma">
+        </div>
+        <div class="route-actions">
+            <button id="clear-route-btn" class="map-control-btn">Clear</button>
+            <button id="find-route-btn" class="map-control-btn">Find Route</button>
+        </div>
+        <div id="route-error-msg" style="color: #ff6b6b; font-size: 0.8rem; margin-top: 5px; display: none;">Route not found.</div>
+    </div>
+
+    <!-- Floating Controls (Bottom-Right) -->
+    <div id="floating-controls-bottom" class="floating-controls">
+        <button id="zoom-in-btn" class="floating-btn" title="Zoom In">➕</button>
+        <button id="zoom-out-btn" class="floating-btn" title="Zoom Out">➖</button>
+    </div>
+
+    <!-- Bottom Navigation Bar (Footer) -->
+    <nav id="bottom-nav-bar">
+        <a href="itihas-puran.html" class="nav-btn" title="Back">⬅</a>
+
+        <!-- Legend Dots -->
+        <div id="map-legend-container" style="display: flex; gap: 10px; align-items: center; position: relative;">
+            <div class="legend-dot" data-desc="सूर्यवंश (Suryavansh Lineage)" style="background-color: #FF9900; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="चंद्रवंश (Chandravansh Lineage)" style="background-color: #4169E1; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="पत्नी (Wife Node & Connection)" style="background-color: #ff99cc; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="पुत्री (Daughter Node)" style="background-color: #ffb6c1; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px solid white;"></div>
+            <div class="legend-dot" data-desc="विवाह (Marriage Transition Wire)" style="background-color: transparent; width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 2px dashed red;"></div>
+
+            <!-- Legend Popup -->
+            <div id="legend-popup" style="display: none; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(34,34,34,0.95); padding: 10px 15px; border-radius: 8px; border: 1px solid #FF6B35; color: white; white-space: nowrap; font-size: 0.9rem; z-index: 300;">
+                <span id="legend-text">Legend</span>
+            </div>
+        </div>
+
+        <a href="../index.html" class="nav-btn" title="Home">🏠</a>
+    </nav>
+
+
+
+    <!-- Fixed River of Time (Left Sidebar) -->
+    <aside id="river-of-time">
+        <!-- Time markers dynamically injected here by JS -->
+    </aside>
+
+    <!-- Map Area (Infinite Canvas) -->
+    <main id="map-container">
+        <canvas id="main-canvas"></canvas>
+    </main>
+
+    <!-- Focus Node Pop-up/Panel (Hidden by default) -->
+    <!-- Full Screen Search Overlay (Google Maps Style) -->
+    <div id="full-screen-search-overlay" class="hidden">
+        <div class="search-header">
+            <button id="close-search-btn" class="icon-btn" title="Back to Map">⬅️</button>
+            <input type="text" id="map-search-input" placeholder="Search Entity, King, Dynasty..." autocomplete="off">
+            <button id="clear-search-btn" class="icon-btn hidden" title="Clear Search">❌</button>
+        </div>
+        <div class="search-body">
+            <div id="recent-searches-container">
+                <div class="search-section-title">Recent Searches</div>
+                <div id="recent-searches-list"></div>
+            </div>
+            <div id="map-search-results"></div>
+        </div>
+    </div>
+
+    <div id="focus-panel" class="hidden">
+        <button id="close-panel">✕</button>
+        <div class="panel-header" id="panel-header">
+            <div class="panel-dots" id="panel-dots"></div>
+            <h2 id="panel-name">Name</h2>
+            <p id="panel-subtitle" class="panel-subtitle">Subtitle</p>
+            <div id="panel-tags" class="panel-tags"></div>
+        </div>
+        <button id="panel-start-route-btn" class="panel-route-btn">🧭 Start Route from Here</button>
+        <div class="panel-tabs">
+            <button class="tab-btn active" data-tab="parichay">परिचय</button>
+            <button class="tab-btn" data-tab="jeevan">जीवन</button>
+            <button class="tab-btn" data-tab="kathayein">कथाएँ</button>
+        </div>
+        <div class="panel-content" id="panel-content-area">
+            <!-- Dynamic Content -->
+        </div>
+
+        <!-- Tooltip Modal for Tags -->
+        <div id="tag-tooltip" class="tag-tooltip hidden">
+            <div class="tooltip-arrow"></div>
+            <h4 id="tooltip-title">Tag Name</h4>
+            <p id="tooltip-desc">Description goes here.</p>
+        </div>
+    </div>
+
+    <!-- Data Files -->
+    <script type="module" src="../js/data/sanatan-glossary.js"></script>
+    <script type="module" src="../js/data/historic-data.js"></script>
+    <!-- Core Engine & Map Modules -->
+    <script type="module" src="../js/layout-engine/index.js"></script>
+    <script src="../js/path-finder.js"></script>
+    <script src="../js/map-state.js"></script>
+    <script src="../js/map-renderer.js"></script>
+    <script src="../js/map-controls.js"></script>
+    <script src="../js/map-ui.js"></script>
+    <script type="module" src="../js/historic-map.js"></script>
+</body>
+</html>

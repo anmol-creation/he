@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vansh & Gotra Directory | Hindu Encyclopedia</title>
+    <meta name="description" content="Trace your lineage back to the Root Ancestor (Brahma) through your Surname or Gotra.">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/timeline.css">
+    <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+</head>
+<body>
+    <header>
+        <div class="header-content" style="width: 100%; justify-content: flex-start;">
+            <img src="../icons/logo.jpg" alt="Logo" class="site-logo" style="margin-right: 15px;">
+            <a href="itihas-puran.html">← Portal</a>
+            <span class="header-separator">|</span>
+            <span>Surnames & Gotras</span>
+        </div>
+    </header>
+
+    <main>
+        <div style="text-align: center; padding: 2rem 1rem;">
+            <h1 style="color: white; margin-bottom: 1rem; font-size: 2.5rem;">Vansh & Gotra <span style="color: var(--primary-saffron);">Directory</span></h1>
+            <p style="color: var(--text-light); max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                Explore the deep structure of Hindu identity. Trace your modern surname or gotra back through the ancient lineages to the root ancestors (Saptarishis, Manu, or Chitragupta).
+            </p>
+        </div>
+
+        <section id="vansh-gotra-directory" style="margin: 2rem auto; margin-bottom: 5rem; background: var(--bg-dark); border: 1px solid rgba(255,107,53,0.2); border-radius: 12px; padding: 3rem; max-width: 800px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+                <!-- Level 1: Pillar -->
+                <div>
+                    <label for="pillar-select" style="display: block; color: var(--text-light); margin-bottom: 0.8rem; font-weight: 500; font-size: 1.1rem;">1. Select Main Category (Pillar)</label>
+                    <select id="pillar-select" style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #444; background: #1a1a1a; color: white; font-family: 'Poppins', sans-serif; font-size: 1.1rem; cursor: pointer;">
+                        <option value="">-- Choose Vansh / Rishi Parampara --</option>
+                    </select>
+                </div>
+
+                <!-- Level 2: Subcategory/Branch -->
+                <div>
+                    <label for="subcategory-select" style="display: block; color: var(--text-light); margin-bottom: 0.8rem; font-weight: 500; font-size: 1.1rem;">2. Select Branch / Gotra</label>
+                    <select id="subcategory-select" disabled style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #444; background: #1a1a1a; color: white; font-family: 'Poppins', sans-serif; font-size: 1.1rem; cursor: pointer; transition: opacity 0.3s;">
+                        <option value="">-- Select Branch / Gotra --</option>
+                    </select>
+                </div>
+
+                <!-- Level 3: Surname -->
+                <div>
+                    <label for="surname-select" style="display: block; color: var(--text-light); margin-bottom: 0.8rem; font-weight: 500; font-size: 1.1rem;">3. Select Surname / Up-naam</label>
+                    <select id="surname-select" disabled style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #444; background: #1a1a1a; color: white; font-family: 'Poppins', sans-serif; font-size: 1.1rem; cursor: pointer; transition: opacity 0.3s;">
+                        <option value="">-- Select Surname --</option>
+                    </select>
+                </div>
+
+                <!-- Result Card -->
+                <div id="lineage-result-card" style="display: none; margin-top: 2rem; background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(0,0,0,0) 100%); border-left: 5px solid var(--primary-saffron); padding: 2rem; border-radius: 8px;">
+                    <h4 style="color: white; margin-bottom: 1.5rem; border-bottom: 1px solid #444; padding-bottom: 1rem; font-size: 1.5rem;">Lineage Path Result</h4>
+
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; font-size: 1.1rem;">
+                        <div style="color: #999;">Surname:</div>
+                        <div id="res-surname" style="color: var(--primary-saffron); font-weight: 600; font-size: 1.3rem;"></div>
+
+                        <div style="color: #999;">Main Pillar:</div>
+                        <div id="res-pillar" style="color: white;"></div>
+
+                        <div style="color: #999;">Branch/Gotra:</div>
+                        <div id="res-branch" style="color: white;"></div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed #444;">
+                        <div style="color: #999; margin-bottom: 0.5rem; font-size: 1.1rem;">Root Ancestor Chain:</div>
+                        <div id="res-ancestor" style="color: var(--secondary-gold); font-size: 1.2rem; font-weight: 500; line-height: 1.5;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/data/vansh-gotra-data.js"></script>
+    <script src="../js/vansh-gotra-ui.js"></script>
+</body>
+</html>

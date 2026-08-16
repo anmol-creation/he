@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>इतिहास पुराण | Single Page Book</title>
+    <meta name="description" content="Full screen Hindu Deities Timeline Book">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/single-page-book.css">
+<link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+    </head>
+<body>
+    <header class="fullscreen-header">
+        <a href="itihas-puran.html" class="back-btn">← Back to Portal</a>
+        <span>इतिहास पुराण Book</span>
+    </header>
+
+    <main class="fullscreen-book-container">
+        <div class="book-slider" id="book-slider">
+            <!-- Pages will be dynamically injected here by JS -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="nav-btn prev-btn" id="prev-page" onclick="window.SinglePageBookApp.turnPageLeft()" disabled>❮</button>
+        <button class="nav-btn next-btn" id="next-page" onclick="window.SinglePageBookApp.turnPageRight()">❯</button>
+    </main>
+
+    <script src="../js/global.js"></script>
+    <script type="module" src="../js/data/historic-data.js"></script>
+    <script src="../js/single-page-book.js"></script>
+</body>
+</html>

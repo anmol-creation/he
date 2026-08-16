@@ -1,0 +1,120 @@
+/* Main Content Area */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Portal Categories Grid */
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.portal-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(247, 147, 30, 0.15);
+    border-color: rgba(247, 147, 30, 0.3);
+}
+
+.portal-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.portal-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-saffron);
+}
+
+.portal-card-desc {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Historic Map Banner */
+.historic-map-banner {
+    background: linear-gradient(135deg, var(--primary-saffron), var(--secondary-gold));
+    border-radius: 15px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--white);
+    margin: 2rem 1rem;
+    box-shadow: 0 10px 30px rgba(247, 147, 30, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.historic-map-banner:hover {
+    transform: scale(1.02);
+}
+
+.historic-map-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.historic-map-banner p {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Global Search Bar Mockup */
+.search-container {
+    padding: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid rgba(0,0,0,0.1);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.search-bar:focus {
+    border-color: var(--primary-saffron);
+    box-shadow: 0 4px 15px rgba(247, 147, 30, 0.2);
+}

@@ -1,0 +1,109 @@
+:root {
+    --primary-saffron: #FF6B35;
+    --secondary-gold: #F7931E;
+    --text-dark: #ffffff;
+    --bg-start: #111111;
+    --bg-end: #111111;
+    --white: #ffffff;
+    --trunk-color: #8b5a2b;
+    --leaf-color: #4CAF50;
+    --wire-color: #FF6B35;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Sticky Header */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--bg-start); /* Black */
+    border-bottom: 1px solid rgba(255,107,53,0.2);
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF6B35; /* Orange to match logo */
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.site-logo {
+    height: 40px; /* Adjust as needed */
+    width: auto;
+    border-radius: 4px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 800px;
+}
+
+.header-content a {
+    color: #FF6B35; /* Orange to match logo */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.header-content a:hover {
+    opacity: 0.9;
+}
+
+.header-separator {
+    opacity: 0.5;
+    margin: 0 0.2rem;
+    color: #FF6B35;
+}
+
+@media (max-width: 400px) {
+    .header-content {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #1a1a1a;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+    .site-logo {
+        height: 50px;
+    }
+}

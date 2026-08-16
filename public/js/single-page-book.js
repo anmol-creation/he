@@ -114,15 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
             childrenText = `<div class="sambandh-item"><span class="sambandh-label">CHILDREN</span> <span class="sambandh-value">${childrenLinks}</span></div>`;
         }
 
-        // Using a premium SVG instead of emoji to prevent OS rendering harsh purple background boxes
-        const premiumOmSvg = `
-            <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 6c-2-2-5-2-7 0s-2 5 0 7 5 2 7 0M11 6c2-2 5-2 7 0s2 5 0 7-5 2-7 0"/>
-                <circle cx="12" cy="12" r="2"/>
-                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M19 19l-1.5-1.5M5 19l1.5-1.5M19 5l-1.5 1.5"/>
-            </svg>
-        `;
-        const mainIcon = premiumOmSvg;
+        const iconMap = {
+            'pre-kalpa': '✨',
+            'satya': '🌞',
+            'treta': '🏹',
+            'dwapar': '🦚',
+            'kali': '⚔️'
+        };
+        const mainIcon = iconMap[item.yug] || '🕉️';
 
         pagesData.push({
             type: 'entity',
@@ -131,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="page-inner-content sp-entity-page">
                     <!-- ABOVE THE FOLD -->
                     <div class="sp-above-fold">
-                        <div class="sp-hero-image-placeholder" style="opacity: 0.8;">
+                        <div class="sp-hero-image-placeholder">
                             ${mainIcon}
                         </div>
                         <h2 class="sp-entity-name">${item.name}</h2>
