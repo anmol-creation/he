@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library - Sampurn Sanatan Itihas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfaf2; /* Light cream */
+            color: #2c3e50;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d35400, #e67e22);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-family: 'Yatra One', cursive;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-btn:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .accordion {
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: white;
+            color: #d35400;
+            cursor: pointer;
+            padding: 1.5rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-left: 5px solid #d35400;
+        }
+
+        .accordion-header:hover {
+            background-color: #fdf6ec;
+        }
+
+        .accordion-header.active {
+            background-color: #fdf6ec;
+        }
+
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .accordion-content-inner {
+            padding: 1rem 1.5rem 1.5rem;
+        }
+
+        .book-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .book-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .book-item:last-child {
+            border-bottom: none;
+        }
+
+        .book-item i {
+            color: #e67e22;
+            width: 20px;
+        }
+
+        .book-link {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .book-link:hover {
+            color: #d35400;
+            text-decoration: underline;
+        }
+
+        .book-name {
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .sub-category {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 2px dashed #eee;
+            padding-bottom: 0.3rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="itihas-puran.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portal</a>
+        <h1>सनातन पुस्तकालय</h1>
+        <p>The Complete Digital Library of Sanatan Literature</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Category 1: Shruti -->
+        <div class="accordion">
+            <button class="accordion-header">
+                1. SHRUTI (श्रुति - Direct Revelation)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">The Vedas</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-book-open"></i> <span class="book-name">Rigveda</span></li>
+                        <li class="book-item"><i class="fas fa-book-open"></i> <span class="book-name">Yajurveda (Shukla & Krishna)</span></li>
+                        <li class="book-item"><i class="fas fa-book-open"></i> <span class="book-name">Samaveda</span></li>
+                        <li class="book-item"><i class="fas fa-book-open"></i> <span class="book-name">Atharvaveda</span></li>
+                    </ul>
+                    <div class="sub-category">Mukhya Upanishads</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-scroll"></i> <span class="book-name">Isha, Kena, Katha, Prashna, Mundaka, Mandukya, Taittiriya, Aitareya, Chandogya, Brihadaranyaka</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Smriti -->
+        <div class="accordion">
+            <button class="accordion-header">
+                2. SMRITI (स्मृति - Law & Tradition)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">Dharmashastras</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-balance-scale"></i> <span class="book-name">Manu Smriti</span></li>
+                        <li class="book-item"><i class="fas fa-balance-scale"></i> <span class="book-name">Yajnavalkya Smriti</span></li>
+                        <li class="book-item"><i class="fas fa-balance-scale"></i> <span class="book-name">Parashara Smriti</span></li>
+                    </ul>
+                    <div class="sub-category">Vedangas & Upavedas</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-graduation-cap"></i> <span class="book-name">Ashtadhyayi (Vyakarana - Panini)</span></li>
+                        <li class="book-item"><i class="fas fa-leaf"></i> <span class="book-name">Sushruta Samhita / Charaka Samhita (Ayurveda)</span></li>
+                        <li class="book-item"><i class="fas fa-star"></i> <span class="book-name">Surya Siddhanta (Jyotisha)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 3: Itihasa -->
+        <div class="accordion">
+            <button class="accordion-header">
+                3. ITIHASA (इतिहास - History)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">Ramayana Epics</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-om"></i> <a href="book-reader.html" class="book-link">Valmiki Ramayana (Read Now)</a></li>
+                        <li class="book-item"><i class="fas fa-book"></i> <span class="book-name">Adhyatma Ramayana</span></li>
+                        <li class="book-item"><i class="fas fa-book"></i> <span class="book-name">Ramcharitmanas (Tulsidas)</span></li>
+                        <li class="book-item"><i class="fas fa-book"></i> <span class="book-name">Kamba Ramayana</span></li>
+                    </ul>
+                    <div class="sub-category">Mahabharata Epics</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-om"></i> <span class="book-name">Mahabharata (Vyasa)</span></li>
+                        <li class="book-item"><i class="fas fa-om"></i> <span class="book-name">Srimad Bhagavad Gita</span></li>
+                        <li class="book-item"><i class="fas fa-book"></i> <span class="book-name">Harivamsa (Lineage of Hari)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 4: Puranas -->
+        <div class="accordion">
+            <button class="accordion-header">
+                4. PURANAS (पुराण - Ancient Lore)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">Maha Puranas</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-book-reader"></i> <span class="book-name">Srimad Bhagavatam (Bhagavata Purana)</span></li>
+                        <li class="book-item"><i class="fas fa-book-reader"></i> <span class="book-name">Vishnu Purana, Shiva Purana, Skanda Purana</span></li>
+                        <li class="book-item"><i class="fas fa-book-reader"></i> <span class="book-name">Markandeya Purana (Contains Devi Mahatmya)</span></li>
+                        <li class="book-item"><i class="fas fa-book-reader"></i> <span class="book-name">Matsya, Kurma, Garuda, Agni Puranas</span></li>
+                    </ul>
+                    <div class="sub-category">Upa Puranas</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-book"></i> <span class="book-name">Kalki Purana, Samba Purana, Kalika Purana</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 5: Darshana -->
+        <div class="accordion">
+            <button class="accordion-header">
+                5. DARSHANA SHASTRA (दर्शन - Philosophy)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-brain"></i> <span class="book-name">Yoga Sutras (Patanjali)</span></li>
+                        <li class="book-item"><i class="fas fa-brain"></i> <span class="book-name">Brahma Sutras (Badarayana - Vedanta)</span></li>
+                        <li class="book-item"><i class="fas fa-brain"></i> <span class="book-name">Samkhya Karika (Kapila)</span></li>
+                        <li class="book-item"><i class="fas fa-brain"></i> <span class="book-name">Vaisheshika Sutras (Kanada - Atomism)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 6: Agamas & Tantras -->
+        <div class="accordion">
+            <button class="accordion-header">
+                6. AGAMAS & TANTRAS (आगम और तन्त्र)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-fire"></i> <span class="book-name">Pancharatra Agamas (Vaishnava)</span></li>
+                        <li class="book-item"><i class="fas fa-fire"></i> <span class="book-name">Vigyan Bhairav Tantra (Kashmir Shaivism)</span></li>
+                        <li class="book-item"><i class="fas fa-fire"></i> <span class="book-name">Saundarya Lahari (Shakta)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 7: Shramana -->
+        <div class="accordion">
+            <button class="accordion-header">
+                7. SHRAMANA (श्रमण - Jain & Bauddha)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">Buddhist Texts</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-dharmachakra"></i> <span class="book-name">Tripitaka (Sutta, Vinaya, Abhidhamma)</span></li>
+                        <li class="book-item"><i class="fas fa-dharmachakra"></i> <span class="book-name">Jataka Tales</span></li>
+                        <li class="book-item"><i class="fas fa-dharmachakra"></i> <span class="book-name">Mahavamsa (Chronicles of Sri Lanka)</span></li>
+                    </ul>
+                    <div class="sub-category">Jain Texts</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-praying-hands"></i> <span class="book-name">Jain Agamas (Svetambara & Digambara)</span></li>
+                        <li class="book-item"><i class="fas fa-praying-hands"></i> <span class="book-name">Kalpa Sutra</span></li>
+                        <li class="book-item"><i class="fas fa-praying-hands"></i> <span class="book-name">Trishashthi Shalaka Purush Caritra</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 8: Gurmat -->
+        <div class="accordion">
+            <button class="accordion-header">
+                8. GURMAT (सिख - Sikh Texts)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-khanda"></i> <span class="book-name">Sri Guru Granth Sahib (Adi Granth)</span></li>
+                        <li class="book-item"><i class="fas fa-khanda"></i> <span class="book-name">Dasam Granth (Chandi Di Var, Chaubis Avtar)</span></li>
+                        <li class="book-item"><i class="fas fa-khanda"></i> <span class="book-name">Janam Sakhis</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 9: Bhashyas & Nibandhas -->
+        <div class="accordion">
+            <button class="accordion-header">
+                9. BHASHYAS & NIBANDHAS (भाष्य और निबंध)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">Commentaries</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-pen-nib"></i> <span class="book-name">Works of Adi Shankaracharya</span></li>
+                        <li class="book-item"><i class="fas fa-pen-nib"></i> <span class="book-name">Works of Ramanujacharya</span></li>
+                        <li class="book-item"><i class="fas fa-pen-nib"></i> <span class="book-name">Works of Madhvacharya</span></li>
+                        <li class="book-item"><i class="fas fa-pen-nib"></i> <span class="book-name">Works of Chaitanya Mahaprabhu</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 10: Loka / Kshetriya Sahitya -->
+        <div class="accordion">
+            <button class="accordion-header">
+                10. LOKA / KSHETRIYA SAHITYA (लोक / क्षेत्रीय)
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="sub-category">Bhakti Texts</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-music"></i> <span class="book-name">Abhangs, Vachanas, Dohe (Kabir, Meera, Tulsidas)</span></li>
+                    </ul>
+                    <div class="sub-category">Sangam Literature</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-scroll"></i> <span class="book-name">Tolkappiyam, Tirukkural</span></li>
+                    </ul>
+                    <div class="sub-category">Janjatiya (Tribal) Lore</div>
+                    <ul class="book-list">
+                        <li class="book-item"><i class="fas fa-tree"></i> <span class="book-name">Santhal, Bhil, Gond oral histories</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordions = document.querySelectorAll('.accordion-header');
+
+            accordions.forEach(acc => {
+                acc.addEventListener('click', function() {
+                    // Toggle active class
+                    this.classList.toggle('active');
+
+                    // Get the content panel
+                    const content = this.nextElementSibling;
+
+                    if (content.style.maxHeight) {
+                        // It is open, so close it
+                        content.style.maxHeight = null;
+                    } else {
+                        // It is closed, so open it
+                        // Optional: close all other accordions first
+                        /*
+                        accordions.forEach(otherAcc => {
+                            if (otherAcc !== this) {
+                                otherAcc.classList.remove('active');
+                                otherAcc.nextElementSibling.style.maxHeight = null;
+                            }
+                        });
+                        */
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

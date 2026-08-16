@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>इतिहास पुराण | Tree Timeline</title>
+    <meta name="description" content="Tree Timeline of Hindu Deities">
+    <meta name="theme-color" content="#FF6B35">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/timeline.css">
+<link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+    </head>
+<body>
+    <header>
+        <div class="header-content" style="width: 100%; justify-content: flex-start;">
+            <img src="../icons/logo.jpg" alt="Logo" class="site-logo" style="margin-right: 15px;">
+            <a href="../index.html">← Home</a>
+            <span class="header-separator">|</span>
+            <span>इतिहास पुराण</span>
+            <span class="header-separator">|</span>
+            <span>Tree Timeline</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Historic Map Banner -->
+        <a href="historic-map.html" class="historic-map-banner">
+            <h2>संपूर्ण सनातन इतिहास</h2>
+            <p>Interactive Historic Map: Explore the complete lineage from Brahma to modern times, navigate eras, and discover ancient stories.</p>
+        </a>
+
+        <!-- Geographic Historical Map Banner -->
+        <a href="historical-atlas.html" class="historic-map-banner" style="background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.8)); margin-top: 1rem;">
+            <h2>ऐतिहासिक भौगोलिक मानचित्र</h2>
+            <p>Historical Atlas: Explore interactive geographic maps of ancient kingdoms, dynasty borders, and key historical events across different eras.</p>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-container" style="position: relative;">
+            <input type="text" id="search-input" class="search-bar" placeholder="Search any King, Dynasty, Era, or Surname..." autocomplete="off">
+            <div id="search-results" class="search-results-dropdown" style="display: none; position: absolute; top: 100%; left: 1rem; right: 1rem; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 10; max-height: 300px; overflow-y: auto; margin-top: 0.5rem; border: 1px solid rgba(0,0,0,0.05);">
+                <!-- Search results will be injected here -->
+            </div>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="portal-grid">
+            <a href="entity-list.html?category=dynasties" class="portal-card">
+                <div class="portal-card-icon">👑</div>
+                <div class="portal-card-title">प्रमुख वंश</div>
+                <div class="portal-card-desc">Suryavansh, Chandravansh, Kuruvansh, etc.</div>
+            </a>
+            <a href="entity-list.html?category=kings" class="portal-card">
+                <div class="portal-card-icon">⚔️</div>
+                <div class="portal-card-title">महान राजा व सम्राट</div>
+                <div class="portal-card-desc">Chakravarti Samrats, Dharmarajs, Warriors</div>
+            </a>
+            <a href="entity-list.html?category=eras" class="portal-card">
+                <div class="portal-card-icon">⏳</div>
+                <div class="portal-card-title">कालगणना और युग</div>
+                <div class="portal-card-desc">Satya, Treta, Dwapar, Kali Yug & Manvantaras</div>
+            </a>
+            <a href="vansh-gotra.html" class="portal-card">
+                <div class="portal-card-icon">🧬</div>
+                <div class="portal-card-title">Surnames / गोत्र</div>
+                <div class="portal-card-desc">Trace modern lineages back to ancient roots</div>
+            </a>
+            <a href="entity-list.html?category=sages" class="portal-card">
+                <div class="portal-card-icon">📜</div>
+                <div class="portal-card-title">ऋषि परंपरा</div>
+                <div class="portal-card-desc">Saptarishi, Gurukul lineages and knowledge flow</div>
+            </a>
+        </div>
+
+        <!-- Book Link Area -->
+        <section id="book-link-section" style="margin-top: 3rem; margin-bottom: 4rem; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+            <!-- Itihas Book -->
+            <div style="background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--secondary-gold) 100%); padding: 3rem; border-radius: 15px; flex: 1; min-width: 300px; max-width: 500px; box-shadow: 0 10px 30px rgba(247, 147, 30, 0.2);">
+                <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">इतिहास पुराण Book</h2>
+                <p style="color: white; font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Read the complete eternal lineage in a full-screen book format.</p>
+                <a href="itihas-book.html" style="background: white; color: var(--primary-saffron); padding: 1rem 2.5rem; border-radius: 30px; font-size: 1.2rem; font-weight: 600; text-decoration: none; display: inline-block; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    📖 Open Book
+                </a>
+            </div>
+
+            <!-- Digital Library -->
+            <div style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 3rem; border-radius: 15px; flex: 1; min-width: 300px; max-width: 500px; box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2);">
+                <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">डिजिटल पुस्तकालय</h2>
+                <p style="color: white; font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">मूल ग्रंथ (Original Texts) - प्रामाणिक श्लोक और हिंदी अनुवाद।</p>
+                <a href="digital-library.html" style="background: white; color: #2c3e50; padding: 1rem 2.5rem; border-radius: 30px; font-size: 1.2rem; font-weight: 600; text-decoration: none; display: inline-block; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    📚 Open Library
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/global.js"></script>
+    <script type="module" src="../js/data/historic-data.js"></script>
+    <script src="../js/itihas-puran.js"></script>
+</body>
+</html>

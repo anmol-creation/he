@@ -181,7 +181,6 @@ body, html {
     text-align: center;
     position: relative;
     padding: 2rem;
-    padding-bottom: 8rem; /* Prevent overlap with absolute positioned read-more button */
 }
 
 .sp-hero-image-placeholder {
