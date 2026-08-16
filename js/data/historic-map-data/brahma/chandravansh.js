@@ -171,6 +171,48 @@ export const chandravanshData = [
     { id: 'chola_dynasty_proxy', name: 'चोल वंश', subtitle: 'कावेरी राजवंश', parent: 'chola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kerala_dynasty_proxy', name: 'चेर (केरल) वंश', subtitle: 'मालाबार राजवंश', parent: 'kerala_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'kola_dynasty_proxy', name: 'कोल वंश', subtitle: 'कोल राजवंश', parent: 'kola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- पौराणिक एवं प्रारंभिक मूषिका (कोल) शासक (Mythological / Early Kings) ---
+    { id: 'rama_mushika', name: 'राम मूषिका', subtitle: 'मूषिका वंश संस्थापक', parent: 'kola_dynasty_proxy', yug: 'dwapar', parichay: '11वीं सदी के महाकाव्य मूषिका-वंश के अनुसार, ये इस राजवंश के संस्थापक थे।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'nandana_mushika', name: 'नंदन', subtitle: 'मूषिका नरेश', parent: 'rama_mushika', yug: 'kali', parichay: 'इन्हें संगम साहित्य के प्रसिद्ध शासक नन्नन के समतुल्य माना जाता है।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    // बीच की अज्ञात पीढ़ियाँ (नंदन से उग्रसेन 6वीं पीढ़ी)
+    { id: 'ugrasena_mushika', name: 'उग्रसेन', subtitle: 'मूषिका नरेश', parent: 'nandana_mushika', yug: 'kali', parichay: 'नंदन के 6वें उत्तराधिकारी, जिन्होंने केरल (चेर) राजाओं का आक्रमण विफल किया।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'chitrasena_mushika', name: 'चित्रसेन', subtitle: 'मूषिका नरेश', parent: 'ugrasena_mushika', yug: 'kali', parichay: 'पाण्ड्य राजा के साथ युद्ध में वीरगति को प्राप्त हुए।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'shatasoma_mushika', name: 'शतसोम', subtitle: 'मूषिका नरेश', parent: 'chitrasena_mushika', yug: 'kali', parichay: 'इन्होंने पाण्ड्य राजा को पराजित कर नया नगर बसाया।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'sharmadatta_mushika', name: 'शर्मदत्त', subtitle: 'मूषिका नरेश', parent: 'shatasoma_mushika', yug: 'kali', parichay: 'इन्हें भगवान शिव से दीर्घायु का वरदान प्राप्त हुआ था।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    { id: 'aryagupta_mushika', name: 'आर्यगुप्त', subtitle: 'मूषिका नरेश', parent: 'sharmadatta_mushika', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'achala_mushika', name: 'अचल', subtitle: 'मूषिका नरेश', parent: 'aryagupta_mushika', yug: 'kali', parichay: 'इन्होंने एझी (Eli) पर्वत पर अचलपट्टन नामक शहर बसाया।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'vikramasena_mushika', name: 'विक्रमसेन', subtitle: 'अचल के पुत्र', parent: 'achala_mushika', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'ashvasena_mushika', name: 'अश्वसेन', subtitle: 'मूषिका नरेश', parent: 'vikramasena_mushika', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'jayamanin_1', name: 'जयमनिन प्रथम', subtitle: 'मूषिका नरेश', parent: 'ashvasena_mushika', yug: 'kali', parichay: 'इन्होंने पाण्ड्य सेना की सहायता से अपना राज्य वापस प्राप्त किया था।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    // --- ऐतिहासिक संगम एझिमाला शासक (Sangam Ezhimala Kings) ---
+    { id: 'nannan_ezhimala', name: 'नन्नन (एझिमाला)', subtitle: 'संगम कोल नरेश', parent: 'jayamanin_1', yug: 'kali', parichay: 'संगम साहित्य के प्रसिद्ध शासक। इन्होंने चेर शासक नार्मुडी चेरल के खिलाफ युद्ध लड़ा था।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'nannan_2', name: 'नन्नन द्वितीय', subtitle: 'कोल नरेश', parent: 'nannan_ezhimala', yug: 'kali', parichay: 'लगभग 210 ई. में शासक।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    // --- मध्यकालीन मूषिका नरेश (Medieval Mushika / 10th-12th Century) ---
+    { id: 'kunchivarman', name: 'कुंचीवर्मन', subtitle: 'मूषिका नरेश', parent: 'nannan_2', yug: 'kali', parichay: 'इनकी पुत्री का विवाह केरल (चेर) राजा से हुआ था।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    { id: 'nandini_chedi', name: 'नंदिनी', subtitle: 'मूषिका महारानी', parent: 'kunchivarman', spouseOf: 'ishanavarman', gender: 'female', yug: 'kali', parichay: 'चेदि राजवंश की राजकुमारी।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'ishanavarman', name: 'ईशानवर्मन', subtitle: 'कुंचीवर्मन के पुत्र', parent: 'kunchivarman', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    { id: 'nrparama', name: 'नृपरम', subtitle: 'मूषिका नरेश', parent: 'ishanavarman', mother: 'nandini_chedi', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'chandravarman_mushika', name: 'चंद्रवर्मन', subtitle: 'शिशु राजा', parent: 'nrparama', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    { id: 'validhara_vikrama_rama', name: 'वलिधर विक्रम राम', subtitle: 'मूषिका नरेश', parent: 'chandravarman_mushika', yug: 'kali', parichay: '929 ई. के रामंथाली अभिलेख (Ramanthali inscription) में इनका उल्लेख है। इन्होंने पश्चिमी गंग वंश के आक्रमण को रोका।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'valabha_1', name: 'वलभ प्रथम', subtitle: 'शक्तिशाली योद्धा', parent: 'validhara_vikrama_rama', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'gambhira', name: 'गंभीर', subtitle: 'मूषिका नरेश', parent: 'valabha_1', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'jayamani_3', name: 'जयमनिन तृतीय', subtitle: 'गंभीर के भाई', parent: 'valabha_1', yug: 'kali', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'vallabha_2', name: 'वल्लभ द्वितीय', subtitle: 'मूषिका नरेश', parent: 'jayamani_3', yug: 'kali', parichay: 'इन्होंने चोलों के विरुद्ध केरल राजा की सैन्य सहायता की थी।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'shrikantha_kantan', name: 'श्रीकंठ (कंतन करिवर्मन)', subtitle: 'वल्लभ द्वितीय के भाई', parent: 'jayamani_3', yug: 'kali', parichay: 'लगभग 1020 ई. में शासक। मूषिका-वंश महाकाव्य इन्हीं के काल में लिखा गया था।', clusterName: 'कोल (मूषिका) राजवंश' },
+    { id: 'udaya_varma_mushika', name: 'उदय वर्मा', subtitle: 'मूषिका नरेश', parent: 'shrikantha_kantan', yug: 'kali', parichay: '12वीं शताब्दी के आरंभिक शासक।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+    // --- परवर्ती शासक (Later Era Kolathiri) ---
+    { id: 'kolathiri_dynasty', name: 'कोलथुनडु (कोलथिरी)', subtitle: 'कन्नूर के शासक', parent: 'udaya_varma_mushika', yug: 'kali', isProxy: true, parichay: '12वीं सदी के बाद मूषिका वंश कोलथिरी (Kolathiri) के नाम से जाना गया। इन्होंने उत्तरी मालाबार पर ब्रिटिश और टीपू सुल्तान के काल तक शासन किया।', clusterName: 'कोल (मूषिका) राजवंश' },
+
+
     { id: 'kalinga_dynasty_proxy', name: 'कलिंग वंश', subtitle: 'कलिंग राजवंश', parent: 'kalinga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'vanga_dynasty_proxy', name: 'वंग वंश', subtitle: 'बंगाल राजवंश', parent: 'vanga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'pundra_dynasty_proxy', name: 'पुण्ड्र वंश', subtitle: 'पुण्ड्र राजवंश', parent: 'pundra_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
