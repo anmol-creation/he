@@ -190,7 +190,7 @@ window.MapUI = {
             recentSearchesContainer.style.display = 'block';
             recentSearchesList.innerHTML = recentSearches.map(item => `
                 <div class="recent-search-item" data-id="${item.id}">
-                    <i class="fas fa-history"></i>
+                    <span>🕒</span>
                     <div>
                         <div style="font-weight:600;">${item.name}</div>
                         <div style="font-size:0.8rem; color:rgba(255,255,255,0.5);">${item.subtitle || ''}</div>
@@ -342,7 +342,7 @@ window.MapUI = {
             if (matches.length > 0) {
                 searchResultsContainer.innerHTML = matches.map(m => `
                     <div class="search-result-item recent-search-item" data-id="${m.id}">
-                        <i class="fas fa-search"></i>
+                        <span>🔍</span>
                         <div>
                             <div style="font-weight: 600;">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
                             <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">${m.subtitle || ''}</div>
