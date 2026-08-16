@@ -179,7 +179,84 @@ export const chandravanshData = [
     { id: 'paundraka_vasudeva_chandra', name: 'पौण्ड्रक वासुदेव', subtitle: 'पुण्ड्र नरेश', parent: 'pundra_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत काल में पुण्ड्र देश का राजा, जो स्वयं को असली वासुदेव (कृष्ण) मानता था।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'chitrangada_kalinga_chandra', name: 'चित्रांगद', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'दुर्योधन की पत्नी भानुमती के पिता।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shrutayush_kalinga_chandra', name: 'श्रुतायु', subtitle: 'कलिंग नरेश', parent: 'kalinga_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत युद्ध में कौरवों की ओर से लड़े और अर्जुन द्वारा वीरगति को प्राप्त हुए।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'malayadhwaja_pandya_chandra', name: 'मलयध्वज', subtitle: 'पाण्ड्य नरेश', parent: 'pandya_dynasty_proxy', yug: 'dwapar', parichay: 'महाभारत युद्ध में पांडवों की ओर से लड़े महान योद्धा।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- पौराणिक पाण्ड्य राजवंश (महाभारत काल) ---
+    { id: 'kulashekara_pandya_myth', name: 'कुलशेखर पाण्ड्य (पौराणिक)', subtitle: 'पाण्ड्य नरेश', parent: 'pandya_dynasty_proxy', yug: 'dwapar', clusterName: 'पाण्ड्य राजवंश' },
+
+    // मलयध्वज (पहले से موجود है, इसे अपडेट करेंगे)
+    { id: 'malayadhwaja_pandya_chandra', name: 'मलयध्वज', subtitle: 'पाण्ड्य नरेश', parent: 'kulashekara_pandya_myth', yug: 'dwapar', parichay: 'महाभारत युद्ध में पांडवों की ओर से लड़े महान योद्धा।', clusterName: 'नहुष चंद्रवंशी' },
+
+    { id: 'kanchanamalai', name: 'कंचनमालई', subtitle: 'पाण्ड्य महारानी', parent: 'malayadhwaja_pandya_chandra', spouseOf: 'malayadhwaja_pandya_chandra', gender: 'female', yug: 'dwapar', parichay: 'राजा मलयध्वज पाण्ड्य की पत्नी।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'meenakshi_tadaatagai', name: 'मीनाक्षी (तडातगई)', subtitle: 'मदुरै की योद्धा रानी (पार्वती अवतार)', parent: 'malayadhwaja_pandya_chandra', mother: 'kanchanamalai', gender: 'female', yug: 'dwapar', parichay: 'मलयध्वज की पुत्री। इन्हें देवी पार्वती का अवतार माना जाता है। मदुरै का प्रसिद्ध मीनाक्षी मंदिर इन्हीं को समर्पित है।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // शिव-सुंदरेश्वर के साथ विवाह
+    { id: 'sundareshwarar_shiva', name: 'सुंदरेश्वरर (शिव)', subtitle: 'मीनाक्षी के पति', parent: 'meenakshi_tadaatagai', spouseOf: 'meenakshi_tadaatagai', yug: 'dwapar', parichay: 'भगवान शिव का वह रूप जिन्होंने रानी मीनाक्षी से विवाह किया था।', clusterName: 'नहुष चंद्रवंशी' },
+
+    { id: 'ugra_pandya', name: 'उग्र पाण्ड्य (सुब्रमण्य)', subtitle: 'मीनाक्षी-सुंदरेश्वरर के पुत्र', parent: 'sundareshwarar_shiva', mother: 'meenakshi_tadaatagai', yug: 'dwapar', parichay: 'मीनाक्षी और सुंदरेश्वरर (शिव) के पुत्र, जिन्हें कार्तिकेय (सुब्रमण्य) का अवतार माना जाता है।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // ऐतिहासिक अंतराल
+    { id: 'early_pandya_link', name: 'ऐतिहासिक अंतराल (पाण्ड्य)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'ugra_pandya', yug: 'kali', parichay: 'पौराणिक पाण्ड्य शासकों और संगम काल के प्रारंभिक ऐतिहासिक पाण्ड्य राजाओं के बीच की पीढ़ियाँ।', clusterName: 'पाण्ड्य राजवंश' },
+
+    // --- संगम काल के प्रारंभिक पाण्ड्य ---
+    { id: 'mudattirumaran', name: 'मुदत्तिरुमारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'early_pandya_link', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'koon_pandya', name: 'कून पाण्ड्य', subtitle: 'संगम पाण्ड्य नरेश', parent: 'mudattirumaran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'mudukudumi_peruvaluthi', name: 'मुदुकुडुमी पेरुवलुथि', subtitle: 'पलयागसलाई', parent: 'koon_pandya', yug: 'kali', parichay: 'इन्होंने कई वैदिक यज्ञ किए थे।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nedunjeliyan_1', name: 'नेदुन्जेलियन प्रथम', subtitle: 'आर्य पदाई कडन्था', parent: 'mudukudumi_peruvaluthi', yug: 'kali', parichay: 'इनके काल में ही कोवलन और कन्नगी (शिलप्पादिकारम) की घटना हुई थी।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kopperundevi', name: 'कोप्पेरुन्देवी', subtitle: 'पाण्ड्य महारानी', parent: 'nedunjeliyan_1', spouseOf: 'nedunjeliyan_1', gender: 'female', yug: 'kali', parichay: 'नेदुन्जेलियन प्रथम की पत्नी, जिन्होंने कोवलन की अन्यायपूर्ण मृत्यु के प्रायश्चित स्वरूप प्राण त्याग दिए थे।', clusterName: 'पाण्ड्य राजवंश' },
+
+    { id: 'nedunjeliyan_2', name: 'नेदुन्जेलियन द्वितीय', subtitle: 'तलैयालंगनाथु', parent: 'nedunjeliyan_1', mother: 'kopperundevi', yug: 'kali', parichay: 'इन्होंने तलैयालंगनम के युद्ध में चेर, चोल और पांच अन्य सरदारों के गुट को हराया था।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nan_maran', name: 'नन मारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nedunjeliyan_3', name: 'नेदुन्जेलियन तृतीय', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nan_maran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'ukkirap_peruvaludi', name: 'उक्किरप पेरुवलुदी', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_3', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+
+    // कलभ्र अंतराल
+    { id: 'kalabhra_interregnum_pandya', name: 'कलभ्र अंतराल', subtitle: 'अंधकार युग', parent: 'ukkirap_peruvaludi', yug: 'kali', parichay: 'संगम युग के अंत में कलभ्र राजवंश के आक्रमण के कारण पाण्ड्य शासन का पतन हुआ।', clusterName: 'पाण्ड्य राजवंश' },
+
+    // --- प्रथम पाण्ड्य साम्राज्य (First Pandyan Empire / 6th-10th Century) ---
+    { id: 'kadungon', name: 'कडुंगोन', subtitle: 'पाण्ड्य पुनरुद्धारक', parent: 'kalabhra_interregnum_pandya', yug: 'kali', parichay: 'इन्होंने कलभ्रों को हराकर पाण्ड्य साम्राज्य की पुनर्स्थापना की (लगभग 590 CE)।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_avanisulamani', name: 'मारवर्मन अवनिसुलामणी', subtitle: 'पाण्ड्य नरेश', parent: 'kadungon', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'seliyan_sendan', name: 'सेलियान सेंडन (जयंतवर्मन)', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_avanisulamani', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'arikesari_maravarman', name: 'अरीकेसरी मारवर्मन (परंकुसन)', subtitle: 'पाण्ड्य नरेश', parent: 'seliyan_sendan', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kochadaiyan_ranadhiran', name: 'कोचदैयन रणधीर', subtitle: 'पाण्ड्य नरेश', parent: 'arikesari_maravarman', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_rajasimha_1', name: 'मारवर्मन राजसिम्हा प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'kochadaiyan_ranadhiran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varagunavarman_1', name: 'वरगुणवर्मन प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_rajasimha_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_srimara_srivallabha', name: 'मारवर्मन श्रीमारा श्रीवल्लभ', subtitle: 'पाण्ड्य नरेश', parent: 'varagunavarman_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varagunavarman_2', name: 'वरगुणवर्मन द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_srimara_srivallabha', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'parantaka_viranarayana', name: 'परान्तक वीरनारायण', subtitle: 'पाण्ड्य नरेश', parent: 'varagunavarman_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_rajasimha_2', name: 'मारवर्मन राजसिम्हा द्वितीय', subtitle: 'प्रथम साम्राज्य के अंतिम', parent: 'parantaka_viranarayana', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+
+    // चोल आधिपत्य अंतराल
+    { id: 'chola_dominance_pandya', name: 'चोल आधिपत्य अंतराल', subtitle: 'अवनति काल', parent: 'maravarman_rajasimha_2', yug: 'kali', parichay: 'चोल सम्राट परान्तक प्रथम द्वारा राजसिम्हा द्वितीय को हराने के बाद पाण्ड्य चोलों के अधीन सामंत रहे।', clusterName: 'पाण्ड्य राजवंश' },
+
+    // --- द्वितीय पाण्ड्य साम्राज्य (Second Pandyan Empire / 13th-14th Century) ---
+    { id: 'maravarman_srivallabha', name: 'मारवर्मन श्रीवल्लभ', subtitle: 'साम्राज्य पुनरुद्धारक', parent: 'chola_dominance_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'jatavarman_srivallabha', name: 'जटावर्मन श्रीवल्लभ', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_srivallabha', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'jatavarman_kulasekara_1', name: 'जटावर्मन कुलशेखर प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'jatavarman_srivallabha', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_sundara_pandyan_1', name: 'मारवर्मन सुंदर पाण्ड्य प्रथम', subtitle: 'साम्राज्य विस्तारक', parent: 'jatavarman_kulasekara_1', yug: 'kali', parichay: 'इन्होंने चोलों को हराकर पाण्ड्य साम्राज्य का फिर से विस्तार किया।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadayavarman_kulasekaran_2', name: 'सदयावर्मन कुलशेखर द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_sundara_pandyan_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_sundara_pandyan_2', name: 'मारवर्मन सुंदर पाण्ड्य द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'sadayavarman_kulasekaran_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+
+    { id: 'jatavarman_sundara_pandyan_1', name: 'जटावर्मन सुंदर पाण्ड्य प्रथम', subtitle: 'दक्षिण का नेपोलियन', parent: 'maravarman_sundara_pandyan_2', yug: 'kali', parichay: 'पाण्ड्य वंश के सबसे महान सम्राट। इन्होंने दक्षिण भारत, श्रीलंका और कलिंग तक अपना साम्राज्य फैलाया।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_kulasekara_pandyan_1', name: 'मारवर्मन कुलशेखर प्रथम', subtitle: 'महान पाण्ड्य नरेश', parent: 'jatavarman_sundara_pandyan_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+
+    // उत्तराधिकार युद्ध
+    { id: 'vira_pandya_4', name: 'वीर पाण्ड्य', subtitle: 'कुलशेखर के पुत्र', parent: 'maravarman_kulasekara_pandyan_1', yug: 'kali', parichay: 'अपने भाई सुंदर पाण्ड्य के साथ उत्तराधिकार युद्ध लड़ा, जिसके कारण दिल्ली सल्तनत को आक्रमण का मौका मिला।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sundara_pandya_4', name: 'सुंदर पाण्ड्य चतुर्थ', subtitle: 'कुलशेखर के पुत्र', parent: 'maravarman_kulasekara_pandyan_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+
+    // --- तेनकासी पाण्ड्य (Tenkasi Pandyas / 15th-17th Century) ---
+    { id: 'sadaavarman_parakrama_pandya', name: 'सदावर्मन पराक्रम पाण्ड्य', subtitle: 'तेनकासी पाण्ड्य संस्थापक', parent: 'sundara_pandya_4', yug: 'kali', parichay: 'दिल्ली सल्तनत और विजयनगर के दबाव में पाण्ड्य मदुरै छोड़कर तेनकासी चले गए।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kulasekara_pandiyan_3', name: 'कुलशेखर पाण्ड्य तृतीय', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_parakrama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'aksharan_perumal_parakrama_pandya', name: 'अक्षरन पेरुमल पराक्रम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'kulasekara_pandiyan_3', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kulasekara_pandya_later', name: 'कुलशेखर पाण्ड्य (तेनकासी)', subtitle: 'तेनकासी नरेश', parent: 'aksharan_perumal_parakrama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadaverman_sewallapa_pandya', name: 'सदावर्मन सेवलप्पा पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'kulasekara_pandya_later', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'parakrama_kulasekaran', name: 'पराक्रम कुलशेखर', subtitle: 'तेनकासी नरेश', parent: 'sadaverman_sewallapa_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nelveli_maran', name: 'नेल्वेली मारन', subtitle: 'तेनकासी नरेश', parent: 'parakrama_kulasekaran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadaavarman_adeevirama_pandya', name: 'सदावर्मन अदीविराम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'nelveli_maran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varathuranga_pandya', name: 'वरथुरंग पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_adeevirama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varagunarama_pandya', name: 'वरगुणराम पाण्ड्य', subtitle: 'अंतिम ज्ञात पाण्ड्य शासक', parent: 'varathuranga_pandya', yug: 'kali', parichay: 'तेनकासी पाण्ड्य वंश के अंतिम ज्ञात शासकों में से एक (1618 CE)।', clusterName: 'पाण्ड्य राजवंश' },
+
+
+
 
 
 
