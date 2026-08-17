@@ -2,7 +2,6 @@
 import './layout-engine/index.js';
 
 function initMap() {
-    console.log("initMap called");
     window.MapState.initElements();
 
     if (window.LayoutEngine && window.HistoricDB) {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Info | सनातन पुस्तकालय</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background-color: #fdfbf7; color: #333; }
+        .header { background: linear-gradient(90deg, #ff6b35, #f4a261); color: white; padding: 1rem 2rem; position: relative; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; font-size: 2rem; }
+        .back-btn { position: absolute; top: 20px; left: 20px; color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 1.1rem; }
+        .container { max-width: 800px; margin: 3rem auto; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
+        .book-title { font-size: 2.5rem; color: #ff6b35; margin-bottom: 0.5rem; }
+        .book-author { font-size: 1.2rem; color: #666; margin-bottom: 2rem; font-style: italic; }
+        .book-meta { text-align: left; background: #fff8f5; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; }
+        .meta-item { margin-bottom: 1rem; font-size: 1.1rem; }
+        .meta-label { font-weight: 600; color: #ff6b35; display: inline-block; width: 150px; }
+        .book-desc { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 3rem; text-align: justify; }
+        .read-btn { display: inline-block; background: #ff6b35; color: white; padding: 15px 40px; font-size: 1.2rem; font-weight: 600; text-decoration: none; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4); }
+        .read-btn:hover { background: #e85d2c; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="digital-library.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Library</a>
+        <h1>सनातन पुस्तकालय</h1>
+    </header>
+    <div class="container" id="info-container">
+        <!-- Content injected by JS -->
+    </div>
+
+    <script src="../js/data/library-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('id') || 'valmiki-ramayan';
+
+            const book = window.LibraryDB ? window.LibraryDB.getBook(bookId) : null;
+            const container = document.getElementById('info-container');
+
+            if (!book) {
+                container.innerHTML = '<h2>Book not found.</h2><a href="digital-library.html" class="read-btn">Return</a>';
+                return;
+            }
+
+            container.innerHTML = `
+                <h1 class="book-title">${book.title}</h1>
+                <div class="book-author">रचयिता: ${book.author}</div>
+
+                <div class="book-desc">${book.description}</div>
+
+                <div class="book-meta">
+                    <div class="meta-item"><span class="meta-label">विषय (Subject):</span> ${book.subject}</div>
+                    <div class="meta-item"><span class="meta-label">संस्करण (Version):</span> ${book.translationVersion}</div>
+                    <div class="meta-item"><span class="meta-label">प्रकाशन (Publisher):</span> ${book.publisher}</div>
+                    <div class="meta-item"><span class="meta-label">प्रामाणिकता (Authenticity):</span> ${book.authenticity}</div>
+                    <div class="meta-item"><span class="meta-label">काल (Era):</span> ${book.year}</div>
+                </div>
+
+                <a href="book-reader.html?id=${book.id}" class="read-btn">प्रारंभ करें (Read Now) <i class="fas fa-book-open" style="margin-left: 8px;"></i></a>
+            `;
+        });
+    </script>
+</body>
+</html>
