@@ -40,9 +40,9 @@ window.MapUI = {
             const tooltip = document.getElementById('tag-tooltip');
             if (e.target.classList.contains('info-tag')) {
                 const tagText = e.target.textContent;
-                const desc = (window.sanatanGlossary && window.sanatanGlossary[tagText])
-                    ? window.sanatanGlossary[tagText]
-                    : "विस्तृत जानकारी उपलब्ध नहीं है।";
+                const desc = (window.sanatanGlossary && window.sanatanGlossary[tagText]) ?
+                    window.sanatanGlossary[tagText] :
+                    "विस्तृत जानकारी उपलब्ध नहीं है।";
 
                 document.getElementById('tooltip-title').textContent = tagText;
                 document.getElementById('tooltip-desc').textContent = desc;
@@ -270,7 +270,13 @@ window.MapUI = {
                             let maxDepth = 100;
                             while (currentNode && currentNode.parent && maxDepth > 0) {
                                 maxDepth--;
-                                const parentNode = dataList.find(d => d.id === currentNode.parent);
+                                let parentNode = null;
+                                for (let i = 0; i < dataList.length; i++) {
+                                    if (dataList[i].id === currentNode.parent) {
+                                        parentNode = dataList[i];
+                                        break;
+                                    }
+                                }
                                 if (!parentNode) break;
 
                                 if (parentNode.clusterName) {
@@ -554,5 +560,4 @@ window.toggleQAMark = function(id) {
             btn.innerText = 'Mark Extra Node for Deletion';
         }
     }
-    console.log("[QA Tool] Marked Nodes for deletion:", markedNodes);
 };

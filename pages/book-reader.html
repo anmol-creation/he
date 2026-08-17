@@ -88,14 +88,16 @@
             const emptyState = document.getElementById('empty-state');
             const bookTitleEl = document.getElementById('current-book-title');
 
-            // Initialize with the first book
-            const books = window.LibraryDB ? window.LibraryDB.getAllBooks() : [];
-            if (books.length === 0) {
-                indexContainer.innerHTML = '<p style="padding:1rem;color:#999;">No books available yet.</p>';
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('id') || 'valmiki-ramayan';
+
+            // Initialize with the requested book
+            const currentBook = window.LibraryDB ? window.LibraryDB.getBook(bookId) : null;
+            if (!currentBook) {
+                indexContainer.innerHTML = '<p style="padding:1rem;color:#999;">Book not found.</p>';
                 return;
             }
 
-            const currentBook = books[0]; // Defaulting to Valmiki Ramayan
             bookTitleEl.textContent = currentBook.title;
 
             // Render Sidebar
