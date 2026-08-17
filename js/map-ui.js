@@ -338,12 +338,70 @@ window.MapUI = {
             recentSearchesContainer.style.display = 'none';
 
             const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
-            const matches = dataList.filter(d =>
-                (d.name && d.name.toLowerCase().includes(query)) ||
-                (d.id && d.id.toLowerCase().includes(query)) ||
-                (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
-                (d.subtitle && d.subtitle.toLowerCase().includes(query))
-            ).slice(0, 10);
+            // Helper to get name from ID for relationship search
+            const getNameFromId = (id) => {
+                const node = dataList.find(n => n.id === id);
+                return node ? (node.name + " " + (node.nameEn || "")).toLowerCase() : "";
+            };
+
+            const matches = dataList.filter(d => {
+                // Direct Text Matches (Name, ID, Subtitle, Tags, Aliases)
+                let textMatch = (
+                    (d.name && d.name.toLowerCase().includes(query)) ||
+                    (d.id && d.id.toLowerCase().includes(query)) ||
+                    (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
+                    (d.subtitle && d.subtitle.toLowerCase().includes(query)) ||
+                    (d.aliases && d.aliases.some(a => a.toLowerCase().includes(query))) ||
+                    (d.tags && d.tags.some(t => t.toLowerCase().includes(query)))
+                );
+
+                if (textMatch) return true;
+
+                // Relationship / Contextual Searches (e.g. "राम की पत्नी", "dashrath ke pita")
+                // We check if the query contains relationship keywords, and if so, check relatives.
+                // It's a broad check: if user types "ram patni", we check if the current node's spouse is "ram"
+
+                const qParts = query.split(/\s+/);
+
+                // If it's a multi-word query, let's see if this node's relatives match the query words
+                if (qParts.length > 1) {
+                    let fatherName = d.parent ? getNameFromId(d.parent) : "";
+                    let motherName = d.mother ? getNameFromId(d.mother) : "";
+                    let spouseNames = "";
+                    if (d.spouse) {
+                        const spouses = Array.isArray(d.spouse) ? d.spouse : [d.spouse];
+                        spouseNames = spouses.map(s => getNameFromId(s)).join(" ");
+                    }
+
+                    // Simple heuristic: if the query contains "patni" or "wife", and the spouse name contains another word from query
+                    const hasWifeKeyword = query.includes("patni") || query.includes("पत्नी") || query.includes("wife");
+                    const hasPitaKeyword = query.includes("pita") || query.includes("पिता") || query.includes("father") || query.includes("putra") || query.includes("पुत्र");
+                    const hasMataKeyword = query.includes("mata") || query.includes("माता") || query.includes("mother") || query.includes("maa") || query.includes("माँ");
+
+                    if (hasWifeKeyword && spouseNames) {
+                        // e.g., query "ram ki patni" -> check if current node is female and spouse matches 'ram'
+                        if (d.gender === 'female' && qParts.some(p => p.length > 2 && spouseNames.includes(p) && !["patni", "पत्नी", "wife"].includes(p))) {
+                            return true;
+                        }
+                    }
+
+                    if (hasPitaKeyword && fatherName) {
+                        // e.g., query "dashrath ke pita" or "ram ke putra"
+                        // Since it's symmetric in text matching (it just sees words), we broadly match relative names.
+                        if (qParts.some(p => p.length > 2 && fatherName.includes(p) && !["pita", "पिता", "father", "putra", "पुत्र"].includes(p))) {
+                            return true;
+                        }
+                    }
+
+                    if (hasMataKeyword && motherName) {
+                        if (qParts.some(p => p.length > 2 && motherName.includes(p) && !["mata", "माता", "mother", "maa", "माँ"].includes(p))) {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }).slice(0, 10);
 
             if (matches.length > 0) {
                 searchResultsContainer.innerHTML = matches.map(m => `
@@ -497,10 +555,80 @@ window.MapUI = {
                 sourceHtml = `<div class="source-texts"><span class="detail-label">ग्रंथ संदर्भ:</span> ${data.source_texts.join(', ')}</div>`;
             }
 
+            // --- DATA QA TOOL LOGIC ---
+            let qaHtml = '';
+            let qaIssues = [];
+
+            const checkExists = (id) => {
+                if (!id) return true; // If not provided, it's not an issue
+                if (!window.HistoricDB) return true; // DB not loaded
+                return window.HistoricDB.getNode(id) !== undefined;
+            };
+
+            // 1. Check parent (father)
+            if (data.parent && !checkExists(data.parent)) {
+                qaIssues.push(`Father ID missing: <strong>${data.parent}</strong>`);
+            }
+            // 2. Check mother
+            if (data.mother && !checkExists(data.mother)) {
+                qaIssues.push(`Mother ID missing: <strong>${data.mother}</strong>`);
+            }
+            // 3. Check spouse(s)
+            if (data.spouse) {
+                const spouses = Array.isArray(data.spouse) ? data.spouse : [data.spouse];
+                spouses.forEach(s => {
+                    if (!checkExists(s)) {
+                        qaIssues.push(`Spouse ID missing: <strong>${s}</strong>`);
+                    }
+                });
+            }
+
+            // 4. Duplicate Detection (Female Auto-dup Rule vs Manual)
+            let isMarked = false;
+            let markedNodes = [];
+            try {
+                markedNodes = JSON.parse(localStorage.getItem('qaMarkedNodes') || '[]');
+                isMarked = markedNodes.includes(data.id);
+            } catch(e){}
+
+            if (data.gender === 'female') {
+                // Find how many times she exists as a raw node in DB vs visually
+                let dbCount = 0;
+                if(window.HistoricDB) {
+                    const allData = window.HistoricDB.getAll();
+                    dbCount = allData.filter(d => d.id === data.id || (d.id && d.id.startsWith(data.id + '_'))).length;
+                }
+
+                // If she has both parent and spouseOf, layout engine duplicates her visually (valid)
+                // We are looking for cases where someone manually added 2 separate entries for her in historic-data.js
+                if (dbCount > 1) {
+                    qaIssues.push(`Warning: Multiple data entries found for this female node. Ensure single source of truth.`);
+                    qaHtml += `
+                        <button class="qa-mark-btn ${isMarked ? 'marked' : ''}" onclick="window.toggleQAMark('${data.id}')" style="margin-top: 10px; padding: 5px; background: ${isMarked ? '#44ff44' : '#ff4444'}; color: white; border: none; border-radius: 3px; cursor: pointer; width: 100%;">
+                            ${isMarked ? 'Unmark for Deletion' : 'Mark Extra Node for Deletion'}
+                        </button>
+                    `;
+                }
+            }
+
+            if (qaIssues.length > 0) {
+                qaHtml = `
+                    <div style="margin-top: 15px; padding: 10px; background: rgba(255,0,0,0.1); border: 1px solid #ff4444; border-radius: 5px;">
+                        <h4 style="color: #ff4444; margin-top:0; margin-bottom: 5px; font-size: 0.9rem;">⚠️ QA Alert</h4>
+                        <ul style="color: #d32f2f; font-size: 0.8rem; margin: 0; padding-left: 15px;">
+                            ${qaIssues.map(iss => `<li>${iss}</li>`).join('')}
+                        </ul>
+                        ${qaHtml}
+                    </div>
+                `;
+            }
+
+
             contentArea.innerHTML = `
                 ${detailsHtml}
                 ${parichayHtml}
                 ${sourceHtml}
+                ${qaHtml}
                 <div style="margin-top: 20px; text-align: center;">
                     <a href="itihas-book.html?entity=${data.id}" class="read-full-btn">
                         📖 Read Full Info
