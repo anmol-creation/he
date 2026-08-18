@@ -57,3 +57,8 @@ npm run test
 
 ## Contributing
 All original data changes require discussion and permission. When adding to the lineage (`vansh`), ensure patrilineal tracking is maintained while documenting known sons and daughters. Scriptures additions must include accurate citations (e.g., `|| [i] (Book, Kaand, Sarga, Shloka)`).
+
+
+## React Lineage Map Redesign
+
+The new Spiritual-Modern React Flow Lineage map is available at `/pages/react-historic-map.html`. It replaces the older Canvas-based rendering engine and uses React without a build step via Babel and Import Maps.
