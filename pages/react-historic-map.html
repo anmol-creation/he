@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Modern Lineage Explorer</title>
+    <meta name="theme-color" content="#FF9933">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Tailwind CSS (Play CDN for standalone usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: '#FF9933',
+                        gold: '#D4AF37',
+                        cream: '#FFF9F0',
+                        maroon: '#800000',
+                        charcoal: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- React Flow Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/reactflow@11.11.3/dist/style.css" />
+
+    <!-- React Flow (UMD) via ES Modules hack for browser or Standalone build -->
+    <!-- We will use a polyfill approach for modules or import maps if needed,
+         but for ease without bundlers, we will use import map to load ReactFlow and Dagre -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react-dom": "https://esm.sh/react-dom@18.2.0",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+        "reactflow": "https://esm.sh/reactflow@11.11.3?deps=react@18.2.0,react-dom@18.2.0",
+        "dagre": "https://esm.sh/dagre@0.8.5",
+        "lucide-react": "https://esm.sh/lucide-react@0.378.0?deps=react@18.2.0"
+      }
+    }
+    </script>
+
+    <style>
+        body { margin: 0; padding: 0; background-color: #FFF9F0; overflow: hidden; }
+
+        /* Mandala Watermark Background */
+        .mandala-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="90" fill="none" stroke="%23E0D4C3" stroke-width="2" opacity="0.2"/><circle cx="100" cy="100" r="70" fill="none" stroke="%23E0D4C3" stroke-width="1" opacity="0.3"/><path d="M100 10 L100 190 M10 100 L190 100" stroke="%23E0D4C3" stroke-width="1" opacity="0.2"/></svg>');
+            background-repeat: repeat;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism utility for Side Drawer */
+        .glass-panel {
+            background: rgba(255, 249, 240, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-left: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+
+        /* React Flow overrides */
+        .react-flow__edge-path {
+            stroke: #A0A0A0;
+            stroke-width: 2;
+            transition: stroke 0.3s, stroke-width 0.3s;
+        }
+        .react-flow__edge.glow .react-flow__edge-path {
+            stroke: #D4AF37;
+            stroke-width: 4;
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
+        }
+        .react-flow__controls button {
+            background-color: #FFF9F0;
+            border-bottom: 1px solid #E2E8F0;
+            color: #333333;
+        }
+        .react-flow__controls button:hover {
+            background-color: #FF9933;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="mandala-bg"></div>
+    <div id="react-root" class="relative w-screen h-screen z-10"></div>
+
+    <!-- Data dependencies -->
+    <script type="module" src="../js/data/sanatan-glossary.js"></script>
+    <script type="module" src="../js/data/historic-data.js"></script>
+
+    <!-- React Application -->
+    <script type="text/babel" data-type="module" src="../js/react-map.jsx"></script>
+</body>
+</html>
