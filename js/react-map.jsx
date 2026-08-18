@@ -16,6 +16,102 @@ import { Home, Search, Map as MapIcon, X, Maximize, User, BookOpen, ChevronRight
 const nodeWidth = 220;
 const nodeHeight = 100;
 
+
+// --- Divine Loading Screen Overlay ---
+const DivineLoader = ({ isLoading }) => {
+    const [visible, setVisible] = useState(true);
+    const [opacity, setOpacity] = useState(1);
+
+    useEffect(() => {
+        if (!isLoading) {
+            setOpacity(0);
+            const timer = setTimeout(() => setVisible(false), 500); // Wait for fade out transition
+            return () => clearTimeout(timer);
+        }
+    }, [isLoading]);
+
+    if (!visible) return null;
+
+    return (
+        <div
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-cream transition-opacity duration-500"
+            style={{ opacity: opacity }}
+        >
+            <div className="flex flex-col items-center max-w-lg w-full px-6">
+                <div className="relative w-full h-32 flex items-center mb-8">
+                    {/* SVG Animation of Lord Rama Firing Arrow */}
+                    <svg viewBox="0 0 400 100" className="w-full h-full overflow-visible">
+                        <defs>
+                            <linearGradient id="arrowTrail" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#fff9f0" stopOpacity="0" />
+                                <stop offset="50%" stopColor="#FF9933" stopOpacity="0.5" />
+                                <stop offset="100%" stopColor="#FFD700" stopOpacity="1" />
+                            </linearGradient>
+
+                            <style>
+                                {`
+                                @keyframes drawBow {
+                                    0% { d: path('M 50 20 Q 70 50 50 80 L 50 20'); }
+                                    40% { d: path('M 50 20 Q 30 50 50 80 L 50 20'); }
+                                    50% { d: path('M 50 20 Q 70 50 50 80 L 50 20'); }
+                                    100% { d: path('M 50 20 Q 70 50 50 80 L 50 20'); }
+                                }
+                                @keyframes fireArrow {
+                                    0% { transform: translateX(0); opacity: 0; }
+                                    10% { transform: translateX(0); opacity: 1; }
+                                    40% { transform: translateX(-20px); opacity: 1; } /* Draw back */
+                                    50% { transform: translateX(350px); opacity: 1; } /* Fire */
+                                    55% { transform: translateX(380px); opacity: 0; } /* Fade out */
+                                    100% { transform: translateX(380px); opacity: 0; }
+                                }
+                                @keyframes progressGlow {
+                                    0% { transform: scaleX(0); opacity: 0; }
+                                    40% { transform: scaleX(0); opacity: 0; }
+                                    50% { transform: scaleX(1); opacity: 1; }
+                                    100% { transform: scaleX(1); opacity: 0; }
+                                }
+                                .bow-string { animation: drawBow 1.5s infinite; }
+                                .golden-arrow { animation: fireArrow 1.5s infinite; }
+                                .progress-trail { animation: progressGlow 1.5s infinite; transform-origin: left; }
+                                `}
+                            </style>
+                        </defs>
+
+                        {/* Base Line */}
+                        <line x1="60" y1="50" x2="380" y2="50" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="4 4" />
+
+                        {/* Progress Line Glow effect behind arrow */}
+                        <line x1="60" y1="50" x2="380" y2="50" stroke="url(#arrowTrail)" strokeWidth="3" className="progress-trail" />
+
+                        {/* Silhouette of Lord Rama (Minimalist) */}
+                        <g fill="#FF9933" transform="translate(15, 25)">
+                            <circle cx="20" cy="10" r="8" /> {/* Head */}
+                            <path d="M15 18 L25 18 L30 35 L35 55 L30 55 L25 40 L15 55 L10 55 L15 35 Z" /> {/* Body/Legs */}
+                            <path d="M15 20 L5 35 L10 40 L20 25 Z" /> {/* Arm pulling bow */}
+                            <path d="M25 20 L40 25 L35 30 L25 25 Z" /> {/* Arm holding bow */}
+                        </g>
+
+                        {/* The Bow */}
+                        <path d="M 50 20 Q 70 50 50 80 L 50 20" fill="none" stroke="#D4AF37" strokeWidth="3" className="bow-string" />
+
+                        {/* The Golden Arrow */}
+                        <g className="golden-arrow">
+                            <line x1="30" y1="50" x2="60" y2="50" stroke="#FFD700" strokeWidth="2" />
+                            <polygon points="60,47 65,50 60,53" fill="#FFD700" />
+                            <polygon points="30,48 35,50 30,52" fill="#FF9933" />
+                        </g>
+                    </svg>
+                </div>
+
+                <h1 className="text-3xl font-bold text-saffron mb-2" style={{ fontFamily: "'Libre Caslon Text', serif" }}>Awakening Lineages</h1>
+                <p className="text-maroon/70 text-sm italic text-center" style={{ fontFamily: "'Libre Caslon Text', serif" }}>
+                    "The string is drawn, the arrow of time flies... tracing the descendants of the Sun and the Moon."
+                </p>
+            </div>
+        </div>
+    );
+};
+
 // ==========================================
 // CUSTOM COMPONENTS
 // ==========================================
@@ -483,10 +579,13 @@ const MapApp = () => {
         }));
     }, [setEdges]);
 
-    if (!isLoaded) return <div className="w-full h-full flex items-center justify-center text-saffron font-bold animate-pulse">Loading Sanatan Lineages...</div>;
+
+
 
     return (
         <div className="w-full h-full relative">
+            <DivineLoader isLoading={!isLoaded} />
+
             <Header
                 onHomeClick={() => window.location.href='../index.html'}
                 breadcrumbs={breadcrumbs}
