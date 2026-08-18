@@ -114,6 +114,7 @@ const DivineLoader = ({ isLoading }) => {
 
 // ==========================================
 // CUSTOM COMPONENTS
+
 // ==========================================
 
 // --- Custom Node (Spiritual Modern Card) ---
@@ -182,7 +183,7 @@ const nodeTypes = {
 
 const Header = ({ onHomeClick, breadcrumbs, onSearch, onFilterChange, onExpandAll }) => {
     return (
-        <div className="fixed top-0 left-0 right-0 h-16 bg-cream border-b border-gold/20 shadow-sm z-50 flex items-center px-4 justify-between"
+        <div className="fixed top-0 left-0 right-0 min-h-[64px] bg-cream border-b border-gold/20 shadow-sm z-[100] flex flex-wrap items-center px-2 sm:px-4 py-3 justify-between gap-y-3"
              style={{ background: 'rgba(255, 249, 240, 0.95)', backdropFilter: 'blur(8px)' }}>
 
             <div className="flex items-center gap-4">
@@ -192,7 +193,7 @@ const Header = ({ onHomeClick, breadcrumbs, onSearch, onFilterChange, onExpandAl
                 <div className="h-6 w-px bg-gold/30"></div>
 
                 {/* Route Breadcrumbs */}
-                <div className="flex items-center gap-2 text-sm overflow-hidden whitespace-nowrap max-w-md">
+                <div className="hidden md:flex items-center gap-2 text-sm overflow-hidden whitespace-nowrap max-w-md">
                     {breadcrumbs && breadcrumbs.length > 0 ? breadcrumbs.map((crumb, idx) => (
                         <React.Fragment key={crumb.id}>
                             <span className={idx === breadcrumbs.length - 1 ? "font-bold text-saffron" : "text-maroon/60"}>
@@ -206,9 +207,9 @@ const Header = ({ onHomeClick, breadcrumbs, onSearch, onFilterChange, onExpandAl
                 </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 w-full md:w-auto justify-between md:justify-end">
                 {/* Mythology Filters */}
-                <select onChange={(e) => onFilterChange && onFilterChange('yuga', e.target.value)} className="bg-white/50 border border-gold/30 rounded-lg px-3 py-1.5 text-sm text-maroon focus:outline-none focus:border-saffron">
+                <select onChange={(e) => onFilterChange && onFilterChange('yuga', e.target.value)} className="bg-white/50 border border-gold/30 rounded-lg px-2 sm:px-3 py-1.5 text-xs sm:text-sm text-maroon focus:outline-none focus:border-saffron">
                     <option value="">All Yugas</option>
                     <option value="Satya Yug">Satya Yuga</option>
                     <option value="Treta Yug">Treta Yuga</option>
@@ -216,7 +217,7 @@ const Header = ({ onHomeClick, breadcrumbs, onSearch, onFilterChange, onExpandAl
                     <option value="Kali Yug">Kali Yuga</option>
                 </select>
 
-                <select onChange={(e) => onFilterChange && onFilterChange('dynasty', e.target.value)} className="bg-white/50 border border-gold/30 rounded-lg px-3 py-1.5 text-sm text-maroon focus:outline-none focus:border-saffron">
+                <select onChange={(e) => onFilterChange && onFilterChange('dynasty', e.target.value)} className="bg-white/50 border border-gold/30 rounded-lg px-2 sm:px-3 py-1.5 text-xs sm:text-sm text-maroon focus:outline-none focus:border-saffron">
                     <option value="">All Dynasties</option>
                     <option value="सूर्यवंश">Suryavansha</option>
                     <option value="चंद्रवंश">Chandravansha</option>
@@ -228,20 +229,20 @@ const Header = ({ onHomeClick, breadcrumbs, onSearch, onFilterChange, onExpandAl
                         type="text"
                         placeholder="Search character..."
                         onChange={(e) => onSearch && onSearch(e.target.value)}
-                        className="pl-9 pr-4 py-1.5 bg-white/50 border border-gold/30 rounded-full text-sm text-maroon focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron w-64 transition-all"
+                        className="pl-9 pr-4 py-1.5 bg-white/50 border border-gold/30 rounded-full text-sm text-maroon focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron w-full sm:w-64 transition-all"
                     />
                 </div>
 
                 {/* Full Expand Map Toggle */}
-                <button onClick={onExpandAll} className="flex items-center gap-2 px-4 py-1.5 bg-saffron/10 text-saffron border border-saffron/30 rounded-lg hover:bg-saffron hover:text-white transition-colors text-sm font-medium">
-                    <Maximize2 size={16} /> Expand Map
+                <button onClick={onExpandAll} className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 bg-saffron/10 text-saffron border border-saffron/30 rounded-lg hover:bg-saffron hover:text-white transition-colors text-xs sm:text-sm font-medium">
+                    <Maximize2 size={16} /> <span className="hidden sm:inline">Expand Map</span>
                 </button>
 
                 <div className="h-6 w-px bg-gold/30 mx-1"></div>
 
                 {/* Switch to Classic Map */}
-                <button onClick={() => window.location.href='historic-map.html'} className="flex items-center gap-2 px-4 py-1.5 bg-charcoal/5 text-charcoal border border-charcoal/20 rounded-lg hover:bg-charcoal hover:text-white transition-colors text-sm font-medium">
-                    <History size={16} /> Classic Map
+                <button onClick={() => window.location.href='historic-map.html'} className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 bg-charcoal/5 text-charcoal border border-charcoal/20 rounded-lg hover:bg-charcoal hover:text-white transition-colors text-xs sm:text-sm font-medium">
+                    <History size={16} /> <span className="hidden sm:inline">Classic Map</span>
                 </button>
             </div>
         </div>
@@ -581,11 +582,9 @@ const MapApp = () => {
 
 
 
-
     return (
         <div className="w-full h-full relative">
             <DivineLoader isLoading={!isLoaded} />
-
             <Header
                 onHomeClick={() => window.location.href='../index.html'}
                 breadcrumbs={breadcrumbs}
