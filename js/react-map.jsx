@@ -11,7 +11,7 @@ import ReactFlow, {
     MarkerType
 } from 'reactflow';
 import dagre from 'dagre';
-import { Home, Search, Map as MapIcon, X, Maximize, User, BookOpen, ChevronRight, Layers } from 'lucide-react';
+import { Home, Search, Map as MapIcon, X, Maximize, User, BookOpen, ChevronRight, Layers, Users, Maximize2 } from 'lucide-react';
 
 const nodeWidth = 220;
 const nodeHeight = 100;
