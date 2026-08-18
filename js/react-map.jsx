@@ -171,7 +171,10 @@ const MapApp = () => {
     const [edges, setEdges, onEdgesChange] = useEdgesState([]);
     const [selectedNode, setSelectedNode] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+
     const [collapsedClusters, setCollapsedClusters] = useState(new Set());
+    const [clustersInitialized, setClustersInitialized] = useState(false);
+
     const [breadcrumbs, setBreadcrumbs] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState({ yuga: '', dynasty: '' });
@@ -191,6 +194,15 @@ const MapApp = () => {
         const initData = () => {
             if (window.HistoricDB) {
                 const rawData = window.HistoricDB.getAll();
+
+                // Initialize all clusters as collapsed on first load
+                if (!clustersInitialized) {
+                    const allClusters = new Set();
+                    rawData.forEach(d => { if (d.clusterName) allClusters.add(d.clusterName); });
+                    setCollapsedClusters(allClusters);
+                    setClustersInitialized(true);
+                    return; // Return early, the state update will trigger re-render and run initData again with the correct clusters
+                }
 
                 // Filter data based on search and dropdowns
                 let filteredData = rawData;
@@ -378,7 +390,7 @@ const MapApp = () => {
         };
 
         initData();
-    }, [setNodes, setEdges, collapsedClusters, toggleCluster, searchQuery, filters]);
+    }, [setNodes, setEdges, collapsedClusters, toggleCluster, searchQuery, filters, clustersInitialized]);
 
     // Calculate Breadcrumbs when a node is selected
     const calculateBreadcrumbs = useCallback((nodeId) => {
