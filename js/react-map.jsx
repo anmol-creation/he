@@ -11,7 +11,7 @@ import ReactFlow, {
     MarkerType
 } from 'reactflow';
 import dagre from 'dagre';
-import { Home, Search, Map as MapIcon, X, Maximize, User, BookOpen, ChevronRight, Layers, Users, Maximize2 } from 'lucide-react';
+import { Home, Search, Map as MapIcon, X, Maximize, User, BookOpen, ChevronRight, Layers, Users, Maximize2, History } from 'lucide-react';
 
 const nodeWidth = 220;
 const nodeHeight = 100;
@@ -83,42 +83,74 @@ const nodeTypes = {
 };
 
 // --- Header Navigation with Breadcrumbs ---
-const Header = ({ onHomeClick, breadcrumbs }) => (
-    <div className="absolute top-0 left-0 w-full h-16 bg-white/90 backdrop-blur-md shadow-sm border-b border-gold/20 flex items-center justify-between px-6 z-50">
-        <div className="flex items-center gap-4">
-            <button onClick={onHomeClick} className="p-2 text-charcoal hover:text-saffron transition-colors rounded-full hover:bg-cream">
-                <Home size={20} />
-            </button>
-            <div className="h-6 w-px bg-gray-300"></div>
-            <div className="font-bold text-lg text-maroon tracking-wide">ITIHAS<span className="text-saffron">PURAN</span></div>
 
-            {/* Breadcrumbs */}
-            {breadcrumbs && breadcrumbs.length > 0 && (
-                <div className="hidden md:flex items-center ml-4 gap-2 text-sm text-gray-500 bg-cream px-4 py-1.5 rounded-full border border-gold/30">
-                    {breadcrumbs.map((b, i) => (
-                        <React.Fragment key={b.id}>
-                            <span className={i === breadcrumbs.length - 1 ? "font-semibold text-saffron" : "text-gray-500"}>
-                                {b.name}
+const Header = ({ onHomeClick, breadcrumbs, onSearch, onFilterChange, onExpandAll }) => {
+    return (
+        <div className="fixed top-0 left-0 right-0 h-16 bg-cream border-b border-gold/20 shadow-sm z-50 flex items-center px-4 justify-between"
+             style={{ background: 'rgba(255, 249, 240, 0.95)', backdropFilter: 'blur(8px)' }}>
+
+            <div className="flex items-center gap-4">
+                <button onClick={onHomeClick} className="p-2 hover:bg-saffron/10 rounded-lg text-maroon transition-colors" title="Home">
+                    <Home size={20} />
+                </button>
+                <div className="h-6 w-px bg-gold/30"></div>
+
+                {/* Route Breadcrumbs */}
+                <div className="flex items-center gap-2 text-sm overflow-hidden whitespace-nowrap max-w-md">
+                    {breadcrumbs && breadcrumbs.length > 0 ? breadcrumbs.map((crumb, idx) => (
+                        <React.Fragment key={crumb.id}>
+                            <span className={idx === breadcrumbs.length - 1 ? "font-bold text-saffron" : "text-maroon/60"}>
+                                {crumb.name}
                             </span>
-                            {i < breadcrumbs.length - 1 && <ChevronRight size={14} className="text-gray-400" />}
+                            {idx < breadcrumbs.length - 1 && <ChevronRight size={14} className="text-gold/50" />}
                         </React.Fragment>
-                    ))}
+                    )) : (
+                        <span className="text-maroon/40 italic">Select a character to view lineage route</span>
+                    )}
                 </div>
-            )}
-        </div>
+            </div>
 
-        <div className="flex-1 max-w-md mx-8 justify-end flex">
-            <div className="relative flex items-center w-full max-w-sm">
-                <Search className="absolute left-3 text-gray-400" size={18} />
-                <input
-                    type="text"
-                    placeholder="Search character, yuga..."
-                    className="w-full pl-10 pr-4 py-2 rounded-full bg-cream border border-gold/30 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron text-sm transition-all"
-                />
+            <div className="flex items-center gap-4">
+                {/* Mythology Filters */}
+                <select onChange={(e) => onFilterChange && onFilterChange('yuga', e.target.value)} className="bg-white/50 border border-gold/30 rounded-lg px-3 py-1.5 text-sm text-maroon focus:outline-none focus:border-saffron">
+                    <option value="">All Yugas</option>
+                    <option value="Satya Yug">Satya Yuga</option>
+                    <option value="Treta Yug">Treta Yuga</option>
+                    <option value="Dvapara Yug">Dvapara Yuga</option>
+                    <option value="Kali Yug">Kali Yuga</option>
+                </select>
+
+                <select onChange={(e) => onFilterChange && onFilterChange('dynasty', e.target.value)} className="bg-white/50 border border-gold/30 rounded-lg px-3 py-1.5 text-sm text-maroon focus:outline-none focus:border-saffron">
+                    <option value="">All Dynasties</option>
+                    <option value="सूर्यवंश">Suryavansha</option>
+                    <option value="चंद्रवंश">Chandravansha</option>
+                </select>
+
+                <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gold/60" size={16} />
+                    <input
+                        type="text"
+                        placeholder="Search character..."
+                        onChange={(e) => onSearch && onSearch(e.target.value)}
+                        className="pl-9 pr-4 py-1.5 bg-white/50 border border-gold/30 rounded-full text-sm text-maroon focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron w-64 transition-all"
+                    />
+                </div>
+
+                {/* Full Expand Map Toggle */}
+                <button onClick={onExpandAll} className="flex items-center gap-2 px-4 py-1.5 bg-saffron/10 text-saffron border border-saffron/30 rounded-lg hover:bg-saffron hover:text-white transition-colors text-sm font-medium">
+                    <Maximize2 size={16} /> Expand Map
+                </button>
+
+                <div className="h-6 w-px bg-gold/30 mx-1"></div>
+
+                {/* Switch to Classic Map */}
+                <button onClick={() => window.location.href='historic-map.html'} className="flex items-center gap-2 px-4 py-1.5 bg-charcoal/5 text-charcoal border border-charcoal/20 rounded-lg hover:bg-charcoal hover:text-white transition-colors text-sm font-medium">
+                    <History size={16} /> Classic Map
+                </button>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 // --- Side Drawer (Info Panel) ---
 const InfoDrawer = ({ node, onClose }) => {
