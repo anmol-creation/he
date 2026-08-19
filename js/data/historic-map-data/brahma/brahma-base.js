@@ -55,7 +55,7 @@ export const brahmaBaseData = [
     { id: 'sukumaran', name: 'सुकुमारन', subtitle: 'जाम्बवान के पुत्र', parent: 'jambavan', yug: 'dwapar', timeScale: 'kalpa' },
     { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'kayastha_vansh', name: 'कायस्थ वंश', subtitle: 'चित्रगुप्त का वंश', parent: 'chitragupta', yug: 'satya', clusterName: 'चित्रगुप्त (कायस्थ) वंश', isProxy: true },
-    { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
+    { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' , gender: 'male', parichay: 'ब्रह्मा जी के मानस पुत्र और सप्तर्षियों में से एक। ये कश्यप ऋषि के पिता हैं और इन्हीं के वंश से देवता, असुर, नाग और मनुष्य आदि उत्पन्न हुए।' },
     { id: 'angiras', name: 'अंगिरस', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'pulastya', name: 'पुलस्त्य', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'pulaha', name: 'पुलह', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
@@ -77,25 +77,25 @@ export const brahmaBaseData = [
     { id: 'kapila_avatar', name: 'कपिल मुनि', subtitle: 'विष्णु अवतार', parent: 'kardama_prajapati', mother: 'devahuti', yug: 'satya', parichay: 'सांख्य दर्शन के प्रणेता महान मुनि और विष्णु के अवतार।' },
 
     // --- MARICHI LINEAGE ---
-        { id: 'marichi_wives_proxy', name: 'मरीचि की पत्नियाँ', subtitle: 'कला, सम्भूति व उर्णा', parent: '', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ', isProxy: true },
-    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' },
-    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' },
-    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' },
+        { id: 'marichi_wives_proxy',name: 'मरीचि की पत्नियाँ', subtitle: 'कला, सम्भूति व उर्णा', parent: '', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ', isProxy: true, gender: 'female' },
+    { id: 'kala', name: 'कला', subtitle: 'कर्दम पुत्री / मरीचि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' , gender: 'female', parichay: 'कर्दम प्रजापति और देवहूति की पुत्री, जिनका विवाह महर्षि मरीचि से हुआ था।' },
+    { id: 'sambhuti_marichi', name: 'सम्भूति', subtitle: 'दक्ष पुत्री / मरीचि पत्नी', parent: 'daksha', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' , gender: 'female', parichay: 'दक्ष प्रजापति की पुत्री, जिनका विवाह महर्षि मरीचि से हुआ था।' },
+    { id: 'urna_marichi', name: 'उर्णा', subtitle: 'मरीचि की पत्नी', spouseOf: 'marichi', yug: 'satya', clusterName: 'मरीचि की पत्नियाँ' , gender: 'female', parichay: 'महर्षि मरीचि की एक अन्य पत्नी, जिनसे अप्सरा पुत्रियों का जन्म हुआ।' },
 
     // Marichi's children from Kala
-    { id: 'purnima_marichi', name: 'पूर्णिमा', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'kala', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'viraja_purnima', name: 'विरज', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'vishvaga_purnima', name: 'विश्वग', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'devakulya_purnima', name: 'देवकुल्या', subtitle: 'पूर्णिमा पुत्री', parent: 'purnima_marichi', yug: 'satya', parichay: 'पूर्णिमा की पुत्री जो बाद में नदी रूप (गंगा) में परिणत हुईं।' , clusterName: 'मरीचि वंश' },
+    { id: 'purnima_marichi', name: 'पूर्णिमा', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'kala', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'male', parichay: 'मरीचि और कला के पुत्र।' },
+    { id: 'viraja_purnima', name: 'विरज', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'male', parichay: 'पूर्णिमा के पुत्र।' },
+    { id: 'vishvaga_purnima', name: 'विश्वग', subtitle: 'पूर्णिमा पुत्र', parent: 'purnima_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'male', parichay: 'पूर्णिमा के पुत्र।' },
+    { id: 'devakulya_purnima', name: 'देवकुल्या', subtitle: 'पूर्णिमा पुत्री', parent: 'purnima_marichi', yug: 'satya', parichay: 'पूर्णिमा की पुत्री जो बाद में नदी रूप (गंगा) में परिणत हुईं।' , clusterName: 'मरीचि वंश' , gender: 'female' },
 
     // Marichi's child from Sambhuti
-    { id: 'paurnamasa_marichi', name: 'पौर्णमास', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'sambhuti_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
+    { id: 'paurnamasa_marichi', name: 'पौर्णमास', subtitle: 'मरीचि पुत्र', parent: 'marichi', mother: 'sambhuti_marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'male', parichay: 'मरीचि और सम्भूति के पुत्र।' },
 
     // Marichi's Apsara Daughters
-    { id: 'sulochna_apsara', name: 'सुलोचना', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'vishalakshi_apsara', name: 'विशालाक्षी', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'suvarna_apsara', name: 'सुवर्णा', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
-    { id: 'bhadraka_apsara', name: 'भद्रका', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' },
+    { id: 'sulochna_apsara', name: 'सुलोचना', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'female', parichay: 'मरीचि और उर्णा की अप्सरा पुत्री।' },
+    { id: 'vishalakshi_apsara', name: 'विशालाक्षी', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'female', parichay: 'मरीचि और उर्णा की अप्सरा पुत्री।' },
+    { id: 'suvarna_apsara', name: 'सुवर्णा', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'female', parichay: 'मरीचि और उर्णा की अप्सरा पुत्री।' },
+    { id: 'bhadraka_apsara', name: 'भद्रका', subtitle: 'मरीचि पुत्री (अप्सरा)', parent: 'marichi', yug: 'satya' , clusterName: 'मरीचि वंश' , gender: 'female', parichay: 'मरीचि और उर्णा की अप्सरा पुत्री।' },
     // ----------------------
 
     { id: 'anusuya', name: 'अनुसूया', subtitle: 'कर्दम पुत्री / अत्रि पत्नी', parent: 'kardama_prajapati', mother: 'devahuti', spouseOf: 'atri', yug: 'satya', parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।', clusterName: 'अत्रि की पत्नियाँ' },
