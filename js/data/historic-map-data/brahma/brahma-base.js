@@ -55,7 +55,7 @@ export const brahmaBaseData = [
     { id: 'sukumaran', name: 'सुकुमारन', subtitle: 'जाम्बवान के पुत्र', parent: 'jambavan', yug: 'dwapar', timeScale: 'kalpa' },
     { id: 'chitragupta', name: 'चित्रगुप्त', subtitle: 'ब्रह्मा की काया से', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'kayastha_vansh', name: 'कायस्थ वंश', subtitle: 'चित्रगुप्त का वंश', parent: 'chitragupta', yug: 'satya', clusterName: 'चित्रगुप्त (कायस्थ) वंश', isProxy: true },
-    { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' , gender: 'male', parichay: 'ब्रह्मा जी के मानस पुत्र और सप्तर्षियों में से एक। ये कश्यप ऋषि के पिता हैं और इन्हीं के वंश से देवता, असुर, नाग और मनुष्य आदि उत्पन्न हुए।' },
+    { id: 'marichi', name: 'मरीचि', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' , gender: 'male', parichay: 'ब्रह्मा जी के मानस पुत्र और सप्तर्षियों में से एक। ये कश्यप ऋषि के पिता हैं और इन्हीं के वंश से देवता, असुर, नाग और मनुष्य आदि उत्पन्न हुए।' , bookLinkId: 'bio_marichi' },
     { id: 'angiras', name: 'अंगिरस', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'pulastya', name: 'पुलस्त्य', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
     { id: 'pulaha', name: 'पुलह', subtitle: 'सप्तर्षि / मानस पुत्र', parent: 'brahma', yug: 'satya', timeScale: 'kalpa' },
