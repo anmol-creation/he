@@ -49,7 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (category === 'kings') {
         filteredEntities = historicData.filter(e => e.subtitle && (e.subtitle.includes('राजा') || e.subtitle.includes('अवतार') || e.subtitle.includes('पुत्र') && e.parent));
     } else if (category === 'sages') {
-        filteredEntities = historicData.filter(e => e.subtitle && (e.subtitle.includes('ऋषि') || e.subtitle.includes('मुनि') || e.subtitle.includes('कुमार')));
+        // As requested by user: "sirf महर्षि marichi ko add kar do or un chapter page se link kar do"
+        filteredEntities = [
+            { id: 'marichi', name: 'महर्षि मरीचि', subtitle: 'सप्तर्षि / ब्रह्मा के मानस पुत्र', bookLinkId: 'bio_marichi' }
+        ];
     } else if (category === 'dynasties') {
          // Show root nodes as dynasties roughly
          filteredEntities = historicData.filter(e => e.type === 'root' || !e.parent);
@@ -67,8 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let html = '';
     filteredEntities.forEach(entity => {
+        let link = `itihas-book.html?entity=${entity.id}`;
+        if (entity.bookLinkId) {
+            link = `book-reader.html?id=${entity.bookLinkId}`;
+        }
+
         html += `
-            <a href="itihas-book.html?entity=${entity.id}" class="entity-item">
+            <a href="${link}" class="entity-item">
                 <div class="entity-name">${entity.name}</div>
                 <div class="entity-subtitle">${entity.subtitle || ''}</div>
             </a>
