@@ -8,10 +8,16 @@ const vanshGotraData = {
             "description": "The spiritual lineage originating from the Saptarishis and Agastya. This forms the root of Brahmin Gotras and the Kul-Guru Gotras for other Varnas.",
             "subcategories": [
                 {
-                    "id": "kashyap",
+                                        "id": "kashyap",
                     "name": "Kashyap",
                     "rootAncestor": "Rishi Kashyap -> Rishi Marichi -> Brahma",
-                    "surnames": ["Sharma", "Mishra", "Tiwari", "Bhatt", "Rathore", "Jaiswal", "Kushwaha", "Bhatia"]
+                    "surnames": ["Sharma", "Mishra", "Tiwari", "Bhatt", "Bhardwaj", "Pandey", "Joshi", "Kaul", "Dhar", "Bhat", "Tikoo", "Raina", "Rathore", "Jaiswal", "Kushwaha", "Bhatia"]
+                },
+                                {
+                    "id": "shandilya",
+                    "name": "Shandilya",
+                    "rootAncestor": "Rishi Shandilya -> Asita -> Rishi Kashyap -> Brahma",
+                    "surnames": ["Banerjee", "Bandyopadhyay", "Borthakur", "Tyagi", "Tiwari", "Dikshit", "Bhatt", "Batta", "Chaudhary"]
                 },
                 {
                     "id": "vashistha",
