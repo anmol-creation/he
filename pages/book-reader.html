@@ -151,24 +151,37 @@
                 document.getElementById('display-title').textContent = sarga.title;
                 document.getElementById('display-subtitle').textContent = `${currentBook.title} - ${chapterTitle}`;
 
-                // Format content (assuming basic plain text or HTML for now)
-                // In the future, we can parse custom tags like || to format Shlokas vs Anuvad
+// Format content
                 const textContainer = document.getElementById('display-text');
-
-                // Simple parsing: if a line starts with || it's a shloka, otherwise translation
-                const lines = sarga.content.split('\n');
                 let html = '';
-                lines.forEach(line => {
-                    const t = line.trim();
-                    if (!t) return;
-                    if (t.startsWith('||') || t.startsWith('॥')) {
-                        html += `<div class="shloka">${t}</div>`;
-                    } else {
-                        html += `<div class="anuvad">${t}</div><br/>`;
-                    }
-                });
 
-                textContainer.innerHTML = html || sarga.content;
+                if (Array.isArray(sarga.content)) {
+                    // New format: array of block objects
+                    sarga.content.forEach(block => {
+                        if (block.type === 'katha-style') {
+                            html += `<div class="katha" style="margin-bottom:1rem; line-height:1.8; font-size:1.1rem; color:#333;">${block.text}</div>`;
+                        } else if (block.type === 'granth-style') {
+                            if (block.subtitle) {
+                                html += `<h4 style="color:#d35400; margin-top:1.5rem; margin-bottom:0.5rem;">${block.subtitle}</h4>`;
+                            }
+                            html += `<div class="anuvad" style="margin-bottom:1rem; line-height:1.6; color:#444;">${block.text}</div>`;
+                        }
+                    });
+                } else if (typeof sarga.content === 'string') {
+                    // Old format: raw string with double danda
+                    const lines = sarga.content.split('\n');
+                    lines.forEach(line => {
+                        const t = line.trim();
+                        if (!t) return;
+                        if (t.startsWith('||') || t.startsWith('॥')) {
+                            html += `<div class="shloka" style="margin: 1rem 0; font-weight: bold; color: #b7410e; text-align: center;">${t}</div>`;
+                        } else {
+                            html += `<div class="anuvad" style="margin-bottom: 0.8rem; line-height:1.6;">${t}</div>`;
+                        }
+                    });
+                }
+
+                textContainer.innerHTML = html;
                 document.getElementById('reader-area').scrollTop = 0;
             }
         });
