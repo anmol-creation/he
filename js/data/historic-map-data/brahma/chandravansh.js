@@ -1,32 +1,34 @@
 export const chandravanshData = [
-    // --- अत्रि और उनकी पत्नी ---
-    { id: 'anasuya_chandra', name: 'अनुसूया', subtitle: 'अत्रि पत्नी', parent: 'kardama_prajapati', spouseOf: 'atri', yug: 'satya', clusterName: 'अत्रि की पत्नियाँ' },
+
+    
 
     // --- अत्रि के पुत्र ---
-        { id: 'atri_dynasty_proxy', name: 'आत्रेय वंश', subtitle: 'अत्रि के वंशज', parent: 'atri', yug: 'satya', clusterName: 'आत्रेय वंश', isProxy: true },
-    { id: 'dattatreya_chandra', name: 'दत्तात्रेय', subtitle: 'विष्णु अंश', parent: 'atri_dynasty_proxy', clusterName: 'आत्रेय वंश', mother: 'anasuya_chandra', yug: 'satya' },
-    { id: 'durvasa_chandra', name: 'दुर्वासा', subtitle: 'शिव अंश', parent: 'atri_dynasty_proxy', clusterName: 'आत्रेय वंश', mother: 'anasuya_chandra', yug: 'satya' },
+    
+    { id: 'dattatreya_chandra', name: 'दत्तात्रेय', subtitle: 'विष्णु अंश', parent: 'atri',mother: 'anasuya_chandra', gender: 'male', yug: 'satya' },
+    { id: 'durvasa_chandra', name: 'दुर्वासा', subtitle: 'शिव अंश', parent: 'atri', mother: 'anasuya_chandra', gender: 'male', yug: 'satya' },
     { id: 'chandra_chandra', name: 'चंद्र', subtitle: 'चंद्र देव (चंद्रवंश के मूल)', parent: 'atri', mother: 'anasuya_chandra', yug: 'satya' },
 
     // --- चंद्र देव की पत्नियां ---
-    { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी (बृहस्पति की पूर्व पत्नी)', parent: '', spouseOf: 'chandra_chandra', yug: 'satya' },
-    // --- चंद्र देव की अन्य पत्नी एवं दैवीय संतानें (अष्ट-वसु के रूप में) ---
-    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'चंद्र (सोम वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'chandra_chandra', yug: 'satya', parichay: 'महाभारत (आदि पर्व) के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) की पत्नी।' },
-    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'ये चंद्र देव और मनोहरा के दैवीय पुत्र हैं। महाभारत के समय देवर्षियों के कहने पर इन्होंने ही अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
-    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-    { id: 'prana_chandra', name: 'प्राण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-    { id: 'ramana_chandra', name: 'रमण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी (बृहस्पति की पूर्व पत्नी)', parent: '', spouseOf: 'chandra_chandra', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ'},
+    // --- चंद्र देव की अन्य पत्नी 
+    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'चंद्र (सोम वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'chandra_chandra', clusterName:'चंद्र की पत्नियाँ',yug: 'satya', parichay: 'महाभारत (आदि पर्व) के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) की पत्नी।' },
+    
+   // एवं दैवीय संतानें (अष्ट-वसु के रूप में) ---
+    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', clusterName:'चंद्र के पुत्र', yug: 'satya', parichay: 'ये चंद्र देव और मनोहरा के दैवीय पुत्र हैं। महाभारत के समय देवर्षियों के कहने पर इन्होंने ही अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
+    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra',clusterName:'चंद्र के पुत्र', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'prana_chandra', name: 'प्राण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra',clusterName:'चंद्र के पुत्र', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'ramana_chandra', name: 'रमण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', clusterName:'चंद्र के पुत्र', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
 
     // (दक्ष की 27 पुत्रियां भी चंद्र की पत्नियां हैं, उन्हें आवश्यकता अनुसार बाद में जोड़ा जा सकता है)
 
     // --- चंद्र देव के पुत्र ---
-    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra', yug: 'satya' },
+    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',clusterName:'चंद्र के पुत्र', yug: 'satya' },
 
     // --- बुध की पत्नी ---
     { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya' },
 
     // --- पुरुरवा ---
-    { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra', mother: 'ila_chandra', yug: 'satya' },
+    { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra',clusterName:'चंद्रवंश Prarambh', mother: 'ila_chandra', yug: 'satya' },
     { id: 'urvashi_chandra', name: 'उर्वशी', subtitle: 'पुरुरवा की पत्नी (अप्सरा)', parent: '', spouseOf: 'pururava_chandra', yug: 'satya' },
 
     // --- पुरुरवा के पुत्र (आयु, श्रुतायु, सत्यायु, रय, विजय, जय) ---
@@ -51,7 +53,11 @@ export const chandravanshData = [
     { id: 'nahush_chandravanshi_proxy', name: 'नहुष चंद्रवंश', subtitle: 'नहुष के वंशज', parent: 'nahusha_chandra', isProxy: true, clusterName: 'नहुष चंद्रवंशी', yug: 'satya' },
 
     { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र / अशोक सुंदरी पति', parent: 'ayu_chandra', mother: 'prabha_chandra', spouseOf: 'ashokasundari', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
+    
+    // क्षत्रवृद्ध चंद्रवंशी
+    { id: 'kshatravriddha_chandravanshi_proxy', name: 'क्षत्रवृद्ध वंशी ', subtitle: 'क्षत्रवृद्ध के वंशज', parent: 'ayu_chandravanshi_proxy', isProxy: true, clusterName: 'आयु चंद्रवंशी', yug: 'satya' },
+    
+    { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'kshatravriddha_chandravanshi_proxy', mother: 'prabha_chandra', yug: 'satya', clusterName: 'क्षत्रवृद्ध वंशी' },
     { id: 'sunahotra_kashi_chandra', name: 'सुनहोत्र', subtitle: 'क्षत्रवृद्ध पुत्र', gender: 'male', parent: 'kshatravriddha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
     { id: 'kusha_vansh_proxy', name: 'कुश वंश', subtitle: 'कुश के वंशज', isProxy: true, parent: 'sunahotra_kashi_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
     { id: 'kusha_chandra', name: 'कुश', subtitle: 'सुनहोत्र पुत्र', gender: 'male', parent: 'kusha_vansh_proxy', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
@@ -93,20 +99,25 @@ export const chandravanshData = [
     { id: 'vitihotra_kashi_chandra', name: 'वीतिहोत्र', subtitle: 'सुकुमार पुत्र', gender: 'male', parent: 'sukumara_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
     { id: 'bharga_kashi_chandra', name: 'भर्ग', subtitle: 'वीतिहोत्र पुत्र', gender: 'male', parent: 'vitihotra_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
     { id: 'bhargabhumi_chandra', name: 'भार्गभूमि', subtitle: 'भर्ग पुत्र', gender: 'male', parent: 'bharga_kashi_chandra', yug: 'treta', parichay: 'भर्ग से भार्गभूमि हुए। इन्हीं के वंशज आगे चलकर भार्गव (वत्स) कहलाए।', clusterName: 'आयु चंद्रवंशी' },
+    
+    // रम्भ के वंशज
 
     { id: 'rambha_ayu_chandra', name: 'रम्भ', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'rambha_vansh_proxy', name: 'रम्भ वंश', subtitle: 'रम्भ के वंशज', isProxy: true, parent: 'rambha_ayu_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'rabhasa_chandra', name: 'रभस', subtitle: 'रम्भ पुत्र', gender: 'male', parent: 'rambha_vansh_proxy', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'gambhira_chandra', name: 'गम्भीर', subtitle: 'रभस पुत्र', gender: 'male', parent: 'rabhasa_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'akriya_chandra', name: 'अक्रिय', subtitle: 'गम्भीर पुत्र', gender: 'male', parent: 'gambhira_chandra', yug: 'satya', parichay: 'भागवत पुराण (9.17.10-11) के अनुसार, इनकी पत्नी के माध्यम से ब्राह्मणों के एक विशिष्ट वंश का आरंभ हुआ। क्षत्रिय राजा होने के बावजूद इनके वंशज ब्रह्मर्षि पद को प्राप्त हुए।', clusterName: 'आयु चंद्रवंशी' },
+    
+    { id: 'rabhasa_chandra', name: 'रभस', subtitle: 'रम्भ पुत्र', gender: 'male', parent: 'rambha_ayu_chandra', yug: 'satya', clusterName: 'रम्भ वंश' },
+    { id: 'gambhira_chandra', name: 'गम्भीर', subtitle: 'रभस पुत्र', gender: 'male', parent: 'rabhasa_chandra', yug: 'satya', clusterName: 'रम्भ वंश' },
+    { id: 'akriya_chandra', name: 'अक्रिय', subtitle: 'गम्भीर पुत्र', gender: 'male', parent: 'gambhira_chandra', yug: 'satya', parichay: 'भागवत पुराण (9.17.10-11) के अनुसार, इनकी पत्नी के माध्यम से ब्राह्मणों के एक विशिष्ट वंश का आरंभ हुआ। क्षत्रिय राजा होने के बावजूद इनके वंशज ब्रह्मर्षि पद को प्राप्त हुए।', clusterName: 'रम्भ वंश' },
+    
     { id: 'raji_chandra', name: 'रजि', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
     { id: 'rajeya_chandra', name: 'रजेय (500 पुत्र)', subtitle: 'रजि के पुत्र', gender: 'male', parent: 'raji_chandra', yug: 'satya', parichay: 'राजा रजि के 500 बलवान पुत्र। इन्होंने इंद्र से स्वर्ग छीन लिया था, जिसे बाद में बृहस्पति के छल से नष्ट किया गया।', clusterName: 'आयु चंद्रवंशी' },
+    
+    // अनेना के वंशज
     { id: 'anena_chandra', name: 'अनेना', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'anena_vansh_proxy', name: 'अनेना वंश', subtitle: 'अनेना के वंशज', isProxy: true, parent: 'anena_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'shuddha_chandra', name: 'शुद्ध', subtitle: 'अनेना पुत्र', gender: 'male', parent: 'anena_vansh_proxy', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'shuchi_chandra', name: 'शुचि', subtitle: 'शुद्ध पुत्र', gender: 'male', parent: 'shuddha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'trikakud_chandra', name: 'त्रिककुद् (धर्मसारथि)', subtitle: 'शुचि पुत्र', gender: 'male', parent: 'shuchi_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'shantaraya_chandra', name: 'शान्तरय', subtitle: 'त्रिककुद् पुत्र', gender: 'male', parent: 'trikakud_chandra', yug: 'satya', parichay: 'ये आत्मज्ञानी (ब्रह्मज्ञानी) थे, अतः इन्होंने अपना वंश आगे नहीं बढ़ाया।', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'anena_vansh_proxy', name: 'अनेना वंश', subtitle: 'अनेना के वंशज', isProxy: true, parent: 'anena_chandra', yug: 'satya', },
+    { id: 'shuddha_chandra', name: 'शुद्ध', subtitle: 'अनेना पुत्र', gender: 'male', parent: 'anena_vansh_proxy', yug: 'satya', clusterName: 'अनेना वंश' },
+    { id: 'shuchi_chandra', name: 'शुचि', subtitle: 'शुद्ध पुत्र', gender: 'male', parent: 'shuddha_chandra', yug: 'satya', clusterName: 'अनेना वंश' },
+    { id: 'trikakud_chandra', name: 'त्रिककुद् (धर्मसारथि)', subtitle: 'शुचि पुत्र', gender: 'male', parent: 'shuchi_chandra', yug: 'satya', clusterName: 'अनेना वंश' },
+    { id: 'shantaraya_chandra', name: 'शान्तरय', subtitle: 'त्रिककुद् पुत्र', gender: 'male', parent: 'trikakud_chandra', yug: 'satya', parichay: 'ये आत्मज्ञानी (ब्रह्मज्ञानी) थे, अतः इन्होंने अपना वंश आगे नहीं बढ़ाया।', clusterName: 'अनेना वंश' },
 
     // --- नहुष की पत्नी ---
     { id: 'ashokasundari_chandra', name: 'अशोकसुंदरी', subtitle: 'नहुष की पत्नी (शिव-पार्वती पुत्री)', parent: 'shiva_parivar_proxy', mother: 'parvati', spouseOf: 'nahusha_chandra', yug: 'satya', clusterName: 'शिव परिवार' },
@@ -201,66 +212,62 @@ export const chandravanshData = [
     { id: 'early_pandya_link', name: 'ऐतिहासिक अंतराल (पाण्ड्य)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'ugra_pandya', yug: 'kali', parichay: 'पौराणिक पाण्ड्य शासकों और संगम काल के प्रारंभिक ऐतिहासिक पाण्ड्य राजाओं के बीच की पीढ़ियाँ।', clusterName: 'पाण्ड्य राजवंश' },
 
     // --- संगम काल के प्रारंभिक पाण्ड्य ---
-    { id: 'mudattirumaran', name: 'मुदत्तिरुमारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'early_pandya_link', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'koon_pandya', name: 'कून पाण्ड्य', subtitle: 'संगम पाण्ड्य नरेश', parent: 'mudattirumaran', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'mudukudumi_peruvaluthi', name: 'मुदुकुडुमी पेरुवलुथि', subtitle: 'पलयागसलाई', parent: 'koon_pandya', gender: 'male', yug: 'kali', parichay: 'इन्होंने कई वैदिक यज्ञ किए थे।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'nedunjeliyan_1', name: 'नेदुन्जेलियन प्रथम', subtitle: 'आर्य पदाई कडन्था', parent: 'mudukudumi_peruvaluthi', gender: 'male', yug: 'kali', parichay: 'इनके काल में ही कोवलन और कन्नगी (शिलप्पादिकारम) की घटना हुई थी।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'mudattirumaran', name: 'मुदत्तिरुमारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'early_pandya_link', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'koon_pandya', name: 'कून पाण्ड्य', subtitle: 'संगम पाण्ड्य नरेश', parent: 'mudattirumaran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'mudukudumi_peruvaluthi', name: 'मुदुकुडुमी पेरुवलुथि', subtitle: 'पलयागसलाई', parent: 'koon_pandya', yug: 'kali', parichay: 'इन्होंने कई वैदिक यज्ञ किए थे।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nedunjeliyan_1', name: 'नेदुन्जेलियन प्रथम', subtitle: 'आर्य पदाई कडन्था', parent: 'mudukudumi_peruvaluthi', yug: 'kali', parichay: 'इनके काल में ही कोवलन और कन्नगी (शिलप्पादिकारम) की घटना हुई थी।', clusterName: 'पाण्ड्य राजवंश' },
     { id: 'kopperundevi', name: 'कोप्पेरुन्देवी', subtitle: 'पाण्ड्य महारानी', parent: '', spouseOf: 'nedunjeliyan_1', gender: 'female', yug: 'kali', parichay: 'नेदुन्जेलियन प्रथम की पत्नी, जिन्होंने कोवलन की अन्यायपूर्ण मृत्यु के प्रायश्चित स्वरूप प्राण त्याग दिए थे।', clusterName: 'पाण्ड्य राजवंश' },
 
-    { id: 'nedunjeliyan_2', name: 'नेदुन्जेलियन द्वितीय', subtitle: 'तलैयालंगनाथु', parent: 'nedunjeliyan_1', mother: 'kopperundevi', gender: 'male', yug: 'kali', parichay: 'इन्होंने तलैयालंगनम के युद्ध में चेर, चोल और पांच अन्य सरदारों के गुट को हराया था।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'nan_maran', name: 'नन मारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_2', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'nedunjeliyan_3', name: 'नेदुन्जेलियन तृतीय', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nan_maran', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'ukkirap_peruvaludi', name: 'उक्किरप पेरुवलुदी', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_3', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nedunjeliyan_2', name: 'नेदुन्जेलियन द्वितीय', subtitle: 'तलैयालंगनाथु', parent: 'nedunjeliyan_1', mother: 'kopperundevi', yug: 'kali', parichay: 'इन्होंने तलैयालंगनम के युद्ध में चेर, चोल और पांच अन्य सरदारों के गुट को हराया था।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nan_maran', name: 'नन मारन', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nedunjeliyan_3', name: 'नेदुन्जेलियन तृतीय', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nan_maran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'ukkirap_peruvaludi', name: 'उक्किरप पेरुवलुदी', subtitle: 'संगम पाण्ड्य नरेश', parent: 'nedunjeliyan_3', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
 
     // कलभ्र अंतराल
-    { id: 'kalabhra_interregnum_pandya', name: 'कलभ्र अंतराल', subtitle: 'अंधकार युग', parent: 'ukkirap_peruvaludi', gender: 'male', yug: 'kali', parichay: 'संगम युग के अंत में कलभ्र राजवंश के आक्रमण के कारण पाण्ड्य शासन का पतन हुआ।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kalabhra_interregnum_pandya', name: 'कलभ्र अंतराल', subtitle: 'अंधकार युग', parent: 'ukkirap_peruvaludi', yug: 'kali', parichay: 'संगम युग के अंत में कलभ्र राजवंश के आक्रमण के कारण पाण्ड्य शासन का पतन हुआ।', clusterName: 'पाण्ड्य राजवंश' },
 
     // --- प्रथम पाण्ड्य साम्राज्य (First Pandyan Empire / 6th-10th Century) ---
-    { id: 'kadungon', name: 'कडुंगोन', subtitle: 'पाण्ड्य पुनरुद्धारक', parent: 'kalabhra_interregnum_pandya', gender: 'male', yug: 'kali', parichay: 'इन्होंने कलभ्रों को हराकर पाण्ड्य साम्राज्य की पुनर्स्थापना की (लगभग 590 CE)।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_avanisulamani', name: 'मारवर्मन अवनिसुलामणी', subtitle: 'पाण्ड्य नरेश', parent: 'kadungon', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'seliyan_sendan', name: 'सेलियान सेंडन (जयंतवर्मन)', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_avanisulamani', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'arikesari_maravarman', name: 'अरीकेसरी मारवर्मन (परंकुसन)', subtitle: 'पाण्ड्य नरेश', parent: 'seliyan_sendan', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'mangayarkkarasiyar', name: 'मंगैयर्क्करसियार', subtitle: 'चोल राजकुमारी', parent: '', spouseOf: 'arikesari_maravarman', gender: 'female', yug: 'kali', parichay: 'चोल राजकुमारी जो अरीकेसरी मारवर्मन की रानी बनीं। ये 63 नायनमार संतों में से एक मानी जाती हैं।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'kochadaiyan_ranadhiran', name: 'कोचदैयन रणधीर', subtitle: 'पाण्ड्य नरेश', parent: 'arikesari_maravarman', mother: 'mangayarkkarasiyar', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_rajasimha_1', name: 'मारवर्मन राजसिम्हा प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'kochadaiyan_ranadhiran', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'pallava_princess_pandya', name: 'पल्लव राजकुमारी', subtitle: 'राजसिम्हा की पत्नी', parent: '', spouseOf: 'maravarman_rajasimha_1', gender: 'female', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'varagunavarman_1', name: 'वरगुणवर्मन प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_rajasimha_1', mother: 'pallava_princess_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_srimara_srivallabha', name: 'मारवर्मन श्रीमारा श्रीवल्लभ', subtitle: 'पाण्ड्य नरेश', parent: 'varagunavarman_1', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'varagunavarman_2', name: 'वरगुणवर्मन द्वितीय', subtitle: 'श्रीवल्लभ के पुत्र', parent: 'maravarman_srimara_srivallabha', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'parantaka_viranarayana', name: 'परान्तक वीरनारायण', subtitle: 'श्रीवल्लभ के पुत्र (भाई)', parent: 'maravarman_srimara_srivallabha', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'vanavan_mahadevi_pandya', name: 'वनवन महादेवी', subtitle: 'चेर राजकुमारी', parent: '', spouseOf: 'parantaka_viranarayana', gender: 'female', yug: 'kali', parichay: 'चेर राजवंश की राजकुमारी और परान्तक वीरनारायण की पत्नी।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_rajasimha_2', name: 'मारवर्मन राजसिम्हा द्वितीय', subtitle: 'प्रथम साम्राज्य के अंतिम', parent: 'parantaka_viranarayana', mother: 'vanavan_mahadevi_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kadungon', name: 'कडुंगोन', subtitle: 'पाण्ड्य पुनरुद्धारक', parent: 'kalabhra_interregnum_pandya', yug: 'kali', parichay: 'इन्होंने कलभ्रों को हराकर पाण्ड्य साम्राज्य की पुनर्स्थापना की (लगभग 590 CE)।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_avanisulamani', name: 'मारवर्मन अवनिसुलामणी', subtitle: 'पाण्ड्य नरेश', parent: 'kadungon', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'seliyan_sendan', name: 'सेलियान सेंडन (जयंतवर्मन)', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_avanisulamani', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'arikesari_maravarman', name: 'अरीकेसरी मारवर्मन (परंकुसन)', subtitle: 'पाण्ड्य नरेश', parent: 'seliyan_sendan', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kochadaiyan_ranadhiran', name: 'कोचदैयन रणधीर', subtitle: 'पाण्ड्य नरेश', parent: 'arikesari_maravarman', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_rajasimha_1', name: 'मारवर्मन राजसिम्हा प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'kochadaiyan_ranadhiran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varagunavarman_1', name: 'वरगुणवर्मन प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_rajasimha_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_srimara_srivallabha', name: 'मारवर्मन श्रीमारा श्रीवल्लभ', subtitle: 'पाण्ड्य नरेश', parent: 'varagunavarman_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varagunavarman_2', name: 'वरगुणवर्मन द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_srimara_srivallabha', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'parantaka_viranarayana', name: 'परान्तक वीरनारायण', subtitle: 'पाण्ड्य नरेश', parent: 'varagunavarman_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_rajasimha_2', name: 'मारवर्मन राजसिम्हा द्वितीय', subtitle: 'प्रथम साम्राज्य के अंतिम', parent: 'parantaka_viranarayana', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
 
     // चोल आधिपत्य अंतराल
-    { id: 'chola_dominance_pandya', name: 'चोल आधिपत्य अंतराल', subtitle: 'अवनति काल', parent: 'maravarman_rajasimha_2', gender: 'male', yug: 'kali', parichay: 'चोल सम्राट परान्तक प्रथम द्वारा राजसिम्हा द्वितीय को हराने के बाद पाण्ड्य चोलों के अधीन सामंत रहे।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'chola_dominance_pandya', name: 'चोल आधिपत्य अंतराल', subtitle: 'अवनति काल', parent: 'maravarman_rajasimha_2', yug: 'kali', parichay: 'चोल सम्राट परान्तक प्रथम द्वारा राजसिम्हा द्वितीय को हराने के बाद पाण्ड्य चोलों के अधीन सामंत रहे।', clusterName: 'पाण्ड्य राजवंश' },
 
     // --- द्वितीय पाण्ड्य साम्राज्य (Second Pandyan Empire / 13th-14th Century) ---
-    { id: 'maravarman_srivallabha', name: 'मारवर्मन श्रीवल्लभ', subtitle: 'साम्राज्य पुनरुद्धारक', parent: 'chola_dominance_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'jatavarman_srivallabha', name: 'जटावर्मन श्रीवल्लभ', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_srivallabha', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'jatavarman_kulasekara_1', name: 'जटावर्मन कुलशेखर प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'jatavarman_srivallabha', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_sundara_pandyan_1', name: 'मारवर्मन सुंदर पाण्ड्य प्रथम', subtitle: 'साम्राज्य विस्तारक', parent: 'jatavarman_kulasekara_1', gender: 'male', yug: 'kali', parichay: 'इन्होंने चोलों को हराकर पाण्ड्य साम्राज्य का फिर से विस्तार किया।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'sadayavarman_kulasekaran_2', name: 'सदयावर्मन कुलशेखर द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_sundara_pandyan_1', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_sundara_pandyan_2', name: 'मारवर्मन सुंदर पाण्ड्य द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'sadayavarman_kulasekaran_2', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_srivallabha', name: 'मारवर्मन श्रीवल्लभ', subtitle: 'साम्राज्य पुनरुद्धारक', parent: 'chola_dominance_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'jatavarman_srivallabha', name: 'जटावर्मन श्रीवल्लभ', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_srivallabha', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'jatavarman_kulasekara_1', name: 'जटावर्मन कुलशेखर प्रथम', subtitle: 'पाण्ड्य नरेश', parent: 'jatavarman_srivallabha', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_sundara_pandyan_1', name: 'मारवर्मन सुंदर पाण्ड्य प्रथम', subtitle: 'साम्राज्य विस्तारक', parent: 'jatavarman_kulasekara_1', yug: 'kali', parichay: 'इन्होंने चोलों को हराकर पाण्ड्य साम्राज्य का फिर से विस्तार किया।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadayavarman_kulasekaran_2', name: 'सदयावर्मन कुलशेखर द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'maravarman_sundara_pandyan_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_sundara_pandyan_2', name: 'मारवर्मन सुंदर पाण्ड्य द्वितीय', subtitle: 'पाण्ड्य नरेश', parent: 'sadayavarman_kulasekaran_2', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
 
-    { id: 'jatavarman_sundara_pandyan_1', name: 'जटावर्मन सुंदर पाण्ड्य प्रथम', subtitle: 'दक्षिण का नेपोलियन', parent: 'maravarman_sundara_pandyan_2', gender: 'male', yug: 'kali', isProminent: true, parichay: 'पाण्ड्य वंश के सबसे महान सम्राट। इन्होंने दक्षिण भारत, श्रीलंका और कलिंग तक अपना साम्राज्य फैलाया।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'jatavarman_vira_pandyan_1', name: 'जटावर्मन वीर पाण्ड्य प्रथम', subtitle: 'सह-शासक (भाई)', parent: 'maravarman_sundara_pandyan_2', gender: 'male', yug: 'kali', parichay: 'जटावर्मन सुंदर पाण्ड्य के भाई और सह-शासक, जिन्होंने श्रीलंका और कावेरी क्षेत्र में विजय प्राप्त की।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'maravarman_kulasekara_pandyan_1', name: 'मारवर्मन कुलशेखर प्रथम', subtitle: 'महान पाण्ड्य नरेश', parent: 'jatavarman_sundara_pandyan_1', gender: 'male', yug: 'kali', isProminent: true, clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'jatavarman_sundara_pandyan_1', name: 'जटावर्मन सुंदर पाण्ड्य प्रथम', subtitle: 'दक्षिण का नेपोलियन', parent: 'maravarman_sundara_pandyan_2', yug: 'kali', parichay: 'पाण्ड्य वंश के सबसे महान सम्राट। इन्होंने दक्षिण भारत, श्रीलंका और कलिंग तक अपना साम्राज्य फैलाया।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'maravarman_kulasekara_pandyan_1', name: 'मारवर्मन कुलशेखर प्रथम', subtitle: 'महान पाण्ड्य नरेश', parent: 'jatavarman_sundara_pandyan_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
 
     // उत्तराधिकार युद्ध
-    { id: 'vira_pandya_4', name: 'वीर पाण्ड्य (द्वितीय)', subtitle: 'कुलशेखर के पुत्र', parent: 'maravarman_kulasekara_pandyan_1', gender: 'male', yug: 'kali', parichay: 'अपने भाई सुंदर पाण्ड्य के साथ उत्तराधिकार युद्ध लड़ा, जिसके कारण अलाउद्दीन खिलजी की सेना (मलिक काफूर) को आक्रमण का मौका मिला।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'sundara_pandya_4', name: 'सुंदर पाण्ड्य चतुर्थ', subtitle: 'कुलशेखर के पुत्र', parent: 'maravarman_kulasekara_pandyan_1', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'vira_pandya_4', name: 'वीर पाण्ड्य', subtitle: 'कुलशेखर के पुत्र', parent: 'maravarman_kulasekara_pandyan_1', yug: 'kali', parichay: 'अपने भाई सुंदर पाण्ड्य के साथ उत्तराधिकार युद्ध लड़ा, जिसके कारण दिल्ली सल्तनत को आक्रमण का मौका मिला।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sundara_pandya_4', name: 'सुंदर पाण्ड्य चतुर्थ', subtitle: 'कुलशेखर के पुत्र', parent: 'maravarman_kulasekara_pandyan_1', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
 
     // --- तेनकासी पाण्ड्य (Tenkasi Pandyas / 15th-17th Century) ---
-    { id: 'sadaavarman_parakrama_pandya', name: 'सदावर्मन पराक्रम पाण्ड्य', subtitle: 'तेनकासी पाण्ड्य संस्थापक', parent: 'sundara_pandya_4', gender: 'male', yug: 'kali', parichay: 'दिल्ली सल्तनत और विजयनगर के दबाव में पाण्ड्य मदुरै छोड़कर तेनकासी चले गए।', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'kulasekara_pandiyan_3', name: 'कुलशेखर पाण्ड्य तृतीय', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_parakrama_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'aksharan_perumal_parakrama_pandya', name: 'अक्षरन पेरुमल पराक्रम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'kulasekara_pandiyan_3', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'kulasekara_pandya_later', name: 'कुलशेखर पाण्ड्य (तेनकासी)', subtitle: 'तेनकासी नरेश', parent: 'aksharan_perumal_parakrama_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'sadaverman_sewallapa_pandya', name: 'सदावर्मन सेवलप्पा पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'kulasekara_pandya_later', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'parakrama_kulasekaran', name: 'पराक्रम कुलशेखर', subtitle: 'तेनकासी नरेश', parent: 'sadaverman_sewallapa_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'nelveli_maran', name: 'नेल्वेली मारन', subtitle: 'तेनकासी नरेश', parent: 'parakrama_kulasekaran', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'sadaavarman_adeevirama_pandya', name: 'सदावर्मन अदीविराम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'nelveli_maran', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'varathuranga_pandya', name: 'वरथुरंग पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_adeevirama_pandya', gender: 'male', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
-    { id: 'varagunarama_pandya', name: 'वरगुणराम पाण्ड्य', subtitle: 'अंतिम ज्ञात पाण्ड्य शासक', parent: 'varathuranga_pandya', gender: 'male', yug: 'kali', parichay: 'तेनकासी पाण्ड्य वंश के अंतिम ज्ञात शासकों में से एक (1618 CE)।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadaavarman_parakrama_pandya', name: 'सदावर्मन पराक्रम पाण्ड्य', subtitle: 'तेनकासी पाण्ड्य संस्थापक', parent: 'sundara_pandya_4', yug: 'kali', parichay: 'दिल्ली सल्तनत और विजयनगर के दबाव में पाण्ड्य मदुरै छोड़कर तेनकासी चले गए।', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kulasekara_pandiyan_3', name: 'कुलशेखर पाण्ड्य तृतीय', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_parakrama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'aksharan_perumal_parakrama_pandya', name: 'अक्षरन पेरुमल पराक्रम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'kulasekara_pandiyan_3', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'kulasekara_pandya_later', name: 'कुलशेखर पाण्ड्य (तेनकासी)', subtitle: 'तेनकासी नरेश', parent: 'aksharan_perumal_parakrama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadaverman_sewallapa_pandya', name: 'सदावर्मन सेवलप्पा पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'kulasekara_pandya_later', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'parakrama_kulasekaran', name: 'पराक्रम कुलशेखर', subtitle: 'तेनकासी नरेश', parent: 'sadaverman_sewallapa_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'nelveli_maran', name: 'नेल्वेली मारन', subtitle: 'तेनकासी नरेश', parent: 'parakrama_kulasekaran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'sadaavarman_adeevirama_pandya', name: 'सदावर्मन अदीविराम पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'nelveli_maran', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varathuranga_pandya', name: 'वरथुरंग पाण्ड्य', subtitle: 'तेनकासी नरेश', parent: 'sadaavarman_adeevirama_pandya', yug: 'kali', clusterName: 'पाण्ड्य राजवंश' },
+    { id: 'varagunarama_pandya', name: 'वरगुणराम पाण्ड्य', subtitle: 'अंतिम ज्ञात पाण्ड्य शासक', parent: 'varathuranga_pandya', yug: 'kali', parichay: 'तेनकासी पाण्ड्य वंश के अंतिम ज्ञात शासकों में से एक (1618 CE)।', clusterName: 'पाण्ड्य राजवंश' },
 
     // --- अनु वंश ---
     { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -1289,80 +1296,6 @@ export const chandravanshData = [
     { id: 'kulothunga_3_chola', name: 'कुलोत्तुंग चोल तृतीय', subtitle: 'राजाधिराज द्वितीय पुत्र', parent: 'rajadhiraja_2_chola', yug: 'kali', parichay: 'उत्तरकालीन चोलों के सबसे शक्तिशाली सम्राट।', clusterName: 'चोल राजवंश' },
     { id: 'rajaraja_3_chola', name: 'राजराजा चोल तृतीय', subtitle: 'कुलोत्तुंग तृतीय पुत्र', parent: 'kulothunga_3_chola', yug: 'kali', clusterName: 'चोल राजवंश' },
     { id: 'rajendra_3_chola', name: 'राजेंद्र चोल तृतीय', subtitle: 'अंतिम चोल सम्राट', parent: 'rajaraja_3_chola', yug: 'kali', parichay: 'चोल राजवंश के अंतिम ज्ञात शासक। 1279 ई. में पांड्यों द्वारा चोल साम्राज्य का अंत कर दिया गया।', clusterName: 'चोल राजवंश' },
-
-    // ----------------------------------------------------
-    // RASHTRAKUTA DYNASTY (Descendants of Satyaki)
-    // ----------------------------------------------------
-    { id: 'satyaki_descendants_proxy', name: 'सात्यकि के वंशज', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'satyaki_chandra', yug: 'kali', parichay: 'सात्यकि (द्वापर युग) और राष्ट्रकूटों के पूर्वजों (कलियुग) के बीच का ऐतिहासिक अंतराल। राष्ट्रकूट अभिलेख (जैसे संजन ताम्रपत्र) स्वयं को सात्यकि (यदुवंश) का वंशज बताते हैं।', clusterName: 'राष्ट्रकूट राजवंश', isProxy: true },
-    { id: 'tunka_rashtrakuta', name: 'तुंग (तुंक)', subtitle: 'राष्ट्रकूटों के पूर्वज', parent: 'satyaki_descendants_proxy', gender: 'male', yug: 'kali', parichay: 'सात्यकि के वंश में जन्मे, जिन्हें राष्ट्रकूट राजवंश का आदि पुरुष माना जाता है।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'rashtrakuta_eponymous', name: 'राष्ट्रकूट (मूल पुरुष)', subtitle: 'वंश का नामकरण', parent: 'tunka_rashtrakuta', gender: 'male', yug: 'kali', parichay: 'इनके नाम पर ही इस राजवंश का नाम "राष्ट्रकूट" पड़ा।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'dantivarman_rashtrakuta', name: 'दंतिवर्मन', subtitle: 'प्रारंभिक शासक', parent: 'rashtrakuta_eponymous', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'indra_1_rashtrakuta', name: 'इंद्र प्रथम', subtitle: 'दंतिवर्मन पुत्र', parent: 'dantivarman_rashtrakuta', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'bhavanaga_queen', name: 'भवनगा', subtitle: 'इंद्र प्रथम की पत्नी', parent: '', spouseOf: 'indra_1_rashtrakuta', gender: 'female', yug: 'kali' },
-    { id: 'govinda_1_rashtrakuta', name: 'गोविंद प्रथम', subtitle: 'इंद्र प्रथम पुत्र', parent: 'indra_1_rashtrakuta', mother: 'bhavanaga_queen', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'kakka_1_rashtrakuta', name: 'कक्क प्रथम', subtitle: 'गोविंद प्रथम पुत्र', parent: 'govinda_1_rashtrakuta', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'indra_2_rashtrakuta', name: 'इंद्र द्वितीय', subtitle: 'कक्क प्रथम पुत्र', parent: 'kakka_1_rashtrakuta', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'bhavanaga_2_queen', name: 'भवनगा (चालुक्य)', subtitle: 'इंद्र द्वितीय की पत्नी', parent: '', spouseOf: 'indra_2_rashtrakuta', gender: 'female', yug: 'kali', parichay: 'ये गुजरात के चालुक्य राजकुमारी थीं।' },
-    
-    // Imperial Rashtrakutas
-    { id: 'dantidurga_rashtrakuta', name: 'दंतिदुर्ग', subtitle: 'राष्ट्रकूट साम्राज्य के संस्थापक', parent: 'indra_2_rashtrakuta', mother: 'bhavanaga_2_queen', gender: 'male', yug: 'kali', isProminent: true, parichay: '735-756 ई.। इन्होंने बादामी के चालुक्यों को हराकर एक स्वतंत्र और विशाल राष्ट्रकूट साम्राज्य की स्थापना की।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'krishna_1_rashtrakuta', name: 'कृष्ण प्रथम', subtitle: 'दंतिदुर्ग के चाचा', parent: 'kakka_1_rashtrakuta', gender: 'male', yug: 'kali', isProminent: true, parichay: 'इन्होंने एलोरा (महाराष्ट्र) में विश्व प्रसिद्ध "कैलाश मंदिर" का निर्माण करवाया था, जिसे एक ही विशाल चट्टान को ऊपर से नीचे की ओर तराश कर बनाया गया है।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'govinda_2_rashtrakuta', name: 'गोविंद द्वितीय', subtitle: 'कृष्ण प्रथम पुत्र', parent: 'krishna_1_rashtrakuta', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'dhruva_dharavarsha', name: 'ध्रुव धारावर्ष', subtitle: 'महान राष्ट्रकूट सम्राट', parent: 'krishna_1_rashtrakuta', gender: 'male', yug: 'kali', isProminent: true, parichay: 'गोविंद द्वितीय के भाई। इन्होंने साम्राज्य का विस्तार उत्तर भारत तक किया और कन्नौज के त्रिपक्षीय संघर्ष (Tripartite Struggle) में प्रतिहारों और पालों को पराजित किया।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'ranavaloka_kambha', name: 'स्तम्भ (कम्भ)', subtitle: 'ध्रुव के ज्येष्ठ पुत्र', parent: 'dhruva_dharavarsha', gender: 'male', yug: 'kali', parichay: 'गंगवाडी (कर्नाटक) के गवर्नर। इन्होंने अपने भाई गोविंद तृतीय के खिलाफ विद्रोह किया था।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'govinda_3_rashtrakuta', name: 'गोविंद तृतीय', subtitle: 'ध्रुव के पुत्र', parent: 'dhruva_dharavarsha', gender: 'male', yug: 'kali', parichay: 'इनके शासनकाल में राष्ट्रकूट साम्राज्य हिमालय से लेकर कन्याकुमारी तक सबसे अधिक शक्तिशाली था।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'gamundabbe_queen', name: 'गामुंडब्बे', subtitle: 'गोविंद तृतीय की पत्नी', parent: '', spouseOf: 'govinda_3_rashtrakuta', gender: 'female', yug: 'kali' },
-    { id: 'indra_gujarat', name: 'इंद्र (गुजरात)', subtitle: 'ध्रुव के पुत्र', parent: 'dhruva_dharavarsha', gender: 'male', yug: 'kali', parichay: 'इन्हें लाट (गुजरात) का शासक बनाया गया था, जहाँ से गुजरात राष्ट्रकूट शाखा शुरू हुई।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'amoghavarsha_1_rashtrakuta', name: 'अमोघवर्ष प्रथम', subtitle: 'महानतम राष्ट्रकूट सम्राट (814–878 ई.)', parent: 'govinda_3_rashtrakuta', mother: 'gamundabbe_queen', gender: 'male', yug: 'kali', isProminent: true, parichay: '64 वर्षों तक शासन किया। ये जैन धर्म और कला के महान संरक्षक थे। इन्होंने कन्नड़ साहित्य का प्रथम ग्रंथ "कविराजमार्ग" लिखा और मान्यखेत (Malkhed) को अपनी नई राजधानी बनाया।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'asagavve_queen', name: 'असगव्वे', subtitle: 'अमोघवर्ष प्रथम की पत्नी', parent: '', spouseOf: 'amoghavarsha_1_rashtrakuta', gender: 'female', yug: 'kali' },
-    { id: 'krishna_2_rashtrakuta', name: 'कृष्ण द्वितीय', subtitle: 'अमोघवर्ष प्रथम पुत्र', parent: 'amoghavarsha_1_rashtrakuta', mother: 'asagavve_queen', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'mahadevi_kalachuri', name: 'महादेवी', subtitle: 'कृष्ण द्वितीय की पत्नी (कलचुरी)', parent: '', spouseOf: 'krishna_2_rashtrakuta', gender: 'female', yug: 'kali' },
-    { id: 'jagattunga', name: 'जगत्तुंग', subtitle: 'कृष्ण द्वितीय के पुत्र', parent: 'krishna_2_rashtrakuta', mother: 'mahadevi_kalachuri', gender: 'male', yug: 'kali', parichay: 'ये पिता के जीवनकाल में ही मृत्यु को प्राप्त हो गए थे, इसलिए राजा नहीं बन पाए।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'lakshmi_kalachuri', name: 'लक्ष्मी', subtitle: 'जगत्तुंग की पत्नी (कलचुरी)', parent: '', spouseOf: 'jagattunga', gender: 'female', yug: 'kali' },
-    { id: 'govindamba', name: 'गोविंदांबा', subtitle: 'जगत्तुंग की पत्नी (कलचुरी)', parent: '', spouseOf: 'jagattunga', gender: 'female', yug: 'kali' },
-    { id: 'indra_3_rashtrakuta', name: 'इंद्र तृतीय', subtitle: 'जगत्तुंग के पुत्र', parent: 'jagattunga', mother: 'lakshmi_kalachuri', gender: 'male', yug: 'kali', parichay: 'इन्होंने उत्तर भारत पर आक्रमण कर प्रतिहारों की राजधानी कन्नौज को नष्ट कर दिया था।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'vijamba_kalachuri', name: 'विजाम्बा', subtitle: 'इंद्र तृतीय की पत्नी', parent: '', spouseOf: 'indra_3_rashtrakuta', gender: 'female', yug: 'kali' },
-    { id: 'amoghavarsha_2_rashtrakuta', name: 'अमोघवर्ष द्वितीय', subtitle: 'इंद्र तृतीय पुत्र', parent: 'indra_3_rashtrakuta', mother: 'vijamba_kalachuri', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'govinda_4_rashtrakuta', name: 'गोविंद चतुर्थ', subtitle: 'इंद्र तृतीय पुत्र', parent: 'indra_3_rashtrakuta', mother: 'vijamba_kalachuri', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'amoghavarsha_3_rashtrakuta', name: 'अमोघवर्ष तृतीय (बद्दिग)', subtitle: 'जगत्तुंग के पुत्र', parent: 'jagattunga', mother: 'govindamba', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'kundakadevi_kalachuri', name: 'कुंदकदेवी', subtitle: 'अमोघवर्ष तृतीय की पत्नी', parent: '', spouseOf: 'amoghavarsha_3_rashtrakuta', gender: 'female', yug: 'kali' },
-    { id: 'krishna_3_rashtrakuta', name: 'कृष्ण तृतीय', subtitle: 'अंतिम महान सम्राट', parent: 'amoghavarsha_3_rashtrakuta', mother: 'kundakadevi_kalachuri', gender: 'male', yug: 'kali', isProminent: true, parichay: 'इन्होंने चोलों को तक्कोलम के युद्ध में हराया और रामेश्वरम तक अपना साम्राज्य फैलाया, जहाँ इन्होंने "कृष्णेश्वर मंदिर" बनवाया।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'khottiga_rashtrakuta', name: 'खोट्टिग', subtitle: 'कृष्ण तृतीय के भाई', parent: 'amoghavarsha_3_rashtrakuta', mother: 'kundakadevi_kalachuri', gender: 'male', yug: 'kali', parichay: 'इनके समय में परमार राजा सीयक ने मान्यखेत पर आक्रमण कर उसे लूटा था।', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'nirupama_rashtrakuta', name: 'निरुपम', subtitle: 'कृष्ण तृतीय के भाई', parent: 'amoghavarsha_3_rashtrakuta', mother: 'kundakadevi_kalachuri', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'karka_2_rashtrakuta', name: 'कर्क द्वितीय (कक्क)', subtitle: 'निरुपम के पुत्र', parent: 'nirupama_rashtrakuta', gender: 'male', yug: 'kali', clusterName: 'राष्ट्रकूट राजवंश' },
-    { id: 'indra_4_rashtrakuta', name: 'इंद्र चतुर्थ', subtitle: 'राष्ट्रकूट वंश के अंतिम शासक', parent: 'karka_2_rashtrakuta', gender: 'male', yug: 'kali', parichay: 'कल्याणी के चालुक्यों ने राष्ट्रकूटों का अंत कर दिया। 982 ई. में इंद्र चतुर्थ ने श्रवणबेलगोला में "सल्लेखना" (जैन विधि से प्राण त्यागना) व्रत लेकर अपना जीवन समाप्त किया।', clusterName: 'राष्ट्रकूट राजवंश' },
-    // ----------------------------------------------------
-    // VIJAYANAGARA EMPIRE (Sangama, Tuluva, Aravidu)
-    // ----------------------------------------------------
-    { id: 'vijayanagara_sangama_proxy', name: 'संगम वंश (विजयनगर)', subtitle: 'यदुवंश शाखा', parent: 'yadu_chandra', yug: 'kali', parichay: 'विजयनगर साम्राज्य का प्रथम राजवंश, जो स्वयं को चंद्रवंशी (यदुवंशी) मानता था।', clusterName: 'विजयनगर (संगम वंश)', isProxy: true },
-    { id: 'bhavana_sangama', name: 'भावना संगम', subtitle: 'संगम वंश के पूर्वज', parent: 'vijayanagara_sangama_proxy', gender: 'male', yug: 'kali', parichay: 'ये कुरुबा/यादव समुदाय के मुखिया थे। इनके 5 पुत्रों ने मिलकर विजयनगर की नींव रखी।', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'maravve_nayakiti', name: 'मारव्वे नायकिटी', subtitle: 'भावना संगम की पत्नी', parent: '', spouseOf: 'bhavana_sangama', gender: 'female', yug: 'kali' },
-    
-    { id: 'harihara_1', name: 'हरिहर प्रथम (हक्का)', subtitle: 'विजयनगर के संस्थापक', parent: 'bhavana_sangama', mother: 'maravve_nayakiti', gender: 'male', yug: 'kali', isProminent: true, parichay: 'इन्होंने अपने भाई बुक्का और गुरु विद्यारण्य के आशीर्वाद से 1336 ई. में तुंगभद्रा नदी के तट पर महान विजयनगर साम्राज्य की स्थापना की।', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'kampana', name: 'कम्पना', subtitle: 'भावना के पुत्र', parent: 'bhavana_sangama', mother: 'maravve_nayakiti', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'bukka_1', name: 'बुक्का राय प्रथम', subtitle: 'हरिहर के भाई', parent: 'bhavana_sangama', mother: 'maravve_nayakiti', gender: 'male', yug: 'kali', isProminent: true, parichay: 'विजयनगर साम्राज्य के सह-संस्थापक। इन्होंने मदुरै सल्तनत का अंत किया।', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'marappa', name: 'मारप्पा', subtitle: 'भावना के पुत्र', parent: 'bhavana_sangama', mother: 'maravve_nayakiti', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'muddappa', name: 'मुद्दप्पा', subtitle: 'भावना के पुत्र', parent: 'bhavana_sangama', mother: 'maravve_nayakiti', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'harihara_2', name: 'हरिहर द्वितीय', subtitle: 'बुक्का प्रथम पुत्र', parent: 'bukka_1', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'deva_raya_1', name: 'देव राय प्रथम', subtitle: 'हरिहर द्वितीय पुत्र', parent: 'harihara_2', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (संगम वंश)' },
-    { id: 'deva_raya_2', name: 'देव राय द्वितीय (प्रौढ़ देव राय)', subtitle: 'संगम वंश के महानतम शासक', parent: 'deva_raya_1', gender: 'male', yug: 'kali', isProminent: true, clusterName: 'विजयनगर (संगम वंश)' },
-
-    { id: 'vijayanagara_tuluva_proxy', name: 'तुलुव वंश', subtitle: 'चंद्रवंश (तुर्वसु शाखा)', parent: 'turvasu_chandra', yug: 'kali', parichay: 'विजयनगर साम्राज्य का तीसरा राजवंश, जो स्वयं को ययाति के पुत्र तुर्वसु का वंशज मानता था। कृष्णदेवराय इसी वंश के थे।', clusterName: 'विजयनगर (तुलुव वंश)', isProxy: true },
-    { id: 'timma_bhupala', name: 'तिम्मा भूपाल', subtitle: 'तुलुव वंश के पूर्वज', parent: 'vijayanagara_tuluva_proxy', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (तुलुव वंश)' },
-    { id: 'devaki_tuluva', name: 'देवकी', subtitle: 'तिम्मा भूपाल की पत्नी', parent: '', spouseOf: 'timma_bhupala', gender: 'female', yug: 'kali' },
-    { id: 'ishvara_nayaka', name: 'ईश्वर नायक', subtitle: 'विजयनगर के सेनापति', parent: 'timma_bhupala', mother: 'devaki_tuluva', gender: 'male', yug: 'kali', parichay: 'ये सुलुव नरसिम्हा के सेनापति थे और तुलुव राजवंश के उदय का कारण बने।', clusterName: 'विजयनगर (तुलुव वंश)' },
-    { id: 'bukkamma_tuluva', name: 'बुक्कम्मा', subtitle: 'ईश्वर नायक की पत्नी', parent: '', spouseOf: 'ishvara_nayaka', gender: 'female', yug: 'kali' },
-    { id: 'narasa_nayaka', name: 'तुलुव नरसा नायक', subtitle: 'तुलुव वंश के संस्थापक', parent: 'ishvara_nayaka', mother: 'bukkamma_tuluva', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (तुलुव वंश)' },
-    
-    { id: 'tippaji_queen', name: 'तिप्पाजी', subtitle: 'नरसा नायक की पत्नी', parent: '', spouseOf: 'narasa_nayaka', gender: 'female', yug: 'kali' },
-    { id: 'nagaladevi_queen', name: 'नागलादेवी', subtitle: 'नरसा नायक की पत्नी', parent: '', spouseOf: 'narasa_nayaka', gender: 'female', yug: 'kali' },
-    { id: 'obambika_queen', name: 'ओबाम्बिका', subtitle: 'नरसा नायक की पत्नी', parent: '', spouseOf: 'narasa_nayaka', gender: 'female', yug: 'kali' },
-    { id: 'vira_narasimha_raya', name: 'वीर नरसिंह राय', subtitle: 'नरसा नायक पुत्र', parent: 'narasa_nayaka', mother: 'tippaji_queen', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (तुलुव वंश)' },
-    { id: 'krishnadevaraya', name: 'सम्राट कृष्णदेवराय', subtitle: 'विजयनगर के महानतम सम्राट', parent: 'narasa_nayaka', mother: 'nagaladevi_queen', gender: 'male', yug: 'kali', isProminent: true, parichay: 'भारत के इतिहास के सबसे महान सम्राटों में से एक। अष्टदिग्गज इनके दरबार में थे। इन्होंने बीजापुर, गोलकुंडा और ओडिशा के गजपतियों को हराया।', clusterName: 'विजयनगर (तुलुव वंश)' },
-    { id: 'tirumala_devi', name: 'तिरुमला देवी', subtitle: 'कृष्णदेवराय की पटरानी', parent: '', spouseOf: 'krishnadevaraya', gender: 'female', yug: 'kali' },
-    { id: 'chinna_devi', name: 'चिन्ना देवी', subtitle: 'कृष्णदेवराय की पत्नी', parent: '', spouseOf: 'krishnadevaraya', gender: 'female', yug: 'kali' },
-    { id: 'annapurna_devi', name: 'अन्नपूर्णा देवी', subtitle: 'कृष्णदेवराय की पत्नी', parent: '', spouseOf: 'krishnadevaraya', gender: 'female', yug: 'kali' },
-    { id: 'achyuta_deva_raya', name: 'अच्युत देव राय', subtitle: 'नरसा नायक पुत्र', parent: 'narasa_nayaka', mother: 'obambika_queen', gender: 'male', yug: 'kali', clusterName: 'विजयनगर (तुलुव वंश)' },
 
     // --- संदर्भ के लिए अन्य राजवंश/पात्र (यदुवंश से जुड़े) ---
     { id: 'bhishmaka_chandra', name: 'भीष्मक', subtitle: 'विदर्भ नरेश', parent: 'other_dynasties_proxy', clusterName: 'अन्य राजवंश (इन-लॉ)', yug: 'dwapar' },
