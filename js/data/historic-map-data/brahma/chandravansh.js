@@ -1,152 +1,150 @@
 export const chandravanshData = [
-
-    
-
     // --- अत्रि के पुत्र ---
     
-    { id: 'dattatreya_chandra', name: 'दत्तात्रेय', subtitle: 'विष्णु अंश', parent: 'atri',mother: 'anasuya_chandra', gender: 'male', yug: 'satya' },
-    { id: 'durvasa_chandra', name: 'दुर्वासा', subtitle: 'शिव अंश', parent: 'atri', mother: 'anasuya_chandra', gender: 'male', yug: 'satya' },
-    { id: 'chandra_chandra', name: 'चंद्र', subtitle: 'चंद्र देव (चंद्रवंश के मूल)', parent: 'atri', mother: 'anasuya_chandra', yug: 'satya' },
+    { id: 'dattatreya_chandra', name: 'दत्तात्रेय', subtitle: 'विष्णु अंश', parent: 'atri',mother: 'anasuya_chandra',lineLabel: 'दत्तात्रेय', gender: 'male', yug: 'satya' },
+    { id: 'durvasa_chandra', name: 'दुर्वासा', subtitle: 'शिव अंश', parent: 'atri', mother: 'anasuya_chandra',lineLabel: 'दुर्वासा', gender: 'male', yug: 'satya' },
+    { id: 'chandra_chandra', name: 'चंद्र', subtitle: 'चंद्र देव (चंद्रवंश के मूल)', parent: 'atri',gender: 'male',lineLabel: 'चंद्र', mother: 'anasuya_chandra', yug: 'satya' },
 
     // --- चंद्र देव की पत्नियां ---
-    { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी (बृहस्पति की पूर्व पत्नी)', parent: '', spouseOf: 'chandra_chandra', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ'},
-    // --- चंद्र देव की अन्य पत्नी 
-    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'चंद्र (सोम वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'chandra_chandra', clusterName:'चंद्र की पत्नियाँ',yug: 'satya', parichay: 'महाभारत (आदि पर्व) के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) की पत्नी।' },
+    { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी (बृहस्पति की पूर्व पत्नी)', parent: '', spouseOf: 'chandra_chandra',gender: 'female', lineLabel: 'तारा', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ'},
+    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'चंद्र (सोम वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'chandra_chandra', lineLabel: 'मनोहरा',clusterName:'चंद्र की पत्नियाँ',yug: 'satya', parichay: 'महाभारत (आदि पर्व) के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) की पत्नी।' },
     
    // एवं दैवीय संतानें (अष्ट-वसु के रूप में) ---
-    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', clusterName:'चंद्र के पुत्र', yug: 'satya', parichay: 'ये चंद्र देव और मनोहरा के दैवीय पुत्र हैं। महाभारत के समय देवर्षियों के कहने पर इन्होंने ही अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
-    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra',clusterName:'चंद्र के पुत्र', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-    { id: 'prana_chandra', name: 'प्राण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra',clusterName:'चंद्र के पुत्र', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-    { id: 'ramana_chandra', name: 'रमण', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', clusterName:'चंद्र के पुत्र', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', clusterName:'चंद्र के अन्य पुत्र', yug: 'satya',lineLabel: 'वर्चस्', parichay: 'ये चंद्र देव और मनोहरा के दैवीय पुत्र हैं। महाभारत के समय देवर्षियों के कहने पर इन्होंने ही अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
+    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra',clusterName:'चंद्र के अन्य पुत्र',lineLabel: 'शिशिर', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'prana_chandra', name: 'प्राण', subtitle: 'चंद्र-मनोहरा पुत्र',lineLabel: 'प्राण', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra',clusterName:'चंद्र के अन्य पुत्र', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
+    { id: 'ramana_chandra', name: 'रमण', subtitle: 'चंद्र-मनोहरा पुत्र',lineLabel: 'रमण', gender: 'male', parent: 'chandra_chandra', clusterName:'चंद्र के अन्य पुत्र', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
 
     // (दक्ष की 27 पुत्रियां भी चंद्र की पत्नियां हैं, उन्हें आवश्यकता अनुसार बाद में जोड़ा जा सकता है)
 
     // --- चंद्र देव के पुत्र ---
-    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',clusterName:'चंद्र के पुत्र', yug: 'satya' },
+    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',lineLabel: 'बुध',gender: 'male', yug: 'satya' },
 
     // --- बुध की पत्नी ---
-    { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya' },
+    { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', gender: 'female',parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya' },
 
     // --- पुरुरवा ---
-    { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra',clusterName:'चंद्रवंश Prarambh', mother: 'ila_chandra', yug: 'satya' },
-    { id: 'urvashi_chandra', name: 'उर्वशी', subtitle: 'पुरुरवा की पत्नी (अप्सरा)', parent: '', spouseOf: 'pururava_chandra', yug: 'satya' },
+    { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra',gender: 'male',clusterName:'चंद्रवंश प्रारंभ ',lineLabel: 'पुरुरवा', mother: 'ila_chandra', yug: 'satya' },
+    { id: 'urvashi_chandra', name: 'उर्वशी', subtitle: 'पुरुरवा की पत्नी (अप्सरा)', gender: 'female',parent: '', spouseOf: 'pururava_chandra', yug: 'satya' },
 
     // --- पुरुरवा के पुत्र (आयु, श्रुतायु, सत्यायु, रय, विजय, जय) ---
-        { id: 'chandravansh_dynasty_proxy', name: 'पुरुरवा के अन्य पुत्र', subtitle: 'श्रुतायु आदि', parent: 'pururava_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', isProxy: true },
-    { id: 'ayu_chandra', name: 'आयु', subtitle: 'पुरुरवा के ज्येष्ठ पुत्र', parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya' },
-    { id: 'shrutayu_chandra', name: 'श्रुतायु', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
-    { id: 'satyayu_chandra', name: 'सत्यायु', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
-    { id: 'raya_chandra', name: 'रय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
-    { id: 'vijaya_chandra', name: 'विजय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
-    { id: 'jaya_chandra', name: 'जय', subtitle: 'पुरुरवा के पुत्र', parent: 'chandravansh_dynasty_proxy', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
-    { id: 'vasuman_shrutayu_chandra', name: 'वसुमान', subtitle: 'श्रुतायु पुत्र', gender: 'male', parent: 'shrutayu_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र श्रुतायु के पुत्र थे।' },
-    { id: 'shrutanjaya_chandra', name: 'श्रुतंजय', subtitle: 'सत्यायु पुत्र', gender: 'male', parent: 'satyayu_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र सत्यायु के पुत्र थे।' },
-    { id: 'eka_raya_chandra', name: 'एक', subtitle: 'रय पुत्र', gender: 'male', parent: 'raya_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र रय के पुत्र थे।' },
-    { id: 'amita_jaya_chandra', name: 'अमित', subtitle: 'जय पुत्र', gender: 'male', parent: 'jaya_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र जय के पुत्र थे।' },
+    
+    { id: 'ayu_chandra', name: 'आयु', subtitle: 'पुरुरवा के ज्येष्ठ पुत्र',gender: 'male', parent: 'pururava_chandra', lineLabel: 'आयु',mother: 'urvashi_chandra', yug: 'satya'},
+    { id: 'shrutayu_chandra', name: 'श्रुतायु', subtitle: 'पुरुरवा के पुत्र',gender: 'male', parent: 'pururava_chandra', mother: 'urvashi_chandra',lineLabel: 'श्रुतायु', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'satyayu_chandra', name: 'सत्यायु', subtitle: 'पुरुरवा के पुत्र', lineLabel: 'सत्यायु',parent: 'pururava_chandra',gender: 'male', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'raya_chandra', name: 'रय', subtitle: 'पुरुरवा के पुत्र',gender: 'male', lineLabel: 'रय',parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'vijaya_chandra', name: 'विजय', subtitle: 'पुरुरवा के पुत्र',lineLabel: 'विजय',gender: 'male', parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'jaya_chandra', name: 'जय', subtitle: 'पुरुरवा के पुत्र', lineLabel: 'जय',parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
+    { id: 'vasuman_shrutayu_chandra', name: 'वसुमान', subtitle: 'श्रुतायु पुत्र', gender: 'male',lineLabel: 'वसुमान', parent: 'shrutayu_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र श्रुतायु के पुत्र थे।' },
+    { id: 'shrutanjaya_chandra', name: 'श्रुतंजय', subtitle: 'सत्यायु पुत्र', gender: 'male', parent: 'satyayu_chandra', lineLabel: 'श्रुतंजय',yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र सत्यायु के पुत्र थे।' },
+    { id: 'eka_raya_chandra', name: 'एक', subtitle: 'रय पुत्र', gender: 'male', parent: 'raya_chandra',lineLabel: 'एक', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र रय के पुत्र थे।' },
+    { id: 'amita_jaya_chandra', name: 'अमित', subtitle: 'जय पुत्र', gender: 'male', parent: 'jaya_chandra', lineLabel: 'अमित',yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र', parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र जय के पुत्र थे।' },
 
     // --- आयु की पत्नी ---
-    { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी / स्वर्भानु पुत्री', parent: 'svarbhanu_danava', spouseOf: 'ayu_chandra', yug: 'satya' },
+    { id: 'prabha_chandra', name: 'प्रभा', subtitle: 'आयु की पत्नी / स्वर्भानु पुत्री', gender: 'female',parent: 'svarbhanu_danava', spouseOf: 'ayu_chandra', yug: 'satya' },
 
     // --- आयु के पुत्र (नहुष, क्षत्रवृद्ध, रम्भ, रजि, अनेना) ---
 
-    { id: 'ayu_chandravanshi_proxy', name: 'आयु चंद्रवंशी', subtitle: 'आयु के वंशज', parent: 'ayu_chandra', isProxy: true, clusterName: 'आयु चंद्रवंशी', yug: 'satya' },
-    { id: 'nahush_chandravanshi_proxy', name: 'नहुष चंद्रवंश', subtitle: 'नहुष के वंशज', parent: 'nahusha_chandra', isProxy: true, clusterName: 'नहुष चंद्रवंशी', yug: 'satya' },
 
-    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र / अशोक सुंदरी पति', parent: 'ayu_chandra', mother: 'prabha_chandra', spouseOf: 'ashokasundari', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'nahusha_chandra', name: 'नहुष', subtitle: 'आयु के पुत्र / अशोक सुंदरी पति', parent: 'ayu_chandra', gender:'male',lineLabel:'नहुष', mother: 'prabha_chandra', spouseOf: 'ashokasundari', clusterName:'आयु के पुत्र',  yug: 'satya'},
     
     // क्षत्रवृद्ध चंद्रवंशी
-    { id: 'kshatravriddha_chandravanshi_proxy', name: 'क्षत्रवृद्ध वंशी ', subtitle: 'क्षत्रवृद्ध के वंशज', parent: 'ayu_chandravanshi_proxy', isProxy: true, clusterName: 'आयु चंद्रवंशी', yug: 'satya' },
     
-    { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'kshatravriddha_chandravanshi_proxy', mother: 'prabha_chandra', yug: 'satya', clusterName: 'क्षत्रवृद्ध वंशी' },
-    { id: 'sunahotra_kashi_chandra', name: 'सुनहोत्र', subtitle: 'क्षत्रवृद्ध पुत्र', gender: 'male', parent: 'kshatravriddha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'kusha_vansh_proxy', name: 'कुश वंश', subtitle: 'कुश के वंशज', isProxy: true, parent: 'sunahotra_kashi_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'kusha_chandra', name: 'कुश', subtitle: 'सुनहोत्र पुत्र', gender: 'male', parent: 'kusha_vansh_proxy', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'prati_kusha_chandra', name: 'प्रति', subtitle: 'कुश पुत्र', gender: 'male', parent: 'kusha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'sanjaya_kusha_chandra', name: 'सञ्जय', subtitle: 'प्रति पुत्र', gender: 'male', parent: 'prati_kusha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'jaya_kusha_chandra', name: 'जय', subtitle: 'सञ्जय पुत्र', gender: 'male', parent: 'sanjaya_kusha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'krita_kusha_chandra', name: 'कृत', subtitle: 'जय पुत्र', gender: 'male', parent: 'jaya_kusha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'haryavana_chandra', name: 'हर्यवन (हर्यश्व)', subtitle: 'कृत पुत्र', gender: 'male', parent: 'krita_kusha_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'sahadeva_kusha_chandra', name: 'सहदेव', subtitle: 'हर्यवन पुत्र', gender: 'male', parent: 'haryavana_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'hina_chandra', name: 'हीन', subtitle: 'सहदेव पुत्र', gender: 'male', parent: 'sahadeva_kusha_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'jayasena_kusha_chandra', name: 'जयसेन', subtitle: 'हीन पुत्र', gender: 'male', parent: 'hina_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'sankriti_kusha_chandra', name: 'सङ्कृति', subtitle: 'जयसेन पुत्र', gender: 'male', parent: 'jayasena_kusha_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'jaya_sankriti_chandra', name: 'जय (क्षात्रधर्मा)', subtitle: 'सङ्कृति पुत्र', gender: 'male', parent: 'sankriti_kusha_chandra', yug: 'treta', parichay: 'यह महान महारथी थे, जिन्होंने क्षत्रियों के धर्म का पूरी निष्ठा से पालन किया।', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'kshatravriddha_chandra', name: 'क्षत्रवृद्ध', subtitle: 'आयु के पुत्र',lineLabel: 'क्षत्रवृद्ध', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु के पुत्र'},
+    { id: 'sunahotra_kashi_chandra', name: 'सुनहोत्र', subtitle: 'क्षत्रवृद्ध पुत्र', gender: 'male', parent: 'kshatravriddha_chandra', yug: 'satya', clusterName: 'क्षत्रवृद्ध वंशी' },
+    
+    // कुश चंद्रवंश 
+    { id: 'kusha_chandra', name: 'कुश', subtitle: 'सुनहोत्र पुत्र',lineLabel: 'कुश', gender: 'male', parent: 'sunahotra_kashi_chandra', yug: 'satya'},
+    { id: 'prati_kusha_chandra', name: 'प्रति', subtitle: 'कुश पुत्र', gender: 'male', parent: 'kusha_chandra', yug: 'satya', clusterName: 'कुश चंद्रवंश' },
+    { id: 'sanjaya_kusha_chandra', name: 'सञ्जय', subtitle: 'प्रति पुत्र', gender: 'male', parent: 'prati_kusha_chandra', yug: 'satya', clusterName: 'कुश चंद्रवंश' },
+    { id: 'jaya_kusha_chandra', name: 'जय', subtitle: 'सञ्जय पुत्र', gender: 'male', parent: 'sanjaya_kusha_chandra', yug: 'satya', clusterName: 'कुश चंद्रवंश' },
+    { id: 'krita_kusha_chandra', name: 'कृत', subtitle: 'जय पुत्र', gender: 'male', parent: 'jaya_kusha_chandra', yug: 'satya', clusterName: 'कुश चंद्रवंश' },
+    { id: 'haryavana_chandra', name: 'हर्यवन (हर्यश्व)', subtitle: 'कृत पुत्र', gender: 'male', parent: 'krita_kusha_chandra', yug: 'treta', clusterName: 'कुश चंद्रवंश' },
+    { id: 'sahadeva_kusha_chandra', name: 'सहदेव', subtitle: 'हर्यवन पुत्र', gender: 'male', parent: 'haryavana_chandra', yug: 'treta', clusterName: 'कुश चंद्रवंश' },
+    { id: 'hina_chandra', name: 'हीन', subtitle: 'सहदेव पुत्र', gender: 'male', parent: 'sahadeva_kusha_chandra', yug: 'treta', clusterName: 'कुश चंद्रवंश' },
+    { id: 'jayasena_kusha_chandra', name: 'जयसेन', subtitle: 'हीन पुत्र', gender: 'male', parent: 'hina_chandra', yug: 'treta', clusterName: 'कुश चंद्रवंश' },
+    { id: 'sankriti_kusha_chandra', name: 'सङ्कृति', subtitle: 'जयसेन पुत्र', gender: 'male', parent: 'jayasena_kusha_chandra', yug: 'treta', clusterName: 'कुश चंद्रवंश' },
+    { id: 'jaya_sankriti_chandra', name: 'जय (क्षात्रधर्मा)', subtitle: 'सङ्कृति पुत्र', gender: 'male', parent: 'sankriti_kusha_chandra', yug: 'treta', parichay: 'यह महान महारथी थे, जिन्होंने क्षत्रियों के धर्म का पूरी निष्ठा से पालन किया।', clusterName: 'कुश चंद्रवंश' },
 
     // --- काशी राजवंश (Kashi Dynasty) ---
-    { id: 'kashi_dynasty_proxy', name: 'काशी राजवंश', subtitle: 'काश्य और उनके वंशज', isProxy: true, parent: 'sunahotra_kashi_chandra', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'kashya', name: 'काश्य', subtitle: 'काशी के संस्थापक', gender: 'male', parent: 'sunahotra_kashi_chandra', yug: 'satya', parichay: 'इन्हीं के नाम पर काशी (वाराणसी) नगर का नामकरण हुआ माना जाता है।', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'rashtra_chandra', name: 'राष्ट्र', subtitle: 'काश्य पुत्र', gender: 'male', parent: 'kashya', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'dirghatapa_chandra', name: 'दीर्घतपा', subtitle: 'राष्ट्र पुत्र', gender: 'male', parent: 'rashtra_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'dhanvantari_chandra', name: 'धन्वंतरि', subtitle: 'आयुर्वेद प्रवर्तक / विष्णु अंशावतार', gender: 'male', parent: 'dirghatapa_chandra', yug: 'satya', parichay: 'समुद्र मंथन से अमृत कलश लेकर प्रकट हुए थे। काशी राजवंश में इनका जन्म हुआ था और ये महान वैद्य माने जाते हैं।', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'ketuman_chandra', name: 'केतुमान', subtitle: 'धन्वंतरि पुत्र', gender: 'male', parent: 'dhanvantari_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'bhimaratha_chandra', name: 'भीमरथ', subtitle: 'केतुमान पुत्र', gender: 'male', parent: 'ketuman_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'divodasa_chandra', name: 'दिवोदास', subtitle: 'काशी नरेश', gender: 'male', parent: 'bhimaratha_chandra', yug: 'treta', parichay: 'काशी के महान राजा, जिन्होंने क्षेमक राक्षस से काशी को मुक्त कराया था।', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'pratardana_chandra', name: 'प्रतर्दन', subtitle: 'दिवोदास पुत्र (ऋतध्वज)', gender: 'male', parent: 'divodasa_chandra', yug: 'treta', parichay: 'इन्हें ऋतध्वज भी कहा जाता है। इन्होंने पातालकेतु राक्षस का वध कर मदालसा से विवाह किया।', clusterName: 'आयु चंद्रवंशी' },
+    
+    { id: 'kashya', name: 'काश्य', subtitle: 'काशी के संस्थापक', gender: 'male', parent: 'sunahotra_kashi_chandra', yug: 'satya', parichay: 'इन्हीं के नाम पर काशी (वाराणसी) नगर का नामकरण हुआ माना जाता है।' },
+    { id: 'rashtra_chandra', name: 'राष्ट्र', subtitle: 'काश्य पुत्र', gender: 'male', parent: 'kashya', yug: 'satya', clusterName: 'काशी राजवंश' },
+    { id: 'dirghatapa_chandra', name: 'दीर्घतपा', subtitle: 'राष्ट्र पुत्र', gender: 'male', parent: 'rashtra_chandra', yug: 'satya', clusterName: 'काशी राजवंश' },
+    { id: 'dhanvantari_chandra', name: 'धन्वंतरि', subtitle: 'आयुर्वेद प्रवर्तक / विष्णु अंशावतार', gender: 'male', parent: 'dirghatapa_chandra', yug: 'satya', parichay: 'समुद्र मंथन से अमृत कलश लेकर प्रकट हुए थे। काशी राजवंश में इनका जन्म हुआ था और ये महान वैद्य माने जाते हैं।', clusterName: 'काशी राजवंश' },
+    { id: 'ketuman_chandra', name: 'केतुमान', subtitle: 'धन्वंतरि पुत्र', gender: 'male', parent: 'dhanvantari_chandra', yug: 'satya', clusterName: 'काशी राजवंश' },
+    { id: 'bhimaratha_chandra', name: 'भीमरथ', subtitle: 'केतुमान पुत्र', gender: 'male', parent: 'ketuman_chandra', yug: 'treta', clusterName: 'काशी राजवंश' },
+    { id: 'divodasa_chandra', name: 'दिवोदास', subtitle: 'काशी नरेश', gender: 'male', parent: 'bhimaratha_chandra', yug: 'treta', parichay: 'काशी के महान राजा, जिन्होंने क्षेमक राक्षस से काशी को मुक्त कराया था।', clusterName: 'काशी राजवंश' },
+    { id: 'pratardana_chandra', name: 'प्रतर्दन', subtitle: 'दिवोदास पुत्र (ऋतध्वज)', gender: 'male', parent: 'divodasa_chandra', yug: 'treta', parichay: 'इन्हें ऋतध्वज भी कहा जाता है। इन्होंने पातालकेतु राक्षस का वध कर मदालसा से विवाह किया।', clusterName: 'काशी राजवंश' },
     { id: 'madalasa_chandra', name: 'मदालसा', subtitle: 'प्रतर्दन (ऋतध्वज) पत्नी', gender: 'female', parent: '', spouseOf: 'pratardana_chandra', yug: 'treta', clusterName: 'काशी राजवंश', parichay: 'विश्वावसु गन्धर्वराज की पुत्री। यह महान विदुषी और ब्रह्मवादिनी थीं, जिन्होंने पालने में झुलाते हुए ही अपने पुत्रों को ब्रह्मज्ञान दे दिया था।' },
-    { id: 'vikranta_chandra', name: 'विक्रान्त', subtitle: 'प्रतर्दन-मदालसा पुत्र', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'मदालसा के ज्ञान उपदेश से यह बचपन में ही ब्रह्मज्ञानी (संन्यासी) हो गए।', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'subahu_kashi_chandra', name: 'सुबाहु', subtitle: 'प्रतर्दन-मदालसा पुत्र', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'मदालसा के ज्ञान उपदेश से यह बचपन में ही ब्रह्मज्ञानी हो गए।', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'arimardana_chandra', name: 'अरि मर्दन', subtitle: 'प्रतर्दन-मदालसा पुत्र', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'मदालसा के ज्ञान उपदेश से यह बचपन में ही ब्रह्मज्ञानी हो गए।', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'vikranta_chandra', name: 'विक्रान्त', subtitle: 'प्रतर्दन-मदालसा पुत्र', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'मदालसा के ज्ञान उपदेश से यह बचपन में ही ब्रह्मज्ञानी (संन्यासी) हो गए।', clusterName : 'प्रतर्दन अन्य के पुत्र'},
+    { id: 'subahu_kashi_chandra', name: 'सुबाहु', subtitle: 'प्रतर्दन-मदालसा पुत्र', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'मदालसा के ज्ञान उपदेश से यह बचपन में ही ब्रह्मज्ञानी हो गए।', clusterName: 'प्रतर्दन अन्य के पुत्र' },
+    { id: 'arimardana_chandra', name: 'अरि मर्दन', subtitle: 'प्रतर्दन-मदालसा पुत्र', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'मदालसा के ज्ञान उपदेश से यह बचपन में ही ब्रह्मज्ञानी हो गए।', clusterName: 'प्रतर्दन अन्य के पुत्र' },
 
-    { id: 'vatsa_kashi_chandra', name: 'वत्स', subtitle: 'प्रतर्दन पुत्र', gender: 'male', parent: 'pratardana_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'alarka_chandra', name: 'अलर्क', subtitle: 'काशी नरेश', gender: 'male', parent: 'vatsa_kashi_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'महान तपस्वी राजा जिसने 66,000 वर्ष तक राज किया और फिर दत्तात्रेय से ज्ञान प्राप्त कर मोक्ष पाया। यह मदालसा के सबसे छोटे पुत्र थे, जिन्हें राजधर्म की शिक्षा मिली थी।', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'vatsa_kashi_chandra', name: 'वत्स', subtitle: 'प्रतर्दन पुत्र', gender: 'male', parent: 'pratardana_chandra', yug: 'treta',clusterName: 'प्रतर्दन अन्य के पुत्र' },
+    { id: 'alarka_chandra', name: 'अलर्क', subtitle: 'काशी नरेश', gender: 'male', parent: 'pratardana_chandra', mother: 'madalasa_chandra', yug: 'treta', parichay: 'महान तपस्वी राजा जिसने 66,000 वर्ष तक राज किया और फिर दत्तात्रेय से ज्ञान प्राप्त कर मोक्ष पाया। यह मदालसा के सबसे छोटे पुत्र थे, जिन्हें राजधर्म की शिक्षा मिली थी।' },
 
-    { id: 'sannati_kashi_chandra', name: 'सन्नति', subtitle: 'अलर्क पुत्र', gender: 'male', parent: 'alarka_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'sunitha_kashi_chandra', name: 'सुनीथ', subtitle: 'सन्नति पुत्र', gender: 'male', parent: 'sannati_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'suketu_kashi_chandra', name: 'सुकेतु', subtitle: 'सुनीथ पुत्र', gender: 'male', parent: 'sunitha_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'satyaketu_kashi_chandra', name: 'सत्यकेतु', subtitle: 'सुकेतु पुत्र', gender: 'male', parent: 'suketu_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'dhrishtaketu_kashi_chandra', name: 'धृष्टकेतु', subtitle: 'सत्यकेतु पुत्र', gender: 'male', parent: 'satyaketu_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'sukumara_kashi_chandra', name: 'सुकुमार', subtitle: 'धृष्टकेतु पुत्र', gender: 'male', parent: 'dhrishtaketu_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'vitihotra_kashi_chandra', name: 'वीतिहोत्र', subtitle: 'सुकुमार पुत्र', gender: 'male', parent: 'sukumara_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'bharga_kashi_chandra', name: 'भर्ग', subtitle: 'वीतिहोत्र पुत्र', gender: 'male', parent: 'vitihotra_kashi_chandra', yug: 'treta', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'bhargabhumi_chandra', name: 'भार्गभूमि', subtitle: 'भर्ग पुत्र', gender: 'male', parent: 'bharga_kashi_chandra', yug: 'treta', parichay: 'भर्ग से भार्गभूमि हुए। इन्हीं के वंशज आगे चलकर भार्गव (वत्स) कहलाए।', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'sannati_kashi_chandra', name: 'सन्नति', subtitle: 'अलर्क पुत्र', gender: 'male', parent: 'alarka_chandra', yug: 'treta', },
+    { id: 'sunitha_kashi_chandra', name: 'सुनीथ', subtitle: 'सन्नति पुत्र', gender: 'male', parent: 'sannati_kashi_chandra', yug: 'treta' },
+    { id: 'suketu_kashi_chandra', name: 'सुकेतु', subtitle: 'सुनीथ पुत्र', gender: 'male', parent: 'sunitha_kashi_chandra', yug: 'treta' },
+    { id: 'satyaketu_kashi_chandra', name: 'सत्यकेतु', subtitle: 'सुकेतु पुत्र', gender: 'male', parent: 'suketu_kashi_chandra', yug: 'treta' },
+    { id: 'dhrishtaketu_kashi_chandra', name: 'धृष्टकेतु', subtitle: 'सत्यकेतु पुत्र', gender: 'male', parent: 'satyaketu_kashi_chandra', yug: 'treta' },
+    { id: 'sukumara_kashi_chandra', name: 'सुकुमार', subtitle: 'धृष्टकेतु पुत्र', gender: 'male', parent: 'dhrishtaketu_kashi_chandra', yug: 'treta' },
+    { id: 'vitihotra_kashi_chandra', name: 'वीतिहोत्र', subtitle: 'सुकुमार पुत्र', gender: 'male', parent: 'sukumara_kashi_chandra', yug: 'treta'},
+    { id: 'bharga_kashi_chandra', name: 'भर्ग', subtitle: 'वीतिहोत्र पुत्र', gender: 'male', parent: 'vitihotra_kashi_chandra', yug: 'treta' },
+    { id: 'bhargabhumi_chandra', name: 'भार्गभूमि', subtitle: 'भर्ग पुत्र', gender: 'male', parent: 'bharga_kashi_chandra', yug: 'treta', parichay: 'भर्ग से भार्गभूमि हुए। इन्हीं के वंशज आगे चलकर भार्गव (वत्स) कहलाए।'},
     
     // रम्भ के वंशज
 
-    { id: 'rambha_ayu_chandra', name: 'रम्भ', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
+    { id: 'rambha_ayu_chandra', name: 'रम्भ', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya' ,clusterName : 'आयु के पुत्र'
+    },
     
     { id: 'rabhasa_chandra', name: 'रभस', subtitle: 'रम्भ पुत्र', gender: 'male', parent: 'rambha_ayu_chandra', yug: 'satya', clusterName: 'रम्भ वंश' },
     { id: 'gambhira_chandra', name: 'गम्भीर', subtitle: 'रभस पुत्र', gender: 'male', parent: 'rabhasa_chandra', yug: 'satya', clusterName: 'रम्भ वंश' },
     { id: 'akriya_chandra', name: 'अक्रिय', subtitle: 'गम्भीर पुत्र', gender: 'male', parent: 'gambhira_chandra', yug: 'satya', parichay: 'भागवत पुराण (9.17.10-11) के अनुसार, इनकी पत्नी के माध्यम से ब्राह्मणों के एक विशिष्ट वंश का आरंभ हुआ। क्षत्रिय राजा होने के बावजूद इनके वंशज ब्रह्मर्षि पद को प्राप्त हुए।', clusterName: 'रम्भ वंश' },
     
-    { id: 'raji_chandra', name: 'रजि', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'rajeya_chandra', name: 'रजेय (500 पुत्र)', subtitle: 'रजि के पुत्र', gender: 'male', parent: 'raji_chandra', yug: 'satya', parichay: 'राजा रजि के 500 बलवान पुत्र। इन्होंने इंद्र से स्वर्ग छीन लिया था, जिसे बाद में बृहस्पति के छल से नष्ट किया गया।', clusterName: 'आयु चंद्रवंशी' },
+    //
+    { id: 'raji_chandra', name: 'रजि', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु के पुत्र'},
+    { id: 'rajeya_chandra', name: 'रजेय (500 पुत्र)', subtitle: 'रजि के पुत्र', gender: 'male', parent: 'raji_chandra', yug: 'satya', parichay: 'राजा रजि के 500 बलवान पुत्र। इन्होंने इंद्र से स्वर्ग छीन लिया था, जिसे बाद में बृहस्पति के छल से नष्ट किया गया' },
     
     // अनेना के वंशज
-    { id: 'anena_chandra', name: 'अनेना', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु चंद्रवंशी' },
-    { id: 'anena_vansh_proxy', name: 'अनेना वंश', subtitle: 'अनेना के वंशज', isProxy: true, parent: 'anena_chandra', yug: 'satya', },
-    { id: 'shuddha_chandra', name: 'शुद्ध', subtitle: 'अनेना पुत्र', gender: 'male', parent: 'anena_vansh_proxy', yug: 'satya', clusterName: 'अनेना वंश' },
+    { id: 'anena_chandra', name: 'अनेना', subtitle: 'आयु के पुत्र', gender: 'male', parent: 'ayu_chandra', mother: 'prabha_chandra', yug: 'satya', clusterName: 'आयु के पुत्र'},
+    
+    { id: 'shuddha_chandra', name: 'शुद्ध', subtitle: 'अनेना पुत्र', gender: 'male', parent: 'anena_chandra', yug: 'satya', clusterName: 'अनेना वंश' },
     { id: 'shuchi_chandra', name: 'शुचि', subtitle: 'शुद्ध पुत्र', gender: 'male', parent: 'shuddha_chandra', yug: 'satya', clusterName: 'अनेना वंश' },
     { id: 'trikakud_chandra', name: 'त्रिककुद् (धर्मसारथि)', subtitle: 'शुचि पुत्र', gender: 'male', parent: 'shuchi_chandra', yug: 'satya', clusterName: 'अनेना वंश' },
     { id: 'shantaraya_chandra', name: 'शान्तरय', subtitle: 'त्रिककुद् पुत्र', gender: 'male', parent: 'trikakud_chandra', yug: 'satya', parichay: 'ये आत्मज्ञानी (ब्रह्मज्ञानी) थे, अतः इन्होंने अपना वंश आगे नहीं बढ़ाया।', clusterName: 'अनेना वंश' },
 
     // --- नहुष की पत्नी ---
-    { id: 'ashokasundari_chandra', name: 'अशोकसुंदरी', subtitle: 'नहुष की पत्नी (शिव-पार्वती पुत्री)', parent: 'shiva_parivar_proxy', mother: 'parvati', spouseOf: 'nahusha_chandra', yug: 'satya', clusterName: 'शिव परिवार' },
+    { id: 'ashokasundari_chandra', name: 'अशोकसुंदरी', gender: 'female',subtitle: 'नहुष की पत्नी (शिव-पार्वती पुत्री)', parent: 'shiva_parivar_proxy', mother: 'parvati', spouseOf: 'nahusha_chandra', yug: 'satya', clusterName: 'शिव परिवार' },
 
     // --- नहुष के पुत्र (यति, ययाति, संयाति, अयाति, वियति, कृति) ---
 
-    { id: 'nahusha_sons_proxy', name: 'नहुष के अन्य पुत्र', subtitle: 'ययाति के अतिरिक्त ५ पुत्र', isProxy: true, parent: 'nahusha_chandra', yug: 'satya', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'yati_chandra', name: 'यति', subtitle: 'नहुष के ज्येष्ठ पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , parichay: 'नहुष के ज्येष्ठ पुत्र। यति बचपन से ही आत्मज्ञानी थे और राज्यपद प्राप्त करने से मोक्ष में बाधा उत्पन्न होगी ऐसा सोचकर उन्होंने संन्यास ग्रहण कर लिया था।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'yayati_chandra', name: 'ययाति', subtitle: 'महान सम्राट', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya', parichay: 'नहुष के द्वितीय पुत्र। ज्येष्ठ भ्राता यति के संन्यासी हो जाने पर ययाति को चक्रवर्ती सम्राट बनाया गया। इन्होंने अपने अन्य चारों भाइयों को विभिन्न दिशाओं का शासक नियुक्त किया।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'sanyati_chandra', name: 'संयाति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya', parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से संयाति एक थे।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'ayati_nahusha_chandra', name: 'अयाति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya', parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से अयाति एक थे।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'viyati_chandra', name: 'वियति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से वियति एक थे।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'kriti_chandra', name: 'कृति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से कृति एक थे।', clusterName: 'नहुष चंद्रवंशी' },
+    
+    { id: 'yati_chandra', name: 'यति', subtitle: 'नहुष के ज्येष्ठ पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , parichay: 'नहुष के ज्येष्ठ पुत्र। यति बचपन से ही आत्मज्ञानी थे और राज्यपद प्राप्त करने से मोक्ष में बाधा उत्पन्न होगी ऐसा सोचकर उन्होंने संन्यास ग्रहण कर लिया था।', clusterName: 'नहुष के अन्य पुत्र'},
+    
+    { id: 'sanyati_chandra', name: 'संयाति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya', parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से संयाति एक थे।', clusterName: 'नहुष के अन्य पुत्र' },
+    { id: 'ayati_nahusha_chandra', name: 'अयाति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya', parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से अयाति एक थे।', clusterName: 'नहुष के अन्य पुत्र' },
+    { id: 'viyati_chandra', name: 'वियति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से वियति एक थे।', clusterName: 'नहुष के अन्य पुत्र' },
+    { id: 'kriti_chandra', name: 'कृति', subtitle: 'नहुष के पुत्र', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya' , parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से कृति एक थे।', clusterName: 'नहुष के अन्य पुत्र' },
+    { id: 'yayati_chandra', name: 'ययाति', subtitle: 'महान सम्राट', gender: 'male', parent: 'nahusha_chandra', mother: 'ashokasundari_chandra', yug: 'satya', parichay: 'नहुष के द्वितीय पुत्र। ज्येष्ठ भ्राता यति के संन्यासी हो जाने पर ययाति को चक्रवर्ती सम्राट बनाया गया। इन्होंने अपने अन्य चारों भाइयों को विभिन्न दिशाओं का शासक नियुक्त किया।' },
 
     // --- ययाति की पत्नियां ---
-    { id: 'devayani_yayati_chandra', name: 'देवयानी', subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)', parent: 'shukracharya', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
-    { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: 'vrishaparva_danava', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की 2 पत्नियाँ' },
+    { id: 'devayani_yayati_chandra', name: 'देवयानी', subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)', parent: 'shukracharya', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की पत्नियाँ' },
+    { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: 'vrishaparva_danava', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की पत्नियाँ' },
 
     // --- ययाति के पुत्र ---
-        { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'yadu_vansh_proxy', name: 'यदु वंश', subtitle: 'यदु के वंशज', parent: 'yadu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-        { id: 'turvasu_dynasty_proxy', name: 'तुर्वसु वंश', subtitle: 'तुर्वसु के वंशज', parent: 'yayati_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'turvasu_dynasty_proxy', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'तुर्वसु वंश', clusterName: 'नहुष चंद्रवंशी' },
-        { id: 'druhyu_dynasty_proxy', name: 'द्रुह्यु वंश', subtitle: 'द्रुह्यु के वंशज', parent: 'yayati_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'druhyu_chandra', name: 'द्रुह्यु', subtitle: 'ययाति के पुत्र', parent: 'druhyu_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'द्रुह्यु वंश', clusterName: 'नहुष चंद्रवंशी' },
-        { id: 'anu_dynasty_proxy', name: 'अनु वंश', subtitle: 'अनु के वंशज', parent: 'yayati_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'anu_yayati_chandra', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'anu_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'अनु वंश', clusterName: 'नहुष चंद्रवंशी' },
-        { id: 'puru_dynasty_proxy', name: 'पुरु वंश', subtitle: 'पुरु के वंशज', parent: 'yayati_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'puru_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'पुरुवंश', clusterName: 'नहुष चंद्रवंशी' },
+        { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश', clusterName: 'चंद्रवंश' },
+        
+    { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'turvasu_dynasty_proxy', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'तुर्वसु वंश', clusterName: 'चंद्रवंश' },
+    { id: 'druhyu_chandra', name: 'द्रुह्यु', subtitle: 'ययाति के पुत्र', parent: 'druhyu_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'द्रुह्यु वंश',
+        clusterName: 'चंद्रवंश' },
+        
+    { id: 'anu_yayati_chandra', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'anu_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'अनु वंश',
+        clusterName: 'चंद्रवंश' },
+
+    { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'puru_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'पुरुवंश', 
+        clusterName: 'चंद्रवंश' },
 
     // --- तुर्वसु वंश ---
     { id: 'vahni_turvasu_chandra', name: 'वह्नि', subtitle: 'तुर्वसु पुत्र', parent: 'turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
@@ -356,9 +354,9 @@ export const chandravanshData = [
     { id: 'brahmadatta_anga', name: 'ब्रह्मदत्त', subtitle: 'अंतिम अंग नरेश', parent: 'anga_unknown_generations', yug: 'kali', parichay: 'छठी शताब्दी ईसा पूर्व के अंग राजा। इन्हें मगध के राजा बिंबिसार ने पराजित कर अंग देश को मगध साम्राज्य में मिला लिया था।', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- पुरुरवा के अन्य पुत्र (अमावसु / विजय वंश - कान्यकुब्ज/कन्नौज) ---
-        { id: 'amavasu_vansh_proxy', name: 'कान्यकुब्ज राजवंश', subtitle: 'अमावसु के वंशज', parent: 'pururava_chandra', yug: 'satya', clusterName: 'कान्यकुब्ज राजवंश', isProxy: true },
-    { id: 'amavasu_chandra', name: 'अमावसु (विजय)', subtitle: 'कान्यकुब्ज के संस्थापक',parent: 'amavasu_vansh_proxy', mother: 'urvashi_chandra', yug: 'satya' , clusterName: 'कान्यकुब्ज राजवंश' },
-    { id: 'bhima_amavasu_chandra', name: 'भीम', subtitle: 'अमावसु पुत्र', parent: 'amavasu_vansh_proxy', yug: 'satya' , clusterName: 'कान्यकुब्ज राजवंश' },
+        
+    { id: 'amavasu_chandra', name: 'अमावसु (विजय)', subtitle: 'कान्यकुब्ज के संस्थापक',parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya'  },
+    { id: 'bhima_amavasu_chandra', name: 'भीम', subtitle: 'अमावसु पुत्र', parent: 'amavasu_chandra', yug: 'satya' , clusterName: 'कान्यकुब्ज राजवंश' },
     { id: 'kanchana_chandra', name: 'कांचन', subtitle: 'भीम पुत्र', parent: 'bhima_amavasu_chandra', yug: 'satya' , clusterName: 'कान्यकुब्ज राजवंश' },
     { id: 'suhotra_amavasu_chandra', name: 'सुहोत्र', subtitle: 'कांचन पुत्र', parent: 'kanchana_chandra', yug: 'satya' , clusterName: 'कान्यकुब्ज राजवंश' },
     { id: 'jahnu_chandra', name: 'जह्नु', subtitle: 'जाह्नवी (गंगा) के पिता', parent: 'suhotra_amavasu_chandra', yug: 'satya', parichay: 'इन्होंने अपने तपोबल से संपूर्ण गंगा को पी लिया था, बाद में भगीरथ के प्रार्थना करने पर कान से निकाला। इसलिए गंगा को जाह्नवी कहा गया।' , clusterName: 'कान्यकुब्ज राजवंश' },
