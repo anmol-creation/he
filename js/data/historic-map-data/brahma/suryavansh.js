@@ -179,30 +179,63 @@ export const suryavanshData = [
     { id: 'taksha', name: 'तक्ष', subtitle: 'तक्षशिला के राजा', parent: 'bharat', mother: 'mandavi', yug: 'treta', parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।' },
     { id: 'pushkala', name: 'पुष्कल', subtitle: 'पुष्कलावती के राजा', parent: 'bharat', mother: 'mandavi', yug: 'treta', parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।' },
 
+    // Bhalla Khatri (Descendants of Bharat)
+    { id: 'bhalla_vansh_proxy', name: 'भल्ला खत्री', subtitle: 'भरत के वंशज', parent: 'bharat', yug: 'kali', clusterName: 'भल्ला खत्री (भरत वंश)', isProxy: true, parichay: 'सिख इतिहास और "बचित्तर नाटक" (दशम ग्रंथ) की परंपराओं के अनुसार, भल्ला खत्री समुदाय की उत्पत्ति भगवान राम के भ्राता भरत के वंशजों से हुई है।' },
+    { id: 'guru_amar_das', name: 'श्री गुरु अमरदास जी', subtitle: 'तृतीय सिख गुरु', parent: 'bhalla_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'भल्ला खत्री (भरत वंश)', parichay: 'सिख धर्म के तीसरे गुरु। इनका जन्म भल्ला खत्री वंश में हुआ था जो भरत जी की वंशावली से संबंधित हैं।' },
+
     { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
     { id: 'angada_lakshman', name: 'अंगद', subtitle: 'कारुपथ के राजा', parent: 'lakshman', mother: 'urmila', yug: 'treta', parichay: 'भगवान राम ने अंगद को कारुपथ राज्य का राजा बनाया था।' },
     { id: 'chandraketu', name: 'चन्द्रकेतु', subtitle: 'चन्द्रकांति (मालवा) के राजा', parent: 'lakshman', mother: 'urmila', yug: 'treta', parichay: 'भगवान राम ने चन्द्रकेतु को चन्द्रकांति राज्य का राजा बनाया था।' },
-    // Lakshman's descendants (Pratihara Rajput claim)
-    { id: 'pratihara_lakshman_proxy', name: 'प्रतिहार / बड़गूजर', subtitle: 'लक्ष्मण के वंशज (ऐतिहासिक मत)', parent: 'lakshman', yug: 'kali', parichay: 'गुर्जर-प्रतिहार राजवंश स्वयं को लक्ष्मण का वंशज मानता है (क्योंकि लक्ष्मण ने राम के लिए द्वारपाल/प्रतिहार का कार्य किया था)। राजौरगढ़ के 959 ई. के शिलालेख के अनुसार, इतिहासकार बड़गूजरों को भी प्रतिहारों की ही एक शाखा मानते हैं। अग्निवंश उत्पत्ति से अलग, यह ঐতিহাসিক मत है।' },
+    // Lakshman's descendants (Pratihara, Bargujar, Trehan)
+    { id: 'lakshman_descendants_proxy', name: 'लक्ष्मण के वंशज', subtitle: 'प्रतिहार, बड़गूजर, त्रेहन', parent: 'lakshman', yug: 'kali', isProxy: true, clusterName: 'लक्ष्मण के वंशज', parichay: 'ऐतिहासिक शिलालेखों (जैसे मिहिर भोज का ग्वालियर शिलालेख) के अनुसार गुर्जर-प्रतिहार स्वयं को लक्ष्मण का वंशज मानते हैं। साथ ही, सिख इतिहास के अनुसार त्रेहन खत्री भी लक्ष्मण के ही वंशज हैं।' },
 
-    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
-    { id: 'subahu_shatrughna', name: 'सुबाहु', subtitle: 'मथुरा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'लवणासुर का वध करने के बाद शत्रुघ्न ने शूरसेन (मथुरा) पर अधिकार किया और सुबाहु को वहां का राजा बनाया।' },
-    { id: 'shatrughati', name: 'शत्रुघाती', subtitle: 'विदिशा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'शत्रुघ्न के द्वितीय पुत्र, जिन्हें विदिशा का राजा बनाया गया था।' },
-    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
-    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
+    // Pratihara / Parihar Rajput
+    { id: 'pratihara_dynasty', name: 'गुर्जर-प्रतिहार राजवंश', subtitle: 'लक्ष्मण के वंशज', parent: 'lakshman_descendants_proxy', yug: 'kali', clusterName: 'लक्ष्मण के वंशज', parichay: '8वीं से 11वीं सदी तक उत्तर भारत के सबसे शक्तिशाली सम्राट। ग्वालियर शिलालेख के अनुसार ये लक्ष्मण के वंशज हैं क्योंकि उन्होंने राम के "प्रतिहार" (द्वारपाल) के रूप में कार्य किया था। वर्तमान "परिहार" (Parihar) राजपूत इसी वंश से हैं।' },
+    { id: 'parihar_rajput', name: 'परिहार (Parihar)', subtitle: 'राजपूत गोत्र', parent: 'pratihara_dynasty', yug: 'kali', clusterName: 'लक्ष्मण के वंशज' },
 
-    // Luv's descendants (Bargujar, Raghav, Sikarwar, Lohana, Leva Patidar)
-        { id: 'luv_descendants_proxy', name: 'लव के वंशज', subtitle: 'कुर्मी, लोहाणा, बड़गूजर', parent: 'luv', yug: 'kali', clusterName: 'लव के वंशज (सूर्यवंशी)', isProxy: true },
-    { id: 'leva_patidar', name: 'लेवा पाटीदार / कुर्मी', subtitle: 'लव के वंशज', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लव की राजधानी लवपुरी (लाहौर) से पलायन कर गुजरात व भारत के अन्य हिस्सों में बसे लेवा पाटीदार (पटेल) और कुर्मी समाज स्वयं को लव का वंशज मानते हैं।' },
-    { id: 'lohana_rajput', name: 'लोहाणा समाज', subtitle: 'सिंध-गुजरात के क्षत्रिय/वैश्य', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लोहाणा समाज लवपुरी (लाहौर) के पतन के बाद सिंध और गुजरात में बसा। वे स्वयं को लव का वंशज मानते हैं।' },
-
-    // Bargujar / Raghav lineage
-    { id: 'bargujar_adi', name: 'बड़गूजर (राघव) वंश', subtitle: 'लव के सूर्यवंशी वंशज', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'पारंपरिक चारण-भाट वंशावलियों के अनुसार बड़गूजर/राघव विशुद्ध सूर्यवंशी हैं जिनका उद्गम लव से होता है। (हालाँकि, कुछ शिलालेख इन्हें लक्ष्मण के वंशज प्रतिहारों की शाखा मानते हैं)।' },
+    // Bargujar / Raghav lineage (Moved from Luv to Lakshman based on Epigraphy)
+    { id: 'bargujar_adi', name: 'बड़गूजर (राघव) वंश', subtitle: 'लक्ष्मण के वंशज', parent: 'pratihara_dynasty', clusterName: 'लक्ष्मण के वंशज', yug: 'kali', parichay: 'राजौरगढ़ के 959 ई. के शिलालेख और ऐतिहासिक साक्ष्यों के अनुसार, बड़गूजर गुर्जर-प्रतिहारों की ही एक शाखा हैं और इस प्रकार लक्ष्मण के वंशज हैं।' },
     { id: 'raja_bagh_singh', name: 'राजा बाघ सिंह', subtitle: 'बड़गूजर राजा', parent: 'bargujar_adi', yug: 'kali', parichay: 'इन्होंने राजस्थान में बाघधरा (BaghDhara) बसाया।' },
     { id: 'raja_pratap_singh_bargujar', name: 'राजा प्रताप सिंह बड़गूजर', subtitle: 'पृथ्वीराज चौहान के सेनापति', parent: 'raja_bagh_singh', yug: 'kali', parichay: 'ये पृथ्वीराज चौहान के समकालीन और उनके सेनापतियों में से एक माने जाते हैं, जिन्होंने मुस्लिम आक्रमणकारियों से भयानक युद्ध किया।' },
     { id: 'sikarwar_rajput', name: 'सिकरवार वंश', subtitle: 'बड़गूजरों की शाखा', parent: 'raja_pratap_singh_bargujar', yug: 'kali', parichay: 'मुस्लिम आक्रमणकारियों के भारी नरसंहार से बचने और अपनी अधीनता स्वीकार न करने के संकल्प के कारण, बड़गूजरों के ही एक समूह ने अपना नाम बदलकर "सिकरवार" रख लिया था।' },
     { id: 'raja_anup_singh', name: 'राजा अनूप सिंह', subtitle: 'अनूपशहर के संस्थापक', parent: 'raja_pratap_singh_bargujar', yug: 'kali', parichay: 'इन्होंने उत्तर प्रदेश में "अनूपशहर" बसाया और वहां बड़गूजरों की एक बड़ी रियासत कायम की।' },
     { id: 'bahadur_singh_bargujar', name: 'बहादुर सिंह बड़गूजर', subtitle: 'घासेरा के शासक', parent: 'raja_anup_singh', yug: 'kali', parichay: 'इन्होंने 18वीं सदी में घासेरा (Ghasera) पर राज किया और मुगलों/जाटों से युद्ध किया।' },
+
+
+
+
+    // Trehan Khatri
+    { id: 'trehan_vansh_proxy', name: 'त्रेहन खत्री', subtitle: 'लक्ष्मण वंशज खत्री', parent: 'lakshman_descendants_proxy', yug: 'kali', clusterName: 'त्रेहन खत्री (लक्ष्मण वंश)', isProxy: true, parichay: 'सिख इतिहास और परम्पराओं के अनुसार, त्रेहन खत्री समुदाय की उत्पत्ति भगवान राम के अनुज लक्ष्मण के वंशजों से हुई है।' },
+    { id: 'guru_angad_dev', name: 'श्री गुरु अंगद देव जी', subtitle: 'द्वितीय सिख गुरु', parent: 'trehan_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'त्रेहन खत्री (लक्ष्मण वंश)', parichay: 'सिख धर्म के दूसरे गुरु। इनका जन्म त्रेहन खत्री वंश में हुआ था जो लक्ष्मण जी की वंशावली से संबंधित हैं।' },
+
+    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'subahu_shatrughna', name: 'सुबाहु', subtitle: 'मथुरा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'लवणासुर का वध करने के बाद शत्रुघ्न ने शूरसेन (मथुरा) पर अधिकार किया और सुबाहु को वहां का राजा बनाया।' },
+    { id: 'shatrughati', name: 'शत्रुघाती', subtitle: 'विदिशा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'शत्रुघ्न के द्वितीय पुत्र, जिन्हें विदिशा का राजा बनाया गया था।' },
+
+    // Bhalla Khatri (Descendants of Bharat)
+    // Note: To keep the tree structured, we add Bharat's descendants under Bharat directly.
+
+    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
+    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
+
+    // Luv's descendants (Leva Patidar, Lohana, Sodhi Khatri)
+    { id: 'luv_descendants_proxy', name: 'लव के वंशज', subtitle: 'कुर्मी, लोहाणा', parent: 'luv', yug: 'kali', clusterName: 'लव के वंशज (सूर्यवंशी)', isProxy: true },
+    { id: 'leva_patidar', name: 'लेवा पाटीदार / कुर्मी', subtitle: 'लव के वंशज', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लव की राजधानी लवपुरी (लाहौर) से पलायन कर गुजरात व भारत के अन्य हिस्सों में बसे लेवा पाटीदार (पटेल) और कुर्मी समाज स्वयं को लव का वंशज मानते हैं।' },
+    { id: 'lohana_rajput', name: 'लोहाणा समाज', subtitle: 'सिंध-गुजरात के क्षत्रिय/वैश्य', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लोहाणा समाज लवपुरी (लाहौर) के पतन के बाद सिंध और गुजरात में बसा। वे स्वयं को लव का वंशज मानते हैं।' },
+
+    // Sodhi Khatri Lineage (from Luv - via Bachittar Natak)
+    { id: 'kal_rai', name: 'कल राय', subtitle: 'लव के वंशज', parent: 'luv_descendants_proxy', yug: 'dwapar', clusterName: 'सोढी खत्री (लव वंश)', isProxy: true, parichay: 'दशम ग्रंथ के "बचित्तर नाटक" के अनुसार, लव के वंशजों में कल राय (Kal Rai) नामक राजा हुए। उनका कुश के वंशज कालकेतु (Kalket) से सत्ता के लिए युद्ध हुआ, जिसमें कल राय पराजित हुए और सनाउध (Sanaudh) चले गए।' },
+    { id: 'sodhi_rao', name: 'सोढी राय (राव)', subtitle: 'सोढी वंश के प्रवर्तक', parent: 'kal_rai', yug: 'kali', clusterName: 'सोढी खत्री (लव वंश)', isProxy: true, parichay: 'कल राय ने सनाउध के राजा की पुत्री से विवाह किया, जिनसे सोढी राय का जन्म हुआ। इन्हीं के नाम पर लव के वंशजों की यह शाखा "सोढी खत्री" कहलाई।' },
+    { id: 'sodhi_vansh_proxy', name: 'सोढी खत्री', subtitle: 'लव के वंशज', parent: 'sodhi_rao', yug: 'kali', clusterName: 'सोढी खत्री (लव वंश)', isProxy: true, parichay: 'चतुर्थ सिख गुरु, श्री गुरु रामदास जी से लेकर दशम गुरु, श्री गुरु गोबिंद सिंह जी तक, सभी सिख गुरु इसी सोढी वंश में जन्मे थे।' },
+
+    // Sikh Gurus in Sodhi lineage
+    { id: 'guru_ram_das', name: 'श्री गुरु रामदास जी', subtitle: 'चतुर्थ सिख गुरु', parent: 'sodhi_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_arjan_dev', name: 'श्री गुरु अर्जन देव जी', subtitle: 'पंचम सिख गुरु', parent: 'guru_ram_das', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_hargobind', name: 'श्री गुरु हरगोबिंद साहिब', subtitle: 'छठे सिख गुरु', parent: 'guru_arjan_dev', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_har_rai', name: 'श्री गुरु हर राय जी', subtitle: 'सातवें सिख गुरु', parent: 'guru_hargobind', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_har_krishan', name: 'श्री गुरु हरकृष्ण जी', subtitle: 'आठवें सिख गुरु', parent: 'guru_har_rai', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_tegh_bahadur', name: 'श्री गुरु तेग बहादुर जी', subtitle: 'नौवें सिख गुरु', parent: 'guru_hargobind', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_gobind_singh', name: 'श्री गुरु गोबिंद सिंह जी', subtitle: 'दशम सिख गुरु', parent: 'guru_tegh_bahadur', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
 
     // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
     { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
@@ -259,7 +292,13 @@ export const suryavanshData = [
     { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।', clusterName: 'गुहिल (सिसोदिया) वंश' },
     { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।', clusterName: 'गुहिल (सिसोदिया) वंश' },
 
-    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
+    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती (कसूर) नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
+
+    // Bedi Khatri Lineage (from Kush - via Bachittar Natak)
+    { id: 'kush_descendants_proxy', name: 'कुश के वंशज', subtitle: 'कसूर शाखा', parent: 'kush', yug: 'dwapar', clusterName: 'बेदी खत्री (कुश वंश)', isProxy: true, parichay: 'कुश के जिन वंशजों ने अयोध्या की बजाय पंजाब (कसूर) में राज किया।' },
+    { id: 'kalket', name: 'कालकेतु (कलकेत)', subtitle: 'कुश के वंशज', parent: 'kush_descendants_proxy', yug: 'dwapar', clusterName: 'बेदी खत्री (कुश वंश)', isProxy: true, parichay: '"बचित्तर नाटक" के अनुसार, इन्होंने लव के वंशज कल राय को पराजित कर लाहौर पर अधिकार किया। बाद में इनके वंशजों का राज छिन गया और वे काशी (वाराणसी) चले गए।' },
+    { id: 'bedi_vansh_proxy', name: 'बेदी खत्री', subtitle: 'कुश के वंशज', parent: 'kalket', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)', isProxy: true, parichay: 'काशी जाकर इन क्षत्रियों ने वेदों का गहन अध्ययन किया, जिसके कारण वे "वेदी" (Bedi/Baidy) कहलाए।' },
+    { id: 'guru_nanak_dev', name: 'श्री गुरु नानक देव जी', subtitle: 'प्रथम सिख गुरु', parent: 'bedi_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'बेदी खत्री (कुश वंश)', parichay: 'सिख धर्म के संस्थापक और प्रथम गुरु। इनका जन्म तलवंडी (ननकाना साहिब) में इसी सूर्यवंशी बेदी खत्री कुल में हुआ था।' },
 
     // Kush's descendants (to Mahabharat era)
     { id: 'kumudvati', name: 'कुमुद्वती', subtitle: 'कुश पत्नी', parent: '', spouseOf: 'kush', yug: 'treta', parichay: 'ये एक नागकन्या थीं।' },
