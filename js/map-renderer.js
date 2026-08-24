@@ -41,10 +41,70 @@ window.MapRenderer = {
                 this.drawRouteConnections(ctx, dataList, this.routePath);
             }
 
+            this.drawBranchLabels(ctx, dataList, state);
+
             this.drawNodes(ctx, dataList, highlightSet, isRouting, state.isMacroMode, state.focusedNodeId);
         } finally {
             ctx.restore();
         }
+    },
+
+    drawBranchLabels(ctx, dataList, state) {
+        if (!dataList || dataList.length === 0 || state.isMacroMode || state.scale < 0.2) return;
+
+        // Group nodes by their branch/vansh
+        const branchGroups = {};
+
+        dataList.forEach(node => {
+            if (node.isProxy) return; // Skip proxies for bounding boxes
+
+            let branchName = null;
+            if (node.inheritedColor === '#FF9900') branchName = 'सूर्यवंश (Suryavansh)';
+            else if (node.inheritedColor === '#4169E1') branchName = 'चंद्रवंश (Chandravansh)';
+            else if (node.clusterName) branchName = node.clusterName;
+
+            if (branchName) {
+                if (!branchGroups[branchName]) {
+                    branchGroups[branchName] = { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity, nodes: [] };
+                }
+                const group = branchGroups[branchName];
+                group.nodes.push(node);
+                if (node.x < group.minX) group.minX = node.x;
+                if (node.x > group.maxX) group.maxX = node.x;
+                if (node.y < group.minY) group.minY = node.y;
+                if (node.y > group.maxY) group.maxY = node.y;
+            }
+        });
+
+        // Draw vertical text for each major branch in the gap space
+        ctx.save();
+        for (const [branchName, group] of Object.entries(branchGroups)) {
+            // Only draw if the group has a significant height (e.g., spans multiple generations)
+            if (group.maxY - group.minY < 300) continue;
+
+            const x = group.minX - 150; // Place in the gap to the left of the branch
+            const y = group.minY + (group.maxY - group.minY) / 2; // Vertically centered
+
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(-Math.PI / 2);
+
+            // CHANGED: Use a much brighter color and larger font for visibility against dark background
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; // Brighter watermark style
+            ctx.font = 'bold 200px Yatra One, Poppins, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Add strong shadow for readability
+            ctx.shadowColor = 'rgba(0, 0, 0, 1)';
+            ctx.shadowBlur = 20;
+            ctx.shadowOffsetX = 4;
+            ctx.shadowOffsetY = 4;
+
+            ctx.fillText(branchName, 0, 0);
+            ctx.restore();
+        }
+        ctx.restore();
     },
 
     getHighlightedRelatives(centerNodeId, dataList) {
