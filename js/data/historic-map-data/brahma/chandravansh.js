@@ -6,16 +6,16 @@ export const chandravanshData = [
     { id: 'chandra_chandra', name: 'चंद्र', subtitle: 'चंद्र देव (चंद्रवंश के मूल)', parent: 'atri',gender: 'male',lineLabel: 'चंद्र', mother: 'anasuya_chandra', yug: 'satya' },
 
     // --- चंद्र देव की पत्नियां ---
-    { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी (बृहस्पति की पूर्व पत्नी)', parent: '', spouseOf: 'chandra_chandra',gender: 'female', lineLabel: 'तारा', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ'},
-    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'चंद्र (सोम वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'chandra_chandra', lineLabel: 'मनोहरा',clusterName:'चंद्र की पत्नियाँ',yug: 'satya', parichay: 'महाभारत (आदि पर्व) के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) की पत्नी।' },
+    { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी', parent: '', spouseOf: 'chandra_chandra',gender: 'female', lineLabel: 'तारा', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ', parichay: 'देवगुरु बृहस्पति की पूर्व पत्नी, जिनका अपहरण चंद्र देव ने किया था जिससे तारामय युद्ध हुआ। बाद में ये चंद्र देव की पत्नी बनीं।' },
+    { id: 'dakshayani_chandra_proxy', name: 'दक्ष की 27 पुत्रियां', subtitle: 'चंद्र की पत्नियां', parent: '', spouseOf: 'chandra_chandra', gender: 'female', isProxy: true, clusterName:'चंद्र की पत्नियाँ', yug: 'satya', parichay: 'प्रजापति दक्ष की 27 पुत्रियां (अश्विनी, भरणी, कृत्तिका, रोहिणी आदि) जिनका विवाह चंद्र देव से हुआ था और जिन्हें 27 नक्षत्र माना जाता है।' },
+    { id: 'rohini_chandra', name: 'रोहिणी', subtitle: 'चंद्र की प्रिय पत्नी', parent: 'dakshayani_chandra_proxy', spouseOf: 'chandra_chandra', gender: 'female', clusterName:'चंद्र की पत्नियाँ', yug: 'satya', parichay: 'दक्ष की 27 पुत्रियों में से चंद्र देव की सबसे प्रिय पत्नी। चंद्र देव के इनके प्रति अधिक झुकाव के कारण ही दक्ष ने चंद्र को क्षय रोग का श्राप दिया था।' },
     
    // एवं दैवीय संतानें (अष्ट-वसु के रूप में) ---
-    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra', clusterName:'चंद्र के अन्य पुत्र', yug: 'satya',lineLabel: 'वर्चस्', parichay: 'ये चंद्र देव और मनोहरा के दैवीय पुत्र हैं। महाभारत के समय देवर्षियों के कहने पर इन्होंने ही अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
-    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'चंद्र-मनोहरा पुत्र', gender: 'male', parent: 'chandra_chandra',clusterName:'चंद्र के अन्य पुत्र',lineLabel: 'शिशिर', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-    { id: 'prana_chandra', name: 'प्राण', subtitle: 'चंद्र-मनोहरा पुत्र',lineLabel: 'प्राण', gender: 'male', parent: 'chandra_chandra', mother: 'manohara_chandra',clusterName:'चंद्र के अन्य पुत्र', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-    { id: 'ramana_chandra', name: 'रमण', subtitle: 'चंद्र-मनोहरा पुत्र',lineLabel: 'रमण', gender: 'male', parent: 'chandra_chandra', clusterName:'चंद्र के अन्य पुत्र', mother: 'manohara_chandra', yug: 'satya', parichay: 'चंद्र देव और मनोहरा के दैवीय पुत्र।' },
-
-    // (दक्ष की 27 पुत्रियां भी चंद्र की पत्नियां हैं, उन्हें आवश्यकता अनुसार बाद में जोड़ा जा सकता है)
+    { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र पुत्र (वसु)', gender: 'male', parent: 'chandra_chandra', clusterName:'चंद्र के अन्य पुत्र', yug: 'satya',lineLabel: 'वर्चस्', parichay: 'महाभारत के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) के दैवीय पुत्र। देवर्षियों के कहने पर इन्होंने ही अर्जुन के पुत्र अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
+    { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'वर्चस् (वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'varchas_chandra', lineLabel: 'मनोहरा',clusterName:'चंद्र के अन्य पुत्र', yug: 'satya', parichay: 'ये अष्ट-वसुओं में से एक "सोम" के पुत्र वर्चस् की पत्नी हैं। महाभारत (आदि पर्व) के अनुसार इनसे शिशिर, प्राण और रमण नामक तीन पुत्र हुए।' },
+    { id: 'shishira_chandra', name: 'शिशिर', subtitle: 'वर्चस्-मनोहरा पुत्र', gender: 'male', parent: 'varchas_chandra', clusterName:'चंद्र के अन्य पुत्र', lineLabel: 'शिशिर', mother: 'manohara_chandra', yug: 'satya' },
+    { id: 'prana_chandra', name: 'प्राण', subtitle: 'वर्चस्-मनोहरा पुत्र', lineLabel: 'प्राण', gender: 'male', parent: 'varchas_chandra', mother: 'manohara_chandra', clusterName:'चंद्र के अन्य पुत्र', yug: 'satya' },
+    { id: 'ramana_chandra', name: 'रमण', subtitle: 'वर्चस्-मनोहरा पुत्र', lineLabel: 'रमण', gender: 'male', parent: 'varchas_chandra', clusterName:'चंद्र के अन्य पुत्र', mother: 'manohara_chandra', yug: 'satya' },
 
     // --- चंद्र देव के पुत्र ---
     { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',lineLabel: 'बुध',gender: 'male', yug: 'satya' },
