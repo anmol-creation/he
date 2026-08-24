@@ -1,7 +1,6 @@
 export const kashyapData = [
 
-    { id: 'kashyap_other_creations_proxy', name: 'कश्यप की अन्य संतति', subtitle: 'नाग, गंधर्व, दैत्य, यक्ष', isProxy: true, parent: 'kashyap', clusterName: 'कश्यप की अन्य संतति', timeScale: 'kalpa', yug: 'satya' },
-    { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
+   { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya', clusterName: 'कश्यप वंश' },
 
     // --- कश्यप की मानव / ब्राह्मण वंशावली (The Human/Brahmin Lineage of Kashyapa) ---
     { id: 'avatsara', name: 'अवत्सार', subtitle: 'कश्यप के पुत्र', parent: 'kashyap', yug: 'satya', gender: 'male', parichay: 'महर्षि कश्यप के पुत्र जो एक महान ऋषि हुए। इन्हीं के वंश से "कश्यप गोत्र" की मुख्य ब्राह्मण वंशावली (नैध्रुव, रैभ्य) आगे बढ़ी। ये ऋग्वेद के मंत्रद्रष्टा थे।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
