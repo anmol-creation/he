@@ -194,7 +194,7 @@ window.MapUI = {
     }
 
     // --- Full Screen Search UI (Google Maps Style) ---
-    const searchToggleBtn = document.getElementById("search-toggle-btn");
+    const searchToggleBtn = document.getElementById("main-search-bar-trigger");
     const searchOverlay = document.getElementById("full-screen-search-overlay");
     const closeSearchBtn = document.getElementById("close-search-btn");
     const searchInput = document.getElementById("map-search-input");

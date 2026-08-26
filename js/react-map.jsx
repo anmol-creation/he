@@ -680,6 +680,12 @@ const MapApp = () => {
                       newCollapsed.add(cluster);
                   }
               }
+
+              // Prevent infinite loop by checking if Sets are identical
+              if (prev.size === newCollapsed.size && [...prev].every(value => newCollapsed.has(value))) {
+                  return prev; // Return original reference to bail out of render cycle
+              }
+
               return newCollapsed;
           });
         }
