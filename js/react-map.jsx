@@ -646,7 +646,44 @@ const MapApp = () => {
               filteredData.push(d);
             }
           });
+
+          // Expand ONLY the clusters that are in the direct lineage of the matched nodes
+          const clustersToKeepOpen = new Set();
+
+          filteredData.forEach((d) => {
+             // Find original node
+             let curr = rawData.find(r => r.id === d.id);
+             if (curr && curr.clusterName) {
+                 clustersToKeepOpen.add(curr.clusterName);
+             }
+
+             // Traverse parents to root
+             while (curr && curr.parent) {
+                 const parentId = curr.parent;
+                 curr = rawData.find(r => r.id === parentId);
+                 if (curr && curr.clusterName) {
+                     clustersToKeepOpen.add(curr.clusterName);
+                 }
+             }
+          });
+
+          // Collapse all clusters EXCEPT the ones in the direct lineage
+          setCollapsedClusters(prev => {
+              const allClusters = new Set();
+              rawData.forEach(d => {
+                  if (d.clusterName) allClusters.add(d.clusterName);
+              });
+
+              const newCollapsed = new Set();
+              for (const cluster of allClusters) {
+                  if (!clustersToKeepOpen.has(cluster)) {
+                      newCollapsed.add(cluster);
+                  }
+              }
+              return newCollapsed;
+          });
         }
+
 
         if (filters.yuga) {
           filteredData = filteredData.filter(

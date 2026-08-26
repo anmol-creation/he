@@ -308,7 +308,7 @@ window.MapUI = {
           }
 
           let currentNode = rawNode;
-          let maxDepth = 100;
+          let maxDepth = 1000; // Increased to ensure it traces all the way to Paramatma
           while (currentNode && currentNode.parent && maxDepth > 0) {
             maxDepth--;
             let parentNode = null;
