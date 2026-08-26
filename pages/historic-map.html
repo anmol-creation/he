@@ -14,17 +14,35 @@
 <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
     </head>
 <body>
-    <!-- Floating Controls (Top-Right) -->
-    <div id="floating-controls-top" class="floating-controls">
-        <div class="search-container floating-btn-group">
-            <a href="react-historic-map.html" class="floating-btn" title="Modern View (Beta)" style="text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">✨</a>
-            <button id="expand-collapse-all-btn" class="floating-btn" title="Expand/Collapse All Clusters" style="font-size: 1.4rem;">🗂️</button>
-            <button id="search-toggle-btn" class="floating-btn" title="Search">🔍</button>
+    <!-- Top Search Bar (Google Maps Style) -->
+    <div id="top-search-container" class="top-search-container">
+        <!-- Main Search Bar -->
+        <div class="main-search-bar" id="main-search-bar-trigger">
+            <div class="search-icon-placeholder">🔍</div>
+            <div class="search-text-placeholder">Search Entity, King, Dynasty...</div>
+            <div class="voice-search-placeholder">🎤</div>
+            <div class="user-account-placeholder">👤</div>
         </div>
-        <button id="route-toggle-btn" class="floating-btn" title="Lineage Route" style="border-radius:50%; background:rgba(34,34,34,0.9); color:white; width:45px; height:45px; border:1px solid rgba(255,255,255,0.1);">🧭</button>
-        <div style="position: relative;">
-            <button id="map-view-btn" class="floating-btn" title="Map View / Filters">🗺️</button>
-            <div id="map-filter-dropdown" class="filter-dropdown">
+
+        <!-- Action Buttons Row -->
+        <div class="action-buttons-row">
+            <button id="expand-collapse-all-btn" class="action-pill-btn" title="Expand/Collapse All Clusters">
+                <span class="action-icon">🗂️</span> Expand
+            </button>
+            <button id="route-toggle-btn" class="action-pill-btn" title="Lineage Route">
+                <span class="action-icon">🧭</span> Route
+            </button>
+            <div style="position: relative;">
+                <button id="map-view-btn" class="action-pill-btn" title="Map View / Filters">
+                    <span class="action-icon">🗺️</span> Filter
+                </button>
+            </div>
+            <a href="react-historic-map.html" class="action-pill-btn beta-btn" title="Modern View (Beta)">
+                <span class="action-icon">✨</span> Beta
+            </a>
+        </div>
+
+        <div id="map-filter-dropdown" class="filter-dropdown">
                 <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 5px;">Map Engine</div>
                 <label class="filter-option" style="margin-bottom: 5px;">
                     <input type="radio" name="layout-mode" value="autoslip" checked>
