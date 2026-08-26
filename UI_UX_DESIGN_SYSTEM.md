@@ -49,6 +49,7 @@ Used strictly on the Historic Map to differentiate bloodlines:
 *   **Lineage Nodes:** No generic boxes. Use House Sigils or circular nodes with subtle glowing borders.
 *   **Varna Icons:** Micro-symbols in the corner of nodes (Book = Brahmin, Sword = Kshatriya, Scales = Vaishya, Tools = Shudra).
 *   **Navigation:** Smooth scroll to zoom, click to open Hero Card, swipe to navigate adjacent nodes.
+*   **Branch Watermarks:** To help users navigate the vast lineage map, large, vertically rotated text watermarks (e.g., "सूर्यवंश (Suryavansh)") are placed in the gaps to the left of major lineage branches. These act as subtle background guides and use a translucent white color (`rgba(255, 255, 255, 0.15)`) with a soft drop shadow.
 
 ## 5. Animation & Transitions
 *   **Pacing:** Keep it majestic and deliberate, not frantic. Transition durations should be around `0.3s` to `0.4s` with `ease-out` timing functions.
