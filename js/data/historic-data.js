@@ -6,6 +6,7 @@ import { kashyapData } from './historic-map-data/brahma/kashyap.js';
 import { suryavanshData } from './historic-map-data/brahma/suryavansh.js';
 import { chandravanshData } from './historic-map-data/brahma/chandravansh.js';
 import { agnivanshData } from './historic-map-data/brahma/agnivansh.js';
+import { jhansiNewalkarData } from './historic-map-data/brahma/jhansi-newalkar.js';
 
 // Combine all data into one master array
 const historicData = [
@@ -16,7 +17,8 @@ const historicData = [
     ...kashyapData,
     ...suryavanshData,
     ...chandravanshData,
-    ...agnivanshData
+    ...agnivanshData,
+    ...jhansiNewalkarData
 ];
 
 // Provide global access for backward compatibility with non-module scripts
