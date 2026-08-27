@@ -232,18 +232,36 @@ window.MapControls = {
         const validCandidates = dataList.filter(n => {
             if (n.id === current.id) return false;
 
-            const connectedDown = (n.parent === current.id || n.mother === current.id || n.spouseOf === current.id);
-            const connectedUp = (current.parent === n.id || current.mother === n.id || current.spouseOf === n.id);
-            const connectedLateral = (
+            // Visibility Check: Skip nodes inside collapsed clusters
+            const state = window.MapState;
+            const isVisible = !n.clusterName || state.expandedClusters.has(n.clusterName) || n.isProxy;
+            if (!isVisible) return false;
+
+            const connectedDown = (n.parent === current.id || n.mother === current.id);
+            const connectedUp = (current.parent === n.id || current.mother === n.id);
+            const connectedSibling = (
                 (n.parent && current.parent && n.parent === current.parent) ||
-                (n.mother && current.mother && n.mother === current.mother) ||
-                (n.spouseOf && current.spouseOf && n.spouseOf === current.spouseOf)
+                (n.mother && current.mother && n.mother === current.mother)
             );
+
+            // Spouse Logic
+            const isSpouseRelation = (n.spouseOf === current.id) || (current.spouseOf === n.id) || (n.spouseOf && current.spouseOf && n.spouseOf === current.spouseOf);
+            let allowSpouseLateral = false;
+
+            if (isSpouseRelation) {
+                // Determine the husband ID
+                const husbandId = n.spouseOf ? n.spouseOf : (current.spouseOf ? current.spouseOf : (n.spouseOf === current.id ? current.id : n.id));
+                const totalWives = dataList.filter(d => d.spouseOf === husbandId).length;
+                if (totalWives > 1) {
+                    allowSpouseLateral = true;
+                }
+            }
 
             if (direction === 'up' && connectedUp) return true;
             if (direction === 'down' && connectedDown) return true;
-            if ((direction === 'left' || direction === 'right') && (connectedLateral || connectedUp || connectedDown)) {
-                return true;
+            if (direction === 'left' || direction === 'right') {
+                if (connectedSibling) return true;
+                if (allowSpouseLateral && isSpouseRelation) return true;
             }
 
             return false;
