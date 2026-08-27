@@ -164,6 +164,7 @@ window.MapRenderer = {
 
     drawConnections(ctx, dataList, highlightSet, isRouting) {
         const drawnHusbandToWives = new Set();
+        const drawnLineLabels = [];
 
         // Simple hash function to generate a stable pseudo-random offset based on an ID string
         // This ensures each parent gets their own dedicated horizontal "channel" (lane) to prevent overlapping lines
@@ -285,48 +286,65 @@ window.MapRenderer = {
                         const state = window.MapState;
                         const dpr = window.devicePixelRatio || 1;
 
-                        // We have 3 segments:
-                        // 1. (startX, startY) to (startX, controlY) - Vertical
-                        // 2. (startX, controlY) to (endX, controlY) - Horizontal
-                        // 3. (endX, controlY) to (endX, endY) - Vertical
+                        // Restrict lineLabel to the horizontal segment only
+                        let bestMid = this.getVisibleMidpoint(startX, controlY, endX, controlY, state, dpr);
 
-                        let bestMid = null;
-                        let maxLen = -1;
-
-                        const segments = [
-                            this.getVisibleMidpoint(startX, startY, startX, controlY, state, dpr),
-                            this.getVisibleMidpoint(startX, controlY, endX, controlY, state, dpr),
-                            this.getVisibleMidpoint(endX, controlY, endX, endY, state, dpr)
-                        ];
-
-                        segments.forEach(seg => {
-                            if (seg && seg.length > maxLen) {
-                                maxLen = seg.length;
-                                bestMid = seg;
-                            }
-                        });
-
-                        if (bestMid && maxLen > 40) { // Only draw if we have enough visible space
+                        if (bestMid && bestMid.length > 40) {
                             ctx.save();
-                            ctx.fillStyle = 'rgba(17, 17, 17, 1)'; // Solid background
-
                             ctx.font = 'bold 12px Poppins';
                             const textMetrics = ctx.measureText(data.lineLabel);
                             const tW = textMetrics.width + 12;
                             const tH = 20;
 
-                            // Draw background box
-                            this.roundRect(ctx, bestMid.x - tW/2, bestMid.y - tH/2, tW, tH, 4);
+                            let proposedX = bestMid.x;
+                            let proposedY = bestMid.y;
+
+                            // Collision Detection: Shift X to avoid overlapping with previously drawn labels
+                            let collision = true;
+                            let shiftCount = 0;
+                            const shiftAmount = tW + 5; // space needed
+
+                            while (collision && shiftCount < 10) {
+                                collision = false;
+                                for (let i = 0; i < drawnLineLabels.length; i++) {
+                                    const other = drawnLineLabels[i];
+                                    // Check horizontal overlap and exact vertical line
+                                    if (Math.abs(proposedY - other.y) < 2) {
+                                        if (Math.abs(proposedX - other.x) < (tW/2 + other.w/2)) {
+                                            collision = true;
+                                            // Move away from the startX to prevent stacking back towards parent
+                                            if (endX > startX) {
+                                                proposedX += shiftAmount;
+                                            } else {
+                                                proposedX -= shiftAmount;
+                                            }
+                                            break;
+                                        }
+                                    }
+                                }
+                                shiftCount++;
+                            }
+
+                            // Prevent drifting entirely off the horizontal line bounds
+                            const minX = Math.min(startX, endX) + tW/2;
+                            const maxX = Math.max(startX, endX) - tW/2;
+                            if (proposedX < minX) proposedX = minX;
+                            if (proposedX > maxX) proposedX = maxX;
+
+                            drawnLineLabels.push({ x: proposedX, y: proposedY, w: tW, h: tH });
+
+                            ctx.fillStyle = 'rgba(17, 17, 17, 1)';
+                            this.roundRect(ctx, proposedX - tW/2, proposedY - tH/2, tW, tH, 4);
                             ctx.fill();
 
                             ctx.strokeStyle = ctx.strokeStyle;
                             ctx.lineWidth = 1;
                             ctx.stroke();
 
-                            ctx.fillStyle = '#ffffff'; // white text for readability
+                            ctx.fillStyle = '#ffffff';
                             ctx.textAlign = 'center';
                             ctx.textBaseline = 'middle';
-                            ctx.fillText(data.lineLabel, bestMid.x, bestMid.y);
+                            ctx.fillText(data.lineLabel, proposedX, proposedY);
 
                             ctx.restore();
                         }
