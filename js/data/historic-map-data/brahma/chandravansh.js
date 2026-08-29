@@ -283,6 +283,39 @@ export const chandravanshData = [
     { id: 'vrishadarbha_anu', name: 'वृषदर्भ', subtitle: 'शिबि पुत्र', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'suvira_anu', name: 'सुवीर', subtitle: 'शिबि पुत्र (सौवीर)', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'madra_anu', name: 'मद्र', subtitle: 'मद्र देश संस्थापक', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- मद्र वंश, सावित्री और मालव-औलिकर उत्पत्ति ---
+    { id: 'ashvapati_madra_anu', name: 'अश्वपति', subtitle: 'मद्र नरेश', parent: 'madra_anu', yug: 'treta', parichay: 'इन्होंने संतान प्राप्ति के लिए देवी सावित्री की 18 वर्ष तक घोर तपस्या की थी।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'malavi_ashvapati_wife', name: 'मालवी', subtitle: 'अश्वपति की पत्नी', parent: '', spouseOf: 'ashvapati_madra_anu', yug: 'treta' },
+    { id: 'savitri_madra', name: 'महा-सावित्री', subtitle: 'अश्वपति-मालवी पुत्री', parent: 'ashvapati_madra_anu', mother: 'malavi_ashvapati_wife', yug: 'treta', parichay: 'सत्यवान की पत्नी। अपने सतीत्व और तपोबल से इन्होंने यमराज से अपने पति के प्राण वापस ले लिए थे।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // शाल्व वंश (सत्यवान)
+    { id: 'salwa_dynasty_proxy', name: 'शाल्व वंश (पुरु-वंश)', subtitle: 'शाल्व नरेश', parent: 'puru_yadu', yug: 'treta', isProxy: true, parichay: 'यह वंश पुरु वंश के राजा व्युषिताश्व से निकला माना जाता है, जिसका मद्र वंश से भी गहरा नाता है।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'dyumatsena_salwa', name: 'द्युमत्सेन', subtitle: 'शाल्व नरेश', parent: 'salwa_dynasty_proxy', yug: 'treta', parichay: 'सत्यवान के पिता। यह अंधे हो गए थे और शत्रुओं ने इनका राज्य छीन लिया था, जिसके कारण इन्हें वन में रहना पड़ा।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'satyavan_salwa', name: 'सत्यवान', subtitle: 'द्युमत्सेन पुत्र', parent: 'dyumatsena_salwa', spouseOf: 'savitri_madra', yug: 'treta', parichay: 'अल्पायु होने के कारण विवाह के एक वर्ष बाद ही इनकी मृत्यु निश्चित थी, परंतु सावित्री ने यमराज से इनके प्राण वापस ले लिए।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'satyavan_100_sons', name: '100 शाल्व पुत्र', subtitle: 'सत्यवान-सावित्री के पुत्र', parent: 'satyavan_salwa', mother: 'savitri_madra', yug: 'treta', parichay: 'यमराज के वरदान स्वरूप सावित्री और सत्यवान को 100 तेजस्वी पुत्रों की प्राप्ति हुई, जिन्होंने आगे शाल्व वंश को बढ़ाया।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // मालव गणराज्य और औलिकर वंश
+    { id: 'malava_tribe_founders', name: '100 मालव पुत्र', subtitle: 'मालव गणराज्य के संस्थापक', parent: 'ashvapati_madra_anu', mother: 'malavi_ashvapati_wife', yug: 'treta', parichay: 'अश्वपति और मालवी के 100 पुत्र, जिन्होंने अपनी माता के नाम पर "मालव" वंश और गणराज्य की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'aulikara_dynasty_proxy', name: 'औलिकर (मालव) राजवंश', subtitle: 'ऐतिहासिक अंतराल', parent: 'malava_tribe_founders', yug: 'kali', isProxy: true, parichay: 'प्राचीन मालव गणराज्य से ही कालांतर में दशपुर (मंदसौर) का औलिकर राजवंश उभरा। इनका राजचिह्न "औलिकर-लांछन" था।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // औलिकर - प्रथम घराना (First Aulikara House)
+    { id: 'jayavarman_aulikara', name: 'जयवर्मन', subtitle: 'औलिकर नरेश (प्रथम घराना)', parent: 'aulikara_dynasty_proxy', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'simhavarman_aulikara', name: 'सिंहवर्मन', subtitle: 'औलिकर नरेश', parent: 'jayavarman_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'naravarman_aulikara', name: 'नरवर्मन', subtitle: 'औलिकर नरेश', parent: 'simhavarman_aulikara', yug: 'kali', parichay: 'गुप्त सम्राट चंद्रगुप्त विक्रमादित्य के समकालीन। इनके शिलालेखों में पहली बार "औलिकर" नाम मिलता है।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vishvavarman_aulikara', name: 'विश्ववर्मन', subtitle: 'औलिकर नरेश', parent: 'naravarman_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'bandhuvarman_aulikara', name: 'बन्धुवर्मन', subtitle: 'औलिकर नरेश', parent: 'vishvavarman_aulikara', yug: 'kali', parichay: 'कुमारगुप्त प्रथम के समकालीन। इनके समय मंदसौर में एक विशाल सूर्य मंदिर का निर्माण हुआ था।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // औलिकर - द्वितीय घराना (Second Aulikara House)
+    { id: 'second_aulikara_house_proxy', name: 'औलिकर (द्वितीय घराना)', subtitle: 'गुप्त साम्राज्य के पतन काल में', parent: 'aulikara_dynasty_proxy', yug: 'kali', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'drumavardhana_aulikara', name: 'द्रुमवर्धन', subtitle: 'औलिकर नरेश', parent: 'second_aulikara_house_proxy', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'jayavardhana_aulikara', name: 'जयवर्धन', subtitle: 'औलिकर नरेश', parent: 'drumavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'ajitavardhana_aulikara', name: 'अजितवर्धन', subtitle: 'औलिकर नरेश', parent: 'jayavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vibhishanavardhana_aulikara', name: 'विभीषणवर्धन', subtitle: 'औलिकर नरेश', parent: 'ajitavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'rajyavardhana_aulikara', name: 'राज्यवर्धन', subtitle: 'औलिकर नरेश', parent: 'vibhishanavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'prakashadharma_aulikara', name: 'प्रकाशधर्मा', subtitle: 'औलिकर नरेश', parent: 'rajyavardhana_aulikara', yug: 'kali', parichay: 'इन्होंने हूण आक्रमणकारी तोरमाण को बुरी तरह हराया और उसके रनिवास (harem) पर कब्ज़ा कर लिया था (रिस्थल शिलालेख)।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'yashodharman_aulikara', name: 'यशोधर्मन (विष्णुवर्धन)', subtitle: 'औलिकर सम्राट (हूण-विनाशक)', parent: 'prakashadharma_aulikara', yug: 'kali', isProminent: true, parichay: 'प्राचीन भारत के सबसे महान सम्राटों में से एक। इन्होंने 528 ई. में खूंखार हूण राजा मिहिरकुल को हराकर भारत को हूणों के आतंक से मुक्त कराया। मंदसौर विजय स्तंभ के अनुसार इनका साम्राज्य हिमालय से महेंद्र पर्वत तक फैला था।', clusterName: 'नहुष चंद्रवंशी' },
+
     { id: 'kekaya_anu', name: 'केकय', subtitle: 'केकय देश संस्थापक', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
 
     // अनु वंश -> तितिक्षु (बलि) शाखा
