@@ -289,11 +289,18 @@ export const chandravanshData = [
     { id: 'malavi_ashvapati_wife', name: 'मालवी', subtitle: 'अश्वपति की पत्नी', parent: '', spouseOf: 'ashvapati_madra_anu', yug: 'treta' },
     { id: 'savitri_madra', name: 'महा-सावित्री', subtitle: 'अश्वपति-मालवी पुत्री', parent: 'ashvapati_madra_anu', mother: 'malavi_ashvapati_wife', yug: 'treta', parichay: 'सत्यवान की पत्नी। अपने सतीत्व और तपोबल से इन्होंने यमराज से अपने पति के प्राण वापस ले लिए थे।', clusterName: 'नहुष चंद्रवंशी' },
 
-    // शाल्व वंश (सत्यवान)
-    { id: 'salwa_dynasty_proxy', name: 'शाल्व वंश (पुरु-वंश)', subtitle: 'शाल्व नरेश', parent: 'puru_yadu', yug: 'treta', isProxy: true, parichay: 'यह वंश पुरु वंश के राजा व्युषिताश्व से निकला माना जाता है, जिसका मद्र वंश से भी गहरा नाता है।', clusterName: 'नहुष चंद्रवंशी' },
+    // --- पुरु वंश की शाखा (व्युषिताश्व) और शाल्व वंश ---
+    { id: 'puru_offshoot_proxy', name: 'पुरु वंश (शाखा)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'puru_chandra', yug: 'treta', isProxy: true, parichay: 'पुरु वंश की एक शाखा, जिसके कुछ पीढ़ियों के नाम अज्ञात हैं, जहाँ से राजा व्युषिताश्व आते हैं।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vyushitashva_puru', name: 'व्युषिताश्व', subtitle: 'पुरु वंशी नरेश', parent: 'puru_offshoot_proxy', yug: 'treta', parichay: 'एक अत्यंत प्रतापी और धार्मिक राजा। कुंती द्वारा महाभारत में वर्णित कथा के अनुसार, इनकी मृत्यु के पश्चात इनकी पत्नी ने आत्मिक संयोग से पुत्र प्राप्त किए।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'bhadra_kakshivat_wife', name: 'भद्रा', subtitle: 'व्युषिताश्व की पत्नी', parent: '', spouseOf: 'vyushitashva_puru', yug: 'treta', parichay: 'कक्षीवान की पुत्री। अपने मृत पति के आशीर्वाद से इन्होंने 7 पुत्रों (3 शाल्व और 4 मद्र) को जन्म दिया।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // शाल्व वंश (सत्यवान और महाभारत काल)
+    { id: 'salwa_dynasty_proxy', name: 'शाल्व वंश', subtitle: 'व्युषिताश्व के 3 पुत्र', parent: 'vyushitashva_puru', mother: 'bhadra_kakshivat_wife', yug: 'treta', isProxy: true, parichay: 'राजा व्युषिताश्व और भद्रा के 3 पुत्रों द्वारा स्थापित वंश।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'dyumatsena_salwa', name: 'द्युमत्सेन', subtitle: 'शाल्व नरेश', parent: 'salwa_dynasty_proxy', yug: 'treta', parichay: 'सत्यवान के पिता। यह अंधे हो गए थे और शत्रुओं ने इनका राज्य छीन लिया था, जिसके कारण इन्हें वन में रहना पड़ा।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'satyavan_salwa', name: 'सत्यवान', subtitle: 'द्युमत्सेन पुत्र', parent: 'dyumatsena_salwa', spouseOf: 'savitri_madra', yug: 'treta', parichay: 'अल्पायु होने के कारण विवाह के एक वर्ष बाद ही इनकी मृत्यु निश्चित थी, परंतु सावित्री ने यमराज से इनके प्राण वापस ले लिए।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'satyavan_100_sons', name: '100 शाल्व पुत्र', subtitle: 'सत्यवान-सावित्री के पुत्र', parent: 'satyavan_salwa', mother: 'savitri_madra', yug: 'treta', parichay: 'यमराज के वरदान स्वरूप सावित्री और सत्यवान को 100 तेजस्वी पुत्रों की प्राप्ति हुई, जिन्होंने आगे शाल्व वंश को बढ़ाया।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'late_salwa_dynasty_proxy', name: 'महाभारत कालीन शाल्व', subtitle: 'ऐतिहासिक अंतराल', parent: 'satyavan_100_sons', yug: 'dwapar', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'shalva_saubha_king', name: 'शाल्व (सौभ नरेश)', subtitle: 'शाल्व नरेश', parent: 'late_salwa_dynasty_proxy', yug: 'dwapar', isProminent: true, parichay: 'सौभ नगर का राजा। यह अंबा का प्रेमी था। शिशुपाल की मृत्यु के बाद इसने द्वारका पर आक्रमण किया था, जहाँ भगवान कृष्ण ने इसका वध किया।', clusterName: 'नहुष चंद्रवंशी' },
 
     // मालव गणराज्य और औलिकर वंश
     { id: 'malava_tribe_founders', name: '100 मालव पुत्र', subtitle: 'मालव गणराज्य के संस्थापक', parent: 'ashvapati_madra_anu', mother: 'malavi_ashvapati_wife', yug: 'treta', parichay: 'अश्वपति और मालवी के 100 पुत्र, जिन्होंने अपनी माता के नाम पर "मालव" वंश और गणराज्य की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
