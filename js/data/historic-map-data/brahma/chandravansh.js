@@ -594,6 +594,11 @@ export const chandravanshData = [
     // ऐतिहासिक अंतराल (Historical Gap) के बाद के मुख्य राजवंश
     { id: 'yaduvansh_medieval_link_chandra', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'shatasena_shantasena_chandra', yug: 'kali', parichay: 'पुराणों में वर्णित शतसेन के बाद और मध्यकालीन राजवंशों के उदय के बीच कई शताब्दियों का अंतराल है।', clusterName: 'नहुष चंद्रवंशी' },
 
+    // --- यादव, जादव और जाटव समुदाय का मूल ---
+    { id: 'modern_yadav_community_chandra', name: 'यादव समुदाय', subtitle: 'यदुवंशी समाज', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'भारत का विशाल यादव समाज जो अपनी उत्पत्ति भगवान श्रीकृष्ण और यदुवंश से मानता है। अहीर और अन्य संबंधित जातियां इसी वृहद समूह का हिस्सा हैं।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'modern_jadav_community_chandra', name: 'जादव समुदाय', subtitle: 'यदुवंशी समाज', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'यह मुख्यतः महाराष्ट्र, गुजरात और अन्य क्षेत्रों का समुदाय है जो स्वयं को यदुवंशी मानता है। "जादव" शब्द प्राचीन "यादव" का ही सीधा रूपान्तरण है।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'modern_jatav_community_chandra', name: 'जाटव समुदाय', subtitle: 'यदुवंशी मूल', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'ऐतिहासिक शोधों और पृथ्वीराज रासो जैसे मध्यकालीन ग्रंथों के अनुसार, "जाटव" शब्द "यादव" का ही अपभ्रंश (Jadav/Jatavar) है। इस समुदाय के गोत्र (जैसे कश्यप, भारद्वाज) प्राचीन वैदिक ऋषियों से जुड़े हैं।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+
     // --- जादौन (करौली) और भाटी (जैसलमेर) का मूल ---
     { id: 'dharmapala_yaduvanshi_chandra', name: 'धर्मपाल', subtitle: 'जादौन / भाटी मूल', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
 
@@ -642,7 +647,6 @@ export const chandravanshData = [
     { id: 'bhanwar_pal_jadon', name: 'भंवर पाल', subtitle: 'करौली नरेश', parent: 'gopal_singh_jadon', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- सेउण (देवगिरि यादव राजवंश) ---
-    { id: 'jijabai_jadhav', name: 'राजमाता जीजाबाई', subtitle: 'शिवाजी की माता', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'सिंदखेड राजा के लखूजी जाधव (देवगिरि यादव वंश) की पुत्री और मराठा साम्राज्य के संस्थापक छत्रपति शिवाजी महाराज की माता। इन्होने शिवाजी को रामायण-महाभारत की कहानियाँ सुनाकर एक महान और धर्मनिष्ठ शासक बनाया।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'seuna_dynasty_proxy', name: 'सेउण (यादव) वंश', subtitle: 'देवगिरि राजवंश', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'dridhaprahara_seuna', name: 'दृढप्रहार', subtitle: 'देवगिरि यादव संस्थापक', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: '9वीं सदी में सेउण राजवंश की नींव रखी।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'seunachandra_chandra', name: 'सेउणचन्द्र', subtitle: 'देवगिरि यादव नरेश', parent: 'dridhaprahara_seuna', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
@@ -665,6 +669,12 @@ export const chandravanshData = [
     { id: 'mahadeva_seuna', name: 'महादेव', subtitle: 'देवगिरि सम्राट', parent: 'krishna_seuna', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'ramachandra_seuna', name: 'रामचन्द्र', subtitle: 'देवगिरि सम्राट', parent: 'mahadeva_seuna', yug: 'kali', parichay: 'इनके शासनकाल में अलाउद्दीन खिलजी ने देवगिरि पर आक्रमण किया।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shankaradeva_seuna', name: 'शंकरदेव', subtitle: 'अंतिम देवगिरि नरेश', parent: 'ramachandra_seuna', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- जाधव (सिंदखेड राजा) - देवगिरि यादवों के वंशज ---
+    { id: 'sindkhed_jadhav_proxy', name: 'सिंदखेड जाधव शाखा', subtitle: 'ऐतिहासिक अंतराल', parent: 'shankaradeva_seuna', yug: 'kali', parichay: 'देवगिरि के पतन के बाद, यादव वंशज सिंदखेड राजा के जागीरदार बने, जिन्हें जाधव (यादव का अपभ्रंश) कहा जाने लगा।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vithoji_jadhav', name: 'विठोजी जाधवराव', subtitle: 'सिंदखेड के जागीरदार', parent: 'sindkhed_jadhav_proxy', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'lakhuji_jadhav', name: 'लखूजी जाधवराव', subtitle: 'महान मराठा सरदार', parent: 'vithoji_jadhav', yug: 'kali', parichay: 'देवगिरि यादवों के वंशज और सिंदखेड राजा के जागीरदार। यह अहमदनगर और बाद में मुगलों के प्रमुख मनसबदार थे।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'jijabai_jadhav', name: 'राजमाता जीजाबाई', subtitle: 'शिवाजी की माता', parent: 'lakhuji_jadhav', yug: 'kali', parichay: 'सिंदखेड राजा के लखूजी जाधव की पुत्री और मराठा साम्राज्य के संस्थापक छत्रपति शिवाजी महाराज की माता। इन्होने शिवाजी को रामायण-महाभारत की कहानियाँ सुनाकर एक महान और धर्मनिष्ठ शासक बनाया।', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- अहीरवाल (रेवाड़ी) राजवंश ---
     { id: 'ahura_nandaram_chandra', name: 'राव नन्दराम', subtitle: 'रेवाड़ी रियासत (अहीरवाल)', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'रेवाड़ी (हरियाणा) में अहीरवाल रियासत के संस्थापक। स्वयं को यदुवंशी मानते हैं।', clusterName: 'नहुष चंद्रवंशी' },
