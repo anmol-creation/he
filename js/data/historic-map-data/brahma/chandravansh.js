@@ -913,7 +913,7 @@ export const chandravanshData = [
     { id: 'pratipa_chandra', name: 'प्रतीप', subtitle: 'हस्तिनापुर नरेश', parent: 'dilipa_kuru', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'sunanda_pratipa_chandra', name: 'सुनंदा', subtitle: 'प्रतीप पत्नी', parent: '', spouseOf: 'pratipa_chandra', yug: 'dwapar' },
 
-    { id: 'devapi_chandra', name: 'देवापि', subtitle: 'प्रतीप पुत्र (संन्यासी)', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'devapi_chandra', name: 'देवापि', subtitle: 'प्रतीप के ज्येष्ठ पुत्र', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', parichay: 'त्वचा रोग के कारण इन्हें राजा नहीं बनाया गया। ये तपस्या करने वन (कलाप ग्राम) चले गए। कल्कि पुराण के अनुसार, 28वें कलियुग के अंत में ये वापस आकर नए सत्य युग में चंद्रवंश की पुनः स्थापना करेंगे।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shantanu_chandra', name: 'शान्तनु', subtitle: 'हस्तिनापुर नरेश', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'bahlika_chandra', name: 'बाल्हीक', subtitle: 'बाल्हीक नरेश', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 

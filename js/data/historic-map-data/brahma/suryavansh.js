@@ -365,7 +365,7 @@ export const suryavanshData = [
     { id: 'sudarshana', name: 'सुदर्शन', subtitle: 'ध्रुवसन्धि पुत्र', parent: 'dhruvasandhi', yug: 'dwapar' },
     { id: 'agnivarna', name: 'अग्निवर्ण', subtitle: 'सुदर्शन पुत्र', parent: 'sudarshana', yug: 'dwapar' },
     { id: 'shighra', name: 'शीघ्र', subtitle: 'अग्निवर्ण पुत्र', parent: 'agnivarna', yug: 'dwapar' },
-    { id: 'maru_suryavansh', name: 'मरु', subtitle: 'शीघ्र पुत्र (अयोध्या नरेश)', parent: 'shighra', yug: 'dwapar' },
+    { id: 'maru_suryavansh', name: 'मरु', subtitle: 'शीघ्र पुत्र', parent: 'shighra', yug: 'dwapar', parichay: 'श्रीमद्भागवत और कल्कि पुराण के अनुसार, इन्होने योग के बल से मृत्यु को जीत लिया था और आज भी कलाप ग्राम में जीवित हैं। 28वें कलियुग के अंत में ये वापस आकर नए सत्य युग में इक्ष्वाकु (सूर्य) वंश की पुनः स्थापना करेंगे।' },
     { id: 'prasushruta', name: 'प्रसुश्रुत', subtitle: 'मरु पुत्र', parent: 'maru_suryavansh', yug: 'dwapar' },
     { id: 'susandhi', name: 'सुसन्धि', subtitle: 'प्रसुश्रुत पुत्र', parent: 'prasushruta', yug: 'dwapar' },
     { id: 'amarsha', name: 'अमर्ष', subtitle: 'सुसन्धि पुत्र', parent: 'susandhi', yug: 'dwapar' },
