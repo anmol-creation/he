@@ -1,500 +1,778 @@
 window.MapUI = {
-    setupUI() {
-        // Expand/Collapse All Clusters
-        const expandCollapseBtn = document.getElementById('expand-collapse-all-btn');
-        if (expandCollapseBtn) {
-            expandCollapseBtn.addEventListener('click', () => {
-                if (!window.rawHistoricData) return;
+  setupUI() {
+    this.generateCosmicTicks();
+    // Expand/Collapse All Clusters
+    const expandCollapseBtn = document.getElementById(
+      "expand-collapse-all-btn",
+    );
+    if (expandCollapseBtn) {
+      expandCollapseBtn.addEventListener("click", () => {
+        if (!window.rawHistoricData) return;
 
-                const allClusters = new Set();
-                window.rawHistoricData.forEach(d => {
-                    if (d.clusterName) allClusters.add(d.clusterName);
-                });
-
-                // If any cluster is NOT expanded, we expand all. Otherwise, collapse all.
-                let shouldExpandAll = false;
-                for (let c of allClusters) {
-                    if (!window.MapState.expandedClusters.has(c)) {
-                        shouldExpandAll = true;
-                        break;
-                    }
-                }
-
-                if (shouldExpandAll) {
-                    allClusters.forEach(c => window.MapState.expandedClusters.add(c));
-                } else {
-                    window.MapState.expandedClusters.clear();
-                }
-
-                window.dispatchEvent(new Event('ClusterToggled'));
-            });
-        }
-
-        // Panel Close
-        document.getElementById('close-panel').addEventListener('click', () => {
-            document.getElementById('focus-panel').classList.add('hidden');
+        const allClusters = new Set();
+        window.rawHistoricData.forEach((d) => {
+          if (d.clusterName) allClusters.add(d.clusterName);
         });
 
-        // Tooltip logic for tags
-        document.addEventListener('click', (e) => {
-            const tooltip = document.getElementById('tag-tooltip');
-            if (e.target.classList.contains('info-tag')) {
-                const tagText = e.target.textContent;
-                const desc = (window.sanatanGlossary && window.sanatanGlossary[tagText])
-                    ? window.sanatanGlossary[tagText]
-                    : "विस्तृत जानकारी उपलब्ध नहीं है।";
-
-                document.getElementById('tooltip-title').textContent = tagText;
-                document.getElementById('tooltip-desc').textContent = desc;
-
-                const rect = e.target.getBoundingClientRect();
-                tooltip.style.top = `${rect.bottom + 10}px`;
-                tooltip.style.left = `${rect.left}px`;
-                tooltip.classList.remove('hidden');
-                e.stopPropagation(); // prevent immediate closing
-            } else if (tooltip && !tooltip.classList.contains('hidden') && !e.target.closest('.tag-tooltip')) {
-                tooltip.classList.add('hidden');
-            }
-        });
-
-        // Panel Tabs
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                const tab = e.target.dataset.tab;
-                const contentArea = document.getElementById('panel-content-area');
-
-                if (window.MapUI && window.MapUI.currentPanelData) {
-                    window.MapUI.renderTabContent(tab, window.MapUI.currentPanelData, contentArea);
-                } else {
-                    if(tab === 'parichay') contentArea.innerHTML = '<p>विस्तृत परिचय यहाँ आएगा।</p>';
-                    if(tab === 'jeevan') contentArea.innerHTML = '<p>जीवन की मुख्य घटनाएँ और टाइमलाइन।</p>';
-                    if(tab === 'kathayein') contentArea.innerHTML = '<p>प्रचलित कथाएँ और प्रसंग।</p>';
-                }
-            });
-        });
-
-        // Filter Dropdown UI Logic
-        const mapViewBtn = document.getElementById('map-view-btn');
-        const filterDropdown = document.getElementById('map-filter-dropdown');
-        const filterTransitionWires = document.getElementById('filter-transition-wires');
-
-        if (mapViewBtn && filterDropdown) {
-            mapViewBtn.addEventListener('click', () => {
-                const isVisible = filterDropdown.style.display === 'block';
-                filterDropdown.style.display = isVisible ? 'none' : 'block';
-            });
+        // If any cluster is NOT expanded, we expand all. Otherwise, collapse all.
+        let shouldExpandAll = false;
+        for (let c of allClusters) {
+          if (!window.MapState.expandedClusters.has(c)) {
+            shouldExpandAll = true;
+            break;
+          }
         }
 
-        if (filterTransitionWires) {
-            // Set initial state matching MapState
-            filterTransitionWires.checked = window.MapState && window.MapState.showTransitionWires;
-
-            filterTransitionWires.addEventListener('change', (e) => {
-                if (window.MapState) {
-                    window.MapState.showTransitionWires = e.target.checked;
-                    window.MapState.requestRedraw();
-                }
-            });
+        if (shouldExpandAll) {
+          allClusters.forEach((c) => window.MapState.expandedClusters.add(c));
+        } else {
+          window.MapState.expandedClusters.clear();
         }
 
-        const layoutRadios = document.querySelectorAll('input[name="layout-mode"]');
-        layoutRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                if (window.MapState) {
-                    window.MapState.layoutMode = e.target.value;
-                    // Re-run the entire layout engine
-                    window.dispatchEvent(new Event('ClusterToggled'));
-                }
-            });
-        });
+        window.dispatchEvent(new Event("ClusterToggled"));
+      });
+    }
 
+    // Panel Close
+    document.getElementById("close-panel").addEventListener("click", () => {
+      document.getElementById("focus-panel").classList.add("hidden");
+    });
 
-        // Route UI Logic
-        const routeToggleBtn = document.getElementById('route-toggle-btn');
-        const routeBox = document.getElementById('route-search-box');
-        const findRouteBtn = document.getElementById('find-route-btn');
-        const clearRouteBtn = document.getElementById('clear-route-btn');
-        const startInput = document.getElementById('route-start-input');
-        const endInput = document.getElementById('route-end-input');
-        const errorMsg = document.getElementById('route-error-msg');
+    // Tooltip logic for tags
+    document.addEventListener("click", (e) => {
+      const tooltip = document.getElementById("tag-tooltip");
+      if (e.target.classList.contains("info-tag")) {
+        const tagText = e.target.textContent;
+        const desc =
+          window.sanatanGlossary && window.sanatanGlossary[tagText]
+            ? window.sanatanGlossary[tagText]
+            : "विस्तृत जानकारी उपलब्ध नहीं है।";
 
-        if (routeToggleBtn) {
-            routeToggleBtn.addEventListener('click', () => {
-                routeBox.classList.toggle('active');
-            });
+        document.getElementById("tooltip-title").textContent = tagText;
+        document.getElementById("tooltip-desc").textContent = desc;
+
+        const rect = e.target.getBoundingClientRect();
+        tooltip.style.top = `${rect.bottom + 10}px`;
+        tooltip.style.left = `${rect.left}px`;
+        tooltip.classList.remove("hidden");
+        e.stopPropagation(); // prevent immediate closing
+      } else if (
+        tooltip &&
+        !tooltip.classList.contains("hidden") &&
+        !e.target.closest(".tag-tooltip")
+      ) {
+        tooltip.classList.add("hidden");
+      }
+    });
+
+    // Panel Tabs
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        e.target.classList.add("active");
+        const tab = e.target.dataset.tab;
+        const contentArea = document.getElementById("panel-content-area");
+
+        if (window.MapUI && window.MapUI.currentPanelData) {
+          window.MapUI.renderTabContent(
+            tab,
+            window.MapUI.currentPanelData,
+            contentArea,
+          );
+        } else {
+          if (tab === "parichay")
+            contentArea.innerHTML = "<p>विस्तृत परिचय यहाँ आएगा।</p>";
+          if (tab === "jeevan")
+            contentArea.innerHTML = "<p>जीवन की मुख्य घटनाएँ और टाइमलाइन।</p>";
+          if (tab === "kathayein")
+            contentArea.innerHTML = "<p>प्रचलित कथाएँ और प्रसंग।</p>";
         }
+      });
+    });
 
-        if (clearRouteBtn) {
-            clearRouteBtn.addEventListener('click', () => {
-                startInput.value = '';
-                endInput.value = '';
-                errorMsg.style.display = 'none';
-                if (window.MapRenderer) window.MapRenderer.drawRoute(null);
-            });
+    // Filter Dropdown UI Logic
+    const mapViewBtn = document.getElementById("map-view-btn");
+    const filterDropdown = document.getElementById("map-filter-dropdown");
+    const filterTransitionWires = document.getElementById(
+      "filter-transition-wires",
+    );
+
+    if (mapViewBtn && filterDropdown) {
+      mapViewBtn.addEventListener("click", () => {
+        const isVisible = filterDropdown.style.display === "block";
+        filterDropdown.style.display = isVisible ? "none" : "block";
+      });
+    }
+
+    if (filterTransitionWires) {
+      // Set initial state matching MapState
+      filterTransitionWires.checked =
+        window.MapState && window.MapState.showTransitionWires;
+
+      filterTransitionWires.addEventListener("change", (e) => {
+        if (window.MapState) {
+          window.MapState.showTransitionWires = e.target.checked;
+          window.MapState.requestRedraw();
         }
+      });
+    }
 
-        if (findRouteBtn) {
-            findRouteBtn.addEventListener('click', () => {
-                const start = startInput.value.trim().toLowerCase();
-                const end = endInput.value.trim().toLowerCase();
-                errorMsg.style.display = 'none';
-
-                if (start && end && window.PathFinder) {
-                    const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
-                    const pf = new window.PathFinder(dataList);
-                    const path = pf.findShortestPath(start, end);
-
-                    if (path) {
-                        if (window.MapRenderer) window.MapRenderer.drawRoute(path);
-                        // Optional: close panel if open
-                        document.getElementById('focus-panel').classList.add('hidden');
-                    } else {
-                        errorMsg.style.display = 'block';
-                    }
-                }
-            });
+    const layoutRadios = document.querySelectorAll('input[name="layout-mode"]');
+    layoutRadios.forEach((radio) => {
+      radio.addEventListener("change", (e) => {
+        if (window.MapState) {
+          window.MapState.layoutMode = e.target.value;
+          // Re-run the entire layout engine
+          window.dispatchEvent(new Event("ClusterToggled"));
         }
+      });
+    });
 
-        // Panel Start Route from Here
-        const panelStartBtn = document.getElementById('panel-start-route-btn');
-        if (panelStartBtn) {
-            panelStartBtn.addEventListener('click', () => {
-                const state = window.MapState;
-                if (state.focusedNodeId) {
-                    startInput.value = state.focusedNodeId;
-                    routeBox.classList.add('active');
-                    endInput.focus();
-                }
-            });
+    // Route UI Logic
+    const routeToggleBtn = document.getElementById("route-toggle-btn");
+    const routeBox = document.getElementById("route-search-box");
+    const findRouteBtn = document.getElementById("find-route-btn");
+    const clearRouteBtn = document.getElementById("clear-route-btn");
+    const startInput = document.getElementById("route-start-input");
+    const endInput = document.getElementById("route-end-input");
+    const errorMsg = document.getElementById("route-error-msg");
+
+    if (routeToggleBtn) {
+      routeToggleBtn.addEventListener("click", () => {
+        routeBox.classList.toggle("active");
+      });
+    }
+
+    if (clearRouteBtn) {
+      clearRouteBtn.addEventListener("click", () => {
+        startInput.value = "";
+        endInput.value = "";
+        errorMsg.style.display = "none";
+        if (window.MapRenderer) window.MapRenderer.drawRoute(null);
+      });
+    }
+
+    if (findRouteBtn) {
+      findRouteBtn.addEventListener("click", () => {
+        const start = startInput.value.trim().toLowerCase();
+        const end = endInput.value.trim().toLowerCase();
+        errorMsg.style.display = "none";
+
+        if (start && end && window.PathFinder) {
+          const dataList =
+            window.rawHistoricData ||
+            (window.HistoricDB
+              ? window.HistoricDB.getAll()
+              : window.historicData) ||
+            [];
+          const pf = new window.PathFinder(dataList);
+          const path = pf.findShortestPath(start, end);
+
+          if (path) {
+            if (window.MapRenderer) window.MapRenderer.drawRoute(path);
+            // Optional: close panel if open
+            document.getElementById("focus-panel").classList.add("hidden");
+          } else {
+            errorMsg.style.display = "block";
+          }
         }
+      });
+    }
 
-        // --- Full Screen Search UI (Google Maps Style) ---
-        const searchToggleBtn = document.getElementById('search-toggle-btn');
-        const searchOverlay = document.getElementById('full-screen-search-overlay');
-        const closeSearchBtn = document.getElementById('close-search-btn');
-        const searchInput = document.getElementById('map-search-input');
-        const clearSearchBtn = document.getElementById('clear-search-btn');
-        const recentSearchesContainer = document.getElementById('recent-searches-container');
-        const recentSearchesList = document.getElementById('recent-searches-list');
-        const searchResultsContainer = document.getElementById('map-search-results');
+    // Panel Start Route from Here
+    const panelStartBtn = document.getElementById("panel-start-route-btn");
+    if (panelStartBtn) {
+      panelStartBtn.addEventListener("click", () => {
+        const state = window.MapState;
+        if (state.focusedNodeId) {
+          startInput.value = state.focusedNodeId;
+          routeBox.classList.add("active");
+          endInput.focus();
+        }
+      });
+    }
 
-        let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+    // --- Full Screen Search UI (Google Maps Style) ---
+    const searchToggleBtn = document.getElementById("main-search-bar-trigger");
+    const searchOverlay = document.getElementById("full-screen-search-overlay");
+    const closeSearchBtn = document.getElementById("close-search-btn");
+    const searchInput = document.getElementById("map-search-input");
+    const clearSearchBtn = document.getElementById("clear-search-btn");
+    const recentSearchesContainer = document.getElementById(
+      "recent-searches-container",
+    );
+    const recentSearchesList = document.getElementById("recent-searches-list");
+    const searchResultsContainer =
+      document.getElementById("map-search-results");
 
-        function renderRecentSearches() {
-            if (recentSearches.length === 0) {
-                recentSearchesContainer.style.display = 'none';
-                return;
-            }
-            recentSearchesContainer.style.display = 'block';
-            recentSearchesList.innerHTML = recentSearches.map(item => `
+    let recentSearches = JSON.parse(
+      localStorage.getItem("recentSearches") || "[]",
+    );
+
+    function renderRecentSearches() {
+      if (recentSearches.length === 0) {
+        recentSearchesContainer.style.display = "none";
+        return;
+      }
+      recentSearchesContainer.style.display = "block";
+      recentSearchesList.innerHTML = recentSearches
+        .map(
+          (item) => `
                 <div class="recent-search-item" data-id="${item.id}">
                     <span>🕒</span>
                     <div>
                         <div style="font-weight:600;">${item.name}</div>
-                        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5);">${item.subtitle || ''}</div>
+                        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5);">${item.subtitle || ""}</div>
                     </div>
                 </div>
-            `).join('');
+            `,
+        )
+        .join("");
 
-            document.querySelectorAll('.recent-search-item').forEach(el => {
-                el.addEventListener('click', (ev) => {
-                    const id = ev.currentTarget.dataset.id;
-                    handleSearchResultClick(id);
-                });
-            });
+      document.querySelectorAll(".recent-search-item").forEach((el) => {
+        el.addEventListener("click", (ev) => {
+          const id = ev.currentTarget.dataset.id;
+          handleSearchResultClick(id);
+        });
+      });
+    }
+
+    function saveRecentSearch(node) {
+      const searchItem = {
+        id: node.id,
+        name: node.name,
+        subtitle: node.subtitle,
+      };
+      recentSearches = recentSearches.filter((s) => s.id !== node.id);
+      recentSearches.unshift(searchItem);
+      if (recentSearches.length > 5) recentSearches.pop();
+      localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+    }
+
+    if (searchToggleBtn && searchOverlay) {
+      searchToggleBtn.addEventListener("click", () => {
+        searchOverlay.classList.remove("hidden");
+        searchInput.focus();
+        renderRecentSearches();
+        if (searchInput.value.trim() === "") {
+          searchResultsContainer.style.display = "none";
         }
+      });
+    }
 
-        function saveRecentSearch(node) {
-            const searchItem = { id: node.id, name: node.name, subtitle: node.subtitle };
-            recentSearches = recentSearches.filter(s => s.id !== node.id);
-            recentSearches.unshift(searchItem);
-            if (recentSearches.length > 5) recentSearches.pop();
-            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-        }
+    if (closeSearchBtn) {
+      closeSearchBtn.addEventListener("click", () => {
+        searchOverlay.classList.add("hidden");
+      });
+    }
 
-        if (searchToggleBtn && searchOverlay) {
-            searchToggleBtn.addEventListener('click', () => {
-                searchOverlay.classList.remove('hidden');
-                searchInput.focus();
-                renderRecentSearches();
-                if (searchInput.value.trim() === '') {
-                    searchResultsContainer.style.display = 'none';
-                }
-            });
-        }
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        clearSearchBtn.classList.add("hidden");
+        searchResultsContainer.style.display = "none";
+        renderRecentSearches();
+        searchInput.focus();
+      });
+    }
 
-        if (closeSearchBtn) {
-            closeSearchBtn.addEventListener('click', () => {
-                searchOverlay.classList.add('hidden');
-            });
-        }
+    function handleSearchResultClick(id) {
+      const dataList =
+        window.rawHistoricData ||
+        (window.HistoricDB
+          ? window.HistoricDB.getAll()
+          : window.historicData) ||
+        [];
+      const rawNode = dataList.find((d) => d.id === id);
 
-        if (clearSearchBtn) {
-            clearSearchBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                clearSearchBtn.classList.add('hidden');
-                searchResultsContainer.style.display = 'none';
-                renderRecentSearches();
-                searchInput.focus();
-            });
-        }
+      if (rawNode) {
+        saveRecentSearch(rawNode);
+        searchInput.value = rawNode.name;
+        searchOverlay.classList.add("hidden");
 
-        function handleSearchResultClick(id) {
-            const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
-            const rawNode = dataList.find(d => d.id === id);
+        if (window.MapState) {
+          let didExpand = false;
 
-            if (rawNode) {
-                saveRecentSearch(rawNode);
-                searchInput.value = rawNode.name;
-                searchOverlay.classList.add('hidden');
+          // To ensure we ONLY open the specific lineage path for the searched node
+          // and collapse any OTHER clusters that were previously opened (if the user wants a clean view),
+          // we can optionally clear expandedClusters first, but usually users want to keep their existing map state.
+          // However, based on the user's feedback: "lekin uske ass pas wale ya wo cluster open nhi hone cahiye jo uski lineage m ho ya na ho leki agar wo direct unke ander se na nikle"
+          // This implies the user WANTS to close all other clusters that are NOT in the direct lineage of the searched node!
 
-                if (window.MapState) {
-                    let didExpand = false;
+          // Let's find all clusters in the direct lineage of the searched node.
+          const requiredClusters = new Set();
 
-                            // To ensure we ONLY open the specific lineage path for the searched node
-                            // and collapse any OTHER clusters that were previously opened (if the user wants a clean view),
-                            // we can optionally clear expandedClusters first, but usually users want to keep their existing map state.
-                            // However, based on the user's feedback: "lekin uske ass pas wale ya wo cluster open nhi hone cahiye jo uski lineage m ho ya na ho leki agar wo direct unke ander se na nikle"
-                            // This implies the user WANTS to close all other clusters that are NOT in the direct lineage of the searched node!
+          if (rawNode.clusterName) {
+            requiredClusters.add(rawNode.clusterName);
+          }
 
-                            // Let's find all clusters in the direct lineage of the searched node.
-                            const requiredClusters = new Set();
-
-                            if (rawNode.clusterName) {
-                                requiredClusters.add(rawNode.clusterName);
-                            }
-
-                            let currentNode = rawNode;
-                            let maxDepth = 100;
-                            while (currentNode && currentNode.parent && maxDepth > 0) {
-                                maxDepth--;
-                                const parentNode = dataList.find(d => d.id === currentNode.parent);
-                                if (!parentNode) break;
-
-                                if (parentNode.clusterName) {
-                                    requiredClusters.add(parentNode.clusterName);
-                                }
-                                currentNode = parentNode;
-                            }
-
-                            // Collapse all currently expanded clusters that are NOT in the required lineage
-                            for (const clusterName of window.MapState.expandedClusters) {
-                                if (!requiredClusters.has(clusterName)) {
-                                    window.MapState.expandedClusters.delete(clusterName);
-                                    didExpand = true; // State changed, need redraw
-                                }
-                            }
-
-                            // Expand the required clusters
-                            for (const clusterName of requiredClusters) {
-                                if (!window.MapState.expandedClusters.has(clusterName)) {
-                                    window.MapState.expandedClusters.add(clusterName);
-                                    didExpand = true; // State changed, need redraw
-                                }
-                            }
-
-                            if (didExpand) {
-                                window.dispatchEvent(new Event('ClusterToggled'));
-                            }
-                        }
-
-                        // Need to give DOM/layout time to update if cluster was toggled,
-                        // but focusOnNode can be called immediately as it looks for the new layout.
-                        // Actually, focusOnNode relies on window.HistoricDB.getAll() being updated.
-                        setTimeout(() => {
-                            if (window.MapControls) window.MapControls.focusOnNode(id);
-
-                            // Re-fetch from updated HistoricDB to get latest properties if needed for panel
-                            const updatedDataList = window.HistoricDB ? window.HistoricDB.getAll() : window.historicData;
-                            const nodeData = updatedDataList.find(d => d.id === id) || rawNode;
-                            if (nodeData) this.openPanel(nodeData);
-                        }, 50); // slight delay to ensure event is processed
+          let currentNode = rawNode;
+          let maxDepth = 1000; // Increased to ensure it traces all the way to Paramatma
+          while (currentNode && currentNode.parent && maxDepth > 0) {
+            maxDepth--;
+            let parentNode = null;
+            for (let i = 0; i < dataList.length; i++) {
+              if (dataList[i].id === currentNode.parent) {
+                parentNode = dataList[i];
+                break;
+              }
             }
+            if (!parentNode) break;
+
+            if (parentNode.clusterName) {
+              requiredClusters.add(parentNode.clusterName);
+            }
+            currentNode = parentNode;
+          }
+
+          // Collapse all currently expanded clusters that are NOT in the required lineage
+          for (const clusterName of window.MapState.expandedClusters) {
+            if (!requiredClusters.has(clusterName)) {
+              window.MapState.expandedClusters.delete(clusterName);
+              didExpand = true; // State changed, need redraw
+            }
+          }
+
+          // Expand the required clusters
+          for (const clusterName of requiredClusters) {
+            if (!window.MapState.expandedClusters.has(clusterName)) {
+              window.MapState.expandedClusters.add(clusterName);
+              didExpand = true; // State changed, need redraw
+            }
+          }
+
+          if (didExpand) {
+            window.dispatchEvent(new Event("ClusterToggled"));
+          }
         }
 
-        searchInput?.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
+        // Need to give DOM/layout time to update if cluster was toggled,
+        // but focusOnNode can be called immediately as it looks for the new layout.
+        // Actually, focusOnNode relies on window.HistoricDB.getAll() being updated.
+        setTimeout(() => {
+          if (window.MapControls) window.MapControls.focusOnNode(id);
 
-            if (query.length > 0) {
-                clearSearchBtn.classList.remove('hidden');
-            } else {
-                clearSearchBtn.classList.add('hidden');
+          // Re-fetch from updated HistoricDB to get latest properties if needed for panel
+          const updatedDataList = window.HistoricDB
+            ? window.HistoricDB.getAll()
+            : window.historicData;
+          const nodeData = updatedDataList.find((d) => d.id === id) || rawNode;
+          if (nodeData) this.openPanel(nodeData);
+        }, 50); // slight delay to ensure event is processed
+      }
+    }
+
+    searchInput?.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
+
+      if (query.length > 0) {
+        clearSearchBtn.classList.remove("hidden");
+      } else {
+        clearSearchBtn.classList.add("hidden");
+      }
+
+      if (query.length < 2) {
+        searchResultsContainer.style.display = "none";
+        renderRecentSearches();
+        return;
+      }
+
+      recentSearchesContainer.style.display = "none";
+
+      const dataList =
+        window.rawHistoricData ||
+        (window.HistoricDB
+          ? window.HistoricDB.getAll()
+          : window.historicData) ||
+        [];
+      // Helper to get name from ID for relationship search
+      const getNameFromId = (id) => {
+        const node = dataList.find((n) => n.id === id);
+        return node
+          ? (node.name + " " + (node.nameEn || "")).toLowerCase()
+          : "";
+      };
+
+      let matches = dataList.filter((d) => {
+        // Direct Text Matches (Name, ID, Subtitle, Tags, Aliases)
+        let textMatch =
+          (d.name && d.name.toLowerCase().includes(query)) ||
+          (d.id && d.id.toLowerCase().includes(query)) ||
+          (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
+          (d.subtitle && d.subtitle.toLowerCase().includes(query)) ||
+          (d.aliases &&
+            d.aliases.some((a) => a.toLowerCase().includes(query))) ||
+          (d.tags && d.tags.some((t) => t.toLowerCase().includes(query)));
+
+        if (textMatch) return true;
+
+        // Relationship / Contextual Searches (e.g. "राम की पत्नी", "dashrath ke pita")
+        const qParts = query.split(/\s+/);
+
+        if (qParts.length > 1) {
+          let fatherName = d.parent ? getNameFromId(d.parent) : "";
+          let motherName = d.mother ? getNameFromId(d.mother) : "";
+          let spouseNames = "";
+          if (d.spouse) {
+            const spouses = Array.isArray(d.spouse) ? d.spouse : [d.spouse];
+            spouseNames = spouses.map((s) => getNameFromId(s)).join(" ");
+          }
+
+          const hasWifeKeyword =
+            query.includes("patni") ||
+            query.includes("पत्नी") ||
+            query.includes("wife");
+          const hasPitaKeyword =
+            query.includes("pita") ||
+            query.includes("पिता") ||
+            query.includes("father") ||
+            query.includes("putra") ||
+            query.includes("पुत्र");
+          const hasMataKeyword =
+            query.includes("mata") ||
+            query.includes("माता") ||
+            query.includes("mother") ||
+            query.includes("maa") ||
+            query.includes("माँ");
+
+          if (hasWifeKeyword && spouseNames) {
+            if (
+              d.gender === "female" &&
+              qParts.some(
+                (p) =>
+                  p.length > 2 &&
+                  spouseNames.includes(p) &&
+                  !["patni", "पत्नी", "wife"].includes(p),
+              )
+            ) {
+              return true;
             }
+          }
 
-            if (query.length < 2) {
-                searchResultsContainer.style.display = 'none';
-                renderRecentSearches();
-                return;
+          if (hasPitaKeyword && fatherName) {
+            if (
+              qParts.some(
+                (p) =>
+                  p.length > 2 &&
+                  fatherName.includes(p) &&
+                  !["pita", "पिता", "father", "putra", "पुत्र"].includes(p),
+              )
+            ) {
+              return true;
             }
+          }
 
-            recentSearchesContainer.style.display = 'none';
+          if (hasMataKeyword && motherName) {
+            if (
+              qParts.some(
+                (p) =>
+                  p.length > 2 &&
+                  motherName.includes(p) &&
+                  !["mata", "माता", "mother", "maa", "माँ"].includes(p),
+              )
+            ) {
+              return true;
+            }
+          }
+        }
 
-            const dataList = window.rawHistoricData || (window.HistoricDB ? window.HistoricDB.getAll() : window.historicData) || [];
-            const matches = dataList.filter(d =>
-                (d.name && d.name.toLowerCase().includes(query)) ||
-                (d.id && d.id.toLowerCase().includes(query)) ||
-                (d.nameEn && d.nameEn.toLowerCase().includes(query)) ||
-                (d.subtitle && d.subtitle.toLowerCase().includes(query))
-            ).slice(0, 10);
+        return false;
+      });
 
-            if (matches.length > 0) {
-                searchResultsContainer.innerHTML = matches.map(m => `
+      // Sorting logic:
+      // 1. Exact match in name or aliases
+      // 2. Prominent figures (isProminent flag)
+      // 3. Match at the beginning of the name
+            matches.sort((a, b) => {
+        const aName = a.name ? a.name.toLowerCase() : "";
+        const bName = b.name ? b.name.toLowerCase() : "";
+        const aNameEn = a.nameEn ? a.nameEn.toLowerCase() : "";
+        const bNameEn = b.nameEn ? b.nameEn.toLowerCase() : "";
+        const aId = a.id ? a.id.toLowerCase() : "";
+        const bId = b.id ? b.id.toLowerCase() : "";
+
+        const isAExact =
+          aName === query ||
+          aNameEn === query ||
+          aId === query ||
+          (a.aliases && a.aliases.some((al) => al.toLowerCase() === query));
+        const isBExact =
+          bName === query ||
+          bNameEn === query ||
+          bId === query ||
+          (b.aliases && b.aliases.some((al) => al.toLowerCase() === query));
+
+        if (isAExact && !isBExact) return -1;
+        if (!isAExact && isBExact) return 1;
+
+        if (a.isProminent && !b.isProminent) return -1;
+        if (!a.isProminent && b.isProminent) return 1;
+
+        const isAStart = aName.startsWith(query) || aNameEn.startsWith(query);
+        const isBStart = bName.startsWith(query) || bNameEn.startsWith(query);
+
+        if (isAStart && !isBStart) return -1;
+        if (!isAStart && isBStart) return 1;
+
+        return 0;
+      });
+
+      // Limit to 50 instead of 10
+      matches = matches.slice(0, 50);
+
+      if (matches.length > 0) {
+        searchResultsContainer.innerHTML = matches
+          .map(
+            (m) => `
                     <div class="search-result-item recent-search-item" data-id="${m.id}">
                         <span>🔍</span>
                         <div>
-                            <div style="font-weight: 600;">${m.name} ${m.nameEn ? `(${m.nameEn})` : ''}</div>
-                            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">${m.subtitle || ''}</div>
+                            <div style="font-weight: 600;">${m.name} ${m.nameEn ? `(${m.nameEn})` : ""}</div>
+                            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">${m.subtitle || ""}</div>
                         </div>
                     </div>
-                `).join('');
-                searchResultsContainer.style.display = 'flex';
+                `,
+          )
+          .join("");
+        searchResultsContainer.style.display = "flex";
 
-                document.querySelectorAll('#map-search-results .search-result-item').forEach(item => {
-                    item.addEventListener('click', (ev) => {
-                        const id = ev.currentTarget.dataset.id;
-                        handleSearchResultClick(id);
-                    });
-                });
-            } else {
-                searchResultsContainer.innerHTML = '<div style="padding: 10px; color: rgba(255,255,255,0.5);">No results found</div>';
-                searchResultsContainer.style.display = 'block';
-            }
+        document
+          .querySelectorAll("#map-search-results .search-result-item")
+          .forEach((item) => {
+            item.addEventListener("click", (ev) => {
+              const id = ev.currentTarget.dataset.id;
+              handleSearchResultClick(id);
+            });
+          });
+      } else {
+        searchResultsContainer.innerHTML =
+          '<div style="padding: 10px; color: rgba(255,255,255,0.5);">No results found</div>';
+        searchResultsContainer.style.display = "block";
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !e.target.closest(".filter-dropdown") &&
+        !e.target.closest("#map-view-btn")
+      ) {
+        const filterDropdown = document.getElementById("map-filter-dropdown");
+        if (filterDropdown) filterDropdown.style.display = "none";
+      }
+    });
+
+    // Legend Interaction
+    const legendDots = document.querySelectorAll(".legend-dot");
+    const legendPopup = document.getElementById("legend-popup");
+    const legendText = document.getElementById("legend-text");
+
+    if (legendDots && legendPopup) {
+      legendDots.forEach((dot) => {
+        dot.addEventListener("click", (e) => {
+          e.stopPropagation();
+          legendText.textContent = dot.dataset.desc;
+          legendPopup.style.display = "block";
+
+          setTimeout(() => {
+            legendPopup.style.display = "none";
+          }, 3000);
         });
+      });
 
+      document.addEventListener("click", () => {
+        legendPopup.style.display = "none";
+      });
+    }
+  },
 
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.filter-dropdown') && !e.target.closest('#map-view-btn')) {
-                const filterDropdown = document.getElementById('map-filter-dropdown');
-                if (filterDropdown) filterDropdown.style.display = 'none';
-            }
+  openPanel(data) {
+    this.currentPanelData = data;
+    const panel = document.getElementById("focus-panel");
+    document.getElementById("panel-name").textContent = data.name;
+    document.getElementById("panel-subtitle").textContent = data.subtitle || "";
+
+    const dotsContainer = document.getElementById("panel-dots");
+    dotsContainer.innerHTML = "";
+    const nodeColor = data.inheritedColor || "#FF6B35";
+    dotsContainer.innerHTML += `<div class="dot" style="background-color: ${nodeColor}"></div>`;
+
+    // Render Tags
+    const tagsContainer = document.getElementById("panel-tags");
+    tagsContainer.innerHTML = "";
+
+    let yugText = "अज्ञात काल";
+    if (data.yug === "satya") yugText = "सत्य युग";
+    else if (data.yug === "treta") yugText = "त्रेता युग";
+    else if (data.yug === "dwapar") yugText = "द्वापर युग";
+    else if (data.yug === "sanatan") yugText = "सनातन";
+
+    let vanshText = "अन्य";
+    if (nodeColor === "#FF9900") vanshText = "सूर्यवंश";
+    else if (nodeColor === "#4169E1") vanshText = "चंद्रवंश";
+    else if (data.clusterName) vanshText = data.clusterName;
+
+    let tagsHTML = `<span class="info-tag clickable">${yugText}</span><span class="info-tag clickable">${vanshText}</span>`;
+    if (data.tags && Array.isArray(data.tags)) {
+      // Avoid duplicate tags
+      data.tags.forEach((t) => {
+        if (t !== yugText && t !== vanshText) {
+          tagsHTML += `<span class="info-tag clickable">${t}</span>`;
+        }
+      });
+    }
+    tagsContainer.innerHTML = tagsHTML;
+
+    // Reset Tabs to Parichay
+    document
+      .querySelectorAll(".tab-btn")
+      .forEach((b) => b.classList.remove("active"));
+    document
+      .querySelector('.tab-btn[data-tab="parichay"]')
+      .classList.add("active");
+
+    const contentArea = document.getElementById("panel-content-area");
+    this.renderTabContent("parichay", data, contentArea);
+
+    panel.classList.remove("hidden");
+  },
+
+  renderTabContent(tab, data, contentArea) {
+    if (tab === "parichay") {
+      let detailsHtml = '<div class="info-details-grid">';
+
+      // Aliases
+      if (data.aliases && data.aliases.length > 0) {
+        detailsHtml += `<div class="detail-row"><span class="detail-label">अन्य नाम:</span> <span class="detail-value">${data.aliases.join(", ")}</span></div>`;
+      }
+
+      // Family Links (Clickable if they exist in DB)
+      const getLink = (idStr) => {
+        const node = window.HistoricDB
+          ? window.HistoricDB.getNode(idStr)
+          : null;
+        if (node)
+          return `<a href="#" class="family-link" data-id="${idStr}">${node.name}</a>`;
+        return `<span class="detail-value">${idStr}</span>`;
+      };
+
+      if (data.parent) {
+        detailsHtml += `<div class="detail-row"><span class="detail-label">पिता:</span> ${getLink(data.parent)}</div>`;
+      }
+      if (data.mother) {
+        // If mother is a string like "मानस पुत्र", it won't resolve to a node, which is fine
+        detailsHtml += `<div class="detail-row"><span class="detail-label">माता:</span> ${getLink(data.mother)}</div>`;
+      }
+      if (data.spouse) {
+        const spouses = Array.isArray(data.spouse)
+          ? data.spouse
+          : [data.spouse];
+        const spouseLinks = spouses.map((s) => getLink(s)).join(", ");
+        detailsHtml += `<div class="detail-row"><span class="detail-label">जीवनसाथी:</span> ${spouseLinks}</div>`;
+      }
+
+      // Attributes
+      if (data.weapons && data.weapons.length > 0) {
+        detailsHtml += `<div class="detail-row"><span class="detail-label">अस्त्र/शस्त्र:</span> <span class="detail-value">${data.weapons.join(", ")}</span></div>`;
+      }
+      if (data.mount) {
+        detailsHtml += `<div class="detail-row"><span class="detail-label">वाहन:</span> <span class="detail-value">${data.mount}</span></div>`;
+      }
+      if (data.abode) {
+        detailsHtml += `<div class="detail-row"><span class="detail-label">निवास:</span> <span class="detail-value">${data.abode}</span></div>`;
+      }
+
+      detailsHtml += "</div>"; // End grid
+
+      let parichayHtml = data.parichay
+        ? `<p class="parichay-text">${data.parichay}</p>`
+        : '<p class="parichay-text">विस्तृत परिचय उपलब्ध नहीं है।</p>';
+
+      let sourceHtml = "";
+      if (data.source_texts && data.source_texts.length > 0) {
+        sourceHtml = `<div class="source-texts"><span class="detail-label">ग्रंथ संदर्भ:</span> ${data.source_texts.join(", ")}</div>`;
+      }
+
+      // --- DATA QA TOOL LOGIC ---
+      let qaHtml = "";
+      let qaIssues = [];
+
+      const checkExists = (id) => {
+        if (!id) return true; // If not provided, it's not an issue
+        if (!window.HistoricDB) return true; // DB not loaded
+        return window.HistoricDB.getNode(id) !== undefined;
+      };
+
+      // 1. Check parent (father)
+      if (data.parent && !checkExists(data.parent)) {
+        qaIssues.push(`Father ID missing: <strong>${data.parent}</strong>`);
+      }
+      // 2. Check mother
+      if (data.mother && !checkExists(data.mother)) {
+        qaIssues.push(`Mother ID missing: <strong>${data.mother}</strong>`);
+      }
+      // 3. Check spouse(s)
+      if (data.spouse) {
+        const spouses = Array.isArray(data.spouse)
+          ? data.spouse
+          : [data.spouse];
+        spouses.forEach((s) => {
+          if (!checkExists(s)) {
+            qaIssues.push(`Spouse ID missing: <strong>${s}</strong>`);
+          }
         });
+      }
 
-        // Legend Interaction
-        const legendDots = document.querySelectorAll('.legend-dot');
-        const legendPopup = document.getElementById('legend-popup');
-        const legendText = document.getElementById('legend-text');
+      // 4. Duplicate Detection (Female Auto-dup Rule vs Manual)
+      let isMarked = false;
+      let markedNodes = [];
+      try {
+        markedNodes = JSON.parse(localStorage.getItem("qaMarkedNodes") || "[]");
+        isMarked = markedNodes.includes(data.id);
+      } catch (e) {}
 
-        if (legendDots && legendPopup) {
-            legendDots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    legendText.textContent = dot.dataset.desc;
-                    legendPopup.style.display = 'block';
-
-                    setTimeout(() => {
-                        legendPopup.style.display = 'none';
-                    }, 3000);
-                });
-            });
-
-            document.addEventListener('click', () => {
-                legendPopup.style.display = 'none';
-            });
+      if (data.gender === "female") {
+        // Find how many times she exists as a raw node in DB vs visually
+        let dbCount = 0;
+        if (window.HistoricDB) {
+          const allData = window.HistoricDB.getAll();
+          dbCount = allData.filter(
+            (d) => d.id === data.id || (d.id && d.id.startsWith(data.id + "_")),
+          ).length;
         }
-    },
 
-    openPanel(data) {
-        this.currentPanelData = data;
-        const panel = document.getElementById('focus-panel');
-        document.getElementById('panel-name').textContent = data.name;
-        document.getElementById('panel-subtitle').textContent = data.subtitle || '';
-
-        const dotsContainer = document.getElementById('panel-dots');
-        dotsContainer.innerHTML = '';
-        const nodeColor = data.inheritedColor || '#FF6B35';
-        dotsContainer.innerHTML += `<div class="dot" style="background-color: ${nodeColor}"></div>`;
-
-        // Render Tags
-        const tagsContainer = document.getElementById('panel-tags');
-        tagsContainer.innerHTML = '';
-
-        let yugText = 'अज्ञात काल';
-        if(data.yug === 'satya') yugText = 'सत्य युग';
-        else if(data.yug === 'treta') yugText = 'त्रेता युग';
-        else if(data.yug === 'dwapar') yugText = 'द्वापर युग';
-        else if(data.yug === 'sanatan') yugText = 'सनातन';
-
-        let vanshText = 'अन्य';
-        if(nodeColor === '#FF9900') vanshText = 'सूर्यवंश';
-        else if(nodeColor === '#4169E1') vanshText = 'चंद्रवंश';
-        else if(data.clusterName) vanshText = data.clusterName;
-
-        let tagsHTML = `<span class="info-tag clickable">${yugText}</span><span class="info-tag clickable">${vanshText}</span>`;
-        if (data.tags && Array.isArray(data.tags)) {
-            // Avoid duplicate tags
-            data.tags.forEach(t => {
-                if(t !== yugText && t !== vanshText) {
-                    tagsHTML += `<span class="info-tag clickable">${t}</span>`;
-                }
-            });
+        // If she has both parent and spouseOf, layout engine duplicates her visually (valid)
+        // We are looking for cases where someone manually added 2 separate entries for her in historic-data.js
+        if (dbCount > 1) {
+          qaIssues.push(
+            `Warning: Multiple data entries found for this female node. Ensure single source of truth.`,
+          );
+          qaHtml += `
+                        <button class="qa-mark-btn ${isMarked ? "marked" : ""}" onclick="window.toggleQAMark('${data.id}')" style="margin-top: 10px; padding: 5px; background: ${isMarked ? "#44ff44" : "#ff4444"}; color: white; border: none; border-radius: 3px; cursor: pointer; width: 100%;">
+                            ${isMarked ? "Unmark for Deletion" : "Mark Extra Node for Deletion"}
+                        </button>
+                    `;
         }
-        tagsContainer.innerHTML = tagsHTML;
+      }
 
-        // Reset Tabs to Parichay
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector('.tab-btn[data-tab="parichay"]').classList.add('active');
+      if (qaIssues.length > 0) {
+        qaHtml = `
+                    <div style="margin-top: 15px; padding: 10px; background: rgba(255,0,0,0.1); border: 1px solid #ff4444; border-radius: 5px;">
+                        <h4 style="color: #ff4444; margin-top:0; margin-bottom: 5px; font-size: 0.9rem;">⚠️ QA Alert</h4>
+                        <ul style="color: #d32f2f; font-size: 0.8rem; margin: 0; padding-left: 15px;">
+                            ${qaIssues.map((iss) => `<li>${iss}</li>`).join("")}
+                        </ul>
+                        ${qaHtml}
+                    </div>
+                `;
+      }
 
-        const contentArea = document.getElementById('panel-content-area');
-        this.renderTabContent('parichay', data, contentArea);
-
-        panel.classList.remove('hidden');
-    },
-
-    renderTabContent(tab, data, contentArea) {
-        if (tab === 'parichay') {
-            let detailsHtml = '<div class="info-details-grid">';
-
-            // Aliases
-            if (data.aliases && data.aliases.length > 0) {
-                detailsHtml += `<div class="detail-row"><span class="detail-label">अन्य नाम:</span> <span class="detail-value">${data.aliases.join(', ')}</span></div>`;
-            }
-
-            // Family Links (Clickable if they exist in DB)
-            const getLink = (idStr) => {
-                const node = window.HistoricDB ? window.HistoricDB.getNode(idStr) : null;
-                if(node) return `<a href="#" class="family-link" data-id="${idStr}">${node.name}</a>`;
-                return `<span class="detail-value">${idStr}</span>`;
-            };
-
-            if (data.parent) {
-                detailsHtml += `<div class="detail-row"><span class="detail-label">पिता:</span> ${getLink(data.parent)}</div>`;
-            }
-            if (data.mother) {
-                // If mother is a string like "मानस पुत्र", it won't resolve to a node, which is fine
-                detailsHtml += `<div class="detail-row"><span class="detail-label">माता:</span> ${getLink(data.mother)}</div>`;
-            }
-            if (data.spouse) {
-                const spouses = Array.isArray(data.spouse) ? data.spouse : [data.spouse];
-                const spouseLinks = spouses.map(s => getLink(s)).join(', ');
-                detailsHtml += `<div class="detail-row"><span class="detail-label">जीवनसाथी:</span> ${spouseLinks}</div>`;
-            }
-
-            // Attributes
-            if (data.weapons && data.weapons.length > 0) {
-                detailsHtml += `<div class="detail-row"><span class="detail-label">अस्त्र/शस्त्र:</span> <span class="detail-value">${data.weapons.join(', ')}</span></div>`;
-            }
-            if (data.mount) {
-                detailsHtml += `<div class="detail-row"><span class="detail-label">वाहन:</span> <span class="detail-value">${data.mount}</span></div>`;
-            }
-            if (data.abode) {
-                detailsHtml += `<div class="detail-row"><span class="detail-label">निवास:</span> <span class="detail-value">${data.abode}</span></div>`;
-            }
-
-            detailsHtml += '</div>'; // End grid
-
-            let parichayHtml = data.parichay ? `<p class="parichay-text">${data.parichay}</p>` : '<p class="parichay-text">विस्तृत परिचय उपलब्ध नहीं है।</p>';
-
-            let sourceHtml = '';
-            if (data.source_texts && data.source_texts.length > 0) {
-                sourceHtml = `<div class="source-texts"><span class="detail-label">ग्रंथ संदर्भ:</span> ${data.source_texts.join(', ')}</div>`;
-            }
-
-            contentArea.innerHTML = `
+      contentArea.innerHTML = `
                 ${detailsHtml}
                 ${parichayHtml}
                 ${sourceHtml}
+                ${qaHtml}
                 <div style="margin-top: 20px; text-align: center;">
                     <a href="itihas-book.html?entity=${data.id}" class="read-full-btn">
                         📖 Read Full Info
@@ -502,57 +780,81 @@ window.MapUI = {
                 </div>
             `;
 
-            // Add click listeners to family links
-            contentArea.querySelectorAll('.family-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = e.target.dataset.id;
-                    if(window.MapControls && targetId) {
-                        window.MapControls.focusOnNode(targetId);
-                        const node = window.HistoricDB.getNode(targetId);
-                        if(node) this.openPanel(node);
-                    }
-                });
-            });
-
-        } else if (tab === 'jeevan') {
-            let eventsHtml = '';
-            if (data.events && data.events.length > 0) {
-                eventsHtml = '<ul class="timeline-list">';
-                data.events.forEach(ev => {
-                    eventsHtml += `<li>${ev}</li>`;
-                });
-                eventsHtml += '</ul>';
-            } else {
-                eventsHtml = '<p>जीवन की घटनाएँ उपलब्ध नहीं हैं।</p>';
-            }
-            contentArea.innerHTML = eventsHtml;
-        } else if (tab === 'kathayein') {
-            contentArea.innerHTML = '<p>प्रचलित कथाएँ जल्द ही जोड़ी जाएँगी।</p>';
-        }
+      // Add click listeners to family links
+      contentArea.querySelectorAll(".family-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = e.target.dataset.id;
+          if (window.MapControls && targetId) {
+            window.MapControls.focusOnNode(targetId);
+            const node = window.HistoricDB.getNode(targetId);
+            if (node) this.openPanel(node);
+          }
+        });
+      });
+    } else if (tab === "jeevan") {
+      let eventsHtml = "";
+      if (data.events && data.events.length > 0) {
+        eventsHtml = '<ul class="timeline-list">';
+        data.events.forEach((ev) => {
+          eventsHtml += `<li>${ev}</li>`;
+        });
+        eventsHtml += "</ul>";
+      } else {
+        eventsHtml = "<p>जीवन की घटनाएँ उपलब्ध नहीं हैं।</p>";
+      }
+      contentArea.innerHTML = eventsHtml;
+    } else if (tab === "kathayein") {
+      contentArea.innerHTML = "<p>प्रचलित कथाएँ जल्द ही जोड़ी जाएँगी।</p>";
     }
+  },
+  generateCosmicTicks() {
+    const ruler = document.querySelector('.scale-ruler');
+    if (!ruler) return;
+    const yugas = [
+      { name: "Satya", pct: 0 },
+      { name: "Treta", pct: 25 },
+      { name: "Dvapara", pct: 50 },
+      { name: "Kali", pct: 75 }
+    ];
+    yugas.forEach(yuga => {
+      const tick = document.createElement('div');
+      tick.className = 'scale-tick major';
+      tick.style.top = yuga.pct + '%';
+      const label = document.createElement('span');
+      label.className = 'scale-tick-label';
+      label.innerText = yuga.name;
+      tick.appendChild(label);
+      ruler.appendChild(tick);
+    });
+    for(let i = 1; i <= 4; i++) {
+      const tick = document.createElement('div');
+      tick.className = 'scale-tick';
+      tick.style.top = (75 + (i * 5)) + '%';
+      ruler.appendChild(tick);
+    }
+  }
 };
 
 // QA Mark Toggle Function attached to window so inline onclick works
-window.toggleQAMark = function(id) {
-    let markedNodes = JSON.parse(localStorage.getItem('qaMarkedNodes') || '[]');
-    if (markedNodes.includes(id)) {
-        markedNodes = markedNodes.filter(n => n !== id);
-    } else {
-        markedNodes.push(id);
-    }
-    localStorage.setItem('qaMarkedNodes', JSON.stringify(markedNodes));
+window.toggleQAMark = function (id) {
+  let markedNodes = JSON.parse(localStorage.getItem("qaMarkedNodes") || "[]");
+  if (markedNodes.includes(id)) {
+    markedNodes = markedNodes.filter((n) => n !== id);
+  } else {
+    markedNodes.push(id);
+  }
+  localStorage.setItem("qaMarkedNodes", JSON.stringify(markedNodes));
 
-    // Refresh the mark button visually
-    const btn = document.querySelector('.qa-mark-btn');
-    if (btn) {
-        if (markedNodes.includes(id)) {
-            btn.classList.add('marked');
-            btn.innerText = 'Unmark for Deletion';
-        } else {
-            btn.classList.remove('marked');
-            btn.innerText = 'Mark Extra Node for Deletion';
-        }
+  // Refresh the mark button visually
+  const btn = document.querySelector(".qa-mark-btn");
+  if (btn) {
+    if (markedNodes.includes(id)) {
+      btn.classList.add("marked");
+      btn.innerText = "Unmark for Deletion";
+    } else {
+      btn.classList.remove("marked");
+      btn.innerText = "Mark Extra Node for Deletion";
     }
-    console.log("[QA Tool] Marked Nodes for deletion:", markedNodes);
+  }
 };

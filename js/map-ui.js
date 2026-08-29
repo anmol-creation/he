@@ -1,5 +1,6 @@
 window.MapUI = {
   setupUI() {
+    this.generateCosmicTicks();
     // Expand/Collapse All Clusters
     const expandCollapseBtn = document.getElementById(
       "expand-collapse-all-btn",
@@ -807,6 +808,32 @@ window.MapUI = {
       contentArea.innerHTML = "<p>प्रचलित कथाएँ जल्द ही जोड़ी जाएँगी।</p>";
     }
   },
+  generateCosmicTicks() {
+    const ruler = document.querySelector('.scale-ruler');
+    if (!ruler) return;
+    const yugas = [
+      { name: "Satya", pct: 0 },
+      { name: "Treta", pct: 25 },
+      { name: "Dvapara", pct: 50 },
+      { name: "Kali", pct: 75 }
+    ];
+    yugas.forEach(yuga => {
+      const tick = document.createElement('div');
+      tick.className = 'scale-tick major';
+      tick.style.top = yuga.pct + '%';
+      const label = document.createElement('span');
+      label.className = 'scale-tick-label';
+      label.innerText = yuga.name;
+      tick.appendChild(label);
+      ruler.appendChild(tick);
+    });
+    for(let i = 1; i <= 4; i++) {
+      const tick = document.createElement('div');
+      tick.className = 'scale-tick';
+      tick.style.top = (75 + (i * 5)) + '%';
+      ruler.appendChild(tick);
+    }
+  }
 };
 
 // QA Mark Toggle Function attached to window so inline onclick works
