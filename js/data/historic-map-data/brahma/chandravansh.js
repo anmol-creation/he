@@ -283,6 +283,46 @@ export const chandravanshData = [
     { id: 'vrishadarbha_anu', name: 'वृषदर्भ', subtitle: 'शिबि पुत्र', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'suvira_anu', name: 'सुवीर', subtitle: 'शिबि पुत्र (सौवीर)', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'madra_anu', name: 'मद्र', subtitle: 'मद्र देश संस्थापक', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- मद्र वंश, सावित्री और मालव-औलिकर उत्पत्ति ---
+    { id: 'ashvapati_madra_anu', name: 'अश्वपति', subtitle: 'मद्र नरेश', parent: 'madra_anu', yug: 'treta', parichay: 'इन्होंने संतान प्राप्ति के लिए देवी सावित्री की 18 वर्ष तक घोर तपस्या की थी।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'malavi_ashvapati_wife', name: 'मालवी', subtitle: 'अश्वपति की पत्नी', parent: '', spouseOf: 'ashvapati_madra_anu', yug: 'treta' },
+    { id: 'savitri_madra', name: 'महा-सावित्री', subtitle: 'अश्वपति-मालवी पुत्री', parent: 'ashvapati_madra_anu', mother: 'malavi_ashvapati_wife', yug: 'treta', parichay: 'सत्यवान की पत्नी। अपने सतीत्व और तपोबल से इन्होंने यमराज से अपने पति के प्राण वापस ले लिए थे।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- पुरु वंश की शाखा (व्युषिताश्व) और शाल्व वंश ---
+    { id: 'puru_offshoot_proxy', name: 'पुरु वंश (शाखा)', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'puru_chandra', yug: 'treta', isProxy: true, parichay: 'पुरु वंश की एक शाखा, जिसके कुछ पीढ़ियों के नाम अज्ञात हैं, जहाँ से राजा व्युषिताश्व आते हैं।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vyushitashva_puru', name: 'व्युषिताश्व', subtitle: 'पुरु वंशी नरेश', parent: 'puru_offshoot_proxy', yug: 'treta', parichay: 'एक अत्यंत प्रतापी और धार्मिक राजा। कुंती द्वारा महाभारत में वर्णित कथा के अनुसार, इनकी मृत्यु के पश्चात इनकी पत्नी ने आत्मिक संयोग से पुत्र प्राप्त किए।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'bhadra_kakshivat_wife', name: 'भद्रा', subtitle: 'व्युषिताश्व की पत्नी', parent: '', spouseOf: 'vyushitashva_puru', yug: 'treta', parichay: 'कक्षीवान की पुत्री। अपने मृत पति के आशीर्वाद से इन्होंने 7 पुत्रों (3 शाल्व और 4 मद्र) को जन्म दिया।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // शाल्व वंश (सत्यवान और महाभारत काल)
+    { id: 'salwa_dynasty_proxy', name: 'शाल्व वंश', subtitle: 'व्युषिताश्व के 3 पुत्र', parent: 'vyushitashva_puru', mother: 'bhadra_kakshivat_wife', yug: 'treta', isProxy: true, parichay: 'राजा व्युषिताश्व और भद्रा के 3 पुत्रों द्वारा स्थापित वंश।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'dyumatsena_salwa', name: 'द्युमत्सेन', subtitle: 'शाल्व नरेश', parent: 'salwa_dynasty_proxy', yug: 'treta', parichay: 'सत्यवान के पिता। यह अंधे हो गए थे और शत्रुओं ने इनका राज्य छीन लिया था, जिसके कारण इन्हें वन में रहना पड़ा।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'satyavan_salwa', name: 'सत्यवान', subtitle: 'द्युमत्सेन पुत्र', parent: 'dyumatsena_salwa', spouseOf: 'savitri_madra', yug: 'treta', parichay: 'अल्पायु होने के कारण विवाह के एक वर्ष बाद ही इनकी मृत्यु निश्चित थी, परंतु सावित्री ने यमराज से इनके प्राण वापस ले लिए।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'satyavan_100_sons', name: '100 शाल्व पुत्र', subtitle: 'सत्यवान-सावित्री के पुत्र', parent: 'satyavan_salwa', mother: 'savitri_madra', yug: 'treta', parichay: 'यमराज के वरदान स्वरूप सावित्री और सत्यवान को 100 तेजस्वी पुत्रों की प्राप्ति हुई, जिन्होंने आगे शाल्व वंश को बढ़ाया।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'late_salwa_dynasty_proxy', name: 'महाभारत कालीन शाल्व', subtitle: 'ऐतिहासिक अंतराल', parent: 'satyavan_100_sons', yug: 'dwapar', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'shalva_saubha_king', name: 'शाल्व (सौभ नरेश)', subtitle: 'शाल्व नरेश', parent: 'late_salwa_dynasty_proxy', yug: 'dwapar', isProminent: true, parichay: 'सौभ नगर का राजा। यह अंबा का प्रेमी था। शिशुपाल की मृत्यु के बाद इसने द्वारका पर आक्रमण किया था, जहाँ भगवान कृष्ण ने इसका वध किया।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // मालव गणराज्य और औलिकर वंश
+    { id: 'malava_tribe_founders', name: '100 मालव पुत्र', subtitle: 'मालव गणराज्य के संस्थापक', parent: 'ashvapati_madra_anu', mother: 'malavi_ashvapati_wife', yug: 'treta', parichay: 'अश्वपति और मालवी के 100 पुत्र, जिन्होंने अपनी माता के नाम पर "मालव" वंश और गणराज्य की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'aulikara_dynasty_proxy', name: 'औलिकर (मालव) राजवंश', subtitle: 'ऐतिहासिक अंतराल', parent: 'malava_tribe_founders', yug: 'kali', isProxy: true, parichay: 'प्राचीन मालव गणराज्य से ही कालांतर में दशपुर (मंदसौर) का औलिकर राजवंश उभरा। इनका राजचिह्न "औलिकर-लांछन" था।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // औलिकर - प्रथम घराना (First Aulikara House)
+    { id: 'jayavarman_aulikara', name: 'जयवर्मन', subtitle: 'औलिकर नरेश (प्रथम घराना)', parent: 'aulikara_dynasty_proxy', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'simhavarman_aulikara', name: 'सिंहवर्मन', subtitle: 'औलिकर नरेश', parent: 'jayavarman_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'naravarman_aulikara', name: 'नरवर्मन', subtitle: 'औलिकर नरेश', parent: 'simhavarman_aulikara', yug: 'kali', parichay: 'गुप्त सम्राट चंद्रगुप्त विक्रमादित्य के समकालीन। इनके शिलालेखों में पहली बार "औलिकर" नाम मिलता है।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vishvavarman_aulikara', name: 'विश्ववर्मन', subtitle: 'औलिकर नरेश', parent: 'naravarman_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'bandhuvarman_aulikara', name: 'बन्धुवर्मन', subtitle: 'औलिकर नरेश', parent: 'vishvavarman_aulikara', yug: 'kali', parichay: 'कुमारगुप्त प्रथम के समकालीन। इनके समय मंदसौर में एक विशाल सूर्य मंदिर का निर्माण हुआ था।', clusterName: 'नहुष चंद्रवंशी' },
+
+    // औलिकर - द्वितीय घराना (Second Aulikara House)
+    { id: 'second_aulikara_house_proxy', name: 'औलिकर (द्वितीय घराना)', subtitle: 'गुप्त साम्राज्य के पतन काल में', parent: 'aulikara_dynasty_proxy', yug: 'kali', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'drumavardhana_aulikara', name: 'द्रुमवर्धन', subtitle: 'औलिकर नरेश', parent: 'second_aulikara_house_proxy', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'jayavardhana_aulikara', name: 'जयवर्धन', subtitle: 'औलिकर नरेश', parent: 'drumavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'ajitavardhana_aulikara', name: 'अजितवर्धन', subtitle: 'औलिकर नरेश', parent: 'jayavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vibhishanavardhana_aulikara', name: 'विभीषणवर्धन', subtitle: 'औलिकर नरेश', parent: 'ajitavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'rajyavardhana_aulikara', name: 'राज्यवर्धन', subtitle: 'औलिकर नरेश', parent: 'vibhishanavardhana_aulikara', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'prakashadharma_aulikara', name: 'प्रकाशधर्मा', subtitle: 'औलिकर नरेश', parent: 'rajyavardhana_aulikara', yug: 'kali', parichay: 'इन्होंने हूण आक्रमणकारी तोरमाण को बुरी तरह हराया और उसके रनिवास (harem) पर कब्ज़ा कर लिया था (रिस्थल शिलालेख)।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'yashodharman_aulikara', name: 'यशोधर्मन (विष्णुवर्धन)', subtitle: 'औलिकर सम्राट (हूण-विनाशक)', parent: 'prakashadharma_aulikara', yug: 'kali', isProminent: true, parichay: 'प्राचीन भारत के सबसे महान सम्राटों में से एक। इन्होंने 528 ई. में खूंखार हूण राजा मिहिरकुल को हराकर भारत को हूणों के आतंक से मुक्त कराया। मंदसौर विजय स्तंभ के अनुसार इनका साम्राज्य हिमालय से महेंद्र पर्वत तक फैला था।', clusterName: 'नहुष चंद्रवंशी' },
+
     { id: 'kekaya_anu', name: 'केकय', subtitle: 'केकय देश संस्थापक', parent: 'sibi_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
 
     // अनु वंश -> तितिक्षु (बलि) शाखा
@@ -594,6 +634,11 @@ export const chandravanshData = [
     // ऐतिहासिक अंतराल (Historical Gap) के बाद के मुख्य राजवंश
     { id: 'yaduvansh_medieval_link_chandra', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'shatasena_shantasena_chandra', yug: 'kali', parichay: 'पुराणों में वर्णित शतसेन के बाद और मध्यकालीन राजवंशों के उदय के बीच कई शताब्दियों का अंतराल है।', clusterName: 'नहुष चंद्रवंशी' },
 
+    // --- यादव, जादव और जाटव समुदाय का मूल ---
+    { id: 'modern_yadav_community_chandra', name: 'यादव समुदाय', subtitle: 'यदुवंशी समाज', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'भारत का विशाल यादव समाज जो अपनी उत्पत्ति भगवान श्रीकृष्ण और यदुवंश से मानता है। अहीर और अन्य संबंधित जातियां इसी वृहद समूह का हिस्सा हैं।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'modern_jadav_community_chandra', name: 'जादव समुदाय', subtitle: 'यदुवंशी समाज', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'यह मुख्यतः महाराष्ट्र, गुजरात और अन्य क्षेत्रों का समुदाय है जो स्वयं को यदुवंशी मानता है। "जादव" शब्द प्राचीन "यादव" का ही सीधा रूपान्तरण है।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'modern_jatav_community_chandra', name: 'जाटव समुदाय', subtitle: 'यदुवंशी मूल', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'ऐतिहासिक शोधों और पृथ्वीराज रासो जैसे मध्यकालीन ग्रंथों के अनुसार, "जाटव" शब्द "यादव" का ही अपभ्रंश (Jadav/Jatavar) है। इस समुदाय के गोत्र (जैसे कश्यप, भारद्वाज) प्राचीन वैदिक ऋषियों से जुड़े हैं।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+
     // --- जादौन (करौली) और भाटी (जैसलमेर) का मूल ---
     { id: 'dharmapala_yaduvanshi_chandra', name: 'धर्मपाल', subtitle: 'जादौन / भाटी मूल', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
 
@@ -642,7 +687,6 @@ export const chandravanshData = [
     { id: 'bhanwar_pal_jadon', name: 'भंवर पाल', subtitle: 'करौली नरेश', parent: 'gopal_singh_jadon', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- सेउण (देवगिरि यादव राजवंश) ---
-    { id: 'jijabai_jadhav', name: 'राजमाता जीजाबाई', subtitle: 'शिवाजी की माता', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'सिंदखेड राजा के लखूजी जाधव (देवगिरि यादव वंश) की पुत्री और मराठा साम्राज्य के संस्थापक छत्रपति शिवाजी महाराज की माता। इन्होने शिवाजी को रामायण-महाभारत की कहानियाँ सुनाकर एक महान और धर्मनिष्ठ शासक बनाया।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'seuna_dynasty_proxy', name: 'सेउण (यादव) वंश', subtitle: 'देवगिरि राजवंश', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'dridhaprahara_seuna', name: 'दृढप्रहार', subtitle: 'देवगिरि यादव संस्थापक', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: '9वीं सदी में सेउण राजवंश की नींव रखी।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'seunachandra_chandra', name: 'सेउणचन्द्र', subtitle: 'देवगिरि यादव नरेश', parent: 'dridhaprahara_seuna', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
@@ -665,6 +709,12 @@ export const chandravanshData = [
     { id: 'mahadeva_seuna', name: 'महादेव', subtitle: 'देवगिरि सम्राट', parent: 'krishna_seuna', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'ramachandra_seuna', name: 'रामचन्द्र', subtitle: 'देवगिरि सम्राट', parent: 'mahadeva_seuna', yug: 'kali', parichay: 'इनके शासनकाल में अलाउद्दीन खिलजी ने देवगिरि पर आक्रमण किया।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shankaradeva_seuna', name: 'शंकरदेव', subtitle: 'अंतिम देवगिरि नरेश', parent: 'ramachandra_seuna', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+
+    // --- जाधव (सिंदखेड राजा) - देवगिरि यादवों के वंशज ---
+    { id: 'sindkhed_jadhav_proxy', name: 'सिंदखेड जाधव शाखा', subtitle: 'ऐतिहासिक अंतराल', parent: 'shankaradeva_seuna', yug: 'kali', parichay: 'देवगिरि के पतन के बाद, यादव वंशज सिंदखेड राजा के जागीरदार बने, जिन्हें जाधव (यादव का अपभ्रंश) कहा जाने लगा।', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vithoji_jadhav', name: 'विठोजी जाधवराव', subtitle: 'सिंदखेड के जागीरदार', parent: 'sindkhed_jadhav_proxy', yug: 'kali', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'lakhuji_jadhav', name: 'लखूजी जाधवराव', subtitle: 'महान मराठा सरदार', parent: 'vithoji_jadhav', yug: 'kali', parichay: 'देवगिरि यादवों के वंशज और सिंदखेड राजा के जागीरदार। यह अहमदनगर और बाद में मुगलों के प्रमुख मनसबदार थे।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'jijabai_jadhav', name: 'राजमाता जीजाबाई', subtitle: 'शिवाजी की माता', parent: 'lakhuji_jadhav', yug: 'kali', parichay: 'सिंदखेड राजा के लखूजी जाधव की पुत्री और मराठा साम्राज्य के संस्थापक छत्रपति शिवाजी महाराज की माता। इन्होने शिवाजी को रामायण-महाभारत की कहानियाँ सुनाकर एक महान और धर्मनिष्ठ शासक बनाया।', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- अहीरवाल (रेवाड़ी) राजवंश ---
     { id: 'ahura_nandaram_chandra', name: 'राव नन्दराम', subtitle: 'रेवाड़ी रियासत (अहीरवाल)', parent: 'yaduvansh_medieval_link_chandra', yug: 'kali', parichay: 'रेवाड़ी (हरियाणा) में अहीरवाल रियासत के संस्थापक। स्वयं को यदुवंशी मानते हैं।', clusterName: 'नहुष चंद्रवंशी' },
@@ -863,7 +913,7 @@ export const chandravanshData = [
     { id: 'pratipa_chandra', name: 'प्रतीप', subtitle: 'हस्तिनापुर नरेश', parent: 'dilipa_kuru', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'sunanda_pratipa_chandra', name: 'सुनंदा', subtitle: 'प्रतीप पत्नी', parent: '', spouseOf: 'pratipa_chandra', yug: 'dwapar' },
 
-    { id: 'devapi_chandra', name: 'देवापि', subtitle: 'प्रतीप पुत्र (संन्यासी)', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'devapi_chandra', name: 'देवापि', subtitle: 'प्रतीप के ज्येष्ठ पुत्र', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', parichay: 'त्वचा रोग के कारण इन्हें राजा नहीं बनाया गया। ये तपस्या करने वन (कलाप ग्राम) चले गए। कल्कि पुराण के अनुसार, 28वें कलियुग के अंत में ये वापस आकर नए सत्य युग में चंद्रवंश की पुनः स्थापना करेंगे।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shantanu_chandra', name: 'शान्तनु', subtitle: 'हस्तिनापुर नरेश', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'bahlika_chandra', name: 'बाल्हीक', subtitle: 'बाल्हीक नरेश', parent: 'pratipa_chandra', mother: 'sunanda_pratipa_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
