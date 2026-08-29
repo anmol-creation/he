@@ -26,42 +26,7 @@ html {
   background: var(--secondary-gold);
 }
 
-/* River of Time (Fixed Sidebar) */
-#river-of-time {
-  position: absolute;
-  left: 0;
-  top: 0; /* Below header */
-  bottom: 0;
-  width: 60px;
-  background: rgba(17, 17, 17, 0.9);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
-}
 
-.time-marker {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #999;
-  padding: 10px 0;
-  transition:
-    color 0.3s,
-    font-size 0.3s;
-  cursor: pointer;
-}
-
-.time-marker.active {
-  color: var(--primary-saffron);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
 
 .time-line {
   flex-grow: 1;
@@ -74,7 +39,7 @@ html {
 #map-container {
   position: absolute;
   top: 0;
-  left: 60px; /* Next to river of time */
+  left: 0;
   right: 0;
   bottom: 0;
   overflow: hidden; /* We will handle drag manually */
@@ -960,4 +925,79 @@ html {
 
 .beta-btn:hover {
   color: var(--white);
+}
+
+
+/* Cosmic Time Scale Overlay */
+#cosmic-time-scale {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 60px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.scale-ruler {
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.1));
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.scale-tick {
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 2px;
+    background: var(--secondary-gold, #f39c12);
+}
+
+.scale-tick.major {
+    width: 25px;
+    background: var(--primary-bhagwa, #e67e22);
+}
+
+.scale-tick-label {
+    position: absolute;
+    left: 30px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.scale-tick.major .scale-tick-label {
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#current-era-label {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--secondary-gold, #f39c12);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: var(--secondary-gold, #f39c12);
+    font-family: 'Yatra One', serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: top 0.1s ease-out;
+    white-space: nowrap;
 }

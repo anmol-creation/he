@@ -16,7 +16,7 @@ window.MapState = {
     container: null,
     canvas: null,
     ctx: null,
-    aside: null,
+
     expandedClusters: new Set(), // Track which clusterNames are open
     showTransitionWires: false, // Filter: Hide Daughter->Wife lines by default
     layoutMode: 'autoslip', // Default layout mode
@@ -58,7 +58,7 @@ window.MapState = {
             this.resizeCanvas();
             window.addEventListener('resize', () => this.resizeCanvas());
         }
-        this.aside = document.getElementById('river-of-time');
+
     },
 
     resizeCanvas() {
@@ -102,6 +102,44 @@ window.MapState = {
             }
         }
 
+
         this.requestRedraw();
+        this.updateCosmicScale();
+    },
+
+    updateCosmicScale() {
+        const overlay = document.getElementById('cosmic-time-scale');
+        const label = document.getElementById('current-era-label');
+        if (!overlay || !label) return;
+
+        // The canvas Y translation tells us how deep we are
+        const depth = -this.translateY / this.scale;
+
+        let era = "Satya Yuga";
+        let subEra = "";
+        let percentage = 0; // 0 to 100% position on the visible ruler
+
+        if (depth < 2000) {
+            era = "Satya Yuga";
+            percentage = Math.max(0, (depth / 2000) * 25);
+        } else if (depth < 4000) {
+            era = "Treta Yuga";
+            percentage = 25 + ((depth - 2000) / 2000) * 25;
+        } else if (depth < 6000) {
+            era = "Dvapara Yuga";
+            percentage = 50 + ((depth - 4000) / 2000) * 25;
+        } else {
+            era = "Kali Yuga";
+            const kaliDepth = depth - 6000;
+            percentage = 75 + Math.min(25, (kaliDepth / 4000) * 25);
+
+            if (kaliDepth < 1000) subEra = " (Early Dynasties)";
+            else if (kaliDepth < 2000) subEra = " (Mahajanapadas)";
+            else if (kaliDepth < 3000) subEra = " (Golden Age)";
+            else subEra = " (Modern Era)";
+        }
+
+        label.textContent = era + subEra;
+        label.style.top = `${percentage}%`;
     }
 };
