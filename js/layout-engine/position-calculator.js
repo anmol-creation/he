@@ -73,7 +73,20 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
     if (node.depth >= 3) timeZonePadding += 250; // Gap between Kalpa and Manvantara
 
     // Calculate Y strictly based on depth: startY + (depth * spacing) + extra padding
-    node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y)) + timeZonePadding;
+        // AUTO-POSITIONING BASED ON KALIYUG RULER
+    if (node.kali_year !== undefined) {
+        // 1 Kali Year = 2 pixels (adjustable scale)
+        // Offset by 10000 pixels so the macro cosmic stuff stays far above Kaliyug 0
+        const KALIYUG_ZERO_Y = 10000;
+        const PIXELS_PER_YEAR = 2;
+        node.y = KALIYUG_ZERO_Y + (node.kali_year * PIXELS_PER_YEAR);
+
+        // Sync downstream depth-based nodes by updating startY for its children
+        // We calculate an artificial "depth Y" to reset the baseline for children without kali_year
+        startY = node.y - (node.depth * (NODE_HEIGHT + MIN_GAP_Y));
+    } else {
+        node.y = startY + (node.depth * (NODE_HEIGHT + MIN_GAP_Y)) + timeZonePadding;
+    }
 
     // Spouses absolute position
     if (node.spouses.length === 1) {

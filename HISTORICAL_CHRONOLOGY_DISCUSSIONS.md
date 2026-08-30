@@ -60,3 +60,19 @@ The geographic origin (Central Asian Steppes) and the brutal, nomadic warfare st
 3.  **Ghaznavids & Ghurids (Turks)** - Brought Islamic invasions to India.
 4.  **Genghis Khan & Timur (Mongols/Turco-Mongols)** - Mass devastation across Asia.
 5.  **Mughals (Babur)** - A direct genetic mix of Timur (father's side) and Genghis Khan (mother's side), completing the millennia-long chain of Central Asian invasions into India.
+
+---
+
+## 6. Map UI Architecture: The Kaliyug Ruler & Auto-Positioning
+Based on the chronological logic above, the physical map UI will implement a strictly Kaliyug-based absolute time scale to auto-position historical figures.
+
+### The Scale Structure (The Ruler)
+*   **The Zero Point:** Kali Samvat 0 (Krishna's departure / Start of Kaliyug).
+*   **Macro Scales (Major Marks):** Divided into 1000-year blocks (0 to 1000, 1000 to 2000... up to ~5126 current year). There will be 6 major scale blocks.
+*   **Micro Scales (Minor Marks):** Inside every 1000-year block, there will be 10 micro-scale markings (each representing 100 years).
+
+### The Node Auto-Positioning Logic
+*   Instead of manually dragging nodes on the Y-axis, a new property `kali_year` will be added to the database nodes (e.g., `kali_year: 1568` for Chandragupta).
+*   **Vertical Shift:** When a node has this property, the React Flow layout engine will automatically bypass the standard layout height and snap this node exactly to the corresponding coordinate on the Kaliyug Ruler.
+*   **Edge Expansion:** If a grandparent is at Year 0 and a grandson is assigned Year 500, the connecting lineage line (edge) will automatically stretch across that spatial gap.
+*   **Downstream Stacking:** All descendant nodes that do not possess an explicit `kali_year` will stack normally below the newly shifted parent node, preserving the relative generational structure while anchoring the branch to a precise historical timeframe.

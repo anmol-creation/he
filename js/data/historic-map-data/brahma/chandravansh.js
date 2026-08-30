@@ -1090,7 +1090,7 @@ export const chandravanshData = [
 
     // युधिष्ठिर
         { id: 'pandu_dynasty_proxy', name: 'पाण्डव वंश', subtitle: 'पाण्डु के वंशज', parent: 'pandu_chandra', yug: 'dwapar', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'yudhishthir_chandra', name: 'युधिष्ठिर', subtitle: 'धर्मराज / पांडव',parent: 'pandu_dynasty_proxy', mother: 'kunti_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'yudhishthir_chandra', name: 'युधिष्ठिर', subtitle: 'धर्मराज / पांडव',parent: 'pandu_dynasty_proxy', mother: 'kunti_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -37 },
     { id: 'devika_yudhishthir_chandra', name: 'देविका', subtitle: 'शिबि पुत्री', parent: 'sibi_anu', spouseOf: 'yudhishthir_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
         { id: 'upapandav_proxy', name: 'उपपांडव', subtitle: 'द्रौपदी के 5 पुत्र', parent: 'yudhishthir_chandra', yug: 'dwapar', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'prativindhya_chandra', name: 'प्रतिविन्ध्य', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },

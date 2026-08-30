@@ -930,74 +930,71 @@ html {
 
 /* Cosmic Time Scale Overlay */
 #cosmic-time-scale {
-    position: absolute;
-    left: 20px;
+    position: fixed;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    height: 70%;
+    height: 60%;
     width: 60px;
     z-index: 100;
     display: flex;
     align-items: center;
     pointer-events: none;
+    flex-direction: row-reverse;
 }
 
 .scale-ruler {
     height: 100%;
     width: 4px;
     background: linear-gradient(to bottom,
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.1));
+        var(--secondary-gold, #f39c12),
+        var(--primary-bhagwa, #e67e22));
     border-radius: 2px;
     position: relative;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(230, 126, 34, 0.5);
 }
 
-.scale-tick {
+.scale-tick-major {
     position: absolute;
-    left: 0;
-    width: 15px;
-    height: 2px;
-    background: var(--secondary-gold, #f39c12);
+    right: 0;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
 }
 
-.scale-tick.major {
-    width: 25px;
-    background: var(--primary-bhagwa, #e67e22);
-}
-
-.scale-tick-label {
+.scale-tick-minor {
     position: absolute;
-    left: 30px;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.75rem;
-    font-family: 'Poppins', sans-serif;
-    white-space: nowrap;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
-
-.scale-tick.major .scale-tick-label {
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.9rem;
+    right: 0;
+    width: 10px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 #current-era-label {
     position: absolute;
-    left: 50px;
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid var(--secondary-gold, #f39c12);
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: var(--secondary-gold, #f39c12);
-    font-family: 'Yatra One', serif;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: top 0.1s ease-out;
+    font-family: 'Yatra One', cursive;
+    color: var(--primary-bhagwa, #e67e22);
+    font-size: 1.5rem;
     white-space: nowrap;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    transition: color 0.5s ease;
+}
+
+#current-year-label {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    opacity: 0.8;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
 }
