@@ -7,9 +7,8 @@ export const chandravanshData = [
 
     // --- चंद्र देव की पत्नियां ---
     { id: 'tara_chandra', name: 'तारा', subtitle: 'चंद्र पत्नी', parent: '', spouseOf: 'chandra_chandra',gender: 'female', lineLabel: 'तारा', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ', parichay: 'देवगुरु बृहस्पति की पूर्व पत्नी, जिनका अपहरण चंद्र देव ने किया था जिससे तारामय युद्ध हुआ। बाद में ये चंद्र देव की पत्नी बनीं।' },
-    { id: 'dakshayani_chandra_proxy', name: 'दक्ष की 27 पुत्रियां', subtitle: 'चंद्र की पत्नियां', parent: '', spouseOf: 'chandra_chandra', gender: 'female', isProxy: true, clusterName:'चंद्र की पत्नियाँ', yug: 'satya', parichay: 'प्रजापति दक्ष की 27 पुत्रियां (अश्विनी, भरणी, कृत्तिका, रोहिणी आदि) जिनका विवाह चंद्र देव से हुआ था और जिन्हें 27 नक्षत्र माना जाता है।' },
-    { id: 'rohini_chandra', name: 'रोहिणी', subtitle: 'चंद्र की प्रिय पत्नी', parent: 'dakshayani_chandra_proxy', spouseOf: 'chandra_chandra', gender: 'female', clusterName:'चंद्र की पत्नियाँ', yug: 'satya', parichay: 'दक्ष की 27 पुत्रियों में से चंद्र देव की सबसे प्रिय पत्नी। चंद्र देव के इनके प्रति अधिक झुकाव के कारण ही दक्ष ने चंद्र को क्षय रोग का श्राप दिया था।' },
     
+    { id: 'rohini_chandra', name: 'rohini', subtitle: 'चंद्र पत्नी', parent: '', spouseOf: 'chandra_chandra',gender: 'female', lineLabel: 'तारा', yug: 'satya' , clusterName:'चंद्र की पत्नियाँ', },
    // एवं दैवीय संतानें (अष्ट-वसु के रूप में) ---
     { id: 'varchas_chandra', name: 'वर्चस्', subtitle: 'चंद्र पुत्र (वसु)', gender: 'male', parent: 'chandra_chandra', clusterName:'चंद्र के अन्य पुत्र', yug: 'satya',lineLabel: 'वर्चस्', parichay: 'महाभारत के अनुसार, अष्ट-वसुओं में से एक "सोम" (चंद्र) के दैवीय पुत्र। देवर्षियों के कहने पर इन्होंने ही अर्जुन के पुत्र अभिमन्यु के रूप में धरती पर अवतार लिया था।' },
     { id: 'manohara_chandra', name: 'मनोहरा', subtitle: 'वर्चस् (वसु) की पत्नी', gender: 'female', parent: '', spouseOf: 'varchas_chandra', lineLabel: 'मनोहरा',clusterName:'चंद्र के अन्य पुत्र', yug: 'satya', parichay: 'ये अष्ट-वसुओं में से एक "सोम" के पुत्र वर्चस् की पत्नी हैं। महाभारत (आदि पर्व) के अनुसार इनसे शिशिर, प्राण और रमण नामक तीन पुत्र हुए।' },
@@ -134,49 +133,51 @@ export const chandravanshData = [
     { id: 'sharmishtha_chandra', name: 'शर्मिष्ठा', subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)', parent: 'vrishaparva_danava', spouseOf: 'yayati_chandra', yug: 'satya', clusterName: 'ययाति की पत्नियाँ' },
 
     // --- ययाति के पुत्र ---
-        { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश', clusterName: 'चंद्रवंश' },
+        { id: 'yadu_chandra', name: 'यदु', subtitle: 'यदुवंश के संस्थापक', parent: 'yayati_chandra', gender:'male', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'यदुवंश', clusterName: 'चंद्रवंश' },
         
-    { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'turvasu_dynasty_proxy', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'तुर्वसु वंश', clusterName: 'चंद्रवंश' },
-    { id: 'druhyu_chandra', name: 'द्रुह्यु', subtitle: 'ययाति के पुत्र', parent: 'druhyu_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'द्रुह्यु वंश',
+    { id: 'turvasu_chandra', name: 'तुर्वसु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra',gender:'male', mother: 'devayani_yayati_chandra', yug: 'treta', lineLabel: 'तुर्वसु वंश', clusterName: 'चंद्रवंश' },
+    { id: 'druhyu_chandra', name: 'द्रुह्यु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra',gender:'male', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'द्रुह्यु वंश',
         clusterName: 'चंद्रवंश' },
         
-    { id: 'anu_yayati_chandra', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'anu_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'अनु वंश',
+    { id: 'anu_yayati_chandra', name: 'अनु', subtitle: 'ययाति के पुत्र', parent: 'yayati_chandra',gender:'male', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'अनु वंश',
         clusterName: 'चंद्रवंश' },
 
-    { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'puru_dynasty_proxy', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'पुरुवंश', 
+    { id: 'puru_chandra', name: 'पुरु', subtitle: 'पौरव/कुरुवंश के संस्थापक', parent: 'yayati_chandra',gender:'male', mother: 'sharmishtha_chandra', yug: 'treta', lineLabel: 'पुरुवंश', 
         clusterName: 'चंद्रवंश' },
 
     // --- तुर्वसु वंश ---
-    { id: 'vahni_turvasu_chandra', name: 'वह्नि', subtitle: 'तुर्वसु पुत्र', parent: 'turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'garbha_turvasu_chandra', name: 'गर्भ', subtitle: 'वह्नि पुत्र', parent: 'vahni_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'gobhanu_turvasu_chandra', name: 'गोभानु', subtitle: 'गर्भ पुत्र', parent: 'garbha_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'trishanu_turvasu_chandra', name: 'त्रिशानु', subtitle: 'गोभानु पुत्र', parent: 'gobhanu_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'karandhama_turvasu_chandra', name: 'करन्धम', subtitle: 'त्रिशानु पुत्र', parent: 'trishanu_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'marutta_turvasu_chandra', name: 'मरुत्त', subtitle: 'करन्धम पुत्र', parent: 'karandhama_turvasu_chandra', yug: 'treta', parichay: 'तुर्वसु वंश के राजा मरुत्त, जिनके कोई पुत्र नहीं था। इन्होंने पौरव वंशीय दुष्यंत को गोद लिया था।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'dushyanta_turvasu_chandra', name: 'दुष्यंत (दत्तक)', subtitle: 'मरुत्त के दत्तक पुत्र', parent: 'marutta_turvasu_chandra', yug: 'treta', parichay: 'पौरव वंश के दुष्यंत जिन्हें मरुत्त ने गोद लिया। परन्तु ये पुनः पुरु वंश में लौट गए।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'sharutthama_turvasu_chandra', name: 'शरुत्थाम', subtitle: 'दुष्यंत पुत्र', parent: 'dushyanta_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'akrida_turvasu_chandra', name: 'आक्रीड', subtitle: 'शरुत्थाम पुत्र', parent: 'sharutthama_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'pandya_turvasu_chandra', name: 'पाण्ड्य', subtitle: 'पाण्ड्य देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण भारत में पाण्ड्य राजवंश की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'kerala_turvasu_chandra', name: 'केरल', subtitle: 'केरल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में केरल (चेर) राज्य की स्थापना की।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की। (नोट: बाद के चोल अभिलेखों जैसे तिरुवालंगाडु में चोल सम्राटों ने अपनी वंशावली सूर्यवंशी राजा मान्धाता व शिबि से जोड़ी, जबकि पुराण इन्हें चंद्रवंशी तुर्वसु की वंशावली में रखते हैं।)', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'kola_turvasu_chandra', name: 'कोल', subtitle: 'कोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'vahni_turvasu_chandra',gender:'male' ,name: 'वह्नि', subtitle: 'तुर्वसु पुत्र', parent: 'turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'garbha_turvasu_chandra', name: 'गर्भ', subtitle: 'वह्नि पुत्र', parent: 'vahni_turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'gobhanu_turvasu_chandra', name: 'गोभानु', subtitle: 'गर्भ पुत्र', parent: 'garbha_turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'trishanu_turvasu_chandra', name: 'त्रिशानु', subtitle: 'गोभानु पुत्र', parent: 'gobhanu_turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'karandhama_turvasu_chandra', name: 'करन्धम', subtitle: 'त्रिशानु पुत्र', parent: 'trishanu_turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'marutta_turvasu_chandra', name: 'मरुत्त', subtitle: 'करन्धम पुत्र', parent: 'karandhama_turvasu_chandra', yug: 'treta', parichay: 'तुर्वसु वंश के राजा मरुत्त, जिनके कोई पुत्र नहीं था। इन्होंने पौरव वंशीय दुष्यंत को गोद लिया था।', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'dushyanta_turvasu_chandra', name: 'दुष्यंत (दत्तक)', subtitle: 'मरुत्त के दत्तक पुत्र', parent: 'marutta_turvasu_chandra', yug: 'treta', parichay: 'पौरव वंश के दुष्यंत जिन्हें मरुत्त ने गोद लिया। परन्तु ये पुनः पुरु वंश में लौट गए।', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'sharutthama_turvasu_chandra', name: 'शरुत्थाम', subtitle: 'दुष्यंत पुत्र', parent: 'dushyanta_turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    
+    // akrida ke putr
+    { id: 'akrida_turvasu_chandra', name: 'आक्रीड', subtitle: 'शरुत्थाम पुत्र', parent: 'sharutthama_turvasu_chandra', yug: 'treta', clusterName: 'तुर्वसु चंद्रवंशी' },
+    { id: 'pandya_turvasu_chandra', name: 'पाण्ड्य', subtitle: 'पाण्ड्य देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण भारत में पाण्ड्य राजवंश की स्थापना की।', },
+    { id: 'kerala_turvasu_chandra', name: 'केरल', subtitle: 'केरल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में केरल (चेर) राज्य की स्थापना की।', },
+    { id: 'chola_turvasu_chandra', name: 'चोल', subtitle: 'चोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta', parichay: 'इन्होंने दक्षिण में चोल राजवंश की स्थापना की। (नोट: बाद के चोल अभिलेखों जैसे तिरुवालंगाडु में चोल सम्राटों ने अपनी वंशावली सूर्यवंशी राजा मान्धाता व शिबि से जोड़ी, जबकि पुराण इन्हें चंद्रवंशी तुर्वसु की वंशावली में रखते हैं।)',  },
+    { id: 'kola_turvasu_chandra', name: 'कोल', subtitle: 'कोल देश संस्थापक', parent: 'akrida_turvasu_chandra', yug: 'treta',},
 
     // --- द्रुह्यु वंश ---
-    { id: 'babhru_druhyu_chandra', name: 'बभ्रु', subtitle: 'द्रुह्यु पुत्र', parent: 'druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'setu_druhyu_chandra', name: 'सेतु', subtitle: 'बभ्रु पुत्र', parent: 'babhru_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'arabdha_druhyu_chandra', name: 'आरब्ध (आरद्वत)', subtitle: 'सेतु पुत्र', parent: 'setu_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'gandhara_druhyu_chandra', name: 'गान्धार', subtitle: 'गान्धार देश संस्थापक', parent: 'arabdha_druhyu_chandra', yug: 'treta', parichay: 'इन्हीं के नाम पर गान्धार (वर्तमान कंधार/अफगानिस्तान क्षेत्र) देश का नाम पड़ा।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'dharma_druhyu_chandra', name: 'धर्म', subtitle: 'गान्धार पुत्र', parent: 'gandhara_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'dhrita_druhyu_chandra', name: 'धृत', subtitle: 'धर्म पुत्र', parent: 'dharma_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'duryaman_druhyu_chandra', name: 'दुर्मन', subtitle: 'धृत पुत्र', parent: 'dhrita_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'prachetas_druhyu_chandra', name: 'प्रचेतस', subtitle: 'दुर्मन पुत्र', parent: 'duryaman_druhyu_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-        { id: 'suchetas_druhyu_chandra', name: 'सुचेतस', subtitle: 'प्रचेतस के पुत्र', parent: 'prachetas_druhyu_chandra', yug: 'treta', parichay: 'इनके समेत प्रचेतस के 100 पुत्र हुए जो उत्तर दिशा में म्लेच्छ देशों के राजा बने।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'babhru_druhyu_chandra', name: 'बभ्रु', subtitle: 'द्रुह्यु पुत्र', parent: 'druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'setu_druhyu_chandra', name: 'सेतु', subtitle: 'बभ्रु पुत्र', parent: 'babhru_druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'arabdha_druhyu_chandra', name: 'आरब्ध (आरद्वत)', subtitle: 'सेतु पुत्र', parent: 'setu_druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'gandhara_druhyu_chandra', name: 'गान्धार', subtitle: 'गान्धार देश संस्थापक', parent: 'arabdha_druhyu_chandra', yug: 'treta', parichay: 'इन्हीं के नाम पर गान्धार (वर्तमान कंधार/अफगानिस्तान क्षेत्र) देश का नाम पड़ा।', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'dharma_druhyu_chandra', name: 'धर्म', subtitle: 'गान्धार पुत्र', parent: 'gandhara_druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'dhrita_druhyu_chandra', name: 'धृत', subtitle: 'धर्म पुत्र', parent: 'dharma_druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'duryaman_druhyu_chandra', name: 'दुर्मन', subtitle: 'धृत पुत्र', parent: 'dhrita_druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+    { id: 'prachetas_druhyu_chandra', name: 'प्रचेतस', subtitle: 'दुर्मन पुत्र', parent: 'duryaman_druhyu_chandra', yug: 'treta', clusterName: 'द्रुह्यु चंद्रवंशी' },
+        { id: 'suchetas_druhyu_chandra', name: 'सुचेतस', subtitle: 'प्रचेतस के पुत्र', parent: 'prachetas_druhyu_chandra', yug: 'treta', parichay: 'इनके समेत प्रचेतस के 100 पुत्र हुए जो उत्तर दिशा में म्लेच्छ देशों के राजा बने।', clusterName: 'द्रुह्यु चंद्रवंशी' },
     // --- दक्षिण एवं पूर्वी राजवंश (Proxies) ---
-    { id: 'mleccha_kings_proxy', name: 'म्लेच्छ राजवंश', subtitle: 'सुचेतस व अन्य भाइयों के वंश', parent: 'suchetas_druhyu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'pandya_dynasty_proxy', name: 'पाण्ड्य वंश', subtitle: 'मदुरै राजवंश', parent: 'pandya_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'chola_dynasty_proxy', name: 'चोल वंश', subtitle: 'कावेरी राजवंश', parent: 'chola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'kerala_dynasty_proxy', name: 'चेर (केरल) वंश', subtitle: 'मालाबार राजवंश', parent: 'kerala_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'kola_dynasty_proxy', name: 'कोल वंश', subtitle: 'कोल राजवंश', parent: 'kola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'mleccha_kings', name: 'म्लेच्छ राजवंश', subtitle: 'सुचेतस व अन्य भाइयों के वंश', parent: 'suchetas_druhyu_chandra', yug: 'treta',},
+    { id: 'pandya_dynasty_proxy', name: 'पाण्ड्य वंश', subtitle: 'मदुरै राजवंश', parent: 'pandya_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'चंद्रवंशी' },
+    { id: 'chola_dynasty_proxy', name: 'चोल वंश', subtitle: 'कावेरी राजवंश', parent: 'chola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'चंद्रवंशी' },
+    { id: 'kerala_dynasty_proxy', name: 'चेर (केरल) वंश', subtitle: 'मालाबार राजवंश', parent: 'kerala_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'चंद्रवंशी' },
+    { id: 'kola_dynasty_proxy', name: 'कोल वंश', subtitle: 'कोल राजवंश', parent: 'kola_turvasu_chandra', yug: 'treta', isProxy: true, clusterName: 'चंद्रवंशी' },
 
     { id: 'kalinga_dynasty_proxy', name: 'कलिंग वंश', subtitle: 'कलिंग राजवंश', parent: 'kalinga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'vanga_dynasty_proxy', name: 'वंग वंश', subtitle: 'बंगाल राजवंश', parent: 'vanga_anu', yug: 'treta', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
@@ -268,14 +269,16 @@ export const chandravanshData = [
     { id: 'varagunarama_pandya', name: 'वरगुणराम पाण्ड्य', subtitle: 'अंतिम ज्ञात पाण्ड्य शासक', parent: 'varathuranga_pandya', yug: 'kali', parichay: 'तेनकासी पाण्ड्य वंश के अंतिम ज्ञात शासकों में से एक (1618 CE)।', clusterName: 'पाण्ड्य राजवंश' },
 
     // --- अनु वंश ---
-    { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'chakshusha_anu', name: 'चाक्षुष', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'paroksha_anu', name: 'परोक्ष (परमेक्षु)', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'kalanara_anu', name: 'कालानर', subtitle: 'सभानर पुत्र', parent: 'sabhanara_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'srijaya_anu', name: 'सृंजय', subtitle: 'कालानर पुत्र', parent: 'kalanara_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'janamejaya_anu', name: 'जनमेजय', subtitle: 'सृंजय पुत्र', parent: 'srijaya_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'mahashala_anu', name: 'महाशाल', subtitle: 'जनमेजय पुत्र', parent: 'janamejaya_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'mahamana_anu', name: 'महामना', subtitle: 'महाशाल पुत्र', parent: 'mahashala_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'sabhanara_anu', name: 'सभानर', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', clusterName: 'अनु चंद्रवंशी' },
+    { id: 'chakshusha_anu', name: 'चाक्षुष', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।', clusterName: 'अनु चंद्रवंशी' },
+    { id: 'paroksha_anu', name: 'परोक्ष (परमेक्षु)', subtitle: 'अनु पुत्र', parent: 'anu_yayati_chandra', yug: 'treta', parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।', clusterName: 'अनु चंद्रवंशी' },
+    
+    //
+    { id: 'kalanara_anu', name: 'कालानर', subtitle: 'सभानर पुत्र', parent: 'sabhanara_anu', yug: 'treta', clusterName: 'सभानर चंद्रवंशी' },
+    { id: 'srijaya_anu', name: 'सृंजय', subtitle: 'कालानर पुत्र', parent: 'kalanara_anu', yug: 'treta', clusterName: 'सभानर चंद्रवंशी' },
+    { id: 'janamejaya_anu', name: 'जनमेजय', subtitle: 'सृंजय पुत्र', parent: 'srijaya_anu', yug: 'treta', clusterName: 'सभानर चंद्रवंशी' },
+    { id: 'mahashala_anu', name: 'महाशाल', subtitle: 'जनमेजय पुत्र', parent: 'janamejaya_anu', yug: 'treta', clusterName: 'सभानर चंद्रवंशी' },
+    { id: 'mahamana_anu', name: 'महामना', subtitle: 'महाशाल पुत्र', parent: 'mahashala_anu', yug: 'treta', clusterName: 'सभानर चंद्रवंशी' },
 
     // अनु वंश -> उशीनर शाखा
     { id: 'ushinara_anu', name: 'उशीनर', subtitle: 'महामना पुत्र', parent: 'mahamana_anu', yug: 'treta', clusterName: 'नहुष चंद्रवंशी' },
