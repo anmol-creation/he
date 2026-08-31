@@ -657,6 +657,15 @@ window.MapUI = {
         return `<span class="detail-value">${idStr}</span>`;
       };
 
+      // Custom Calculated Dates
+      if (data.kali_year !== undefined) {
+          const yearsAgo = 5126 - data.kali_year; // 5126 is approx current Kali year
+          detailsHtml += `<div class="detail-row"><span class="detail-label">कालक्रम:</span> <span class="detail-value" style="color: #ff9933; font-weight: bold;">आज से लगभग ${yearsAgo.toLocaleString('en-IN')} वर्ष पूर्व</span></div>`;
+      }
+      if (data.tithi) {
+          detailsHtml += `<div class="detail-row"><span class="detail-label">जन्म तिथि:</span> <span class="detail-value">${data.tithi}</span></div>`;
+      }
+
       if (data.parent) {
         detailsHtml += `<div class="detail-row"><span class="detail-label">पिता:</span> ${getLink(data.parent)}</div>`;
       }
