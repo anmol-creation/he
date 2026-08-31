@@ -368,8 +368,8 @@ export const suryavanshData = [
     { id: 'maru_suryavansh', name: 'मरु', subtitle: 'शीघ्र पुत्र', parent: 'shighra', yug: 'dwapar', parichay: 'श्रीमद्भागवत और कल्कि पुराण के अनुसार, इन्होने योग के बल से मृत्यु को जीत लिया था और आज भी कलाप ग्राम में जीवित हैं। 28वें कलियुग के अंत में ये वापस आकर नए सत्य युग में इक्ष्वाकु (सूर्य) वंश की पुनः स्थापना करेंगे।' },
     { id: 'prasushruta', name: 'प्रसुश्रुत', subtitle: 'मरु पुत्र', parent: 'maru_suryavansh', yug: 'dwapar' },
     { id: 'susandhi', name: 'सुसन्धि', subtitle: 'प्रसुश्रुत पुत्र', parent: 'prasushruta', yug: 'dwapar' },
-    { id: 'amarsha', name: 'अमर्ष', subtitle: 'सुसन्धि पुत्र', parent: 'susandhi', yug: 'dwapar' },
-    { id: 'vishrutavant', name: 'विश्रुतवन्त्', subtitle: 'अमर्ष पुत्र', parent: 'amarsha', yug: 'dwapar' },
+    { id: 'amarsha', name: 'अमर्ष', subtitle: 'सुसन्धि पुत्र', parent: 'susandhi', yug: 'dwapar', kali_year: -161 },
+    { id: 'vishrutavant', name: 'विश्रुतवन्त्', subtitle: 'अमर्ष पुत्र', parent: 'amarsha', yug: 'dwapar', kali_year: -131 },
     { id: 'brihadbala', name: 'बृहद्बल', subtitle: 'महाभारत योद्धा (कौरव पक्ष)', parent: 'vishrutavant', yug: 'dwapar', parichay: 'ये अयोध्या के राजा थे और महाभारत युद्ध में कौरवों की ओर से लड़े थे। ये अभिमन्यु के हाथों वीरगति को प्राप्त हुए थे। कछवाहा राजपूत कुश के वंशज माने जाते हैं।', kali_year: -101 },
 
     // Post-Mahabharata Ikshvaku Kings (Brihadbala to Sumitra)
