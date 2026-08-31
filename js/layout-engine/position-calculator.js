@@ -77,8 +77,8 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
     if (node.kali_year !== undefined) {
         // 1 Kali Year = 2 pixels (adjustable scale)
         // Offset by 10000 pixels so the macro cosmic stuff stays far above Kaliyug 0
-        const KALIYUG_ZERO_Y = 20000;
-        const PIXELS_PER_YEAR = 2;
+        const KALIYUG_ZERO_Y = 33000;
+        const PIXELS_PER_YEAR = 3;
         node.y = KALIYUG_ZERO_Y + (node.kali_year * PIXELS_PER_YEAR);
 
         // Sync downstream depth-based nodes by updating startY for its children
