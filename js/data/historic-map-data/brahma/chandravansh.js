@@ -614,7 +614,7 @@ export const chandravanshData = [
     { id: 'lakshmana_krishna_chandra', name: 'लक्ष्मणा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
 
     // श्रीकृष्ण के पुत्र (प्रद्युम्न, साम्ब आदि)
-    { id: 'pradyumna_chandra', name: 'प्रद्युम्न', subtitle: 'कामदेव अवतार', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'pradyumna_chandra', name: 'प्रद्युम्न', subtitle: 'कामदेव अवतार', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -95 },
     { id: 'charudeshna_chandra', name: 'चारुदेष्ण', subtitle: 'कृष्ण पुत्र', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'samba_krishna_chandra', name: 'साम्ब', subtitle: 'कृष्ण पुत्र', parent: 'krishna_chandra', mother: 'jambavati_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
