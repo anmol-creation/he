@@ -120,12 +120,18 @@ window.MapState = {
         // Depth is effectively the Y coordinate we are currently looking at on screen
         const centerY = (-this.translateY / this.scale) + (window.innerHeight / (2 * this.scale));
 
+        // Calculate Kali Year across the entire spectrum (positive and negative)
+        const kaliYear = Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR);
+
         if (centerY < KALIYUG_ZERO_Y) {
-            eraLabel.textContent = "Pre-Kaliyug";
-            yearLabel.textContent = "K.Y. < 0";
+            let eraText = "Dvapara Yuga";
+            if (kaliYear > -200) eraText = "Dvapara Yuga (Ant)";
+            else if (kaliYear < -864000) eraText = "Treta Yuga";
+
+            eraLabel.textContent = eraText;
+            yearLabel.textContent = `K.Y. ${kaliYear}`;
         } else {
-            // Calculate current Kali Year based on scroll depth
-            const kaliYear = Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR);
+            // (Kali Year is already calculated above)
 
             // Determine macro scale text (1000 year blocks)
             let macroText = "Kaliyuga";
