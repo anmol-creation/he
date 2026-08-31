@@ -597,7 +597,7 @@ export const chandravanshData = [
     { id: 'balram_chandra', name: 'बलराम (संकर्षण)', subtitle: 'शेषनाग अवतार', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'revati_balram_chandra', name: 'रेवती', subtitle: 'बलराम पत्नी', parent: '', spouseOf: 'balram_chandra', yug: 'dwapar' },
 
-    { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।', clusterName: 'नहुष चंद्रवंशी', kali_year: -125 },
     { id: 'subhadra_chandra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', spouseOf: 'arjun_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- श्रीकृष्ण का परिवार ---
