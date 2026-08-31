@@ -581,7 +581,8 @@ window.MapRenderer = {
         const dividers = [
             { label: 'Sanatan (Eternal) Zone ↑', y: sanatanBottomLine, color: '#FFD700' },
             { label: 'Maha-Kalpa Zone ↑', y: mahakalpBottomLine, color: '#FF8C00' },
-            { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' }
+            { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' },
+            { label: 'Dvapara Yuga ➔ Kali Yuga', y: 20000, color: '#e67e22' }
         ];
 
         ctx.globalAlpha = 0.5;

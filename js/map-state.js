@@ -114,7 +114,7 @@ window.MapState = {
         if (!overlay || !eraLabel || !yearLabel) return;
 
         // In position-calculator, KALIYUG_ZERO_Y is set to 10000. PIXELS_PER_YEAR is 2.
-        const KALIYUG_ZERO_Y = 10000;
+        const KALIYUG_ZERO_Y = 20000;
         const PIXELS_PER_YEAR = 2;
 
         // Depth is effectively the Y coordinate we are currently looking at on screen
