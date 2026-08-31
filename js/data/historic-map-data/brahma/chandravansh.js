@@ -597,7 +597,7 @@ export const chandravanshData = [
     { id: 'balram_chandra', name: 'बलराम (संकर्षण)', subtitle: 'शेषनाग अवतार', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'revati_balram_chandra', name: 'रेवती', subtitle: 'बलराम पत्नी', parent: '', spouseOf: 'balram_chandra', yug: 'dwapar' },
 
-    { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।', clusterName: 'नहुष चंद्रवंशी', kali_year: -125 },
     { id: 'subhadra_chandra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', spouseOf: 'arjun_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- श्रीकृष्ण का परिवार ---
@@ -614,7 +614,7 @@ export const chandravanshData = [
     { id: 'lakshmana_krishna_chandra', name: 'लक्ष्मणा', subtitle: 'श्रीकृष्ण की पत्नी', parent: '', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
 
     // श्रीकृष्ण के पुत्र (प्रद्युम्न, साम्ब आदि)
-    { id: 'pradyumna_chandra', name: 'प्रद्युम्न', subtitle: 'कामदेव अवतार', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'pradyumna_chandra', name: 'प्रद्युम्न', subtitle: 'कामदेव अवतार', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -95 },
     { id: 'charudeshna_chandra', name: 'चारुदेष्ण', subtitle: 'कृष्ण पुत्र', parent: 'krishna_chandra', mother: 'rukmini_krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'samba_krishna_chandra', name: 'साम्ब', subtitle: 'कृष्ण पुत्र', parent: 'krishna_chandra', mother: 'jambavati_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
