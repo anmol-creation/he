@@ -601,11 +601,11 @@ export const chandravanshData = [
     { id: 'revati_balram_chandra', name: 'रेवती', subtitle: 'बलराम पत्नी', parent: '', spouseOf: 'balram_chandra', yug: 'dwapar' },
 
     { id: 'krishna_chandra', name: 'कृष्ण (वासुदेव)', subtitle: 'पूर्णावतार', parent: 'vasudev_chandra', mother: 'devaki_devaka_chandra', yug: 'dwapar', parichay: 'भगवान विष्णु के पूर्णावतार। नन्द बाबा और यशोदा ने गोकुल में इनका पालन किया।', clusterName: 'नहुष चंद्रवंशी', kali_year: -125, tithi: 'भाद्रपद कृष्ण अष्टमी (रोहिणी नक्षत्र)' },
-    { id: 'subhadra_chandra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', spouseOf: 'arjun_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'subhadra_chandra', name: 'सुभद्रा', subtitle: 'कृष्ण की बहन', parent: 'vasudev_chandra', mother: 'rohini_vasudev_chandra', spouseOf: 'arjun_chandra', yug: 'dwapar', clusterName: 'अर्जुन की पत्नियाँ' },
 
     // --- श्रीकृष्ण का परिवार ---
     // अष्टभार्या
-    { id: 'krishna_wives_proxy', name: 'अष्टभार्या', subtitle: 'श्रीकृष्ण की 8 पटरानियां', parent: 'other_dynasties_proxy', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या', isProxy: true },
+    
 
     { id: 'rukmini_krishna_chandra', name: 'रुक्मिणी', subtitle: 'श्रीकृष्ण की प्रथम पत्नी (लक्ष्मी अवतार)', parent: 'bhishmaka_chandra', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'अष्टभार्या' },
     { id: 'satyabhama_krishna_chandra', name: 'सत्यभामा', subtitle: 'श्रीकृष्ण की पत्नी (भूदेवी)', parent: 'satrajit_nighna_chandra', spouseOf: 'krishna_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
@@ -840,7 +840,7 @@ export const chandravanshData = [
 
     { id: 'dhrishtadyumna_chandra', name: 'धृष्टद्युम्न', subtitle: 'द्रुपद पुत्र (यज्ञकुण्ड से)', parent: 'drupada_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'shikhandi_chandra', name: 'शिखंडी', subtitle: 'द्रुपद पुत्र/पुत्री', parent: 'drupada_chandra', yug: 'dwapar', parichay: 'पूर्वजन्म में अम्बा। भीष्म के वध का कारण बने।', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'draupadi_chandra', name: 'द्रौपदी (पांचाली)', subtitle: 'पांडवों की पत्नी (यज्ञकुण्ड से)', parent: 'drupada_chandra', spouseOf: 'yudhishthir_chandra', yug: 'dwapar', parichay: 'पांडवों की धर्मपत्नी। यज्ञकुण्ड से उत्पन्न हुईं।', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'draupadi_chandra', name: 'द्रौपदी (पांचाली)', subtitle: 'पांडवों की पत्नी (यज्ञकुण्ड से)', parent: 'drupada_chandra', spouseOf: 'yudhishthir_chandra', yug: 'dwapar', parichay: 'पांडवों की धर्मपत्नी। यज्ञकुण्ड से उत्पन्न हुईं।', clusterName: 'युधिष्ठिर की पत्नियां',},
     { id: 'satyajit_panchal', name: 'सत्यजित', subtitle: 'द्रुपद पुत्र', parent: 'drupada_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'yudhamanyu_chandra', name: 'युधामन्यु', subtitle: 'द्रुपद पुत्र', parent: 'drupada_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'uttamaujas_chandra', name: 'उत्तमौजस', subtitle: 'द्रुपद पुत्र', parent: 'drupada_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
@@ -1092,18 +1092,16 @@ export const chandravanshData = [
     { id: 'madri_chandra', name: 'माद्री', subtitle: 'पाण्डु पत्नी', parent: '', spouseOf: 'pandu_chandra', yug: 'dwapar' },
 
     // युधिष्ठिर
-        { id: 'pandu_dynasty_proxy', name: 'पाण्डव वंश', subtitle: 'पाण्डु के वंशज', parent: 'pandu_chandra', yug: 'dwapar', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'yudhishthir_chandra', name: 'युधिष्ठिर', subtitle: 'धर्मराज / पांडव',parent: 'pandu_dynasty_proxy', mother: 'kunti_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -127 },
-    { id: 'devika_yudhishthir_chandra', name: 'देविका', subtitle: 'शिबि पुत्री', parent: 'sibi_anu', spouseOf: 'yudhishthir_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
-        { id: 'upapandav_proxy', name: 'उपपांडव', subtitle: 'द्रौपदी के 5 पुत्र', parent: 'yudhishthir_chandra', yug: 'dwapar', isProxy: true, clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'prativindhya_chandra', name: 'प्रतिविन्ध्य', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
-    { id: 'yaudheya_chandra', name: 'यौधेय', subtitle: 'युधिष्ठिर पुत्र', parent: 'yudhishthir_chandra', mother: 'devika_yudhishthir_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'yudhishthir_chandra', name: 'युधिष्ठिर', subtitle: 'धर्मराज / पांडव',parent: 'pandu_chandra', mother: 'kunti_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -127 },
+    { id: 'devika_yudhishthir_chandra', name: 'देविका', subtitle: 'शिबि पुत्री', parent: 'sibi_anu', spouseOf: 'yudhishthir_chandra', yug: 'dwapar', clusterName: 'युधिष्ठिर की पत्नियां' },
+    { id: 'prativindhya_chandra', name: 'प्रतिविन्ध्य', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'yudhishthir_chandra', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
+    { id: 'yaudheya_chandra', name: 'यौधेय', subtitle: 'युधिष्ठिर पुत्र', parent: 'yudhishthir_chandra', mother: 'devika_yudhishthir_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
 
     // भीम
     { id: 'bhim_chandra', name: 'भीम (वृकोदर)', subtitle: 'पवन पुत्र / पांडव',parent: 'pandu_dynasty_proxy', mother: 'kunti_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -126 },
-    { id: 'hidimba_wife_chandra', name: 'हिडिम्बा', subtitle: 'राक्षसी / भीम पत्नी', parent: '', spouseOf: 'bhim_chandra', yug: 'dwapar' },
-    { id: 'valandhara_chandra', name: 'वलंधरा', subtitle: 'काशी पुत्री', parent: '', spouseOf: 'bhim_chandra', yug: 'dwapar' },
-    { id: 'sutasoma_chandra', name: 'सुतसोम', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'hidimba_wife_chandra', name: 'हिडिम्बा', subtitle: 'राक्षसी / भीम पत्नी', gender:'female', clusterName:'भीम की पत्नियाँ', parent: '', spouseOf: 'bhim_chandra', yug: 'dwapar' },
+    { id: 'valandhara_chandra', name: 'वलंधरा', subtitle: 'काशी पुत्री', clusterName:'भीम की पत्नियाँ', parent: '', spouseOf: 'bhim_chandra', yug: 'dwapar' },
+    { id: 'sutasoma_chandra', name: 'सुतसोम', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'yudhishthir_chandra', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'ghatotkacha_chandra', name: 'घटोत्कच', subtitle: 'भीम-हिडिम्बा पुत्र', parent: 'bhim_chandra', mother: 'hidimba_wife_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'ahilawati_chandra', name: 'अहिलावती', subtitle: 'घटोत्कच पत्नी', parent: '', spouseOf: 'ghatotkacha_chandra', yug: 'dwapar' },
     { id: 'barbarik_chandra', name: 'बर्बरीक (खाटू श्याम)', subtitle: 'घटोत्कच पुत्र', parent: 'ghatotkacha_chandra', mother: 'ahilawati_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
@@ -1113,9 +1111,9 @@ export const chandravanshData = [
 
     // अर्जुन
     { id: 'arjun_chandra', name: 'अर्जुन (पार्थ)', subtitle: 'इंद्र पुत्र / पांडव',parent: 'pandu_dynasty_proxy', mother: 'kunti_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -125 },
-    { id: 'ulupi_chandra', name: 'उलूपी', subtitle: 'नाग कन्या / अर्जुन पत्नी', parent: 'kauravya_naga_king', spouseOf: 'arjun_chandra', yug: 'dwapar' },
-    { id: 'chitrangada_wife_chandra', name: 'चित्रांगदा', subtitle: 'मणिपुर पुत्री / अर्जुन पत्नी', parent: 'chitravahana_manipur', spouseOf: 'arjun_chandra', yug: 'dwapar' },
-    { id: 'shrutakarma_chandra', name: 'श्रुतकर्मा', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'ulupi_chandra', name: 'उलूपी', subtitle: 'नाग कन्या / अर्जुन पत्नी',clusterName:'अर्जुन की पत्नियाँ', parent: 'kauravya_naga_king', spouseOf: 'arjun_chandra', yug: 'dwapar' },
+    { id: 'chitrangada_wife_chandra', name: 'चित्रांगदा', subtitle: 'मणिपुर पुत्री / अर्जुन पत्नी', parent: 'chitravahana_manipur', spouseOf: 'arjun_chandra', yug: 'dwapar', clusterName:'अर्जुन की पत्नियाँ', },
+    { id: 'shrutakarma_chandra', name: 'श्रुतकर्मा', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'yudhishthir_chandra', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
     { id: 'abhimanyu_chandra', name: 'अभिमन्यु', subtitle: 'अर्जुन-सुभद्रा पुत्र', parent: 'arjun_chandra', mother: 'subhadra_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'iravan_chandra', name: 'इरावन', subtitle: 'अर्जुन पुत्र', parent: 'arjun_chandra', mother: 'ulupi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'babhruvahana_chandra', name: 'बभ्रुवाहन', subtitle: 'अर्जुन पुत्र', parent: 'arjun_chandra', mother: 'chitrangada_wife_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
@@ -1123,13 +1121,13 @@ export const chandravanshData = [
     // नकुल
     { id: 'nakul_chandra', name: 'नकुल', subtitle: 'अश्विनी कुमार पुत्र',parent: 'pandu_dynasty_proxy', mother: 'madri_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -123 },
     { id: 'karenumati_chandra', name: 'करेणुमती', subtitle: 'चेदि पुत्री / नकुल पत्नी', parent: 'shishupala_chandra', spouseOf: 'nakul_chandra', yug: 'dwapar' },
-    { id: 'shatanika_upa_chandra', name: 'शतानीक', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'shatanika_upa_chandra', name: 'शतानीक', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'yudhishthir_chandra', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
     { id: 'niramitra_chandra', name: 'निरमित्र', subtitle: 'नकुल पुत्र', parent: 'nakul_chandra', mother: 'karenumati_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
     // सहदेव
     { id: 'sahadev_chandra', name: 'सहदेव', subtitle: 'अश्विनी कुमार पुत्र',parent: 'pandu_dynasty_proxy', mother: 'madri_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी', kali_year: -123 },
     { id: 'vijaya_sahadev_chandra', name: 'विजया', subtitle: 'मद्र पुत्री / सहदेव पत्नी', parent: 'shalya_madra_king', spouseOf: 'sahadev_chandra', yug: 'dwapar' },
-    { id: 'shrutasena_upa_chandra', name: 'श्रुतसेन', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'upapandav_proxy', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'shrutasena_upa_chandra', name: 'श्रुतसेन', subtitle: 'द्रौपदी पुत्र (उपपांडव)', parent: 'yudhishthir_chandra', mother: 'draupadi_chandra', yug: 'dwapar', clusterName: 'उपपांडव' },
     { id: 'suhotra_sahadev_chandra', name: 'सुहोत्र', subtitle: 'सहदेव पुत्र', parent: 'sahadev_chandra', mother: 'vijaya_sahadev_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- कलियुग (परीक्षित से क्षेमक तक) ---
