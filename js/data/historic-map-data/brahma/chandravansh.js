@@ -17,7 +17,7 @@ export const chandravanshData = [
     { id: 'ramana_chandra', name: 'रमण', subtitle: 'वर्चस्-मनोहरा पुत्र', lineLabel: 'रमण', gender: 'male', parent: 'varchas_chandra', clusterName:'चंद्र के अन्य पुत्र', mother: 'manohara_chandra', yug: 'satya' },
 
     // --- चंद्र देव के पुत्र ---
-    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',lineLabel: 'बुध',gender: 'male', yug: 'satya' },
+    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',lineLabel: 'बुध',gender: 'male', yug: 'satya', kali_year: -10000 },
 
     // --- बुध की पत्नी ---
     { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', gender: 'female',parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya' },
