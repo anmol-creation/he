@@ -17,18 +17,18 @@ export const chandravanshData = [
     { id: 'ramana_chandra', name: 'रमण', subtitle: 'वर्चस्-मनोहरा पुत्र', lineLabel: 'रमण', gender: 'male', parent: 'varchas_chandra', clusterName:'चंद्र के अन्य पुत्र', mother: 'manohara_chandra', yug: 'satya' },
 
     // --- चंद्र देव के पुत्र ---
-    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',lineLabel: 'बुध',gender: 'male', yug: 'satya', kali_year: -10000 },
+    { id: 'budh_chandra', name: 'बुध', subtitle: 'चंद्र व तारा के पुत्र', parent: 'chandra_chandra', mother: 'tara_chandra',lineLabel: 'बुध',gender: 'male', yug: 'satya', kali_year: -10100 },
 
     // --- बुध की पत्नी ---
-    { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', gender: 'female',parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya', kali_year: -10000 },
+    { id: 'ila_chandra', name: 'इला', subtitle: 'बुध की पत्नी', gender: 'female',parent: 'vaivasvata_manu', spouseOf: 'budh_chandra', yug: 'satya', kali_year: -10100 },
 
     // --- पुरुरवा ---
-    { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra',gender: 'male',clusterName:'चंद्रवंश प्रारंभ ',lineLabel: 'पुरुरवा', mother: 'ila_chandra', yug: 'satya', kali_year: -9500 },
+    { id: 'pururava_chandra', name: 'पुरुरवा', subtitle: 'चंद्रवंश के प्रथम राजा', parent: 'budh_chandra',gender: 'male',clusterName:'चंद्रवंश प्रारंभ ',lineLabel: 'पुरुरवा', mother: 'ila_chandra', yug: 'satya', kali_year: -9700 },
     { id: 'urvashi_chandra', name: 'उर्वशी', subtitle: 'पुरुरवा की पत्नी (अप्सरा)', gender: 'female',parent: '', spouseOf: 'pururava_chandra', yug: 'satya' },
 
     // --- पुरुरवा के पुत्र (आयु, श्रुतायु, सत्यायु, रय, विजय, जय) ---
     
-    { id: 'ayu_chandra', name: 'आयु', subtitle: 'पुरुरवा के ज्येष्ठ पुत्र',gender: 'male', parent: 'pururava_chandra', lineLabel: 'आयु',mother: 'urvashi_chandra', yug: 'treta', kali_year: -9000 },
+    { id: 'ayu_chandra', name: 'आयु', subtitle: 'पुरुरवा के ज्येष्ठ पुत्र',gender: 'male', parent: 'pururava_chandra', lineLabel: 'आयु',mother: 'urvashi_chandra', yug: 'treta', kali_year: -9600 },
     { id: 'shrutayu_chandra', name: 'श्रुतायु', subtitle: 'पुरुरवा के पुत्र',gender: 'male', parent: 'pururava_chandra', mother: 'urvashi_chandra',lineLabel: 'श्रुतायु', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
     { id: 'satyayu_chandra', name: 'सत्यायु', subtitle: 'पुरुरवा के पुत्र', lineLabel: 'सत्यायु',parent: 'pururava_chandra',gender: 'male', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
     { id: 'raya_chandra', name: 'रय', subtitle: 'पुरुरवा के पुत्र',gender: 'male', lineLabel: 'रय',parent: 'pururava_chandra', mother: 'urvashi_chandra', yug: 'satya', clusterName: 'पुरुरवा के अन्य पुत्र' },
@@ -775,7 +775,7 @@ export const chandravanshData = [
     { id: 'dushyant_chandra', name: 'दुष्यंत', subtitle: 'तंसु पुत्र', parent: 'tamsu_chandra', mother: 'ilin_tamsu_chandra', yug: 'treta', parichay: 'इन्हें तुर्वसु वंश के मरुत्त ने गोद लिया था, परन्तु ये पुनः पुरु वंश में लौट गए।', clusterName: 'नहुष चंद्रवंशी' },
 
     // --- भरत और हस्ति ---
-    { id: 'bharat_kuru', name: 'भरत', subtitle: 'चक्रवर्ती सम्राट (भारतवर्ष)', parent: 'dushyant_chandra', mother: 'shakuntala_vishwamitra_chandra', yug: 'dwapar', kali_year: -5000, clusterName: 'नहुष चंद्रवंशी' },
+    { id: 'bharat_kuru', name: 'भरत', subtitle: 'चक्रवर्ती सम्राट (भारतवर्ष)', parent: 'dushyant_chandra', mother: 'shakuntala_vishwamitra_chandra', yug: 'dwapar', kali_year: -3500, clusterName: 'नहुष चंद्रवंशी' },
     { id: 'sunanda_bharat_chandra', name: 'सुनंदा', subtitle: 'भरत की पत्नी', parent: '', spouseOf: 'bharat_kuru', yug: 'dwapar' },
     { id: 'vidatha_bharadvaja_chandra', name: 'भरद्वाज (विदथ)', subtitle: 'भरत के दत्तक पुत्र', parent: 'bharat_kuru', yug: 'dwapar', parichay: 'भरत के अपने ९ पुत्र योग्य नहीं थे, अतः उन्होंने महर्षि बृहस्पति के पुत्र भरद्वाज को गोद लिया।', clusterName: 'नहुष चंद्रवंशी' },
     { id: 'bhumanyu_chandra', name: 'भुमन्यु', subtitle: 'भरद्वाज पुत्र', parent: 'vidatha_bharadvaja_chandra', yug: 'dwapar', clusterName: 'नहुष चंद्रवंशी' },

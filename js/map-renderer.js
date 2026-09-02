@@ -578,17 +578,17 @@ window.MapRenderer = {
         const mahakalpBottomLine = mahakalpY + ((kalpY - mahakalpY) / 2);
         const kalpBottomLine = kalpY + ((manvantaraY - kalpY) / 2);
 
-        const KALIYUG_ZERO_Y = 33000;
+        const KALIYUG_ZERO_Y = 36800;
         const PIXELS_PER_YEAR = 3;
 
         const dividers = [
             { label: 'Sanatan (Eternal) Zone ↑', y: sanatanBottomLine, color: '#FFD700' },
             { label: 'Maha-Kalpa Zone ↑', y: mahakalpBottomLine, color: '#FF8C00' },
             { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' },
-            { label: 'Pralaya ➔ Satya Yuga Start', y: KALIYUG_ZERO_Y + (-15000 * PIXELS_PER_YEAR), color: '#FFD700' },
-            { label: 'Satya Yuga ➔ Treta Yuga', y: KALIYUG_ZERO_Y + (-9250 * PIXELS_PER_YEAR), color: '#e67e22' },
-            { label: 'Treta Yuga ➔ Dvapara Yuga', y: KALIYUG_ZERO_Y + (-5000 * PIXELS_PER_YEAR), color: '#e67e22' },
-            { label: 'Dvapara Yuga ➔ Kali Yuga', y: KALIYUG_ZERO_Y, color: '#e67e22' }
+            { label: 'Pralaya ➔ Satya Yuga Start', y: 6500, color: '#FFD700' },
+            { label: 'Satya Yuga ➔ Treta Yuga', y: 7700, color: '#e67e22' },
+            { label: 'Treta Yuga ➔ Dvapara Yuga', y: 26300, color: '#e67e22' },
+            { label: 'Dvapara Yuga ➔ Kali Yuga', y: 36800, color: '#e67e22' }
         ];
 
         ctx.globalAlpha = 0.5;

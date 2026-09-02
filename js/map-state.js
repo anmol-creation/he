@@ -113,8 +113,8 @@ window.MapState = {
         const yearLabel = document.getElementById('current-year-label');
         if (!overlay || !eraLabel || !yearLabel) return;
 
-        // In position-calculator, KALIYUG_ZERO_Y is set to 33000. PIXELS_PER_YEAR is 3.
-        const KALIYUG_ZERO_Y = 33000;
+        // In position-calculator, KALIYUG_ZERO_Y is set to 36800. PIXELS_PER_YEAR is 3.
+        const KALIYUG_ZERO_Y = 36800;
         const PIXELS_PER_YEAR = 3;
 
         // Depth is effectively the Y coordinate we are currently looking at on screen
