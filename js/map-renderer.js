@@ -585,7 +585,9 @@ window.MapRenderer = {
             { label: 'Sanatan (Eternal) Zone ↑', y: sanatanBottomLine, color: '#FFD700' },
             { label: 'Maha-Kalpa Zone ↑', y: mahakalpBottomLine, color: '#FF8C00' },
             { label: 'Kalpa-spanning Entities ↑', y: kalpBottomLine, color: '#00BFFF' },
-            { label: 'Satya Yuga ➔ Treta Yuga', y: KALIYUG_ZERO_Y + (-10000 * PIXELS_PER_YEAR), color: '#e67e22' },
+            { label: 'Pralaya ➔ Satya Yuga Start', y: KALIYUG_ZERO_Y + (-15000 * PIXELS_PER_YEAR), color: '#FFD700' },
+            { label: 'Satya Yuga ➔ Treta Yuga', y: KALIYUG_ZERO_Y + (-9250 * PIXELS_PER_YEAR), color: '#e67e22' },
+            { label: 'Treta Yuga ➔ Dvapara Yuga', y: KALIYUG_ZERO_Y + (-5000 * PIXELS_PER_YEAR), color: '#e67e22' },
             { label: 'Dvapara Yuga ➔ Kali Yuga', y: KALIYUG_ZERO_Y, color: '#e67e22' }
         ];
 

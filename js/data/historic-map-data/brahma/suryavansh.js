@@ -1,5 +1,5 @@
 export const suryavanshData = [
-    { id: 'vaivasvata_manu', name: 'वैवस्वत मनु', subtitle: 'वर्तमान मनु', parent: 'surya', yug: 'satya', kali_year: -10000 },
+    { id: 'vaivasvata_manu', name: 'वैवस्वत मनु', subtitle: 'वर्तमान मनु', parent: 'surya', yug: 'satya', kali_year: -20000 },
     { id: 'shraddha_manu_wife', name: 'श्रद्धा', subtitle: 'मनु पत्नी', parent: '', spouseOf: 'vaivasvata_manu', yug: 'satya' },
 
     // Manu's other children
@@ -21,14 +21,14 @@ export const suryavanshData = [
     { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
     { id: 'kavi_manu', name: 'कवि', subtitle: 'मनु पुत्र', gender: 'male', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'वैवस्वत मनु के पुत्र जिन्होंने सांसारिक मोह त्याग कर सन्यास ले लिया था।', source_texts: 'भागवत पुराण' },
 
-    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', kali_year: -10000 },
     // Descendants of Ikshvaku
         { id: 'suryavansh_proxy', name: 'सूर्यवंश', subtitle: 'इक्ष्वाकु के वंशज', parent: 'ikshvaku', yug: 'satya', clusterName: 'सूर्यवंश', isProxy: true },
-{ id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'suryavansh_proxy', yug: 'treta', parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
+{ id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'suryavansh_proxy', yug: 'satya', kali_year: -9500, parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
     { id: 'nimi', name: 'निमि', subtitle: 'विदेह वंश संस्थापक', parent: 'ikshvaku', yug: 'treta', parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।' },
     { id: 'danda', name: 'दण्ड', subtitle: 'इक्ष्वाकु पुत्र', parent: 'ikshvaku', yug: 'treta', parichay: 'दंडकारण्य वन का नाम इन्हीं के नाम पर पड़ा।' },
     // Vikukshi's immediate
-    { id: 'puranjaya', name: 'पुरंजय', subtitle: 'ककुत्स्थ / इन्द्रवाह', parent: 'vikukshi', yug: 'treta', parichay: 'इन्होंने देवासुर संग्राम में वृषभ रूपी इन्द्र पर बैठकर युद्ध किया था।' },
+    { id: 'puranjaya', name: 'पुरंजय', subtitle: 'ककुत्स्थ / इन्द्रवाह', parent: 'vikukshi', yug: 'treta', kali_year: -9000, parichay: 'इन्होंने देवासुर संग्राम में वृषभ रूपी इन्द्र पर बैठकर युद्ध किया था।' },
     // Vikukshi to Harishchandra (Suryavansh main line)
     { id: 'anena_surya', name: 'अनेना', subtitle: 'पुरंजय पुत्र', parent: 'puranjaya', yug: 'treta' },
     { id: 'prithu_surya', name: 'पृथु', subtitle: 'अनेना पुत्र', parent: 'anena_surya', yug: 'treta' },
@@ -336,18 +336,18 @@ export const suryavanshData = [
 
     // Kush's descendants (to Mahabharat era)
     { id: 'kumudvati', name: 'कुमुद्वती', subtitle: 'कुश पत्नी', parent: '', spouseOf: 'kush', yug: 'treta', parichay: 'ये एक नागकन्या थीं।' },
-    { id: 'atithi', name: 'अतिथि', subtitle: 'कुश पुत्र', parent: 'kush', mother: 'kumudvati', yug: 'treta' },
-    { id: 'nishadha', name: 'निषध', subtitle: 'अतिथि पुत्र', parent: 'atithi', yug: 'treta' },
-    { id: 'nala', name: 'नल', subtitle: 'निषध पुत्र', parent: 'nishadha', yug: 'treta' },
-    { id: 'nabhas', name: 'नभस्', subtitle: 'नल पुत्र', parent: 'nala', yug: 'treta' },
-    { id: 'pundarika', name: 'पुण्डरीक', subtitle: 'नभस् पुत्र', parent: 'nabhas', yug: 'treta' },
-    { id: 'kshemadhanvan', name: 'क्षेमधन्वन्', subtitle: 'पुण्डरीक पुत्र', parent: 'pundarika', yug: 'treta' },
-    { id: 'devanika', name: 'देवानीक', subtitle: 'क्षेमधन्वन् पुत्र', parent: 'kshemadhanvan', yug: 'treta' },
-    { id: 'ahinagu', name: 'अहीनगु', subtitle: 'देवानीक पुत्र', parent: 'devanika', yug: 'treta' },
-    { id: 'ruru_suryavansh', name: 'रुरु', subtitle: 'अहीनगु पुत्र', parent: 'ahinagu', yug: 'treta' },
-    { id: 'paripatra', name: 'पारिपात्र', subtitle: 'रुरु पुत्र', parent: 'ruru_suryavansh', yug: 'treta' },
-    { id: 'shala_surya', name: 'शल', subtitle: 'पारिपात्र पुत्र', parent: 'paripatra', yug: 'treta' },
-    { id: 'dala', name: 'दल', subtitle: 'शल पुत्र', parent: 'shala_surya', yug: 'treta' },
+    { id: 'atithi', name: 'अतिथि', subtitle: 'कुश पुत्र', parent: 'kush', mother: 'kumudvati', yug: 'dwapar', kali_year: -5000 },
+    { id: 'nishadha', name: 'निषध', subtitle: 'अतिथि पुत्र', parent: 'atithi', yug: 'dwapar' },
+    { id: 'nala', name: 'नल', subtitle: 'निषध पुत्र', parent: 'nishadha', yug: 'dwapar' },
+    { id: 'nabhas', name: 'नभस्', subtitle: 'नल पुत्र', parent: 'nala', yug: 'dwapar' },
+    { id: 'pundarika', name: 'पुण्डरीक', subtitle: 'नभस् पुत्र', parent: 'nabhas', yug: 'dwapar' },
+    { id: 'kshemadhanvan', name: 'क्षेमधन्वन्', subtitle: 'पुण्डरीक पुत्र', parent: 'pundarika', yug: 'dwapar' },
+    { id: 'devanika', name: 'देवानीक', subtitle: 'क्षेमधन्वन् पुत्र', parent: 'kshemadhanvan', yug: 'dwapar' },
+    { id: 'ahinagu', name: 'अहीनगु', subtitle: 'देवानीक पुत्र', parent: 'devanika', yug: 'dwapar' },
+    { id: 'ruru_suryavansh', name: 'रुरु', subtitle: 'अहीनगु पुत्र', parent: 'ahinagu', yug: 'dwapar' },
+    { id: 'paripatra', name: 'पारिपात्र', subtitle: 'रुरु पुत्र', parent: 'ruru_suryavansh', yug: 'dwapar' },
+    { id: 'shala_surya', name: 'शल', subtitle: 'पारिपात्र पुत्र', parent: 'paripatra', yug: 'dwapar' },
+    { id: 'dala', name: 'दल', subtitle: 'शल पुत्र', parent: 'shala_surya', yug: 'dwapar' },
     { id: 'bala', name: 'बल', subtitle: 'दल पुत्र', parent: 'dala', yug: 'dwapar' },
     { id: 'uktha', name: 'उक्थ', subtitle: 'बल पुत्र', parent: 'bala', yug: 'dwapar' },
     { id: 'sahasrashva', name: 'सहस्राश्व', subtitle: 'उक्थ पुत्र', parent: 'uktha', yug: 'dwapar' },
@@ -717,10 +717,10 @@ export const suryavanshData = [
     { id: 'karanchand', name: 'करनचंद', subtitle: 'कुच्छल गोत्र', parent: 'agrawal_dynasty_proxy', mother: 'madhavi_agrasen', yug: 'dwapar', parichay: 'कुच्छल गोत्र के प्रवर्तक। गुरु: कश्यप।', clusterName: 'अग्रवाल वंश' },
     { id: 'narsev', name: 'नरसेव', subtitle: 'नांगल गोत्र', parent: 'agrawal_dynasty_proxy', mother: 'madhavi_agrasen', yug: 'dwapar', parichay: 'नांगल गोत्र के प्रवर्तक। गुरु: नागेंद्र।', clusterName: 'अग्रवाल वंश' },
 
-    { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'treta' },
+    { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'dwapar' },
 
 
 
 
-    { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', parent: 'arun', yug: 'treta' }
+    { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', parent: 'arun', yug: 'dwapar' }
 ];
