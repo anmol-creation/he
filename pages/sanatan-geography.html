@@ -3,204 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सनातन भूगोल | Sanatan Geography</title>
-    <meta name="description" content="Sanatan Geography, Brahmanda, Jambudvipa, and Mount Meru">
-    <meta name="theme-color" content="#FF6B35">
+    <title>Sacred Geography | Sanatan Archive</title>
+    <meta name="description" content="Explore the Cosmic and Physical Geography according to Puranas and Surya Siddhanta.">
+
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../icons/logo.jpg">
+    <meta name="theme-color" content="#1a110b">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yatra+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/geography.css">
     <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
-    <style>
-        body {
-            background-color: var(--bg-parchment);
-            color: var(--text-dark);
-            font-family: 'Poppins', sans-serif;
-        }
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        h1 {
-            font-family: 'Yatra One', cursive;
-            color: var(--primary-saffron);
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-        .geo-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        .geo-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-saffron), var(--secondary-gold));
-        }
-        .geo-title {
-            font-family: 'Yatra One', cursive;
-            color: var(--text-dark);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .geo-content {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #444;
-        }
-        .geo-content strong {
-            color: var(--primary-saffron);
-        }
-        .dvipa-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        .dvipa-item {
-            background: #fdfbf7;
-            border: 1px solid #eee;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .dvipa-item .title {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        .dvipa-item .desc {
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
 </head>
 <body>
-    <header style="padding: 1rem;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 15px;">
-            <a href="itihas-puran.html" style="text-decoration: none; font-size: 1.5rem; color: var(--text-dark);">←</a>
-            <img src="../icons/logo.jpg" alt="Logo" class="site-logo" style="height: 40px;">
-            <span style="font-weight: 600; font-size: 1.2rem; color: var(--primary-saffron);">सनातन भूगोल (Sanatan Geography)</span>
+
+    <!-- Shared Top Navigation Bar -->
+    <header class="geo-topbar">
+        <a href="../index.html" class="geo-brand">
+            <img src="../icons/logo.jpg" alt="Logo">
+            <span>Sanatan Archive</span>
+        </a>
+        <div class="geo-utilities">
+            <button class="geo-icon-btn" aria-label="Search Archives">🔍</button>
         </div>
     </header>
 
-    <div class="container">
-        <h1>सनातन भूगोल संरचना</h1>
-        <div class="subtitle">The Cosmic and Physical Geography according to Puranas and Surya Siddhanta</div>
+    <div class="geo-layout-wrapper">
+        <!-- Sidebar Navigation (Desktop Only) -->
+        <aside class="geo-sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="itihas-puran.html">Chronicles</a></li>
+                <li><a href="../index.html">Eras & Epochs</a></li>
+                <li><a href="sanatan-geography.html" class="active">Sacred Geography</a></li>
+                <li><a href="digital-library.html">Library</a></li>
+            </ul>
+        </aside>
 
-        <!-- 1. Brahmanda -->
-        <div class="geo-card">
-            <h2 class="geo-title">🌌 १. ब्रह्मांड (The Cosmic Egg / Universe)</h2>
-            <div class="geo-content">
-                <p>सनातन ग्रंथों के अनुसार संपूर्ण सृष्टि एक विशाल अंडे के आकार में है जिसे <strong>ब्रह्मांड</strong> (Brahma's Egg) कहा जाता है। ऐसे अनंत ब्रह्मांड हैं।</p>
-                <p>इस ब्रह्मांड के अंदर १४ भुवन (Lokas) हैं:</p>
-                <ul>
-                    <li><strong>उर्ध्व लोक (Upper Worlds):</strong> सत्य, तप, जन, महर, स्वर्, भुवर्, भूर्लोक (पृथ्वी)।</li>
-                    <li><strong>अधो लोक (Nether Worlds):</strong> अतल, वितल, सुतल, तलातल, महातल, रसातल, पाताल।</li>
-                </ul>
-                <p>ब्रह्मांड के बाहर ७ आवरण (layers) हैं - जल, अग्नि, वायु, आकाश, अहंकार, महत और प्रकृति, जो इसे ढके हुए हैं।</p>
-            </div>
-        </div>
+        <!-- Main Content Area -->
+        <main class="geo-main-content">
 
-        <!-- 2. Jyotischakra & Bhu-Mandala -->
-        <div class="geo-card">
-            <h2 class="geo-title">🪐 २. ज्योतिषचक्र और भू-मंडल (Galaxies & Solar System)</h2>
-            <div class="geo-content">
-                <p><strong>ज्योतिषचक्र (Jyotischakra):</strong> आकाश में दिखने वाले सभी तारे, नक्षत्र और तारामंडल (Constellations) मिलकर ज्योतिषचक्र बनाते हैं। भागवत पुराण इसे एक विशाल जलीय जीव (शिशुमार / Cosmic Dolphin) के रूप में वर्णित करता है, जिसकी पूंछ पर <strong>ध्रुव तारा (Pole Star)</strong> स्थित है। यह हमारी मिल्की वे गैलेक्सी (Milky Way) का प्राचीन वर्णन है।</p>
-                <p><strong>भू-मंडल / ग्रहकक्षा (Bhu-Mandala):</strong> सूर्य और चंद्रमा की रोशनी जहां तक जाती है, उसे भू-मंडल कहा जाता है। सूर्य सिद्धांत के अनुसार ग्रह (Planets) अपनी निश्चित 'कक्षा' (Orbits) में काल (Time / Gravity) के प्रभाव से सूर्य की परिक्रमा करते हैं।</p>
-            </div>
-        </div>
+            <header class="geo-page-header">
+                <h1 class="geo-title">Sacred Geography</h1>
+                <div class="geo-subtitle">The Cosmic Architecture & Puranic Worlds</div>
+            </header>
 
-        <!-- 3. Prithvi & Sapta Dvipa -->
-        <div class="geo-card">
-            <h2 class="geo-title">🌍 ३. भूगोल (Earth) और सप्त द्वीप</h2>
-            <div class="geo-content">
-                <p>सूर्य सिद्धांत स्पष्ट रूप से पृथ्वी को <strong>'भूगोल' (Round sphere)</strong> कहता है। पुराणों के अनुसार पृथ्वी पर ७ विशाल भूखंड या महाद्वीप (Continents) हैं, जिन्हें <strong>सप्त द्वीप</strong> कहा जाता है। ये सातों द्वीप अलग-अलग महासागरों (Oceans) से घिरे हुए हैं।</p>
+            <!-- 1. Brahmanda -->
+            <section class="geo-section" id="brahmanda">
+                <h2 class="geo-section-title"><span class="icon">🌌</span> ब्रह्मांड (The Cosmic Egg)</h2>
+                <div style="padding: 0 1rem;">
+                    <span class="drop-cap">A</span>
+                    <p style="font-size: 1.1rem;">ccording to ancient Sanatan texts, the entire creation exists within a colossal, egg-shaped structure known as the <strong>Brahmanda</strong> (Brahma's Egg). It is believed that countless such universes exist. Within this specific Brahmanda, there are fourteen realms or <em>Lokas</em>, forming a grand cosmic hierarchy.</p>
+                </div>
+
+                <div class="geo-dual-list">
+                    <div class="geo-list-group">
+                        <h4>उर्ध्व लोक (Upper Worlds)</h4>
+                        <ul>
+                            <li><strong>Satya Loka:</strong> Realm of Absolute Truth</li>
+                            <li><strong>Tapa Loka:</strong> Realm of Penance</li>
+                            <li><strong>Jana Loka:</strong> Realm of the Saints</li>
+                            <li><strong>Mahar Loka:</strong> Realm of Great Sages</li>
+                            <li><strong>Svar Loka:</strong> The Heavenly Realm (Indra's domain)</li>
+                            <li><strong>Bhuvar Loka:</strong> The Atmospheric Realm</li>
+                            <li><strong>Bhur Loka:</strong> The Earthly Realm</li>
+                        </ul>
+                    </div>
+                    <div class="geo-list-group">
+                        <h4>अधो लोक (Nether Worlds)</h4>
+                        <ul>
+                            <li><strong>Atala:</strong> Realm devoid of form</li>
+                            <li><strong>Vitala:</strong> Realm of change</li>
+                            <li><strong>Sutala:</strong> The Great Abyss (Bali's domain)</li>
+                            <li><strong>Talatala:</strong> Under the Bottom level</li>
+                            <li><strong>Mahatala:</strong> The Great Bottom</li>
+                            <li><strong>Rasatala:</strong> Realm of the Demons</li>
+                            <li><strong>Patala:</strong> The Lowest Realm (Nagas)</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; text-align: center; color: var(--geo-text-muted); font-size: 0.95rem;">
+                    The universe is enveloped by seven elements: Water, Fire, Air, Ether, Ego, Intelligence, and Pure Nature.
+                </p>
+            </section>
+
+            <div class="decorative-divider">✧</div>
+
+            <!-- 2. Jyotischakra & Bhu-Mandala -->
+            <section class="geo-section" id="jyotischakra">
+                <h2 class="geo-section-title"><span class="icon">🪐</span> ज्योतिषचक्र (Galactic Systems)</h2>
+                <div class="geo-texture-panel">
+                    <h3 style="margin-top: 0; font-size: 1.5rem;">Jyotischakra (The Wheel of Light)</h3>
+                    <p>All visible stars, constellations (<em>Nakshatras</em>), and galaxies in the night sky constitute the Jyotischakra. In the Bhagavata Purana, this vast stellar assembly is poetically visualized as a giant cosmic dolphin (<em>Shishumara</em>), with the Pole Star (<strong>Dhruva Tara</strong>) fixed at its tail—an ancient conceptualization of the Milky Way and the celestial sphere.</p>
+
+                    <h3 style="font-size: 1.5rem; margin-top: 2rem;">Bhu-Mandala (Planetary Orbits)</h3>
+                    <p style="margin-bottom: 0;">The expanse illuminated by the Sun and the Moon is defined as Bhu-Mandala. According to astronomical treatises like the <em>Surya Siddhanta</em>, planets orbit the sun in their designated paths (<em>Kaksha</em>), governed by the inexorable force of Time (<em>Kala</em>, akin to gravity).</p>
+                </div>
+            </section>
+
+            <div class="decorative-divider">✧</div>
+
+            <!-- 3. Sapt Dvipa -->
+            <section class="geo-section" id="saptadvipa">
+                <h2 class="geo-section-title"><span class="icon">🌍</span> सप्त द्वीप (The Seven Continents)</h2>
+                <p style="padding-left: 1rem;">The Surya Siddhanta explicitly describes the Earth as a round sphere (<strong>'Bhugol'</strong>). Puranic geography divides the Earth into seven massive landmasses or continents, known as the <em>Sapta Dvipa</em>. Each is encircled by a unique, vast ocean.</p>
 
                 <div class="dvipa-grid">
-                    <div class="dvipa-item">
-                        <div class="title">जम्बू द्वीप (Jambu Dvipa)</div>
-                        <div class="desc">मध्य (Center) का द्वीप (Eurasia/Asia)। खारे पानी के समुद्र (Salt Ocean) से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">जम्बू <span class="dvipa-tag">Jambu Dvipa</span></h3>
+                        <p class="dvipa-desc">The central continent (Eurasia/Asia). Encircled by the <strong>Salt Ocean</strong>.</p>
                     </div>
-                    <div class="dvipa-item">
-                        <div class="title">प्लक्ष द्वीप (Plaksha Dvipa)</div>
-                        <div class="desc">इक्षु रस (Sugarcane juice) के समुद्र से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">प्लक्ष <span class="dvipa-tag">Plaksha Dvipa</span></h3>
+                        <p class="dvipa-desc">Encircled by an ocean of <strong>Sugarcane Juice</strong>.</p>
                     </div>
-                    <div class="dvipa-item">
-                        <div class="title">शाल्मली द्वीप (Shalmali Dvipa)</div>
-                        <div class="desc">मदिरा (Wine/Liquor) के समुद्र से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">शाल्मली <span class="dvipa-tag">Shalmali Dvipa</span></h3>
+                        <p class="dvipa-desc">Encircled by an ocean of <strong>Wine/Liquor</strong>.</p>
                     </div>
-                    <div class="dvipa-item">
-                        <div class="title">कुश द्वीप (Kusha Dvipa)</div>
-                        <div class="desc">घृत (Clarified Butter/Ghee) के समुद्र से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">कुश <span class="dvipa-tag">Kusha Dvipa</span></h3>
+                        <p class="dvipa-desc">Encircled by an ocean of <strong>Clarified Butter (Ghee)</strong>.</p>
                     </div>
-                    <div class="dvipa-item">
-                        <div class="title">क्रौंच द्वीप (Krauncha Dvipa)</div>
-                        <div class="desc">क्षीर (Milk) के समुद्र से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">क्रौंच <span class="dvipa-tag">Krauncha Dvipa</span></h3>
+                        <p class="dvipa-desc">Encircled by an ocean of <strong>Milk</strong>.</p>
                     </div>
-                    <div class="dvipa-item">
-                        <div class="title">शाक द्वीप (Shaka Dvipa)</div>
-                        <div class="desc">दधि (Yogurt/Curd) के समुद्र से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">शाक <span class="dvipa-tag">Shaka Dvipa</span></h3>
+                        <p class="dvipa-desc">Encircled by an ocean of <strong>Yogurt/Curd</strong>.</p>
                     </div>
-                    <div class="dvipa-item">
-                        <div class="title">पुष्कर द्वीप (Pushkara Dvipa)</div>
-                        <div class="desc">मीठे जल (Fresh Water) के समुद्र से घिरा है।</div>
+                    <div class="dvipa-card">
+                        <h3 class="dvipa-title">पुष्कर <span class="dvipa-tag">Pushkara Dvipa</span></h3>
+                        <p class="dvipa-desc">Encircled by an ocean of <strong>Fresh Water</strong>.</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- 4. Jambudvipa & Meru -->
-        <div class="geo-card">
-            <h2 class="geo-title">🏔️ ४. जम्बू द्वीप, मेरु पर्वत और भारतवर्ष</h2>
-            <div class="geo-content">
-                <p>पृथ्वी के बिल्कुल मध्य में <strong>जम्बू द्वीप</strong> है। जम्बू द्वीप के ठीक बीच में एक अत्यंत विशाल और स्वर्णमयी पर्वत है जिसे <strong>सुमेरु या मेरु पर्वत</strong> कहा जाता है (आधुनिक भूगोल में इसे पामीर ग्रंथि / Pamir Knot या हिमालय का केंद्र माना जा सकता है)।</p>
-                <p>मेरु पर्वत के चारों ओर जम्बू द्वीप को <strong>९ खण्डों (Varshas)</strong> में बांटा गया है:</p>
-                <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
-                    <li><strong>इलावृत वर्ष:</strong> मेरु पर्वत के चारों ओर का केंद्रीय भाग (Tibet/Pamir)।</li>
-                    <li><strong>भद्राश्व वर्ष:</strong> मेरु के पूर्व (East) में (China/East Asia)।</li>
-                    <li><strong>केतुमाल वर्ष:</strong> मेरु के पश्चिम (West) में (Iran/Middle East)।</li>
-                    <li><strong>कुरु वर्ष (उत्तर कुरु):</strong> मेरु के उत्तर (North) में (Russia/Siberia)।</li>
-                    <li><strong>हिरण्यमय वर्ष:</strong> उत्तर दिशा में।</li>
-                    <li><strong>रम्यक वर्ष:</strong> उत्तर दिशा में।</li>
-                    <li><strong>हरि वर्ष:</strong> दक्षिण दिशा में।</li>
-                    <li><strong>किम्पुरुष वर्ष:</strong> दक्षिण दिशा में (Himalayas)।</li>
-                    <li><strong style="color:var(--primary-saffron); font-size: 1.1rem;">भारत वर्ष:</strong> सबसे दक्षिण (South) में, समुद्र के उत्तर और हिमालय के दक्षिण का भूभाग (Indian Subcontinent)।</li>
-                </ul>
-                <div style="background: rgba(255, 153, 51, 0.1); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border: 1px solid rgba(255, 153, 51, 0.2);">
-                    <h3 style="margin-top: 0; color: var(--primary-saffron);">भारतवर्ष की महिमा (Glory of Bharatavarsha)</h3>
-                    <p style="margin-bottom: 0;">विष्णु पुराण (२.३.१) के अनुसार:<br>
-                    <em>"उत्तरं यत्समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।<br>
-                    वर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥"</em><br>
-                    (समुद्र के उत्तर में और हिमालय के दक्षिण में जो भूभाग है, उसका नाम भारत है, और वहाँ की संतान भारती कहलाती है।) केवल भारतवर्ष ही 'कर्मभूमि' है, अन्य सभी वर्ष 'भोगभूमि' हैं।</p>
+            <!-- 4. Glory of Bharatavarsha (Callout) -->
+            <section class="geo-section" id="bharatavarsha">
+                <div class="geo-callout">
+                    <h2 class="callout-title">Glory of Bharatavarsha</h2>
+                    <p style="margin-bottom: 2rem;">At the heart of Jambu Dvipa lies Mount Meru (the cosmic axis, often associated with the Pamir Knot). South of Meru and the Himalayas lies Bharatavarsha, the sacred land.</p>
+
+                    <div class="sanskrit-verse">
+                        "उत्तरं यत्समुद्रस्य हिमाद्रेश्चैव दक्षिणम्।<br>
+                        वर्षं तद् भारतं नाम भारती यत्र सन्ततिः॥"
+                    </div>
+
+                    <p class="verse-translation">
+                        "The country that lies north of the ocean and south of the snowy mountains is called Bhāratam; there dwell the descendants of Bharata."<br>
+                        <span style="display: block; margin-top: 10px; font-size: 0.85rem; color: var(--geo-text-muted);">(Vishnu Purana 2.3.1)</span>
+                    </p>
                 </div>
-            </div>
-        </div>
+            </section>
 
+        </main>
     </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="geo-bottom-nav">
+        <a href="itihas-puran.html" class="bottom-nav-item">
+            <span class="icon">📜</span>
+            <span>Chronicles</span>
+        </a>
+        <a href="sanatan-geography.html" class="bottom-nav-item active">
+            <span class="icon">🌍</span>
+            <span>Geography</span>
+        </a>
+        <a href="digital-library.html" class="bottom-nav-item">
+            <span class="icon">🏛️</span>
+            <span>Library</span>
+        </a>
+    </nav>
+
+    <!-- Scholarly Footer -->
+    <footer class="scholarly-footer">
+        <div style="font-family: var(--font-geo-heading); color: var(--geo-accent); font-size: 1.5rem; margin-bottom: 1rem;">✧</div>
+        <p>Compiled from Puranic Cosmology & Surya Siddhanta</p>
+        <p><a href="../index.html">Return to Archive</a> • Preserving Eternal Heritage</p>
+    </footer>
 
 </body>
 </html>
