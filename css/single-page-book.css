@@ -1,497 +1,443 @@
-/* Fullscreen Single Page Book Styles */
+/* Veda Modern Archive Design System */
+:root {
+    --veda-surface: #fcf9f8; /* Parchment white */
+    --veda-primary: #ff8c00; /* Saffron / Deep Orange */
+    --veda-primary-light: rgba(255, 140, 0, 0.1);
+    --veda-text: #333333; /* Charcoal */
+    --veda-text-light: #666666;
+    --veda-border: rgba(0, 0, 0, 0.1);
 
-body, html {
+    --font-heading: 'Yatra One', Georgia, serif;
+    --font-body: 'Poppins', sans-serif;
+
+    --topbar-height: 60px;
+    --sidebar-width: 280px;
+}
+
+body {
+    background-color: var(--veda-surface);
+    color: var(--veda-text);
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; /* Prevent scrolling, we'll handle swipe/slide */
-    background: #fefefe;
-}
-
-.fullscreen-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--secondary-gold) 100%);
-    color: white;
-    font-weight: 600;
-    z-index: 100;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.back-btn {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.2);
-    transition: background 0.3s;
-}
-
-.back-btn:hover {
-    background: rgba(255,255,255,0.3);
-}
-
-.fullscreen-book-container {
-    position: relative;
-    width: 100vw;
-    height: calc(100vh - 60px); /* Adjust for header height approx */
-    overflow: hidden;
-    background: #f5eedc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.book-slider {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Page base styles */
-.sp-page {
-    flex: 0 0 100vw;
-    width: 100vw;
-    height: 100%;
-    box-sizing: border-box;
-    /* Removed thick padding to allow edge-to-edge above the fold */
-    padding: 0;
-    background: #FAFAFA; /* Off-white minimalist background */
-    overflow-y: auto; /* Scroll down for details */
     overflow-x: hidden;
-    position: relative;
-
-    /* Optional slight parchment texture overlay via pseudo-element */
-    z-index: 1;
-
-    /* Scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-saffron) transparent;
 }
 
-.sp-page::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    /* A very subtle noise or ruled line texture can go here in future */
-    pointer-events: none;
-    z-index: -1;
-    background-image:
-        repeating-linear-gradient(transparent, transparent 31px, rgba(0, 0, 0, 0.03) 31px, rgba(0, 0, 0, 0.03) 32px);
-    background-attachment: local; /* Scrolls with content */
-}
-
-
-.sp-page::-webkit-scrollbar {
-    width: 6px;
-}
-.sp-page::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 107, 53, 0.5);
-    border-radius: 3px;
-}
-
-/* Page Content Formatting */
-.page-inner-content {
-    max-width: 900px;
-    margin: 0 auto;
-    /* Removed heavy box-shadow and white background to blend into the minimalist theme */
-    padding: 0;
-    position: relative;
-    min-height: 100%;
-}
-
-/* Cover Style */
-.sp-cover {
+/* Layout Wrapper */
+.veda-app-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    border: 8px solid var(--primary-saffron);
-    background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, transparent 100%);
-}
-
-.sp-title {
-    font-size: 3.5rem;
-    color: var(--primary-saffron);
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.sp-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-dark);
-    font-style: italic;
-}
-
-/* Index Style */
-.sp-index-title {
-    font-size: 2.2rem;
-    color: var(--primary-saffron);
-    border-bottom: 2px solid var(--secondary-gold);
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.sp-index-list {
-    list-style: none;
-    padding: 0;
-}
-
-.sp-index-item {
-    padding: 1rem 0;
-    border-bottom: 1px dashed rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: color 0.3s, background 0.3s;
-}
-
-.sp-index-item:hover {
-    color: var(--primary-saffron);
-    background: rgba(255, 107, 53, 0.05);
-}
-
-/* Entity Style - New Character Layout (Premium Neal.fun Inspired) */
-.sp-entity-page {
-    display: flex;
-    flex-direction: column;
-    background-color: #FDFBF7; /* Soft parchment beige */
-    background-image:
-        repeating-linear-gradient(transparent, transparent 31px, rgba(0, 0, 0, 0.02) 31px, rgba(0, 0, 0, 0.02) 32px); /* Very faint horizontal lines */
     min-height: 100vh;
 }
 
-/* Above the fold section */
-.sp-above-fold {
-    min-height: calc(100vh - 60px);
+/* Top Nav Bar */
+.veda-topbar {
+    height: var(--topbar-height);
+    background: var(--veda-surface);
+    border-bottom: 1px solid var(--veda-border);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    position: relative;
-    padding: 2rem;
-    padding-bottom: 8rem; /* Prevent overlap with absolute positioned read-more button */
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.sp-hero-image-placeholder {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 8rem;
-    /* No borders or harsh backgrounds. Letting the icon/image float */
-    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.05)); /* Soft reflection-like shadow */
-}
-
-.sp-entity-name {
-    font-family: 'Yatra One', serif; /* Elegant, traditional feel for Title */
-    font-size: 5rem;
-    color: #1A1A1A; /* Deep dark grey instead of pure black */
-    margin: 0;
-    line-height: 1.1;
-    font-weight: 400; /* Let the font shine */
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.sp-entity-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: #666;
-    margin-top: 1.5rem;
-    font-weight: 300;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-}
-
-.read-more-btn-container {
-    position: absolute;
-    bottom: 3rem;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.read-more-btn {
-    background: transparent;
-    border: none;
-    color: #888;
-    padding: 1rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    opacity: 0.7;
-}
-
-.read-more-btn:hover {
-    color: #1A1A1A;
-    opacity: 1;
-}
-
-.read-more-btn span {
+.veda-brand {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
-    animation: bounce 2s infinite;
+    color: var(--veda-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
+.veda-top-actions {
+    display: flex;
+    gap: 15px;
 }
 
-/* Below the fold section */
-.sp-below-fold {
-    padding: 6rem 2rem 8rem;
-    background: transparent;
-    text-align: left;
-    max-width: 800px;
+.veda-icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--veda-text);
+    transition: color 0.3s;
+}
+
+.veda-icon-btn:hover {
+    color: var(--veda-primary);
+}
+
+/* Main Layout */
+.veda-main-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Desktop Sidebar */
+.veda-sidebar {
+    width: var(--sidebar-width);
+    border-right: 1px solid var(--veda-border);
+    padding: 2rem 0;
+    background: var(--veda-surface);
+    position: sticky;
+    top: var(--topbar-height);
+    height: calc(100vh - var(--topbar-height));
+    overflow-y: auto;
+}
+
+.veda-sidebar-title {
+    font-family: var(--font-heading);
+    padding: 0 2rem;
+    color: var(--veda-text-light);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.veda-yuga-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.veda-yuga-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.veda-yuga-item:hover {
+    background: var(--veda-primary-light);
+}
+
+.veda-yuga-item.active {
+    border-left-color: var(--veda-primary);
+    background: var(--veda-primary-light);
+    font-weight: 600;
+    color: var(--veda-primary);
+}
+
+/* Main Content Area */
+.veda-content-area {
+    flex: 1;
+    padding: 2rem 4rem;
+    background: var(--veda-surface);
+    position: relative;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.sp-quick-stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 5rem;
-    flex-wrap: wrap;
+/* Index View */
+.veda-index-header {
+    margin-bottom: 3rem;
 }
 
-.stat-pill {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    color: #888;
-    background: transparent; /* No box */
-    padding: 0;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+.veda-index-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--veda-text);
+    margin: 0;
+}
+
+.veda-chapter-list {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+}
+
+.veda-chapter-item {
+    display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid var(--veda-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.stat-pill strong {
-    color: #1A1A1A;
-    font-size: 1.1rem;
-    font-weight: 500;
+.veda-chapter-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.sp-narrative-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    line-height: 2;
-    color: #333;
-    font-weight: 300;
+.veda-chapter-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--veda-primary);
+    opacity: 0.5;
+    min-width: 50px;
+}
+
+.veda-chapter-details h3 {
+    margin: 0 0 5px 0;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--veda-text);
+}
+
+.veda-chapter-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--veda-text-light);
+}
+
+/* Reading View */
+.veda-breadcrumbs {
+    font-size: 0.9rem;
+    color: var(--veda-text-light);
+    margin-bottom: 2rem;
+}
+
+.veda-breadcrumbs span {
+    cursor: pointer;
+}
+.veda-breadcrumbs span:hover {
+    color: var(--veda-primary);
+}
+.veda-breadcrumbs .separator {
+    margin: 0 10px;
+    color: var(--veda-border);
+}
+
+.veda-reading-header {
+    text-align: center;
     margin-bottom: 4rem;
 }
 
-/* Drop cap for narrative */
-.sp-narrative-text > p:first-child::first-letter {
-    font-family: 'Yatra One', serif;
+.veda-reading-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--veda-text);
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.veda-reading-subtitle {
+    font-size: 1.1rem;
+    color: var(--veda-text-light);
+    font-style: italic;
+}
+
+.veda-decorative-line {
+    width: 100px;
+    height: 3px;
+    background: var(--veda-primary);
+    margin: 2rem auto;
+}
+
+/* Reading Content (Drop caps etc) */
+.veda-reading-content {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--veda-text);
+}
+
+.veda-reading-content p:first-of-type::first-letter {
+    font-family: var(--font-heading);
     font-size: 4.5rem;
     float: left;
     margin-right: 1rem;
-    margin-top: -0.5rem;
     line-height: 1;
-    color: #1A1A1A;
+    color: var(--veda-primary);
+    padding-top: 4px;
 }
 
-.sp-sambandh-widget {
-    background: transparent;
-    border: none;
-    border-top: 1px solid rgba(0,0,0,0.1); /* Simple separator line */
-    border-radius: 0;
-    padding: 4rem 0 2rem;
-    margin-top: 4rem;
-    box-shadow: none;
-}
-
-.sp-sambandh-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    color: #888;
-    margin-top: 0;
-    margin-bottom: 2.5rem;
-    border: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.sambandh-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-}
-
-.sambandh-item {
+.veda-stats-grid {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
-.sambandh-label {
-    font-family: 'Poppins', sans-serif;
+.veda-stat-item {
+    text-align: center;
+}
+
+.veda-stat-label {
+    display: block;
     font-size: 0.8rem;
-    color: #999;
+    color: var(--veda-text-light);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.5rem;
-}
-
-.sambandh-value {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
-    color: #1A1A1A;
-    font-weight: 400;
-}
-
-.sp-detail-row {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.sp-detail-label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    color: #888;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-}
-
-.katha-card {
-    margin-top: 2rem;
-    background: transparent;
-    padding: 0;
-    border: none;
-}
-
-.katha-title {
-    display: block;
-    color: #1A1A1A;
-    font-family: 'Yatra One', serif;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.katha-source {
-    display: block;
-    font-size: 0.9rem;
-    font-family: 'Poppins', sans-serif;
-    color: #999;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
 }
 
-.katha-content {
-    white-space: pre-line;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 2;
-    color: #444;
+.veda-stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--veda-text);
 }
 
-/* Navigation Overlays */
-.nav-btn {
-    position: absolute;
+/* Desktop Pagination (Side floating arrows) */
+.veda-pagination-side {
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
-    color: var(--primary-saffron);
-    border: none;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    font-size: 2rem;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: background 0.3s, transform 0.3s;
-    z-index: 10;
+    background: var(--veda-surface);
+    border: 1px solid var(--veda-border);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--veda-text);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    z-index: 10;
 }
 
-.nav-btn:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
+.veda-pagination-side:hover {
+    color: var(--veda-primary);
+    border-color: var(--veda-primary);
 }
 
-.nav-btn:disabled {
-    background: rgba(200, 200, 200, 0.5);
-    color: #999;
-    cursor: not-allowed;
-    transform: translateY(-50%);
+.veda-pagination-side.prev { left: calc(var(--sidebar-width) + 2rem); }
+.veda-pagination-side.next { right: 2rem; }
+
+/* Mobile Bottom Nav & Layouts */
+.veda-mobile-bottom-nav {
+    display: none;
 }
 
-.prev-btn { left: 2vw; }
-.next-btn { right: 2vw; }
-
-/* Page Number */
-.sp-page-number {
-    position: absolute;
-    bottom: 1rem;
-    right: 2rem;
-    font-size: 1rem;
-    color: #888;
+.veda-mobile-accordion {
+    display: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .sp-page {
-        padding: 1rem 5vw;
+.veda-mobile-pagination {
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .veda-sidebar {
+        display: none; /* Hide sidebar on mobile */
     }
 
-    .page-inner-content {
+    .veda-content-area {
         padding: 1.5rem;
     }
 
-    .sp-title {
+    .veda-topbar {
+        padding: 0 1rem;
+    }
+
+    .veda-pagination-side {
+        display: none; /* Hide side arrows on mobile */
+    }
+
+    /* Mobile Accordion for Index */
+    .veda-mobile-accordion {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    .veda-accordion-item {
+        border-bottom: 1px solid var(--veda-border);
+    }
+
+    .veda-accordion-header {
+        padding: 1rem 0;
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .veda-accordion-content {
+        display: none;
+        padding-bottom: 1rem;
+    }
+
+    .veda-accordion-item.active .veda-accordion-content {
+        display: block;
+    }
+
+    .veda-accordion-item.active .veda-accordion-header {
+        color: var(--veda-primary);
+    }
+
+    /* Mobile Bottom Nav */
+    .veda-mobile-bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: var(--veda-surface);
+        border-top: 1px solid var(--veda-border);
+        z-index: 100;
+    }
+
+    .veda-mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--veda-text-light);
+        font-size: 0.8rem;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .veda-mobile-nav-item.active {
+        color: var(--veda-primary);
+    }
+
+    /* Mobile Reading Pagination (Sticky cards) */
+    .veda-mobile-pagination {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        padding-bottom: 4rem; /* Space for bottom nav */
+    }
+
+    .veda-mobile-page-card {
+        flex: 1;
+        padding: 1rem;
+        border: 1px solid var(--veda-border);
+        border-radius: 8px;
+        background: #fff;
+        text-align: center;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+
+    .veda-mobile-page-card:hover {
+        border-color: var(--veda-primary);
+    }
+
+    .veda-mobile-page-label {
+        font-size: 0.8rem;
+        color: var(--veda-text-light);
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .veda-mobile-page-title {
+        font-family: var(--font-heading);
+        color: var(--veda-text);
+        font-size: 1rem;
+        display: block;
+    }
+
+    .veda-reading-title {
         font-size: 2.5rem;
     }
-
-    .sp-entity-name {
-        font-size: 2rem;
-    }
-
-    .nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
 }

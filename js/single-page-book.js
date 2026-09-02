@@ -1,305 +1,287 @@
-// js/single-page-book.js
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    const initBook = () => {
-        if (!window.HistoricDB || typeof window.HistoricDB.getAll !== 'function') {
-            console.error("Historic Data not loaded properly.");
+    // Core state
+    const state = {
+        currentView: 'index', // 'index' or 'reading'
+        activeYuga: 'All', // 'All', 'Satya', 'Treta', 'Dvapara', 'Kali', 'Pre-Kalpa'
+        currentEntityId: null,
+        entities: []
+    };
+
+    // Yuga mappings for standardizing data
+    const YUGA_CATEGORIES = ['Pre-Kalpa', 'Satya', 'Treta', 'Dvapara', 'Kali'];
+
+    // DOM Elements
+    const elements = {
+        desktopMenu: document.getElementById('desktop-yuga-menu'),
+        mainContent: document.getElementById('main-content-area')
+    };
+
+    // Initialize application
+    function init() {
+        if (!window.HistoricDB) {
+            setTimeout(init, 100);
             return;
         }
 
-        const allData = window.HistoricDB.getAll();
-    const sliderContainer = document.getElementById('book-slider');
-    const prevBtn = document.getElementById('prev-page');
-    const nextBtn = document.getElementById('next-page');
+        // Fetch all historical nodes (characters/events)
+        const allNodes = window.HistoricDB.getAll();
 
-    let currentPageIndex = 0;
-    let pagesData = [];
+        // Filter out proxy nodes or utility nodes, keep only main characters with data
+        state.entities = allNodes.filter(node => node.id && !node.id.includes('_proxy'));
 
-    // Grouping by Yug for the index
-    const yugGroups = {
-        'pre-kalpa': [],
-        'satya': [],
-        'treta': [],
-        'dwapar': [],
-        'kali': []
-    };
+        setupDesktopSidebar();
 
-    allData.forEach(item => {
-        if (item.yug && yugGroups[item.yug]) {
-            yugGroups[item.yug].push(item);
+        // Check URL parameters for direct link
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetEntityId = urlParams.get('entity');
+
+        if (targetEntityId) {
+            renderReadingView(targetEntityId);
         } else {
-            yugGroups['satya'].push(item);
+            renderIndexView();
         }
-    });
+    }
 
-    // Generate Index Pages Html
-    const itemsPerIndexPage = 20; // more items fit since it's full screen
-    const indexPagesHtml = [];
-    let currentIndexContent = '';
-    let currentItemCount = 0;
+    // Generate Sidebar Menu
+    function setupDesktopSidebar() {
+        if (!elements.desktopMenu) return;
 
-    for (const [yug, items] of Object.entries(yugGroups)) {
-        if (items.length === 0) continue;
+        let html = `<li class="veda-yuga-item ${state.activeYuga === 'All' ? 'active' : ''}" onclick="window.VedaApp.setYugaFilter('All')">All Eras</li>`;
 
-        const yugName = yug.toUpperCase();
-        currentIndexContent += `<h3 style="margin-top:1.5rem; color:var(--secondary-gold); font-size:1.5rem;">${yugName} YUG</h3><ul class="sp-index-list">`;
-
-        items.forEach(item => {
-            if (currentItemCount >= itemsPerIndexPage) {
-                currentIndexContent += `</ul>`;
-                indexPagesHtml.push(currentIndexContent);
-                currentIndexContent = `<h3 style="margin-top:1.5rem; color:var(--secondary-gold); font-size:1.5rem;">${yugName} YUG (Cont.)</h3><ul class="sp-index-list">`;
-                currentItemCount = 0;
-            }
-
-            currentIndexContent += `
-                <li class="sp-index-item" onclick="window.SinglePageBookApp.goToEntity('${item.id}')">
-                    <span>${item.name} <small style="color:#888;">${item.subtitle || ''}</small></span>
-                </li>`;
-            currentItemCount++;
+        YUGA_CATEGORIES.forEach(yuga => {
+            html += `<li class="veda-yuga-item ${state.activeYuga === yuga ? 'active' : ''}" onclick="window.VedaApp.setYugaFilter('${yuga}')">${yuga} Yuga</li>`;
         });
 
-        currentIndexContent += `</ul>`;
+        elements.desktopMenu.innerHTML = html;
     }
 
-    if (currentIndexContent !== '') {
-        indexPagesHtml.push(currentIndexContent);
+    // Get entities grouped or filtered by Yuga
+    function getFilteredEntities() {
+        if (state.activeYuga === 'All') return state.entities;
+
+        return state.entities.filter(e => {
+            const y = (e.yug || 'UNKNOWN').toLowerCase();
+            const filter = state.activeYuga.toLowerCase();
+            return y.includes(filter);
+        });
     }
 
-    // 1. Cover Page
-    pagesData.push({
-        type: 'cover',
-        html: `
-            <div class="page-inner-content sp-cover">
-                <div class="sp-title">इतिहास पुराण</div>
-                <div class="sp-subtitle">The Complete Eternal Lineage</div>
-                <div style="margin-top: 3rem; font-size: 5rem;">🕉️</div>
+    // ==========================================
+    // VIEW RENDERERS
+    // ==========================================
+
+    function renderIndexView() {
+        state.currentView = 'index';
+        state.currentEntityId = null;
+
+        // Update URL cleanly
+        window.history.pushState({}, '', window.location.pathname);
+        setupDesktopSidebar(); // refresh active state
+
+        const filtered = getFilteredEntities();
+
+        // 1. Desktop layout (Simple List)
+        let listHtml = `<div class="veda-chapter-list">`;
+        filtered.forEach((entity, index) => {
+            const chapNum = (index + 1).toString().padStart(2, '0');
+            listHtml += `
+                <div class="veda-chapter-item" onclick="window.VedaApp.renderReadingView('${entity.id}')">
+                    <div class="veda-chapter-num">${chapNum}</div>
+                    <div class="veda-chapter-details">
+                        <h3>${entity.name}</h3>
+                        <p>${entity.subtitle || entity.yug + ' Yuga Character'}</p>
+                    </div>
+                </div>
+            `;
+        });
+        listHtml += `</div>`;
+
+        // 2. Mobile Layout (Accordion grouped by Yuga - shown only via CSS media queries)
+        let accordionHtml = `<div class="veda-mobile-accordion">`;
+
+        YUGA_CATEGORIES.forEach(yuga => {
+            const yugaEntities = state.entities.filter(e => (e.yug || '').toLowerCase().includes(yuga.toLowerCase()));
+            if (yugaEntities.length === 0) return;
+
+            accordionHtml += `
+                <div class="veda-accordion-item" onclick="this.classList.toggle('active')">
+                    <div class="veda-accordion-header">
+                        <span>${yuga} Yuga</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="veda-accordion-content">
+                        <div class="veda-chapter-list" style="gap:0.5rem;">
+            `;
+
+            yugaEntities.forEach((entity, idx) => {
+                const chapNum = (idx + 1).toString().padStart(2, '0');
+                accordionHtml += `
+                    <div class="veda-chapter-item" style="padding:1rem; border-color:transparent; border-bottom:1px solid #eee;" onclick="event.stopPropagation(); window.VedaApp.renderReadingView('${entity.id}')">
+                        <div class="veda-chapter-num" style="font-size:1.2rem;">${chapNum}</div>
+                        <div class="veda-chapter-details">
+                            <h3 style="font-size:1.1rem;">${entity.name}</h3>
+                        </div>
+                    </div>
+                `;
+            });
+
+            accordionHtml += `</div></div></div>`;
+        });
+        accordionHtml += `</div>`;
+
+
+        elements.mainContent.innerHTML = `
+            <div class="veda-index-header">
+                <h1 class="veda-index-title">अनुक्रमणिका (Index)</h1>
+                <p style="color:var(--veda-text-light); margin-top:0.5rem;">${state.activeYuga === 'All' ? 'Complete' : state.activeYuga + ' Yuga'} Catalog</p>
             </div>
-        `
-    });
 
-    // 2. Index Pages
-    indexPagesHtml.forEach((html, idx) => {
-        pagesData.push({
-            type: 'index',
-            html: `
-                <div class="page-inner-content">
-                    <div class="sp-index-title">अनुक्रमणिका (Index) ${idx + 1}/${indexPagesHtml.length}</div>
-                    ${html}
-                </div>
-            `
-        });
-    });
+            <!-- Shows on Mobile -->
+            ${state.activeYuga === 'All' ? accordionHtml : ''}
 
-    // 3. Content Pages
-    allData.forEach(item => {
-        let parentText = '';
-        if (item.parent) {
-            const parent = window.HistoricDB.getNode(item.parent);
-            if (parent) parentText = `<div class="sambandh-item"><span class="sambandh-label">PARENT</span> <span class="sambandh-value" onclick="window.SinglePageBookApp.goToEntity('${parent.id}')" style="cursor:pointer; color:#1A1A1A;">${parent.name}</span></div>`;
-        }
-
-        let spouseText = '';
-        if (item.spouseOf) {
-            const spouse = window.HistoricDB.getNode(item.spouseOf);
-            if (spouse) spouseText = `<div class="sambandh-item"><span class="sambandh-label">SPOUSE</span> <span class="sambandh-value" onclick="window.SinglePageBookApp.goToEntity('${spouse.id}')" style="cursor:pointer; color:#1A1A1A;">${spouse.name}</span></div>`;
-        }
-
-        // Try to find children (nodes where parent == this item)
-        let children = window.HistoricDB.getAll().filter(n => n.parent === item.id);
-        let childrenText = '';
-        if (children.length > 0) {
-            const childrenLinks = children.map(c => `<span onclick="window.SinglePageBookApp.goToEntity('${c.id}')" style="cursor:pointer; color:#1A1A1A;">${c.name}</span>`).join(', ');
-            childrenText = `<div class="sambandh-item"><span class="sambandh-label">CHILDREN</span> <span class="sambandh-value">${childrenLinks}</span></div>`;
-        }
-
-        // Using a premium SVG instead of emoji to prevent OS rendering harsh purple background boxes
-        const premiumOmSvg = `
-            <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 6c-2-2-5-2-7 0s-2 5 0 7 5 2 7 0M11 6c2-2 5-2 7 0s2 5 0 7-5 2-7 0"/>
-                <circle cx="12" cy="12" r="2"/>
-                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M19 19l-1.5-1.5M5 19l1.5-1.5M19 5l-1.5 1.5"/>
-            </svg>
+            <!-- Shows on Desktop (or Mobile if filtered) -->
+            ${(state.activeYuga !== 'All' || window.innerWidth > 900) ? listHtml : ''}
         `;
-        const mainIcon = premiumOmSvg;
 
-        pagesData.push({
-            type: 'entity',
-            id: item.id,
-            html: `
-                <div class="page-inner-content sp-entity-page">
-                    <!-- ABOVE THE FOLD -->
-                    <div class="sp-above-fold">
-                        <div class="sp-hero-image-placeholder" style="opacity: 0.8;">
-                            ${mainIcon}
-                        </div>
-                        <h2 class="sp-entity-name">${item.name}</h2>
-                        <div class="sp-entity-subtitle">${item.subtitle || ''}</div>
-
-                        <div class="read-more-btn-container">
-                            <button class="read-more-btn" onclick="this.closest('.sp-page').scrollBy({top: window.innerHeight * 0.8, behavior: 'smooth'})">
-                                SCROLL DOWN <span>↓</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- BELOW THE FOLD -->
-                    <div class="sp-below-fold">
-                        <div class="sp-quick-stats">
-                            <div class="stat-pill">ERA <strong style="text-transform: capitalize;">${item.yug || 'UNKNOWN'}</strong></div>
-                            ${item.weapon ? `<div class="stat-pill">WEAPON <strong>${item.weapon}</strong></div>` : ''}
-                            ${item.mount ? `<div class="stat-pill">MOUNT <strong>${item.mount}</strong></div>` : ''}
-                            ${item.abode ? `<div class="stat-pill">ABODE <strong>${item.abode}</strong></div>` : ''}
-                        </div>
-
-                        <div class="sp-narrative-text">
-                            <p>${item.parichay || 'सनातन धर्म के इतिहास में इनका महत्वपूर्ण स्थान है। इनके जीवन और कार्यों का वर्णन विभिन्न ग्रंथों में मिलता है।'}</p>
-                        </div>
-
-                        ${(parentText || spouseText || childrenText) ? `
-                        <div class="sp-sambandh-widget">
-                            <h3 class="sp-sambandh-title">FAMILY RELATIONS</h3>
-                            <div class="sambandh-grid">
-                                ${parentText}
-                                ${spouseText}
-                                ${childrenText}
-                            </div>
-                        </div>
-                        ` : ''}
-
-                        ${item.events ? `
-                        <div class="sp-detail-row">
-                            <span class="sp-detail-label">KEY EVENTS</span>
-                            <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 300; line-height: 2; color: #333;">
-                                ${item.events.map(ev => `<li style="margin-bottom:1rem;">${ev}</li>`).join('')}
-                            </ul>
-                        </div>` : ''}
-
-                        ${item.kathayein ? `
-                        <div class="sp-detail-row">
-                            <span class="sp-detail-label">STORIES & LEGENDS</span>
-                            ${item.kathayein.map(katha => `
-                                <div class="katha-card">
-                                    <strong class="katha-title">${katha.title}</strong>
-                                    <em class="katha-source">SOURCE: ${katha.source}</em>
-                                    <p class="katha-content">${katha.content}</p>
-                                </div>
-                            `).join('')}
-                        </div>` : ''}
-                    </div>
-                </div>
-            `
-        });
-    });
-
-    // Render pages to DOM
-    pagesData.forEach((pageData, index) => {
-        const pageElem = document.createElement('div');
-        pageElem.className = 'sp-page';
-        pageElem.innerHTML = `
-            ${pageData.html}
-            <div class="sp-page-number">${index === 0 ? '' : index}</div>
-        `;
-        sliderContainer.appendChild(pageElem);
-    });
-
-    const totalPages = pagesData.length;
-
-    function updateView() {
-        sliderContainer.style.transform = `translateX(-${currentPageIndex * 100}vw)`;
-        prevBtn.disabled = currentPageIndex === 0;
-        nextBtn.disabled = currentPageIndex === totalPages - 1;
+        window.scrollTo(0,0);
     }
 
-    // Touch/Swipe logic
-    let startX = 0;
-    let currentX = 0;
-    let isDragging = false;
-    const threshold = 50; // min swipe distance
+    function renderReadingView(entityId) {
+        const entityIndex = state.entities.findIndex(e => e.id === entityId);
+        if (entityIndex === -1) return;
 
-    sliderContainer.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-        sliderContainer.style.transition = 'none'; // remove transition for smooth follow
-    });
+        const entity = state.entities[entityIndex];
+        state.currentView = 'reading';
+        state.currentEntityId = entityId;
 
-    sliderContainer.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        currentX = e.touches[0].clientX;
-        const diff = currentX - startX;
+        // Update URL
+        window.history.pushState({}, '', `${window.location.pathname}?entity=${entityId}`);
 
-        // Prevent sliding past edges
-        if ((currentPageIndex === 0 && diff > 0) || (currentPageIndex === totalPages - 1 && diff < 0)) {
-            // Add resistance
-            sliderContainer.style.transform = `translateX(calc(-${currentPageIndex * 100}vw + ${diff * 0.2}px))`;
+        // Calculate Next/Prev for pagination
+        const prevEntity = entityIndex > 0 ? state.entities[entityIndex - 1] : null;
+        const nextEntity = entityIndex < state.entities.length - 1 ? state.entities[entityIndex + 1] : null;
+
+        // Compile content
+        const yugaStr = (entity.yug || 'Unknown').charAt(0).toUpperCase() + (entity.yug || 'Unknown').slice(1);
+
+        let storiesHtml = '';
+        if (entity.kathayein && entity.kathayein.length > 0) {
+            entity.kathayein.forEach(katha => {
+                storiesHtml += `
+                    <h3 style="font-family: var(--font-heading); margin-top:2rem;">${katha.title}</h3>
+                    ${katha.source ? `<p style="font-size:0.8rem; color:var(--veda-primary); text-transform:uppercase;">Source: ${katha.source}</p>` : ''}
+                    <p>${katha.content.replace(/\n/g, '<br>')}</p>
+                `;
+            });
         } else {
-            sliderContainer.style.transform = `translateX(calc(-${currentPageIndex * 100}vw + ${diff}px))`;
-        }
-    });
-
-    sliderContainer.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        sliderContainer.style.transition = 'transform 0.5s ease-in-out'; // restore transition
-
-        const diff = currentX - startX;
-
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0 && currentPageIndex > 0) {
-                // Swipe right -> go left (prev)
-                currentPageIndex--;
-            } else if (diff < 0 && currentPageIndex < totalPages - 1) {
-                // Swipe left -> go right (next)
-                currentPageIndex++;
-            }
+            // Fallback to parichay
+            storiesHtml = `<p>${(entity.parichay || 'No detailed narrative available at this moment.').replace(/\n/g, '<br>')}</p>`;
         }
 
-        updateView();
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' && currentPageIndex > 0) {
-            window.SinglePageBookApp.turnPageLeft();
-        } else if (e.key === 'ArrowRight' && currentPageIndex < totalPages - 1) {
-            window.SinglePageBookApp.turnPageRight();
+        let eventsHtml = '';
+        if (entity.events && entity.events.length > 0) {
+             eventsHtml = `
+                <div style="margin-top: 3rem; background: #fff; padding: 2rem; border: 1px solid var(--veda-border); border-radius: 8px;">
+                    <h4 style="font-family: var(--font-heading); margin-top:0; color: var(--veda-primary);">Key Events</h4>
+                    <ul style="padding-left: 1.5rem; color: var(--veda-text-light);">
+                        ${entity.events.map(ev => `<li style="margin-bottom:0.5rem;">${ev}</li>`).join('')}
+                    </ul>
+                </div>
+             `;
         }
-    });
 
-    window.SinglePageBookApp = {
-        turnPageRight: function() {
-            if (currentPageIndex < totalPages - 1) {
-                currentPageIndex++;
-                updateView();
-            }
-        },
-        turnPageLeft: function() {
-            if (currentPageIndex > 0) {
-                currentPageIndex--;
-                updateView();
-            }
-        },
-        goToEntity: function(id) {
-            const targetIndex = pagesData.findIndex(page => page.id === id);
-            if (targetIndex !== -1) {
-                currentPageIndex = targetIndex;
-            }
-            updateView();
+        // Pagination HTML
+        let desktopPagination = '';
+        let mobilePagination = '<div class="veda-mobile-pagination">';
+
+        if (prevEntity) {
+            desktopPagination += `<div class="veda-pagination-side prev" onclick="window.VedaApp.renderReadingView('${prevEntity.id}')" title="Previous: ${prevEntity.name}">❮</div>`;
+            mobilePagination += `
+                <div class="veda-mobile-page-card" onclick="window.VedaApp.renderReadingView('${prevEntity.id}')">
+                    <span class="veda-mobile-page-label">PREVIOUS</span>
+                    <span class="veda-mobile-page-title">${prevEntity.name}</span>
+                </div>
+            `;
+        } else {
+            mobilePagination += `<div class="veda-mobile-page-card" style="opacity:0.5; pointer-events:none;"><span class="veda-mobile-page-label">START</span></div>`;
         }
-    };
 
-    // Check if there is an entity ID in the URL to jump to
-    const urlParams = new URLSearchParams(window.location.search);
-    const targetEntityId = urlParams.get('entity');
+        if (nextEntity) {
+            desktopPagination += `<div class="veda-pagination-side next" onclick="window.VedaApp.renderReadingView('${nextEntity.id}')" title="Next: ${nextEntity.name}">❯</div>`;
+            mobilePagination += `
+                <div class="veda-mobile-page-card" onclick="window.VedaApp.renderReadingView('${nextEntity.id}')">
+                    <span class="veda-mobile-page-label">NEXT</span>
+                    <span class="veda-mobile-page-title">${nextEntity.name}</span>
+                </div>
+            `;
+        } else {
+             mobilePagination += `<div class="veda-mobile-page-card" style="opacity:0.5; pointer-events:none;"><span class="veda-mobile-page-label">END</span></div>`;
+        }
+        mobilePagination += `</div>`;
 
-    if (targetEntityId) {
-        window.SinglePageBookApp.goToEntity(targetEntityId);
-    } else {
-        updateView(); // Initial state
+
+        elements.mainContent.innerHTML = `
+            <!-- Breadcrumbs -->
+            <div class="veda-breadcrumbs">
+                <span onclick="window.VedaApp.renderIndexView()">Index</span>
+                <span class="separator">/</span>
+                <span onclick="window.VedaApp.setYugaFilter('${yugaStr}')">${yugaStr} Yuga</span>
+                <span class="separator">/</span>
+                <span style="color:var(--veda-text);">${entity.name}</span>
+            </div>
+
+            <!-- Reading Header -->
+            <div class="veda-reading-header">
+                <h1 class="veda-reading-title">${entity.name}</h1>
+                <div class="veda-reading-subtitle">${entity.subtitle || ''}</div>
+                <div class="veda-decorative-line"></div>
+            </div>
+
+            <!-- Stats/Meta Grid -->
+            <div class="veda-stats-grid">
+                <div class="veda-stat-item">
+                    <span class="veda-stat-label">ERA</span>
+                    <span class="veda-stat-value">${yugaStr}</span>
+                </div>
+                ${entity.weapon ? `
+                <div class="veda-stat-item">
+                    <span class="veda-stat-label">WEAPON</span>
+                    <span class="veda-stat-value">${entity.weapon}</span>
+                </div>` : ''}
+                ${entity.mount ? `
+                <div class="veda-stat-item">
+                    <span class="veda-stat-label">MOUNT</span>
+                    <span class="veda-stat-value">${entity.mount}</span>
+                </div>` : ''}
+            </div>
+
+            <!-- Reading Content with Drop Cap -->
+            <div class="veda-reading-content">
+                ${storiesHtml}
+            </div>
+
+            ${eventsHtml}
+
+            <!-- Pagination Components -->
+            ${desktopPagination}
+            ${mobilePagination}
+        `;
+
+        window.scrollTo(0,0);
     }
 
+    // Expose Global App Controller
+    window.VedaApp = {
+        renderIndexView,
+        renderReadingView,
+        setYugaFilter: function(yuga) {
+            state.activeYuga = yuga;
+            // Always revert to index view when filtering
+            renderIndexView();
+        }
     };
 
-    initBook();
+    // Run Init
+    init();
 });
