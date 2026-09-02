@@ -1,101 +1,395 @@
+/* Sanatan Encyclopedia - The Knowledge Vault Design System */
+:root {
+    --vault-surface: #1a110b; /* Deep Earth/Dark Parchment */
+    --vault-primary: #cc6a00; /* Burnt Saffron */
+    --vault-accent: #d4af37; /* Temple Gold */
+    --vault-text-main: #f5eedc; /* Off-white for contrast on dark background */
+    --vault-text-muted: #a39587; /* Muted stone color */
+    --vault-border: rgba(212, 175, 55, 0.3); /* Subtle gold border */
 
-.main-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-saffron); /* Primary Orange */
-    margin-bottom: 0.5rem;
-    text-align: center;
+    --font-vault-heading: 'EB Garamond', serif;
+    --font-vault-body: 'Work Sans', sans-serif;
+
+    --vault-topbar-height: 70px;
+}
+
+body {
+    background-color: var(--vault-surface);
+    color: var(--vault-text-main);
+    font-family: var(--font-vault-body);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Subtle texture overlay */
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(204, 106, 0, 0.1) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.05) 2px, rgba(0,0,0,0.05) 4px);
+}
+
+/* -------------------------------------
+   Top Navigation Bar
+-------------------------------------- */
+.vault-topbar {
+    height: var(--vault-topbar-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    border-bottom: 1px solid var(--vault-border);
+    background: rgba(26, 17, 11, 0.95);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.vault-brand {
+    font-family: var(--font-vault-heading);
+    font-size: 1.8rem;
+    color: var(--vault-accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     letter-spacing: 1px;
 }
-/* Main Content */
-main {
-    flex: 1;
+
+.vault-brand img {
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--vault-accent);
+}
+
+.vault-nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.vault-nav-links a {
+    color: var(--vault-text-main);
+    text-decoration: none;
+    font-family: var(--font-vault-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.vault-nav-links a:hover {
+    color: var(--vault-primary);
+}
+
+.vault-utilities {
+    display: flex;
+    gap: 1rem;
+}
+
+.vault-icon-btn {
+    background: none;
+    border: none;
+    color: var(--vault-accent);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.vault-icon-btn:hover {
+    transform: scale(1.1);
+}
+
+/* -------------------------------------
+   Main Container
+-------------------------------------- */
+.vault-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* -------------------------------------
+   Hero Section
+-------------------------------------- */
+.vault-hero {
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.vault-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--vault-accent), transparent);
+}
+
+.vault-hero-title {
+    font-family: var(--font-vault-heading);
+    font-size: 4.5rem;
+    color: var(--vault-accent);
+    margin: 0 0 1rem 0;
+    font-weight: normal;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.vault-hero-subtitle {
+    font-family: var(--font-vault-body);
+    font-size: 1.2rem;
+    color: var(--vault-text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+.vault-cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 1px solid var(--vault-accent);
+    color: var(--vault-accent);
+    font-family: var(--font-vault-heading);
+    font-size: 1.2rem;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vault-cta:hover {
+    background: var(--vault-accent);
+    color: var(--vault-surface);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* -------------------------------------
+   Archives Grid (Desktop) / 2x2 (Mobile)
+-------------------------------------- */
+.vault-section-title {
+    font-family: var(--font-vault-heading);
+    font-size: 2.5rem;
+    color: var(--vault-text-main);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+.vault-archives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.vault-archive-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    animation: fadeIn 1s ease-out;
-}
-
-.tagline {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: var(--text-dark);
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-/* Buttons */
-.btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.nav-btn {
-    display: block;
-    background: #111111; /* Black background */
-    color: var(--white); /* White text */
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--vault-border);
+    border-radius: 8px;
     text-decoration: none;
-    padding: 1.2rem 2rem;
-    border-radius: 16px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: 2px solid var(--primary-saffron); /* Prepare for border transition if needed, though mostly shadow based */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: var(--vault-text-main);
+    transition: all 0.4s ease;
     position: relative;
-    overflow: hidden;
-    z-index: 1;
 }
 
-/* Gradient border effect simulated with background-clip or box-shadow */
-.nav-btn::before {
+.vault-archive-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-saffron), var(--secondary-gold));
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    border-radius: 16px; /* Match button radius */
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: inset 0 0 50px rgba(204, 106, 0, 0);
+    transition: box-shadow 0.4s ease;
+    border-radius: 8px;
+    pointer-events: none;
 }
 
-.nav-btn:hover {
-    transform: scale(1.05);
-    color: var(--white);
-    box-shadow: 0 8px 25px rgba(247, 147, 30, 0.4); /* Glow matching gold/orange */
-    border-color: transparent;
+.vault-archive-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--vault-primary);
 }
 
-.nav-btn:hover::before {
-    opacity: 1;
+.vault-archive-card:hover::before {
+    box-shadow: inset 0 0 50px rgba(204, 106, 0, 0.1);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.archive-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
 }
 
-/* Responsive Tweaks */
-@media (min-width: 768px) {
-    .tagline {
-        font-size: 1.5rem;
+.archive-title {
+    font-family: var(--font-vault-heading);
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--vault-accent);
+}
+
+.archive-desc {
+    font-size: 0.95rem;
+    color: var(--vault-text-muted);
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* -------------------------------------
+   Featured Chronicle
+-------------------------------------- */
+.vault-featured {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--vault-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vault-featured-img {
+    flex: 1;
+    background: url('../icons/logo.jpg') center/cover no-repeat;
+    min-height: 300px;
+    position: relative;
+}
+
+.vault-featured-img::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, transparent, rgba(26, 17, 11, 1));
+}
+
+.vault-featured-content {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-label {
+    color: var(--vault-primary);
+    font-family: var(--font-vault-body);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.featured-title {
+    font-family: var(--font-vault-heading);
+    font-size: 2.5rem;
+    color: var(--vault-text-main);
+    margin: 0 0 1rem 0;
+}
+
+.featured-text {
+    font-size: 1rem;
+    color: var(--vault-text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.featured-link {
+    color: var(--vault-accent);
+    text-decoration: none;
+    font-family: var(--font-vault-heading);
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s;
+}
+
+.featured-link:hover {
+    gap: 12px;
+}
+
+/* -------------------------------------
+   Footer
+-------------------------------------- */
+.vault-footer {
+    text-align: center;
+    padding: 3rem 5%;
+    border-top: 1px solid var(--vault-border);
+    margin-top: 4rem;
+    font-family: var(--font-vault-heading);
+    color: var(--vault-text-muted);
+}
+
+.vault-divider {
+    width: 50px;
+    height: 1px;
+    background: var(--vault-primary);
+    margin: 1rem auto;
+}
+
+/* -------------------------------------
+   Responsive (Mobile)
+-------------------------------------- */
+@media (max-width: 768px) {
+    .vault-topbar {
+        padding: 0 1rem;
     }
-    .nav-btn {
+
+    .vault-nav-links {
+        display: none; /* Hide standard links on mobile */
+    }
+
+    .vault-hero-title {
+        font-size: 3rem;
+    }
+
+    .vault-hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* 2x2 Grid for Quick Navigation on Mobile */
+    .vault-archives-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .vault-archive-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .archive-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .archive-title {
         font-size: 1.2rem;
-        padding: 1.5rem;
+    }
+
+    .archive-desc {
+        display: none; /* Hide description to make it compact */
+    }
+
+    /* Stacked Cards for Featured Feed on Mobile */
+    .vault-featured {
+        flex-direction: column;
+    }
+
+    .vault-featured-img {
+        min-height: 200px;
+    }
+
+    .vault-featured-img::after {
+        background: linear-gradient(to bottom, transparent, rgba(26, 17, 11, 1));
+    }
+
+    .vault-featured-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .featured-title {
+        font-size: 2rem;
     }
 }

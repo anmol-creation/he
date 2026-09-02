@@ -3,58 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hindu Encyclopedia</title>
+    <title>The Knowledge Vault | Sanatan Encyclopedia</title>
     <meta name="description" content="Eternal History • Sacred Heritage • Historical Truth - The ultimate Hindu Encyclopedia">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="icons/logo.jpg">
-    <meta name="theme-color" content="#FF6B35">
+    <meta name="theme-color" content="#1a110b">
+
+    <!-- Sanatan Archive Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
-<link rel="icon" type="image/jpeg" href="icons/logo.jpg">
-    </head>
+    <link rel="icon" type="image/jpeg" href="icons/logo.jpg">
+</head>
 <body>
 
-    <header style="justify-content: flex-start; padding: 0.5rem 1rem;">
-        <div class="logo-container"><img src="icons/logo.jpg" alt="Logo" class="site-logo"></div>
+    <!-- Top Navigation Bar -->
+    <header class="vault-topbar">
+        <a href="index.html" class="vault-brand">
+            <img src="icons/logo.jpg" alt="Logo">
+            <span>Sanatan Archive</span>
+        </a>
+        <nav class="vault-nav-links">
+            <a href="pages/itihas-puran.html">Chronicles</a>
+            <a href="hindu-heritage.html">Dynasties</a>
+            <a href="hindu-archives.html">Vault</a>
+        </nav>
+        <div class="vault-utilities">
+            <button class="vault-icon-btn" aria-label="Search Vault">🔍</button>
+            <button class="vault-icon-btn" aria-label="Settings">⚙️</button>
+        </div>
     </header>
 
-    <main>
-        <h1 class="main-title">Hindu Encyclopedia</h1>
-        <div class="tagline">Eternal History • Sacred Heritage • Historical Truth</div>
+    <main class="vault-main">
 
-        <div class="btn-container">
-            <a href="pages/itihas-puran.html" class="nav-btn">Itihas Puran - Timeline</a>
-            <a href="hindu-heritage.html" class="nav-btn">Hindu Heritage - Map</a>
-            <a href="hindu-archives.html" class="nav-btn">Hindu Archives - Incidents</a>
+        <!-- Hero Section: Vault Entrance -->
+        <section class="vault-hero">
+            <h1 class="vault-hero-title">The Knowledge Vault</h1>
+            <div class="vault-hero-subtitle">Eternal History • Sacred Heritage • Historical Truth</div>
+            <a href="pages/itihas-puran.html" class="vault-cta">Enter the Archives</a>
+        </section>
+
+        <!-- Primary Archives Grid -->
+        <section>
+            <h2 class="vault-section-title">Explore the Archives</h2>
+            <div class="vault-archives-grid">
+
+                <a href="pages/itihas-puran.html" class="vault-archive-card">
+                    <div class="archive-icon">📜</div>
+                    <h3 class="archive-title">Chronicles</h3>
+                    <p class="archive-desc">Journey through the epochs of time. Explore the comprehensive timeline of the Itihas Puran.</p>
+                </a>
+
+                <a href="hindu-heritage.html" class="vault-archive-card">
+                    <div class="archive-icon">🗺️</div>
+                    <h3 class="archive-title">Dynasties</h3>
+                    <p class="archive-desc">Trace the eternal lineages and sacred geography through interactive historical maps.</p>
+                </a>
+
+                <a href="hindu-archives.html" class="vault-archive-card">
+                    <div class="archive-icon">🏛️</div>
+                    <h3 class="archive-title">Incidents</h3>
+                    <p class="archive-desc">Delve into specific historical events, legendary battles, and philosophical discourses.</p>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Featured Chronicle Feed -->
+        <section>
+            <div class="vault-featured">
+                <div class="vault-featured-img"></div>
+                <div class="vault-featured-content">
+                    <div class="featured-label">Featured Manuscript</div>
+                    <h3 class="featured-title">The Solar Dynasty</h3>
+                    <p class="featured-text">
+                        Discover the unbroken lineage of Suryavansha, originating from the sun god Surya.
+                        Read the accounts of legendary monarchs like Ikshvaku, Harishchandra, Bhagiratha, and Bhagwan Rama,
+                        whose reigns defined the concepts of Dharma across Yugas.
+                    </p>
+                    <a href="pages/itihas-book.html?entity=ram" class="featured-link">Read Chronicle <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PWA Install Button (Hidden by default, shown via JS) -->
+        <div style="text-align: center;">
+             <button id="installAppBtn" class="vault-cta" style="display: none; border-color: var(--vault-primary); color: var(--vault-primary);">Install App</button>
         </div>
 
-        <button id="installAppBtn" class="nav-btn" style="display: none; margin-top: 2rem; background: var(--primary-saffron); width: 250px;">Install App</button>
     </main>
+
+    <footer class="vault-footer">
+        <div class="vault-divider"></div>
+        <div>© 2026 - Original Research Only</div>
+        <div style="font-size: 0.8rem; margin-top: 5px;">Preserving the Eternal Heritage</div>
+    </footer>
 
     <script>
         let deferredPrompt;
         const installAppBtn = document.getElementById('installAppBtn');
 
         window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
-            // Stash the event so it can be triggered later.
             deferredPrompt = e;
-            // Update UI notify the user they can install the PWA
             installAppBtn.style.display = 'inline-block';
         });
 
         installAppBtn.addEventListener('click', async () => {
             if (deferredPrompt) {
-                // Show the install prompt
                 deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
                 const { outcome } = await deferredPrompt.userChoice;
                 console.log(`User response to the install prompt: ${outcome}`);
-                // We've used the prompt, and can't use it again, throw it away
                 deferredPrompt = null;
                 installAppBtn.style.display = 'none';
             }
@@ -63,20 +125,10 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful');
-                    })
-                    .catch(err => {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
+                    .catch(err => console.log('ServiceWorker registration failed: ', err));
             });
         }
     </script>
-
-    <footer>
-        © 2026 - Original Research Only
-    </footer>
-
     <script src="js/global.js"></script>
     <script src="js/home.js"></script>
 </body>
