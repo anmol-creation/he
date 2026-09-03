@@ -283,8 +283,8 @@ export const brahmaBaseData = [
     { id: 'makaraksha', name: 'मकराक्ष', subtitle: 'खर का पुत्र', parent: 'khara', yug: 'treta', parichay: 'अपने पिता खर की मृत्यु का बदला लेने आया था, जिसे श्रीराम ने युद्ध में मारा।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
 
     { id: 'kumbhinasi', name: 'कुम्भीनसी', subtitle: 'रावण की बहन', parent: 'vishrava', mother: 'pushpotkata', yug: 'treta', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
-    { id: 'madhu_asura', name: 'मधु (असुर)', subtitle: 'कुम्भीनसी का पति', parent: '', spouseOf: 'kumbhinasi', yug: 'treta', parichay: 'मधुवन का राजा, जिसे शिव से त्रिशूल प्राप्त था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
-    { id: 'lavanasura', name: 'लवणासुर', subtitle: 'मधु-कुम्भीनसी का पुत्र', parent: 'madhu_asura', mother: 'kumbhinasi', yug: 'treta', parichay: 'मथुरा (मधुवन) का अत्याचारी राक्षस, जिसे श्रीराम के आदेश पर शत्रुघ्न ने मारा था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'madhu_asura_lavana', name: 'मधु (असुर)', subtitle: 'कुम्भीनसी का पति', parent: '', spouseOf: 'kumbhinasi', yug: 'treta', parichay: 'मधुवन का राजा, जिसे शिव से त्रिशूल प्राप्त था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
+    { id: 'lavanasura', name: 'लवणासुर', subtitle: 'मधु-कुम्भीनसी का पुत्र', parent: 'madhu_asura_lavana', mother: 'kumbhinasi', yug: 'treta', parichay: 'मथुरा (मधुवन) का अत्याचारी राक्षस, जिसे श्रीराम के आदेश पर शत्रुघ्न ने मारा था।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)' },
 
     { id: 'trijata', name: 'त्रिजटा', subtitle: 'विभीषण की पुत्री', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'अशोक वाटिका में माता सीता की स्नेही रक्षक।', clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'  },
     { id: 'taranisen', name: 'तरणीसेन', subtitle: 'विभीषण पुत्र', parent: 'vibhishana', mother: 'sarama', yug: 'treta', parichay: 'बांग्ला रामायण के अनुसार विभीषण का वीर और रामभक्त पुत्र।' },
