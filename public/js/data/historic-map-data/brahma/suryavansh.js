@@ -1,5 +1,5 @@
 export const suryavanshData = [
-    { id: 'vaivasvata_manu', name: 'वैवस्वत मनु', subtitle: 'वर्तमान मनु', parent: 'surya', yug: 'satya' },
+    { id: 'vaivasvata_manu', name: 'वैवस्वत मनु', subtitle: 'वर्तमान मनु', parent: 'surya', yug: 'satya', kali_year: -10100 },
     { id: 'shraddha_manu_wife', name: 'श्रद्धा', subtitle: 'मनु पत्नी', parent: '', spouseOf: 'vaivasvata_manu', yug: 'satya' },
 
     // Manu's other children
@@ -21,14 +21,14 @@ export const suryavanshData = [
     { id: 'prishadhra', name: 'पृषध्र', subtitle: 'मनु पुत्र', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' , clusterName: 'मनु के अन्य पुत्र' },
     { id: 'kavi_manu', name: 'कवि', subtitle: 'मनु पुत्र', gender: 'male', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', clusterName: 'मनु के अन्य पुत्र', parichay: 'वैवस्वत मनु के पुत्र जिन्होंने सांसारिक मोह त्याग कर सन्यास ले लिया था।', source_texts: 'भागवत पुराण' },
 
-    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya' },
+    { id: 'ikshvaku', name: 'इक्ष्वाकु', subtitle: 'सूर्यवंश के संस्थापक', parent: 'vaivasvata_manu', mother: 'shraddha_manu_wife', yug: 'satya', kali_year: -10100 },
     // Descendants of Ikshvaku
         { id: 'suryavansh_proxy', name: 'सूर्यवंश', subtitle: 'इक्ष्वाकु के वंशज', parent: 'ikshvaku', yug: 'satya', clusterName: 'सूर्यवंश', isProxy: true },
-{ id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'suryavansh_proxy', yug: 'treta', parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
+{ id: 'vikukshi', name: 'विकुक्षि', subtitle: 'शशाद', parent: 'suryavansh_proxy', yug: 'satya', kali_year: -9700, parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।' },
     { id: 'nimi', name: 'निमि', subtitle: 'विदेह वंश संस्थापक', parent: 'ikshvaku', yug: 'treta', parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।' },
     { id: 'danda', name: 'दण्ड', subtitle: 'इक्ष्वाकु पुत्र', parent: 'ikshvaku', yug: 'treta', parichay: 'दंडकारण्य वन का नाम इन्हीं के नाम पर पड़ा।' },
     // Vikukshi's immediate
-    { id: 'puranjaya', name: 'पुरंजय', subtitle: 'ककुत्स्थ / इन्द्रवाह', parent: 'vikukshi', yug: 'treta', parichay: 'इन्होंने देवासुर संग्राम में वृषभ रूपी इन्द्र पर बैठकर युद्ध किया था।' },
+    { id: 'puranjaya', name: 'पुरंजय', subtitle: 'ककुत्स्थ / इन्द्रवाह', parent: 'vikukshi', yug: 'treta', kali_year: -9600, parichay: 'इन्होंने देवासुर संग्राम में वृषभ रूपी इन्द्र पर बैठकर युद्ध किया था।' },
     // Vikukshi to Harishchandra (Suryavansh main line)
     { id: 'anena_surya', name: 'अनेना', subtitle: 'पुरंजय पुत्र', parent: 'puranjaya', yug: 'treta' },
     { id: 'prithu_surya', name: 'पृथु', subtitle: 'अनेना पुत्र', parent: 'anena_surya', yug: 'treta' },
@@ -179,30 +179,63 @@ export const suryavanshData = [
     { id: 'taksha', name: 'तक्ष', subtitle: 'तक्षशिला के राजा', parent: 'bharat', mother: 'mandavi', yug: 'treta', parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।' },
     { id: 'pushkala', name: 'पुष्कल', subtitle: 'पुष्कलावती के राजा', parent: 'bharat', mother: 'mandavi', yug: 'treta', parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।' },
 
+    // Bhalla Khatri (Descendants of Bharat)
+    { id: 'bhalla_vansh_proxy', name: 'भल्ला खत्री', subtitle: 'भरत के वंशज', parent: 'bharat', yug: 'kali', clusterName: 'भल्ला खत्री (भरत वंश)', isProxy: true, parichay: 'सिख इतिहास और "बचित्तर नाटक" (दशम ग्रंथ) की परंपराओं के अनुसार, भल्ला खत्री समुदाय की उत्पत्ति भगवान राम के भ्राता भरत के वंशजों से हुई है।' },
+    { id: 'guru_amar_das', name: 'श्री गुरु अमरदास जी', subtitle: 'तृतीय सिख गुरु', parent: 'bhalla_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'भल्ला खत्री (भरत वंश)', parichay: 'सिख धर्म के तीसरे गुरु। इनका जन्म भल्ला खत्री वंश में हुआ था जो भरत जी की वंशावली से संबंधित हैं।' },
+
     { id: 'lakshman', name: 'लक्ष्मण', subtitle: 'शेषनाग अवतार', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
     { id: 'angada_lakshman', name: 'अंगद', subtitle: 'कारुपथ के राजा', parent: 'lakshman', mother: 'urmila', yug: 'treta', parichay: 'भगवान राम ने अंगद को कारुपथ राज्य का राजा बनाया था।' },
     { id: 'chandraketu', name: 'चन्द्रकेतु', subtitle: 'चन्द्रकांति (मालवा) के राजा', parent: 'lakshman', mother: 'urmila', yug: 'treta', parichay: 'भगवान राम ने चन्द्रकेतु को चन्द्रकांति राज्य का राजा बनाया था।' },
-    // Lakshman's descendants (Pratihara Rajput claim)
-    { id: 'pratihara_lakshman_proxy', name: 'प्रतिहार / बड़गूजर', subtitle: 'लक्ष्मण के वंशज (ऐतिहासिक मत)', parent: 'lakshman', yug: 'kali', parichay: 'गुर्जर-प्रतिहार राजवंश स्वयं को लक्ष्मण का वंशज मानता है (क्योंकि लक्ष्मण ने राम के लिए द्वारपाल/प्रतिहार का कार्य किया था)। राजौरगढ़ के 959 ई. के शिलालेख के अनुसार, इतिहासकार बड़गूजरों को भी प्रतिहारों की ही एक शाखा मानते हैं। अग्निवंश उत्पत्ति से अलग, यह ঐতিহাসিক मत है।' },
+    // Lakshman's descendants (Pratihara, Bargujar, Trehan)
+    { id: 'lakshman_descendants_proxy', name: 'लक्ष्मण के वंशज', subtitle: 'प्रतिहार, बड़गूजर, त्रेहन', parent: 'lakshman', yug: 'kali', isProxy: true, clusterName: 'लक्ष्मण के वंशज', parichay: 'ऐतिहासिक शिलालेखों (जैसे मिहिर भोज का ग्वालियर शिलालेख) के अनुसार गुर्जर-प्रतिहार स्वयं को लक्ष्मण का वंशज मानते हैं। साथ ही, सिख इतिहास के अनुसार त्रेहन खत्री भी लक्ष्मण के ही वंशज हैं।' },
 
-    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
-    { id: 'subahu_shatrughna', name: 'सुबाहु', subtitle: 'मथुरा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'लवणासुर का वध करने के बाद शत्रुघ्न ने शूरसेन (मथुरा) पर अधिकार किया और सुबाहु को वहां का राजा बनाया।' },
-    { id: 'shatrughati', name: 'शत्रुघाती', subtitle: 'विदिशा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'शत्रुघ्न के द्वितीय पुत्र, जिन्हें विदिशा का राजा बनाया गया था।' },
-    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
-    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
+    // Pratihara / Parihar Rajput
+    { id: 'pratihara_dynasty', name: 'गुर्जर-प्रतिहार राजवंश', subtitle: 'लक्ष्मण के वंशज', parent: 'lakshman_descendants_proxy', yug: 'kali', clusterName: 'लक्ष्मण के वंशज', parichay: '8वीं से 11वीं सदी तक उत्तर भारत के सबसे शक्तिशाली सम्राट। ग्वालियर शिलालेख के अनुसार ये लक्ष्मण के वंशज हैं क्योंकि उन्होंने राम के "प्रतिहार" (द्वारपाल) के रूप में कार्य किया था। वर्तमान "परिहार" (Parihar) राजपूत इसी वंश से हैं।' },
+    { id: 'parihar_rajput', name: 'परिहार (Parihar)', subtitle: 'राजपूत गोत्र', parent: 'pratihara_dynasty', yug: 'kali', clusterName: 'लक्ष्मण के वंशज' },
 
-    // Luv's descendants (Bargujar, Raghav, Sikarwar, Lohana, Leva Patidar)
-        { id: 'luv_descendants_proxy', name: 'लव के वंशज', subtitle: 'कुर्मी, लोहाणा, बड़गूजर', parent: 'luv', yug: 'kali', clusterName: 'लव के वंशज (सूर्यवंशी)', isProxy: true },
-    { id: 'leva_patidar', name: 'लेवा पाटीदार / कुर्मी', subtitle: 'लव के वंशज', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लव की राजधानी लवपुरी (लाहौर) से पलायन कर गुजरात व भारत के अन्य हिस्सों में बसे लेवा पाटीदार (पटेल) और कुर्मी समाज स्वयं को लव का वंशज मानते हैं।' },
-    { id: 'lohana_rajput', name: 'लोहाणा समाज', subtitle: 'सिंध-गुजरात के क्षत्रिय/वैश्य', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लोहाणा समाज लवपुरी (लाहौर) के पतन के बाद सिंध और गुजरात में बसा। वे स्वयं को लव का वंशज मानते हैं।' },
-
-    // Bargujar / Raghav lineage
-    { id: 'bargujar_adi', name: 'बड़गूजर (राघव) वंश', subtitle: 'लव के सूर्यवंशी वंशज', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'पारंपरिक चारण-भाट वंशावलियों के अनुसार बड़गूजर/राघव विशुद्ध सूर्यवंशी हैं जिनका उद्गम लव से होता है। (हालाँकि, कुछ शिलालेख इन्हें लक्ष्मण के वंशज प्रतिहारों की शाखा मानते हैं)।' },
+    // Bargujar / Raghav lineage (Moved from Luv to Lakshman based on Epigraphy)
+    { id: 'bargujar_adi', name: 'बड़गूजर (राघव) वंश', subtitle: 'लक्ष्मण के वंशज', parent: 'pratihara_dynasty', clusterName: 'लक्ष्मण के वंशज', yug: 'kali', parichay: 'राजौरगढ़ के 959 ई. के शिलालेख और ऐतिहासिक साक्ष्यों के अनुसार, बड़गूजर गुर्जर-प्रतिहारों की ही एक शाखा हैं और इस प्रकार लक्ष्मण के वंशज हैं।' },
     { id: 'raja_bagh_singh', name: 'राजा बाघ सिंह', subtitle: 'बड़गूजर राजा', parent: 'bargujar_adi', yug: 'kali', parichay: 'इन्होंने राजस्थान में बाघधरा (BaghDhara) बसाया।' },
     { id: 'raja_pratap_singh_bargujar', name: 'राजा प्रताप सिंह बड़गूजर', subtitle: 'पृथ्वीराज चौहान के सेनापति', parent: 'raja_bagh_singh', yug: 'kali', parichay: 'ये पृथ्वीराज चौहान के समकालीन और उनके सेनापतियों में से एक माने जाते हैं, जिन्होंने मुस्लिम आक्रमणकारियों से भयानक युद्ध किया।' },
     { id: 'sikarwar_rajput', name: 'सिकरवार वंश', subtitle: 'बड़गूजरों की शाखा', parent: 'raja_pratap_singh_bargujar', yug: 'kali', parichay: 'मुस्लिम आक्रमणकारियों के भारी नरसंहार से बचने और अपनी अधीनता स्वीकार न करने के संकल्प के कारण, बड़गूजरों के ही एक समूह ने अपना नाम बदलकर "सिकरवार" रख लिया था।' },
     { id: 'raja_anup_singh', name: 'राजा अनूप सिंह', subtitle: 'अनूपशहर के संस्थापक', parent: 'raja_pratap_singh_bargujar', yug: 'kali', parichay: 'इन्होंने उत्तर प्रदेश में "अनूपशहर" बसाया और वहां बड़गूजरों की एक बड़ी रियासत कायम की।' },
     { id: 'bahadur_singh_bargujar', name: 'बहादुर सिंह बड़गूजर', subtitle: 'घासेरा के शासक', parent: 'raja_anup_singh', yug: 'kali', parichay: 'इन्होंने 18वीं सदी में घासेरा (Ghasera) पर राज किया और मुगलों/जाटों से युद्ध किया।' },
+
+
+
+
+    // Trehan Khatri
+    { id: 'trehan_vansh_proxy', name: 'त्रेहन खत्री', subtitle: 'लक्ष्मण वंशज खत्री', parent: 'lakshman_descendants_proxy', yug: 'kali', clusterName: 'त्रेहन खत्री (लक्ष्मण वंश)', isProxy: true, parichay: 'सिख इतिहास और परम्पराओं के अनुसार, त्रेहन खत्री समुदाय की उत्पत्ति भगवान राम के अनुज लक्ष्मण के वंशजों से हुई है।' },
+    { id: 'guru_angad_dev', name: 'श्री गुरु अंगद देव जी', subtitle: 'द्वितीय सिख गुरु', parent: 'trehan_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'त्रेहन खत्री (लक्ष्मण वंश)', parichay: 'सिख धर्म के दूसरे गुरु। इनका जन्म त्रेहन खत्री वंश में हुआ था जो लक्ष्मण जी की वंशावली से संबंधित हैं।' },
+
+    { id: 'shatrughna', name: 'शत्रुघ्न', subtitle: 'राम के अनुज', parent: 'dasharath', mother: 'sumitra', yug: 'treta' },
+    { id: 'subahu_shatrughna', name: 'सुबाहु', subtitle: 'मथुरा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'लवणासुर का वध करने के बाद शत्रुघ्न ने शूरसेन (मथुरा) पर अधिकार किया और सुबाहु को वहां का राजा बनाया।' },
+    { id: 'shatrughati', name: 'शत्रुघाती', subtitle: 'विदिशा के राजा', parent: 'shatrughna', mother: 'shrutakirti', yug: 'treta', parichay: 'शत्रुघ्न के द्वितीय पुत्र, जिन्हें विदिशा का राजा बनाया गया था।' },
+
+    // Bhalla Khatri (Descendants of Bharat)
+    // Note: To keep the tree structured, we add Bharat's descendants under Bharat directly.
+
+    { id: 'sita', name: 'सीता', subtitle: 'जनक नंदिनी', parent: 'seeradhwaja_janak', mother: 'sunayana', spouseOf: 'ram', yug: 'treta' },
+    { id: 'luv', name: 'लव', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।' },
+
+    // Luv's descendants (Leva Patidar, Lohana, Sodhi Khatri)
+    { id: 'luv_descendants_proxy', name: 'लव के वंशज', subtitle: 'कुर्मी, लोहाणा', parent: 'luv', yug: 'kali', clusterName: 'लव के वंशज (सूर्यवंशी)', isProxy: true },
+    { id: 'leva_patidar', name: 'लेवा पाटीदार / कुर्मी', subtitle: 'लव के वंशज', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लव की राजधानी लवपुरी (लाहौर) से पलायन कर गुजरात व भारत के अन्य हिस्सों में बसे लेवा पाटीदार (पटेल) और कुर्मी समाज स्वयं को लव का वंशज मानते हैं।' },
+    { id: 'lohana_rajput', name: 'लोहाणा समाज', subtitle: 'सिंध-गुजरात के क्षत्रिय/वैश्य', parent: 'luv_descendants_proxy', clusterName: 'लव के वंशज (सूर्यवंशी)', yug: 'kali', parichay: 'लोहाणा समाज लवपुरी (लाहौर) के पतन के बाद सिंध और गुजरात में बसा। वे स्वयं को लव का वंशज मानते हैं।' },
+
+    // Sodhi Khatri Lineage (from Luv - via Bachittar Natak)
+    { id: 'kal_rai', name: 'कल राय', subtitle: 'लव के वंशज', parent: 'luv_descendants_proxy', yug: 'dwapar', clusterName: 'सोढी खत्री (लव वंश)', isProxy: true, parichay: 'दशम ग्रंथ के "बचित्तर नाटक" के अनुसार, लव के वंशजों में कल राय (Kal Rai) नामक राजा हुए। उनका कुश के वंशज कालकेतु (Kalket) से सत्ता के लिए युद्ध हुआ, जिसमें कल राय पराजित हुए और सनाउध (Sanaudh) चले गए।' },
+    { id: 'sodhi_rao', name: 'सोढी राय (राव)', subtitle: 'सोढी वंश के प्रवर्तक', parent: 'kal_rai', yug: 'kali', clusterName: 'सोढी खत्री (लव वंश)', isProxy: true, parichay: 'कल राय ने सनाउध के राजा की पुत्री से विवाह किया, जिनसे सोढी राय का जन्म हुआ। इन्हीं के नाम पर लव के वंशजों की यह शाखा "सोढी खत्री" कहलाई।' },
+    { id: 'sodhi_vansh_proxy', name: 'सोढी खत्री', subtitle: 'लव के वंशज', parent: 'sodhi_rao', yug: 'kali', clusterName: 'सोढी खत्री (लव वंश)', isProxy: true, parichay: 'चतुर्थ सिख गुरु, श्री गुरु रामदास जी से लेकर दशम गुरु, श्री गुरु गोबिंद सिंह जी तक, सभी सिख गुरु इसी सोढी वंश में जन्मे थे।' },
+
+    // Sikh Gurus in Sodhi lineage
+    { id: 'guru_ram_das', name: 'श्री गुरु रामदास जी', subtitle: 'चतुर्थ सिख गुरु', parent: 'sodhi_vansh_proxy', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_arjan_dev', name: 'श्री गुरु अर्जन देव जी', subtitle: 'पंचम सिख गुरु', parent: 'guru_ram_das', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_hargobind', name: 'श्री गुरु हरगोबिंद साहिब', subtitle: 'छठे सिख गुरु', parent: 'guru_arjan_dev', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_har_rai', name: 'श्री गुरु हर राय जी', subtitle: 'सातवें सिख गुरु', parent: 'guru_hargobind', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_har_krishan', name: 'श्री गुरु हरकृष्ण जी', subtitle: 'आठवें सिख गुरु', parent: 'guru_har_rai', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_tegh_bahadur', name: 'श्री गुरु तेग बहादुर जी', subtitle: 'नौवें सिख गुरु', parent: 'guru_hargobind', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
+    { id: 'guru_gobind_singh', name: 'श्री गुरु गोबिंद सिंह जी', subtitle: 'दशम सिख गुरु', parent: 'guru_tegh_bahadur', yug: 'kali', isProminent: true, clusterName: 'सोढी खत्री (लव वंश)' },
 
     // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
     { id: 'bappa_rawal', name: 'बप्पा रावल (कालभोज)', subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक', parent: 'guhadatta_mewar', yug: 'kali', parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।' },
@@ -220,23 +253,56 @@ export const suryavanshData = [
     { id: 'rana_hammir_sisodia', name: 'राणा हम्मीर', subtitle: 'सिसोदिया वंश के संस्थापक', parent: 'ari_singh_mewar', yug: 'kali', parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की पुनर्स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।' },
 
     // Maratha Empire (Bhonsle Lineage from Mewar)
-    { id: 'rana_ajay_singh', name: 'राणा अजय सिंह', subtitle: 'लक्ष्मण सिंह के पुत्र', parent: 'lakshman_singh_sisodia', yug: 'kali', parichay: 'चित्तौड़ के पतन के बाद इन्होने केलवाड़ा में शरण ली और अपने भतीजे हम्मीर को मेवाड़ का उत्तराधिकारी बनाया।' },
-    { id: 'sajjan_singh_bhonsle', name: 'सज्जन सिंह (सुजनसिंह)', subtitle: 'भोंसले वंश के मूल पुरुष', parent: 'rana_ajay_singh', yug: 'kali', parichay: 'मेवाड़ छोड़कर दक्षिण (दक्कन) चले गए और बहमनी सुल्तानों के यहाँ सेवा दी। इन्हीं के वंशज आगे चलकर "भोंसले" कहलाए।' },
+    { id: 'rana_ajay_singh', name: 'राणा अजय सिंह', gender: 'male', subtitle: 'लक्ष्मण सिंह के पुत्र', parent: 'lakshman_singh_sisodia', yug: 'kali', kali_year: 4426, parichay: 'मृत्यु: 1326 ई.। चित्तौड़ के पतन के बाद इन्होने केलवाड़ा में शरण ली और अपने भतीजे हम्मीर को मेवाड़ का उत्तराधिकारी बनाया।' },
+    { id: 'sajjan_singh_bhonsle', name: 'सज्जन सिंह (सुजनसिंह)', gender: 'male', subtitle: 'भोंसले वंश के मूल पुरुष', parent: 'rana_ajay_singh', yug: 'kali', kali_year: 4435, parichay: 'जन्म: 1291 ई. के पूर्व | मृत्यु: ~1350 ई.। मेवाड़ छोड़कर 1333 ई. में दक्षिण (दक्कन) चले गए और बहमनी सुल्तान के यहाँ मीरत की जागीर प्राप्त की। इन्हीं के वंशज आगे चलकर "भोंसले" कहलाए।' },
     { id: 'maratha_empire_proxy', name: 'मराठा साम्राज्य (भोंसले)', subtitle: 'शिवाजी महाराज का वंश', parent: 'sajjan_singh_bhonsle', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश', isProxy: true, isProminent: true },
-    { id: 'dilip_singh_bhonsle', name: 'दिलीप सिंह', subtitle: 'सज्जन सिंह पुत्र', parent: 'maratha_empire_proxy', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'sidhji_bhonsle', name: 'शिधाजी (सिधजी)', subtitle: 'दिलीप सिंह पुत्र', parent: 'dilip_singh_bhonsle', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'bhairav_singh_bhosaji', name: 'भैरव सिंह (भोसाजी)', subtitle: 'भोंसले नाम के प्रवर्तक', parent: 'sidhji_bhonsle', yug: 'kali', parichay: 'इन्हीं के नाम (भोसाजी) या "भोसावट" जागीर के नाम पर इस वंश का नाम "भोंसले" पड़ा।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'devaraj_bhonsle', name: 'देवराज', subtitle: 'भैरव सिंह पुत्र', parent: 'bhairav_singh_bhosaji', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'dilip_singh_bhonsle', name: 'दिलीप सिंह (बाजीराजा)', gender: 'male', subtitle: 'सज्जन सिंह पुत्र', parent: 'maratha_empire_proxy', yug: 'kali', kali_year: 4467, parichay: 'मीरत के जागीरदार। विजयनगर के विरुद्ध युद्धों में (1353-1365) वीरता दिखाई। मृत्यु: 1365 ई. के पूर्व।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'sidhji_bhonsle', name: 'शिधाजी (सिधजी)', gender: 'male', subtitle: 'दिलीप सिंह पुत्र', parent: 'dilip_singh_bhonsle', yug: 'kali', kali_year: 4490, parichay: 'सुल्तान मुजाहिद शाह के अंगरक्षक। 1388 ई. से पूर्व युद्ध में वीरगति।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'bhairav_singh_bhosaji', name: 'भैरव सिंह (भोसाजी)', gender: 'male', subtitle: 'भोंसले नाम के प्रवर्तक', parent: 'sidhji_bhonsle', yug: 'kali', kali_year: 4499, parichay: 'मुधोल के जागीरदार (1397 ई.)। इन्हीं के नाम (भोसाजी) या "भोसावट" जागीर के नाम पर इस वंश का नाम "भोंसले" पड़ा। मृत्यु: 1398 ई.।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'devaraj_bhonsle', name: 'देवराज भोंसले', gender: 'male', subtitle: 'भैरव सिंह पुत्र', parent: 'bhairav_singh_bhosaji', yug: 'kali', kali_year: 4524, parichay: 'मुधोल के शासक। मृत्यु: 1422 ई.।', clusterName: 'मराठा (भोंसले) वंश' },
     { id: 'bhonsle_medieval_link', name: 'ऐतिहासिक अंतराल', subtitle: 'अज्ञात पीढ़ियाँ', parent: 'devaraj_bhonsle', yug: 'kali', parichay: 'देवराज के बाद उग्रसेन, कर्ण, शुभकृष्ण, रूपसिंह, भूमिन्द्र, धापजी, खेलोजी, कर्णसिंह, सम्भाजी आदि कई पीढ़ियों का अंतराल।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'babaji_bhonsle', name: 'बाबाजी भोंसले', subtitle: 'वेरुल के पाटिल', parent: 'bhonsle_medieval_link', yug: 'kali', parichay: 'ये औरंगाबाद के पास वेरुल (एलोरा) गाँव के पाटिल थे।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'maloji_bhonsle', name: 'मालोजी राजे भोंसले', subtitle: 'शिवाजी के दादा', parent: 'babaji_bhonsle', yug: 'kali', parichay: 'इन्होंने अहमदनगर के निज़ामशाही सुल्तानों के यहाँ एक महान सेनापति के रूप में कार्य किया और "राजे" की उपाधि प्राप्त की।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'shahaji_bhonsle', name: 'शाहजी राजे भोंसले', subtitle: 'शिवाजी के पिता', parent: 'maloji_bhonsle', yug: 'kali', parichay: 'एक प्रमुख मराठा सेनापति जिन्होंने अहमदनगर, बीजापुर और मुगलों की राजनीति में अहम भूमिका निभाई।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'chhatrapati_shivaji_maharaj', name: 'छत्रपति शिवाजी महाराज', subtitle: 'मराठा साम्राज्य के संस्थापक', parent: 'shahaji_bhonsle', mother: 'jijabai_jadhav', yug: 'kali', isProminent: true, parichay: 'भारत के महानतम योद्धाओं में से एक। इन्होंने आदिलशाही और मुगल साम्राज्य से संघर्ष कर 1674 ई. में एक स्वतंत्र "हिन्दवी स्वराज्य" (मराठा साम्राज्य) की स्थापना की।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'chhatrapati_sambhaji', name: 'छत्रपति सम्भाजी महाराज', subtitle: 'शिवाजी के ज्येष्ठ पुत्र', parent: 'chhatrapati_shivaji_maharaj', yug: 'kali', isProminent: true, parichay: 'इन्होंने अपने छोटे से शासनकाल में मुगलों से लगातार युद्ध किया और धर्म व स्वराज्य के लिए हंसते-हंसते अपना बलिदान दे दिया।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'chhatrapati_rajaram', name: 'छत्रपति राजाराम महाराज', subtitle: 'शिवाजी के कनिष्ठ पुत्र', parent: 'chhatrapati_shivaji_maharaj', yug: 'kali', parichay: 'सम्भाजी महाराज के बाद मराठा साम्राज्य का नेतृत्व किया और जिंजी के किले से मुगलों के खिलाफ स्वतंत्रता संग्राम जारी रखा।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'tarabai_bhosale', name: 'महारानी ताराबाई', subtitle: 'राजाराम की पत्नी', parent: '', spouseOf: 'chhatrapati_rajaram', yug: 'kali', parichay: 'छत्रपति राजाराम की मृत्यु के बाद इन्होंने मुगलों के खिलाफ मराठा स्वतंत्रता संग्राम का अत्यंत साहसपूर्ण नेतृत्व किया।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'chhatrapati_shahu', name: 'छत्रपति शाहू महाराज', subtitle: 'सम्भाजी के पुत्र', parent: 'chhatrapati_sambhaji', yug: 'kali', parichay: 'मुगलों की कैद से छूटने के बाद इन्होंने मराठा साम्राज्य का विस्तार किया और पेशवाओं (विशेषकर बाजीराव प्रथम) को नियुक्त किया।', clusterName: 'मराठा (भोंसले) वंश' },
-    { id: 'shivaji_ii', name: 'शिवाजी द्वितीय', subtitle: 'राजाराम व ताराबाई के पुत्र', parent: 'chhatrapati_rajaram', mother: 'tarabai_bhosale', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+
+    // Babaji Bhosale & Family
+    { id: 'babaji_bhonsle', name: 'बाबाजी भोंसले', gender: 'male', subtitle: 'वेरुल के पाटिल', parent: 'bhonsle_medieval_link', yug: 'kali', kali_year: 4699, parichay: 'मृत्यु: 1597 ई.। पुणे के निकट हिंगनी, बेरडी और देवलगाँव के पाटिल। शुभकृष्ण के पौत्र।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'vithoji_bhonsle', name: 'विठोजी भोंसले', gender: 'male', subtitle: 'बाबाजी के द्वितीय पुत्र', parent: 'babaji_bhonsle', yug: 'kali', kali_year: 4656, parichay: 'जन्म: 1554 ई.। बाबाजी भोंसले के छोटे बेटे। इन्होने अपने भाई मालोजी के साथ मिलकर काम किया। इनके आठ पुत्र थे।', clusterName: 'मराठा (भोंसले) वंश' },
+
+    // Maloji Bhosale & Family
+    { id: 'maloji_bhonsle', name: 'मालोजी राजे भोंसले', gender: 'male', subtitle: 'शिवाजी के दादा', parent: 'babaji_bhonsle', yug: 'kali', kali_year: 4654, parichay: 'जन्म: 1552 ई. | मृत्यु: 1605 ई.। इन्होंने अहमदनगर के निज़ामशाही सुल्तानों के यहाँ एक महान सेनापति के रूप में कार्य किया।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'umabai_nimbalkar', name: 'उमाबाई (दीपाबाई) निंबालकर', gender: 'female', subtitle: 'मालोजी की पत्नी', parent: '', spouseOf: 'maloji_bhonsle', yug: 'kali', kali_year: 4658, parichay: 'फलटन के देशमुख जगपालराव निंबालकर की बहन। शाहजी और शरीफजी की माता।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'sharifji_bhonsle', name: 'शरीफजी भोंसले', gender: 'male', subtitle: 'मालोजी के पुत्र', parent: 'maloji_bhonsle', mother: 'umabai_nimbalkar', yug: 'kali', kali_year: 4698, parichay: 'शाहजी के छोटे भाई। भातवड़ी के युद्ध (1624 ई.) में वीरगति प्राप्त की।', clusterName: 'मराठा (भोंसले) वंश' },
+
+    // Shahaji Bhosale & Family
+    { id: 'shahaji_bhonsle', name: 'शाहजी राजे भोंसले', gender: 'male', subtitle: 'शिवाजी के पिता', parent: 'maloji_bhonsle', mother: 'umabai_nimbalkar', yug: 'kali', kali_year: 4696, parichay: 'जन्म: 1594 ई. | मृत्यु: 1664 ई.। एक प्रमुख मराठा सेनापति जिन्होंने अहमदनगर, बीजापुर और मुगलों की राजनीति में अहम भूमिका निभाई।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'jijabai_jadhav', name: 'राजमाता जीजाबाई', gender: 'female', subtitle: 'शाहजी की प्रथम पत्नी', parent: '', spouseOf: 'shahaji_bhonsle', yug: 'kali', kali_year: 4700, parichay: 'जन्म: 12 जनवरी 1598 (सिंदखेड राजा) | मृत्यु: 17 जून 1674। छत्रपति शिवाजी महाराज की माता और उनकी सबसे बड़ी प्रेरणा।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'tukabai_mohite', name: 'तुकाबाई मोहिते', gender: 'female', subtitle: 'शाहजी की द्वितीय पत्नी', parent: '', spouseOf: 'shahaji_bhonsle', yug: 'kali', parichay: 'शाहजी महाराज की दूसरी पत्नी और व्यंकोजी (एकोजी) की माता।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'sambhaji_shahaji_bhosale', name: 'सम्भाजी राजे भोंसले', gender: 'male', subtitle: 'शाहजी के ज्येष्ठ पुत्र', parent: 'shahaji_bhonsle', mother: 'jijabai_jadhav', yug: 'kali', kali_year: 4725, parichay: 'जन्म: 1623 ई. | मृत्यु: 1654 ई.। शिवाजी महाराज के बड़े भाई, जो कनकगिरी के युद्ध में वीरगति को प्राप्त हुए।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'ekoji_i', name: 'व्यंकोजी (एकोजी प्रथम)', gender: 'male', subtitle: 'शाहजी के पुत्र (तंजौर शाखा)', parent: 'shahaji_bhonsle', mother: 'tukabai_mohite', yug: 'kali', kali_year: 4734, parichay: 'जन्म: 1632 ई. | मृत्यु: 1684 ई.। तंजौर (Thanjavur) मराठा साम्राज्य के संस्थापक। शिवाजी के सौतेले भाई।', clusterName: 'मराठा (भोंसले) वंश' },
+
+    // Chhatrapati Shivaji Maharaj & Wives
+    { id: 'chhatrapati_shivaji_maharaj', name: 'छत्रपति शिवाजी महाराज', gender: 'male', subtitle: 'मराठा साम्राज्य के संस्थापक', parent: 'shahaji_bhonsle', mother: 'jijabai_jadhav', yug: 'kali', kali_year: 4732, isProminent: true, parichay: 'जन्म: 19 फरवरी 1630 (तिथि: फाल्गुन कृष्ण तृतीया) | मृत्यु: 3 अप्रैल 1680 (तिथि: चैत्र पूर्णिमा हनुमान जयंती)। भारत के महानतम योद्धाओं में से एक। इन्होंने आदिलशाही और मुगल साम्राज्य से संघर्ष कर 1674 ई. में एक स्वतंत्र "हिन्दवी स्वराज्य" (मराठा साम्राज्य) की स्थापना की।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'saibai_nimbalkar', name: 'सईबाई निंबालकर', gender: 'female', subtitle: 'शिवाजी की प्रथम पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', kali_year: 4735, parichay: 'जन्म: 1633 ई. | मृत्यु: 1659 ई.। सम्भाजी महाराज की माता और शिवाजी महाराज की सबसे प्रिय रानी।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'soyarabai_mohite', name: 'सोयराबाई मोहिते', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', parichay: 'छत्रपति राजाराम की माता।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'putalabai_palkar', name: 'पुतळाबाई पालकर', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', parichay: 'शिवाजी महाराज के निधन के बाद सती हो गईं थीं।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'sakvarbai_gaikwad', name: 'सकवरबाई गायकवाड़', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', parichay: 'कमलाबाई की माता।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'kashibai_jadhav', name: 'काशीबाई जाधव', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'sagunabai_shirke', name: 'सगुणाबाई शिर्के', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', parichay: 'राजकुंवरबाई की माता।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'gunvantabai_ingle', name: 'गुणवंताबाई इंगले', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'lakshmibai_vichare', name: 'लक्ष्मीबाई विचारे', gender: 'female', subtitle: 'शिवाजी की पत्नी', parent: '', spouseOf: 'chhatrapati_shivaji_maharaj', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+
+    // Daughters of Shivaji Maharaj
+    { id: 'sakhubai_nimbalkar', name: 'सखूबाई निंबालकर', gender: 'female', subtitle: 'शिवाजी की पुत्री', parent: 'chhatrapati_shivaji_maharaj', mother: 'saibai_nimbalkar', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'ranubai_jadhav', name: 'राणूबाई जाधव', gender: 'female', subtitle: 'शिवाजी की पुत्री', parent: 'chhatrapati_shivaji_maharaj', mother: 'saibai_nimbalkar', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'ambikabai_mahadik', name: 'अंबिकाबाई महाडिक', gender: 'female', subtitle: 'शिवाजी की पुत्री', parent: 'chhatrapati_shivaji_maharaj', mother: 'saibai_nimbalkar', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'deepabai', name: 'दीपाबाई', gender: 'female', subtitle: 'शिवाजी की पुत्री', parent: 'chhatrapati_shivaji_maharaj', mother: 'soyarabai_mohite', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'kamalabai_palkar', name: 'कमलाबाई', gender: 'female', subtitle: 'शिवाजी की पुत्री', parent: 'chhatrapati_shivaji_maharaj', mother: 'sakvarbai_gaikwad', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'rajkunwarbai_shirke', name: 'राजकुंवरबाई', gender: 'female', subtitle: 'शिवाजी की पुत्री', parent: 'chhatrapati_shivaji_maharaj', mother: 'sagunabai_shirke', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
+
+    // Sons of Shivaji Maharaj
+    { id: 'chhatrapati_sambhaji', name: 'छत्रपति सम्भाजी महाराज', gender: 'male', subtitle: 'शिवाजी के ज्येष्ठ पुत्र', parent: 'chhatrapati_shivaji_maharaj', mother: 'saibai_nimbalkar', yug: 'kali', kali_year: 4759, isProminent: true, parichay: 'जन्म: 14 मई 1657 (तिथि: ज्येष्ठ शुक्ल द्वादशी) | मृत्यु: 11 मार्च 1689 (फाल्गुन अमावस्या)। इन्होंने अपने छोटे से शासनकाल में मुगलों से लगातार युद्ध किया और धर्म व स्वराज्य के लिए हंसते-हंसते अपना बलिदान दे दिया।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'chhatrapati_rajaram', name: 'छत्रपति राजाराम महाराज', gender: 'male', subtitle: 'शिवाजी के कनिष्ठ पुत्र', parent: 'chhatrapati_shivaji_maharaj', mother: 'soyarabai_mohite', yug: 'kali', kali_year: 4772, parichay: 'जन्म: 24 फरवरी 1670 (तिथि: फाल्गुन कृष्ण नवमी) | मृत्यु: 3 मार्च 1700। सम्भाजी महाराज के बाद मराठा साम्राज्य का नेतृत्व किया और जिंजी के किले से मुगलों के खिलाफ स्वतंत्रता संग्राम जारी रखा।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'tarabai_bhosale', name: 'महारानी ताराबाई', gender: 'female', subtitle: 'राजाराम की पत्नी', parent: '', spouseOf: 'chhatrapati_rajaram', yug: 'kali', parichay: 'छत्रपति राजाराम की मृत्यु के बाद इन्होंने मुगलों के खिलाफ मराठा स्वतंत्रता संग्राम का अत्यंत साहसपूर्ण नेतृत्व किया।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'chhatrapati_shahu', name: 'छत्रपति शाहू महाराज', gender: 'male', subtitle: 'सम्भाजी के पुत्र', parent: 'chhatrapati_sambhaji', yug: 'kali', parichay: 'मुगलों की कैद से छूटने के बाद इन्होंने मराठा साम्राज्य का विस्तार किया और पेशवाओं (विशेषकर बाजीराव प्रथम) को नियुक्त किया।', clusterName: 'मराठा (भोंसले) वंश' },
+    { id: 'shivaji_ii', name: 'शिवाजी द्वितीय', gender: 'male', subtitle: 'राजाराम व ताराबाई के पुत्र', parent: 'chhatrapati_rajaram', mother: 'tarabai_bhosale', yug: 'kali', clusterName: 'मराठा (भोंसले) वंश' },
     { id: 'rana_lakha', name: 'राणा लाखा', subtitle: 'मेवाड़ नरेश', parent: 'rana_hammir_sisodia', yug: 'kali', parichay: 'इन्हीं के समय में पिछोला झील का निर्माण हुआ और जावर में चांदी की खदानें मिली थीं।' },
 
     // Chundawat Branch
@@ -259,22 +325,62 @@ export const suryavanshData = [
     { id: 'raj_singh_mewar', name: 'महाराणा राज सिंह प्रथम', subtitle: 'मेवाड़ नरेश', parent: 'amar_singh_mewar', yug: 'kali', parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।', clusterName: 'गुहिल (सिसोदिया) वंश' },
     { id: 'arvind_singh_mewar', name: 'अरविन्द सिंह मेवाड़', subtitle: 'वर्तमान मुखिया', parent: 'raj_singh_mewar', yug: 'kali', parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।', clusterName: 'गुहिल (सिसोदिया) वंश' },
 
-    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
+    { id: 'kush', name: 'कुश', subtitle: 'राम के पुत्र', parent: 'ram', mother: 'sita', yug: 'treta', parichay: 'कुश ने कुशावती (कसूर) नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।' },
+
+    // Bedi Khatri Lineage (from Kush - via Bachittar Natak)
+    { id: 'kush_descendants_proxy', name: 'कुश के वंशज', subtitle: 'कसूर शाखा', parent: 'kush', yug: 'dwapar', clusterName: 'बेदी खत्री (कुश वंश)', isProxy: true, parichay: 'कुश के जिन वंशजों ने अयोध्या की बजाय पंजाब (कसूर) में राज किया।' },
+    { id: 'kalket', name: 'कालकेतु (कलकेत)', subtitle: 'कुश के वंशज', parent: 'kush_descendants_proxy', yug: 'dwapar', clusterName: 'बेदी खत्री (कुश वंश)', isProxy: true, parichay: '"बचित्तर नाटक" के अनुसार, इन्होंने लव के वंशज कल राय को पराजित कर लाहौर पर अधिकार किया। बाद में इनके वंशजों का राज छिन गया और वे काशी (वाराणसी) चले गए।' },
+    { id: 'bedi_vansh_proxy', name: 'बेदी खत्री', subtitle: 'कुश के वंशज', parent: 'kalket', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)', isProxy: true, parichay: 'काशी जाकर इन क्षत्रियों ने वेदों का गहन अध्ययन किया, जिसके कारण वे "वेदी" (Bedi/Baidy) कहलाए।' },
+
+    // Guru Nanak Dev Ji Ancestors
+    { id: 'baba_ram_narayan_bedi', name: 'बाबा राम नारायण बेदी', subtitle: 'गुरु नानक जी के परदादा', parent: 'bedi_vansh_proxy', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_shiv_ram_bedi', name: 'बाबा शिव राम बेदी', subtitle: 'गुरु नानक जी के दादा', parent: 'baba_ram_narayan_bedi', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'mata_banarasi', name: 'माता बनारसी', subtitle: 'गुरु नानक जी की दादी', parent: '', spouseOf: 'baba_shiv_ram_bedi', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+
+    { id: 'kalyan_das_bedi', name: 'कल्याण दास (मेहता कालू)', subtitle: 'गुरु नानक जी के पिता', parent: 'baba_shiv_ram_bedi', mother: 'mata_banarasi', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_lalu', name: 'बाबा लालू', subtitle: 'गुरु नानक जी के चाचा', parent: 'baba_shiv_ram_bedi', mother: 'mata_banarasi', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'mata_tripta', name: 'माता तृप्ता', subtitle: 'गुरु नानक जी की माता', parent: '', spouseOf: 'kalyan_das_bedi', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)', parichay: 'माता तृप्ता जी रामा (माझा) और भाई कृष्ण जी की बहन थीं।' },
+
+    // Guru Nanak Dev Ji & Siblings
+    { id: 'bebe_nanaki', name: 'बेबे नानकी', subtitle: 'गुरु नानक जी की बहन', parent: 'kalyan_das_bedi', mother: 'mata_tripta', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'bhai_jai_ram', name: 'भाई जय राम', subtitle: 'बेबे नानकी के पति', parent: '', spouseOf: 'bebe_nanaki', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'guru_nanak_dev', name: 'श्री गुरु नानक देव जी', subtitle: 'प्रथम सिख गुरु', parent: 'kalyan_das_bedi', mother: 'mata_tripta', yug: 'kali', isProminent: true, clusterName: 'बेदी खत्री (कुश वंश)', parichay: 'सिख धर्म के संस्थापक और प्रथम गुरु। इनका जन्म तलवंडी (ननकाना साहिब) में इसी सूर्यवंशी बेदी खत्री कुल में हुआ था।' },
+
+    // Guru Nanak Dev Ji In-laws & Wife
+    { id: 'baba_mool_chand', name: 'बाबा मूल चंद', subtitle: 'गुरु नानक जी के ससुर', parent: '', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'mata_chando_rani', name: 'माता चंदो रानी', subtitle: 'गुरु नानक जी की सास', parent: '', spouseOf: 'baba_mool_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'mata_sulakhni', name: 'माता सुलखनी', subtitle: 'गुरु नानक जी की पत्नी', parent: 'baba_mool_chand', mother: 'mata_chando_rani', spouseOf: 'guru_nanak_dev', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+
+    // Guru Nanak Dev Ji Descendants
+    { id: 'baba_sri_chand', name: 'बाबा श्री चंद', subtitle: 'उदासी संप्रदाय के संस्थापक', parent: 'guru_nanak_dev', mother: 'mata_sulakhni', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)', parichay: 'गुरु नानक देव जी के बड़े पुत्र। इन्होंने कभी विवाह नहीं किया और उदासी संप्रदाय की स्थापना की।' },
+    { id: 'baba_lakhmi_das', name: 'बाबा लखमी दास', subtitle: 'गुरु नानक जी के छोटे पुत्र', parent: 'guru_nanak_dev', mother: 'mata_sulakhni', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)', parichay: 'गुरु नानक देव जी के छोटे पुत्र। बेदी वंश इन्ही के द्वारा आगे बढ़ा।' },
+
+    // Lineage from Baba Lakhmi Das
+    { id: 'baba_dharam_chand', name: 'बाबा धरम चंद', subtitle: 'बाबा लखमी दास के पुत्र', parent: 'baba_lakhmi_das', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_mehar_chand', name: 'बाबा मेहर चंद', subtitle: 'मेहरचंदिया बेदी शाखा', parent: 'baba_dharam_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_manik_chand', name: 'बाबा मानिक चंद', subtitle: 'मानिकचंदिया बेदी शाखा', parent: 'baba_dharam_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_dataar_chand', name: 'बाबा दातार चंद', subtitle: 'बाबा मानिक चंद के पुत्र', parent: 'baba_manik_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_pahar_chand', name: 'बाबा पहाड़ चंद', subtitle: 'बाबा दातार चंद के पुत्र', parent: 'baba_dataar_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_harkaran_chand', name: 'बाबा हरकरन चंद', subtitle: 'बाबा पहाड़ चंद के पुत्र', parent: 'baba_pahar_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_nihal_chand', name: 'बाबा निहाल चंद', subtitle: 'बाबा हरकरन चंद के पुत्र', parent: 'baba_harkaran_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_kaladhari', name: 'बाबा कलाधारी', subtitle: 'बाबा निहाल चंद के पुत्र', parent: 'baba_nihal_chand', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_jit_singh', name: 'बाबा जीत सिंह', subtitle: 'बाबा कलाधारी के पुत्र', parent: 'baba_kaladhari', yug: 'kali', clusterName: 'बेदी खत्री (कुश वंश)' },
+    { id: 'baba_sahib_singh_bedi', name: 'बाबा साहिब सिंह बेदी', subtitle: 'सिख इतिहास की सम्मानित हस्ती', parent: 'baba_jit_singh', yug: 'kali', isProminent: true, clusterName: 'बेदी खत्री (कुश वंश)', parichay: 'बाबा साहिब सिंह बेदी जी सिख इतिहास में एक अत्यंत सम्मानित हस्ती थे, जिन्होंने महाराजा रणजीत सिंह का राज्याभिषेक किया था।' },
 
     // Kush's descendants (to Mahabharat era)
     { id: 'kumudvati', name: 'कुमुद्वती', subtitle: 'कुश पत्नी', parent: '', spouseOf: 'kush', yug: 'treta', parichay: 'ये एक नागकन्या थीं।' },
-    { id: 'atithi', name: 'अतिथि', subtitle: 'कुश पुत्र', parent: 'kush', mother: 'kumudvati', yug: 'treta' },
-    { id: 'nishadha', name: 'निषध', subtitle: 'अतिथि पुत्र', parent: 'atithi', yug: 'treta' },
-    { id: 'nala', name: 'नल', subtitle: 'निषध पुत्र', parent: 'nishadha', yug: 'treta' },
-    { id: 'nabhas', name: 'नभस्', subtitle: 'नल पुत्र', parent: 'nala', yug: 'treta' },
-    { id: 'pundarika', name: 'पुण्डरीक', subtitle: 'नभस् पुत्र', parent: 'nabhas', yug: 'treta' },
-    { id: 'kshemadhanvan', name: 'क्षेमधन्वन्', subtitle: 'पुण्डरीक पुत्र', parent: 'pundarika', yug: 'treta' },
-    { id: 'devanika', name: 'देवानीक', subtitle: 'क्षेमधन्वन् पुत्र', parent: 'kshemadhanvan', yug: 'treta' },
-    { id: 'ahinagu', name: 'अहीनगु', subtitle: 'देवानीक पुत्र', parent: 'devanika', yug: 'treta' },
-    { id: 'ruru_suryavansh', name: 'रुरु', subtitle: 'अहीनगु पुत्र', parent: 'ahinagu', yug: 'treta' },
-    { id: 'paripatra', name: 'पारिपात्र', subtitle: 'रुरु पुत्र', parent: 'ruru_suryavansh', yug: 'treta' },
-    { id: 'shala_surya', name: 'शल', subtitle: 'पारिपात्र पुत्र', parent: 'paripatra', yug: 'treta' },
-    { id: 'dala', name: 'दल', subtitle: 'शल पुत्र', parent: 'shala_surya', yug: 'treta' },
+    { id: 'atithi', name: 'अतिथि', subtitle: 'कुश पुत्र', parent: 'kush', mother: 'kumudvati', yug: 'dwapar', kali_year: -3500 },
+    { id: 'nishadha', name: 'निषध', subtitle: 'अतिथि पुत्र', parent: 'atithi', yug: 'dwapar' },
+    { id: 'nala', name: 'नल', subtitle: 'निषध पुत्र', parent: 'nishadha', yug: 'dwapar' },
+    { id: 'nabhas', name: 'नभस्', subtitle: 'नल पुत्र', parent: 'nala', yug: 'dwapar' },
+    { id: 'pundarika', name: 'पुण्डरीक', subtitle: 'नभस् पुत्र', parent: 'nabhas', yug: 'dwapar' },
+    { id: 'kshemadhanvan', name: 'क्षेमधन्वन्', subtitle: 'पुण्डरीक पुत्र', parent: 'pundarika', yug: 'dwapar' },
+    { id: 'devanika', name: 'देवानीक', subtitle: 'क्षेमधन्वन् पुत्र', parent: 'kshemadhanvan', yug: 'dwapar' },
+    { id: 'ahinagu', name: 'अहीनगु', subtitle: 'देवानीक पुत्र', parent: 'devanika', yug: 'dwapar' },
+    { id: 'ruru_suryavansh', name: 'रुरु', subtitle: 'अहीनगु पुत्र', parent: 'ahinagu', yug: 'dwapar' },
+    { id: 'paripatra', name: 'पारिपात्र', subtitle: 'रुरु पुत्र', parent: 'ruru_suryavansh', yug: 'dwapar' },
+    { id: 'shala_surya', name: 'शल', subtitle: 'पारिपात्र पुत्र', parent: 'paripatra', yug: 'dwapar' },
+    { id: 'dala', name: 'दल', subtitle: 'शल पुत्र', parent: 'shala_surya', yug: 'dwapar' },
     { id: 'bala', name: 'बल', subtitle: 'दल पुत्र', parent: 'dala', yug: 'dwapar' },
     { id: 'uktha', name: 'उक्थ', subtitle: 'बल पुत्र', parent: 'bala', yug: 'dwapar' },
     { id: 'sahasrashva', name: 'सहस्राश्व', subtitle: 'उक्थ पुत्र', parent: 'uktha', yug: 'dwapar' },
@@ -292,12 +398,12 @@ export const suryavanshData = [
     { id: 'sudarshana', name: 'सुदर्शन', subtitle: 'ध्रुवसन्धि पुत्र', parent: 'dhruvasandhi', yug: 'dwapar' },
     { id: 'agnivarna', name: 'अग्निवर्ण', subtitle: 'सुदर्शन पुत्र', parent: 'sudarshana', yug: 'dwapar' },
     { id: 'shighra', name: 'शीघ्र', subtitle: 'अग्निवर्ण पुत्र', parent: 'agnivarna', yug: 'dwapar' },
-    { id: 'maru_suryavansh', name: 'मरु', subtitle: 'शीघ्र पुत्र (अयोध्या नरेश)', parent: 'shighra', yug: 'dwapar' },
+    { id: 'maru_suryavansh', name: 'मरु', subtitle: 'शीघ्र पुत्र', parent: 'shighra', yug: 'dwapar', parichay: 'श्रीमद्भागवत और कल्कि पुराण के अनुसार, इन्होने योग के बल से मृत्यु को जीत लिया था और आज भी कलाप ग्राम में जीवित हैं। 28वें कलियुग के अंत में ये वापस आकर नए सत्य युग में इक्ष्वाकु (सूर्य) वंश की पुनः स्थापना करेंगे।' },
     { id: 'prasushruta', name: 'प्रसुश्रुत', subtitle: 'मरु पुत्र', parent: 'maru_suryavansh', yug: 'dwapar' },
     { id: 'susandhi', name: 'सुसन्धि', subtitle: 'प्रसुश्रुत पुत्र', parent: 'prasushruta', yug: 'dwapar' },
-    { id: 'amarsha', name: 'अमर्ष', subtitle: 'सुसन्धि पुत्र', parent: 'susandhi', yug: 'dwapar' },
-    { id: 'vishrutavant', name: 'विश्रुतवन्त्', subtitle: 'अमर्ष पुत्र', parent: 'amarsha', yug: 'dwapar' },
-    { id: 'brihadbala', name: 'बृहद्बल', subtitle: 'महाभारत योद्धा (कौरव पक्ष)', parent: 'vishrutavant', yug: 'dwapar', parichay: 'ये अयोध्या के राजा थे और महाभारत युद्ध में कौरवों की ओर से लड़े थे। ये अभिमन्यु के हाथों वीरगति को प्राप्त हुए थे। कछवाहा राजपूत कुश के वंशज माने जाते हैं।' },
+    { id: 'amarsha', name: 'अमर्ष', subtitle: 'सुसन्धि पुत्र', parent: 'susandhi', yug: 'dwapar', kali_year: -161 },
+    { id: 'vishrutavant', name: 'विश्रुतवन्त्', subtitle: 'अमर्ष पुत्र', parent: 'amarsha', yug: 'dwapar', kali_year: -131 },
+    { id: 'brihadbala', name: 'बृहद्बल', subtitle: 'महाभारत योद्धा (कौरव पक्ष)', parent: 'vishrutavant', yug: 'dwapar', parichay: 'ये अयोध्या के राजा थे और महाभारत युद्ध में कौरवों की ओर से लड़े थे। ये अभिमन्यु के हाथों वीरगति को प्राप्त हुए थे। कछवाहा राजपूत कुश के वंशज माने जाते हैं।', kali_year: -101 },
 
     // Post-Mahabharata Ikshvaku Kings (Brihadbala to Sumitra)
     { id: 'brihatkshaya', name: 'बृहत्क्षय', subtitle: 'बृहद्बल पुत्र', parent: 'brihadbala', yug: 'kali' },
@@ -590,7 +696,7 @@ export const suryavanshData = [
     { id: 'mohandas', name: 'मोहनदास', subtitle: 'शीघ्र पुत्र', parent: 'shighra', yug: 'dwapar', parichay: 'ये भगवान विष्णु (रंगनाथ) के परम भक्त थे। इन्होंने कावेरी नदी के तट पर भगवान रंगनाथ के कई भव्य मंदिर बनवाए थे।' },
     { id: 'neminath_suryavansh', name: 'नेमिनाथ', subtitle: 'मोहनदास पुत्र', parent: 'mohandas', yug: 'dwapar', parichay: 'इन्होंने प्राचीन काल में नेपाल में अपना राज्य स्थापित किया था और वहां शासन किया।' },
     { id: 'vrand', name: 'व्रंद', subtitle: 'नेमिनाथ पुत्र', parent: 'neminath_suryavansh', yug: 'dwapar', parichay: 'व्रंद महाराजा वल्लभ देव के पिता थे, जो कि प्रतापनगर के शासक बने।' },
-    { id: 'raja_vallabh', name: 'महाराजा वल्लभ देव', subtitle: 'प्रतापनगर के राजा', parent: 'vrand', yug: 'dwapar', parichay: 'ये कुश की पीढ़ी में प्रतापनगर (राजस्थान) के सूर्यवंशी राजा थे। इन्होने अपने ज्येष्ठ पुत्र अग्रसेन को युद्ध से रोकना चाहा क्योंकि वह केवल 15 वर्ष के थे, लेकिन माता भगवती की आज्ञा पाकर दोनों युद्ध में गए। महाभारत युद्ध में पांडवों की ओर से लड़ते हुए ये भीष्म पितामह के बाणों से वीरगति को प्राप्त हुए। भगवान श्रीकृष्ण ने स्वयं इनके पुत्र अग्रसेन को सांत्वना दी थी और वल्लभ देव को धर्म और सत्य के लिए प्राण त्यागने वाला अमर शहीद बताया था।' },
+    { id: 'raja_vallabh', name: 'महाराजा वल्लभ देव', subtitle: 'प्रतापनगर के राजा', parent: 'vrand', yug: 'dwapar', parichay: 'ये कुश की पीढ़ी में प्रतापनगर (राजस्थान) के सूर्यवंशी राजा थे। इन्होने अपने ज्येष्ठ पुत्र अग्रसेन को युद्ध से रोकना चाहा क्योंकि वह केवल 15 वर्ष के थे, लेकिन माता भगवती की आज्ञा पाकर दोनों युद्ध में गए। महाभारत युद्ध में पांडवों की ओर से लड़ते हुए ये भीष्म पितामह के बाणों से वीरगति को प्राप्त हुए। भगवान श्रीकृष्ण ने स्वयं इनके पुत्र अग्रसेन को सांत्वना दी थी और वल्लभ देव को धर्म और सत्य के लिए प्राण त्यागने वाला अमर शहीद बताया था।', kali_year: -111 },
     { id: 'bhagwati_devi', name: 'भगवती देवी', subtitle: 'वल्लभ देव की पत्नी', parent: '', spouseOf: 'raja_vallabh', yug: 'dwapar', parichay: 'महारानी भगवती देवी (विदर्भनंदिनी) ने ही अपने युवा पुत्र अग्रसेन को धर्म-युद्ध (महाभारत) में भाग लेने की अनुमति दी थी।' },
     {
         id: 'maharaja_agrasen',
@@ -599,6 +705,7 @@ export const suryavanshData = [
         parent: 'raja_vallabh',
         mother: 'bhagwati_devi',
         yug: 'dwapar',
+        kali_year: -51,
         parichay: 'इन्होंने अग्रोहा नगर की स्थापना की और अग्रवाल समाज का निर्माण किया। 15 वर्ष की आयु में इन्होने महाभारत युद्ध में पांडवों की ओर से भाग लिया था। भारतेन्दु हरिश्चंद्र के 1871 के निबंध "अग्रवालों की उत्पत्ति" (जिसका स्रोत भविष्य पुराण की "महालक्ष्मी व्रत कथा" माना जाता है) के अनुसार ये द्वापर युग के अंत और कलयुग के प्रारंभ (लगभग 3082 ईसा पूर्व) के समय भगवान कृष्ण के समकालीन थे।',
         events: [
             '15 वर्ष की आयु में पिता वल्लभ देव के साथ महाभारत युद्ध में पांडवों के पक्ष से लड़े।',
@@ -643,10 +750,10 @@ export const suryavanshData = [
     { id: 'karanchand', name: 'करनचंद', subtitle: 'कुच्छल गोत्र', parent: 'agrawal_dynasty_proxy', mother: 'madhavi_agrasen', yug: 'dwapar', parichay: 'कुच्छल गोत्र के प्रवर्तक। गुरु: कश्यप।', clusterName: 'अग्रवाल वंश' },
     { id: 'narsev', name: 'नरसेव', subtitle: 'नांगल गोत्र', parent: 'agrawal_dynasty_proxy', mother: 'madhavi_agrasen', yug: 'dwapar', parichay: 'नांगल गोत्र के प्रवर्तक। गुरु: नागेंद्र।', clusterName: 'अग्रवाल वंश' },
 
-    { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'treta' },
+    { id: 'hanuman', name: 'हनुमान', subtitle: 'राम भक्त / शिव अंश', parent: 'vayu', yug: 'dwapar' },
 
 
 
 
-    { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', parent: 'arun', yug: 'treta' }
+    { id: 'jatayu', name: 'जटायु', subtitle: 'गृध्रराज', parent: 'arun', yug: 'dwapar' }
 ];
