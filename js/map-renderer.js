@@ -579,7 +579,6 @@ window.MapRenderer = {
         const kalpBottomLine = kalpY + ((manvantaraY - kalpY) / 2);
 
         const KALIYUG_ZERO_Y = 36800;
-        const PIXELS_PER_YEAR = 3;
 
         const dividers = [
             { label: 'Sanatan (Eternal) Zone ↑', y: sanatanBottomLine, color: '#FFD700' },

@@ -75,11 +75,31 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
     // Calculate Y strictly based on depth: startY + (depth * spacing) + extra padding
         // AUTO-POSITIONING BASED ON KALIYUG RULER
     if (node.kali_year !== undefined) {
-        // 1 Kali Year = 2 pixels (adjustable scale)
-        // Offset by 10000 pixels so the macro cosmic stuff stays far above Kaliyug 0
-        const KALIYUG_ZERO_Y = 36800; // 6500(Pre-Satya) + 1200(Satya) + 18600(Treta) + 10500(Dwapar) = 36800
-        const PIXELS_PER_YEAR = 3;
-        node.y = KALIYUG_ZERO_Y + (node.kali_year * PIXELS_PER_YEAR);
+        const KALIYUG_ZERO_Y = 36800;
+
+        // Dynamic Yuga Scaling
+        // Satya: 6500 to 7700 (1200px) spans year -10000 to -6400 (3600 years) -> 1200/3600 = 0.33 px/yr
+        // Treta: 7700 to 26300 (18600px) spans year -6400 to -2800 (3600 years) -> 18600/3600 = 5.16 px/yr
+        // Dwapar: 26300 to 36800 (10500px) spans year -2800 to 0 (2800 years) -> 10500/2800 = 3.75 px/yr
+        // Kali: 36800+ spans 0+ -> 3 px/yr
+
+        let yPos = KALIYUG_ZERO_Y;
+        if (node.kali_year > 0) {
+            yPos = KALIYUG_ZERO_Y + (node.kali_year * 3);
+        } else if (node.kali_year >= -2800) {
+             // Dwapar
+             yPos = 36800 - (Math.abs(node.kali_year) * 3.75);
+        } else if (node.kali_year >= -6400) {
+             // Treta
+             let diff = Math.abs(node.kali_year) - 2800;
+             yPos = 26300 - (diff * 5.16);
+        } else {
+             // Satya
+             let diff = Math.abs(node.kali_year) - 6400;
+             yPos = 7700 - (diff * 0.33);
+        }
+
+        node.y = yPos;
 
         // Sync downstream depth-based nodes by updating startY for its children
         // We calculate an artificial "depth Y" to reset the baseline for children without kali_year
