@@ -75,11 +75,35 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
     // Calculate Y strictly based on depth: startY + (depth * spacing) + extra padding
         // AUTO-POSITIONING BASED ON KALIYUG RULER
     if (node.kali_year !== undefined) {
-        // 1 Kali Year = 2 pixels (adjustable scale)
-        // Offset by 10000 pixels so the macro cosmic stuff stays far above Kaliyug 0
-        const KALIYUG_ZERO_Y = 36800; // 6500(Pre-Satya) + 1200(Satya) + 18600(Treta) + 10500(Dwapar) = 36800
-        const PIXELS_PER_YEAR = 3;
-        node.y = KALIYUG_ZERO_Y + (node.kali_year * PIXELS_PER_YEAR);
+        const KALIYUG_ZERO_Y = 36800;
+
+        let calculatedY = KALIYUG_ZERO_Y;
+        let remainingYears = Math.abs(node.kali_year);
+
+        // Positive kali_year (Kaliyug)
+        if (node.kali_year >= 0) {
+            calculatedY = KALIYUG_ZERO_Y + (node.kali_year * 3);
+        } else {
+            // Negative kali_year (Pre-Kaliyug)
+            // Use the strict Yuga scale defined by generational density
+            if (remainingYears <= 864000) {
+                // Dvapara Yuga: 864,000 years fits in 10,500px => ~82.285 years/px
+                calculatedY = KALIYUG_ZERO_Y - (remainingYears / (864000 / 10500));
+            } else if (remainingYears <= 2160000) { // 864k + 1296k
+                // Treta Yuga: 1,296,000 years fits in 18,600px => ~69.677 years/px
+                const dwaparPx = 10500;
+                const tretaYears = remainingYears - 864000;
+                calculatedY = KALIYUG_ZERO_Y - dwaparPx - (tretaYears / (1296000 / 18600));
+            } else {
+                // Satya Yuga: 1,728,000 years fits in 1200px => 1440 years/px
+                const dwaparPx = 10500;
+                const tretaPx = 18600;
+                const satyaYears = remainingYears - 2160000;
+                calculatedY = KALIYUG_ZERO_Y - dwaparPx - tretaPx - (satyaYears / (1728000 / 1200));
+            }
+        }
+
+        node.y = calculatedY;
 
         // Sync downstream depth-based nodes by updating startY for its children
         // We calculate an artificial "depth Y" to reset the baseline for children without kali_year
