@@ -14,7 +14,7 @@ import { agnivanshData } from './historic-map-data/brahma/agnivansh.js';
 import { jhansiNewalkarData } from './historic-map-data/brahma/jhansi-newalkar.js';
 
 // Combine all data into one master array
-const historicData = [
+export const historicData = [
     ...supremeData,
     ...vishnuBaseData,
     ...maheshBaseData,
