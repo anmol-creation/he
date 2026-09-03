@@ -1,7 +1,23 @@
 export const kashyapData = [
 
-    { id: 'kashyap_other_creations_proxy', name: 'कश्यप की अन्य संतति', subtitle: 'नाग, गंधर्व, दैत्य, यक्ष', isProxy: true, parent: 'kashyap', clusterName: 'कश्यप की अन्य संतति', timeScale: 'kalpa', yug: 'satya' },
-    { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya', clusterName: 'मरीचि वंश' },
+   { id: 'kashyap', name: 'कश्यप', subtitle: 'महान ऋषि', parent: 'marichi', yug: 'satya', clusterName: 'कश्यप वंश' },
+
+    // --- कश्यप की मानव / ब्राह्मण वंशावली (The Human/Brahmin Lineage of Kashyapa) ---
+    { id: 'avatsara', name: 'अवत्सार', subtitle: 'कश्यप के पुत्र', parent: 'kashyap', yug: 'satya', gender: 'male', parichay: 'महर्षि कश्यप के पुत्र जो एक महान ऋषि हुए। इन्हीं के वंश से "कश्यप गोत्र" की मुख्य ब्राह्मण वंशावली (नैध्रुव, रैभ्य) आगे बढ़ी। ये ऋग्वेद के मंत्रद्रष्टा थे।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'asita_rishi', name: 'असित', subtitle: 'कश्यप के पुत्र', parent: 'kashyap', yug: 'satya', gender: 'male', parichay: 'महर्षि कश्यप के पुत्र और मंत्रद्रष्टा ऋषि। इन्हीं के वंश से महान ऋषि देवल और शांडिल्य हुए।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+
+    // Avatsara's Branch
+    { id: 'naidhruva', name: 'नैध्रुव', subtitle: 'अवत्सार पुत्र', parent: 'avatsara', yug: 'satya', gender: 'male', parichay: 'ऋषि अवत्सार के पुत्र। कश्यप गोत्र वाले ब्राह्मणों का मुख्य प्रवर "कश्यप, अवत्सार, नैध्रुव" इन्हीं के नाम पर है।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'sumedha_wife', name: 'सुमेधा', subtitle: 'नैध्रुव की पत्नी', parent: 'chyavana', spouseOf: 'naidhruva', yug: 'satya', gender: 'female', parichay: 'ऋषि च्यवन की पुत्री और महर्षि नैध्रुव की पत्नी।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'rebha_rishi', name: 'रेभ', subtitle: 'अवत्सार पुत्र', parent: 'avatsara', yug: 'satya', gender: 'male', parichay: 'ऋषि अवत्सार के पुत्र। ऋग्वेद के कई सूक्तों के द्रष्टा।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'raibhya_rishi', name: 'रैभ्य', subtitle: 'रेभ पुत्र', parent: 'rebha_rishi', yug: 'treta', gender: 'male', parichay: 'महर्षि रेभ के पुत्र। भरद्वाज ऋषि के मित्र, जिनके आश्रम में पांडवों ने तीर्थयात्रा के समय विश्राम किया था।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'arvavasu', name: 'अर्वावसु', subtitle: 'रैभ्य पुत्र', parent: 'raibhya_rishi', yug: 'dwapar', gender: 'male', parichay: 'महर्षि रैभ्य के बड़े पुत्र, जो एक महान तपस्वी और धर्मात्मा थे। जब इनके भाई परावसु ने पिता का वध कर दिया, तो अर्वावसु ने कठिन तपस्या करके पिता को पुनर्जीवित किया।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'paravasu', name: 'परावसु', subtitle: 'रैभ्य पुत्र', parent: 'raibhya_rishi', yug: 'dwapar', gender: 'male', parichay: 'महर्षि रैभ्य के छोटे पुत्र। एक रात यज्ञ से लौटते समय इन्होंने अंधकार में भूलवश अपने ही पिता को जंगली पशु समझकर उनका वध कर दिया था।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+
+    // Asita's Branch
+    { id: 'shandilya_rishi', name: 'शांडिल्य', subtitle: 'असित पुत्र (शांडिल्य गोत्र)', parent: 'asita_rishi', yug: 'treta', gender: 'male', parichay: 'असित ऋषि के पुत्र। ये इतने महान हुए कि इन्होंने कश्यप गोत्र से अलग होकर अपना एक नया "शांडिल्य गोत्र" स्थापित किया, जो आज भी कई ब्राह्मणों (जैसे त्यागी, मैथिल, बनर्जी) का गोत्र है।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+    { id: 'devala_rishi', name: 'देवल', subtitle: 'असित पुत्र', parent: 'asita_rishi', yug: 'dwapar', gender: 'male', parichay: 'असित ऋषि के महान पुत्र, जिन्हें प्रायः असित-देवल कहा जाता है। महाभारत काल में इनका प्रमुख उल्लेख है और इन्होंने ही हूहू गंधर्व को मगरमच्छ बनने का शाप दिया था।', clusterName: 'कश्यप गोत्र (ब्राह्मण वंश)' },
+
     { id: 'aditi', name: 'अदिति', subtitle: 'देवताओं की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'diti', name: 'दिति', subtitle: 'दैत्यों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
     { id: 'danu', name: 'दनु', subtitle: 'दानवों की माता', parent: 'daksha', spouseOf: 'kashyap', yug: 'satya', clusterName: 'कश्यप की १३ पत्नियाँ' },
@@ -23,10 +39,10 @@ export const kashyapData = [
     { id: 'dwadash_aditya_proxy', name: 'अन्य आदित्य', subtitle: 'द्वादश आदित्य', isProxy: true, parent: 'kashyap', clusterName: 'द्वादश आदित्य (अन्य)', yug: 'satya' },
     { id: 'dhatri_aditya', name: 'धाता', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
     { id: 'aryaman_aditya', name: 'अर्यमा', subtitle: 'आदित्य (पितरों के अधिपति)', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
-    { id: 'mitra_aditya', name: 'मित्र', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
-    { id: 'varuna_aditya', name: 'वरुण', subtitle: 'आदित्य (जल के देवता)', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+
+
     { id: 'anshuman_aditya', name: 'अंशुमान', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
-    { id: 'bhaga_aditya', name: 'भग', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
+
     { id: 'pushan_aditya', name: 'पूषा', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
     { id: 'savitr_aditya', name: 'सविता', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
     { id: 'tvashtar_aditya', name: 'त्वष्टा', subtitle: 'आदित्य', parent: 'kashyap', mother: 'aditi', yug: 'satya', clusterName: 'द्वादश आदित्य (अन्य)' },
