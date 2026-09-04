@@ -3353,33 +3353,49 @@ export const suryavanshData = [
     },
 
     // Descendants of Sumitra leading to Mewar (According to Raj Prashasti)
+
+    {
+        id: 'missing_generations_mewar',
+        name: 'ऐतिहासिक अंतराल',
+        subtitle: 'अज्ञात पीढ़ियाँ',
+        parent: 'sumitra_king',
+        yug: 'kali',
+        kali_year: 2300,
+        isProxy: true,
+        clusterName: 'मेवाड़ वंश',
+        parichay: 'सुमित्र (नंद काल) और कनकसेन (दूसरी शताब्दी) के मध्य लगभग 1700 वर्षों का अंतराल है। चारण/भाट वंशावलियों में कुछ गिने-चुने नाम मिलते हैं (जैसे वज्रनाभ), लेकिन स्पष्ट है कि यहाँ अनेक पीढ़ियाँ विलुप्त या अज्ञात हैं।'
+    },
     {
         id: 'vajranabh',
         name: 'वज्रनाभ',
         subtitle: 'सुमित्र पुत्र',
-        parent: 'sumitra_king',
-        yug: 'kali'
+        parent: 'missing_generations_mewar',
+        yug: 'kali',
+        kali_year: 3086,
     },
     {
         id: 'maharathi',
         name: 'महारथी',
         subtitle: 'वज्रनाभ पुत्र',
         parent: 'vajranabh',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 3126,
     },
     {
         id: 'atirathi',
         name: 'अतिरथी',
         subtitle: 'महारथी पुत्र',
         parent: 'maharathi',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 3166,
     },
     {
         id: 'achalasen',
         name: 'अचलसेन',
         subtitle: 'अतिरथी पुत्र',
         parent: 'atirathi',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 3206
     },
 
     // Guhila / Sisodia Dynasty of Mewar (Origin Debate: Luv vs Kusha)
@@ -3389,6 +3405,7 @@ export const suryavanshData = [
         subtitle: 'वल्लभी के संस्थापक',
         parent: 'achalasen',
         yug: 'kali',
+        kali_year: 3246,
         parichay: 'ऐतिहासिक डिबेट: कर्नल टॉड के अनुसार कनकसेन लव के वंशज थे जो लाहौर से गुजरात आये। लेकिन मेवाड़ के आधिकारिक "राज प्रशस्ति" शिलालेख के अनुसार, कनकसेन कुश के वंशज राजा सुमित्र की लाइन (सुमित्र -> वज्रनाभ -> महारथी -> अतिरथी -> अचलसेन -> कनकसेन) से आते हैं। इन्होंने सौराष्ट्र में वल्लभी (Vallabhi) राज्य की स्थापना की।'
     },
     {
