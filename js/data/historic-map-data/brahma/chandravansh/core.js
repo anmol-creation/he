@@ -705,31 +705,6 @@ export const chandravanshCoreData = [
   clusterName: 'गाहड़वाल वंश'
 },
     {
-  id: 'parjanya_gopa_chandra',
-  name: 'पर्जन्य',
-  subtitle: 'गोप',
-  parent: 'other_dynasties_proxy',
-  yug: 'dwapar',
-  clusterName: 'अन्य राजवंश (इन-लॉ)'
-},
-    {
-  id: 'nanda_chandra',
-  name: 'नंद बाबा',
-  subtitle: 'कृष्ण के पालक पिता',
-  parent: 'parjanya_gopa_chandra',
-  yug: 'dwapar',
-  clusterName: 'अन्य राजवंश (इन-लॉ)'
-},
-    {
-  id: 'yashoda_chandra',
-  name: 'यशोदा',
-  subtitle: 'कृष्ण की पालक माता',
-  parent: '',
-  spouseOf: 'nanda_chandra',
-  yug: 'dwapar',
-  clusterName: 'अन्य राजवंश (इन-लॉ)'
-},
-    {
   id: 'other_dynasties_proxy',
   name: 'अन्य राजवंश',
   subtitle: 'विवाह सम्बन्धित',
@@ -740,52 +715,13 @@ export const chandravanshCoreData = [
   timeScale: 'kalpa'
 },
     {
-  id: 'virata_matsya',
-  name: 'विराट',
-  subtitle: 'मत्स्य नरेश',
-  parent: 'other_dynasties_proxy',
-  clusterName: 'अन्य राजवंश (इन-लॉ)',
-  yug: 'dwapar'
-},
-    {
-  id: 'shalya_madra_king',
-  name: 'शल्य',
-  subtitle: 'मद्र नरेश',
-  parent: 'other_dynasties_proxy',
-  clusterName: 'अन्य राजवंश (इन-लॉ)',
-  yug: 'dwapar'
-},
-    {
-  id: 'subala_gandhara_king',
-  name: 'सुबल',
-  subtitle: 'गांधार नरेश',
-  parent: 'other_dynasties_proxy',
-  clusterName: 'अन्य राजवंश (इन-लॉ)',
-  yug: 'dwapar'
-},
-    {
   id: 'chitravahana_manipur',
   name: 'चित्रवाहन',
   subtitle: 'मणिपुर नरेश',
   parent: 'other_dynasties_proxy',
   clusterName: 'अन्य राजवंश (इन-लॉ)',
+  gender: 'male',
   yug: 'dwapar'
-},
-    {
-  id: 'vridhakshetra_sindhu',
-  name: 'वृद्धक्षत्र',
-  subtitle: 'सिन्धु नरेश',
-  parent: 'other_dynasties_proxy',
-  clusterName: 'अन्य राजवंश (इन-लॉ)',
-  yug: 'dwapar'
-},
-    {
-  id: 'jayadratha',
-  name: 'जयद्रथ',
-  subtitle: 'सिन्धु नरेश',
-  parent: 'vridhakshetra_sindhu',
-  yug: 'dwapar',
-  parichay: 'कौरवों के बहनोई और सिन्धु नरेश। दुर्योधन की बहन दुश्शला के पति।'
 },
     {
   id: 'rai_sahasi_ii',
@@ -1424,36 +1360,5 @@ export const chandravanshCoreData = [
   yug: 'kali',
   parichay: 'इन्हें कांगड़ा का स्वर्ण युग लाने का श्रेय है। इन्होंने कांगड़ा चित्रकला (Kangra Paintings) को संरक्षण दिया और महाराजा रणजीत सिंह के साथ संधियां कीं।',
   clusterName: 'कटोच (कांगड़ा) वंश'
-},
-    {
-  id: 'bhishmaka_chandra',
-  name: 'भीष्मक',
-  subtitle: 'विदर्भ नरेश',
-  parent: 'other_dynasties_proxy',
-  clusterName: 'अन्य राजवंश (इन-लॉ)',
-  yug: 'dwapar'
-},
-    {
-  id: 'rukmi_vidarbha_chandra',
-  name: 'रुक्मी',
-  subtitle: 'रुक्मिणी का भाई',
-  parent: 'bhishmaka_chandra',
-  yug: 'dwapar'
-},
-    {
-  id: 'damaghosha_chandra',
-  name: 'दमघोष',
-  subtitle: 'चेदि नरेश',
-  parent: 'other_dynasties_proxy',
-  clusterName: 'अन्य राजवंश (इन-लॉ)',
-  yug: 'dwapar'
-},
-    {
-  id: 'shishupala_chandra',
-  name: 'शिशुपाल',
-  subtitle: 'चेदि नरेश',
-  parent: 'damaghosha_chandra',
-  mother: 'shrutasrava_chandra',
-  yug: 'dwapar'
 }
 ];

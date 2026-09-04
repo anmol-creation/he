@@ -433,6 +433,34 @@ export const yaduData = [
   clusterName: 'नहुष चंद्रवंशी'
 },
     {
+  id: 'vidarbha_dynasty_proxy',
+  name: 'विदर्भ वंश',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'vidarbha_yadu',
+  yug: 'treta',
+  clusterName: 'विदर्भ वंश',
+  isProxy: true,
+  timeScale: 'kalpa'
+},
+    {
+  id: 'bhishmaka_chandra',
+  name: 'भीष्मक',
+  subtitle: 'विदर्भ नरेश',
+  parent: 'vidarbha_dynasty_proxy',
+  gender: 'male',
+  clusterName: 'विदर्भ वंश',
+  yug: 'dwapar'
+},
+    {
+  id: 'rukmi_vidarbha_chandra',
+  name: 'रुक्मी',
+  subtitle: 'रुक्मिणी का भाई',
+  parent: 'bhishmaka_chandra',
+  gender: 'male',
+  clusterName: 'विदर्भ वंश',
+  yug: 'dwapar'
+},
+    {
   id: 'kratha_yadu',
   name: 'क्रथ',
   subtitle: 'विदर्भ पुत्र',
@@ -1035,6 +1063,34 @@ export const yaduData = [
   parent: 'vrishni_dynasty_proxy',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
+},
+    {
+  id: 'parjanya_gopa_chandra',
+  name: 'पर्जन्य',
+  subtitle: 'गोप',
+  parent: 'devamidhusha_vrishni',
+  gender: 'male',
+  yug: 'dwapar',
+  clusterName: 'वृष्णि वंश'
+},
+    {
+  id: 'nanda_chandra',
+  name: 'नंद बाबा',
+  subtitle: 'कृष्ण के पालक पिता',
+  parent: 'parjanya_gopa_chandra',
+  gender: 'male',
+  yug: 'dwapar',
+  clusterName: 'वृष्णि वंश'
+},
+    {
+  id: 'yashoda_chandra',
+  name: 'यशोदा',
+  subtitle: 'कृष्ण की पालक माता',
+  parent: '',
+  gender: 'female',
+  spouseOf: 'nanda_chandra',
+  yug: 'dwapar',
+  clusterName: 'वृष्णि वंश'
 },
     {
   id: 'shurasen_chandra',
