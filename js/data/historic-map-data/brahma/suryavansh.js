@@ -2176,6 +2176,7 @@ export const suryavanshData = [
         subtitle: 'शिवाजी के ज्येष्ठ पुत्र',
         parent: 'chhatrapati_shivaji_maharaj',
         yug: 'kali',
+        kali_year: 4759,
         isProminent: true,
         parichay: 'इन्होंने अपने छोटे से शासनकाल में मुगलों से लगातार युद्ध किया और धर्म व स्वराज्य के लिए हंसते-हंसते अपना बलिदान दे दिया।',
         clusterName: 'मराठा (भोंसले) वंश'
@@ -2186,6 +2187,7 @@ export const suryavanshData = [
         subtitle: 'शिवाजी के कनिष्ठ पुत्र',
         parent: 'chhatrapati_shivaji_maharaj',
         yug: 'kali',
+        kali_year: 4772,
         parichay: 'सम्भाजी महाराज के बाद मराठा साम्राज्य का नेतृत्व किया और जिंजी के किले से मुगलों के खिलाफ स्वतंत्रता संग्राम जारी रखा।',
         clusterName: 'मराठा (भोंसले) वंश'
     },
@@ -2199,23 +2201,343 @@ export const suryavanshData = [
         parichay: 'छत्रपति राजाराम की मृत्यु के बाद इन्होंने मुगलों के खिलाफ मराठा स्वतंत्रता संग्राम का अत्यंत साहसपूर्ण नेतृत्व किया।',
         clusterName: 'मराठा (भोंसले) वंश'
     },
+
+
+    // ----------------------------------------------------
+    // Chhatrapati Shivaji Maharaj's Family & Wives
+    // ----------------------------------------------------
+    {
+        id: 'saibai_bhosale',
+        name: 'महारानी सईबाई',
+        subtitle: 'शिवाजी की प्रथम पत्नी',
+        gender: 'female',
+        parent: '',
+        spouseOf: 'chhatrapati_shivaji_maharaj',
+        yug: 'kali',
+        kali_year: 4735,
+        parichay: 'शिवाजी महाराज की पहली पत्नी और छत्रपति सम्भाजी महाराज की माता। निंबालकर परिवार से थीं। (जन्म: 1633 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'soyarabai_bhosale',
+        name: 'महारानी सोयराबाई',
+        subtitle: 'शिवाजी की पत्नी',
+        gender: 'female',
+        parent: '',
+        spouseOf: 'chhatrapati_shivaji_maharaj',
+        yug: 'kali',
+        kali_year: 4742,
+        parichay: 'मोहिते परिवार से थीं। छत्रपति राजाराम की माता। (जन्म: 1640 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'putalabai_bhosale',
+        name: 'महारानी पुतळाबाई',
+        subtitle: 'शिवाजी की पत्नी',
+        gender: 'female',
+        parent: '',
+        spouseOf: 'chhatrapati_shivaji_maharaj',
+        yug: 'kali',
+        kali_year: 4744,
+        parichay: 'पालकर परिवार से थीं। शिवाजी महाराज के निधन के बाद इन्होंने सती प्रथा का पालन किया।',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'sakhubai_nimbalkar',
+        name: 'सखूबाई निंबालकर',
+        subtitle: 'शिवाजी की पुत्री',
+        gender: 'female',
+        parent: 'chhatrapati_shivaji_maharaj',
+        mother: 'saibai_bhosale',
+        yug: 'kali',
+        kali_year: 4753,
+        parichay: 'शिवाजी महाराज और सईबाई की ज्येष्ठ पुत्री। (जन्म: 1651 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'ranubai_jadhav',
+        name: 'राणूबाई जाधव',
+        subtitle: 'शिवाजी की पुत्री',
+        gender: 'female',
+        parent: 'chhatrapati_shivaji_maharaj',
+        mother: 'saibai_bhosale',
+        yug: 'kali',
+        kali_year: 4755,
+        parichay: 'शिवाजी महाराज और सईबाई की पुत्री। (जन्म: 1653 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'ambikabai_mahadik',
+        name: 'अंबिकाबाई महाडिक',
+        subtitle: 'शिवाजी की पुत्री',
+        gender: 'female',
+        parent: 'chhatrapati_shivaji_maharaj',
+        mother: 'saibai_bhosale',
+        yug: 'kali',
+        kali_year: 4757,
+        parichay: 'शिवाजी महाराज और सईबाई की पुत्री। (जन्म: 1655 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'balibai_palkar',
+        name: 'बाळीबाई पालकर',
+        subtitle: 'शिवाजी की पुत्री',
+        gender: 'female',
+        parent: 'chhatrapati_shivaji_maharaj',
+        mother: 'soyarabai_bhosale',
+        yug: 'kali',
+        kali_year: 4761,
+        parichay: 'शिवाजी महाराज और सोयराबाई की पुत्री। (जन्म: 1659 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+
+    // ----------------------------------------------------
+    // Satara Branch (Sambhaji -> Shahu I)
+    // ----------------------------------------------------
+    {
+        id: 'yesubai_bhosale',
+        name: 'महारानी येसूबाई',
+        subtitle: 'सम्भाजी की पत्नी',
+        gender: 'female',
+        parent: '',
+        spouseOf: 'chhatrapati_sambhaji',
+        yug: 'kali',
+        kali_year: 4761,
+        parichay: 'शिर्के परिवार से थीं। इन्होंने मुगलों की लंबी कैद सही और अपने पुत्र शाहू को सुरक्षित रखा। (जन्म: 1659 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'bhavanibai_sambhaji',
+        name: 'भवानीबाई',
+        subtitle: 'सम्भाजी की पुत्री',
+        gender: 'female',
+        parent: 'chhatrapati_sambhaji',
+        mother: 'yesubai_bhosale',
+        yug: 'kali',
+        kali_year: 4780,
+        parichay: 'छत्रपति सम्भाजी महाराज और महारानी येसूबाई की पुत्री। (जन्म: 1678 ई.)',
+        clusterName: 'मराठा (भोंसले) वंश'
+    },
     {
         id: 'chhatrapati_shahu',
-        name: 'छत्रपति शाहू महाराज',
-        subtitle: 'सम्भाजी के पुत्र',
+        name: 'छत्रपति शाहू महाराज (प्रथम)',
+        subtitle: 'सतारा के छत्रपति',
+        gender: 'male',
         parent: 'chhatrapati_sambhaji',
+        mother: 'yesubai_bhosale',
         yug: 'kali',
-        parichay: 'मुगलों की कैद से छूटने के बाद इन्होंने मराठा साम्राज्य का विस्तार किया और पेशवाओं (विशेषकर बाजीराव प्रथम) को नियुक्त किया।',
+        kali_year: 4784,
+        isProminent: true,
+        parichay: 'मुगलों की कैद से छूटने के बाद इन्होंने मराठा साम्राज्य का विस्तार किया और पेशवाओं (विशेषकर बाजीराव प्रथम) को नियुक्त किया। (जन्म: 1682 ई.)',
+        clusterName: 'सतारा मराठा वंश'
+    },
+    {
+        id: 'rajaram_ii_satara',
+        name: 'छत्रपति राजाराम (द्वितीय) / रामराजा',
+        subtitle: 'सतारा के छत्रपति',
+        gender: 'male',
+        parent: 'chhatrapati_shahu',
+        yug: 'kali',
+        kali_year: 4814,
+        parichay: 'शिवाजी द्वितीय के पुत्र, जिन्हें शाहू महाराज ने गोद लिया था। (जन्म: 1712 ई.)',
+        clusterName: 'सतारा मराठा वंश'
+    },
+    {
+        id: 'shahu_ii_satara',
+        name: 'छत्रपति शाहू (द्वितीय)',
+        subtitle: 'सतारा के छत्रपति',
+        gender: 'male',
+        parent: 'rajaram_ii_satara',
+        yug: 'kali',
+        kali_year: 4865,
+        parichay: 'इन्हें राजाराम द्वितीय ने गोद लिया था। (जन्म: 1763 ई.)',
+        clusterName: 'सतारा मराठा वंश'
+    },
+    {
+        id: 'pratapsinh_satara',
+        name: 'छत्रपति प्रतापसिंह',
+        subtitle: 'सतारा के छत्रपति',
+        gender: 'male',
+        parent: 'shahu_ii_satara',
+        yug: 'kali',
+        kali_year: 4895,
+        parichay: 'इन्होंने 1808 से 1839 तक शासन किया। बाद में अंग्रेजों ने इन्हें हटा दिया। (जन्म: 1793 ई.)',
+        clusterName: 'सतारा मराठा वंश'
+    },
+    {
+        id: 'shahaji_appa_sahib',
+        name: 'छत्रपति शाहजी (अप्पा साहिब)',
+        subtitle: 'सतारा के अंतिम छत्रपति',
+        gender: 'male',
+        parent: 'shahu_ii_satara',
+        yug: 'kali',
+        kali_year: 4904,
+        parichay: 'अंग्रेजों ने प्रतापसिंह को हटाकर इन्हें गद्दी पर बैठाया। 1848 में अंग्रेजों ने सतारा राज्य को हड़प लिया (Doctrine of Lapse)। (जन्म: 1802 ई.)',
+        clusterName: 'सतारा मराठा वंश'
+    },
+
+    // ----------------------------------------------------
+    // Kolhapur Branch (Rajaram -> Shivaji II / Sambhaji II)
+    // ----------------------------------------------------
+
+    {
+        id: 'rajasbai_bhosale',
+        name: 'महारानी राजसबाई',
+        subtitle: 'राजाराम की पत्नी',
+        gender: 'female',
+        parent: '',
+        spouseOf: 'chhatrapati_rajaram',
+        yug: 'kali',
+        kali_year: 4774,
+        parichay: 'छत्रपति राजाराम की दूसरी पत्नी और छत्रपति सम्भाजी (द्वितीय) की माता। घाटगे परिवार से थीं।',
         clusterName: 'मराठा (भोंसले) वंश'
     },
     {
         id: 'shivaji_ii',
-        name: 'शिवाजी द्वितीय',
+        name: 'शिवाजी (द्वितीय)',
         subtitle: 'राजाराम व ताराबाई के पुत्र',
+        gender: 'male',
         parent: 'chhatrapati_rajaram',
         mother: 'tarabai_bhosale',
         yug: 'kali',
+        kali_year: 4798,
         clusterName: 'मराठा (भोंसले) वंश'
+    },
+    {
+        id: 'sambhaji_ii_kolhapur',
+        name: 'छत्रपति सम्भाजी (द्वितीय)',
+        subtitle: 'कोल्हापुर के छत्रपति',
+        gender: 'male',
+        parent: 'chhatrapati_rajaram',
+        mother: 'rajasbai_bhosale',
+        yug: 'kali',
+        kali_year: 4800,
+        parichay: 'इन्होंने ताराबाई को हटाकर कोल्हापुर पर अधिकार किया। (जन्म: 1698 ई.)',
+        clusterName: 'कोल्हापुर मराठा वंश'
+    },
+    {
+        id: 'shivaji_iii_kolhapur',
+        name: 'छत्रपति शिवाजी (तृतीय)',
+        subtitle: 'कोल्हापुर के छत्रपति',
+        gender: 'male',
+        parent: 'sambhaji_ii_kolhapur',
+        yug: 'kali',
+        kali_year: 4858,
+        parichay: 'इन्हें सम्भाजी द्वितीय की पत्नी जीजाबाई ने गोद लिया था। (जन्म: 1756 ई.)',
+        clusterName: 'कोल्हापुर मराठा वंश'
+    },
+    {
+        id: 'shahu_kolhapur_maharaj',
+        name: 'छत्रपति शाहू जी महाराज (कोल्हापुर)',
+        subtitle: 'समाजिक सुधारक और कोल्हापुर नरेश',
+        gender: 'male',
+        parent: 'kolhapur_dynasty_proxy',
+        yug: 'kali',
+        kali_year: 4976,
+        isProminent: true,
+        parichay: 'भारत में पहली बार आरक्षण (Reservation) लागू करने वाले महान समाज सुधारक और कोल्हापुर के छत्रपति। डॉ बी.आर. अम्बेडकर को इन्होने ही सहायता दी थी। (जन्म: 1874 ई.)',
+        clusterName: 'कोल्हापुर मराठा वंश'
+    },
+    {
+        id: 'kolhapur_dynasty_proxy',
+        name: 'कोल्हापुर वंश',
+        subtitle: 'अज्ञात पीढ़ियाँ',
+        parent: 'shivaji_iii_kolhapur',
+        yug: 'kali',
+        kali_year: 4900,
+        isProxy: true,
+        clusterName: 'कोल्हापुर मराठा वंश'
+    },
+
+    // ----------------------------------------------------
+    // Tanjore Branch (Venkoji / Ekoji)
+    // ----------------------------------------------------
+    {
+        id: 'tanjore_dynasty_proxy',
+        name: 'तंजावुर मराठा वंश',
+        subtitle: 'शाहजी के वंशज',
+        parent: 'shahaji_bhonsle',
+        yug: 'kali',
+        kali_year: 4725,
+        isProxy: true,
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'venkoji_bhonsle',
+        name: 'व्यंकोजी (एकोजी प्रथम)',
+        subtitle: 'तंजावुर मराठा साम्राज्य के संस्थापक',
+        gender: 'male',
+        parent: 'tanjore_dynasty_proxy',
+        yug: 'kali',
+        kali_year: 4734,
+        parichay: 'शाहजी और तुकाबाई (मोहिते) के पुत्र और शिवाजी महाराज के सौतेले भाई। इन्होंने दक्षिण भारत में तंजावुर (Tanjore) मराठा साम्राज्य की स्थापना की। (जन्म: 1632 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'shahaji_ii_tanjore',
+        name: 'शाहजी (द्वितीय)',
+        subtitle: 'तंजावुर नरेश',
+        gender: 'male',
+        parent: 'venkoji_bhonsle',
+        yug: 'kali',
+        kali_year: 4774,
+        parichay: 'व्यंकोजी के ज्येष्ठ पुत्र। (जन्म: 1672 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'serfoji_i_tanjore',
+        name: 'सरफोजी (प्रथम)',
+        subtitle: 'तंजावुर नरेश',
+        gender: 'male',
+        parent: 'venkoji_bhonsle',
+        yug: 'kali',
+        kali_year: 4777,
+        parichay: 'व्यंकोजी के द्वितीय पुत्र। (जन्म: 1675 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'tukkoji_tanjore',
+        name: 'तुक्कोजी (तुलजाजी प्रथम)',
+        subtitle: 'तंजावुर नरेश',
+        gender: 'male',
+        parent: 'venkoji_bhonsle',
+        yug: 'kali',
+        kali_year: 4779,
+        parichay: 'व्यंकोजी के तृतीय पुत्र। (जन्म: 1677 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'pratapsingh_tanjore',
+        name: 'प्रताप सिंह',
+        subtitle: 'तंजावुर नरेश',
+        gender: 'male',
+        parent: 'tukkoji_tanjore',
+        yug: 'kali',
+        kali_year: 4802,
+        parichay: 'इन्होंने तंजावुर में लम्बे समय तक सफलतापूर्वक शासन किया। (जन्म: 1700 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'serfoji_ii_tanjore',
+        name: 'सरफोजी (द्वितीय)',
+        subtitle: 'महान विद्वान और तंजावुर नरेश',
+        gender: 'male',
+        parent: 'tanjore_dynasty_proxy',
+        yug: 'kali',
+        kali_year: 4879,
+        parichay: 'इन्हें तंजावुर में शिक्षा और साहित्य के महान संरक्षक के रूप में जाना जाता है (Saraswathi Mahal Library)। (जन्म: 1777 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
+    },
+    {
+        id: 'shivaji_ii_tanjore',
+        name: 'शिवाजी (द्वितीय - तंजावुर)',
+        subtitle: 'तंजावुर के अंतिम नरेश',
+        gender: 'male',
+        parent: 'serfoji_ii_tanjore',
+        yug: 'kali',
+        kali_year: 4934,
+        parichay: 'इनके निधन के बाद 1855 में अंग्रेजों ने "Doctrine of Lapse" के तहत तंजावुर राज्य को हड़प लिया। (जन्म: 1832 ई.)',
+        clusterName: 'तंजावुर मराठा वंश'
     },
     {
         id: 'rana_lakha',
