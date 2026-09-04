@@ -2845,6 +2845,7 @@ export const suryavanshData = [
         mother: 'yashodhara',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के इकलौते पुत्र, जो बाद में अपने पिता के शिष्य (भिक्षु) बन गए।',
+        kali_year: 1314,
         clusterName: 'शाक्य वंश'
     },
 
@@ -2856,7 +2857,7 @@ export const suryavanshData = [
         parent: 'amitodana',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के चचेरे भाई और उनके सबसे प्रिय व प्रमुख शिष्य। इन्होने ही बुद्ध के अधिकांश उपदेशों को कंठस्थ किया था।',
-        kali_year: 1274,
+        kali_year: 1314,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2875,6 +2876,7 @@ export const suryavanshData = [
         subtitle: 'राहुल पुत्र',
         parent: 'rahula',
         yug: 'kali',
+        kali_year: 1354,
         parichay: 'पुराणों के अनुसार राहुल के पुत्र। (हालाँकि बौद्ध ग्रंथों में प्रसेनजित कोशल के एक समकालीन राजा थे)।',
         clusterName: 'शाक्य वंश'
     },
@@ -2905,6 +2907,7 @@ export const suryavanshData = [
         parent: 'maurya_dynasty_proxy',
         clusterName: 'मौर्य वंश',
         yug: 'kali',
+        kali_year: 1615,
         parichay: 'इन्होंने चाणक्य की सहायता से नंद वंश का नाश किया और भारत के सबसे विशाल मौर्य साम्राज्य की स्थापना की। वर्तमान में "कुशवाहा, कोइरी, काछी, सैनी और शाक्य/मौर्य" कृषक समाज गर्व से इसी वंश (कुश->शाक्य->मौर्य) से अपनी उत्पत्ति मानते हैं।'
     },
     {
@@ -2913,6 +2916,7 @@ export const suryavanshData = [
         subtitle: 'चन्द्रगुप्त पुत्र',
         parent: 'chandragupta_maurya',
         yug: 'kali',
+        kali_year: 1640,
         clusterName: 'मौर्य वंश'
     },
     {
@@ -2922,6 +2926,7 @@ export const suryavanshData = [
         parent: 'bindusara',
         clusterName: 'मौर्य वंश',
         yug: 'kali',
+        kali_year: 1665,
         parichay: 'ये भारत के सबसे महान सम्राटों में से एक थे। कलिंग युद्ध के बाद इन्होंने बौद्ध धर्म अपना लिया और शांति व धम्म का प्रचार किया।'
     },
     {
@@ -2938,21 +2943,24 @@ export const suryavanshData = [
         name: 'क्षुद्रक',
         subtitle: 'प्रसेनजित पुत्र',
         parent: 'prasenajit',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 1394,
     },
     {
         id: 'kundaka',
         name: 'कुण्डक',
         subtitle: 'क्षुद्रक पुत्र',
         parent: 'kshudraka',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 1434,
     },
     {
         id: 'suratha',
         name: 'सुरथ',
         subtitle: 'कुण्डक पुत्र',
         parent: 'kundaka',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 1474,
     },
     {
         id: 'sumitra_king',
@@ -2960,6 +2968,7 @@ export const suryavanshData = [
         subtitle: 'इक्ष्वाकु वंश के अंतिम राजा',
         parent: 'suratha',
         yug: 'kali',
+        kali_year: 1514,
         parichay: 'पुराणों के अनुसार सुमित्र इक्ष्वाकु/सूर्यवंश के अंतिम प्रतापी राजा थे। नंद वंश के महापद्म नंद ने इन्हें पराजित कर कोशल को मगध साम्राज्य में मिला लिया था।'
     },
 
