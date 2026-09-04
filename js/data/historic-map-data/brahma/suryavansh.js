@@ -2523,147 +2523,168 @@ export const suryavanshData = [
         name: 'बृहत्क्षय',
         subtitle: 'बृहद्बल पुत्र',
         parent: 'brihadbala',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: -46,
     },
     {
         id: 'urukshaya',
         name: 'उरुक्षय',
         subtitle: 'बृहत्क्षय पुत्र',
         parent: 'brihatkshaya',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 9,
     },
     {
         id: 'vatsavyuha',
         name: 'वत्सव्यूह',
         subtitle: 'उरुक्षय पुत्र',
         parent: 'urukshaya',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 64,
     },
     {
         id: 'prativyoma',
         name: 'प्रतिव्योम',
         subtitle: 'वत्सव्यूह पुत्र',
         parent: 'vatsavyuha',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 119,
     },
     {
         id: 'divakara',
         name: 'दिवाकर',
         subtitle: 'प्रतिव्योम पुत्र',
         parent: 'prativyoma',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 174,
     },
     {
         id: 'sahadeva_surya',
         name: 'सहदेव',
         subtitle: 'दिवाकर पुत्र',
         parent: 'divakara',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 229,
     },
     {
         id: 'brihadashva_kali',
         name: 'बृहदश्व',
         subtitle: 'सहदेव पुत्र',
         parent: 'sahadeva_surya',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 284,
     },
     {
         id: 'bhanuratha_2',
         name: 'भानुरथ',
         subtitle: 'बृहदश्व पुत्र',
         parent: 'brihadashva_kali',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 339
     },
     {
         id: 'pratitashva',
         name: 'प्रतीताश्व',
         subtitle: 'भानुरथ पुत्र',
         parent: 'bhanuratha_2',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 394,
     },
     {
         id: 'supratika',
         name: 'सुप्रतीक',
         subtitle: 'प्रतीताश्व पुत्र',
         parent: 'pratitashva',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 449,
     },
     {
         id: 'marudeva',
         name: 'मरुदेव',
         subtitle: 'सुप्रतीक पुत्र',
         parent: 'supratika',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 504,
     },
     {
         id: 'sunakshatra',
         name: 'सुनक्षत्र',
         subtitle: 'मरुदेव पुत्र',
         parent: 'marudeva',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 559,
     },
     {
         id: 'kinnara',
         name: 'किन्नर',
         subtitle: 'सुनक्षत्र पुत्र',
         parent: 'sunakshatra',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 614
     },
     {
         id: 'antariksha',
         name: 'अन्तरिक्ष',
         subtitle: 'किन्नर पुत्र',
         parent: 'kinnara',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 669,
     },
     {
         id: 'suvarna',
         name: 'सुवर्ण',
         subtitle: 'अन्तरिक्ष पुत्र',
         parent: 'antariksha',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 724
     },
     {
         id: 'amitrajit',
         name: 'अमित्रजित',
         subtitle: 'सुवर्ण पुत्र',
         parent: 'suvarna',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 779,
     },
     {
         id: 'brihadraja',
         name: 'बृहद्राज',
         subtitle: 'अमित्रजित पुत्र',
         parent: 'amitrajit',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 834
     },
     {
         id: 'dharmin',
         name: 'धर्मिन्',
         subtitle: 'बृहद्राज पुत्र',
         parent: 'brihadraja',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 889,
     },
     {
         id: 'kritanjaya',
         name: 'कृतञ्जय',
         subtitle: 'धर्मिन् पुत्र',
         parent: 'dharmin',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 944,
     },
     {
         id: 'rananjaya',
         name: 'रणञ्जय',
         subtitle: 'कृतञ्जय पुत्र',
         parent: 'kritanjaya',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 999,
     },
     {
         id: 'sanjaya_surya',
         name: 'सञ्जय',
         subtitle: 'रणञ्जय पुत्र',
         parent: 'rananjaya',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 1054,
     },
     {
         id: 'shakya_dynasty_proxy',
@@ -2673,6 +2694,7 @@ export const suryavanshData = [
         yug: 'kali',
         parichay: 'शाक्य वंश के प्रवर्तक, जिसमें गौतम बुद्ध का जन्म हुआ।',
         isProxy: true,
+        kali_year: 1109,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2682,6 +2704,7 @@ export const suryavanshData = [
         parent: 'shakya_dynasty_proxy',
         yug: 'kali',
         parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।',
+        kali_year: 1164,
         clusterName: 'शाक्य वंश'
     },
 
@@ -2693,6 +2716,7 @@ export const suryavanshData = [
         parent: 'shakya_king',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के पिता।',
+        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2701,6 +2725,7 @@ export const suryavanshData = [
         subtitle: 'शाक्य पुत्र',
         parent: 'shakya_king',
         yug: 'kali',
+        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2710,6 +2735,7 @@ export const suryavanshData = [
         parent: 'shakya_king',
         yug: 'kali',
         parichay: 'बुद्ध के चाचा और आनंद के पिता।',
+        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2719,6 +2745,7 @@ export const suryavanshData = [
         parent: 'shakya_king',
         yug: 'kali',
         parichay: 'बुद्ध की बुआ, जिनका विवाह कोलिय वंश के राजा सुप्पबुद्ध से हुआ था। यशोधरा और देवदत्त इन्हीं की संतान थे।',
+        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
 
@@ -2772,6 +2799,7 @@ export const suryavanshData = [
         mother: 'maya_devi',
         yug: 'kali',
         parichay: 'हालाँकि बौद्ध ग्रंथ इनका वंश इक्ष्वाकु (ओक्काक) से जोड़ते हैं, लेकिन पुराणों में इन्हें सीधे इसी अयोध्या वंशावली में लिखा गया है। ज्ञान प्राप्ति के बाद ये बुद्ध कहलाये।',
+        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2782,6 +2810,7 @@ export const suryavanshData = [
         mother: 'mahapajapati_gotami',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के सौतेले भाई। बाद में इन्होंने भी बुद्ध से दीक्षा लेकर भिक्षु जीवन अपना लिया था।',
+        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2805,6 +2834,7 @@ export const suryavanshData = [
         spouseOf: 'siddhartha_buddha',
         yug: 'kali',
         parichay: 'सिद्धार्थ (बुद्ध) की पत्नी और कोलिय राजा सुप्पबुद्ध की पुत्री। ये देवदत्त की सगी बहन थीं।',
+        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2826,6 +2856,7 @@ export const suryavanshData = [
         parent: 'amitodana',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के चचेरे भाई और उनके सबसे प्रिय व प्रमुख शिष्य। इन्होने ही बुद्ध के अधिकांश उपदेशों को कंठस्थ किया था।',
+        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
