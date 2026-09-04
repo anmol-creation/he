@@ -220,67 +220,12 @@ export const anuDruhyuTurvasuData = [
   yug: 'treta'
 },
     {
-  id: 'pandya_dynasty_proxy',
-  name: 'पाण्ड्य वंश',
-  subtitle: 'मदुरै राजवंश',
-  parent: 'pandya_turvasu_chandra',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'चंद्रवंशी'
-},
-    {
-  id: 'chola_dynasty_proxy',
-  name: 'चोल वंश',
-  subtitle: 'कावेरी राजवंश',
-  parent: 'chola_turvasu_chandra',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'चंद्रवंशी'
-},
-    {
-  id: 'kerala_dynasty_proxy',
-  name: 'चेर (केरल) वंश',
-  subtitle: 'मालाबार राजवंश',
-  parent: 'kerala_turvasu_chandra',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'चंद्रवंशी'
-},
-    {
-  id: 'kola_dynasty_proxy',
-  name: 'कोल वंश',
-  subtitle: 'कोल राजवंश',
-  parent: 'kola_turvasu_chandra',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'चंद्रवंशी'
-},
-    {
-  id: 'kalinga_dynasty_proxy',
-  name: 'कलिंग वंश',
-  subtitle: 'कलिंग राजवंश',
-  parent: 'kalinga_anu',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
-  id: 'vanga_dynasty_proxy',
-  name: 'वंग वंश',
-  subtitle: 'बंगाल राजवंश',
-  parent: 'vanga_anu',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
   id: 'samudrasena_vanga',
   name: 'समुद्रसेन',
   subtitle: 'वंग नरेश',
   parent: 'vanga_dynasty_proxy',
   yug: 'dwapar',
   parichay: 'महाभारत काल में वंग देश (बंगाल) के शासक। ये कुरुक्षेत्र युद्ध में कौरवों की ओर से 10,000 हाथियों की सेना के साथ लड़े थे।',
-  clusterName: 'नहुष चंद्रवंशी'
 },
     {
   id: 'chandrasena_vanga',
@@ -288,25 +233,6 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'वंग नरेश',
   parent: 'samudrasena_vanga',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
-  id: 'pundra_dynasty_proxy',
-  name: 'पुण्ड्र वंश',
-  subtitle: 'पुण्ड्र राजवंश',
-  parent: 'pundra_anu',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
-  id: 'suhma_dynasty_proxy',
-  name: 'सुह्म वंश',
-  subtitle: 'सुह्म राजवंश',
-  parent: 'suhma_anu',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
 },
     {
   id: 'paundraka_vasudeva_chandra',
@@ -315,13 +241,12 @@ export const anuDruhyuTurvasuData = [
   parent: 'pundra_dynasty_proxy',
   yug: 'dwapar',
   parichay: 'महाभारत काल में पुण्ड्र देश का राजा, जो स्वयं को असली वासुदेव (कृष्ण) मानता था।',
-  clusterName: 'नहुष चंद्रवंशी'
 },
     {
   id: 'chitrangada_kalinga_chandra',
   name: 'चित्रांगद',
   subtitle: 'कलिंग नरेश',
-  parent: 'kalinga_dynasty_proxy',
+  parent: 'kalinga_anu',
   yug: 'dwapar',
   parichay: 'दुर्योधन की पत्नी भानुमती के पिता।',
   clusterName: 'नहुष चंद्रवंशी'
@@ -330,7 +255,7 @@ export const anuDruhyuTurvasuData = [
   id: 'shrutayush_kalinga_chandra',
   name: 'श्रुतायु',
   subtitle: 'कलिंग नरेश',
-  parent: 'kalinga_dynasty_proxy',
+  parent: 'kalinga_anu',
   yug: 'dwapar',
   parichay: 'महाभारत युद्ध में कौरवों की ओर से लड़े और अर्जुन द्वारा वीरगति को प्राप्त हुए।',
   clusterName: 'नहुष चंद्रवंशी'
@@ -339,7 +264,7 @@ export const anuDruhyuTurvasuData = [
   id: 'kulashekara_pandya_myth',
   name: 'कुलशेखर पाण्ड्य (पौराणिक)',
   subtitle: 'पाण्ड्य नरेश',
-  parent: 'pandya_dynasty_proxy',
+  parent: 'pandya_turvasu_chandra',
   yug: 'dwapar',
   clusterName: 'पाण्ड्य राजवंश'
 },
@@ -350,7 +275,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'kulashekara_pandya_myth',
   yug: 'dwapar',
   parichay: 'महाभारत युद्ध में पांडवों की ओर से लड़े महान योद्धा।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'पाण्ड्य राजवंश'
 },
     {
   id: 'kanchanamalai',
@@ -361,7 +286,7 @@ export const anuDruhyuTurvasuData = [
   gender: 'female',
   yug: 'dwapar',
   parichay: 'राजा मलयध्वज पाण्ड्य की पत्नी।',
-  clusterName: 'नहुष चंद्रवंशी'
+
 },
     {
   id: 'meenakshi_tadaatagai',
@@ -372,7 +297,7 @@ export const anuDruhyuTurvasuData = [
   gender: 'female',
   yug: 'dwapar',
   parichay: 'मलयध्वज की पुत्री। इन्हें देवी पार्वती का अवतार माना जाता है। मदुरै का प्रसिद्ध मीनाक्षी मंदिर इन्हीं को समर्पित है।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'पाण्ड्य राजवंश'
 },
     {
   id: 'sundareshwarar_shiva',
@@ -382,7 +307,7 @@ export const anuDruhyuTurvasuData = [
   spouseOf: 'meenakshi_tadaatagai',
   yug: 'dwapar',
   parichay: 'भगवान शिव का वह रूप जिन्होंने रानी मीनाक्षी से विवाह किया था।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'पाण्ड्य राजवंश'
 },
     {
   id: 'ugra_pandya',
@@ -392,7 +317,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'meenakshi_tadaatagai',
   yug: 'dwapar',
   parichay: 'मीनाक्षी और सुंदरेश्वरर (शिव) के पुत्र, जिन्हें कार्तिकेय (सुब्रमण्य) का अवतार माना जाता है।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'पाण्ड्य राजवंश'
 },
     {
   id: 'early_pandya_link',
@@ -754,6 +679,7 @@ export const anuDruhyuTurvasuData = [
   parichay: 'तेनकासी पाण्ड्य वंश के अंतिम ज्ञात शासकों में से एक (1618 CE)।',
   clusterName: 'पाण्ड्य राजवंश'
 },
+// anu ke putr
     {
   id: 'sabhanara_anu',
   name: 'सभानर',
@@ -780,6 +706,9 @@ export const anuDruhyuTurvasuData = [
   parichay: 'पुराणों में इनके आगे के वंश का वर्णन उपलब्ध नहीं है।',
   clusterName: 'अनु चंद्रवंशी'
 },
+// anu ke putr samapt
+
+// sabhanara ka vansh
     {
   id: 'kalanara_anu',
   name: 'कालानर',
@@ -826,7 +755,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'महामना पुत्र',
   parent: 'mahamana_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'सभानर चंद्रवंशी'
 },
     {
   id: 'sibi_anu',
@@ -835,7 +764,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'ushinara_anu',
   yug: 'treta',
   parichay: 'राजा शिबि अपने त्याग और शरणागत की रक्षा के लिए प्रसिद्ध हैं। उन्होंने एक कबूतर की रक्षा के लिए बाज़ को अपना माँस काट कर दे दिया था।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'सभानर चंद्रवंशी'
 },
     {
   id: 'vrishadarbha_anu',
@@ -843,7 +772,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'शिबि पुत्र',
   parent: 'sibi_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'शिबि पुत्र'
 },
     {
   id: 'suvira_anu',
@@ -851,7 +780,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'शिबि पुत्र (सौवीर)',
   parent: 'sibi_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'शिबि पुत्र'
 },
     {
   id: 'madra_anu',
@@ -859,7 +788,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'मद्र देश संस्थापक',
   parent: 'sibi_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'शिबि पुत्र'
 },
     {
   id: 'ashvapati_madra_anu',
@@ -868,7 +797,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'madra_anu',
   yug: 'treta',
   parichay: 'इन्होंने संतान प्राप्ति के लिए देवी सावित्री की 18 वर्ष तक घोर तपस्या की थी।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मद्र देश'
 },
     {
   id: 'malavi_ashvapati_wife',
@@ -886,7 +815,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'malavi_ashvapati_wife',
   yug: 'treta',
   parichay: 'सत्यवान की पत्नी। अपने सतीत्व और तपोबल से इन्होंने यमराज से अपने पति के प्राण वापस ले लिए थे।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'सत्यवान सावित्री'
 },
     {
   id: 'malava_tribe_founders',
@@ -896,17 +825,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'malavi_ashvapati_wife',
   yug: 'treta',
   parichay: 'अश्वपति और मालवी के 100 पुत्र, जिन्होंने अपनी माता के नाम पर "मालव" वंश और गणराज्य की स्थापना की।',
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
-  id: 'aulikara_dynasty_proxy',
-  name: 'औलिकर (मालव) राजवंश',
-  subtitle: 'ऐतिहासिक अंतराल',
-  parent: 'malava_tribe_founders',
-  yug: 'kali',
-  isProxy: true,
-  parichay: 'प्राचीन मालव गणराज्य से ही कालांतर में दशपुर (मंदसौर) का औलिकर राजवंश उभरा। इनका राजचिह्न "औलिकर-लांछन" था।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'jayavarman_aulikara',
@@ -914,7 +833,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश (प्रथम घराना)',
   parent: 'aulikara_dynasty_proxy',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'simhavarman_aulikara',
@@ -931,7 +850,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'simhavarman_aulikara',
   yug: 'kali',
   parichay: 'गुप्त सम्राट चंद्रगुप्त विक्रमादित्य के समकालीन। इनके शिलालेखों में पहली बार "औलिकर" नाम मिलता है।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'vishvavarman_aulikara',
@@ -939,7 +858,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश',
   parent: 'naravarman_aulikara',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'bandhuvarman_aulikara',
@@ -948,7 +867,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'vishvavarman_aulikara',
   yug: 'kali',
   parichay: 'कुमारगुप्त प्रथम के समकालीन। इनके समय मंदसौर में एक विशाल सूर्य मंदिर का निर्माण हुआ था।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'second_aulikara_house_proxy',
@@ -957,7 +876,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'aulikara_dynasty_proxy',
   yug: 'kali',
   isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य' 
 },
     {
   id: 'drumavardhana_aulikara',
@@ -965,7 +884,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश',
   parent: 'second_aulikara_house_proxy',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'jayavardhana_aulikara',
@@ -973,7 +892,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश',
   parent: 'drumavardhana_aulikara',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'ajitavardhana_aulikara',
@@ -981,7 +900,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश',
   parent: 'jayavardhana_aulikara',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'vibhishanavardhana_aulikara',
@@ -989,7 +908,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश',
   parent: 'ajitavardhana_aulikara',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'rajyavardhana_aulikara',
@@ -997,7 +916,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'औलिकर नरेश',
   parent: 'vibhishanavardhana_aulikara',
   yug: 'kali',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'prakashadharma_aulikara',
@@ -1006,7 +925,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'rajyavardhana_aulikara',
   yug: 'kali',
   parichay: 'इन्होंने हूण आक्रमणकारी तोरमाण को बुरी तरह हराया और उसके रनिवास (harem) पर कब्ज़ा कर लिया था (रिस्थल शिलालेख)।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'yashodharman_aulikara',
@@ -1016,7 +935,7 @@ export const anuDruhyuTurvasuData = [
   yug: 'kali',
   isProminent: true,
   parichay: 'प्राचीन भारत के सबसे महान सम्राटों में से एक। इन्होंने 528 ई. में खूंखार हूण राजा मिहिरकुल को हराकर भारत को हूणों के आतंक से मुक्त कराया। मंदसौर विजय स्तंभ के अनुसार इनका साम्राज्य हिमालय से महेंद्र पर्वत तक फैला था।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'मालव गणराज्य'
 },
     {
   id: 'kekaya_anu',
@@ -1024,7 +943,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'केकय देश संस्थापक',
   parent: 'sibi_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'केकय देश'
 },
     {
   id: 'titikshu_anu',
@@ -1032,7 +951,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'महामना पुत्र',
   parent: 'mahamana_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'तितिक्षु चंद्रवंशी'
 },
     {
   id: 'rushadratha_anu',
@@ -1040,7 +959,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'तितिक्षु पुत्र',
   parent: 'titikshu_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'तितिक्षु चंद्रवंशी'
 },
     {
   id: 'hema_anu',
@@ -1048,7 +967,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'रुशद्रथ पुत्र',
   parent: 'rushadratha_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'तितिक्षु चंद्रवंशी'
 },
     {
   id: 'sutapas_anu',
@@ -1056,7 +975,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'हेम पुत्र',
   parent: 'hema_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'तितिक्षु चंद्रवंशी'
 },
     {
   id: 'bali_anu',
@@ -1065,7 +984,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'sutapas_anu',
   yug: 'treta',
   parichay: 'अनु वंश के राजा बलि। महर्षि दीर्घतमा के नियोग से इनकी पत्नी सुदेष्णा के गर्भ से ५ महान पुत्र उत्पन्न हुए।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'तितिक्षु चंद्रवंशी'
 },
     {
   id: 'sudeshna_bali_wife_chandra',
@@ -1083,7 +1002,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'sudeshna_bali_wife_chandra',
   yug: 'treta',
   parichay: 'इन्होंने अंग देश (वर्तमान भागलपुर, बिहार) की स्थापना की। कर्ण बाद में इसी अंग देश के राजा बने।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'vanga_anu',
@@ -1093,7 +1012,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'sudeshna_bali_wife_chandra',
   yug: 'treta',
   parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'वंग देश चंद्रवंशी'
 },
     {
   id: 'kalinga_anu',
@@ -1103,7 +1022,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'sudeshna_bali_wife_chandra',
   yug: 'treta',
   parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कलिंग देश चंद्रवंशी'
 },
     {
   id: 'pundra_anu',
@@ -1112,7 +1031,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'पुण्ड्र देश चंद्रवंशी'
 },
     {
   id: 'suhma_anu',
@@ -1121,7 +1040,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'सुह्म देश चंद्रवंशी'
 },
     {
   id: 'dadhivahana_anu',
@@ -1129,7 +1048,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'anga_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'khalapana_anu',
@@ -1137,7 +1056,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'dadhivahana_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'diviratha_anu',
@@ -1145,7 +1064,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'khalapana_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'dharmaratha_anu',
@@ -1153,7 +1072,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'diviratha_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'chitraratha_anga_anu',
@@ -1161,7 +1080,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'dharmaratha_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'dasharatha_anga_anu',
@@ -1169,7 +1088,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'chitraratha_anga_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'chaturanga_anu',
@@ -1177,7 +1096,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'dasharatha_anga_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'prithulaksha_anu',
@@ -1185,7 +1104,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'chaturanga_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'bhadraratha_anu',
@@ -1193,7 +1112,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'prithulaksha_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihadratha_anga_anu',
@@ -1201,7 +1120,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'bhadraratha_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihatkarman_anu',
@@ -1209,7 +1128,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihadratha_anga_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihadbhanu_anu',
@@ -1217,7 +1136,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihatkarman_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihanmanas_anu',
@@ -1225,7 +1144,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihadbhanu_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'jayadratha_anga_anu',
@@ -1233,7 +1152,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihanmanas_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'dridharatha_anu',
@@ -1241,7 +1160,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'jayadratha_anga_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'vishvajit_anga_anu',
@@ -1249,7 +1168,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'dridharatha_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'romapada_anu',
@@ -1258,7 +1177,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'vishvajit_anga_anu',
   yug: 'treta',
   parichay: 'इन्होंने अयोध्या के राजा दशरथ की पुत्री शांता को गोद लिया था।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'chaturanga_ii_anu',
@@ -1266,7 +1185,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'रोमपाद पुत्र',
   parent: 'romapada_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'prithulaksha_ii_anu',
@@ -1274,7 +1193,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'चतुरंग द्वितीय पुत्र',
   parent: 'chaturanga_ii_anu',
   yug: 'treta',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'champa_anu',
@@ -1283,7 +1202,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'prithulaksha_ii_anu',
   yug: 'treta',
   parichay: 'इन्होंने अंग देश की राजधानी चम्पापुरी की स्थापना की।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'haryanga_anu',
@@ -1291,7 +1210,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'champa_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'bhadraratha_ii_anu',
@@ -1299,7 +1218,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'haryanga_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihatkarman_ii_anu',
@@ -1307,7 +1226,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'bhadraratha_ii_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihadbhanu_ii_anu',
@@ -1315,7 +1234,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihatkarman_ii_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'brihanmanas_ii_anu',
@@ -1323,7 +1242,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihadbhanu_ii_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'jayadratha_ii_anu',
@@ -1331,7 +1250,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'brihanmanas_ii_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'vijaya_anga_anu',
@@ -1339,7 +1258,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'jayadratha_ii_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'dhriti_anga_anu',
@@ -1347,7 +1266,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'vijaya_anga_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'dhritavrata_anu',
@@ -1355,7 +1274,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'dhriti_anga_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'satyakarman_anu',
@@ -1363,7 +1282,7 @@ export const anuDruhyuTurvasuData = [
   subtitle: 'अंग नरेश',
   parent: 'dhritavrata_anu',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'adhiratha_anu',
@@ -1372,7 +1291,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'satyakarman_anu',
   yug: 'dwapar',
   parichay: 'सूत अधिरथ, जिन्होंने कर्ण का पालन-पोषण किया।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'radha_karna_chandra',
@@ -1391,7 +1310,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'radha_karna_chandra',
   yug: 'dwapar',
   parichay: 'कर्ण के छोटे भाई (पालक)।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'karna_chandra',
@@ -1401,7 +1320,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'radha_karna_chandra',
   yug: 'dwapar',
   parichay: 'जैविक माता-पिता कुंती और सूर्यदेव। पालक माता-पिता राधा और अधिरथ। दुर्योधन ने इन्हें अंग देश का राजा बनाया।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'अंग देश चंद्रवंशी'
 },
     {
   id: 'vrushali_chandra',
@@ -1422,22 +1341,13 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'कर्ण की पत्नियाँ'
 },
     {
-  id: 'karna_sons_proxy',
-  name: 'कर्ण के पुत्र',
-  subtitle: 'वृषसेन आदि 9 पुत्र',
-  isProxy: true,
-  parent: 'karna_chandra',
-  yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
   id: 'vrishasena_karna_chandra',
   name: 'वृषसेन',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'chitrasena_karna_chandra',
@@ -1446,7 +1356,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'satyasena_karna_chandra',
@@ -1455,7 +1365,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'sushena_karna_chandra',
@@ -1464,7 +1374,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'shatrunjaya_karna_chandra',
@@ -1473,7 +1383,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'dvipata_karna_chandra',
@@ -1482,7 +1392,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'prasena_karna_chandra',
@@ -1491,7 +1401,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'supriya_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'banasena_karna_chandra',
@@ -1500,7 +1410,7 @@ export const anuDruhyuTurvasuData = [
   parent: 'karna_chandra',
   mother: 'supriya_chandra',
   yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'vrishaketu_karna_chandra',
@@ -1510,7 +1420,7 @@ export const anuDruhyuTurvasuData = [
   mother: 'supriya_chandra',
   yug: 'dwapar',
   parichay: 'महाभारत युद्ध के बाद कर्ण के एकमात्र जीवित पुत्र। युधिष्ठिर ने इन्हें अंग देश का राजा बनाया और अर्जुन ने इन्हें अस्त्र विद्या दी।',
-  clusterName: 'नहुष चंद्रवंशी'
+  clusterName: 'कर्ण के पुत्र'
 },
     {
   id: 'anga_unknown_generations',
@@ -1519,7 +1429,6 @@ export const anuDruhyuTurvasuData = [
   parent: 'vrishaketu_karna_chandra',
   yug: 'kali',
   parichay: 'वृषकेतु के बाद और बिंबिसार के समकालीन राजा ब्रह्मदत्त के बीच की अज्ञात पीढ़ियाँ।',
-  clusterName: 'नहुष चंद्रवंशी'
 },
     {
   id: 'brahmadatta_anga',
@@ -1528,13 +1437,12 @@ export const anuDruhyuTurvasuData = [
   parent: 'anga_unknown_generations',
   yug: 'kali',
   parichay: 'छठी शताब्दी ईसा पूर्व के अंग राजा। इन्हें मगध के राजा बिंबिसार ने पराजित कर अंग देश को मगध साम्राज्य में मिला लिया था।',
-  clusterName: 'नहुष चंद्रवंशी'
 },
     {
   id: 'early_chera_link',
   name: 'ऐतिहासिक अंतराल (संगम काल)',
   subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'kerala_dynasty_proxy',
+  parent: 'kerala_turvasu_chandra',
   yug: 'kali',
   parichay: 'पौराणिक केरल संस्थापक से लेकर संगम युग के प्रथम ऐतिहासिक चेर राजा उदियन चेरलथन के बीच की अज्ञात पीढ़ियाँ। मूषिका वंश जैसे ग्रंथ इस बीच कई राजाओं (जैसे राम, नंदन, उग्रसेन) का वर्णन करते हैं।',
   clusterName: 'चेर (केरल) राजवंश'
