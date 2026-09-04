@@ -565,7 +565,7 @@ export const chandravanshCoreData = [
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'कुश के अन्य पुत्र'
 },
     {
   id: 'amurtarajas_chandra',
@@ -573,7 +573,7 @@ export const chandravanshCoreData = [
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'कुश के अन्य पुत्र'
 },
     {
   id: 'vasu_amavasu_chandra',
@@ -581,7 +581,7 @@ export const chandravanshCoreData = [
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'कुश के अन्य पुत्र'
 },
     {
   id: 'gadhi_chandra',
@@ -617,9 +617,10 @@ export const chandravanshCoreData = [
   subtitle: 'विश्वामित्र पुत्री',
   parent: 'vishwamitra_chandra',
   mother: 'menaka_apsara_chandra',
+  gender: 'female',
   yug: 'treta',
   parichay: 'इनका विवाह पौरव वंशी राजा दुष्यंत से हुआ और इन्होने भरत को जन्म दिया।',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'विश्वामित्र की अन्य संतान'
 },
     {
   id: 'shunahshepa_chandra',
@@ -628,7 +629,7 @@ export const chandravanshCoreData = [
   parent: 'vishwamitra_chandra',
   yug: 'treta',
   parichay: 'महर्षि ऋचीक के पुत्र जिन्हें हरिश्चंद्र के यज्ञ में बलि के लिए ख़रीदा गया था, पर विश्वामित्र ने इन्हें बचाया और अपना ज्येष्ठ पुत्र (देवरथ) बना लिया।',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'विश्वामित्र की अन्य संतान'
 },
     {
   id: 'madhucchandas_chandra',
@@ -636,7 +637,7 @@ export const chandravanshCoreData = [
   subtitle: 'विश्वामित्र पुत्र',
   parent: 'vishwamitra_chandra',
   yug: 'treta',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'विश्वामित्र की अन्य संतान'
 },
     {
   id: 'ashtaka_chandra',
@@ -644,7 +645,7 @@ export const chandravanshCoreData = [
   subtitle: 'विश्वामित्र पुत्र',
   parent: 'vishwamitra_chandra',
   yug: 'treta',
-  clusterName: 'कान्यकुब्ज राजवंश'
+  clusterName: 'विश्वामित्र की अन्य संतान'
 },
     {
   id: 'galava_chandra',
@@ -652,23 +653,13 @@ export const chandravanshCoreData = [
   subtitle: 'विश्वामित्र पुत्र / शिष्य',
   parent: 'vishwamitra_chandra',
   yug: 'treta',
-  clusterName: 'कान्यकुब्ज राजवंश'
-},
-    {
-  id: 'gahadavala_dynasty_proxy',
-  name: 'गाहड़वाल वंश',
-  subtitle: 'कन्नौज राजवंश',
-  parent: 'vishwamitra_chandra',
-  yug: 'kali',
-  clusterName: 'गाहड़वाल वंश',
-  isProxy: true,
-  parichay: 'कान्यकुब्ज (कन्नौज) के प्राचीन वंश के पतन के बाद मध्यकाल में गाहड़वाल वंश का उदय हुआ जो स्वयं को इसी प्राचीन चंद्रवंशी शाखा से जोड़ते हैं।'
+  clusterName: 'विश्वामित्र की अन्य संतान'
 },
     {
   id: 'chandradeva_gahadavala',
   name: 'चन्द्रदेव',
   subtitle: 'गाहड़वाल संस्थापक',
-  parent: 'gahadavala_dynasty_proxy',
+  parent: 'vishwamitra_chandra',
   yug: 'kali',
   clusterName: 'गाहड़वाल वंश'
 },
@@ -797,21 +788,9 @@ export const chandravanshCoreData = [
   parichay: 'कौरवों के बहनोई और सिन्धु नरेश। दुर्योधन की बहन दुश्शला के पति।'
 },
     {
-  id: 'chach_dynasty_proxy',
-  name: 'चच राजवंश',
-  subtitle: 'सिंध राजवंश',
-  parent: 'jayadratha',
-  gender: 'male',
-  yug: 'kali',
-  clusterName: 'चच वंश (सिंध)',
-  isProxy: true,
-  parichay: 'सिंधु के प्राचीन शासकों (जयद्रथ) के बाद मध्यकाल में यह सिंध का अंतिम हिंदू ब्राह्मण राजवंश था।'
-},
-    {
   id: 'rai_sahasi_ii',
   name: 'राय साहसी द्वितीय',
   subtitle: 'राय वंश',
-  parent: 'chach_dynasty_proxy',
   gender: 'male',
   yug: 'kali',
   clusterName: 'चच वंश (सिंध)',
@@ -867,7 +846,7 @@ export const chandravanshCoreData = [
   gender: 'female',
   spouseOf: 'dahir_of_sindh',
   yug: 'kali',
-  clusterName: 'चच वंश (सिंध)'
+  clusterName: 'दाहीर की पत्नी'
 },
     {
   id: 'rani_bai',
@@ -877,7 +856,7 @@ export const chandravanshCoreData = [
   gender: 'female',
   spouseOf: 'dahir_of_sindh',
   yug: 'kali',
-  clusterName: 'चच वंश (सिंध)',
+  clusterName: 'दाहीर की पत्नी',
   parichay: 'अरबों से किले की रक्षा करते हुए इन्होंने अंत में अन्य राजपूत महिलाओं के साथ जौहर किया।'
 },
     {
