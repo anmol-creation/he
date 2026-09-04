@@ -188,6 +188,25 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'द्रुह्यु चंद्रवंशी'
 },
     {
+  id: 'gandhara_dynasty_proxy',
+  name: 'गांधार वंश',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'dhrita_druhyu_chandra',
+  yug: 'dwapar',
+  clusterName: 'द्रुह्यु चंद्रवंशी',
+  isProxy: true,
+  timeScale: 'kalpa'
+},
+    {
+  id: 'subala_gandhara_king',
+  name: 'सुबल',
+  subtitle: 'गांधार नरेश',
+  parent: 'gandhara_dynasty_proxy',
+  gender: 'male',
+  clusterName: 'द्रुह्यु चंद्रवंशी',
+  yug: 'dwapar'
+},
+    {
   id: 'duryaman_druhyu_chandra',
   name: 'दुर्मन',
   subtitle: 'धृत पुत्र',
@@ -783,6 +802,34 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'शिबि पुत्र'
 },
     {
+  id: 'sindhu_dynasty_proxy',
+  name: 'सिन्धु-सौवीर वंश',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'suvira_anu',
+  yug: 'dwapar',
+  clusterName: 'शिबि पुत्र',
+  isProxy: true,
+  timeScale: 'kalpa'
+},
+    {
+  id: 'vridhakshetra_sindhu',
+  name: 'वृद्धक्षत्र',
+  subtitle: 'सिन्धु नरेश',
+  parent: 'sindhu_dynasty_proxy',
+  gender: 'male',
+  clusterName: 'शिबि पुत्र',
+  yug: 'dwapar'
+},
+    {
+  id: 'jayadratha',
+  name: 'जयद्रथ',
+  subtitle: 'सिन्धु नरेश',
+  parent: 'vridhakshetra_sindhu',
+  gender: 'male',
+  yug: 'dwapar',
+  parichay: 'कौरवों के बहनोई और सिन्धु नरेश। दुर्योधन की बहन दुश्शला के पति।'
+},
+    {
   id: 'madra_anu',
   name: 'मद्र',
   subtitle: 'मद्र देश संस्थापक',
@@ -816,6 +863,25 @@ export const anuDruhyuTurvasuData = [
   yug: 'treta',
   parichay: 'सत्यवान की पत्नी। अपने सतीत्व और तपोबल से इन्होंने यमराज से अपने पति के प्राण वापस ले लिए थे।',
   clusterName: 'सत्यवान सावित्री'
+},
+    {
+  id: 'madra_dynasty_proxy',
+  name: 'मद्र वंश',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'ashvapati_madra_anu',
+  yug: 'dwapar',
+  clusterName: 'मद्र देश',
+  isProxy: true,
+  timeScale: 'kalpa'
+},
+    {
+  id: 'shalya_madra_king',
+  name: 'शल्य',
+  subtitle: 'मद्र नरेश',
+  parent: 'madra_dynasty_proxy',
+  gender: 'male',
+  clusterName: 'मद्र देश',
+  yug: 'dwapar'
 },
     {
   id: 'malava_tribe_founders',
