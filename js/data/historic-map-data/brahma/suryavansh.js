@@ -1465,19 +1465,260 @@ export const suryavanshData = [
     },
 
     // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
+
+    {
+        id: 'bhoj_mewar',
+        name: 'रावल भोज',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'guhadatta_mewar',
+        yug: 'kali',
+        kali_year: 3688,
+        parichay: 'गुहादित्य के उत्तराधिकारी।'
+    },
+    {
+        id: 'mahendra_1_mewar',
+        name: 'रावल महेन्द्र (प्रथम)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'bhoj_mewar',
+        yug: 'kali',
+        kali_year: 3708
+    },
+    {
+        id: 'nagaditya_mewar',
+        name: 'रावल नागादित्य',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'mahendra_1_mewar',
+        yug: 'kali',
+        kali_year: 3728,
+        parichay: 'इनके शासनकाल में भीलों ने आक्रमण कर ईडर पर अधिकार कर लिया था।'
+    },
+    {
+        id: 'shiladitya_mewar',
+        name: 'रावल शीलादित्य',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'nagaditya_mewar',
+        yug: 'kali',
+        kali_year: 3748
+    },
+    {
+        id: 'aparajit_mewar',
+        name: 'रावल अपराजित',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'shiladitya_mewar',
+        yug: 'kali',
+        kali_year: 3763
+    },
+    {
+        id: 'mahendra_2_mewar',
+        name: 'रावल महेन्द्र (द्वितीय)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'aparajit_mewar',
+        yug: 'kali',
+        kali_year: 3790,
+        parichay: 'ये बप्पा रावल के पिता थे। भीलों के आक्रमण में इनकी मृत्यु हो गई थी।'
+    },
     {
         id: 'bappa_rawal',
         name: 'बप्पा रावल (कालभोज)',
         subtitle: 'मेवाड़ राज्य के वास्तविक संस्थापक',
-        parent: 'guhadatta_mewar',
+        parent: 'mahendra_2_mewar',
+        kali_year: 3836,
         yug: 'kali',
         parichay: 'इन्होंने 8वीं शताब्दी में अरब आक्रमणकारियों को खदेड़ा, चित्तौड़ पर अधिकार किया और भगवान एकलिंग जी के महान मंदिर का निर्माण करवाया।'
+    },
+
+    {
+        id: 'khuman_1_mewar',
+        name: 'रावल खुमाण (प्रथम)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'bappa_rawal',
+        yug: 'kali',
+        kali_year: 3855,
+        parichay: 'बप्पा रावल के उत्तराधिकारी।'
+    },
+    {
+        id: 'mattat_mewar',
+        name: 'रावल मत्तट',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'khuman_1_mewar',
+        yug: 'kali',
+        kali_year: 3875
+    },
+    {
+        id: 'bhartripat_1_mewar',
+        name: 'भर्तृभट (प्रथम)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'mattat_mewar',
+        yug: 'kali',
+        kali_year: 3895
+    },
+    {
+        id: 'singh_mewar',
+        name: 'रावल सिंह',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'bhartripat_1_mewar',
+        yug: 'kali',
+        kali_year: 3915
+    },
+    {
+        id: 'khuman_2_mewar',
+        name: 'रावल खुमाण (द्वितीय)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'singh_mewar',
+        yug: 'kali',
+        kali_year: 3935
+    },
+    {
+        id: 'mahayaka_mewar',
+        name: 'महायाक',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'khuman_2_mewar',
+        yug: 'kali',
+        kali_year: 3955
+    },
+    {
+        id: 'khuman_3_mewar',
+        name: 'रावल खुमाण (तृतीय)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'mahayaka_mewar',
+        yug: 'kali',
+        kali_year: 3975
+    },
+    {
+        id: 'bhartripat_2_mewar',
+        name: 'भर्तृभट (द्वितीय)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'khuman_3_mewar',
+        yug: 'kali',
+        kali_year: 4045
+    },
+    {
+        id: 'allat_mewar',
+        name: 'रावल अल्लट (आलू रावल)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'bhartripat_2_mewar',
+        yug: 'kali',
+        kali_year: 4053,
+        parichay: 'इन्होंने आहड़ (Ahar) को मेवाड़ की नई राजधानी बनाया और हूण राजकुमारी हरियादेवी से विवाह किया।'
+    },
+    {
+        id: 'naravahana_mewar',
+        name: 'नरवाहन',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'allat_mewar',
+        yug: 'kali',
+        kali_year: 4073
+    },
+    {
+        id: 'shaktikumar_mewar',
+        name: 'शक्त कुमार',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'naravahana_mewar',
+        yug: 'kali',
+        kali_year: 4079
+    },
+    {
+        id: 'amraprasad_mewar',
+        name: 'आम्रप्रसाद',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'shaktikumar_mewar',
+        yug: 'kali',
+        kali_year: 4095
+    },
+    {
+        id: 'shuchivarma_mewar',
+        name: 'शुचिवर्मा',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'amraprasad_mewar',
+        yug: 'kali',
+        kali_year: 4110
+    },
+    {
+        id: 'naravarma_mewar',
+        name: 'नरवर्मा',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'shuchivarma_mewar',
+        yug: 'kali',
+        kali_year: 4125
+    },
+    {
+        id: 'kirtivarma_mewar',
+        name: 'कीर्तिवर्मा',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'naravarma_mewar',
+        yug: 'kali',
+        kali_year: 4140
+    },
+    {
+        id: 'yograj_mewar',
+        name: 'योगराज',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'kirtivarma_mewar',
+        yug: 'kali',
+        kali_year: 4155
+    },
+    {
+        id: 'vairat_mewar',
+        name: 'वैराट',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'yograj_mewar',
+        yug: 'kali',
+        kali_year: 4170
+    },
+    {
+        id: 'hanspal_mewar',
+        name: 'हंसपाल',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'vairat_mewar',
+        yug: 'kali',
+        kali_year: 4185
+    },
+    {
+        id: 'vairisingh_mewar',
+        name: 'वैरीसिंह',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'hanspal_mewar',
+        yug: 'kali',
+        kali_year: 4200
+    },
+    {
+        id: 'vijaysingh_mewar',
+        name: 'विजयसिंह',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'vairisingh_mewar',
+        yug: 'kali',
+        kali_year: 4215
+    },
+    {
+        id: 'arisinha_1_mewar',
+        name: 'अरिसिंह (प्रथम)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'vijaysingh_mewar',
+        yug: 'kali',
+        kali_year: 4230
+    },
+    {
+        id: 'chaud_singh_mewar',
+        name: 'चौड़ सिंह',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'arisinha_1_mewar',
+        yug: 'kali',
+        kali_year: 4245
+    },
+    {
+        id: 'vikramsingh_mewar',
+        name: 'विक्रमसिंह',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'chaud_singh_mewar',
+        yug: 'kali',
+        kali_year: 4255
     },
     {
         id: 'rana_ranasimha',
         name: 'रावल रणसिंह (कर्ण सिंह)',
         subtitle: 'शाखाओं का विभाजन',
-        parent: 'bappa_rawal',
+        parent: 'vikramsingh_mewar',
+        kali_year: 4260,
         yug: 'kali',
         parichay: 'इनके समय में गुहिल वंश दो शाखाओं में बंट गया: 1. रावल शाखा (क्षेमसिंह) और 2. राणा/सिसोदिया शाखा (राहप)।'
     },
@@ -1511,20 +1752,131 @@ export const suryavanshData = [
     },
 
     // Sisodia Branch (Rana Branch)
+
+    {
+        id: 'khemsingh_mewar',
+        name: 'रावल क्षेमसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'rana_ranasimha',
+        yug: 'kali',
+        kali_year: 4270,
+        parichay: 'इन्होंने रावल शाखा को आगे बढ़ाया।'
+    },
+    {
+        id: 'samantsingh_mewar',
+        name: 'रावल सामंतसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'khemsingh_mewar',
+        yug: 'kali',
+        kali_year: 4275
+    },
+    {
+        id: 'kumarsingh_mewar',
+        name: 'रावल कुमारसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'khemsingh_mewar',
+        yug: 'kali',
+        kali_year: 4280
+    },
+    {
+        id: 'mathansingh_mewar',
+        name: 'रावल मथनसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'kumarsingh_mewar',
+        yug: 'kali',
+        kali_year: 4290
+    },
+    {
+        id: 'padmasingh_mewar',
+        name: 'रावल पद्मसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'mathansingh_mewar',
+        yug: 'kali',
+        kali_year: 4300
+    },
+    {
+        id: 'jaitrasingh_mewar',
+        name: 'रावल जैत्रसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'padmasingh_mewar',
+        yug: 'kali',
+        kali_year: 4315,
+        parichay: 'इन्होंने भूताला के युद्ध में दिल्ली सुल्तान इल्तुतमिश को पराजित किया था।'
+    },
+    {
+        id: 'tejsingh_mewar',
+        name: 'रावल तेजसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'jaitrasingh_mewar',
+        yug: 'kali',
+        kali_year: 4355
+    },
+    {
+        id: 'samarsingh_mewar',
+        name: 'रावल समरसिंह',
+        subtitle: 'मेवाड़ (रावल शाखा)',
+        parent: 'tejsingh_mewar',
+        yug: 'kali',
+        kali_year: 4375,
+        parichay: 'इन्होंने गुजरात जाने वाले अलाउद्दीन खिलजी की सेना से कर (Tax) वसूला था।'
+    },
+    {
+        id: 'ratansingh_mewar',
+        name: 'रावल रतनसिंह',
+        subtitle: 'मेवाड़ के अंतिम रावल',
+        parent: 'samarsingh_mewar',
+        yug: 'kali',
+        kali_year: 4404,
+        parichay: 'चित्तौड़ के शासक और रानी पद्मिनी के पति। 1303 ई. में अलाउद्दीन खिलजी के आक्रमण में वीरगति को प्राप्त हुए। इनके साथ रावल शाखा समाप्त हो गई।'
+    },
+    {
+        id: 'mahap_sisodia',
+        name: 'राणा महप',
+        subtitle: 'सिसोदिया शाखा',
+        parent: 'rahapa',
+        yug: 'kali',
+        kali_year: 4290
+    },
+    {
+        id: 'bhuvansingh_sisodia',
+        name: 'राणा भुवनसिंह',
+        subtitle: 'सिसोदिया शाखा',
+        parent: 'mahap_sisodia',
+        yug: 'kali',
+        kali_year: 4310
+    },
+    {
+        id: 'bhimsingh_sisodia',
+        name: 'राणा भीमसिंह',
+        subtitle: 'सिसोदिया शाखा',
+        parent: 'bhuvansingh_sisodia',
+        yug: 'kali',
+        kali_year: 4330
+    },
+    {
+        id: 'jaysingh_sisodia',
+        name: 'राणा जयसिंह',
+        subtitle: 'सिसोदिया शाखा',
+        parent: 'bhimsingh_sisodia',
+        yug: 'kali',
+        kali_year: 4350
+    },
     {
         id: 'rahapa',
         name: 'राहप',
         subtitle: 'राणा/सिसोदिया शाखा के संस्थापक',
         parent: 'rana_ranasimha',
         yug: 'kali',
+        kali_year: 4270,
         parichay: 'इन्होंने सिसोदा ग्राम में जागीर स्थापित की, जिससे इनके वंशज "सिसोदिया" कहलाए और इन्होने "राणा" की उपाधि धारण की।'
     },
     {
         id: 'lakshman_singh_sisodia',
         name: 'राणा लक्ष्मण सिंह',
         subtitle: 'सिसोदा के राणा',
-        parent: 'rahapa',
+        parent: 'jaysingh_sisodia',
         yug: 'kali',
+        kali_year: 4370,
         parichay: '1303 ई. में अलाउद्दीन खिलजी के खिलाफ चित्तौड़ की रक्षा करते हुए अपने 7 पुत्रों सहित वीरगति को प्राप्त हुए।'
     },
     {
@@ -1533,6 +1885,7 @@ export const suryavanshData = [
         subtitle: 'लक्ष्मण सिंह के पुत्र',
         parent: 'lakshman_singh_sisodia',
         yug: 'kali',
+        kali_year: 4390,
         parichay: '1303 ई. में पिता लक्ष्मण सिंह के साथ चित्तौड़ की रक्षा करते हुए वीरगति को प्राप्त हुए।'
     },
     {
@@ -1541,6 +1894,7 @@ export const suryavanshData = [
         subtitle: 'सिसोदिया वंश के संस्थापक',
         parent: 'ari_singh_mewar',
         yug: 'kali',
+        kali_year: 4428,
         parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की पुनर्स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।'
     },
 
@@ -1551,6 +1905,7 @@ export const suryavanshData = [
         subtitle: 'लक्ष्मण सिंह के पुत्र',
         parent: 'lakshman_singh_sisodia',
         yug: 'kali',
+        kali_year: 4390,
         parichay: 'चित्तौड़ के पतन के बाद इन्होने केलवाड़ा में शरण ली और अपने भतीजे हम्मीर को मेवाड़ का उत्तराधिकारी बनाया।'
     },
     {
@@ -1559,6 +1914,7 @@ export const suryavanshData = [
         subtitle: 'भोंसले वंश के मूल पुरुष',
         parent: 'rana_ajay_singh',
         yug: 'kali',
+        kali_year: 4420,
         parichay: 'मेवाड़ छोड़कर दक्षिण (दक्कन) चले गए और बहमनी सुल्तानों के यहाँ सेवा दी। इन्हीं के वंशज आगे चलकर "भोंसले" कहलाए।'
     },
     {
@@ -1577,6 +1933,7 @@ export const suryavanshData = [
         subtitle: 'सज्जन सिंह पुत्र',
         parent: 'maratha_empire_proxy',
         yug: 'kali',
+        kali_year: 4450,
         clusterName: 'मराठा (भोंसले) वंश'
     },
     {
@@ -1619,6 +1976,7 @@ export const suryavanshData = [
         subtitle: 'वेरुल के पाटिल',
         parent: 'bhonsle_medieval_link',
         yug: 'kali',
+        kali_year: 4690,
         parichay: 'ये औरंगाबाद के पास वेरुल (एलोरा) गाँव के पाटिल थे।',
         clusterName: 'मराठा (भोंसले) वंश'
     },
@@ -1750,6 +2108,7 @@ export const suryavanshData = [
         subtitle: 'शिवाजी के दादा',
         parent: 'babaji_bhonsle',
         yug: 'kali',
+        kali_year: 4695,
         parichay: 'इन्होंने अहमदनगर के निज़ामशाही सुल्तानों के यहाँ एक महान सेनापति के रूप में कार्य किया और "राजे" की उपाधि प्राप्त की।',
         clusterName: 'मराठा (भोंसले) वंश'
     },
@@ -1795,6 +2154,7 @@ export const suryavanshData = [
         subtitle: 'शिवाजी के पिता',
         parent: 'maloji_bhonsle',
         yug: 'kali',
+        kali_year: 4710,
         parichay: 'एक प्रमुख मराठा सेनापति जिन्होंने अहमदनगर, बीजापुर और मुगलों की राजनीति में अहम भूमिका निभाई।',
         clusterName: 'मराठा (भोंसले) वंश'
     },
@@ -1805,6 +2165,7 @@ export const suryavanshData = [
         parent: 'shahaji_bhonsle',
         mother: 'jijabai_jadhav',
         yug: 'kali',
+        kali_year: 4732,
         isProminent: true,
         parichay: 'भारत के महानतम योद्धाओं में से एक। इन्होंने आदिलशाही और मुगल साम्राज्य से संघर्ष कर 1674 ई. में एक स्वतंत्र "हिन्दवी स्वराज्य" (मराठा साम्राज्य) की स्थापना की।',
         clusterName: 'मराठा (भोंसले) वंश'
@@ -1862,6 +2223,7 @@ export const suryavanshData = [
         subtitle: 'मेवाड़ नरेश',
         parent: 'rana_hammir_sisodia',
         yug: 'kali',
+        kali_year: 4484,
         parichay: 'इन्हीं के समय में पिछोला झील का निर्माण हुआ और जावर में चांदी की खदानें मिली थीं।'
     },
 
@@ -1891,7 +2253,8 @@ export const suryavanshData = [
         name: 'राणा मोकल',
         subtitle: 'मेवाड़ नरेश',
         parent: 'rana_lakha',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 4523,
     },
     {
         id: 'rana_kumbha',
@@ -1899,6 +2262,7 @@ export const suryavanshData = [
         subtitle: 'महान निर्माता और योद्धा',
         parent: 'rana_mokal_mewar',
         yug: 'kali',
+        kali_year: 4535,
         parichay: 'ये स्थापत्य कला के महान संरक्षक थे। इन्होने मेवाड़ में 32 किलों (जैसे कुम्भलगढ़) का निर्माण करवाया और मालवा-गुजरात की संयुक्त सेनाओं को हराया।'
     },
     {
@@ -1906,7 +2270,8 @@ export const suryavanshData = [
         name: 'राणा रायमल',
         subtitle: 'मेवाड़ नरेश',
         parent: 'rana_kumbha',
-        yug: 'kali'
+        yug: 'kali',
+        kali_year: 4575,
     },
     {
         id: 'rana_sanga',
@@ -1914,6 +2279,7 @@ export const suryavanshData = [
         subtitle: 'हिन्दूपत',
         parent: 'rana_raimal',
         yug: 'kali',
+        kali_year: 4611,
         parichay: 'ये एक महान शूरवीर थे जिनके शरीर पर 80 घाव थे। इन्होने खातोली और बाड़ी के युद्धों में इब्राहिम लोदी को हराया और खानवा के युद्ध (1527) में बाबर का सामना किया।'
     },
     {
@@ -1922,6 +2288,7 @@ export const suryavanshData = [
         subtitle: 'उदयपुर के संस्थापक',
         parent: 'rana_sanga',
         yug: 'kali',
+        kali_year: 4639,
         parichay: 'इन्होंने 1559 ई. में उदयपुर शहर की स्थापना की थी।'
     },
 
@@ -1959,6 +2326,7 @@ export const suryavanshData = [
         subtitle: 'मेवाड़ के वीर शिरोमणि',
         parent: 'rana_udai_singh_ii',
         yug: 'kali',
+        kali_year: 4674,
         parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।',
         clusterName: 'गुहिल (सिसोदिया) वंश'
     },
@@ -1968,6 +2336,7 @@ export const suryavanshData = [
         subtitle: 'मेवाड़ नरेश',
         parent: 'maharana_pratap',
         yug: 'kali',
+        kali_year: 4700,
         parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े। इनके बाद के शासकों के वंशज \"राणावत\" (Ranawat) भी कहलाये।',
         clusterName: 'गुहिल (सिसोदिया) वंश'
     },
@@ -2523,168 +2892,147 @@ export const suryavanshData = [
         name: 'बृहत्क्षय',
         subtitle: 'बृहद्बल पुत्र',
         parent: 'brihadbala',
-        yug: 'kali',
-        kali_year: -46,
+        yug: 'kali'
     },
     {
         id: 'urukshaya',
         name: 'उरुक्षय',
         subtitle: 'बृहत्क्षय पुत्र',
         parent: 'brihatkshaya',
-        yug: 'kali',
-        kali_year: 9,
+        yug: 'kali'
     },
     {
         id: 'vatsavyuha',
         name: 'वत्सव्यूह',
         subtitle: 'उरुक्षय पुत्र',
         parent: 'urukshaya',
-        yug: 'kali',
-        kali_year: 64,
+        yug: 'kali'
     },
     {
         id: 'prativyoma',
         name: 'प्रतिव्योम',
         subtitle: 'वत्सव्यूह पुत्र',
         parent: 'vatsavyuha',
-        yug: 'kali',
-        kali_year: 119,
+        yug: 'kali'
     },
     {
         id: 'divakara',
         name: 'दिवाकर',
         subtitle: 'प्रतिव्योम पुत्र',
         parent: 'prativyoma',
-        yug: 'kali',
-        kali_year: 174,
+        yug: 'kali'
     },
     {
         id: 'sahadeva_surya',
         name: 'सहदेव',
         subtitle: 'दिवाकर पुत्र',
         parent: 'divakara',
-        yug: 'kali',
-        kali_year: 229,
+        yug: 'kali'
     },
     {
         id: 'brihadashva_kali',
         name: 'बृहदश्व',
         subtitle: 'सहदेव पुत्र',
         parent: 'sahadeva_surya',
-        yug: 'kali',
-        kali_year: 284,
+        yug: 'kali'
     },
     {
         id: 'bhanuratha_2',
         name: 'भानुरथ',
         subtitle: 'बृहदश्व पुत्र',
         parent: 'brihadashva_kali',
-        yug: 'kali',
-        kali_year: 339
+        yug: 'kali'
     },
     {
         id: 'pratitashva',
         name: 'प्रतीताश्व',
         subtitle: 'भानुरथ पुत्र',
         parent: 'bhanuratha_2',
-        yug: 'kali',
-        kali_year: 394,
+        yug: 'kali'
     },
     {
         id: 'supratika',
         name: 'सुप्रतीक',
         subtitle: 'प्रतीताश्व पुत्र',
         parent: 'pratitashva',
-        yug: 'kali',
-        kali_year: 449,
+        yug: 'kali'
     },
     {
         id: 'marudeva',
         name: 'मरुदेव',
         subtitle: 'सुप्रतीक पुत्र',
         parent: 'supratika',
-        yug: 'kali',
-        kali_year: 504,
+        yug: 'kali'
     },
     {
         id: 'sunakshatra',
         name: 'सुनक्षत्र',
         subtitle: 'मरुदेव पुत्र',
         parent: 'marudeva',
-        yug: 'kali',
-        kali_year: 559,
+        yug: 'kali'
     },
     {
         id: 'kinnara',
         name: 'किन्नर',
         subtitle: 'सुनक्षत्र पुत्र',
         parent: 'sunakshatra',
-        yug: 'kali',
-        kali_year: 614
+        yug: 'kali'
     },
     {
         id: 'antariksha',
         name: 'अन्तरिक्ष',
         subtitle: 'किन्नर पुत्र',
         parent: 'kinnara',
-        yug: 'kali',
-        kali_year: 669,
+        yug: 'kali'
     },
     {
         id: 'suvarna',
         name: 'सुवर्ण',
         subtitle: 'अन्तरिक्ष पुत्र',
         parent: 'antariksha',
-        yug: 'kali',
-        kali_year: 724
+        yug: 'kali'
     },
     {
         id: 'amitrajit',
         name: 'अमित्रजित',
         subtitle: 'सुवर्ण पुत्र',
         parent: 'suvarna',
-        yug: 'kali',
-        kali_year: 779,
+        yug: 'kali'
     },
     {
         id: 'brihadraja',
         name: 'बृहद्राज',
         subtitle: 'अमित्रजित पुत्र',
         parent: 'amitrajit',
-        yug: 'kali',
-        kali_year: 834
+        yug: 'kali'
     },
     {
         id: 'dharmin',
         name: 'धर्मिन्',
         subtitle: 'बृहद्राज पुत्र',
         parent: 'brihadraja',
-        yug: 'kali',
-        kali_year: 889,
+        yug: 'kali'
     },
     {
         id: 'kritanjaya',
         name: 'कृतञ्जय',
         subtitle: 'धर्मिन् पुत्र',
         parent: 'dharmin',
-        yug: 'kali',
-        kali_year: 944,
+        yug: 'kali'
     },
     {
         id: 'rananjaya',
         name: 'रणञ्जय',
         subtitle: 'कृतञ्जय पुत्र',
         parent: 'kritanjaya',
-        yug: 'kali',
-        kali_year: 999,
+        yug: 'kali'
     },
     {
         id: 'sanjaya_surya',
         name: 'सञ्जय',
         subtitle: 'रणञ्जय पुत्र',
         parent: 'rananjaya',
-        yug: 'kali',
-        kali_year: 1054,
+        yug: 'kali'
     },
     {
         id: 'shakya_dynasty_proxy',
@@ -2694,7 +3042,6 @@ export const suryavanshData = [
         yug: 'kali',
         parichay: 'शाक्य वंश के प्रवर्तक, जिसमें गौतम बुद्ध का जन्म हुआ।',
         isProxy: true,
-        kali_year: 1109,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2704,7 +3051,6 @@ export const suryavanshData = [
         parent: 'shakya_dynasty_proxy',
         yug: 'kali',
         parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।',
-        kali_year: 1164,
         clusterName: 'शाक्य वंश'
     },
 
@@ -2716,7 +3062,6 @@ export const suryavanshData = [
         parent: 'shakya_king',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के पिता।',
-        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2725,7 +3070,6 @@ export const suryavanshData = [
         subtitle: 'शाक्य पुत्र',
         parent: 'shakya_king',
         yug: 'kali',
-        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2735,7 +3079,6 @@ export const suryavanshData = [
         parent: 'shakya_king',
         yug: 'kali',
         parichay: 'बुद्ध के चाचा और आनंद के पिता।',
-        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2745,7 +3088,6 @@ export const suryavanshData = [
         parent: 'shakya_king',
         yug: 'kali',
         parichay: 'बुद्ध की बुआ, जिनका विवाह कोलिय वंश के राजा सुप्पबुद्ध से हुआ था। यशोधरा और देवदत्त इन्हीं की संतान थे।',
-        kali_year: 1219,
         clusterName: 'शाक्य वंश'
     },
 
@@ -2799,7 +3141,6 @@ export const suryavanshData = [
         mother: 'maya_devi',
         yug: 'kali',
         parichay: 'हालाँकि बौद्ध ग्रंथ इनका वंश इक्ष्वाकु (ओक्काक) से जोड़ते हैं, लेकिन पुराणों में इन्हें सीधे इसी अयोध्या वंशावली में लिखा गया है। ज्ञान प्राप्ति के बाद ये बुद्ध कहलाये।',
-        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2810,7 +3151,6 @@ export const suryavanshData = [
         mother: 'mahapajapati_gotami',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के सौतेले भाई। बाद में इन्होंने भी बुद्ध से दीक्षा लेकर भिक्षु जीवन अपना लिया था।',
-        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2834,7 +3174,6 @@ export const suryavanshData = [
         spouseOf: 'siddhartha_buddha',
         yug: 'kali',
         parichay: 'सिद्धार्थ (बुद्ध) की पत्नी और कोलिय राजा सुप्पबुद्ध की पुत्री। ये देवदत्त की सगी बहन थीं।',
-        kali_year: 1274,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2845,7 +3184,6 @@ export const suryavanshData = [
         mother: 'yashodhara',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के इकलौते पुत्र, जो बाद में अपने पिता के शिष्य (भिक्षु) बन गए।',
-        kali_year: 1314,
         clusterName: 'शाक्य वंश'
     },
 
@@ -2857,7 +3195,6 @@ export const suryavanshData = [
         parent: 'amitodana',
         yug: 'kali',
         parichay: 'गौतम बुद्ध के चचेरे भाई और उनके सबसे प्रिय व प्रमुख शिष्य। इन्होने ही बुद्ध के अधिकांश उपदेशों को कंठस्थ किया था।',
-        kali_year: 1314,
         clusterName: 'शाक्य वंश'
     },
     {
@@ -2876,7 +3213,6 @@ export const suryavanshData = [
         subtitle: 'राहुल पुत्र',
         parent: 'rahula',
         yug: 'kali',
-        kali_year: 1354,
         parichay: 'पुराणों के अनुसार राहुल के पुत्र। (हालाँकि बौद्ध ग्रंथों में प्रसेनजित कोशल के एक समकालीन राजा थे)।',
         clusterName: 'शाक्य वंश'
     },
@@ -2907,7 +3243,6 @@ export const suryavanshData = [
         parent: 'maurya_dynasty_proxy',
         clusterName: 'मौर्य वंश',
         yug: 'kali',
-        kali_year: 1615,
         parichay: 'इन्होंने चाणक्य की सहायता से नंद वंश का नाश किया और भारत के सबसे विशाल मौर्य साम्राज्य की स्थापना की। वर्तमान में "कुशवाहा, कोइरी, काछी, सैनी और शाक्य/मौर्य" कृषक समाज गर्व से इसी वंश (कुश->शाक्य->मौर्य) से अपनी उत्पत्ति मानते हैं।'
     },
     {
@@ -2916,7 +3251,6 @@ export const suryavanshData = [
         subtitle: 'चन्द्रगुप्त पुत्र',
         parent: 'chandragupta_maurya',
         yug: 'kali',
-        kali_year: 1640,
         clusterName: 'मौर्य वंश'
     },
     {
@@ -2926,7 +3260,6 @@ export const suryavanshData = [
         parent: 'bindusara',
         clusterName: 'मौर्य वंश',
         yug: 'kali',
-        kali_year: 1665,
         parichay: 'ये भारत के सबसे महान सम्राटों में से एक थे। कलिंग युद्ध के बाद इन्होंने बौद्ध धर्म अपना लिया और शांति व धम्म का प्रचार किया।'
     },
     {
@@ -2943,24 +3276,21 @@ export const suryavanshData = [
         name: 'क्षुद्रक',
         subtitle: 'प्रसेनजित पुत्र',
         parent: 'prasenajit',
-        yug: 'kali',
-        kali_year: 1394,
+        yug: 'kali'
     },
     {
         id: 'kundaka',
         name: 'कुण्डक',
         subtitle: 'क्षुद्रक पुत्र',
         parent: 'kshudraka',
-        yug: 'kali',
-        kali_year: 1434,
+        yug: 'kali'
     },
     {
         id: 'suratha',
         name: 'सुरथ',
         subtitle: 'कुण्डक पुत्र',
         parent: 'kundaka',
-        yug: 'kali',
-        kali_year: 1474,
+        yug: 'kali'
     },
     {
         id: 'sumitra_king',
@@ -2968,7 +3298,6 @@ export const suryavanshData = [
         subtitle: 'इक्ष्वाकु वंश के अंतिम राजा',
         parent: 'suratha',
         yug: 'kali',
-        kali_year: 1514,
         parichay: 'पुराणों के अनुसार सुमित्र इक्ष्वाकु/सूर्यवंश के अंतिम प्रतापी राजा थे। नंद वंश के महापद्म नंद ने इन्हें पराजित कर कोशल को मगध साम्राज्य में मिला लिया था।'
     },
 
@@ -3395,7 +3724,7 @@ export const suryavanshData = [
         subtitle: 'अतिरथी पुत्र',
         parent: 'atirathi',
         yug: 'kali',
-        kali_year: 3206
+        kali_year: 3206,
     },
 
     // Guhila / Sisodia Dynasty of Mewar (Origin Debate: Luv vs Kusha)
@@ -3422,6 +3751,7 @@ export const suryavanshData = [
         subtitle: 'गुहिल वंश के संस्थापक',
         parent: 'shiladitya_vallabhi',
         yug: 'kali',
+        kali_year: 3668,
         parichay: 'ये वल्लभी के अंतिम राजा शीलादित्य और रानी पुष्पावती के पुत्र थे। गुफा में जन्म लेने के कारण इनका नाम गुहादित्य पड़ा। इन्होने ईडर (मेवाड़) में गुहिल (गहलोत) राजवंश की नींव रखी। इनके वंशज आगे चलकर गुहिल या गहलोत कहलाए।'
     },
 
