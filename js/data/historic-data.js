@@ -3,7 +3,6 @@ import { vishnuBaseData } from './historic-map-data/vishnu/vishnu-base.js';
 import { maheshBaseData } from './historic-map-data/mahesh/mahesh-base.js';
 import { brahmaBaseData } from './historic-map-data/brahma/brahma-base.js';
 import { kashyapData } from './historic-map-data/brahma/kashyap.js';
-import { suryavanshData } from './historic-map-data/brahma/suryavansh.js';
 import { chandravanshCoreData } from './historic-map-data/brahma/chandravansh/core.js';
 import { kashiData } from './historic-map-data/brahma/chandravansh/kashi.js';
 import { yaduData } from './historic-map-data/brahma/chandravansh/yadu.js';
@@ -12,6 +11,8 @@ import { kuruData } from './historic-map-data/brahma/chandravansh/kuru.js';
 import { anuDruhyuTurvasuData } from './historic-map-data/brahma/chandravansh/anu_druhyu_turvasu.js';
 import { agnivanshData } from './historic-map-data/brahma/agnivansh.js';
 import { jhansiNewalkarData } from './historic-map-data/brahma/jhansi-newalkar.js';
+import { coreData } from './historic-map-data/brahma/suryavansh/core.js';
+import { jhansiNewalkarData } from './historic-map-data/brahma/suryavansh/my_lineage.js';
 
 // Combine all data into one master array
 export const historicData = [
@@ -20,7 +21,6 @@ export const historicData = [
     ...maheshBaseData,
     ...brahmaBaseData,
     ...kashyapData,
-    ...suryavanshData,
     ...chandravanshCoreData,
     ...kashiData,
     ...yaduData,
@@ -28,7 +28,9 @@ export const historicData = [
     ...kuruData,
     ...anuDruhyuTurvasuData,
     ...agnivanshData,
-    ...jhansiNewalkarData
+    ...jhansiNewalkarData,
+    ...coreData,
+    ...my_lineageData
 ];
 
 // Provide global access for backward compatibility with non-module scripts

@@ -5,7 +5,7 @@ export const coreData = [
         subtitle: 'वर्तमान मनु',
         parent: 'surya',
         yug: 'satya',
-        kali_year: -3888000
+        kali_year: -3988000
     },
     {
         id: 'shraddha_manu_wife',
