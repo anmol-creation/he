@@ -12,7 +12,7 @@ import { anuDruhyuTurvasuData } from './historic-map-data/brahma/chandravansh/an
 import { agnivanshData } from './historic-map-data/brahma/agnivansh.js';
 import { jhansiNewalkarData } from './historic-map-data/brahma/jhansi-newalkar.js';
 import { coreData } from './historic-map-data/brahma/suryavansh/core.js';
-import { jhansiNewalkarData } from './historic-map-data/brahma/suryavansh/my_lineage.js';
+import { my_lineageData } from './historic-map-data/brahma/suryavansh/my_lineage.js';
 
 // Combine all data into one master array
 export const historicData = [
