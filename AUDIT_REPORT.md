@@ -62,7 +62,7 @@ Treating the `historic-map-data` as a database, I ran a deep verification script
 🔴 **Data Integrity Errors (Broken References):**
 - **Missing Parents:** 27 nodes reference a `parent` ID that does NOT exist in the database.
 - **Missing Mothers:** 4 nodes reference a `mother` ID that does NOT exist in the database.
-- **Total Broken References:** 34
+- **Total Broken References:** 31
 
 *Note:* If a node's parent doesn't exist, the UI layout engine (`tree-builder.js`) will either drop the node (orphan) or crash.
 
@@ -96,12 +96,39 @@ The recent split of `chandravansh.js` into multiple files (`core.js`, `kuru.js`,
 *See Section 4. Total Records: 2324.*
 
 **Missing Mother Examples:**
-- `narada` -> mother `मानस पुत्र` (Invalid ID, should probably be a string in `parichay` or handled differently).
-- `dattatreya_chandra` -> mother `anasuya_chandra` (Doesn't exist).
+- `narada` -> mother `मानस पुत्र` (Missing)
+- `dattatreya_chandra` -> mother `anasuya_chandra` (Missing)
+- `durvasa_chandra` -> mother `anasuya_chandra` (Missing)
+- `chandra_chandra` -> mother `anasuya_chandra` (Missing)
 
 **Missing Parent Examples:**
-- `bhim_chandra` -> parent `pandu_dynasty_proxy` (Proxy missing).
-- `parvati` -> parent `himavan_mountain` (Should be `himavan`).
+- `parvati` -> parent `himavan_mountain` (Missing)
+- `valli` -> parent `unknown_origin` (Missing)
+- `riddhi` -> parent `vishwakarma` (Missing)
+- `siddhi` -> parent `vishwakarma` (Missing)
+- `rani_suhandi` -> parent `chach_dynasty_proxy` (Missing)
+- `chach_of_alor` -> parent `chach_dynasty_proxy` (Missing)
+- `chandar_of_sindh` -> parent `chach_dynasty_proxy` (Missing)
+- `rani_ladi` -> parent `chach_dynasty_proxy` (Missing)
+- `rani_bai` -> parent `chach_dynasty_proxy` (Missing)
+- `bhim_chandra` -> parent `pandu_dynasty_proxy` (Missing)
+- `arjun_chandra` -> parent `pandu_dynasty_proxy` (Missing)
+- `nakul_chandra` -> parent `pandu_dynasty_proxy` (Missing)
+- `sahadev_chandra` -> parent `pandu_dynasty_proxy` (Missing)
+- `bhumichand_katoch` -> parent `chandravansh_dynasty_proxy` (Missing)
+- `sahasrajit_yadu` -> parent `yadu_vansh_proxy` (Missing)
+- `kroshtu_yadu` -> parent `yadu_vansh_proxy` (Missing)
+- `nala_yadu` -> parent `yadu_vansh_proxy` (Missing)
+- `ripu_yadu` -> parent `yadu_vansh_proxy` (Missing)
+- `mitravinda_krishna_chandra` -> parent `krishna_wives_proxy` (Missing)
+- `nagnajiti_krishna_chandra` -> parent `krishna_wives_proxy` (Missing)
+- `bhadra_krishna_chandra` -> parent `krishna_wives_proxy` (Missing)
+- `lakshmana_krishna_chandra` -> parent `krishna_wives_proxy` (Missing)
+- `samudrasena_vanga` -> parent `vanga_dynasty_proxy` (Missing)
+- `paundraka_vasudeva_chandra` -> parent `pundra_dynasty_proxy` (Missing)
+- `jayavarman_aulikara` -> parent `aulikara_dynasty_proxy` (Missing)
+- `second_aulikara_house_proxy` -> parent `aulikara_dynasty_proxy` (Missing)
+- `early_chola_link` -> parent `chola_dynasty_proxy` (Missing)
 
 ---
 
@@ -247,3 +274,23 @@ The recent split of `chandravansh.js` into multiple files (`core.js`, `kuru.js`,
 - **PHASE 2 (Data Integrity Fixes):** Synchronize the `js/` and `public/js/` directories perfectly. Fix the invalid `mother` references.
 - **PHASE 3 (Code Cleanup):** Delete root-level calculation scripts and the `verification/` folder artifacts. Add `"type": "module"` to `package.json`.
 - **PHASE 4 (Testing Improvements):** Implement an automated Node.js test script to catch missing parent/mother IDs before deployment. Write the missing Playwright tests.
+---
+
+## 24. DEEP AUDIT: MAP RENDER & TIME YUGAS LOGIC
+
+🔴 **Time Yugas & Pixel Scaling Logic Errors:**
+- In `js/layout-engine/position-calculator.js`, the map calculates strict auto-positioning based on `kali_year` for historical nodes.
+- However, the actual Yuga visual dividers drawn in `js/map-renderer.js` (`drawTimeDividers`) use hardcoded Y-pixel coordinates:
+  - Satya Yuga Start: `6500`
+  - Satya ➔ Treta: `7700` (Span = 1200px)
+  - Treta ➔ Dvapara: `26300` (Span = 18600px)
+  - Dvapara ➔ Kali: `36800` (Span = 10500px)
+- **The Issue:** The span calculated for Satya Yuga (1200px) is drastically shorter than Treta (18600px) and Dvapara (10500px), despite Satya Yuga being mathematically the longest Yuga (1,728,000 years). The discrepancy arises because the generational density mapped in the historic data has fewer documented characters for Satya Yuga compared to Treta and Dvapara. This means nodes with `kali_year` dynamically calculate their Y-position scaling using different pixel/year ratios across Yugas, leading to an inconsistent "cosmic time scale."
+- **Broken baseline syncing:** When a child node doesn't have a `kali_year`, the position calculator attempts to stack it downstream by resetting the `startY`. Because of the missing proxy nodes (broken chains), this auto-slip calculation completely breaks down for entire lineages (e.g. Pandavas).
+
+🔴 **Cosmic Ruler UI / Timeline Overlay:**
+- `js/map-ui.js` (`generateCosmicTicks`) creates a fixed scale ruler with arbitrary percentage values (`Satya: 0%`, `Treta: 25%`, `Dvapara: 50%`, `Kali: 75%`). This UI overlay is visually incorrect and out of sync with the actual mathematical scaling applied to the canvas via `position-calculator.js`.
+
+🟡 **Service Worker (PWA) Caching Incompleteness:**
+- `sw.js` only caches `/js/data/historic-data.js` but fails to cache the newly modularized split files inside `/js/data/historic-map-data/...`.
+- Consequently, the PWA will fail to work offline because the central `historic-data.js` relies on dynamic ES module imports which are not cached.
