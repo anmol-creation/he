@@ -5,7 +5,7 @@ export const suryavanshData = [
         subtitle: 'वर्तमान मनु',
         parent: 'surya',
         yug: 'satya',
-        kali_year: -3888000
+        kali_year: -3988000
     },
     {
         id: 'shraddha_manu_wife',
@@ -17,16 +17,6 @@ export const suryavanshData = [
     },
 
     // Manu's other children
-
-    {
-        id: 'manu_other_sons_proxy',
-        name: 'मनु के अन्य पुत्र',
-        subtitle: 'इक्ष्वाकु के अतिरिक्त अन्य पुत्र',
-        isProxy: true,
-        parent: 'vaivasvata_manu',
-        clusterName: 'मनु के अन्य पुत्र',
-        yug: 'satya'
-    },
 
     {
         id: 'sudyumna_surya',
@@ -46,7 +36,7 @@ export const suryavanshData = [
         gender: 'male',
         parent: 'sudyumna_surya',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+        clusterName: 'उत्कल राज्य',
         parichay: 'इन्होंने उत्कल (वर्तमान ओडिशा) क्षेत्र की स्थापना की और वहाँ शासन किया।'
     },
     {
@@ -56,7 +46,7 @@ export const suryavanshData = [
         gender: 'male',
         parent: 'sudyumna_surya',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+        clusterName: 'गय राज्य',
         parichay: 'इन्होंने गय राज्य (वर्तमान बिहार में गया) की स्थापना की।'
     },
     {
@@ -66,7 +56,7 @@ export const suryavanshData = [
         gender: 'male',
         parent: 'sudyumna_surya',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+        clusterName: 'उत्तर-पूर्वी दिशा',
         parichay: 'इन्होंने उत्तर-पूर्वी दिशा के राज्यों पर शासन किया। कुछ पुराणों में इन्हें विनताश्व भी कहा गया है।'
     },
 
@@ -165,23 +155,16 @@ export const suryavanshData = [
         kali_year: -3888000
     },
     // Descendants of Ikshvaku
-    {
-        id: 'suryavansh_proxy',
-        name: 'सूर्यवंश',
-        subtitle: 'इक्ष्वाकु के वंशज',
-        parent: 'ikshvaku',
-        yug: 'satya',
-        clusterName: 'सूर्यवंश',
-        isProxy: true
-    },
+
     {
         id: 'vikukshi',
         name: 'विकुक्षि',
         subtitle: 'शशाद',
-        parent: 'suryavansh_proxy',
+        parent: 'ikshvaku',
         yug: 'satya',
         kali_year: -2160000,
-        parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।'
+        parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।',
+        clusterName: 'इक्ष्वाकु सूर्यवंश',
     },
     {
         id: 'nimi',
@@ -189,6 +172,7 @@ export const suryavanshData = [
         subtitle: 'विदेह वंश संस्थापक',
         parent: 'ikshvaku',
         yug: 'treta',
+        clusterName: 'मिथिला वंश',
         parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।'
     },
     {
@@ -272,7 +256,8 @@ export const suryavanshData = [
         name: 'दृढ़ाश्व',
         subtitle: 'धुंधुमार पुत्र',
         parent: 'kuvalayashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'दृढ़ाश्व वंश',
     },
     {
         id: 'chandrashva',
@@ -380,6 +365,7 @@ export const suryavanshData = [
         subtitle: 'मान्धाता पुत्र',
         parent: 'mandhata',
         mother: 'bindumati',
+        clusterName: 'पुरुकुत्स वंश',
         yug: 'treta'
     },
     {
@@ -655,7 +641,8 @@ export const suryavanshData = [
         name: 'विशाल',
         subtitle: 'वैशाली के संस्थापक',
         parent: 'ikshvaku',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'वैशाली राज्य वंश',
     },
     {
         id: 'hemachandra',
@@ -849,16 +836,6 @@ export const suryavanshData = [
         parichay: 'सगर के अश्वमेध यज्ञ का घोड़ा इंद्र ने कपिल मुनि के आश्रम में बांध दिया था।'
     },
     {
-        id: 'sagara_wives_proxy',
-        name: 'सगर की पत्नियाँ',
-        subtitle: 'सुमति व केशिनी',
-        isProxy: true,
-        parent: '',
-        spouseOf: 'sagara',
-        clusterName: 'सगर की पत्नियाँ',
-        yug: 'treta'
-    },
-    {
         id: 'sumati_sagara',
         name: 'सुमति',
         subtitle: 'सगर पत्नी',
@@ -884,7 +861,6 @@ export const suryavanshData = [
         mother: 'sumati_sagara',
         yug: 'treta',
         parichay: 'सुमति के 60,000 पुत्र, जिन्हें कपिल मुनि ने भस्म कर दिया था।',
-        clusterName: 'सगर के 60 हज़ार पुत्र'
     },
     {
         id: 'asamanjas',
@@ -892,7 +868,8 @@ export const suryavanshData = [
         subtitle: 'सगर पुत्र',
         parent: 'sagara',
         mother: 'keshini',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'सगर वंश',
     },
     {
         id: 'ambujakshi',
@@ -1122,7 +1099,8 @@ export const suryavanshData = [
         parent: 'bharat',
         mother: 'mandavi',
         yug: 'treta',
-        parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।'
+        parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।',
+        clusterName: 'भरत वंश',
     },
     {
         id: 'pushkala',
@@ -1131,7 +1109,8 @@ export const suryavanshData = [
         parent: 'bharat',
         mother: 'mandavi',
         yug: 'treta',
-        parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।'
+        parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।',
+        clusterName: 'भरत वंश',
     },
 
     // Bhalla Khatri (Descendants of Bharat)
@@ -1171,7 +1150,8 @@ export const suryavanshData = [
         parent: 'lakshman',
         mother: 'urmila',
         yug: 'treta',
-        parichay: 'भगवान राम ने अंगद को कारुपथ राज्य का राजा बनाया था।'
+        parichay: 'भगवान राम ने अंगद को कारुपथ राज्य का राजा बनाया था।',
+        clusterName: 'लक्ष्मण वंश',
     },
     {
         id: 'chandraketu',
@@ -1180,7 +1160,8 @@ export const suryavanshData = [
         parent: 'lakshman',
         mother: 'urmila',
         yug: 'treta',
-        parichay: 'भगवान राम ने चन्द्रकेतु को चन्द्रकांति राज्य का राजा बनाया था।'
+        parichay: 'भगवान राम ने चन्द्रकेतु को चन्द्रकांति राज्य का राजा बनाया था।',
+        clusterName: 'लक्ष्मण वंश',
     },
     // Lakshman's descendants (Pratihara, Bargujar, Trehan)
     {
@@ -2962,7 +2943,8 @@ export const suryavanshData = [
         parent: 'kush',
         mother: 'kumudvati',
         yug: 'dwapar',
-        kali_year: -864000
+        kali_year: -864000,
+        clusterName: 'कुश के वंशज',
     },
     {
         id: 'nishadha',
@@ -3188,7 +3170,7 @@ export const suryavanshData = [
         subtitle: 'सुसन्धि पुत्र',
         parent: 'susandhi',
         yug: 'dwapar',
-        kali_year: -161
+        
     },
     {
         id: 'vishrutavant',
@@ -3196,7 +3178,7 @@ export const suryavanshData = [
         subtitle: 'अमर्ष पुत्र',
         parent: 'amarsha',
         yug: 'dwapar',
-        kali_year: -131
+        
     },
     {
         id: 'brihadbala',

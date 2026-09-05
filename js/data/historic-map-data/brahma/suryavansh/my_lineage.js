@@ -4,9 +4,9 @@ export const my_lineageData = [
         id: 'radha_krishna_agarwal',
         name: 'राधा कृष्ण अग्रवाल',
         subtitle: 'परदादा',
-        parent: 'maharaja_agrasen',
+        parent: 'gendumal',
         yug: 'kali',
-        clusterName: 'अग्रवाल वंश (मेरा परिवार)',
+        clusterName: 'गोयल Vansh',
         parichay: 'गोत्र: गोयल'
     },
 
