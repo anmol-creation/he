@@ -88,7 +88,7 @@ export const agarwalData = [
         subtitle: 'महाराजा अग्रसेन की पत्नी',
         parent: '',
         spouseOf: 'maharaja_agrasen',
-        yug: 'dwapar'
+        yug: 'dwapar',
         clusterName: 'अग्रसेन की पत्नी',
     },
     {
