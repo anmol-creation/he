@@ -117,7 +117,7 @@ export const chandravanshCoreData = [
   lineLabel: 'बुध',
   gender: 'male',
   yug: 'satya',
-  kali_year: -10100
+  kali_year: -3988000
 },
     {
   id: 'ila_chandra',
@@ -127,7 +127,6 @@ export const chandravanshCoreData = [
   parent: 'vaivasvata_manu',
   spouseOf: 'budh_chandra',
   yug: 'satya',
-  kali_year: -10100
 },
     {
   id: 'pururava_chandra',
@@ -139,7 +138,7 @@ export const chandravanshCoreData = [
   lineLabel: 'पुरुरवा',
   mother: 'ila_chandra',
   yug: 'satya',
-  kali_year: -9700
+  kali_year: -2160000
 },
     {
   id: 'urvashi_chandra',
@@ -159,7 +158,7 @@ export const chandravanshCoreData = [
   lineLabel: 'आयु',
   mother: 'urvashi_chandra',
   yug: 'treta',
-  kali_year: -9600
+  kali_year: -2139096
 },
     {
   id: 'shrutayu_chandra',
