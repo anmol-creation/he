@@ -96,4 +96,58 @@ export const sodhi_khatriData = [
         isProminent: true,
         clusterName: 'सोढी खत्री (लव वंश)'
     },
+
+    // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
+
+    {
+        id: 'bhoj_mewar',
+        name: 'रावल भोज',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'guhadatta_mewar',
+        yug: 'kali',
+        kali_year: 3688,
+        parichay: 'गुहादित्य के उत्तराधिकारी।'
+    },
+    {
+        id: 'mahendra_1_mewar',
+        name: 'रावल महेन्द्र (प्रथम)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'bhoj_mewar',
+        yug: 'kali',
+        kali_year: 3708
+    },
+    {
+        id: 'nagaditya_mewar',
+        name: 'रावल नागादित्य',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'mahendra_1_mewar',
+        yug: 'kali',
+        kali_year: 3728,
+        parichay: 'इनके शासनकाल में भीलों ने आक्रमण कर ईडर पर अधिकार कर लिया था।'
+    },
+    {
+        id: 'shiladitya_mewar',
+        name: 'रावल शीलादित्य',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'nagaditya_mewar',
+        yug: 'kali',
+        kali_year: 3748
+    },
+    {
+        id: 'aparajit_mewar',
+        name: 'रावल अपराजित',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'shiladitya_mewar',
+        yug: 'kali',
+        kali_year: 3763
+    },
+    {
+        id: 'mahendra_2_mewar',
+        name: 'रावल महेन्द्र (द्वितीय)',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'aparajit_mewar',
+        yug: 'kali',
+        kali_year: 3790,
+        parichay: 'ये बप्पा रावल के पिता थे। भीलों के आक्रमण में इनकी मृत्यु हो गई थी।'
+    },
 ];

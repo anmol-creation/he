@@ -1,4 +1,13 @@
 export const kush_to_sumitraData = [
+    {
+        id: 'sumitra',
+        name: 'सुमित्रा',
+        subtitle: 'लक्ष्मण/शत्रुघ्न की माता',
+        parent: '',
+        spouseOf: 'dasharath',
+        yug: 'treta',
+        clusterName: 'दशरथ की 3 पत्नियाँ'
+    },
 
     // Kush's descendants (to Mahabharat era)
     {

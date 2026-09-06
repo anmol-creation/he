@@ -3,7 +3,7 @@ import { vishnuBaseData } from './historic-map-data/vishnu/vishnu-base.js';
 import { maheshBaseData } from './historic-map-data/mahesh/mahesh-base.js';
 import { brahmaBaseData } from './historic-map-data/brahma/brahma-base.js';
 import { kashyapData } from './historic-map-data/brahma/kashyap.js';
-import { suryavanshData } from './historic-map-data/brahma/suryavansh.js';
+import { suryavanshData } from './historic-map-data/brahma/suryavansh/index.js';
 import { chandravanshCoreData } from './historic-map-data/brahma/chandravansh/core.js';
 import { kashiData } from './historic-map-data/brahma/chandravansh/kashi.js';
 import { yaduData } from './historic-map-data/brahma/chandravansh/yadu.js';

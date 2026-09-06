@@ -79,6 +79,7 @@ export const agarwalData = [
         parent: '',
         spouseOf: 'maharaja_agrasen',
         yug: 'dwapar',
+        clusterName: 'अग्रसेन की पत्नी',
         parichay: 'ये नागराज कुमुद की पुत्री थीं (नागवंशी)। इनके स्वयंवर में देवराज इंद्र भी आए थे, लेकिन माधवी ने अग्रसेन को चुना। इसी कारण इंद्र क्रोधित हो गए और प्रतापनगर में वर्षा रोककर भयंकर अकाल ला दिया था।'
     },
     {
@@ -87,17 +88,8 @@ export const agarwalData = [
         subtitle: 'महाराजा अग्रसेन की पत्नी',
         parent: '',
         spouseOf: 'maharaja_agrasen',
-        yug: 'dwapar'
-    },
-
-    {
-        id: 'agrawal_dynasty_proxy',
-        name: 'अग्रवाल वंश',
-        subtitle: 'महाराजा अग्रसेन के वंशज',
-        parent: 'maharaja_agrasen',
         yug: 'dwapar',
-        clusterName: 'अग्रवाल वंश',
-        isProxy: true
+        clusterName: 'अग्रसेन की पत्नी',
     },
     {
         id: 'pushpadev',
@@ -279,22 +271,4 @@ export const agarwalData = [
         parichay: 'नांगल गोत्र के प्रवर्तक। गुरु: नागेंद्र।',
         clusterName: 'अग्रवाल वंश'
     },
-
-    {
-        id: 'hanuman',
-        name: 'हनुमान',
-        subtitle: 'राम भक्त / शिव अंश',
-        parent: 'vayu',
-        yug: 'dwapar'
-    },
-
-
-
-
-    {
-        id: 'jatayu',
-        name: 'जटायु',
-        subtitle: 'गृध्रराज',
-        parent: 'arun',
-        yug: 'dwapar' }
 ];

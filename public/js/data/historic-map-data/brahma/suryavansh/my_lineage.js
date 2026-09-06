@@ -4,9 +4,9 @@ export const my_lineageData = [
         id: 'radha_krishna_agarwal',
         name: 'राधा कृष्ण अग्रवाल',
         subtitle: 'परदादा',
-        parent: 'maharaja_agrasen',
+        parent: 'gendumal',
         yug: 'kali',
-        clusterName: 'अग्रवाल वंश (मेरा परिवार)',
+        clusterName: 'गोयल Vansh',
         parichay: 'गोत्र: गोयल'
     },
 
@@ -174,7 +174,8 @@ export const my_lineageData = [
         mother: 'vineeta_agarwal',
         yug: 'kali',
         clusterName: 'अग्रवाल वंश (मेरा परिवार)',
-        parichay: 'बचपन में इनका स्वर्गवास हो गया था।'
+        parichay: 'बचपन में इनका स्वर्गवास हो गया था।',
+        kali_year: 5228
     },
     {
         id: 'anmol_agarwal',
@@ -184,6 +185,7 @@ export const my_lineageData = [
         mother: 'vineeta_agarwal',
         yug: 'kali',
         clusterName: 'अग्रवाल वंश (मेरा परिवार)',
-        parichay: 'जन्म तिथि: 22 दिसंबर 1999, गोत्र: गोयल'
+        parichay: 'जन्म तिथि: 22 दिसंबर 1999, गोत्र: गोयल',
+        kali_year: 5227
     }
 ];

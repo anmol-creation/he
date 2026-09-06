@@ -5,7 +5,7 @@ export const coreData = [
         subtitle: 'वर्तमान मनु',
         parent: 'surya',
         yug: 'satya',
-        kali_year: -3888000
+        kali_year: -3988000
     },
     {
         id: 'shraddha_manu_wife',
@@ -812,15 +812,6 @@ export const coreData = [
         clusterName: 'दशरथ की 3 पत्नियाँ'
     },
     {
-        id: 'sumitra',
-        name: 'सुमित्रा',
-        subtitle: 'लक्ष्मण/शत्रुघ्न की माता',
-        parent: '',
-        spouseOf: 'dasharath',
-        yug: 'treta',
-        clusterName: 'दशरथ की 3 पत्नियाँ'
-    },
-    {
         id: 'ram',
         name: 'राम',
         subtitle: 'मर्यादा पुरुषोत्तम',
@@ -828,31 +819,18 @@ export const coreData = [
         mother: 'kaushalya',
         yug: 'treta'
     },
+
+    // Bhalla Khatri (Descendants of Bharat)
+    // Note: To keep the tree structured, we add Bharat's descendants under Bharat directly.
+
     {
-        id: 'bharat',
-        name: 'भरत',
-        subtitle: 'आदर्श भ्राता',
-        parent: 'dasharath',
-        mother: 'kaikeyi',
+        id: 'sita',
+        name: 'सीता',
+        subtitle: 'जनक नंदिनी',
+        parent: 'seeradhwaja_janak',
+        mother: 'sunayana',
+        spouseOf: 'ram',
         yug: 'treta'
-    },
-    {
-        id: 'taksha',
-        name: 'तक्ष',
-        subtitle: 'तक्षशिला के राजा',
-        parent: 'bharat',
-        mother: 'mandavi',
-        yug: 'treta',
-        parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।'
-    },
-    {
-        id: 'pushkala',
-        name: 'पुष्कल',
-        subtitle: 'पुष्कलावती के राजा',
-        parent: 'bharat',
-        mother: 'mandavi',
-        yug: 'treta',
-        parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।'
     },
     {
         id: 'luv',
@@ -873,4 +851,22 @@ export const coreData = [
         yug: 'treta',
         parichay: 'कुश ने कुशावती (कसूर) नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।'
     },
+
+    {
+        id: 'hanuman',
+        name: 'हनुमान',
+        subtitle: 'राम भक्त / शिव अंश',
+        parent: 'vayu',
+        yug: 'dwapar'
+    },
+
+
+
+
+    {
+        id: 'jatayu',
+        name: 'जटायु',
+        subtitle: 'गृध्रराज',
+        parent: 'arun',
+        yug: 'dwapar' }
 ];
