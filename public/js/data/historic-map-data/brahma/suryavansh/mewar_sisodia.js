@@ -28,60 +28,6 @@ export const mewar_sisodiaData = [
         yug: 'kali',
         parichay: 'लोहाणा समाज लवपुरी (लाहौर) के पतन के बाद सिंध और गुजरात में बसा। वे स्वयं को लव का वंशज मानते हैं।'
     },
-
-    // Bappa Rawal and Descendants (Guhil/Gehlot dynasty continuation)
-
-    {
-        id: 'bhoj_mewar',
-        name: 'रावल भोज',
-        subtitle: 'मेवाड़ नरेश',
-        parent: 'guhadatta_mewar',
-        yug: 'kali',
-        kali_year: 3688,
-        parichay: 'गुहादित्य के उत्तराधिकारी।'
-    },
-    {
-        id: 'mahendra_1_mewar',
-        name: 'रावल महेन्द्र (प्रथम)',
-        subtitle: 'मेवाड़ नरेश',
-        parent: 'bhoj_mewar',
-        yug: 'kali',
-        kali_year: 3708
-    },
-    {
-        id: 'nagaditya_mewar',
-        name: 'रावल नागादित्य',
-        subtitle: 'मेवाड़ नरेश',
-        parent: 'mahendra_1_mewar',
-        yug: 'kali',
-        kali_year: 3728,
-        parichay: 'इनके शासनकाल में भीलों ने आक्रमण कर ईडर पर अधिकार कर लिया था।'
-    },
-    {
-        id: 'shiladitya_mewar',
-        name: 'रावल शीलादित्य',
-        subtitle: 'मेवाड़ नरेश',
-        parent: 'nagaditya_mewar',
-        yug: 'kali',
-        kali_year: 3748
-    },
-    {
-        id: 'aparajit_mewar',
-        name: 'रावल अपराजित',
-        subtitle: 'मेवाड़ नरेश',
-        parent: 'shiladitya_mewar',
-        yug: 'kali',
-        kali_year: 3763
-    },
-    {
-        id: 'mahendra_2_mewar',
-        name: 'रावल महेन्द्र (द्वितीय)',
-        subtitle: 'मेवाड़ नरेश',
-        parent: 'aparajit_mewar',
-        yug: 'kali',
-        kali_year: 3790,
-        parichay: 'ये बप्पा रावल के पिता थे। भीलों के आक्रमण में इनकी मृत्यु हो गई थी।'
-    },
     {
         id: 'bappa_rawal',
         name: 'बप्पा रावल (कालभोज)',
@@ -461,6 +407,138 @@ export const mewar_sisodiaData = [
         yug: 'kali',
         kali_year: 4428,
         parichay: 'इन्होने 1326 ई. में चित्तौड़ को तुर्कों से वापस छीना और "सिसोदिया" शाखा की पुनर्स्थापना की। इन्हें "विषम घाटी पंचानन" भी कहा जाता है।'
+    },
+
+    // Chundawat Branch
+    {
+        id: 'chundawat_dynasty_proxy',
+        name: 'चूंडावत वंश',
+        subtitle: 'राव चूंडा के वंशज',
+        parent: 'rana_lakha',
+        yug: 'kali',
+        parichay: 'मेवाड़ के प्रथम श्रेणी के सामंत (राव चूंडा के वंशज)।',
+        isProxy: true,
+        clusterName: 'चूंडावत वंश'
+    },
+    {
+        id: 'rao_chunda',
+        name: 'राव चूंडा',
+        subtitle: 'मेवाड़ के भीष्म पितामह',
+        parent: 'chundawat_dynasty_proxy',
+        yug: 'kali',
+        parichay: 'इन्होंने अपने पिता के लिए मेवाड़ के सिंहासन का त्याग किया था। इनके वंशज "चूंडावत" (Chundawat) कहलाते हैं, जो मेवाड़ के प्रथम श्रेणी के सामंत थे।',
+        clusterName: 'चूंडावत वंश'
+    },
+
+    {
+        id: 'rana_mokal_mewar',
+        name: 'राणा मोकल',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'rana_lakha',
+        yug: 'kali',
+        kali_year: 4523,
+    },
+    {
+        id: 'rana_kumbha',
+        name: 'राणा कुम्भा',
+        subtitle: 'महान निर्माता और योद्धा',
+        parent: 'rana_mokal_mewar',
+        yug: 'kali',
+        kali_year: 4535,
+        parichay: 'ये स्थापत्य कला के महान संरक्षक थे। इन्होने मेवाड़ में 32 किलों (जैसे कुम्भलगढ़) का निर्माण करवाया और मालवा-गुजरात की संयुक्त सेनाओं को हराया।'
+    },
+    {
+        id: 'rana_raimal',
+        name: 'राणा रायमल',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'rana_kumbha',
+        yug: 'kali',
+        kali_year: 4575,
+    },
+    {
+        id: 'rana_sanga',
+        name: 'राणा सांगा (संग्राम सिंह)',
+        subtitle: 'हिन्दूपत',
+        parent: 'rana_raimal',
+        yug: 'kali',
+        kali_year: 4611,
+        parichay: 'ये एक महान शूरवीर थे जिनके शरीर पर 80 घाव थे। इन्होने खातोली और बाड़ी के युद्धों में इब्राहिम लोदी को हराया और खानवा के युद्ध (1527) में बाबर का सामना किया।'
+    },
+    {
+        id: 'rana_udai_singh_ii',
+        name: 'राणा उदय सिंह (द्वितीय)',
+        subtitle: 'उदयपुर के संस्थापक',
+        parent: 'rana_sanga',
+        yug: 'kali',
+        kali_year: 4639,
+        parichay: 'इन्होंने 1559 ई. में उदयपुर शहर की स्थापना की थी।'
+    },
+
+    // Shaktawat Branch
+    {
+        id: 'shaktawat_dynasty_proxy',
+        name: 'शक्तावत वंश',
+        subtitle: 'शक्ति सिंह के वंशज',
+        parent: 'rana_udai_singh_ii',
+        yug: 'kali',
+        clusterName: 'शक्तावत वंश',
+        isProxy: true
+    },
+    {
+        id: 'shakti_singh',
+        name: 'शक्ति सिंह',
+        subtitle: 'शक्तावत वंश के संस्थापक',
+        parent: 'shaktawat_dynasty_proxy',
+        clusterName: 'शक्तावत वंश',
+        yug: 'kali',
+        parichay: 'महाराणा प्रताप के भाई। इनके वंशज \"शक्तावत\" (Shaktawat) कहलाए।'
+    },
+    {
+        id: 'shaktawat_dynasty',
+        name: 'शक्तावत वंश',
+        subtitle: 'सिसोदिया शाखा',
+        parent: 'shakti_singh',
+        yug: 'kali',
+        clusterName: 'शक्तावत वंश'
+    },
+
+    {
+        id: 'maharana_pratap',
+        name: 'महाराणा प्रताप',
+        subtitle: 'मेवाड़ के वीर शिरोमणि',
+        parent: 'rana_udai_singh_ii',
+        yug: 'kali',
+        kali_year: 4674,
+        parichay: 'ये भारतीय इतिहास के सबसे महान योद्धाओं में से एक हैं। इन्होंने मुग़ल सम्राट अकबर की अधीनता कभी स्वीकार नहीं की और हल्दीघाटी के युद्ध (1576) में अदम्य साहस का परिचय दिया।',
+        clusterName: 'गुहिल (सिसोदिया) वंश'
+    },
+    {
+        id: 'amar_singh_mewar',
+        name: 'महाराणा अमर सिंह प्रथम',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'maharana_pratap',
+        yug: 'kali',
+        kali_year: 4700,
+        parichay: 'इन्होंने अपने पिता महाराणा प्रताप के संघर्ष को जारी रखा और मुगलों के साथ कई युद्ध लड़े। इनके बाद के शासकों के वंशज \"राणावत\" (Ranawat) भी कहलाये।',
+        clusterName: 'गुहिल (सिसोदिया) वंश'
+    },
+    {
+        id: 'raj_singh_mewar',
+        name: 'महाराणा राज सिंह प्रथम',
+        subtitle: 'मेवाड़ नरेश',
+        parent: 'amar_singh_mewar',
+        yug: 'kali',
+        parichay: 'इन्होंने औरंगजेब की नीतियों का कड़ा विरोध किया और राजसमंद झील का निर्माण करवाया।',
+        clusterName: 'गुहिल (सिसोदिया) वंश'
+    },
+    {
+        id: 'arvind_singh_mewar',
+        name: 'अरविन्द सिंह मेवाड़',
+        subtitle: 'वर्तमान मुखिया',
+        parent: 'raj_singh_mewar',
+        yug: 'kali',
+        parichay: 'ये मेवाड़ राजघराने के वर्तमान प्रतिनिधि और एच.आर.एच. ग्रुप के अध्यक्ष हैं।',
+        clusterName: 'गुहिल (सिसोदिया) वंश'
     },
 
     // Descendants of Sumitra leading to Mewar (According to Raj Prashasti)

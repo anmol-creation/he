@@ -1016,6 +1016,53 @@ export const puruData = [
   clusterName: 'नहुष चंद्रवंशी'
 },
     {
+  id: 'chedi_dynasty_proxy',
+  name: 'चेदि वंश',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'yadu_vasu_chandra',
+  yug: 'dwapar',
+  clusterName: 'नहुष चंद्रवंशी',
+  isProxy: true,
+  timeScale: 'kalpa'
+},
+    {
+  id: 'damaghosha_chandra',
+  name: 'दमघोष',
+  subtitle: 'चेदि नरेश',
+  parent: 'chedi_dynasty_proxy',
+  gender: 'male',
+  clusterName: 'नहुष चंद्रवंशी',
+  yug: 'dwapar'
+},
+    {
+  id: 'shishupala_chandra',
+  name: 'शिशुपाल',
+  subtitle: 'चेदि नरेश',
+  parent: 'damaghosha_chandra',
+  mother: 'shrutasrava_chandra',
+  gender: 'male',
+  yug: 'dwapar'
+},
+    {
+  id: 'matsya_dynasty_proxy',
+  name: 'मत्स्य वंश',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'vasu_uparichara_chandra',
+  yug: 'dwapar',
+  clusterName: 'नहुष चंद्रवंशी',
+  isProxy: true,
+  timeScale: 'kalpa'
+},
+    {
+  id: 'virata_matsya',
+  name: 'विराट',
+  subtitle: 'मत्स्य नरेश',
+  parent: 'matsya_dynasty_proxy',
+  gender: 'male',
+  clusterName: 'नहुष चंद्रवंशी',
+  yug: 'dwapar'
+},
+    {
   id: 'jarasandha_chandra',
   name: 'जरासंध',
   subtitle: 'मगध सम्राट',

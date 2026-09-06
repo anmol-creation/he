@@ -1,4 +1,30 @@
 export const lakshman_bharat_shatrughanData = [
+    {
+        id: 'bharat',
+        name: 'भरत',
+        subtitle: 'आदर्श भ्राता',
+        parent: 'dasharath',
+        mother: 'kaikeyi',
+        yug: 'treta'
+    },
+    {
+        id: 'taksha',
+        name: 'तक्ष',
+        subtitle: 'तक्षशिला के राजा',
+        parent: 'bharat',
+        mother: 'mandavi',
+        yug: 'treta',
+        parichay: 'भरत ने गंधर्वों को हराकर सिंधु नदी के पूर्वी भाग में तक्षशिला नगर बसाया और तक्ष को वहां का राजा बनाया।'
+    },
+    {
+        id: 'pushkala',
+        name: 'पुष्कल',
+        subtitle: 'पुष्कलावती के राजा',
+        parent: 'bharat',
+        mother: 'mandavi',
+        yug: 'treta',
+        parichay: 'भरत ने सिंधु नदी के पश्चिमी भाग में पुष्कलावती (पेशावर) नगर बसाया और पुष्कल को वहां का राजा बनाया।'
+    },
 
     // Bhalla Khatri (Descendants of Bharat)
     {
@@ -180,18 +206,5 @@ export const lakshman_bharat_shatrughanData = [
         mother: 'shrutakirti',
         yug: 'treta',
         parichay: 'शत्रुघ्न के द्वितीय पुत्र, जिन्हें विदिशा का राजा बनाया गया था।'
-    },
-
-    // Bhalla Khatri (Descendants of Bharat)
-    // Note: To keep the tree structured, we add Bharat's descendants under Bharat directly.
-
-    {
-        id: 'sita',
-        name: 'सीता',
-        subtitle: 'जनक नंदिनी',
-        parent: 'seeradhwaja_janak',
-        mother: 'sunayana',
-        spouseOf: 'ram',
-        yug: 'treta'
     },
 ];
