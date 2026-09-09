@@ -121,3 +121,35 @@ Based on the chronological logic above, the physical map UI will implement a str
 *   **Vertical Shift:** When a node has this property, the React Flow layout engine will automatically bypass the standard layout height and snap this node exactly to the corresponding coordinate on the Kaliyug Ruler.
 *   **Edge Expansion:** If a grandparent is at Year 0 and a grandson is assigned Year 500, the connecting lineage line (edge) will automatically stretch across that spatial gap.
 *   **Downstream Stacking:** All descendant nodes that do not possess an explicit `kali_year` will stack normally below the newly shifted parent node, preserving the relative generational structure while anchoring the branch to a precise historical timeframe.
+
+## 7. Deep Dive: Kaliyug Progression, Communities, and Kalki Avatar
+
+### The Gradual Decline of Kaliyug
+Kaliyug did not manifest instantaneously but progressed through distinct socio-psychological phases.
+*   **The Entry of Kali:** As described in Srimad Bhagavatam (Canto 1), Kali (the personification of the age) was allowed by King Parikshit to reside only in five places: Gambling, Intoxication, Illicit Relationships, Slaughter, and Gold (Wealth).
+*   **The Fall of Dharma:** Of the four pillars of Dharma (Tapa, Shaucha, Daya, Satya), only Satya (Truth) remained at the onset of Kaliyug, which is prophesied to systematically degrade due to deceit and greed.
+*   **Socio-Political Shifts:** Kingship shifts away from Rishi-like rulers to those driven by power and wealth, leading to severe taxation, corruption, and the eventual flight of citizens to forests.
+
+### The Buddha Paradox (Maya-Moha)
+A complex scriptural paradox explains the role of the Puranic Buddha Avatar:
+*   **The Context:** According to texts like Vishnu Purana and Shiva Purana (in the context of Tripurasura), Asuras gained immense power by strictly adhering to Vedic rituals (Yagya) and austerities (Tapasya), making them invincible.
+*   **The Strategy:** To break their invincibility, Lord Vishnu assumed the form of 'Maya-Moha' (the Deluder) or 'Buddha' to preach a philosophy of non-violence that explicitly rejected the Vedas.
+*   **The Result:** The Asuras adopted this anti-Vedic philosophy, abandoned their protective Vedic rituals, and were subsequently defeated by the Devas. However, this anti-Vedic philosophy persisted into Kaliyug, causing humans to stray from Sanatan Dharma.
+
+### Puranic Buddha vs. Gautama Buddha and Multiple Buddhas
+*   **Historical vs. Puranic:** Traditional scholars separate the Puranic 'Maya-Moha' Avatar (who appeared in ancient times to delude Asuras) from the historical Siddhartha Gautama (born ~500 BCE in Lumbini). Later syncretic traditions often merged the two.
+*   **Multiple Buddhas:** Similar to the 24 Tirthankaras in Jainism, Buddhism also recognizes 28 Buddhas across time cycles (e.g., Dipankara, Kassapa) prior to Siddhartha Gautama, aligning with the Puranic concept of cyclical manifestations.
+
+### World Communities in Kaliyug
+The Mahabharata (Vana Parva) and Bhavishya Purana explicitly mention the global communities that would dominate Kaliyug:
+*   **The Mlecchas:** Mleccha refers to a conduct (those who reject Vedic injunctions, purity, and consume prohibited food), not a race.
+*   **Specific Tribes:** Texts prophesy that tribes such as the Shakas, Yavanas (Indo-Greeks/Westerners), Pahlavas (Persians), and Chinas (Chinese/Tibetans) would rule the earth, imposing heavy taxes and discarding the Varnashrama structure.
+
+### The Final Climax and Kalki Avatar
+Kaliyug is mathematically defined as 4,32,000 human years. Its degradation occurs in phases:
+1.  **Phase 1 (~First 10,000 years):** Devotion and holy rivers (like Ganga) remain.
+2.  **Phase 2:** Holy rivers disappear or change course; divinity fades from temple deities.
+3.  **Phase 3:** Extreme physical degradation (lifespans drop to 20-30 years), severe environmental collapse, loss of morality, and famine.
+4.  **Final Phase (Kalki):** When Dharma is completely lost, Lord Kalki (born in Shambhala) incarnates.
+    *   **The Opponents:** Kalki's primary adversaries are those who vehemently reject the existence of God and the Vedas (symbolically represented in Kalki Purana as 'Buddhists/Jinas' in Keekat) and the Mlecchas led by 'Vikau'.
+    *   **The Allies:** Kalki is supported by Parashurama (his Guru), the 'Seed Kings' (Maru and Devapi awakening from Kalapa Grama), and pure-hearted individuals to destroy the corrupted order and re-establish Satya Yuga.
