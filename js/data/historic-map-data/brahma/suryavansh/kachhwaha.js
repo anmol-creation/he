@@ -93,7 +93,10 @@ export const kachhwahaData = [
         name: 'उदयकर्ण',
         subtitle: 'जुंसी पुत्र',
         parent: 'junsi',
-        yug: 'kali'
+        yug: 'kali',
+        gender: 'male',
+        kali_year: 4468, // Roughly 1366 AD
+        parichay: 'आमेर के राजा (1366-1388 AD)।'
     },
 
     // Udayakarna's descendants forming sub-clans
@@ -102,25 +105,96 @@ export const kachhwahaData = [
         name: 'बर सिंह',
         subtitle: 'उदयकर्ण पुत्र',
         parent: 'udayakarna',
-        yug: 'kali'
-    },
-    {
-        id: 'naruka_dynasty_proxy',
-        name: 'नरूका वंश',
-        subtitle: 'राव नरू के वंशज',
-        parent: 'bar_singh_amer',
         yug: 'kali',
-        clusterName: 'नरूका वंश',
-        isProxy: true
+        gender: 'male',
+        kali_year: 4493
     },
     {
         id: 'naru_singh',
         name: 'राव नरू',
         subtitle: 'नरूका वंश के संस्थापक',
-        parent: 'naruka_dynasty_proxy',
+        parent: 'bar_singh_amer',
         clusterName: 'नरूका वंश',
+        lineLabel: 'नरूका वंश',
+        gender: 'male',
         yug: 'kali',
-        parichay: 'इनके वंशज "नरूका" (Naruka) कहलाए। अलवर का राजघराना नरूका कछवाहों का ही है।'
+        kali_year: 4518,
+        parichay: 'मोजद (मोजमाबाद) के महाराव नरू सिंह। इनके वंशज "नरूका" (Naruka) कहलाए और इनके अधीन क्षेत्र को "नरूखंड" कहा गया। अलवर का राजघराना नरूका कछवाहों का ही है।'
+    },
+
+    // Sons of Rao Naru Singh (Naruka Clan Branches)
+    {
+        id: 'dasa_naruka',
+        name: 'दासा',
+        subtitle: 'राव नरू पुत्र',
+        parent: 'naru_singh',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4543,
+        parichay: 'इनके वंशज दासावत नरूका (Dasawat Naruka) कहलाये। लावा (Lawa) और लडाना ठिकाने के शासक इन्हीं के वंशज हैं।'
+    },
+    {
+        id: 'pratap_singh_naruka',
+        name: 'राव प्रताप सिंह',
+        subtitle: 'अलवर के संस्थापक',
+        parent: 'naru_singh',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4877, // Roughly 1775 AD
+        parichay: 'इन्होंने 1775 में अलवर (Alwar) रियासत की स्थापना की थी। ये राव नरू के वंशजों में से थे।'
+    },
+    {
+        id: 'nahar_singh_lawa',
+        name: 'ठाकुर नाहर सिंह',
+        subtitle: 'लावा के संस्थापक',
+        parent: 'dasa_naruka',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4824, // Roughly 1722 AD
+        parichay: 'दासा जी के वंशज। इन्हें जयपुर नरेश ने 1722 ई. में लावा (Lawa) ठिकाने की जागीर दी थी।'
+    },
+    {
+        id: 'lala_naruka',
+        name: 'लाला',
+        subtitle: 'राव नरू पुत्र',
+        parent: 'naru_singh',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4544
+    },
+    {
+        id: 'teja_naruka',
+        name: 'तेजा',
+        subtitle: 'राव नरू पुत्र',
+        parent: 'naru_singh',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4545
+    },
+    {
+        id: 'jeta_naruka',
+        name: 'जेता',
+        subtitle: 'राव नरू पुत्र',
+        parent: 'naru_singh',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4546
+    },
+    {
+        id: 'chitar_naruka',
+        name: 'चीतर',
+        subtitle: 'राव नरू पुत्र',
+        parent: 'naru_singh',
+        clusterName: 'नरूका वंश',
+        gender: 'male',
+        yug: 'kali',
+        kali_year: 4547
     },
 
     {
@@ -292,22 +366,6 @@ export const kachhwahaData = [
         parent: 'rao_mokal',
         yug: 'kali',
         parichay: 'इन्होंने 15वीं शताब्दी में आमेर से स्वतंत्र होकर अमरसर में अपना राज्य स्थापित किया। इन्हीं के नाम पर शेखावाटी क्षेत्र और "शेखावत" सरनेम/शाखा की शुरुआत हुई।'
-    },
-
-    {
-        id: 'rao_bar_singh',
-        name: 'राव बार सिंह',
-        subtitle: 'उदयकर्ण पुत्र',
-        parent: 'udayakarna',
-        yug: 'kali'
-    },
-    {
-        id: 'rao_naru',
-        name: 'राव नरू',
-        subtitle: 'नरूका वंश के संस्थापक',
-        parent: 'rao_bar_singh',
-        yug: 'kali',
-        parichay: 'राव बार सिंह के वंशज। इन्हीं के नाम से "नरूका" सरनेम/शाखा की शुरुआत हुई। अलवर का राजघराना नरूका शाखा से ही है।'
     },
 
     {

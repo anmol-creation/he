@@ -135,7 +135,7 @@ export const my_lineageData = [
         id: 'ganga_sahay_agarwal',
         name: 'गंगा सहाय अग्रवाल',
         subtitle: 'परनाना',
-        parent: 'maharaja_agrasen',
+        parent: 'sindhupati',
         yug: 'kali',
         clusterName: 'सिंघल अग्रवाल (माता का परिवार)'
     },
