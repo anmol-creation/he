@@ -66,7 +66,7 @@ export const shakyaData = [
         spouseOf: 'shuddhodana',
         yug: 'kali',
         parichay: 'गौतम बुद्ध की सगी माता, जिनका बुद्ध के जन्म के सात दिन बाद निधन हो गया था।',
-        clusterName: 'शाक्य वंश'
+        clusterName: 'शुद्धोदन पत्नी'
     },
     {
         id: 'mahapajapati_gotami',
@@ -75,7 +75,8 @@ export const shakyaData = [
         parent: '',
         spouseOf: 'shuddhodana',
         yug: 'kali',
-        parichay: 'गौतम बुद्ध की मौसी और सौतेली माता। ये पहली महिला थीं जिन्होंने बौद्ध संघ में भिक्षुणी के रूप में प्रवेश लिया था।'
+        parichay: 'गौतम बुद्ध की मौसी और सौतेली माता। ये पहली महिला थीं जिन्होंने बौद्ध संघ में भिक्षुणी के रूप में प्रवेश लिया था।',
+        clusterName: 'शुद्धोदन पत्नी'
     },
 
     // Children of Shuddhodana
