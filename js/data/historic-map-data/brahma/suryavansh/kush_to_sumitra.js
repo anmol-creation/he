@@ -421,20 +421,10 @@ export const kush_to_sumitraData = [
         yug: 'kali'
     },
     {
-        id: 'shakya_dynasty_proxy',
-        name: 'शाक्य वंश',
-        subtitle: 'सञ्जय के वंशज',
-        parent: 'sanjaya_surya',
-        yug: 'kali',
-        parichay: 'शाक्य वंश के प्रवर्तक, जिसमें गौतम बुद्ध का जन्म हुआ।',
-        isProxy: true,
-        clusterName: 'शाक्य वंश'
-    },
-    {
         id: 'shakya_king',
         name: 'शाक्य',
         subtitle: 'सञ्जय पुत्र',
-        parent: 'shakya_dynasty_proxy',
+        parent: 'sanjaya_surya',
         yug: 'kali',
         parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।',
         clusterName: 'शाक्य वंश'
