@@ -175,19 +175,10 @@ export const shakyaData = [
         clusterName: 'मौर्य वंश'
     },
     {
-        id: 'maurya_dynasty_proxy',
-        name: 'मौर्य वंश',
-        subtitle: 'चन्द्रगुप्त के वंशज',
-        parent: 'moriya_clan',
-        yug: 'kali',
-        clusterName: 'मौर्य वंश',
-        isProxy: true
-    },
-    {
         id: 'chandragupta_maurya',
         name: 'चन्द्रगुप्त मौर्य',
         subtitle: 'मौर्य साम्राज्य के संस्थापक',
-        parent: 'maurya_dynasty_proxy',
+        parent: 'moriya_clan',
         clusterName: 'मौर्य वंश',
         yug: 'kali',
         parichay: 'इन्होंने चाणक्य की सहायता से नंद वंश का नाश किया और भारत के सबसे विशाल मौर्य साम्राज्य की स्थापना की। वर्तमान में "कुशवाहा, कोइरी, काछी, सैनी और शाक्य/मौर्य" कृषक समाज गर्व से इसी वंश (कुश->शाक्य->मौर्य) से अपनी उत्पत्ति मानते हैं।'

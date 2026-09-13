@@ -421,22 +421,12 @@ export const kush_to_sumitraData = [
         yug: 'kali'
     },
     {
-        id: 'shakya_dynasty_proxy',
-        name: 'शाक्य वंश',
-        subtitle: 'सञ्जय के वंशज',
+        id: 'shakya_king',
+        name: 'शाक्य (सीहहनु)',
+        subtitle: 'सञ्जय पुत्र',
         parent: 'sanjaya_surya',
         yug: 'kali',
-        parichay: 'शाक्य वंश के प्रवर्तक, जिसमें गौतम बुद्ध का जन्म हुआ।',
-        isProxy: true,
-        clusterName: 'शाक्य वंश'
-    },
-    {
-        id: 'shakya_king',
-        name: 'शाक्य',
-        subtitle: 'सञ्जय पुत्र',
-        parent: 'shakya_dynasty_proxy',
-        yug: 'kali',
-        parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक माने गए हैं, जिसमें गौतम बुद्ध का जन्म हुआ।',
+        parichay: 'पुराणों के अनुसार ये शाक्य वंश के प्रवर्तक राजा \'शाक्य\' माने गए हैं, जो सञ्जय के पुत्र थे। लेकिन बौद्ध ग्रंथों (महावंश) के अनुसार बुद्ध के दादा का मूल नाम \'सीहहनु\' (Sihahanu) था, और शाक्य वंश की उत्पत्ति सीधे प्राचीन राजा इक्ष्वाकु (ओक्काक) के निर्वासित पुत्रों से हुई थी।',
         clusterName: 'शाक्य वंश'
     },
 ];
