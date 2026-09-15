@@ -184,7 +184,7 @@ html {
   backdrop-filter: blur(10px);
   border-radius: 15px;
   box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-  z-index: 100;
+  z-index: 300;
   display: flex;
   flex-direction: column;
   transform: translateX(0);
