@@ -1,3 +1,3 @@
 import urllib.request
-import json
-print("Running search...")
+import urllib.parse
+print("Searching Wikipedia")

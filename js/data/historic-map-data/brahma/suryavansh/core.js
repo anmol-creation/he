@@ -38,7 +38,7 @@ export const coreData = [
         id: 'shraddha_manu_wife',
         name: 'श्रद्धा',
         subtitle: 'मनु पत्नी',
-        parent: '',
+        parent: 'kashyapa_rishi',
         spouseOf: 'vaivasvata_manu',
         yug: 'satya'
     },
