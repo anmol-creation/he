@@ -58,13 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Get entities grouped or filtered by Yuga
     function getFilteredEntities() {
-        if (state.activeYuga === 'All') return state.entities;
+        let filtered = state.entities;
 
-        return state.entities.filter(e => {
-            const y = (e.yug || 'UNKNOWN').toLowerCase();
-            const filter = state.activeYuga.toLowerCase();
-            return y.includes(filter);
-        });
+        if (state.activeYuga !== 'All') {
+            filtered = state.entities.filter(e => {
+                const y = (e.yug || 'UNKNOWN').toLowerCase();
+                const filter = state.activeYuga.toLowerCase();
+                return y.includes(filter);
+            });
+        }
+
+        // Ensure Vaivasvata Manu is placed first in the Satyug (or All) list
+        const manuIndex = filtered.findIndex(e => e.id === 'vaivasvata_manu');
+        if (manuIndex > 0) {
+            const manu = filtered.splice(manuIndex, 1)[0];
+            filtered.unshift(manu);
+        }
+
+        return filtered;
     }
 
     // ==========================================
