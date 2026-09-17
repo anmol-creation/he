@@ -40,7 +40,7 @@ export const coreData = [
         name: 'श्रद्धा',
         subtitle: 'मनु पत्नी',
         gender: 'female',
-        parent: '',
+        parent: 'kashyapa_rishi',
         spouseOf: 'vaivasvata_manu',
         yug: 'satya',
         kathayein: [
