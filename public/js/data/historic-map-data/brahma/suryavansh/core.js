@@ -32,6 +32,16 @@ export const coreData = [
                 title: "मनुस्मृति और सन्यास",
                 source: "श्रीमद्भागवत पुराण",
                 content: "वैवस्वत मनु ने ही जल प्रलय के बाद नए मानव समाज के लिए धर्म, अर्थ और न्याय के नियम (मनुस्मृति के मूल सिद्धांत) स्थापित किए। एक अत्यंत दीर्घ काल तक शासन करने के बाद, जब उन्होंने देखा कि इक्ष्वाकु राज्य चलाने में सक्षम हैं, तब वे अपना सारा राज-पाट सौंपकर वन प्रस्थान कर गए और वासुदेव में ध्यान लगाते हुए परम मोक्ष को प्राप्त हुए।"
+            },
+            {
+                title: "सृष्टि विस्तार और अन्य प्रजातियों (दैत्य, दानव) से संघर्ष",
+                source: "पुराण / महाभारत",
+                content: "जल-प्रलय के पश्चात् जब मनु के पुत्रों ने पृथ्वी पर राज्यों का विस्तार करना आरंभ किया, तो पूरी पृथ्वी खाली नहीं थी। महर्षि कश्यप की अन्य पत्नियों (दिति, दनु, कद्रू आदि) से उत्पन्न शक्तिशाली प्रजातियाँ—जैसे दैत्य, दानव और नाग—जंगलों, पहाड़ों और निचले इलाकों (पाताल) में निवास करती थीं। ये प्रजातियाँ शक्तिशाली थीं परंतु वैदिक यज्ञों और नियमों को नहीं मानती थीं। मनु के देव-तुल्य पुत्रों (सूर्यवंशियों) का मुख्य संघर्ष इन्हीं दानवों और असुरों से हुआ, जो उनके यज्ञों को नष्ट करने का प्रयास करते थे। इसी विस्तार के दौरान, जो आर्य (क्षत्रिय) मुख्य भूमि से दूर जंगलों या मध्य एशिया की ओर गए और वेद भूल गए, वे बाद में 'म्लेच्छ' (जैसे शक, यवन) कहलाए।"
+            },
+            {
+                title: "अन्य ५० पुत्रों का उल्लेख और सत्ता का संघर्ष",
+                source: "महाभारत",
+                content: "महाभारत के अनुसार, इक्ष्वाकु, नाभाग, शर्याति आदि १० प्रसिद्ध पुत्रों के अतिरिक्त वैवस्वत मनु के ५० अन्य पुत्र भी हुए थे। जहाँ उनके १० प्रमुख पुत्रों ने धर्मपूर्वक राज्यों की स्थापना की, वहीं ये अन्य ५० पुत्र भूमि, संपत्ति और सत्ता के लालच में आकर परस्पर (आपस में ही) भयानक युद्ध करने लगे। अंततः वे एक-दूसरे से लड़कर पूर्णतः नष्ट हो गए। यह घटना सत्ता-संघर्ष और गृह-युद्ध का एक प्रारंभिक प्राचीन उदाहरण प्रस्तुत करती है।"
             }
         ]
     },
@@ -93,6 +103,7 @@ export const coreData = [
         subtitle: 'सुद्युम्न पुत्र',
         gender: 'male',
         parent: 'sudyumna_surya',
+        lineLabel: 'उत्कल (ओडिशा)',
         yug: 'satya',
         clusterName: 'सुद्युम्न के पुत्र',
         parichay: 'सुद्युम्न के पुत्र जिन्होंने पूर्वी भारत में शासन किया और उत्कल (वर्तमान उड़ीसा) प्रदेश बसाया।'
@@ -103,6 +114,7 @@ export const coreData = [
         subtitle: 'सुद्युम्न पुत्र',
         gender: 'male',
         parent: 'sudyumna_surya',
+        lineLabel: 'गय (बिहार)',
         yug: 'satya',
         clusterName: 'सुद्युम्न के पुत्र',
         parichay: 'सुद्युम्न के पुत्र जिन्होंने पूर्वी क्षेत्र में गया (वर्तमान बिहार) शहर की स्थापना की और धर्मपरायण राज्य किया।'
@@ -113,6 +125,7 @@ export const coreData = [
         subtitle: 'सुद्युम्न पुत्र',
         gender: 'male',
         parent: 'sudyumna_surya',
+        lineLabel: 'विमल (पश्चिम)',
         yug: 'satya',
         clusterName: 'सुद्युम्न के पुत्र',
         parichay: 'सुद्युम्न के पुत्र, जिन्हें कुछ पुराणों में हरिताश्व या विनताश्व भी कहा गया है। इन्होंने पश्चिमी भारत के राज्यों पर शासन किया।'
@@ -152,6 +165,7 @@ export const coreData = [
         subtitle: 'अंबरीष पुत्र',
         gender: 'male',
         parent: 'ambarisha_nabhaga',
+        lineLabel: 'विरूप',
         yug: 'satya',
         clusterName: 'नाभाग के वंशज'
     },
@@ -161,6 +175,7 @@ export const coreData = [
         subtitle: 'अंबरीष पुत्र',
         gender: 'male',
         parent: 'ambarisha_nabhaga',
+        lineLabel: 'केतुमान',
         yug: 'satya',
         clusterName: 'नाभाग के वंशज'
     },
@@ -170,6 +185,7 @@ export const coreData = [
         subtitle: 'अंबरीष पुत्र',
         gender: 'male',
         parent: 'ambarisha_nabhaga',
+        lineLabel: 'शंभु',
         yug: 'satya',
         clusterName: 'नाभाग के वंशज'
     },
@@ -260,10 +276,110 @@ export const coreData = [
         id: 'narishyanta',
         name: 'नरिष्यंत',
         subtitle: 'मनु पुत्र',
+        gender: 'male',
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
-        yug: 'satya' ,
-        clusterName: 'मनु के अन्य पुत्र'
+        yug: 'satya',
+        clusterName: 'मनु के अन्य पुत्र',
+        parichay: 'इन्होंने उत्तर-पश्चिमी सीमांतों पर शासन किया। कुछ ऐतिहासिक ग्रंथों के अनुसार ये शक (Scythians) जाति के आदि-पुरुष थे।',
+        kathayein: [
+            {
+                title: "शक (Sakas) जाति की उत्पत्ति और अग्निवेश्य गोत्र",
+                source: "श्रीमद्भागवत पुराण (स्कन्ध 9, अध्याय 2) / मत्स्य पुराण",
+                content: "नरिष्यंत वैवस्वत मनु के पुत्र और सूर्यवंशी क्षत्रिय थे। इन्होंने भारतवर्ष के उत्तर-पश्चिमी सीमाओं और उससे आगे (मध्य एशिया) की ओर जाकर अपना राज्य स्थापित किया। प्राचीन ऐतिहासिक साक्ष्यों और कुछ पुराणों के अनुसार, मध्य एशिया की 'शक' (Sakas / Scythians) नामक प्रसिद्ध लड़ाकू जाति का आदि-संस्थापक नरिष्यंत को ही माना जाता है। चूँकि इनके कुछ वंशज मुख्य भूमि से बहुत दूर चले गए थे, इसलिए वे बाद में वैदिक कर्मकांड भूलकर म्लेच्छ या घुमंतू कबीले कहलाए।\n\nहालाँकि, नरिष्यंत की मुख्य वंशावली में उनके पुत्र चित्रसेन हुए। इसी वंश में आगे चलकर 11वीं पीढ़ी में एक अत्यंत प्रतापी पुत्र हुआ जिसका नाम 'अग्निवेश्य' था। अग्निवेश्य को साक्षात अग्निदेव का अवतार माना गया और वे एक महान महर्षि बने। नरिष्यंत के उस क्षत्रिय वंश से ही 'अग्निवेश्यायन' नामक महान ब्राह्मण गोत्र की शुरुआत हुई।"
+            }
+        ]
+    },
+    {
+        id: 'chitrasena_narishyanta',
+        name: 'चित्रसेन',
+        subtitle: 'नरिष्यंत पुत्र',
+        gender: 'male',
+        parent: 'narishyanta',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'riksha_chitrasena',
+        name: 'ऋक्ष',
+        subtitle: 'चित्रसेन पुत्र',
+        gender: 'male',
+        parent: 'chitrasena_narishyanta',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'midhvan_riksha',
+        name: 'मीढ्वान',
+        subtitle: 'ऋक्ष पुत्र',
+        gender: 'male',
+        parent: 'riksha_chitrasena',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'purna_midhvan',
+        name: 'पूर्ण',
+        subtitle: 'मीढ्वान पुत्र',
+        gender: 'male',
+        parent: 'midhvan_riksha',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'indrasena_purna',
+        name: 'इन्द्रसेन',
+        subtitle: 'पूर्ण पुत्र',
+        gender: 'male',
+        parent: 'purna_midhvan',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'vitihotra_indrasena',
+        name: 'वीतिहोत्र',
+        subtitle: 'इन्द्रसेन पुत्र',
+        gender: 'male',
+        parent: 'indrasena_purna',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'satyashrava_vitihotra',
+        name: 'सत्यश्रवा',
+        subtitle: 'वीतिहोत्र पुत्र',
+        gender: 'male',
+        parent: 'vitihotra_indrasena',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'urushrava_satyashrava',
+        name: 'उरुश्रवा',
+        subtitle: 'सत्यश्रवा पुत्र',
+        gender: 'male',
+        parent: 'satyashrava_vitihotra',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'devadatta_urushrava',
+        name: 'देवदत्त',
+        subtitle: 'उरुश्रवा पुत्र',
+        gender: 'male',
+        parent: 'urushrava_satyashrava',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज'
+    },
+    {
+        id: 'agniveshya_devadatta',
+        name: 'अग्निवेश्य',
+        subtitle: 'देवदत्त पुत्र',
+        gender: 'male',
+        parent: 'devadatta_urushrava',
+        yug: 'satya',
+        clusterName: 'नरिष्यंत के वंशज',
+        parichay: 'इन्हें अग्निदेव का अवतार माना जाता है। ये महान महर्षि हुए और इन्होंने अग्निवेश्यायन ब्राह्मण गोत्र की स्थापना की।'
     },
     {
         id: 'pramshu',
@@ -611,35 +727,6 @@ export const coreData = [
         parent: 'trayaruni',
         yug: 'treta',
         parichay: 'विश्वामित्र ने इन्हें सदेह स्वर्ग भेजा था, जहाँ से इन्द्र ने इन्हें उल्टा गिरा दिया। फिर विश्वामित्र ने इनके लिए अलग स्वर्ग (त्रिशंकु स्वर्ग) का निर्माण किया।'
-    },
-
-
-    // Descendants of Sharyati
-    {
-        id: 'sukanya_surya',
-        name: 'सुकन्या',
-        subtitle: 'शर्याति पुत्री',
-        parent: 'sharyati',
-        yug: 'satya',
-        parichay: 'इनका विवाह महर्षि च्यवन से हुआ था।'
-    },
-    {
-        id: 'anarta',
-        name: 'आनर्त',
-        subtitle: 'शर्याति पुत्र',
-        parent: 'sharyati',
-        yug: 'satya',
-        parichay: 'इनके नाम पर आनर्त देश (आधुनिक गुजरात का भाग) का नाम पड़ा।'
-    },
-
-    // Descendants of Nabhaga
-    {
-        id: 'ambarisha',
-        name: 'अम्बरीष',
-        subtitle: 'महान विष्णु भक्त',
-        parent: 'nabhaga',
-        yug: 'satya',
-        parichay: 'दुर्वासा ऋषि के श्राप से सुदर्शन चक्र ने इनकी रक्षा की थी।'
     },
 
 
