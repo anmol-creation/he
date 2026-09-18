@@ -394,10 +394,100 @@ export const coreData = [
         id: 'nabhanedishta',
         name: 'नाभानेदिष्ट',
         subtitle: 'मनु पुत्र',
+        gender: 'male',
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र'
+        clusterName: 'मनु के अन्य पुत्र',
+        parichay: 'इनके नाम और प्रारंभिक जीवन की कथा मनु के अन्य पुत्र "नाभाग" से बहुत मिलती है, इसलिए अक्सर दोनों को एक मान लिया जाता है, परंतु इनका राजवंश (वैशाल) बिल्कुल अलग है।',
+        kathayein: [
+            {
+                title: "ऋषियों के यज्ञ से धन प्राप्ति और वैशाल वंश की नींव",
+                source: "ऐतरेय ब्राह्मण / श्रीमद्भागवत पुराण",
+                content: "नाभानेदिष्ट वैवस्वत मनु के पुत्र थे। जब मनु अपने राज्य का बंटवारा कर रहे थे, तब नाभानेदिष्ट गुरुकुल में शिक्षा ग्रहण कर रहे थे, इसलिए उन्हें संपत्ति का कोई भाग नहीं मिला। पिता मनु ने उन्हें बताया कि अंगिरस गोत्र के ऋषि स्वर्ग प्राप्ति के लिए एक महायज्ञ कर रहे हैं, परंतु वे मंत्रों में अटक रहे हैं। नाभानेदिष्ट ने जाकर उनका यज्ञ संपन्न करवाया और बदले में ऋषियों ने उन्हें यज्ञ का सारा बचा हुआ धन दे दिया।\n\n(यह कथा नाभाग की प्रारंभिक कथा से समान है, लेकिन इसके आगे की घटनाएं अलग हैं)। नाभानेदिष्ट ने अपने तपोबल और विद्या से प्राप्त उस विशाल धन से एक अत्यंत प्रतापी राजवंश की नींव रखी, जिसे 'वैशाल वंश' या 'भालन्दन वंश' कहा गया। इसी वंश में आगे चलकर महान चक्रवर्ती सम्राट 'मरुत्त' पैदा हुए और उनके वंशजों ने पूर्वी भारत में 'वैशाली' (वर्तमान बिहार) नामक महान नगरी की स्थापना की।"
+            }
+        ]
+    },
+    {
+        id: 'bhalandana_nabhanedishta',
+        name: 'भालन्दन',
+        subtitle: 'नाभानेदिष्ट पुत्र',
+        gender: 'male',
+        parent: 'nabhanedishta',
+        lineLabel: 'भालन्दन',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'vatsapri_bhalandana',
+        name: 'वत्सप्री',
+        subtitle: 'भालन्दन पुत्र',
+        gender: 'male',
+        parent: 'bhalandana_nabhanedishta',
+        lineLabel: 'वत्सप्री',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'pramshu_2_vatsapri',
+        name: 'प्रांशु (द्वितीय)',
+        subtitle: 'वत्सप्री पुत्र',
+        gender: 'male',
+        parent: 'vatsapri_bhalandana',
+        lineLabel: 'प्रांशु II',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'pramati_2_pramshu_2',
+        name: 'प्रमति (द्वितीय)',
+        subtitle: 'प्रांशु (द्वितीय) पुत्र',
+        gender: 'male',
+        parent: 'pramshu_2_vatsapri',
+        lineLabel: 'प्रमति II',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'khanitra_pramati_2',
+        name: 'खनित्र',
+        subtitle: 'प्रमति पुत्र',
+        gender: 'male',
+        parent: 'pramati_2_pramshu_2',
+        lineLabel: 'खनित्र',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'karandhama_2_khanitra',
+        name: 'करंधम',
+        subtitle: 'खनित्र पुत्र',
+        gender: 'male',
+        parent: 'khanitra_pramati_2',
+        lineLabel: 'करंधम',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'avikshita_karandhama_2',
+        name: 'अविक्षित',
+        subtitle: 'करंधम पुत्र',
+        gender: 'male',
+        parent: 'karandhama_2_khanitra',
+        lineLabel: 'अविक्षित',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज'
+    },
+    {
+        id: 'marutta_avikshita',
+        name: 'मरुत्त',
+        subtitle: 'चक्रवर्ती सम्राट',
+        gender: 'male',
+        parent: 'avikshita_karandhama_2',
+        lineLabel: 'मरुत्त',
+        yug: 'satya',
+        clusterName: 'नाभानेदिष्ट के वंशज',
+        parichay: 'अविक्षित के पुत्र, जो एक अत्यंत प्रतापी और चक्रवर्ती सम्राट हुए। इन्होंने सोने के बर्तनों वाला एक विश्व प्रसिद्ध महायज्ञ किया था। इसी वंश ने वैशाली नगरी बसाई।'
     },
     {
         id: 'karusha',
