@@ -727,6 +727,7 @@ export const coreData = [
         subtitle: 'विदेह वंश संस्थापक',
         parent: 'ikshvaku',
         yug: 'treta',
+        clusterName: 'इक्ष्वाकु वंश',
         parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।'
     },
     {
@@ -736,16 +737,9 @@ export const coreData = [
         gender: 'male',
         parent: 'ikshvaku',
         yug: 'satya',
+        clusterName: 'इक्ष्वाकु वंश'
         parichay: 'इक्ष्वाकु के १०० पुत्रों में से एक। इन्होंने दण्डकारण्य नामक क्षेत्र बसाया।',
         clusterName: 'इक्ष्वाकु वंश'
-    },
-    {
-        id: 'danda',
-        name: 'दण्ड',
-        subtitle: 'इक्ष्वाकु पुत्र',
-        parent: 'ikshvaku',
-        yug: 'treta',
-        parichay: 'दंडकारण्य वन का नाम इन्हीं के नाम पर पड़ा।'
     },
     // Vikukshi's immediate
     {
@@ -763,49 +757,56 @@ export const coreData = [
         name: 'अनेना',
         subtitle: 'पुरंजय पुत्र',
         parent: 'puranjaya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'prithu_surya',
         name: 'पृथु',
         subtitle: 'अनेना पुत्र',
         parent: 'anena_surya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'vishvarandhi',
         name: 'विश्वरंधि',
         subtitle: 'पृथु पुत्र',
         parent: 'prithu_surya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'chandra_surya',
         name: 'चंद्र',
         subtitle: 'विश्वरंधि पुत्र',
         parent: 'vishvarandhi',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'yuvanashva_1',
         name: 'युवनाश्व प्रथम',
         subtitle: 'चंद्र पुत्र',
         parent: 'chandra_surya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'shravasta',
         name: 'श्रावस्त',
         subtitle: 'श्रावस्ती के संस्थापक',
         parent: 'yuvanashva_1',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'brihadashva',
         name: 'बृहदाश्व',
         subtitle: 'श्रावस्त पुत्र',
         parent: 'shravasta',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'kuvalayashva',
@@ -813,28 +814,32 @@ export const coreData = [
         subtitle: 'धुंधुमार',
         parent: 'brihadashva',
         yug: 'treta',
-        parichay: 'धुंधु नामक राक्षस का वध करने के कारण धुंधुमार कहलाए।'
+        parichay: 'धुंधु नामक राक्षस का वध करने के कारण धुंधुमार कहलाए।',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'dridhashva',
         name: 'दृढ़ाश्व',
         subtitle: 'धुंधुमार पुत्र',
         parent: 'kuvalayashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'chandrashva',
         name: 'चन्द्राश्व',
         subtitle: 'धुंधुमार पुत्र',
         parent: 'kuvalayashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'kapilashva',
         name: 'कपिलाश्व',
         subtitle: 'धुंधुमार पुत्र',
         parent: 'kuvalayashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -842,49 +847,56 @@ export const coreData = [
         name: 'प्रमोद',
         subtitle: 'दृढ़ाश्व पुत्र',
         parent: 'dridhashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'haryashva_1',
         name: 'हर्याश्व प्रथम',
         subtitle: 'प्रमोद पुत्र',
         parent: 'pramoda',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'nikumbha_surya',
         name: 'निकुंभ',
         subtitle: 'हर्याश्व पुत्र',
         parent: 'haryashva_1',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'baharnashva',
         name: 'बहर्णाश्व',
         subtitle: 'निकुंभ पुत्र',
         parent: 'nikumbha_surya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'krishashva',
         name: 'कृशाश्व',
         subtitle: 'बहर्णाश्व पुत्र',
         parent: 'baharnashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'prasenajit_1',
         name: 'प्रसेनजित प्रथम',
         subtitle: 'कृशाश्व पुत्र',
         parent: 'krishashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'yuvanashva_2',
         name: 'युवनाश्व द्वितीय',
         subtitle: 'प्रसेनजित पुत्र',
         parent: 'prasenajit_1',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'mandhata',
@@ -892,7 +904,8 @@ export const coreData = [
         subtitle: 'चक्रवर्ती सम्राट',
         parent: 'yuvanashva_2',
         yug: 'treta',
-        parichay: 'इनका जन्म पिता युवनाश्व के गर्भ (ऋषियों के मन्त्रपूत जल पीने के कारण) से हुआ था। इन्द्र ने इन्हें अपनी उंगली चुसाकर पाला था।'
+        parichay: 'इनका जन्म पिता युवनाश्व के गर्भ (ऋषियों के मन्त्रपूत जल पीने के कारण) से हुआ था। इन्द्र ने इन्हें अपनी उंगली चुसाकर पाला था।',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -902,7 +915,8 @@ export const coreData = [
         parent: '',
         spouseOf: 'mandhata',
         yug: 'treta',
-        parichay: 'यादव नरेश शशबिंदु की पुत्री।'
+        parichay: 'यादव नरेश शशबिंदु की पुत्री।',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'muchukunda',
@@ -911,7 +925,8 @@ export const coreData = [
         parent: 'mandhata',
         mother: 'bindumati',
         yug: 'treta',
-        parichay: 'महान योद्धा। इन्होंने देवासुर संग्राम में देवताओं का साथ दिया था। द्वापर युग में इन्होंने अपनी दृष्टि से कालयवन को भस्म किया था।'
+        parichay: 'महान योद्धा। इन्होंने देवासुर संग्राम में देवताओं का साथ दिया था। द्वापर युग में इन्होंने अपनी दृष्टि से कालयवन को भस्म किया था।',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'ambarisha_mandhata',
@@ -919,7 +934,8 @@ export const coreData = [
         subtitle: 'मान्धाता पुत्र',
         parent: 'mandhata',
         mother: 'bindumati',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -928,70 +944,80 @@ export const coreData = [
         subtitle: 'मान्धाता पुत्र',
         parent: 'mandhata',
         mother: 'bindumati',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'trasadasyu',
         name: 'त्रासदस्यु',
         subtitle: 'पुरुकुत्स पुत्र',
         parent: 'purukutsa',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sambhuta',
         name: 'संभ्रुत',
         subtitle: 'त्रासदस्यु पुत्र',
         parent: 'trasadasyu',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'anaranya_2',
         name: 'अनरण्य द्वितीय',
         subtitle: 'संभ्रुत पुत्र',
         parent: 'sambhuta',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'prishadashva_2',
         name: 'पृषदाश्व',
         subtitle: 'अनरण्य पुत्र',
         parent: 'anaranya_2',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'haryashva_2',
         name: 'हर्याश्व द्वितीय',
         subtitle: 'पृषदाश्व पुत्र',
         parent: 'prishadashva_2',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'hastya',
         name: 'हस्त्य',
         subtitle: 'हर्याश्व पुत्र',
         parent: 'haryashva_2',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sumana',
         name: 'सुमन',
         subtitle: 'हस्त्य पुत्र',
         parent: 'hastya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'tridhanva',
         name: 'त्रिधन्वा',
         subtitle: 'सुमन पुत्र',
         parent: 'sumana',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'trayaruni',
         name: 'त्रैयारुणि',
         subtitle: 'त्रिधन्वा पुत्र',
         parent: 'tridhanva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'trishanku',
@@ -999,7 +1025,8 @@ export const coreData = [
         subtitle: 'सत्यव्रत',
         parent: 'trayaruni',
         yug: 'treta',
-        parichay: 'विश्वामित्र ने इन्हें सदेह स्वर्ग भेजा था, जहाँ से इन्द्र ने इन्हें उल्टा गिरा दिया। फिर विश्वामित्र ने इनके लिए अलग स्वर्ग (त्रिशंकु स्वर्ग) का निर्माण किया।'
+        parichay: 'विश्वामित्र ने इन्हें सदेह स्वर्ग भेजा था, जहाँ से इन्द्र ने इन्हें उल्टा गिरा दिया। फिर विश्वामित्र ने इनके लिए अलग स्वर्ग (त्रिशंकु स्वर्ग) का निर्माण किया।',
+        clusterName: 'अयोध्या राजवंश'
     },
 
 
@@ -1009,7 +1036,8 @@ export const coreData = [
         subtitle: 'त्रिशंकु पत्नी',
         parent: '',
         spouseOf: 'trishanku',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1018,7 +1046,8 @@ export const coreData = [
         subtitle: 'सत्यवादी',
         parent: 'trishanku',
         mother: 'satyaratha',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     // Harishchandra to Bhagirath Lineage
@@ -1028,7 +1057,8 @@ export const coreData = [
         subtitle: 'हरिश्चंद्र पत्नी',
         parent: '',
         spouseOf: 'harishchandra',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'rohitashva',
@@ -1036,49 +1066,56 @@ export const coreData = [
         subtitle: 'हरिश्चंद्र पुत्र',
         parent: 'harishchandra',
         mother: 'taramati',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'harita',
         name: 'हरित',
         subtitle: 'रोहिताश्व पुत्र',
         parent: 'rohitashva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'chanchu',
         name: 'चंचु',
         subtitle: 'हरित पुत्र',
         parent: 'harita',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sudeva',
         name: 'सुदेव',
         subtitle: 'चंचु पुत्र',
         parent: 'chanchu',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'ruruka',
         name: 'रुरुक',
         subtitle: 'सुदेव पुत्र',
         parent: 'sudeva',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'vrika',
         name: 'वृक',
         subtitle: 'रुरुक पुत्र',
         parent: 'ruruka',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'bahu',
         name: 'बाहु (बाहुक)',
         subtitle: 'वृक पुत्र',
         parent: 'vrika',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sagara',
@@ -1086,7 +1123,8 @@ export const coreData = [
         subtitle: 'चक्रवर्ती सम्राट',
         parent: 'bahu',
         yug: 'treta',
-        parichay: 'सगर के अश्वमेध यज्ञ का घोड़ा इंद्र ने कपिल मुनि के आश्रम में बांध दिया था।'
+        parichay: 'सगर के अश्वमेध यज्ञ का घोड़ा इंद्र ने कपिल मुनि के आश्रम में बांध दिया था।',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sagara_wives_proxy',
@@ -1096,7 +1134,8 @@ export const coreData = [
         parent: '',
         spouseOf: 'sagara',
         clusterName: 'सगर की पत्नियाँ',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sumati_sagara',
@@ -1132,7 +1171,8 @@ export const coreData = [
         subtitle: 'सगर पुत्र',
         parent: 'sagara',
         mother: 'keshini',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'ambujakshi',
@@ -1140,7 +1180,8 @@ export const coreData = [
         subtitle: 'असमंजस पत्नी',
         parent: '',
         spouseOf: 'asamanjas',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'anshuman',
@@ -1148,14 +1189,16 @@ export const coreData = [
         subtitle: 'असमंजस पुत्र',
         parent: 'asamanjas',
         mother: 'ambujakshi',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'dilipa_1',
         name: 'दिलीप प्रथम',
         subtitle: 'अंशुमान पुत्र',
         parent: 'anshuman',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1163,7 +1206,8 @@ export const coreData = [
         name: 'भगीरथ',
         subtitle: 'गंगा को लाने वाले',
         parent: 'dilipa_1',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     // Bhagirath to Raghu Lineage
@@ -1172,105 +1216,120 @@ export const coreData = [
         name: 'श्रुत',
         subtitle: 'भगीरथ पुत्र',
         parent: 'bhagirath',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'nabhaga_2',
         name: 'नाभाग (द्वितीय)',
         subtitle: 'श्रुत पुत्र',
         parent: 'shruta',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'ambarisha_2',
         name: 'अम्बरीष (द्वितीय)',
         subtitle: 'नाभाग पुत्र',
         parent: 'nabhaga_2',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sindhudvipa',
         name: 'सिन्धुद्वीप',
         subtitle: 'अम्बरीष पुत्र',
         parent: 'ambarisha_2',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'ayutayu',
         name: 'अयुतायु',
         subtitle: 'सिन्धुद्वीप पुत्र',
         parent: 'sindhudvipa',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'rituparna',
         name: 'ऋतुपर्ण',
         subtitle: 'अयुतायु पुत्र',
         parent: 'ayutayu',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sarvakama',
         name: 'सर्वकाम',
         subtitle: 'ऋतुपर्ण पुत्र',
         parent: 'rituparna',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'sudasa',
         name: 'सुदास',
         subtitle: 'सर्वकाम पुत्र',
         parent: 'sarvakama',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'mitrasaha',
         name: 'मित्रसह (कल्माषपाद)',
         subtitle: 'सुदास पुत्र',
         parent: 'sudasa',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'ashmaka',
         name: 'अश्मक',
         subtitle: 'मित्रसह पुत्र',
         parent: 'mitrasaha',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'mulaka',
         name: 'मूलक',
         subtitle: 'अश्मक पुत्र',
         parent: 'ashmaka',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'shataratha',
         name: 'शतरथ',
         subtitle: 'मूलक पुत्र',
         parent: 'mulaka',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'vishvasaha',
         name: 'विश्वसह',
         subtitle: 'शतरथ पुत्र',
         parent: 'shataratha',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'dilipa_2',
         name: 'दिलीप द्वितीय (खट्वांग)',
         subtitle: 'विश्वसह पुत्र',
         parent: 'vishvasaha',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'dirghabahu',
         name: 'दीर्घबाहु',
         subtitle: 'दिलीप पुत्र',
         parent: 'dilipa_2',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1278,21 +1337,24 @@ export const coreData = [
         name: 'रघु',
         subtitle: 'रघुवंश के संस्थापक',
         parent: 'dirghabahu',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'aja',
         name: 'अज',
         subtitle: 'रघु के पुत्र',
         parent: 'raghu',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'dasharath',
         name: 'दशरथ',
         subtitle: 'अयोध्या के चक्रवर्ती सम्राट',
         parent: 'aja',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1301,7 +1363,8 @@ export const coreData = [
         subtitle: 'अज पत्नी',
         parent: '',
         spouseOf: 'aja',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'shanta',
@@ -1309,7 +1372,8 @@ export const coreData = [
         subtitle: 'दशरथ पुत्री',
         parent: 'dasharath',
         yug: 'treta',
-        parichay: 'दशरथ की पुत्री जिसे अंगदेश के राजा रोमपाद ने गोद लिया था। इनका विवाह ऋष्यशृंग मुनि से हुआ था।'
+        parichay: 'दशरथ की पुत्री जिसे अंगदेश के राजा रोमपाद ने गोद लिया था। इनका विवाह ऋष्यशृंग मुनि से हुआ था।',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1336,7 +1400,8 @@ export const coreData = [
         subtitle: 'मर्यादा पुरुषोत्तम',
         parent: 'dasharath',
         mother: 'kaushalya',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     // Bhalla Khatri (Descendants of Bharat)
@@ -1349,7 +1414,8 @@ export const coreData = [
         parent: 'seeradhwaja_janak',
         mother: 'sunayana',
         spouseOf: 'ram',
-        yug: 'treta'
+        yug: 'treta',
+        clusterName: 'अयोध्या राजवंश'
     },
     {
         id: 'luv',
@@ -1358,7 +1424,8 @@ export const coreData = [
         parent: 'ram',
         mother: 'sita',
         yug: 'treta',
-        parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।'
+        parichay: 'लव ने लवपुरी (लाहौर) नगर की स्थापना की थी। आधुनिक काल में लेवा पाटीदार, कुर्मी, और लोहना समाज लव के वंशज माने जाते हैं। गहलौत, सिसोदिया, और सिकरवार जैसे कई राजपूत वंश भी लव के वंशज हैं।',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1368,7 +1435,8 @@ export const coreData = [
         parent: 'ram',
         mother: 'sita',
         yug: 'treta',
-        parichay: 'कुश ने कुशावती (कसूर) नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।'
+        parichay: 'कुश ने कुशावती (कसूर) नगर बसाया था। आधुनिक काल में कड़वा पाटीदार, कुशवाहा, कोएरी, मौर्य, सैनी और अग्रवाल समाज कुश के वंशज माने जाते हैं। कच्छवाहा जैसे राजपूत वंश भी कुश के वंशज हैं।',
+        clusterName: 'अयोध्या राजवंश'
     },
 
     {
@@ -1376,7 +1444,8 @@ export const coreData = [
         name: 'हनुमान',
         subtitle: 'राम भक्त / शिव अंश',
         parent: 'vayu',
-        yug: 'dwapar'
+        yug: 'dwapar',
+        clusterName: 'अयोध्या राजवंश'
     },
 
 
@@ -1387,5 +1456,7 @@ export const coreData = [
         name: 'जटायु',
         subtitle: 'गृध्रराज',
         parent: 'arun',
-        yug: 'dwapar' }
+        yug: 'dwapar',
+        clusterName: 'अयोध्या राजवंश'
+    }
 ];
