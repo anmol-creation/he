@@ -385,10 +385,95 @@ export const coreData = [
         id: 'pramshu',
         name: 'प्रांशु',
         subtitle: 'मनु पुत्र',
+        gender: 'male',
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
-        yug: 'satya' ,
-        clusterName: 'मनु के अन्य पुत्र'
+        yug: 'satya',
+        clusterName: 'मनु के अन्य पुत्र',
+        kathayein: [
+            {
+                title: "राज्य, जीवन और स्वभाव",
+                source: "ब्रह्म पुराण / अन्य पुराण",
+                content: "चूँकि वैवस्वत मनु ने अपने पुत्रों को पृथ्वी के अलग-अलग हिस्से दिए थे, प्रांशु को भी एक राज्य प्राप्त हुआ। प्रांशु का वंश शर्याति के राज्य (आनर्त/पश्चिमी भारत) के आसपास ही फला-फूला। प्रांशु एक अत्यंत शांत और मर्यादित क्षत्रिय थे। उनके विषय में कोई बहुत बड़ा 'युद्ध' या 'संघर्ष' पुराणों में दर्ज नहीं है। इनका जीवन मुख्य रूप से धर्मपालन और वैदिक नियमों के अनुसार चला।"
+            },
+            {
+                title: "वंशावली और वंशज",
+                source: "पुराण",
+                content: "प्रांशु की वंशावली छोटी है, लेकिन इसके कुछ प्रमुख वंशज इस प्रकार हैं: प्रांशु (वैवस्वत मनु के पुत्र) -> प्रमति -> खनिज (खनित्र) -> चाक्षुष -> विविंशति -> रंभ -> खनीनेत्र -> करंधम। इसके बाद इस वंश का इतिहास पुराणों में क्षीण हो जाता है, और संभवतः यह वंश किसी अन्य बड़े सूर्यवंशी शाखा या शर्याति के आनर्त राज्य में विलीन हो गया।"
+            }
+        ]
+    },
+    // Lineage of Pramshu (Son of Manu)
+    {
+        id: 'pramati_pramshu',
+        name: 'प्रमति',
+        subtitle: 'प्रांशु पुत्र',
+        gender: 'male',
+        parent: 'pramshu',
+        lineLabel: 'प्रमति',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'khanija_pramati',
+        name: 'खनिज',
+        subtitle: 'प्रमति पुत्र',
+        gender: 'male',
+        parent: 'pramati_pramshu',
+        lineLabel: 'खनिज',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'chakshusha_khanija',
+        name: 'चाक्षुष',
+        subtitle: 'खनिज पुत्र',
+        gender: 'male',
+        parent: 'khanija_pramati',
+        lineLabel: 'चाक्षुष',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज',
+        parichay: 'ये चाक्षुष मनु नहीं हैं, बल्कि उसी नाम के राजा हैं।'
+    },
+    {
+        id: 'vivimshati_chakshusha',
+        name: 'विविंशति',
+        subtitle: 'चाक्षुष पुत्र',
+        gender: 'male',
+        parent: 'chakshusha_khanija',
+        lineLabel: 'विविंशति',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'rambha_vivimshati',
+        name: 'रंभ',
+        subtitle: 'विविंशति पुत्र',
+        gender: 'male',
+        parent: 'vivimshati_chakshusha',
+        lineLabel: 'रंभ',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'khaninetra_rambha',
+        name: 'खनीनेत्र',
+        subtitle: 'रंभ पुत्र',
+        gender: 'male',
+        parent: 'rambha_vivimshati',
+        lineLabel: 'खनीनेत्र',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'karandhama_khaninetra_pramshu',
+        name: 'करंधम',
+        subtitle: 'खनीनेत्र पुत्र',
+        gender: 'male',
+        parent: 'khaninetra_rambha',
+        lineLabel: 'करंधम',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
     },
     {
         id: 'nabhanedishta',
