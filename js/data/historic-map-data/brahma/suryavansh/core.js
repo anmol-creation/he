@@ -501,7 +501,7 @@ export const coreData = [
         parent: 'nabhanedishta',
         lineLabel: 'भालन्दन',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'vatsapri_bhalandana',
@@ -511,7 +511,7 @@ export const coreData = [
         parent: 'bhalandana_nabhanedishta',
         lineLabel: 'वत्सप्री',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'pramshu_2_vatsapri',
@@ -521,7 +521,7 @@ export const coreData = [
         parent: 'vatsapri_bhalandana',
         lineLabel: 'प्रांशु II',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'pramati_2_pramshu_2',
@@ -531,7 +531,7 @@ export const coreData = [
         parent: 'pramshu_2_vatsapri',
         lineLabel: 'प्रमति II',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'khanitra_pramati_2',
@@ -541,7 +541,7 @@ export const coreData = [
         parent: 'pramati_2_pramshu_2',
         lineLabel: 'खनित्र',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'karandhama_2_khanitra',
@@ -551,7 +551,7 @@ export const coreData = [
         parent: 'khanitra_pramati_2',
         lineLabel: 'करंधम',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'avikshita_karandhama_2',
@@ -561,7 +561,7 @@ export const coreData = [
         parent: 'karandhama_2_khanitra',
         lineLabel: 'अविक्षित',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज'
+        clusterName: 'वैशाल वंश'
     },
     {
         id: 'marutta_avikshita',
@@ -571,7 +571,7 @@ export const coreData = [
         parent: 'avikshita_karandhama_2',
         lineLabel: 'मरुत्त',
         yug: 'satya',
-        clusterName: 'नाभानेदिष्ट के वंशज',
+        clusterName: 'वैशाल वंश',
         parichay: 'अविक्षित के पुत्र, जो एक अत्यंत प्रतापी और चक्रवर्ती सम्राट हुए। इन्होंने सोने के बर्तनों वाला एक विश्व प्रसिद्ध महायज्ञ किया था। इसी वंश ने वैशाली नगरी बसाई।'
     },
     {
@@ -701,6 +701,16 @@ export const coreData = [
         ]
     },
     // Descendants of Ikshvaku
+        {
+        id: 'other_97_sons_ikshvaku',
+        name: 'अन्य 97 पुत्र',
+        subtitle: 'इक्ष्वाकु के पुत्र',
+        gender: 'male',
+        parent: 'ikshvaku',
+        yug: 'satya',
+        parichay: 'इक्ष्वाकु के 100 पुत्रों में से अन्य 97 पुत्र जिन्हें आर्यावर्त, उत्तरापथ और दक्षिणापथ का शासक बनाया गया। इनमें से किसी का विस्तृत इतिहास और नाम शास्त्रों में उल्लिखित नहीं है।',
+        clusterName: 'इक्ष्वाकु वंश'
+    },
     {
         id: 'vikukshi',
         name: 'विकुक्षि',
@@ -718,6 +728,16 @@ export const coreData = [
         parent: 'ikshvaku',
         yug: 'treta',
         parichay: 'इनके नाम पर विदेह या मिथिला वंश चला।'
+    },
+    {
+        id: 'dandaka',
+        name: 'दण्डक',
+        subtitle: 'इक्ष्वाकु के पुत्र',
+        gender: 'male',
+        parent: 'ikshvaku',
+        yug: 'satya',
+        parichay: 'इक्ष्वाकु के १०० पुत्रों में से एक। इन्होंने दण्डकारण्य नामक क्षेत्र बसाया।',
+        clusterName: 'इक्ष्वाकु वंश'
     },
     {
         id: 'danda',
