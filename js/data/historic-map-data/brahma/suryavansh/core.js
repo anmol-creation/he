@@ -673,7 +673,7 @@ export const coreData = [
         ]
     },
 
-    {
+        {
         id: 'ikshvaku',
         name: 'इक्ष्वाकु',
         subtitle: 'सूर्यवंश के संस्थापक',
@@ -725,6 +725,7 @@ export const coreData = [
         id: 'nimi',
         name: 'निमि',
         subtitle: 'विदेह वंश संस्थापक',
+        gender: 'male',
         parent: 'ikshvaku',
         yug: 'treta',
         clusterName: 'इक्ष्वाकु वंश',
@@ -741,6 +742,7 @@ export const coreData = [
         parichay: 'इक्ष्वाकु के १०० पुत्रों में से एक। इन्होंने दण्डकारण्य नामक क्षेत्र बसाया।',
         clusterName: 'इक्ष्वाकु वंश'
     },
+
     // Vikukshi's immediate
     {
         id: 'puranjaya',

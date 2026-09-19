@@ -2,6 +2,16 @@ export const vaishaliData = [
 
 
     // Other sons of Ikshvaku
+
+    {
+        id: 'trinabindu',
+        name: 'तृणबिन्दु',
+        subtitle: 'मरुत्त के वंशज',
+        gender: 'male',
+        parent: 'marutta_avikshita',
+        yug: 'treta',
+        clusterName: 'वैशाल वंश'
+    },
     {
         id: 'trinabindu',
         name: 'तृणबिन्दु',
