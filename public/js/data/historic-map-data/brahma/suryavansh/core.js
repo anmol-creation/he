@@ -385,10 +385,95 @@ export const coreData = [
         id: 'pramshu',
         name: 'प्रांशु',
         subtitle: 'मनु पुत्र',
+        gender: 'male',
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
-        yug: 'satya' ,
-        clusterName: 'मनु के अन्य पुत्र'
+        yug: 'satya',
+        clusterName: 'मनु के अन्य पुत्र',
+        kathayein: [
+            {
+                title: "राज्य, जीवन और स्वभाव",
+                source: "ब्रह्म पुराण / अन्य पुराण",
+                content: "चूँकि वैवस्वत मनु ने अपने पुत्रों को पृथ्वी के अलग-अलग हिस्से दिए थे, प्रांशु को भी एक राज्य प्राप्त हुआ। प्रांशु का वंश शर्याति के राज्य (आनर्त/पश्चिमी भारत) के आसपास ही फला-फूला। प्रांशु एक अत्यंत शांत और मर्यादित क्षत्रिय थे। उनके विषय में कोई बहुत बड़ा 'युद्ध' या 'संघर्ष' पुराणों में दर्ज नहीं है। इनका जीवन मुख्य रूप से धर्मपालन और वैदिक नियमों के अनुसार चला।"
+            },
+            {
+                title: "वंशावली और वंशज",
+                source: "पुराण",
+                content: "प्रांशु की वंशावली छोटी है, लेकिन इसके कुछ प्रमुख वंशज इस प्रकार हैं: प्रांशु (वैवस्वत मनु के पुत्र) -> प्रमति -> खनिज (खनित्र) -> चाक्षुष -> विविंशति -> रंभ -> खनीनेत्र -> करंधम। इसके बाद इस वंश का इतिहास पुराणों में क्षीण हो जाता है, और संभवतः यह वंश किसी अन्य बड़े सूर्यवंशी शाखा या शर्याति के आनर्त राज्य में विलीन हो गया।"
+            }
+        ]
+    },
+    // Lineage of Pramshu (Son of Manu)
+    {
+        id: 'pramati_pramshu',
+        name: 'प्रमति',
+        subtitle: 'प्रांशु पुत्र',
+        gender: 'male',
+        parent: 'pramshu',
+        lineLabel: 'प्रमति',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'khanija_pramati',
+        name: 'खनिज',
+        subtitle: 'प्रमति पुत्र',
+        gender: 'male',
+        parent: 'pramati_pramshu',
+        lineLabel: 'खनिज',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'chakshusha_khanija',
+        name: 'चाक्षुष',
+        subtitle: 'खनिज पुत्र',
+        gender: 'male',
+        parent: 'khanija_pramati',
+        lineLabel: 'चाक्षुष',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज',
+        parichay: 'ये चाक्षुष मनु नहीं हैं, बल्कि उसी नाम के राजा हैं।'
+    },
+    {
+        id: 'vivimshati_chakshusha',
+        name: 'विविंशति',
+        subtitle: 'चाक्षुष पुत्र',
+        gender: 'male',
+        parent: 'chakshusha_khanija',
+        lineLabel: 'विविंशति',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'rambha_vivimshati',
+        name: 'रंभ',
+        subtitle: 'विविंशति पुत्र',
+        gender: 'male',
+        parent: 'vivimshati_chakshusha',
+        lineLabel: 'रंभ',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'khaninetra_rambha',
+        name: 'खनीनेत्र',
+        subtitle: 'रंभ पुत्र',
+        gender: 'male',
+        parent: 'rambha_vivimshati',
+        lineLabel: 'खनीनेत्र',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
+    },
+    {
+        id: 'karandhama_khaninetra_pramshu',
+        name: 'करंधम',
+        subtitle: 'खनीनेत्र पुत्र',
+        gender: 'male',
+        parent: 'khaninetra_rambha',
+        lineLabel: 'करंधम',
+        yug: 'satya',
+        clusterName: 'प्रांशु के वंशज'
     },
     {
         id: 'nabhanedishta',
@@ -491,12 +576,60 @@ export const coreData = [
     },
     {
         id: 'karusha',
-        name: 'करुष',
+        name: 'करूष',
         subtitle: 'मनु पुत्र',
+        gender: 'male',
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
-        yug: 'satya' ,
-        clusterName: 'मनु के अन्य पुत्र'
+        yug: 'satya',
+        clusterName: 'मनु के अन्य पुत्र',
+        parichay: 'वैवस्वत मनु के पुत्र। इन्हीं से "कारूष" नामक वीर क्षत्रिय वंश और "करूष देश" की स्थापना हुई।',
+        kathayein: [
+            {
+                title: "कारूष क्षत्रिय वंश की स्थापना",
+                source: "श्रीमद्भागवत पुराण / महाभारत",
+                content: "करूष वैवस्वत मनु के दस प्रमुख पुत्रों में से एक थे। इन्हें मनु से उत्तरापथ (उत्तरी दिशा) का राज्य प्राप्त हुआ था। करूष अत्यंत धर्मनिष्ठ और ब्राह्मणों के रक्षक थे (श्रीमद्भागवत 9.2.16 के अनुसार ये ब्रह्मण्य और धर्मवत्सल थे)। इन्हीं के नाम से 'कारूष' नामक एक महान और बलशाली क्षत्रिय वंश चला। पुराणों में करूष के तुरंत बाद की वंशावली (उनके पुत्रों आदि के नाम) स्पष्ट रूप से नहीं मिलती, लेकिन द्वापर युग (महाभारत काल) में कारूष वंश और करूष देश (वर्तमान बुंदेलखंड/दतिया क्षेत्र) का अत्यंत विस्तृत वर्णन मिलता है।"
+            },
+            {
+                title: "द्वापर युग के राजा वृद्धशर्मा और दंतवक्त्र",
+                source: "महाभारत / भागवत पुराण",
+                content: "द्वापर युग में इसी कारूष देश के राजा 'वृद्धशर्मा' हुए (जिन्हें स्वयं करूष की उपाधि प्राप्त थी), जिनका विवाह भगवान श्रीकृष्ण की बुआ (वसुदेव की बहन) 'श्रुतदेवा' से हुआ था। श्रुतदेवा और वृद्धशर्मा से ही महाभारत काल का प्रसिद्ध राजा 'दंतवक्त्र' उत्पन्न हुआ था। दंतवक्त्र पूर्वजन्म में भगवान विष्णु का द्वारपाल 'हिरण्याक्ष' था, जिसे ऋषियों ने श्राप दिया था। दंतवक्त्र, शिशुपाल और जरासंध का मित्र था, और अंततः भगवान श्रीकृष्ण के हाथों सद्गति को प्राप्त हुआ।"
+            }
+        ]
+    },
+    // Karusha Descendants (Mahabharata Era)
+    {
+        id: 'vriddhasharma',
+        name: 'वृद्धशर्मा',
+        subtitle: 'कारूष वंश के राजा',
+        gender: 'male',
+        parent: 'karusha',
+        lineLabel: 'कारूष वंश',
+        yug: 'dwapar',
+        clusterName: 'कारूष वंश',
+        parichay: 'ये द्वापर युग में करूष देश के राजा थे, जिनका विवाह वसुदेव की बहन श्रुतदेवा से हुआ था। ऐतिहासिक रूप से करूष और वृद्धशर्मा के बीच कई पीढ़ियों का अंतर था, परंतु पुराणों में मध्य की पीढ़ियों का विस्तृत विवरण लुप्त है।'
+    },
+    {
+        id: 'shrutadeva_vasudeva_sister',
+        name: 'श्रुतदेवा',
+        subtitle: 'वसुदेव की बहन',
+        gender: 'female',
+        parent: '',
+        spouseOf: 'vriddhasharma',
+        yug: 'dwapar',
+        clusterName: 'कारूष वंश'
+    },
+    {
+        id: 'dantavakra',
+        name: 'दंतवक्त्र',
+        subtitle: 'वृद्धशर्मा पुत्र',
+        gender: 'male',
+        parent: 'vriddhasharma',
+        mother: 'shrutadeva_vasudeva_sister',
+        lineLabel: 'दंतवक्त्र',
+        yug: 'dwapar',
+        clusterName: 'कारूष वंश',
+        parichay: 'ये पूर्वजन्म में भगवान विष्णु के द्वारपाल हिरण्याक्ष थे, जिन्हें सनकादि ऋषियों ने श्राप दिया था। इनका वध भगवान श्रीकृष्ण ने किया था।'
     },
     {
         id: 'prishadhra',
