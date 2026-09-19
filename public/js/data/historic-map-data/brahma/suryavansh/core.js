@@ -72,7 +72,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'ये मनु की पुत्री इला का पुरुष रूप थे। पुरुष रूप में इन्होंने शासन किया और इनके 3 पुत्र हुए। (जब ये स्त्री रूप में होते थे, तब इन्होंने बुध से विवाह कर पुरुरवा को जन्म दिया जो चंद्रवंश के प्रवर्तक बने)।',
         kathayein: [
             {
@@ -139,7 +139,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'इन्होंने मध्यदेश (अयोध्या-मथुरा के आसपास) पर शासन किया। भगवान शिव से ब्रह्मज्ञान प्राप्त करने वाले सत्यनिष्ठ राजा।',
         kathayein: [
             {
@@ -197,7 +197,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'इन्होंने उत्तर-पश्चिम (बाह्लीक/बाल्ख) क्षेत्र की ओर प्रस्थान किया। इनके वंशज क्षत्रिय होकर भी अपने कर्मों से ब्राह्मण (धार्ष्टक) बन गए।',
         kathayein: [
             {
@@ -225,7 +225,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'वेदज्ञ और महान चक्रवर्ती सम्राट, जिन्होंने पश्चिमी भारत (गुजरात/आनर्त) पर शासन किया।',
         kathayein: [
             {
@@ -280,7 +280,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'इन्होंने उत्तर-पश्चिमी सीमांतों पर शासन किया। कुछ ऐतिहासिक ग्रंथों के अनुसार ये शक (Scythians) जाति के आदि-पुरुष थे।',
         kathayein: [
             {
@@ -389,7 +389,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         kathayein: [
             {
                 title: "राज्य, जीवन और स्वभाव",
@@ -483,7 +483,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'इनके नाम और प्रारंभिक जीवन की कथा मनु के अन्य पुत्र "नाभाग" से बहुत मिलती है, इसलिए अक्सर दोनों को एक मान लिया जाता है, परंतु इनका राजवंश (वैशाल) बिल्कुल अलग है।',
         kathayein: [
             {
@@ -582,7 +582,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'वैवस्वत मनु के पुत्र। इन्हीं से "कारूष" नामक वीर क्षत्रिय वंश और "करूष देश" की स्थापना हुई।',
         kathayein: [
             {
@@ -639,7 +639,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'वैवस्वत मनु के पुत्र। गुरु के श्राप के कारण इनका कोई राजवंश नहीं चला और इन्होंने वन में भगवान की भक्ति करते हुए शरीर त्याग दिया।',
         kathayein: [
             {
@@ -662,7 +662,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        clusterName: 'मनु के अन्य पुत्र',
+
         parichay: 'वैवस्वत मनु के सबसे छोटे पुत्र। बचपन से ही वैरागी होने के कारण इन्होंने राजपाठ त्याग दिया और इनका कोई वंश आगे नहीं बढ़ा।',
         kathayein: [
             {
@@ -677,27 +677,37 @@ export const coreData = [
         id: 'ikshvaku',
         name: 'इक्ष्वाकु',
         subtitle: 'सूर्यवंश के संस्थापक',
+        gender: 'male',
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-        kali_year: -3888000
+        parichay: 'वैवस्वत मनु के सबसे बड़े और प्रतापी पुत्र, जिन्होंने मध्यदेश (अयोध्या) में सूर्यवंश की नींव रखी।',
+        kathayein: [
+            {
+                title: "जन्म का रहस्य (छींक से उत्पत्ति)",
+                source: "श्रीमद्भागवत पुराण",
+                content: "श्रीमद्भागवत पुराण (9.6.4) के अनुसार, जब वैवस्वत मनु को जोर से छींक आई, तब उनकी नासिका (nostrils) से इक्ष्वाकु का जन्म हुआ। इसी कारण इनका नाम 'इक्ष्वाकु' पड़ा। इन्हें वैवस्वत मनु और माता श्रद्धा का सबसे ज्येष्ठ (बड़ा) पुत्र माना जाता है, जिन्हें पृथ्वी के केंद्र 'मध्यदेश' और उसकी राजधानी 'अयोध्या' का शासक नियुक्त किया गया था।"
+            },
+            {
+                title: "सौ (100) पुत्रों का साम्राज्य",
+                source: "श्रीमद्भागवत पुराण",
+                content: "राजा इक्ष्वाकु के सौ (100) पुत्र थे। उन्होंने अपने पुत्रों को अलग-अलग दिशाओं का राज्य सौंपा: 25 पुत्रों ने आर्यावर्त (उत्तर भारत) पर राज किया, 25 ने पश्चिमी क्षेत्रों पर, 3 ने मध्य-देश में, और शेष अन्य छोटे प्रांतों के शासक बने। इन 100 पुत्रों में तीन सबसे प्रमुख थे: विकुक्षि, निमि, और दण्डक।"
+            },
+            {
+                title: "विकुक्षि का निष्कासन और इक्ष्वाकु का न्याय",
+                source: "श्रीमद्भागवत पुराण",
+                content: "एक बार राजा इक्ष्वाकु ने अष्टक श्राद्ध के अवसर पर अपने ज्येष्ठ पुत्र विकुक्षि को शिकार करके पवित्र मांस लाने भेजा। विकुक्षि ने शिकार किया, लेकिन भूख लगने के कारण उन्होंने मार्ग में एक खरगोश का मांस खा लिया (जिससे शेष भोजन जूठा हो गया)। जब यह बात गुरु वशिष्ठ को पता चली, तो उन्होंने इक्ष्वाकु को सूचित किया। इक्ष्वाकु अत्यंत न्यायप्रिय और धर्मनिष्ठ थे, उन्होंने धर्म की मर्यादा स्थापित करते हुए अपने ही ज्येष्ठ पुत्र विकुक्षि को राज्य से निकाल दिया। इक्ष्वाकु के शरीर त्यागने के बाद विकुक्षि वापस लौटे और उन्होंने अयोध्या का राजपाट संभाला।"
+            }
+        ]
     },
     // Descendants of Ikshvaku
-    {
-        id: 'suryavansh_proxy',
-        name: 'सूर्यवंश',
-        subtitle: 'इक्ष्वाकु के वंशज',
-        parent: 'ikshvaku',
-        yug: 'satya',
-        clusterName: 'सूर्यवंश',
-        isProxy: true
-    },
     {
         id: 'vikukshi',
         name: 'विकुक्षि',
         subtitle: 'शशाद',
-        parent: 'suryavansh_proxy',
+        parent: 'ikshvaku',
         yug: 'satya',
+        clusterName: 'इक्ष्वाकु वंश',
         kali_year: -2160000,
         parichay: 'इक्ष्वाकु के सौ पुत्रों में ज्येष्ठ। इन्होंने सूर्यवंश को आगे बढ़ाया।'
     },
