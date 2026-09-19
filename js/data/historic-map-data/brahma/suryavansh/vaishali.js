@@ -13,6 +13,16 @@ export const vaishaliData = [
         clusterName: 'वैशाल वंश'
     },
     {
+        id: 'trinabindu',
+        name: 'तृणबिन्दु',
+        subtitle: 'मरुत्त के वंशज',
+        gender: 'male',
+        parent: 'marutta_avikshita',
+        yug: 'treta',
+        clusterName: 'वैशाल वंश',
+        parichay: 'चक्रवर्ती सम्राट मरुत्त के वंशज। इनके और मरुत्त के बीच कई पीढ़ियों का अंतर था (जैसे दम, राज्यवर्धन आदि)। इनका विवाह अप्सरा अलम्बुषा से हुआ था।'
+    },
+    {
         id: 'vishal',
         name: 'विशाल',
         subtitle: 'वैशाली के संस्थापक',
@@ -101,6 +111,7 @@ export const vaishaliData = [
         gender: 'male',
         parent: 'kakutstha_vishal',
         yug: 'treta',
+        clusterName: 'वैशाल वंश',
         parichay: 'इन्होंने विश्वामित्र के साथ आए राम और लक्ष्मण का वैशाली में स्वागत किया था।'
     },
 
