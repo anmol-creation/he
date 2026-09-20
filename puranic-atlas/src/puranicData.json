@@ -1,0 +1,121 @@
+{
+  "yugas": [
+    {
+      "id": 1,
+      "name": "Satya Yug",
+      "duration": "1,728,000 solar years",
+      "description": "Dawn of Manvantara. The era of Truth and purity.",
+      "riverState": {
+        "saraswati": "100% perennial, cosmic flow"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Treta Yug",
+      "duration": "1,296,000 solar years",
+      "description": "The Ramayana Era. Virtue diminishes slightly.",
+      "riverState": {
+        "saraswati": "100% perennial"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dvapara Yug",
+      "duration": "864,000 solar years",
+      "description": "The Mahabharata Era.",
+      "riverState": {
+        "saraswati": "Partially fragmented, receding"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Kali Yug",
+      "duration": "432,000 solar years",
+      "description": "Historic & Present Era. The age of darkness and strife.",
+      "riverState": {
+        "saraswati": "Subterranean / Dry"
+      }
+    }
+  ],
+  "kingdoms": [
+    {
+      "id": "ikshvaku",
+      "name": "Kosala",
+      "dynasty": "सूर्यवंश • SOLAR DYNASTY",
+      "capital": "Ayodhya",
+      "rulers": ["Ikshvaku", "Harishchandra", "Dasharatha", "Rama"],
+      "era": [1, 2],
+      "coordinates": [26.7922, 82.1968],
+      "rivers": ["Sarayu", "Tamasa"],
+      "scriptures": [
+        {
+          "text": "कोसलो नाम मुदितः स्फीतो जनपदो महान्।",
+          "translation": "There is a great and prosperous realm named Kosala...",
+          "source": "Valmiki Ramayana 1.5.5"
+        }
+      ]
+    },
+    {
+      "id": "kuru",
+      "name": "Kuru",
+      "dynasty": "चन्द्रवंश • LUNAR DYNASTY",
+      "capital": "Hastinapur",
+      "rulers": ["Kuru", "Shantanu", "Dhritarashtra", "Yudhishthira"],
+      "era": [3],
+      "coordinates": [29.1667, 78.0167],
+      "rivers": ["Ganga", "Yamuna"],
+      "scriptures": [
+        {
+          "text": "धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।",
+          "translation": "Gathered on the holy field of Kurukshetra...",
+          "source": "Bhagavad Gita 1.1"
+        }
+      ]
+    },
+    {
+      "id": "manali",
+      "name": "Manu-Alaya",
+      "dynasty": "FIRST REALM",
+      "capital": "Manali",
+      "rulers": ["Vaivasvata Manu"],
+      "era": [1],
+      "coordinates": [32.2396, 77.1887],
+      "rivers": ["Vipasha (Beas)"],
+      "scriptures": [
+        {
+          "text": "मनुः प्रविश्य... (associated with the great flood)",
+          "translation": "Manu established his abode here after the deluge.",
+          "source": "Matsya Purana / Shatapatha Brahmana"
+        }
+      ]
+    }
+  ],
+  "rivers": [
+    {
+      "id": "saraswati",
+      "name": "Saraswati",
+      "type": "Sacred River",
+      "coordinates": [[30.0, 77.0], [29.0, 76.0], [24.0, 69.0]]
+    },
+    {
+      "id": "ganga",
+      "name": "Ganga",
+      "type": "Sacred River",
+      "coordinates": [[30.9, 79.0], [25.3, 83.0], [22.0, 90.0]]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "meru",
+      "name": "Mount Meru",
+      "type": "Cosmic Axis",
+      "coordinates": [35.0, 75.0]
+    },
+    {
+      "id": "kailash",
+      "name": "Mount Kailash",
+      "type": "Sacred Abode",
+      "coordinates": [31.06, 81.31]
+    }
+  ]
+}
