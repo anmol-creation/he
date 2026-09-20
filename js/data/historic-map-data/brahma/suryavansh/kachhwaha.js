@@ -146,17 +146,6 @@ export const kachhwahaData = [
         parichay: 'इन्होंने 1775 में अलवर (Alwar) रियासत की स्थापना की थी। ये राव नरू के वंशजों में से थे।'
     },
     {
-        id: 'nahar_singh_lawa',
-        name: 'ठाकुर नाहर सिंह',
-        subtitle: 'लावा के संस्थापक',
-        parent: 'dasa_naruka',
-        clusterName: 'नरूका वंश',
-        gender: 'male',
-        yug: 'kali',
-        kali_year: 4824, // Roughly 1722 AD
-        parichay: 'दासा जी के वंशज। इन्हें जयपुर नरेश ने 1722 ई. में लावा (Lawa) ठिकाने की जागीर दी थी।'
-    },
-    {
         id: 'lala_naruka',
         name: 'लाला',
         subtitle: 'राव नरू पुत्र',

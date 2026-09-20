@@ -738,7 +738,6 @@ export const coreData = [
         gender: 'male',
         parent: 'ikshvaku',
         yug: 'satya',
-        clusterName: 'इक्ष्वाकु वंश'
         parichay: 'इक्ष्वाकु के १०० पुत्रों में से एक। इन्होंने दण्डकारण्य नामक क्षेत्र बसाया।',
         clusterName: 'इक्ष्वाकु वंश'
     },

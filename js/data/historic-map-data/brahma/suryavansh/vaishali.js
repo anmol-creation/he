@@ -10,15 +10,6 @@ export const vaishaliData = [
         gender: 'male',
         parent: 'marutta_avikshita',
         yug: 'treta',
-        clusterName: 'वैशाल वंश'
-    },
-    {
-        id: 'trinabindu',
-        name: 'तृणबिन्दु',
-        subtitle: 'मरुत्त के वंशज',
-        gender: 'male',
-        parent: 'marutta_avikshita',
-        yug: 'treta',
         clusterName: 'वैशाल वंश',
         parichay: 'चक्रवर्ती सम्राट मरुत्त के वंशज। इनके और मरुत्त के बीच कई पीढ़ियों का अंतर था (जैसे दम, राज्यवर्धन आदि)। इनका विवाह अप्सरा अलम्बुषा से हुआ था।'
     },
