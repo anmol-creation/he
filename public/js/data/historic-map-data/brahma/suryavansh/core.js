@@ -107,6 +107,7 @@ export const coreData = [
         parent: 'sudyumna_surya',
         lineLabel: 'उत्कल (ओडिशा)',
         yug: 'satya',
+        kali_year: -2160000,
         clusterName: 'सुद्युम्न के पुत्र',
         parichay: 'सुद्युम्न (इला) के पुत्र जिन्होंने पूर्वी भारत में शासन किया और अपने नाम पर "उत्कल" (वर्तमान उड़ीसा) प्रदेश की स्थापना की। ये एक अत्यंत धर्मपरायण राजा थे।',
         kathayein: [
@@ -125,6 +126,7 @@ export const coreData = [
         parent: 'sudyumna_surya',
         lineLabel: 'गय (बिहार)',
         yug: 'satya',
+        kali_year: -2160000,
         clusterName: 'सुद्युम्न के पुत्र',
         parichay: 'सुद्युम्न (इला) के पुत्र जिन्होंने पूर्वी भारत के कुछ हिस्सों पर शासन किया और अपने नाम पर प्रसिद्ध "गया" (वर्तमान बिहार) तीर्थ शहर की स्थापना की।',
         kathayein: [
@@ -143,6 +145,7 @@ export const coreData = [
         parent: 'sudyumna_surya',
         lineLabel: 'विमल (पश्चिम)',
         yug: 'satya',
+        kali_year: -2160000,
         clusterName: 'सुद्युम्न के पुत्र',
         parichay: 'सुद्युम्न (इला) के पुत्र, जिन्हें कुछ अन्य पुराणों में हरिताश्व या विनताश्व के नाम से भी जाना जाता है। इन्होंने पश्चिमोत्तर भारत के राज्यों पर शासन किया।',
         kathayein: [

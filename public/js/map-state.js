@@ -109,37 +109,104 @@ window.MapState = {
 
     updateCosmicScale() {
         const overlay = document.getElementById('cosmic-time-scale');
-        const label = document.getElementById('current-era-label');
-        if (!overlay || !label) return;
+        const eraLabel = document.getElementById('current-era-label');
+        const yearLabel = document.getElementById('current-year-label');
+        if (!overlay || !eraLabel || !yearLabel) return;
 
-        // The canvas Y translation tells us how deep we are
-        const depth = -this.translateY / this.scale;
+        // In position-calculator, KALIYUG_ZERO_Y is set to 36800. PIXELS_PER_YEAR is 3.
+        const KALIYUG_ZERO_Y = 36800;
+        const PIXELS_PER_YEAR = 3;
 
-        let era = "Satya Yuga";
-        let subEra = "";
-        let percentage = 0; // 0 to 100% position on the visible ruler
+        // Depth is effectively the Y coordinate we are currently looking at on screen
+        const centerY = (-this.translateY / this.scale) + (window.innerHeight / (2 * this.scale));
 
-        if (depth < 2000) {
-            era = "Satya Yuga";
-            percentage = Math.max(0, (depth / 2000) * 25);
-        } else if (depth < 4000) {
-            era = "Treta Yuga";
-            percentage = 25 + ((depth - 2000) / 2000) * 25;
-        } else if (depth < 6000) {
-            era = "Dvapara Yuga";
-            percentage = 50 + ((depth - 4000) / 2000) * 25;
+        // Calculate Kali Year for positive (Kaliyug) space
+        let kaliYear = 0;
+
+        if (centerY < KALIYUG_ZERO_Y) {
+            let eraText = "Dvapara Yuga";
+
+            // Re-calculate the actual year based on the dynamic scale from position-calculator
+            let absoluteYearsBeforeKali = 0;
+            const pixelsBeforeKali = KALIYUG_ZERO_Y - centerY;
+
+            if (pixelsBeforeKali <= 10500) { // Dvapara
+                absoluteYearsBeforeKali = pixelsBeforeKali * (864000 / 10500);
+                eraText = absoluteYearsBeforeKali < 200 ? "Dvapara Yuga (Ant)" : "Dvapara Yuga";
+            } else if (pixelsBeforeKali <= 29100) { // 10500 + 18600 (Treta)
+                absoluteYearsBeforeKali = 864000 + ((pixelsBeforeKali - 10500) * (1296000 / 18600));
+                eraText = "Treta Yuga";
+            } else { // Satya
+                absoluteYearsBeforeKali = 864000 + 1296000 + ((pixelsBeforeKali - 29100) * (1728000 / 1200));
+                eraText = "Satya Yuga";
+            }
+
+            kaliYear = -Math.floor(absoluteYearsBeforeKali);
+
+            eraLabel.textContent = eraText;
+            yearLabel.textContent = `K.Y. ${kaliYear}`;
         } else {
-            era = "Kali Yuga";
-            const kaliDepth = depth - 6000;
-            percentage = 75 + Math.min(25, (kaliDepth / 4000) * 25);
+            kaliYear = Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR);
 
-            if (kaliDepth < 1000) subEra = " (Early Dynasties)";
-            else if (kaliDepth < 2000) subEra = " (Mahajanapadas)";
-            else if (kaliDepth < 3000) subEra = " (Golden Age)";
-            else subEra = " (Modern Era)";
+            // Determine macro scale text (1000 year blocks)
+
+            // Determine macro scale text (1000 year blocks)
+            let macroText = "Kaliyuga";
+            if (kaliYear < 1000) macroText = "Kaliyuga (Charan 1)";
+            else if (kaliYear < 2000) macroText = "Kaliyuga (Charan 1-2)";
+            else if (kaliYear < 3000) macroText = "Kaliyuga (Charan 2)";
+            else if (kaliYear < 4000) macroText = "Kaliyuga (Charan 3)";
+            else macroText = "Kaliyuga (Modern)";
+
+            eraLabel.textContent = macroText;
+            yearLabel.textContent = `K.Y. ${kaliYear}`;
         }
 
-        label.textContent = era + subEra;
-        label.style.top = `${percentage}%`;
+        // Build the ruler visually once if empty
+        const ruler = overlay.querySelector('.scale-ruler');
+        if (ruler && ruler.children.length === 0) {
+            ruler.innerHTML = ''; // clear
+            // Create 6 major blocks, each with 10 minor blocks
+            for (let major = 0; major <= 6; major++) {
+                const majorTick = document.createElement('div');
+                majorTick.className = 'scale-tick-major';
+                // percentage down the 400px ruler (0 to 6000 years -> 6 major blocks)
+                majorTick.style.top = `${(major / 6) * 100}%`;
+                ruler.appendChild(majorTick);
+
+                if (major < 6) {
+                    for(let minor = 1; minor < 10; minor++) {
+                        const minorTick = document.createElement('div');
+                        minorTick.className = 'scale-tick-minor';
+                        const percent = ((major * 10) + minor) / 60;
+                        minorTick.style.top = `${percent * 100}%`;
+                        ruler.appendChild(minorTick);
+                    }
+                }
+            }
+
+            // Add a dynamic active marker
+            const marker = document.createElement('div');
+            marker.id = 'ruler-active-marker';
+            marker.style.position = 'absolute';
+            marker.style.right = '0';
+            marker.style.width = '30px';
+            marker.style.height = '4px';
+            marker.style.background = '#ff0000';
+            marker.style.boxShadow = '0 0 8px #ff0000';
+            marker.style.transition = 'top 0.1s ease-out';
+            ruler.appendChild(marker);
+        }
+
+        // Move the marker based on scroll (max 6000 years represented on the ruler)
+        if (ruler) {
+            const marker = document.getElementById('ruler-active-marker');
+            if (marker) {
+                const kaliYear = Math.max(0, Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR));
+                let rulerPercent = (kaliYear / 6000) * 100;
+                if (rulerPercent > 100) rulerPercent = 100;
+                marker.style.top = `${rulerPercent}%`;
+            }
+        }
     }
 };

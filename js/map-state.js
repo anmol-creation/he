@@ -120,18 +120,35 @@ window.MapState = {
         // Depth is effectively the Y coordinate we are currently looking at on screen
         const centerY = (-this.translateY / this.scale) + (window.innerHeight / (2 * this.scale));
 
-        // Calculate Kali Year across the entire spectrum (positive and negative)
-        const kaliYear = Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR);
+        // Calculate Kali Year for positive (Kaliyug) space
+        let kaliYear = 0;
 
         if (centerY < KALIYUG_ZERO_Y) {
             let eraText = "Dvapara Yuga";
-            if (kaliYear > -200) eraText = "Dvapara Yuga (Ant)";
-            else if (kaliYear < -864000) eraText = "Treta Yuga";
+
+            // Re-calculate the actual year based on the dynamic scale from position-calculator
+            let absoluteYearsBeforeKali = 0;
+            const pixelsBeforeKali = KALIYUG_ZERO_Y - centerY;
+
+            if (pixelsBeforeKali <= 10500) { // Dvapara
+                absoluteYearsBeforeKali = pixelsBeforeKali * (864000 / 10500);
+                eraText = absoluteYearsBeforeKali < 200 ? "Dvapara Yuga (Ant)" : "Dvapara Yuga";
+            } else if (pixelsBeforeKali <= 29100) { // 10500 + 18600 (Treta)
+                absoluteYearsBeforeKali = 864000 + ((pixelsBeforeKali - 10500) * (1296000 / 18600));
+                eraText = "Treta Yuga";
+            } else { // Satya
+                absoluteYearsBeforeKali = 864000 + 1296000 + ((pixelsBeforeKali - 29100) * (1728000 / 1200));
+                eraText = "Satya Yuga";
+            }
+
+            kaliYear = -Math.floor(absoluteYearsBeforeKali);
 
             eraLabel.textContent = eraText;
             yearLabel.textContent = `K.Y. ${kaliYear}`;
         } else {
-            // (Kali Year is already calculated above)
+            kaliYear = Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR);
+
+            // Determine macro scale text (1000 year blocks)
 
             // Determine macro scale text (1000 year blocks)
             let macroText = "Kaliyuga";
