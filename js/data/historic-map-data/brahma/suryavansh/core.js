@@ -7,6 +7,7 @@ export const coreData = [
         parent: 'surya',
         yug: 'satya',
         kali_year: -3988000,
+        parichay: 'वर्तमान (सातवें) मन्वंतर के अधिपति और सूर्यदेव (विवस्वान) के पुत्र। इन्हीं से मानव जाति और सूर्यवंशी/चंद्रवंशी क्षत्रिय राजाओं की उत्पत्ति हुई।',
         kathayein: [
             {
                 title: "जन्म और माता-पिता का रहस्य",
@@ -53,6 +54,7 @@ export const coreData = [
         parent: '',
         spouseOf: 'vaivasvata_manu',
         yug: 'satya',
+        parichay: 'वैवस्वत मनु की धर्मपत्नी और संपूर्ण सूर्यवंश व चंद्रवंश की आदिमाता।',
         kathayein: [
             {
                 title: "वैवस्वत मनु की अर्धांगिनी और इला की माता",
@@ -410,7 +412,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
-
+        parichay: 'वैवस्वत मनु और श्रद्धा के पुत्र। इन्होंने पश्चिमी भारत (आनर्त क्षेत्र के पास) एक मर्यादित क्षत्रिय के रूप में शासन किया।',
         kathayein: [
             {
                 title: "राज्य, जीवन और स्वभाव",
