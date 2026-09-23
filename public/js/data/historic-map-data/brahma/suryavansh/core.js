@@ -291,14 +291,40 @@ export const coreData = [
         ]
     },
     {
+        id: 'uttanabarhi_sharyati',
+        name: 'उत्तानबर्हि',
+        subtitle: 'शर्याति पुत्र',
+        gender: 'male',
+        parent: 'sharyati',
+        lineLabel: 'उत्तानबर्हि',
+        yug: 'satya',
+        kali_year: -2160975,
+        clusterName: 'शर्याति के वंशज',
+        parichay: 'राजा शर्याति के तीन पुत्रों में से एक (श्रीमद्भागवत पुराण 9.3.27)।'
+    },
+    {
         id: 'anarta_sharyati',
         name: 'आनर्त',
         subtitle: 'शर्याति पुत्र',
         gender: 'male',
         parent: 'sharyati',
+        lineLabel: 'आनर्त',
         yug: 'satya',
+        kali_year: -2160975,
         clusterName: 'शर्याति के वंशज',
         parichay: 'शर्याति के पुत्र, जिनके नाम पर गुजरात क्षेत्र का प्राचीन नाम "आनर्त देश" पड़ा।'
+    },
+    {
+        id: 'bhurishena_sharyati',
+        name: 'भूरिषेण',
+        subtitle: 'शर्याति पुत्र',
+        gender: 'male',
+        parent: 'sharyati',
+        lineLabel: 'भूरिषेण',
+        yug: 'satya',
+        kali_year: -2160975,
+        clusterName: 'शर्याति के वंशज',
+        parichay: 'राजा शर्याति के तीन पुत्रों में से एक (श्रीमद्भागवत पुराण 9.3.27)।'
     },
     {
         id: 'sukanya_sharyati',
@@ -306,7 +332,9 @@ export const coreData = [
         subtitle: 'शर्याति पुत्री',
         gender: 'female',
         parent: 'sharyati',
+        lineLabel: 'सुकन्या',
         yug: 'satya',
+        kali_year: -2160975,
         clusterName: 'शर्याति के वंशज',
         parichay: 'शर्याति की पुत्री, जिनका विवाह महर्षि च्यवन से हुआ था। इनके पतिव्रत धर्म के कारण ही च्यवनप्राश का निर्माण हुआ।',
         kathayein: [
