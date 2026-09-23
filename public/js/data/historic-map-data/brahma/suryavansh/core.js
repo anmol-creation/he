@@ -165,6 +165,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'इन्होंने मध्यदेश (अयोध्या-मथुरा के आसपास) पर शासन किया। भगवान शिव से ब्रह्मज्ञान प्राप्त करने वाले सत्यनिष्ठ राजा।',
         kathayein: [
@@ -223,6 +224,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'इन्होंने उत्तर-पश्चिम (बाह्लीक/बाल्ख) क्षेत्र की ओर प्रस्थान किया। इनके वंशज क्षत्रिय होकर भी अपने कर्मों से ब्राह्मण (धार्ष्टक) बन गए।',
         kathayein: [
@@ -251,6 +253,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'वेदज्ञ और महान चक्रवर्ती सम्राट, जिन्होंने पश्चिमी भारत (गुजरात/आनर्त) पर शासन किया।',
         kathayein: [
@@ -306,6 +309,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'इन्होंने उत्तर-पश्चिमी सीमांतों पर शासन किया। कुछ ऐतिहासिक ग्रंथों के अनुसार ये शक (Scythians) जाति के आदि-पुरुष थे।',
         kathayein: [
@@ -509,6 +513,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'इनके नाम और प्रारंभिक जीवन की कथा मनु के अन्य पुत्र "नाभाग" से बहुत मिलती है, इसलिए अक्सर दोनों को एक मान लिया जाता है, परंतु इनका राजवंश (वैशाल) बिल्कुल अलग है।',
         kathayein: [
@@ -608,6 +613,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'वैवस्वत मनु के पुत्र। इन्हीं से "कारूष" नामक वीर क्षत्रिय वंश और "करूष देश" की स्थापना हुई।',
         kathayein: [
@@ -665,6 +671,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'वैवस्वत मनु के पुत्र। गुरु के श्राप के कारण इनका कोई राजवंश नहीं चला और इन्होंने वन में भगवान की भक्ति करते हुए शरीर त्याग दिया।',
         kathayein: [
@@ -688,6 +695,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
 
         parichay: 'वैवस्वत मनु के सबसे छोटे पुत्र। बचपन से ही वैरागी होने के कारण इन्होंने राजपाठ त्याग दिया और इनका कोई वंश आगे नहीं बढ़ा।',
         kathayein: [
@@ -707,6 +715,7 @@ export const coreData = [
         parent: 'vaivasvata_manu',
         mother: 'shraddha_manu_wife',
         yug: 'satya',
+        kali_year: -2161000,
         parichay: 'वैवस्वत मनु के सबसे बड़े और प्रतापी पुत्र, जिन्होंने मध्यदेश (अयोध्या) में सूर्यवंश की नींव रखी।',
         kathayein: [
             {
