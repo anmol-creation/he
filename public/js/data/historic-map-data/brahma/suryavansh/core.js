@@ -775,11 +775,23 @@ export const coreData = [
     },
     // Karusha Descendants (Mahabharata Era)
     {
+        id: 'agyat_pidhiyan_karusha',
+        name: 'अज्ञात पीढ़ियाँ',
+        subtitle: 'कारूष वंश',
+        gender: 'male',
+        parent: 'karusha',
+        lineLabel: 'अज्ञात पीढ़ियाँ',
+        yug: 'treta',
+        clusterName: 'कारूष वंश',
+        parichay: 'पुराणों में करूष के तुरंत बाद की मध्यवर्ती पीढ़ियों के नामों का उल्लेख नहीं मिलता। यह नोड सतयुग के करूष और द्वापर युग के राजा वृद्धशर्मा के बीच के लंबे अंतराल (हजारों वर्षों) को दर्शाता है।',
+        isProxy: false
+    },
+    {
         id: 'vriddhasharma',
         name: 'वृद्धशर्मा',
         subtitle: 'कारूष वंश के राजा',
         gender: 'male',
-        parent: 'karusha',
+        parent: 'agyat_pidhiyan_karusha',
         lineLabel: 'कारूष वंश',
         yug: 'dwapar',
         clusterName: 'कारूष वंश',
