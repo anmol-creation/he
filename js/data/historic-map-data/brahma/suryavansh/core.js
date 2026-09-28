@@ -551,7 +551,8 @@ export const coreData = [
         parent: 'pramshu',
         lineLabel: 'प्रमति',
         yug: 'satya',
-        clusterName: 'प्रांशु के वंशज'
+        clusterName: 'प्रांशु के वंशज',
+        parichay: 'प्रमति वैवस्वत मनु के पुत्र प्रांशु के पुत्र थे।'
     },
     {
         id: 'khanija_pramati',
