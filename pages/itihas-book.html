@@ -23,11 +23,21 @@
                 <span>इतिहास पुराण</span>
             </a>
             <div class="veda-top-actions">
-                <button class="veda-icon-btn" aria-label="Search">🔍</button>
-                <button class="veda-icon-btn" aria-label="Bookmarks">🔖</button>
+                <button class="veda-icon-btn" id="top-search-btn" aria-label="Search">🔍</button>
+                <button class="veda-icon-btn" aria-label="Map" onclick="window.location.href='historic-map.html'">🗺️</button>
                 <button class="veda-icon-btn" aria-label="Settings">⚙️</button>
             </div>
         </header>
+
+        <!-- Search Overlay -->
+        <div id="veda-search-overlay" style="display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--veda-surface); border-bottom: 1px solid var(--veda-border); padding: 1rem; z-index: 200; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div style="position: relative; max-width: 800px; margin: 0 auto;">
+                <input type="text" id="veda-search-input" placeholder="Search any King, Dynasty, or Era..." style="width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--veda-border); border-radius: 8px; font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background: white;" autocomplete="off">
+                <div id="veda-search-results" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; margin-top: 0.5rem; border: 1px solid rgba(0,0,0,0.05);">
+                    <!-- Search results injected here -->
+                </div>
+            </div>
+        </div>
 
         <div class="veda-main-wrapper">
 
@@ -52,13 +62,13 @@
                 <span>🏠</span>
                 <span>Home</span>
             </div>
-            <div class="veda-mobile-nav-item active" onclick="window.VedaApp.renderIndexView()">
+            <div class="veda-mobile-nav-item active" id="mobile-nav-index" onclick="window.VedaApp.renderIndexView()">
                 <span>📑</span>
                 <span>Index</span>
             </div>
-            <div class="veda-mobile-nav-item">
-                <span>🔖</span>
-                <span>Saved</span>
+            <div class="veda-mobile-nav-item" id="mobile-nav-chapter" onclick="window.VedaApp.renderLastReadingView()">
+                <span>📄</span>
+                <span>Chapter</span>
             </div>
         </nav>
 
