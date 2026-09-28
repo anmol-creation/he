@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentView: 'index', // 'index' or 'reading'
         activeYuga: 'All', // 'All', 'Satya', 'Treta', 'Dvapara', 'Kali', 'Pre-Kalpa'
         currentEntityId: null,
+        lastEntityId: null,
         entities: []
     };
 
@@ -14,7 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const elements = {
         desktopMenu: document.getElementById('desktop-yuga-menu'),
-        mainContent: document.getElementById('main-content-area')
+        mainContent: document.getElementById('main-content-area'),
+        topSearchBtn: document.getElementById('top-search-btn'),
+        searchOverlay: document.getElementById('veda-search-overlay'),
+        searchInput: document.getElementById('veda-search-input'),
+        searchResults: document.getElementById('veda-search-results'),
+        navIndex: document.getElementById('mobile-nav-index'),
+        navChapter: document.getElementById('mobile-nav-chapter')
     };
 
     // Initialize application
@@ -32,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setupDesktopSidebar();
 
+        setupSearch();
+
         // Check URL parameters for direct link
         const urlParams = new URLSearchParams(window.location.search);
         const targetEntityId = urlParams.get('entity');
@@ -41,6 +50,66 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             renderIndexView();
         }
+    }
+
+    // Search functionality
+    function setupSearch() {
+        if (!elements.topSearchBtn || !elements.searchOverlay || !elements.searchInput) return;
+
+        elements.topSearchBtn.addEventListener('click', () => {
+            if (elements.searchOverlay.style.display === 'none') {
+                elements.searchOverlay.style.display = 'block';
+                elements.searchInput.focus();
+            } else {
+                elements.searchOverlay.style.display = 'none';
+            }
+        });
+
+        const resultItemStyle = `
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+            color: var(--veda-text);
+            transition: background-color 0.2s;
+        `;
+
+        elements.searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length < 2) {
+                elements.searchResults.style.display = 'none';
+                elements.searchResults.innerHTML = '';
+                return;
+            }
+
+            const results = state.entities.filter(entity => {
+                return (entity.name && entity.name.toLowerCase().includes(query)) ||
+                       (entity.id && entity.id.toLowerCase().includes(query)) ||
+                       (entity.subtitle && entity.subtitle.toLowerCase().includes(query));
+            }).slice(0, 10);
+
+            if (results.length > 0) {
+                elements.searchResults.innerHTML = results.map(entity => `
+                    <div class="search-result-item" style="${resultItemStyle}" onclick="window.VedaApp.renderReadingView('${entity.id}'); document.getElementById('veda-search-overlay').style.display='none'; document.getElementById('veda-search-input').value='';">
+                        <div style="font-weight: 600; color: var(--veda-primary);">${entity.name}</div>
+                        <div style="font-size: 0.85rem; color: var(--veda-text-light);">${entity.subtitle || ''}</div>
+                    </div>
+                `).join('');
+                elements.searchResults.style.display = 'block';
+            } else {
+                elements.searchResults.innerHTML = '<div style="padding: 10px 15px; color: #999;">No results found</div>';
+                elements.searchResults.style.display = 'block';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!elements.searchOverlay.contains(e.target) && !elements.topSearchBtn.contains(e.target)) {
+                elements.searchOverlay.style.display = 'none';
+            }
+        });
     }
 
     // Generate Sidebar Menu
@@ -82,9 +151,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // VIEW RENDERERS
     // ==========================================
 
+    function updateMobileNav() {
+        if (elements.navIndex) {
+            if (state.currentView === 'index') {
+                elements.navIndex.classList.add('active');
+            } else {
+                elements.navIndex.classList.remove('active');
+            }
+        }
+        if (elements.navChapter) {
+            if (state.currentView === 'reading') {
+                elements.navChapter.classList.add('active');
+            } else {
+                elements.navChapter.classList.remove('active');
+            }
+        }
+    }
+
     function renderIndexView() {
         state.currentView = 'index';
         state.currentEntityId = null;
+
+        updateMobileNav();
 
         // Update URL cleanly
         window.history.pushState({}, '', window.location.pathname);
@@ -165,6 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const entity = state.entities[entityIndex];
         state.currentView = 'reading';
         state.currentEntityId = entityId;
+        state.lastEntityId = entityId;
+
+        updateMobileNav();
 
         // Update URL
         window.history.pushState({}, '', `${window.location.pathname}?entity=${entityId}`);
@@ -282,10 +373,22 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     }
 
+    function renderLastReadingView() {
+        if (state.lastEntityId) {
+            renderReadingView(state.lastEntityId);
+        } else {
+            // If no previous chapter, open the first one
+            if (state.entities.length > 0) {
+                renderReadingView(state.entities[0].id);
+            }
+        }
+    }
+
     // Expose Global App Controller
     window.VedaApp = {
         renderIndexView,
         renderReadingView,
+        renderLastReadingView,
         setYugaFilter: function(yuga) {
             state.activeYuga = yuga;
             // Always revert to index view when filtering
