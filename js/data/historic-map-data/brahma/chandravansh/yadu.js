@@ -1,4 +1,141 @@
 export const yaduData = [
+
+    {
+  id: 'chandratreya_chandel',
+  name: 'चंद्रात्रेय',
+  subtitle: 'चंदेल वंश के आदि-पुरुष',
+  parent: 'vrishni_satvata',
+  gender: 'male',
+  yug: 'dwapar',
+  parichay: 'खजुराहो के शिलालेखों (जैसे राजा धंगदेव के अभिलेख) के अनुसार, चंद्रात्रेय एक महान मुनि थे और इन्हीं के नाम पर "चंदेल" (Chandela) राजवंश का नाम पड़ा। राजा धंगदेव ने स्वयं को वृष्णि-वंश से जोड़ा है।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'chandel_unknown_gap',
+  name: 'ऐतिहासिक अंतराल',
+  subtitle: 'अज्ञात पीढ़ियाँ',
+  parent: 'chandratreya_chandel',
+  yug: 'kali',
+  parichay: 'चंद्रात्रेय से लेकर चंदेल वंश के प्रथम ऐतिहासिक राजा नन्नुक (831 CE) के बीच कई शताब्दियों का अंतराल है, जिनका स्पष्ट उल्लेख शिलालेखों में नहीं है। लोककथाओं (महोबा खंड) में हेमवती और चन्द्रमा की कथा से चंद्रवर्मन की उत्पत्ति बताई जाती है।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'nannuka_chandel',
+  name: 'नन्नुक',
+  subtitle: 'चंदेल वंश के प्रथम ऐतिहासिक राजा',
+  parent: 'chandel_unknown_gap',
+  gender: 'male',
+  kali_year: 3933, // 831 CE
+  yug: 'kali',
+  parichay: 'नन्नुक (831-845 CE) चंदेल वंश के प्रथम ज्ञात ऐतिहासिक शासक थे। इन्होंने खजुराहो के आस-पास (जेजाकभुक्ति) गुर्जर-प्रतिहारों के सामंत के रूप में शासन शुरू किया।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'vakpati_chandel',
+  name: 'वाक्पति',
+  parent: 'nannuka_chandel',
+  gender: 'male',
+  kali_year: 3947, // ~845 CE
+  yug: 'kali',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'jayasakti_chandel',
+  name: 'जयशक्ति (जेजा)',
+  subtitle: 'जेजाकभुक्ति नामकरण',
+  parent: 'vakpati_chandel',
+  gender: 'male',
+  kali_year: 3967, // ~865 CE
+  yug: 'kali',
+  parichay: 'वाक्पति के पुत्र। इन्हीं के नाम (जेजा) पर चंदेलों के राज्य बुंदेलखंड का नाम "जेजाकभुक्ति" (Jejakabhukti) पड़ा। इनके भाई विजयशक्ति थे।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'vijasakti_chandel',
+  name: 'विजयशक्ति',
+  parent: 'vakpati_chandel',
+  gender: 'male',
+  kali_year: 3967,
+  yug: 'kali',
+  parichay: 'वाक्पति के पुत्र और जयशक्ति के भाई।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'rahila_chandel',
+  name: 'राहिल',
+  parent: 'vijasakti_chandel',
+  gender: 'male',
+  kali_year: 3987, // ~885 CE
+  yug: 'kali',
+  parichay: 'विजयशक्ति के पुत्र।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'harsha_chandel',
+  name: 'हर्ष चंदेल',
+  parent: 'rahila_chandel',
+  gender: 'male',
+  kali_year: 4007, // ~905 CE
+  yug: 'kali',
+  parichay: 'राहिल के पुत्र। खजुराहो के मतंगेश्वर मंदिर से जुड़े।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'yashovarman_chandel',
+  name: 'यशोवर्मन',
+  subtitle: 'खजुराहो के निर्माता',
+  parent: 'harsha_chandel',
+  gender: 'male',
+  kali_year: 4027, // 925 CE
+  yug: 'kali',
+  parichay: 'हर्ष के पुत्र। इन्होंने कालिंजर किले पर अधिकार किया और खजुराहो का प्रसिद्ध लक्ष्मण मंदिर बनवाया।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'dhangadeva_chandel',
+  name: 'धंगदेव',
+  subtitle: 'महान चंदेल सम्राट',
+  parent: 'yashovarman_chandel',
+  gender: 'male',
+  kali_year: 4052, // 950 CE
+  yug: 'kali',
+  parichay: 'यशोवर्मन के पुत्र। इन्होंने चंदेल वंश को गुर्जर-प्रतिहारों से पूर्ण स्वतंत्र किया और एक सार्वभौम सत्ता बनाई। इन्होंने खजुराहो का "विश्वनाथ मंदिर" बनवाया। इनके शिलालेखों में इन्हें वृष्णि वंश से जोड़ा गया है। 100 वर्ष से अधिक आयु तक जीवित रहे और अंत में प्रयाग में जल-समाधि ली।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'gandadeva_chandel',
+  name: 'गंडदेव',
+  parent: 'dhangadeva_chandel',
+  gender: 'male',
+  kali_year: 4101, // 999 CE
+  yug: 'kali',
+  parichay: 'धंगदेव के पुत्र और विद्याधर के पिता।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'vidyadhara_chandel',
+  name: 'विद्याधर',
+  subtitle: 'गजनवी को हराने वाले',
+  parent: 'gandadeva_chandel',
+  gender: 'male',
+  kali_year: 4105, // 1003 CE
+  yug: 'kali',
+  parichay: 'चंदेल वंश के सबसे शक्तिशाली और प्रतापी सम्राट। इन्होंने महमूद गजनवी के आक्रमण का कलिंजर के किले में सफलतापूर्वक सामना किया और उसे दो बार पीछे हटने पर मजबूर किया। खजुराहो का सबसे विशाल "कंदरिया महादेव मंदिर" इन्हीं के शासनकाल में बना।',
+  clusterName: 'चंदेल राजवंश'
+},
+    {
+  id: 'paramardideva_chandel',
+  name: 'परमर्दिदेव (परमाल)',
+  subtitle: 'अंतिम महान चंदेल शासक',
+  parent: 'vidyadhara_chandel', // Note: skipping intermediate kings for brevity, can connect directly or via another gap. I will connect to Vidyadhara for simplicity but state intermediate kings in parichay
+  gender: 'male',
+  kali_year: 4267, // 1165 CE
+  yug: 'kali',
+  parichay: 'विद्याधर के वंशज (विजयपाल, देववर्मन, कीर्तिवर्मन, मदनवर्मन आदि के बाद)। परमर्दिदेव (परमाल) के ही दरबार में प्रसिद्ध वीर सेनापति "आल्हा" और "ऊदल" थे। 1182 CE में पृथ्वीराज चौहान के साथ इनका महोबा का युद्ध हुआ था।',
+  clusterName: 'चंदेल राजवंश'
+},
+
+
     {
   id: 'yadu_chandra',
   name: 'यदु',
@@ -14,7 +151,7 @@ export const yaduData = [
   id: 'sahasrajit_yadu',
   name: 'सहस्रजित',
   subtitle: 'यदु पुत्र (हैहय वंश के मूल)',
-  parent: 'yadu_vansh_proxy',
+  parent: 'yadu_chandra',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -22,7 +159,7 @@ export const yaduData = [
   id: 'kroshtu_yadu',
   name: 'क्रोष्टु',
   subtitle: 'यदु पुत्र (वृष्णि/अंधक वंश के मूल)',
-  parent: 'yadu_vansh_proxy',
+  parent: 'yadu_chandra',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -30,7 +167,7 @@ export const yaduData = [
   id: 'nala_yadu',
   name: 'नल',
   subtitle: 'यदु पुत्र',
-  parent: 'yadu_vansh_proxy',
+  parent: 'yadu_chandra',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -38,7 +175,7 @@ export const yaduData = [
   id: 'ripu_yadu',
   name: 'रिपु',
   subtitle: 'यदु पुत्र',
-  parent: 'yadu_vansh_proxy',
+  parent: 'yadu_chandra',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -719,6 +856,54 @@ export const yaduData = [
   clusterName: 'नहुष चंद्रवंशी'
 },
     {
+  id: 'madri_vrishni_wife',
+  name: 'माद्री',
+  subtitle: 'वृष्णि की पत्नी',
+  gender: 'female',
+  spouseOf: 'vrishni_satvata',
+  yug: 'dwapar',
+  clusterName: 'नहुष चंद्रवंशी'
+},
+    {
+  id: 'gandhari_vrishni_wife',
+  name: 'गांधारी',
+  subtitle: 'वृष्णि की पत्नी',
+  gender: 'female',
+  spouseOf: 'vrishni_satvata',
+  yug: 'dwapar',
+  clusterName: 'नहुष चंद्रवंशी'
+},
+    {
+  id: 'yudhajit_vrishni',
+  name: 'युधाजित',
+  subtitle: 'वृष्णि पुत्र',
+  parent: 'vrishni_satvata',
+  gender: 'male',
+  yug: 'dwapar',
+  parichay: 'वृष्णि के पुत्र। इनके वंश में आगे चलकर श्वफल्क और अक्रूर जी उत्पन्न हुए।',
+  clusterName: 'नहुष चंद्रवंशी'
+},
+    {
+  id: 'anamitra_vrishni',
+  name: 'अनमित्र',
+  subtitle: 'वृष्णि पुत्र',
+  parent: 'vrishni_satvata',
+  gender: 'male',
+  yug: 'dwapar',
+  parichay: 'वृष्णि के पुत्र। इनके वंश में सत्राजित (स्यमंतक मणि वाले) और सत्यभामा उत्पन्न हुईं।',
+  clusterName: 'नहुष चंद्रवंशी'
+},
+    {
+  id: 'shini_vrishni_descendant',
+  name: 'शिनी',
+  subtitle: 'वृष्णि वंशज',
+  parent: 'anamitra_vrishni',
+  gender: 'male',
+  yug: 'dwapar',
+  parichay: 'वृष्णि वंश के महान योद्धा। इनके वंश में आगे चलकर सात्यकि हुए जो महाभारत युद्ध में पांडवों की ओर से लड़े।',
+  clusterName: 'नहुष चंद्रवंशी'
+},
+    {
   id: 'kukura_andhaka',
   name: 'कुकुर',
   subtitle: 'अंधक पुत्र',
@@ -1006,7 +1191,7 @@ export const yaduData = [
   id: 'shvaphalaka_vrishni',
   name: 'श्वफल्क',
   subtitle: 'वृष्णि वंश',
-  parent: 'vrishni_dynasty_proxy',
+  parent: 'yudhajit_vrishni',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -1058,9 +1243,11 @@ export const yaduData = [
 },
     {
   id: 'devamidhusha_vrishni',
-  name: 'देवमीढुष',
+  name: 'देवमीढ़ुष',
   subtitle: 'वृष्णि पुत्र',
-  parent: 'vrishni_dynasty_proxy',
+  parent: 'vrishni_satvata',
+  mother: 'madri_vrishni_wife',
+  gender: 'male',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -2483,4 +2670,5 @@ export const yaduData = [
   parichay: 'ये त्रिपुरी शाखा के अंतिम ज्ञात शासक थे, जिनके बाद कलचुरी साम्राज्य का पतन हो गया।',
   clusterName: 'नहुष चंद्रवंशी'
 }
+
 ];
