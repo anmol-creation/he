@@ -5,63 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kundali Engine | Sanatan Archive</title>
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: var(--vault-bg);
-            color: var(--vault-text);
+            background-color: #111111;
+            color: var(--vault-text-main);
             font-family: 'Work Sans', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        .header {
+        .vault-topbar {
             width: 100%;
-            padding: 1rem 2rem;
-            background-color: var(--vault-surface);
-            border-bottom: 1px solid var(--vault-border);
-            display: flex;
-            align-items: center;
-        }
-
-        .header a {
-            color: var(--vault-primary);
-            text-decoration: none;
-            font-weight: 500;
-            margin-right: 2rem;
-        }
-
-        .header h1 {
-            font-family: 'EB Garamond', serif;
-            color: var(--vault-primary);
-            margin: 0;
-            font-size: 1.5rem;
         }
 
         .container {
             max-width: 800px;
-            width: 100%;
-            margin: 2rem auto;
-            padding: 2rem;
+            width: 90%;
+            margin: 4rem auto;
+            padding: 2.5rem;
             background-color: var(--vault-surface);
             border: 1px solid var(--vault-border);
             border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .title {
             font-family: 'EB Garamond', serif;
             font-size: 2.5rem;
-            color: var(--vault-primary);
+            color: var(--vault-accent);
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .subtitle {
             text-align: center;
-            color: var(--vault-text-light);
+            color: var(--vault-text-muted);
             margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .form-group {
@@ -71,54 +57,73 @@
         label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--vault-text-light);
+            color: var(--vault-text-muted);
+            font-weight: 500;
         }
 
         input[type="text"], input[type="date"], input[type="time"] {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.8rem;
             border: 1px solid var(--vault-border);
-            background-color: var(--vault-bg);
-            color: var(--vault-text);
+            background-color: #000;
+            color: var(--vault-text-main);
             border-radius: 4px;
             font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--vault-primary);
+            box-shadow: 0 0 5px rgba(204, 106, 0, 0.5);
         }
 
         button {
             width: 100%;
             padding: 1rem;
+            margin-top: 1rem;
             background-color: var(--vault-primary);
-            color: var(--vault-bg);
-            border: none;
+            color: #fff;
+            border: 1px solid var(--vault-accent);
             border-radius: 4px;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            opacity: 0.9;
+            background-color: var(--vault-accent);
+            color: #000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .result-box {
             margin-top: 2rem;
-            padding: 1rem;
-            border: 1px dashed var(--vault-border);
+            padding: 1.5rem;
+            border: 1px dashed var(--vault-accent);
             border-radius: 4px;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
             white-space: pre-wrap;
             font-family: monospace;
+            font-size: 1.1rem;
             display: none;
+            color: var(--vault-text-main);
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <a href="../index.html">← Back to Archives</a>
-        <h1>Sanatan Archive</h1>
-    </div>
+    <!-- Top Navigation Bar (Matches Vault Theme) -->
+    <header class="vault-topbar">
+        <a href="../index.html" class="vault-brand" style="text-decoration: none;">
+            <span style="font-size: 1.5rem; margin-right: 10px;">←</span>
+            <span>Sanatan Archive</span>
+        </a>
+    </header>
 
     <div class="container">
         <h1 class="title">Kundali Engine</h1>
