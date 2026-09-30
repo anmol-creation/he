@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kundali Engine | Sanatan Archive</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        body {
+            background-color: var(--vault-bg);
+            color: var(--vault-text);
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: var(--vault-surface);
+            border-bottom: 1px solid var(--vault-border);
+            display: flex;
+            align-items: center;
+        }
+
+        .header a {
+            color: var(--vault-primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 2rem;
+        }
+
+        .header h1 {
+            font-family: 'EB Garamond', serif;
+            color: var(--vault-primary);
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--vault-surface);
+            border: 1px solid var(--vault-border);
+            border-radius: 8px;
+        }
+
+        .title {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--vault-primary);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--vault-text-light);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--vault-text-light);
+        }
+
+        input[type="text"], input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--vault-border);
+            background-color: var(--vault-bg);
+            color: var(--vault-text);
+            border-radius: 4px;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--vault-primary);
+            color: var(--vault-bg);
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result-box {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px dashed var(--vault-border);
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.2);
+            white-space: pre-wrap;
+            font-family: monospace;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="../index.html">← Back to Archives</a>
+        <h1>Sanatan Archive</h1>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Kundali Engine</h1>
+        <p class="subtitle">Advanced Astrological Calculations using Swiss Ephemeris</p>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter Name">
+        </div>
+
+        <div class="form-group" style="display: flex; gap: 1rem;">
+            <div style="flex: 1;">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" value="1999-12-22">
+            </div>
+            <div style="flex: 1;">
+                <label for="time">Time of Birth</label>
+                <input type="time" id="time" value="20:45">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location (Lat, Lng) - Default is Pilibhit</label>
+            <input type="text" id="location" value="28.6333, 79.8000">
+        </div>
+
+        <button id="calculateBtn">Generate Kundali Data</button>
+
+        <div id="resultBox" class="result-box"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
