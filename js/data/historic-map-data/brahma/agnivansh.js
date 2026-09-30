@@ -266,25 +266,8 @@ export const agnivanshData = [
         parichay: 'परमार वंश के अंतिम शासक। 1305 ई. में दिल्ली के सुल्तान अलाउद्दीन खिलजी की सेना ने इन्हें और इनके मंत्री गोगादेव को मांडू में पराजित कर मार डाला, जिससे परमार वंश का अंत हो गया।'
     },
 
-    // Proxy nodes
-    {
-        id: 'paramara_dynasty_proxy',
-        name: 'परमार वंश',
-        subtitle: 'उपेन्द्र से हर्ष सीयक तक',
-        isProxy: true,
-        parent: 'parmar',
-        clusterName: 'परमार वंश',
-        yug: 'kaliyug'
-    },
-    {
-        id: 'bhoja_successors_proxy',
-        name: 'राजा भोज के उत्तराधिकारी',
-        subtitle: 'परमार वंश के परवर्ती शासक (1305 AD तक)',
-        isProxy: true,
-        parent: 'bhoja_paramara',
-        clusterName: 'राजा भोज के उत्तराधिकारी',
-        yug: 'kaliyug'
-    },
+
+
 
     {
         id: 'chalukya',
@@ -443,16 +426,102 @@ export const agnivanshData = [
         clusterName: 'चालुक्य (सोलंकी) वंश'
     },
 
-    // Proxy Node for Chalukya
     {
-        id: 'chalukya_dynasty_proxy',
-        name: 'चालुक्य (सोलंकी) वंश',
-        subtitle: 'मूलराज से भीमदेव द्वितीय तक',
-        isProxy: true,
-        parent: 'chalukya_hero',
+        id: 'tribhuvanapala_2_chalukya',
+        name: 'त्रिभुवनपाल (द्वितीय)',
+        subtitle: 'अंतिम सोलंकी राजा',
+        parent: 'bhima_2_chalukya',
+        yug: 'kaliyug',
+        gender: 'male',
         clusterName: 'चालुक्य (सोलंकी) वंश',
-        yug: 'kaliyug'
+        parichay: 'भीमदेव द्वितीय के उत्तराधिकारी और चालुक्य/सोलंकी वंश के अंतिम राजा। इनके बाद सत्ता पूरी तरह से वाघेलाओं के हाथ में आ गई।'
     },
+
+    // ----------------------------------------------------
+    // VAGHELA (BAGHEL) DYNASTY (Branch of Chalukya)
+    // ----------------------------------------------------
+    {
+        id: 'arnoraja_vaghela',
+        name: 'अर्णोराज वाघेला (बघेल)',
+        subtitle: 'वाघेला वंश के संस्थापक पुरुष',
+        parent: 'tribhuvanapala_chalukya',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+        parichay: 'कुमारपाल सोलंकी के दरबार में सामंत। सम्राट कुमारपाल ने इनकी बहादुरी से प्रसन्न होकर इन्हें "व्याघ्रपल्ली" (बाघ की मांद) गाँव जागीर में दिया था, जिससे इनका नाम वाघेला (बघेल) पड़ा।'
+    },
+    {
+        id: 'lavanaprasada_vaghela',
+        name: 'लवणप्रसाद वाघेला',
+        subtitle: 'धोलका के शासक/सामंत',
+        parent: 'arnoraja_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+        parichay: 'अर्णोराज के पुत्र। सोलंकी राजा भीमदेव द्वितीय के शासनकाल में जब साम्राज्य कमजोर पड़ा, तो इन्होंने धोलका में रहकर कई विद्रोहियों से राज्य की रक्षा की।'
+    },
+    {
+        id: 'viradhavala_vaghela',
+        name: 'वीरधवल वाघेला',
+        subtitle: 'गुजरात के रक्षक',
+        parent: 'lavanaprasada_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+        parichay: 'लवणप्रसाद के पुत्र। इन्होंने गुजरात पर हुए विदेशी हमलों और स्थानीय विद्रोहों को कुचलने में अहम भूमिका निभाई।'
+    },
+    {
+        id: 'visaladeva_vaghela',
+        name: 'विशालदेव वाघेला',
+        subtitle: 'वाघेला वंश के प्रथम स्वतंत्र राजा (1244 ई.)',
+        parent: 'viradhavala_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+        parichay: 'इन्होंने 1244 ई. में सोलंकी राजा त्रिभुवनपाल द्वितीय से सत्ता अपने हाथों में लेकर गुजरात में स्वतंत्र वाघेला (बघेल) राजवंश की स्थापना की।'
+    },
+    {
+        id: 'arjunadeva_vaghela',
+        name: 'अर्जुनदेव वाघेला',
+        subtitle: 'वाघेला सम्राट',
+        parent: 'visaladeva_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+    },
+    {
+        id: 'sarangadeva_vaghela',
+        name: 'सारंगदेव वाघेला',
+        subtitle: 'वाघेला सम्राट',
+        parent: 'arjunadeva_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+    },
+    {
+        id: 'karna_vaghela',
+        name: 'कर्णदेव वाघेला (करन घेलो)',
+        subtitle: 'अंतिम वाघेला सम्राट (गुजरात)',
+        parent: 'sarangadeva_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        isProminent: true,
+        clusterName: 'बघेल (वाघेला) वंश',
+        parichay: 'गुजरात के अंतिम हिंदू और वाघेला सम्राट। 1304 ई. में अलाउद्दीन खिलजी के आक्रमण के कारण इन्हें हार का सामना करना पड़ा। इनके बाद बघेल वंश मध्य भारत (बघेलखंड) की ओर विस्थापित हो गया।'
+    },
+    {
+        id: 'baghelkhand_rulers',
+        name: 'रीवा (बघेलखंड) राजवंश',
+        subtitle: 'मध्य प्रदेश में बघेल सत्ता',
+        parent: 'karna_vaghela',
+        yug: 'kaliyug',
+        gender: 'male',
+        clusterName: 'बघेल (वाघेला) वंश',
+        parichay: 'गुजरात पतन के बाद, बघेल वंश के योद्धाओं ने मध्य भारत में आकर अपना राज्य स्थापित किया, जिसे आज बघेलखंड (रीवा, सतना, कोठी आदि) के नाम से जाना जाता है। राजा रामचंद्र सिंह, ठाकुर रणमत सिंह और महाराजा मार्तंड सिंह इसी महान वंश में हुए।'
+    },
+
+
+
 
 
     // ----------------------------------------------------
@@ -587,15 +656,5 @@ export const agnivanshData = [
         yug: 'kaliyug',
         clusterName: 'चौहान (चाहमान) वंश',
         parichay: 'पृथ्वीराज के पुत्र, जिन्होंने रणथंभौर जाकर एक नए चौहान राज्य की नींव रखी।'
-    },
-
-    // Proxy Node for Chauhan
-    {
-        id: 'chauhan_dynasty_proxy',
-        name: 'चौहान (चाहमान) वंश',
-        subtitle: 'वासुदेव से पृथ्वीराज तक',
-        isProxy: true,
-        parent: 'chahamana_hero',
-        clusterName: 'चौहान (चाहमान) वंश',
-        yug: 'kaliyug' }
+    }
 ];
