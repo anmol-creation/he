@@ -2,15 +2,27 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
     const name = document.getElementById('name').value;
     const date = document.getElementById('dob').value;
     const time = document.getElementById('time').value;
-    const location = document.getElementById('location').value;
+    const city = document.getElementById('city').value;
     const resultBox = document.getElementById('resultBox');
 
-    const [lat, lng] = location.split(',').map(s => s.trim());
-
     resultBox.style.display = 'block';
-    resultBox.textContent = 'Calculating...';
+    resultBox.textContent = 'Fetching coordinates...';
+
+    let lat, lng;
 
     try {
+        // Fetch coordinates using OpenStreetMap Nominatim API
+        const geoResponse = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}`);
+        const geoData = await geoResponse.json();
+
+        if (geoData && geoData.length > 0) {
+            lat = parseFloat(geoData[0].lat);
+            lng = parseFloat(geoData[0].lon);
+            resultBox.textContent = `Coordinates found: ${lat.toFixed(4)}, ${lng.toFixed(4)}. Calculating Kundali...`;
+        } else {
+            throw new Error('City not found. Please try a different name (e.g., "New Delhi, India").');
+        }
+
         const response = await fetch('/api/calculate', {
             method: 'POST',
             headers: {
@@ -29,8 +41,12 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         let output = `Kundali Results for ${name || 'User'}\n`;
         output += `Date: ${date} Time: ${time}\n`;
-        output += `Location: Lat ${lat}, Lng ${lng}\n`;
-        output += `Julian Day: ${data.jd.toFixed(4)}\n\n`;
+        output += `Location: ${city} (Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)})\n`;
+        output += `Julian Day: ${data.jd.toFixed(4)}\n`;
+        if (data.tithi) {
+            output += `Tithi (Lunar Day): ${data.tithi.name} (${(data.tithi.percentage * 100).toFixed(2)}% complete)\n`;
+        }
+        output += `\n`;
 
         if (data.ascendant) {
             const ascSign = Math.floor(data.ascendant / 30);

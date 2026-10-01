@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kundali Engine | Sanatan Archive</title>
+    <title>Historical Astronomical Search | Sanatan Archive</title>
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -20,12 +20,10 @@
             min-height: 100vh;
         }
 
-        .vault-topbar {
-            width: 100%;
-        }
+        .vault-topbar { width: 100%; }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 90%;
             margin: 4rem auto;
             padding: 2.5rem;
@@ -50,6 +48,12 @@
             font-size: 1.1rem;
         }
 
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -61,7 +65,7 @@
             font-weight: 500;
         }
 
-        input[type="text"], input[type="date"], input[type="time"] {
+        input[type="number"], select {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid var(--vault-border);
@@ -72,7 +76,7 @@
             font-size: 1rem;
         }
 
-        input:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: var(--vault-primary);
             box-shadow: 0 0 5px rgba(204, 106, 0, 0.5);
@@ -112,53 +116,51 @@
             display: none;
             color: var(--vault-text-main);
             line-height: 1.5;
+            max-height: 500px;
+            overflow-y: auto;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar (Matches Vault Theme) -->
     <header class="vault-topbar">
-        <a href="../index.html" class="vault-brand" style="text-decoration: none;">
+        <a href="index.html" class="vault-brand" style="text-decoration: none;">
             <span style="font-size: 1.5rem; margin-right: 10px;">←</span>
-            <span>Sanatan Archive</span>
+            <span>Kundali Engine</span>
         </a>
     </header>
 
     <div class="container">
-        <h1 class="title">Kundali Engine</h1>
-        <p class="subtitle">Advanced Astrological Calculations using Swiss Ephemeris</p>
+        <h1 class="title">Astronomical Search</h1>
+        <p class="subtitle">Search historical dates based on celestial events and Tithis (Reverse Ephemeris)</p>
 
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter Name">
-        </div>
-
-        <div class="form-group" style="display: flex; gap: 1rem;">
-            <div style="flex: 1;">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" value="1999-12-22">
+        <div class="grid-2">
+            <div class="form-group">
+                <label for="startYear">Start Year (e.g., -5000 for 5000 BCE)</label>
+                <input type="number" id="startYear" value="-3000">
             </div>
-            <div style="flex: 1;">
-                <label for="time">Time of Birth</label>
-                <input type="time" id="time" value="20:45">
+            <div class="form-group">
+                <label for="endYear">End Year (e.g., -1000)</label>
+                <input type="number" id="endYear" value="-2000">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="city">City of Birth</label>
-            <input type="text" id="city" value="Pilibhit, India" placeholder="e.g., Ayodhya, India">
+            <label for="tithiSelect">Target Tithi (Optional)</label>
+            <select id="tithiSelect">
+                <option value="any">-- Any Tithi --</option>
+                <option value="15">Shukla Purnima (Full Moon)</option>
+                <option value="30">Krishna Amavasya (New Moon)</option>
+                <option value="9">Shukla Navami (e.g., Ram Navami)</option>
+                <option value="8">Krishna Ashtami (e.g., Janmashtami)</option>
+            </select>
         </div>
 
-        <button id="calculateBtn">Generate Kundali Data</button>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="search.html" style="color: var(--vault-accent); text-decoration: none; font-size: 0.9rem; border-bottom: 1px dotted var(--vault-accent);">Go to Historical Astronomical Search →</a>
-        </div>
+        <button id="searchBtn">Start Historical Search</button>
 
         <div id="resultBox" class="result-box"></div>
     </div>
 
-    <script type="module" src="app.js"></script>
+    <script src="search.js"></script>
 </body>
 </html>
