@@ -269,6 +269,173 @@ export const agnivanshData = [
 
 
 
+    // ----------------------------------------------------
+    // UJJAINIYA PARMAR DYNASTY (Bhojpur, Bihar)
+    // ----------------------------------------------------
+    {
+        id: 'santan_sahi_ujjainiya',
+        name: 'संतान साही (सनातन सिंह)',
+        subtitle: 'उज्जैनिया परमार वंश के संस्थापक',
+        parent: 'mahalakadeva_paramara',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'मालवा (उज्जैन) के पतन के बाद परमार वंश की एक शाखा बिहार के भोजपुर क्षेत्र में विस्थापित हुई। 1320 ई. के आसपास संतान साही ने भोजपुर में उज्जैनिया परमार वंश की स्थापना की।'
+    },
+    {
+        id: 'hunkar_sahi_ujjainiya',
+        name: 'हुंकार साही',
+        subtitle: 'संतान साही के पुत्र',
+        parent: 'santan_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने भोजपुर के चेरो शासकों को पराजित कर अपनी सत्ता स्थापित की और बिहिया को अपनी राजधानी बनाया।'
+    },
+    {
+        id: 'dev_sahi_ujjainiya',
+        name: 'देव साही',
+        subtitle: 'हुंकार साही के पुत्र',
+        parent: 'hunkar_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'dullah_sahi_ujjainiya',
+        name: 'दुल्लाह साही',
+        subtitle: 'देव साही के भाई',
+        parent: 'hunkar_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'अपने बड़े भाई देव साही के बाद गद्दी पर बैठे। 85 वर्ष की उम्र तक राज किया।'
+    },
+    {
+        id: 'ram_sahi_ujjainiya',
+        name: 'राम साही',
+        subtitle: 'दुल्लाह साही के पुत्र',
+        parent: 'dullah_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'durlabh_deo_ujjainiya',
+        name: 'राजा दुर्लभ देव',
+        subtitle: 'राम साही के उत्तराधिकारी',
+        parent: 'ram_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने 1489 ई. में गद्दी संभाली। इनके पांच पुत्र थे, जिनमें उत्तराधिकार का भयंकर युद्ध हुआ।'
+    },
+    {
+        id: 'badal_singh_ujjainiya',
+        name: 'बादल सिंह',
+        subtitle: 'दुर्लभ देव के ज्येष्ठ पुत्र',
+        parent: 'durlabh_deo_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'shivram_singh_ujjainiya',
+        name: 'शिवराम सिंह',
+        subtitle: 'दुर्लभ देव के पुत्र',
+        parent: 'durlabh_deo_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'mahipal_singh_ujjainiya',
+        name: 'महिपाल सिंह',
+        subtitle: 'दुर्लभ देव के पुत्र',
+        parent: 'durlabh_deo_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'gajpati_sahi_ujjainiya',
+        name: 'राजा गजपति साही',
+        subtitle: 'महान उज्जैनिया शासक',
+        parent: 'badal_singh_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने 1534 ई. में शेरशाह सूरी की सहायता से बंगाल की सेना को सूरजगढ़ा के युद्ध में पराजित किया था। जगदीशपुर को राजधानी बनाया।'
+    },
+    {
+        id: 'dalpati_sahi_ujjainiya',
+        name: 'राजा दलपति साही',
+        subtitle: 'महिपाल सिंह के पुत्र',
+        parent: 'mahipal_singh_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'mukutman_sahi_ujjainiya',
+        name: 'मुकुटमन साही',
+        subtitle: 'दलपति साही के पुत्र',
+        parent: 'dalpati_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'narayan_mal_ujjainiya',
+        name: 'राजा नारायण मल',
+        subtitle: 'दलपति साही के वंशज',
+        parent: 'dalpati_sahi_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने 1607 ई. में गद्दी संभाली और बक्सर के युद्ध में चेरो और मुंडा सेना को पराजित किया।'
+    },
+    {
+        id: 'amar_singh_1_ujjainiya',
+        name: 'राजा अमर सिंह (प्रथम)',
+        subtitle: 'नारायण मल के पुत्र',
+        parent: 'narayan_mal_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'rudra_singh_ujjainiya',
+        name: 'राजा रुद्र सिंह',
+        subtitle: 'अमर सिंह के पुत्र',
+        parent: 'amar_singh_1_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने औरंगजेब के खिलाफ विद्रोह किया था।'
+    },
+    {
+        id: 'horil_singh_ujjainiya',
+        name: 'राजा होरिल सिंह',
+        subtitle: 'डुमराँव राज के संस्थापक',
+        parent: 'rudra_singh_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने डुमराँव शहर बसाया और स्वतंत्र डुमराँव राज की स्थापना की (1709 ई.)।'
+    },
+    {
+        id: 'sahabzada_singh_ujjainiya',
+        name: 'राजा साहबज़ादा सिंह',
+        subtitle: 'जगदीशपुर रियासत के राजा',
+        parent: 'horil_singh_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)'
+    },
+    {
+        id: 'veer_kunwar_singh',
+        name: 'बाबू वीर कुंवर सिंह',
+        subtitle: '1857 की क्रांति के महान योद्धा',
+        parent: 'sahabzada_singh_ujjainiya',
+        yug: 'kaliyug',
+        isProminent: true,
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: '1857 के प्रथम स्वतंत्रता संग्राम के महान योद्धा। इन्होंने 80 वर्ष की आयु में अंग्रेजों को कई बार पराजित किया और शाहाबाद क्षेत्र को स्वतंत्र कराया।'
+    },
+    {
+        id: 'amar_singh_2_ujjainiya',
+        name: 'बाबू अमर सिंह (द्वितीय)',
+        subtitle: 'वीर कुंवर सिंह के भाई',
+        parent: 'sahabzada_singh_ujjainiya',
+        yug: 'kaliyug',
+        clusterName: 'उज्जैनिया परमार (भोजपुर)',
+        parichay: 'इन्होंने वीर कुंवर सिंह के निधन के बाद 1857 की क्रांति का नेतृत्व किया और शाहाबाद में समानांतर सरकार चलाई।'
+    },
+
     {
         id: 'chalukya',
         name: 'चालुक्य',
