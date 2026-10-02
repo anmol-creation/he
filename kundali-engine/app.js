@@ -23,7 +23,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             throw new Error('City not found. Please try a different name (e.g., "New Delhi, India").');
         }
 
-        const response = await fetch('/api/calculate', {
+        const response = await fetch('http://localhost:3000/api/calculate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         const data = await response.json();
 
-        const signNames = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"];
+        const signNames = ["मेष (Aries)", "वृषभ (Taurus)", "मिथुन (Gemini)", "कर्क (Cancer)", "सिंह (Leo)", "कन्या (Virgo)", "तुला (Libra)", "वृश्चिक (Scorpio)", "धनु (Sagittarius)", "मकर (Capricorn)", "कुंभ (Aquarius)", "मीन (Pisces)"];
 
         let output = `Kundali Results for ${name || 'User'}\n`;
         output += `Date: ${date} Time: ${time}\n`;
@@ -51,12 +51,12 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         if (data.ascendant) {
             const ascSign = Math.floor(data.ascendant / 30);
             const ascDegree = data.ascendant % 30;
-            output += `ASCENDANT (LAGNA): ${signNames[ascSign]} (${ascDegree.toFixed(2)}°)\n\n`;
+            output += `लग्न (Ascendant): ${signNames[ascSign]} (${ascDegree.toFixed(2)}°)\n\n`;
         }
 
-        output += `PLANETARY POSITIONS (Lahiri Ayanamsa):\n`;
+        output += `ग्रह स्थिति (Planetary Positions - Lahiri Ayanamsa):\n`;
         output += `------------------------------------------------------\n`;
-        output += `Planet    | Sign         | Degree    | Speed / State\n`;
+        output += `ग्रह (Planet)   | राशि (Sign)       | अंश (Degree)| अवस्था (State)\n`;
         output += `------------------------------------------------------\n`;
 
         data.planets.forEach(p => {

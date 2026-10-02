@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from 'express';
 import swisseph from 'swisseph';
 import path from 'path';
@@ -9,6 +10,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 // Serve static files from the root and kundali-engine directory
@@ -39,7 +41,7 @@ app.post('/api/calculate', (req, res) => {
             swisseph.SE_MERCURY, swisseph.SE_JUPITER, swisseph.SE_VENUS,
             swisseph.SE_SATURN, swisseph.SE_MEAN_NODE
         ];
-        const planetNames = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu'];
+        const planetNames = ['सूर्य (Sun)', 'चंद्र (Moon)', 'मंगल (Mars)', 'बुध (Mercury)', 'गुरु (Jupiter)', 'शुक्र (Venus)', 'शनि (Saturn)', 'राहु (Rahu)'];
 
         planets.forEach((planet, index) => {
             const flags = swisseph.SEFLG_SIDEREAL | swisseph.SEFLG_SPEED;
@@ -76,15 +78,15 @@ app.post('/api/calculate', (req, res) => {
         const tithiPercentage = (diff % 12) / 12; // How far along in the Tithi
 
         const tithiNames = [
-            "Pratipada", "Dwitiya", "Tritiya", "Chaturthi", "Panchami", "Shashthi",
-            "Saptami", "Ashtami", "Navami", "Dashami", "Ekadashi", "Dwadashi",
-            "Trayodashi", "Chaturdashi", "Purnima", // Shukla Paksha
-            "Pratipada", "Dwitiya", "Tritiya", "Chaturthi", "Panchami", "Shashthi",
-            "Saptami", "Ashtami", "Navami", "Dashami", "Ekadashi", "Dwadashi",
-            "Trayodashi", "Chaturdashi", "Amavasya" // Krishna Paksha
+            "प्रतिपदा (Pratipada)", "द्वितीया (Dwitiya)", "तृतीया (Tritiya)", "चतुर्थी (Chaturthi)", "पंचमी (Panchami)", "षष्ठी (Shashthi)",
+            "सप्तमी (Saptami)", "अष्टमी (Ashtami)", "नवमी (Navami)", "दशमी (Dashami)", "एकादशी (Ekadashi)", "द्वादशी (Dwadashi)",
+            "त्रयोदशी (Trayodashi)", "चतुर्दशी (Chaturdashi)", "पूर्णिमा (Purnima)", // Shukla Paksha
+            "प्रतिपदा (Pratipada)", "द्वितीया (Dwitiya)", "तृतीया (Tritiya)", "चतुर्थी (Chaturthi)", "पंचमी (Panchami)", "षष्ठी (Shashthi)",
+            "सप्तमी (Saptami)", "अष्टमी (Ashtami)", "नवमी (Navami)", "दशमी (Dashami)", "एकादशी (Ekadashi)", "द्वादशी (Dwadashi)",
+            "त्रयोदशी (Trayodashi)", "चतुर्दशी (Chaturdashi)", "अमावस्या (Amavasya)" // Krishna Paksha
         ];
 
-        const paksha = tithiNumber <= 15 ? "Shukla" : "Krishna";
+        const paksha = tithiNumber <= 15 ? "शुक्ल पक्ष" : "कृष्ण पक्ष";
         const tithiData = {
             number: tithiNumber,
             name: `${paksha} ${tithiNames[tithiNumber - 1]}`,
@@ -95,7 +97,8 @@ app.post('/api/calculate', (req, res) => {
         // Note: Ascendant calculation requires geocoordinates and swe_houses
         // swe_houses(jd_ut, lat, lon, hsys)
         // Note: In Javascript swe_houses typically returns { error: ..., cusps: [...], ascmc: [...] }
-        const houses = swisseph.swe_houses(jd, parseFloat(lat), parseFloat(lng), 'P');
+        const flags = swisseph.SEFLG_SIDEREAL;
+        const houses = swisseph.swe_houses_ex(jd, flags, parseFloat(lat), parseFloat(lng), 'P');
         let ascendant = null;
 
         // Debugging structure of 'houses'
@@ -157,7 +160,7 @@ app.post('/api/search', (req, res) => {
                         "Saptami", "Ashtami", "Navami", "Dashami", "Ekadashi", "Dwadashi",
                         "Trayodashi", "Chaturdashi", "Amavasya"
                     ];
-                    const paksha = tithiNumber <= 15 ? "Shukla" : "Krishna";
+                    const paksha = tithiNumber <= 15 ? "शुक्ल पक्ष" : "कृष्ण पक्ष";
 
                     matches.push({
                         year: dateObj.year,

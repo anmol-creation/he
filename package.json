@@ -10,6 +10,7 @@
   },
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "swisseph": "^0.5.17"
   },
