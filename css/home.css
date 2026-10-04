@@ -27,6 +27,32 @@ body {
 }
 
 /* -------------------------------------
+   Animations
+-------------------------------------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatIcon {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
+    100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+}
+
+/* -------------------------------------
    Top Navigation Bar
 -------------------------------------- */
 .vault-topbar {
@@ -71,11 +97,27 @@ body {
     font-family: var(--font-vault-heading);
     font-size: 1.1rem;
     letter-spacing: 1px;
-    transition: color 0.3s;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.vault-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--vault-primary);
+    transition: width 0.3s ease;
 }
 
 .vault-nav-links a:hover {
     color: var(--vault-primary);
+}
+
+.vault-nav-links a:hover::after {
+    width: 100%;
 }
 
 .vault-utilities {
@@ -115,6 +157,7 @@ body {
     text-align: center;
     padding: 4rem 0;
     position: relative;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 .vault-hero::after {
@@ -156,7 +199,7 @@ body {
     text-decoration: none;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
 }
@@ -164,7 +207,12 @@ body {
 .vault-cta:hover {
     background: var(--vault-accent);
     color: var(--vault-surface);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    transform: scale(1.05);
+}
+
+.vault-cta:active {
+    transform: scale(0.95);
 }
 
 /* -------------------------------------
@@ -195,8 +243,9 @@ body {
     border-radius: 8px;
     text-decoration: none;
     color: var(--vault-text-main);
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    overflow: hidden;
 }
 
 .vault-archive-card::before {
@@ -210,18 +259,28 @@ body {
 }
 
 .vault-archive-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     border-color: var(--vault-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(204, 106, 0, 0.2);
+}
+
+.vault-archive-card:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 .vault-archive-card:hover::before {
-    box-shadow: inset 0 0 50px rgba(204, 106, 0, 0.1);
+    box-shadow: inset 0 0 50px rgba(204, 106, 0, 0.15);
 }
 
 .archive-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+    transition: transform 0.4s ease;
+}
+
+.vault-archive-card:hover .archive-icon {
+    animation: floatIcon 2s infinite ease-in-out;
 }
 
 .archive-title {
@@ -248,13 +307,32 @@ body {
     border: 1px solid var(--vault-border);
     border-radius: 8px;
     overflow: hidden;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.vault-featured:hover {
+    border-color: var(--vault-primary);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
 .vault-featured-img {
-    flex: 1;
+    height: 100%;
+    width: 100%;
     background: url('../icons/logo.jpg') center/cover no-repeat;
     min-height: 300px;
     position: relative;
+    transition: transform 0.8s ease;
+}
+
+.vault-featured:hover .vault-featured-img {
+    transform: scale(1.05);
+}
+
+.vault-featured-img-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 300px;
 }
 
 .vault-featured-img::after {
