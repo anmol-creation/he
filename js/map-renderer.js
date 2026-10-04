@@ -217,6 +217,8 @@ window.MapRenderer = {
                             let channelOffset = getChannelOffset(husbandId);
                             let controlY = startY + (endY - startY) / 2 + (channelOffset * 0.5);
 
+                            let iconX, iconY;
+
                             if (wives.length === 1 && husband.y === wife.y) {
                                 startY = husband.y;
                                 endY = wife.y;
@@ -226,6 +228,9 @@ window.MapRenderer = {
                                 ctx.moveTo(startX, startY);
                                 ctx.lineTo(endX, endY);
                                 ctx.stroke();
+
+                                iconX = startX + (endX - startX) / 2;
+                                iconY = startY;
                             } else {
                                 // Orthogonal rendering for wives (down, over, down)
                                 ctx.beginPath();
@@ -243,7 +248,34 @@ window.MapRenderer = {
                                 ctx.closePath();
                                 ctx.fillStyle = ctx.strokeStyle;
                                 ctx.fill();
+
+                                iconX = startX + (endX - startX) / 2;
+                                iconY = controlY;
                             }
+
+                            // Draw Indian Wedding Knot / Flame Icon at the midpoint
+                            // A golden circle with a sacred red center symbol
+                            ctx.beginPath();
+                            ctx.arc(iconX, iconY, 12, 0, 2 * Math.PI);
+                            ctx.fillStyle = '#111111'; // Match map background
+                            ctx.fill();
+
+                            ctx.beginPath();
+                            ctx.arc(iconX, iconY, 10, 0, 2 * Math.PI);
+                            ctx.fillStyle = '#FFD700'; // Gold
+                            ctx.fill();
+
+                            ctx.lineWidth = 1.5;
+                            ctx.strokeStyle = '#8b0000'; // Dark Red / Maroon border
+                            ctx.stroke();
+
+                            // FontAwesome Handshake symbol (\uf2b5)
+                            ctx.fillStyle = '#8b0000'; // Sacred Red
+                            ctx.font = '900 10px "Font Awesome 6 Free"'; // Use weight 900 for Solid icons
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            // Using FontAwesome 'Handshake' to represent Panigrahana (holding hands) in Hindu marriage
+                            ctx.fillText('\uf2b5', iconX, iconY + 1);
                         });
 
                         if (wives.length > 1) {
