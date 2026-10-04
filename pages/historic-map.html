@@ -12,33 +12,35 @@
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/historic-map.css">
 <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
-    </head>
+        <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 <body>
     <!-- Top Search Bar (Google Maps Style) -->
     <div id="top-search-container" class="top-search-container">
         <!-- Main Search Bar -->
         <div class="main-search-bar" id="main-search-bar-trigger">
-            <div class="search-icon-placeholder">🔍</div>
+            <div class="search-icon-placeholder"><i class="fa-solid fa-magnifying-glass"></i></div>
             <div class="search-text-placeholder">Search Entity, King, Dynasty...</div>
-            <div class="voice-search-placeholder">🎤</div>
-            <div class="user-account-placeholder">👤</div>
+            <div class="voice-search-placeholder"><i class="fa-solid fa-microphone"></i></div>
+            <div class="user-account-placeholder"><i class="fa-solid fa-user"></i></div>
         </div>
 
         <!-- Action Buttons Row -->
         <div class="action-buttons-row">
             <button id="expand-collapse-all-btn" class="action-pill-btn" title="Expand/Collapse All Clusters">
-                <span class="action-icon">🗂️</span> Expand
+                <span class="action-icon"><i class="fa-solid fa-folder-tree"></i></span> Expand
             </button>
             <button id="route-toggle-btn" class="action-pill-btn" title="Lineage Route">
-                <span class="action-icon">🧭</span> Route
+                <span class="action-icon"><i class="fa-solid fa-compass"></i></span> Route
             </button>
             <div style="position: relative;">
                 <button id="map-view-btn" class="action-pill-btn" title="Map View / Filters">
-                    <span class="action-icon">🗺️</span> Filter
+                    <span class="action-icon"><i class="fa-solid fa-layer-group"></i></span> Filter
                 </button>
             </div>
             <a href="react-historic-map.html" class="action-pill-btn beta-btn" title="Modern View (Beta)">
-                <span class="action-icon">✨</span> Beta
+                <span class="action-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span> Beta
             </a>
         </div>
 
@@ -81,13 +83,13 @@
 
     <!-- Floating Controls (Bottom-Right) -->
     <div id="floating-controls-bottom" class="floating-controls">
-        <button id="zoom-in-btn" class="floating-btn" title="Zoom In">➕</button>
-        <button id="zoom-out-btn" class="floating-btn" title="Zoom Out">➖</button>
+        <button id="zoom-in-btn" class="floating-btn" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
+        <button id="zoom-out-btn" class="floating-btn" title="Zoom Out"><i class="fa-solid fa-minus"></i></button>
     </div>
 
     <!-- Bottom Navigation Bar (Footer) -->
     <nav id="bottom-nav-bar">
-        <a href="itihas-puran.html" class="nav-btn" title="Back">⬅</a>
+        <a href="itihas-puran.html" class="nav-btn" title="Back"><i class="fa-solid fa-arrow-left"></i></a>
 
         <!-- Legend Dots -->
         <div id="map-legend-container" style="display: flex; gap: 10px; align-items: center; position: relative;">
@@ -103,7 +105,7 @@
             </div>
         </div>
 
-        <a href="../index.html" class="nav-btn" title="Home">🏠</a>
+        <a href="../index.html" class="nav-btn" title="Home"><i class="fa-solid fa-house"></i></a>
     </nav>
 
     <!-- Map Area (Infinite Canvas) -->
@@ -124,9 +126,9 @@
     <!-- Full Screen Search Overlay (Google Maps Style) -->
     <div id="full-screen-search-overlay" class="hidden">
         <div class="search-header">
-            <button id="close-search-btn" class="icon-btn" title="Back to Map">⬅️</button>
+            <button id="close-search-btn" class="icon-btn" title="Back to Map"><i class="fa-solid fa-arrow-left"></i></button>
             <input type="text" id="map-search-input" placeholder="Search Entity, King, Dynasty..." autocomplete="off">
-            <button id="clear-search-btn" class="icon-btn hidden" title="Clear Search">❌</button>
+            <button id="clear-search-btn" class="icon-btn hidden" title="Clear Search"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="search-body">
             <div id="recent-searches-container">
@@ -138,14 +140,14 @@
     </div>
 
     <div id="focus-panel" class="hidden">
-        <button id="close-panel">✕</button>
+        <button id="close-panel"><i class="fa-solid fa-xmark"></i></button>
         <div class="panel-header" id="panel-header">
             <div class="panel-dots" id="panel-dots"></div>
             <h2 id="panel-name">Name</h2>
             <p id="panel-subtitle" class="panel-subtitle">Subtitle</p>
             <div id="panel-tags" class="panel-tags"></div>
         </div>
-        <button id="panel-start-route-btn" class="panel-route-btn">🧭 Start Route from Here</button>
+        <button id="panel-start-route-btn" class="panel-route-btn"><i class="fa-solid fa-compass"></i> Start Route from Here</button>
         <div class="panel-tabs">
             <button class="tab-btn active" data-tab="parichay">परिचय</button>
             <button class="tab-btn" data-tab="jeevan">जीवन</button>

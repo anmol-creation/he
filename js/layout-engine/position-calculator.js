@@ -76,30 +76,37 @@ export function calculateAbsolutePositions(nodesMap, nodeId, absoluteX = 5000, s
         // AUTO-POSITIONING BASED ON KALIYUG RULER
     if (node.kali_year !== undefined) {
         const KALIYUG_ZERO_Y = 36800;
+        const PIXELS_PER_YEAR = 5;
+        const TRANSITION_YEARS = 1000; // Apply linear pixel scale for up to 1000 years before Kaliyuga
 
         let calculatedY = KALIYUG_ZERO_Y;
         let remainingYears = Math.abs(node.kali_year);
 
-        // Positive kali_year (Kaliyug)
-        if (node.kali_year >= 0) {
-            calculatedY = KALIYUG_ZERO_Y + (node.kali_year * 3);
+        // Positive kali_year (Kaliyug) or transition period (up to -1000 years)
+        if (node.kali_year >= -TRANSITION_YEARS) {
+            calculatedY = KALIYUG_ZERO_Y + (node.kali_year * PIXELS_PER_YEAR);
         } else {
-            // Negative kali_year (Pre-Kaliyug)
-            // Use the strict Yuga scale defined by generational density
-            if (remainingYears <= 864000) {
-                // Dvapara Yuga: 864,000 years fits in 10,500px => ~82.285 years/px
-                calculatedY = KALIYUG_ZERO_Y - (remainingYears / (864000 / 10500));
-            } else if (remainingYears <= 2160000) { // 864k + 1296k
-                // Treta Yuga: 1,296,000 years fits in 18,600px => ~69.677 years/px
-                const dwaparPx = 10500;
-                const tretaYears = remainingYears - 864000;
-                calculatedY = KALIYUG_ZERO_Y - dwaparPx - (tretaYears / (1296000 / 18600));
+            // Negative kali_year (Pre-Kaliyug beyond transition)
+            const transitionPx = TRANSITION_YEARS * PIXELS_PER_YEAR; // 5000px used for transition
+            const remainingDvaparaYears = 864000 - TRANSITION_YEARS; // 863000
+            const remainingDvaparaPx = 10500 - transitionPx; // 5500px
+
+            // We offset by the transition years to find where we are in the rest of history
+            remainingYears -= TRANSITION_YEARS;
+            const KALIYUG_TRANSITION_Y = KALIYUG_ZERO_Y - transitionPx;
+
+            if (remainingYears <= remainingDvaparaYears) {
+                // Dvapara Yuga remainder
+                calculatedY = KALIYUG_TRANSITION_Y - (remainingYears / (remainingDvaparaYears / remainingDvaparaPx));
+            } else if (remainingYears <= (remainingDvaparaYears + 1296000)) {
+                // Treta Yuga
+                const tretaYears = remainingYears - remainingDvaparaYears;
+                calculatedY = KALIYUG_TRANSITION_Y - remainingDvaparaPx - (tretaYears / (1296000 / 18600));
             } else {
-                // Satya Yuga: 1,728,000 years fits in 1200px => 1440 years/px
-                const dwaparPx = 10500;
+                // Satya Yuga
                 const tretaPx = 18600;
-                const satyaYears = remainingYears - 2160000;
-                calculatedY = KALIYUG_ZERO_Y - dwaparPx - tretaPx - (satyaYears / (1728000 / 1200));
+                const satyaYears = remainingYears - remainingDvaparaYears - 1296000;
+                calculatedY = KALIYUG_TRANSITION_Y - remainingDvaparaPx - tretaPx - (satyaYears / (1728000 / 1200));
             }
         }
 

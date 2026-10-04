@@ -25,8 +25,10 @@ window.MapUI = {
 
         if (shouldExpandAll) {
           allClusters.forEach((c) => window.MapState.expandedClusters.add(c));
+          expandCollapseBtn.innerHTML = '<span class="action-icon"><i class="fa-solid fa-folder-minus"></i></span> Collapse';
         } else {
           window.MapState.expandedClusters.clear();
+          expandCollapseBtn.innerHTML = '<span class="action-icon"><i class="fa-solid fa-folder-tree"></i></span> Expand';
         }
 
         window.dispatchEvent(new Event("ClusterToggled"));
@@ -142,6 +144,11 @@ window.MapUI = {
     if (routeToggleBtn) {
       routeToggleBtn.addEventListener("click", () => {
         routeBox.classList.toggle("active");
+        if (routeBox.classList.contains("active")) {
+          routeToggleBtn.innerHTML = '<span class="action-icon"><i class="fa-solid fa-xmark"></i></span> Close';
+        } else {
+          routeToggleBtn.innerHTML = '<span class="action-icon"><i class="fa-solid fa-compass"></i></span> Route';
+        }
       });
     }
 
@@ -527,7 +534,7 @@ window.MapUI = {
           .map(
             (m) => `
                     <div class="search-result-item recent-search-item" data-id="${m.id}">
-                        <span>🔍</span>
+                        <span><i class="fa-solid fa-clock-rotate-left"></i></span>
                         <div>
                             <div style="font-weight: 600;">${m.name} ${m.nameEn ? `(${m.nameEn})` : ""}</div>
                             <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">${m.subtitle || ""}</div>
