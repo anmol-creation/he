@@ -127,6 +127,7 @@ export const chandravanshCoreData = [
   parent: 'vaivasvata_manu',
   spouseOf: 'budh_chandra',
   yug: 'satya',
+  clusterName: 'सूर्यवंश',
   kathayein: [
       {
           title: "मनु की प्रथम संतान और चंद्रवंश की माता",
@@ -212,7 +213,6 @@ export const chandravanshCoreData = [
   lineLabel: 'आयु',
   mother: 'urvashi_chandra',
   yug: 'treta',
-  kali_year: -2139096,
   clusterName: 'चंद्रवंश',
   parichay: 'पुरूरवा और उर्वशी के ज्येष्ठ पुत्र। इन्होने मुख्य चंद्रवंश को आगे बढ़ाया और प्रतिष्ठानपुर पर शासन किया।',
   kathayein: [
@@ -238,7 +238,6 @@ export const chandravanshCoreData = [
   lineLabel: 'श्रुतायु',
   yug: 'satya',
   clusterName: 'चंद्रवंश',
-  kali_year: -2160000,
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के द्वितीय पुत्र।',
   kathayein: [
       {
@@ -263,7 +262,6 @@ export const chandravanshCoreData = [
   mother: 'urvashi_chandra',
   yug: 'satya',
   clusterName: 'चंद्रवंश',
-  kali_year: -2160000,
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के तृतीय पुत्र।',
   kathayein: [
       {
@@ -288,7 +286,6 @@ export const chandravanshCoreData = [
   mother: 'urvashi_chandra',
   yug: 'satya',
   clusterName: 'चंद्रवंश',
-  kali_year: -2160000,
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के चतुर्थ पुत्र।'
 },
 
@@ -302,7 +299,6 @@ export const chandravanshCoreData = [
   mother: 'urvashi_chandra',
   yug: 'satya',
   clusterName: 'चंद्रवंश',
-  kali_year: -2160000,
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के छठे पुत्र।'
 },
     {
@@ -313,7 +309,6 @@ export const chandravanshCoreData = [
   lineLabel: 'वसुमान',
   parent: 'shrutayu_chandra',
   yug: 'satya',
-  kali_year: -2160975,
   clusterName: 'चंद्रवंश',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र श्रुतायु के पुत्र थे। इनके बाद इस वंश के विस्तार का कोई स्पष्ट प्रमाण नहीं मिलता।'
 },
@@ -325,7 +320,6 @@ export const chandravanshCoreData = [
   lineLabel: 'श्रुतंजय',
   parent: 'satyayu_chandra',
   yug: 'satya',
-  kali_year: -2160975,
   clusterName: 'चंद्रवंश',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र सत्यायु के पुत्र थे। इनके बाद यह वंश चंद्रवंश की मुख्य शाखा में विलीन हो गया।'
 },
@@ -337,7 +331,6 @@ export const chandravanshCoreData = [
   lineLabel: 'एक',
   parent: 'raya_chandra',
   yug: 'satya',
-  kali_year: -2160975,
   clusterName: 'चंद्रवंश',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र रय के पुत्र थे।'
 },
@@ -349,7 +342,6 @@ export const chandravanshCoreData = [
   lineLabel: 'अमित',
   parent: 'jaya_chandra',
   yug: 'satya',
-  kali_year: -2160975,
   clusterName: 'चंद्रवंश',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र जय के पुत्र थे।'
 },
@@ -594,7 +586,6 @@ export const chandravanshCoreData = [
   parent: 'pururava_chandra',
   mother: 'urvashi_chandra',
   yug: 'satya',
-  kali_year: -2160000,
   clusterName: 'चंद्रवंश',
   parichay: 'पुरूरवा के पुत्र (महाभारत व वायु पुराण के अनुसार)। इन्होंने अपनी वीरता से एक स्वतंत्र राज्य की स्थापना की, जो बाद में कान्यकुब्ज (कन्नौज) राजवंश के नाम से प्रसिद्ध हुआ।',
   kathayein: [
