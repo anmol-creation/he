@@ -157,6 +157,11 @@ export const chandravanshCoreData = [
           title: 'तीन अग्नियों का पृथ्वी पर विस्तार',
           source: 'महाभारत',
           content: 'उर्वशी के वियोग में भटकते हुए पुरुरवा को गंधर्वों ने एक विशेष अग्नि (अरणि) दी थी। कहा जाता है कि पुरुरवा ही वह पहले राजा थे जिन्होंने त्रेता युग में पृथ्वी पर तीन प्रकार की यज्ञीय अग्नियों (गार्हपत्य, आहवनीय और दक्षिणाग्नि) का विस्तार किया।'
+      },
+      {
+          title: 'विभिन्न ग्रंथों में पुरूरवा के पुत्र',
+          source: 'श्रीमद्भागवत, विष्णु पुराण, महाभारत, वायु पुराण',
+          content: 'शास्त्रों में पुरूरवा के पुत्रों के नामों को लेकर दो अलग-अलग सूचियां मिलती हैं। श्रीमद्भागवत (9.15.1) और विष्णु पुराण के अनुसार इनके 6 पुत्र थे: आयु, श्रुतायु, सत्यायु, रय, विजय, और जय। वहीं दूसरी ओर, महाभारत (आदि पर्व) और वायु/मत्स्य पुराण के अनुसार इनके 6 पुत्र थे: आयु, धीमान, अमावसु, दृढायु, वनायु, और शतायु। इन सभी पुत्रों में से सबसे प्रतापी और मुख्य चंद्रवंश को आगे बढ़ाने वाले ज्येष्ठ पुत्र \'आयु\' ही हुए, जबकि अन्य पुत्रों (जैसे अमावसु) ने अलग-अलग प्रांतीय राजवंशों की स्थापना की।'
       }
   ]
 },
@@ -207,7 +212,8 @@ export const chandravanshCoreData = [
   lineLabel: 'आयु',
   mother: 'urvashi_chandra',
   yug: 'treta',
-  kali_year: -2139096
+  kali_year: -2139096,
+  clusterName: 'चंद्रवंश'
 },
     {
   id: 'shrutayu_chandra',
@@ -218,7 +224,21 @@ export const chandravanshCoreData = [
   mother: 'urvashi_chandra',
   lineLabel: 'श्रुतायु',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र'
+  clusterName: 'चंद्रवंश',
+  kali_year: -2160000,
+  parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के द्वितीय पुत्र।',
+  kathayein: [
+      {
+          title: 'जन्म और राज्य',
+          source: 'श्रीमद्भागवत पुराण 9.15.1 / महाभारत',
+          content: 'श्रुतायु, चंद्रवंश के आदि-पुरुष सम्राट पुरूरवा और स्वर्ग की अप्सरा उर्वशी के द्वितीय पुत्र थे। महाभारत और कुछ पुराणों में इन्हें शतायु या दृढायु भी कहा गया है। जब पुरूरवा ने अपने साम्राज्य का विभाजन किया, तो मुख्य केंद्र (प्रतिष्ठानपुर) ज्येष्ठ पुत्र आयु को मिला, जबकि श्रुतायु को साम्राज्य के अंतर्गत गंगा-यमुना दोआब या प्रतिष्ठानपुर के आस-पास का कोई क्षेत्रीय राज्य (Provincial Kingdom) सौंपा गया।'
+      },
+      {
+          title: 'वंश विस्तार',
+          source: 'श्रीमद्भागवत पुराण 9.15.2',
+          content: 'श्रीमद्भागवत पुराण (९.१५.२) के श्लोक "श्रुतायोर्वसुमान् पुत्रः..." के अनुसार श्रुतायु के पुत्र का नाम वसुमान था। वसुमान के बाद इस वंश के किसी प्रतापी राजा या बड़े युद्ध का वर्णन नहीं मिलता। ऐतिहासिक दृष्टिकोण से श्रुतायु की राजसत्ता कुछ समय बाद या तो चंद्रवंश की मुख्य शाखा (आयु के वंश) में विलीन हो गई, या उनके वंशजों ने राजपाट छोड़ दिया।'
+      }
+  ]
 },
     {
   id: 'satyayu_chandra',
@@ -229,7 +249,7 @@ export const chandravanshCoreData = [
   gender: 'male',
   mother: 'urvashi_chandra',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र'
+  clusterName: 'चंद्रवंश'
 },
     {
   id: 'raya_chandra',
@@ -240,19 +260,9 @@ export const chandravanshCoreData = [
   parent: 'pururava_chandra',
   mother: 'urvashi_chandra',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र'
+  clusterName: 'चंद्रवंश'
 },
-    {
-  id: 'vijaya_chandra',
-  name: 'विजय',
-  subtitle: 'पुरुरवा के पुत्र',
-  lineLabel: 'विजय',
-  gender: 'male',
-  parent: 'pururava_chandra',
-  mother: 'urvashi_chandra',
-  yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र'
-},
+
     {
   id: 'jaya_chandra',
   name: 'जय',
@@ -261,7 +271,7 @@ export const chandravanshCoreData = [
   parent: 'pururava_chandra',
   mother: 'urvashi_chandra',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र'
+  clusterName: 'चंद्रवंश'
 },
     {
   id: 'vasuman_shrutayu_chandra',
@@ -271,7 +281,7 @@ export const chandravanshCoreData = [
   lineLabel: 'वसुमान',
   parent: 'shrutayu_chandra',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र',
+  clusterName: 'चंद्रवंश',
   parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र श्रुतायु के पुत्र थे।'
 },
     {
@@ -282,7 +292,7 @@ export const chandravanshCoreData = [
   parent: 'satyayu_chandra',
   lineLabel: 'श्रुतंजय',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र',
+  clusterName: 'चंद्रवंश',
   parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र सत्यायु के पुत्र थे।'
 },
     {
@@ -293,7 +303,7 @@ export const chandravanshCoreData = [
   parent: 'raya_chandra',
   lineLabel: 'एक',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र',
+  clusterName: 'चंद्रवंश',
   parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र रय के पुत्र थे।'
 },
     {
@@ -304,7 +314,7 @@ export const chandravanshCoreData = [
   parent: 'jaya_chandra',
   lineLabel: 'अमित',
   yug: 'satya',
-  clusterName: 'पुरुरवा के अन्य पुत्र',
+  clusterName: 'चंद्रवंश',
   parichay: 'भागवत पुराण के अनुसार, ये पुरुरवा के पुत्र जय के पुत्र थे।'
 },
     {
@@ -1227,7 +1237,7 @@ export const chandravanshCoreData = [
   parent: 'chandravansh_dynasty_proxy',
   yug: 'satya',
   parichay: 'इन्हें चंद्रवंश/सोमवंश का माना जाता है जिन्होंने कांगड़ा (त्रिगर्त) राज्य की स्थापना की।',
-  clusterName: 'पुरुरवा के अन्य पुत्र'
+  clusterName: 'चंद्रवंश'
 },
     {
   id: 'susharma_chandra_katoch',
