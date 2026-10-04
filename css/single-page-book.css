@@ -23,6 +23,29 @@ body {
     overflow-x: hidden;
 }
 
+/* Animations */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Layout Wrapper */
 .veda-app-container {
     display: flex;
@@ -65,11 +88,16 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     color: var(--veda-text);
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .veda-icon-btn:hover {
     color: var(--veda-primary);
+    transform: scale(1.1);
+}
+
+.veda-icon-btn:active {
+    transform: scale(0.9);
 }
 
 /* Main Layout */
@@ -162,12 +190,17 @@ body {
     border: 1px solid var(--veda-border);
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .veda-chapter-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: var(--veda-primary-light);
+}
+
+.veda-chapter-item:active {
+    transform: translateY(-1px) scale(0.99);
 }
 
 .veda-chapter-num {
@@ -192,6 +225,10 @@ body {
 }
 
 /* Reading View */
+.veda-reading-view-container {
+    animation: fadeInContent 0.8s ease-out forwards;
+}
+
 .veda-breadcrumbs {
     font-size: 0.9rem;
     color: var(--veda-text-light);
@@ -294,7 +331,7 @@ body {
     font-size: 1.5rem;
     color: var(--veda-text);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     z-index: 10;
 }
@@ -302,6 +339,12 @@ body {
 .veda-pagination-side:hover {
     color: var(--veda-primary);
     border-color: var(--veda-primary);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.2);
+}
+
+.veda-pagination-side:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .veda-pagination-side.prev { left: calc(var(--sidebar-width) + 2rem); }
@@ -384,6 +427,7 @@ body {
         background: var(--veda-surface);
         border-top: 1px solid var(--veda-border);
         z-index: 100;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
     }
 
     .veda-mobile-nav-item {
@@ -394,6 +438,11 @@ body {
         font-size: 0.8rem;
         gap: 4px;
         cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .veda-mobile-nav-item:active {
+        transform: scale(0.9);
     }
 
     .veda-mobile-nav-item.active {
@@ -417,10 +466,17 @@ body {
         text-align: center;
         cursor: pointer;
         margin: 0 5px;
+        transition: all 0.2s ease;
     }
 
     .veda-mobile-page-card:hover {
         border-color: var(--veda-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .veda-mobile-page-card:active {
+        transform: scale(0.98);
     }
 
     .veda-mobile-page-label {

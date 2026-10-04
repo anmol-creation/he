@@ -231,16 +231,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         elements.mainContent.innerHTML = `
-            <div class="veda-index-header">
-                <h1 class="veda-index-title">अनुक्रमणिका (Index)</h1>
-                <p style="color:var(--veda-text-light); margin-top:0.5rem;">${state.activeYuga === 'All' ? 'Complete' : state.activeYuga + ' Yuga'} Catalog</p>
+            <div class="veda-reading-view-container">
+                <div class="veda-index-header">
+                    <h1 class="veda-index-title">अनुक्रमणिका (Index)</h1>
+                    <p style="color:var(--veda-text-light); margin-top:0.5rem;">${state.activeYuga === 'All' ? 'Complete' : state.activeYuga + ' Yuga'} Catalog</p>
+                </div>
+
+                <!-- Shows on Mobile -->
+                ${state.activeYuga === 'All' ? accordionHtml : ''}
+
+                <!-- Shows on Desktop (or Mobile if filtered) -->
+                ${(state.activeYuga !== 'All' || window.innerWidth > 900) ? listHtml : ''}
             </div>
-
-            <!-- Shows on Mobile -->
-            ${state.activeYuga === 'All' ? accordionHtml : ''}
-
-            <!-- Shows on Desktop (or Mobile if filtered) -->
-            ${(state.activeYuga !== 'All' || window.innerWidth > 900) ? listHtml : ''}
         `;
 
         window.scrollTo(0,0);
@@ -324,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         elements.mainContent.innerHTML = `
+            <div class="veda-reading-view-container">
             <!-- Breadcrumbs -->
             <div class="veda-breadcrumbs">
                 <span onclick="window.VedaApp.renderIndexView()">Index</span>
@@ -368,6 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Pagination Components -->
             ${desktopPagination}
             ${mobilePagination}
+            </div>
         `;
 
         window.scrollTo(0,0);
