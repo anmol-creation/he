@@ -127,6 +127,7 @@ export const chandravanshCoreData = [
   parent: 'vaivasvata_manu',
   spouseOf: 'budh_chandra',
   yug: 'satya',
+  clusterName: 'सूर्यवंश',
   kathayein: [
       {
           title: "मनु की प्रथम संतान और चंद्रवंश की माता",
@@ -206,8 +207,7 @@ export const chandravanshCoreData = [
   parent: 'pururava_chandra',
   lineLabel: 'आयु',
   mother: 'urvashi_chandra',
-  yug: 'treta',
-  kali_year: -2139096
+  yug: 'treta'
 },
     {
   id: 'shrutayu_chandra',
