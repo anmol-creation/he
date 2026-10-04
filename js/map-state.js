@@ -113,9 +113,10 @@ window.MapState = {
         const yearLabel = document.getElementById('current-year-label');
         if (!overlay || !eraLabel || !yearLabel) return;
 
-        // In position-calculator, KALIYUG_ZERO_Y is set to 36800. PIXELS_PER_YEAR is 3.
+        // In position-calculator, KALIYUG_ZERO_Y is set to 36800. PIXELS_PER_YEAR is 5.
         const KALIYUG_ZERO_Y = 36800;
-        const PIXELS_PER_YEAR = 3;
+        const PIXELS_PER_YEAR = 5;
+        const KALIYUG_TRANSITION_Y = KALIYUG_ZERO_Y - (1000 * PIXELS_PER_YEAR); // -1000 years
 
         // Depth is effectively the Y coordinate we are currently looking at on screen
         const centerY = (-this.translateY / this.scale) + (window.innerHeight / (2 * this.scale));
@@ -123,21 +124,21 @@ window.MapState = {
         // Calculate Kali Year for positive (Kaliyug) space
         let kaliYear = 0;
 
-        if (centerY < KALIYUG_ZERO_Y) {
+        if (centerY < KALIYUG_TRANSITION_Y) {
             let eraText = "Dvapara Yuga";
 
             // Re-calculate the actual year based on the dynamic scale from position-calculator
-            let absoluteYearsBeforeKali = 0;
-            const pixelsBeforeKali = KALIYUG_ZERO_Y - centerY;
+            let absoluteYearsBeforeKali = 1000;
+            const pixelsBeforeKali = KALIYUG_TRANSITION_Y - centerY;
 
-            if (pixelsBeforeKali <= 10500) { // Dvapara
-                absoluteYearsBeforeKali = pixelsBeforeKali * (864000 / 10500);
-                eraText = absoluteYearsBeforeKali < 200 ? "Dvapara Yuga (Ant)" : "Dvapara Yuga";
-            } else if (pixelsBeforeKali <= 29100) { // 10500 + 18600 (Treta)
-                absoluteYearsBeforeKali = 864000 + ((pixelsBeforeKali - 10500) * (1296000 / 18600));
+            if (pixelsBeforeKali <= 5500) { // Dvapara (10500 original - 5000 used by 1000 years transition)
+                absoluteYearsBeforeKali += pixelsBeforeKali * (863000 / 5500); // Remaining years
+                eraText = "Dvapara Yuga";
+            } else if (pixelsBeforeKali <= 24100) { // 5500 + 18600 (Treta)
+                absoluteYearsBeforeKali = 864000 + ((pixelsBeforeKali - 5500) * (1296000 / 18600));
                 eraText = "Treta Yuga";
             } else { // Satya
-                absoluteYearsBeforeKali = 864000 + 1296000 + ((pixelsBeforeKali - 29100) * (1728000 / 1200));
+                absoluteYearsBeforeKali = 864000 + 1296000 + ((pixelsBeforeKali - 24100) * (1728000 / 1200));
                 eraText = "Satya Yuga";
             }
 
@@ -149,9 +150,9 @@ window.MapState = {
             kaliYear = Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR);
 
             // Determine macro scale text (1000 year blocks)
-
-            // Determine macro scale text (1000 year blocks)
             let macroText = "Kaliyuga";
+            if (kaliYear < 0) macroText = "End of Dvapara Yuga";
+            else
             if (kaliYear < 1000) macroText = "Kaliyuga (Charan 1)";
             else if (kaliYear < 2000) macroText = "Kaliyuga (Charan 1-2)";
             else if (kaliYear < 3000) macroText = "Kaliyuga (Charan 2)";
@@ -202,8 +203,9 @@ window.MapState = {
         if (ruler) {
             const marker = document.getElementById('ruler-active-marker');
             if (marker) {
-                const kaliYear = Math.max(0, Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR));
-                let rulerPercent = (kaliYear / 6000) * 100;
+                // Ruler is typically just 0 to 6000 for Kaliyuga, cap at 0 minimum for marker.
+                const kYear = Math.max(0, Math.floor((centerY - KALIYUG_ZERO_Y) / PIXELS_PER_YEAR));
+                let rulerPercent = (kYear / 6000) * 100;
                 if (rulerPercent > 100) rulerPercent = 100;
                 marker.style.top = `${rulerPercent}%`;
             }
