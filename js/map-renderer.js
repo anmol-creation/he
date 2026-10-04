@@ -269,13 +269,13 @@ window.MapRenderer = {
                             ctx.strokeStyle = '#8b0000'; // Dark Red / Maroon border
                             ctx.stroke();
 
-                            // FontAwesome Handshake symbol (\uf2b5) or Fire (\uf06d)
+                            // FontAwesome Handshake symbol (\uf2b5)
                             ctx.fillStyle = '#8b0000'; // Sacred Red
                             ctx.font = '900 10px "Font Awesome 6 Free"'; // Use weight 900 for Solid icons
                             ctx.textAlign = 'center';
                             ctx.textBaseline = 'middle';
-                            // Using FontAwesome 'Fire' (agni) which is deeply symbolic of Hindu marriage (Agni Sakshi)
-                            ctx.fillText('\uf06d', iconX, iconY + 1);
+                            // Using FontAwesome 'Handshake' to represent Panigrahana (holding hands) in Hindu marriage
+                            ctx.fillText('\uf2b5', iconX, iconY + 1);
                         });
 
                         if (wives.length > 1) {
