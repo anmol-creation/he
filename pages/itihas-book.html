@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/single-page-book.css">
     <link rel="icon" type="image/jpeg" href="../icons/logo.jpg">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="veda-app-container">
@@ -19,13 +21,13 @@
         <!-- Top Navigation Bar -->
         <header class="veda-topbar">
             <a href="itihas-puran.html" class="veda-brand">
-                <span>←</span>
+                <span><i class="fa-solid fa-arrow-left"></i></span>
                 <span>इतिहास पुराण</span>
             </a>
             <div class="veda-top-actions">
-                <button class="veda-icon-btn" id="top-search-btn" aria-label="Search">🔍</button>
-                <button class="veda-icon-btn" aria-label="Map" onclick="window.location.href='historic-map.html'">🗺️</button>
-                <button class="veda-icon-btn" aria-label="Settings">⚙️</button>
+                <button class="veda-icon-btn" id="top-search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="veda-icon-btn" aria-label="Map" onclick="window.location.href='historic-map.html'"><i class="fa-solid fa-map-location-dot"></i></button>
+                <button class="veda-icon-btn" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
             </div>
         </header>
 
@@ -59,15 +61,15 @@
         <!-- Mobile Bottom Navigation -->
         <nav class="veda-mobile-bottom-nav">
             <div class="veda-mobile-nav-item" onclick="window.location.href='itihas-puran.html'">
-                <span>🏠</span>
+                <span style="font-size: 1.2rem;"><i class="fa-solid fa-house"></i></span>
                 <span>Home</span>
             </div>
             <div class="veda-mobile-nav-item active" id="mobile-nav-index" onclick="window.VedaApp.renderIndexView()">
-                <span>📑</span>
+                <span style="font-size: 1.2rem;"><i class="fa-solid fa-bookmark"></i></span>
                 <span>Index</span>
             </div>
             <div class="veda-mobile-nav-item" id="mobile-nav-chapter" onclick="window.VedaApp.renderLastReadingView()">
-                <span>📄</span>
+                <span style="font-size: 1.2rem;"><i class="fa-solid fa-file-lines"></i></span>
                 <span>Chapter</span>
             </div>
         </nav>

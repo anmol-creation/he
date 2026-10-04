@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="veda-accordion-item" onclick="this.classList.toggle('active')">
                     <div class="veda-accordion-header">
                         <span>${yuga} Yuga</span>
-                        <span>▼</span>
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
                     </div>
                     <div class="veda-accordion-content">
                         <div class="veda-chapter-list" style="gap:0.5rem;">
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let mobilePagination = '<div class="veda-mobile-pagination">';
 
         if (prevEntity) {
-            desktopPagination += `<div class="veda-pagination-side prev" onclick="window.VedaApp.renderReadingView('${prevEntity.id}')" title="Previous: ${prevEntity.name}">❮</div>`;
+            desktopPagination += `<div class="veda-pagination-side prev" onclick="window.VedaApp.renderReadingView('${prevEntity.id}')" title="Previous: ${prevEntity.name}"><i class="fa-solid fa-chevron-left"></i></div>`;
             mobilePagination += `
                 <div class="veda-mobile-page-card" onclick="window.VedaApp.renderReadingView('${prevEntity.id}')">
                     <span class="veda-mobile-page-label">PREVIOUS</span>
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (nextEntity) {
-            desktopPagination += `<div class="veda-pagination-side next" onclick="window.VedaApp.renderReadingView('${nextEntity.id}')" title="Next: ${nextEntity.name}">❯</div>`;
+            desktopPagination += `<div class="veda-pagination-side next" onclick="window.VedaApp.renderReadingView('${nextEntity.id}')" title="Next: ${nextEntity.name}"><i class="fa-solid fa-chevron-right"></i></div>`;
             mobilePagination += `
                 <div class="veda-mobile-page-card" onclick="window.VedaApp.renderReadingView('${nextEntity.id}')">
                     <span class="veda-mobile-page-label">NEXT</span>
