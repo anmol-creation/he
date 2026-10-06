@@ -388,7 +388,14 @@ export const chandravanshCoreData = [
   parent: 'ayu_chandra',
   mother: 'prabha_chandra',
   yug: 'satya',
-  clusterName: 'आयु के पुत्र'
+  clusterName: 'आयु के पुत्र',
+  kathayein: [
+      {
+          title: "चंद्रवंश की रम्भ शाखा",
+          source: "श्रीमद्भागवत पुराण 9.17.1-10",
+          content: "रम्भ (या राभ) चंद्रवंशी राजा आयु और उनकी पत्नी प्रभा के अत्यंत पराक्रमी पुत्र थे। इन्होने चंद्रवंश की अपनी एक अलग शाखा की शुरुआत की, जिसे रम्भ वंश के नाम से जाना गया। इनके पुत्र का नाम रभस था।"
+      }
+  ]
 },
     {
   id: 'rabhasa_chandra',
@@ -459,7 +466,14 @@ export const chandravanshCoreData = [
   parent: 'ayu_chandra',
   mother: 'prabha_chandra',
   yug: 'satya',
-  clusterName: 'आयु के पुत्र'
+  clusterName: 'आयु के पुत्र',
+  kathayein: [
+      {
+          title: "चंद्रवंश की अनेना शाखा",
+          source: "श्रीमद्भागवत पुराण 9.17",
+          content: "अनेना चंद्रवंशी राजा आयु और उनकी पत्नी प्रभा के पाँचवें पुत्र थे। उनके भाई नहुष, क्षत्रवृद्ध, रजि और रभ थे। अनेना ने चंद्रवंश की एक अलग शाखा की स्थापना की जो आध्यात्मिकता और विरक्ति के लिए जानी गई।"
+      }
+  ]
 },
     {
   id: 'shuddha_chandra',
@@ -468,7 +482,14 @@ export const chandravanshCoreData = [
   gender: 'male',
   parent: 'anena_chandra',
   yug: 'satya',
-  clusterName: 'अनेना वंश'
+  clusterName: 'अनेना वंश',
+  kathayein: [
+      {
+          title: "अनेना के उत्तराधिकारी",
+          source: "श्रीमद्भागवत पुराण 9.17.11",
+          content: "शुद्ध चंद्रवंशी राजा अनेना के पुत्र थे। उन्होंने अपने पिता के बाद इस शाखा को आगे बढ़ाया।"
+      }
+  ]
 },
     {
   id: 'shuchi_chandra',
@@ -477,7 +498,14 @@ export const chandravanshCoreData = [
   gender: 'male',
   parent: 'shuddha_chandra',
   yug: 'satya',
-  clusterName: 'अनेना वंश'
+  clusterName: 'अनेना वंश',
+  kathayein: [
+      {
+          title: "शुद्ध के पुत्र",
+          source: "श्रीमद्भागवत पुराण 9.17.11",
+          content: "शुचि राजा शुद्ध के पुत्र और अनेना के पौत्र थे। वे इस अत्यंत आध्यात्मिक और संक्षिप्त वंश की एक महत्वपूर्ण कड़ी थे।"
+      }
+  ]
 },
     {
   id: 'trikakud_chandra',
@@ -486,7 +514,14 @@ export const chandravanshCoreData = [
   gender: 'male',
   parent: 'shuchi_chandra',
   yug: 'satya',
-  clusterName: 'अनेना वंश'
+  clusterName: 'अनेना वंश',
+  kathayein: [
+      {
+          title: "चित्रकृत् / धर्मसारथि",
+          source: "श्रीमद्भागवत पुराण 9.17.11",
+          content: "त्रिककुद्, जिन्हें भागवत पुराण में 'चित्रकृत्' और 'धर्मसारथि' भी कहा गया है, शुचि के पुत्र थे। उनका नाम 'धर्मसारथि' उनके धार्मिक मार्ग पर चलने (धर्म को रथ के समान हांकने वाले) के कारण पड़ा।"
+      }
+  ]
 },
     {
   id: 'shantaraya_chandra',
@@ -496,7 +531,14 @@ export const chandravanshCoreData = [
   parent: 'trikakud_chandra',
   yug: 'satya',
   parichay: 'ये आत्मज्ञानी (ब्रह्मज्ञानी) थे, अतः इन्होंने अपना वंश आगे नहीं बढ़ाया।',
-  clusterName: 'अनेना वंश'
+  clusterName: 'अनेना वंश',
+  kathayein: [
+      {
+          title: "वंश की समाप्ति और विरक्ति",
+          source: "श्रीमद्भागवत पुराण 9.17.12",
+          content: "शान्तरय (या शान्तरज) त्रिककुद् (चित्रकृत्) के पुत्र थे। भागवत पुराण के अनुसार, वे एक आत्म-साक्षात्कारी (आत्मवान्) व्यक्ति थे। उन्होंने अपने जीवन में सारे आवश्यक वैदिक कर्म (कृत-कृत्य) पूरे कर लिए थे। उनकी इस पूर्णता और विरक्ति के कारण उन्होंने विवाह करके कोई संतान उत्पन्न नहीं की। इसी कारण अनेना का यह वंश शान्तरय पर आकर समाप्त हो गया।"
+      }
+  ]
 },
     {
   id: 'ashokasundari_chandra',
