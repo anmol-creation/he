@@ -377,7 +377,7 @@ export const chandravanshCoreData = [
   lineLabel: 'नहुष',
   mother: 'prabha_chandra',
   spouseOf: 'ashokasundari',
-  clusterName: 'आयु के पुत्र',
+  clusterName: 'आयु वंश',
   yug: 'satya',
   parichay: "नहुष चंद्रवंशी राजा आयु और माता प्रभा (स्वरभानु की पुत्री) के अत्यंत प्रतापी पुत्र थे। वे भगवान शिव की पुत्री अशोकसुंदरी के पति और महान चक्रवर्ती सम्राट ययाति के पिता थे। इन्होंने स्वर्ग के अधिपति (इन्द्र) का पद भी प्राप्त किया था, किंतु महर्षि अगस्त्य के शाप से सर्प बन गए।",
   kathayein: [
@@ -411,7 +411,7 @@ export const chandravanshCoreData = [
   parent: 'ayu_chandra',
   mother: 'prabha_chandra',
   yug: 'satya',
-  clusterName: 'आयु के पुत्र',
+  clusterName: 'आयु वंश',
   parichay: "रम्भ (या राभ) चंद्रवंशी राजा आयु और माता प्रभा के प्रतापी पुत्र तथा नहुष के भाई थे। इन्होंने चंद्रवंश की रम्भ शाखा की शुरुआत की।",
   kathayein: [
       {
@@ -457,7 +457,7 @@ export const chandravanshCoreData = [
   parent: 'ayu_chandra',
   mother: 'prabha_chandra',
   yug: 'satya',
-  clusterName: 'आयु के पुत्र',
+  clusterName: 'आयु वंश',
   parichay: "रजि चंद्रवंशी राजा आयु और प्रभा के पराक्रमी पुत्र तथा नहुष के भाई थे। इन्होंने देवासुर संग्राम में देवताओं की सहायता की थी। इनके 500 बलशाली पुत्र थे जिन्हें रजेय कहा जाता था।",
   kathayein: [
       {
@@ -491,7 +491,7 @@ export const chandravanshCoreData = [
   parent: 'ayu_chandra',
   mother: 'prabha_chandra',
   yug: 'satya',
-  clusterName: 'आयु के पुत्र',
+  clusterName: 'आयु वंश',
   parichay: "अनेना चंद्रवंशी राजा आयु और प्रभा के पुत्र तथा नहुष के भाई थे। इन्होंने चंद्रवंश की एक शाखा की स्थापना की जो विरक्ति और आध्यात्मिकता के लिए जानी गई।",
   kathayein: [
       {
@@ -586,7 +586,7 @@ export const chandravanshCoreData = [
   mother: 'ashokasundari_chandra',
   yug: 'satya',
   parichay: 'नहुष के ज्येष्ठ पुत्र। यति बचपन से ही आत्मज्ञानी थे और राज्यपद प्राप्त करने से मोक्ष में बाधा उत्पन्न होगी ऐसा सोचकर उन्होंने संन्यास ग्रहण कर लिया था।',
-  clusterName: 'नहुष के अन्य पुत्र'
+  clusterName: 'नहुष वंश'
 },
     {
   id: 'sanyati_chandra',
@@ -597,7 +597,7 @@ export const chandravanshCoreData = [
   mother: 'ashokasundari_chandra',
   yug: 'satya',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से संयाति एक थे।',
-  clusterName: 'नहुष के अन्य पुत्र'
+  clusterName: 'नहुष वंश'
 },
     {
   id: 'ayati_nahusha_chandra',
@@ -608,7 +608,7 @@ export const chandravanshCoreData = [
   mother: 'ashokasundari_chandra',
   yug: 'satya',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से अयाति एक थे।',
-  clusterName: 'नहुष के अन्य पुत्र'
+  clusterName: 'नहुष वंश'
 },
     {
   id: 'viyati_chandra',
@@ -619,7 +619,7 @@ export const chandravanshCoreData = [
   mother: 'ashokasundari_chandra',
   yug: 'satya',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से वियति एक थे।',
-  clusterName: 'नहुष के अन्य पुत्र'
+  clusterName: 'नहुष वंश'
 },
     {
   id: 'kriti_chandra',
@@ -630,7 +630,7 @@ export const chandravanshCoreData = [
   mother: 'ashokasundari_chandra',
   yug: 'satya',
   parichay: 'श्रीमद्भागवत पुराण के अनुसार, चक्रवर्ती सम्राट बनने के बाद ययाति ने अपने 4 छोटे भाइयों (संयाति, अयाति, वियति, कृति) को चारों दिशाओं का अधिपति (गवर्नर) नियुक्त कर दिया था, जिनमें से कृति एक थे।',
-  clusterName: 'नहुष के अन्य पुत्र'
+  clusterName: 'नहुष वंश'
 },
     {
   id: 'yayati_chandra',
@@ -640,6 +640,7 @@ export const chandravanshCoreData = [
   parent: 'nahusha_chandra',
   mother: 'ashokasundari_chandra',
   yug: 'satya',
+  clusterName: 'नहुष वंश',
   parichay: 'नहुष के द्वितीय पुत्र। ज्येष्ठ भ्राता यति के संन्यासी हो जाने पर ययाति को चक्रवर्ती सम्राट बनाया गया। इन्होंने अपने अन्य चारों भाइयों को विभिन्न दिशाओं का शासक नियुक्त किया।'
 },
     {

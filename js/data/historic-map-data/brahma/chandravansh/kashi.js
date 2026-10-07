@@ -8,7 +8,7 @@ export const kashiData = [
   parent: 'ayu_chandra',
   mother: 'prabha_chandra',
   yug: 'satya',
-  clusterName: 'आयु के पुत्र',
+  clusterName: 'आयु वंश',
   parichay: "क्षत्रवृद्ध चंद्रवंशी राजा आयु और माता प्रभा के पुत्र तथा नहुष के भाई थे। ये चंद्रवंश के मूल पुरुष माने जाते हैं, जिनके वंश में काशी राजवंश, भगवान धन्वन्तरि और ब्रह्मर्षि शौनक का जन्म हुआ।",
   kathayein: [
       {
