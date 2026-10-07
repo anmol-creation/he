@@ -72,6 +72,21 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             output += `${planetName} | ${signName} | ${deg}   | ${state}\n`;
         });
 
+        if (data.yogas && data.yogas.length > 0) {
+            output += `\n`;
+            output += `=== योग और दोष विश्लेषण (Yoga & Dosha Analysis) ===\n`;
+            output += `Total Detected: ${data.yogas.length}\n`;
+            output += `------------------------------------------------------\n`;
+            data.yogas.forEach(yoga => {
+                output += `• [${yoga.type}] ${yoga.name}\n`;
+                output += `  ${yoga.description}\n\n`;
+            });
+        } else if (data.yogas && data.yogas.length === 0) {
+            output += `\n`;
+            output += `=== योग और दोष विश्लेषण (Yoga & Dosha Analysis) ===\n`;
+            output += `No specific yogas or doshas detected based on current rules.\n`;
+        }
+
         resultBox.textContent = output;
 
     } catch (error) {

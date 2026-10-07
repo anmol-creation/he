@@ -2,6 +2,7 @@ import cors from "cors";
 import express from 'express';
 import swisseph from 'swisseph';
 import path from 'path';
+import { detectYogas } from './yoga-detector.js';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -108,7 +109,9 @@ app.post('/api/calculate', (req, res) => {
             ascendant = houses.ascendant; // Swisseph JS wrapper uses .ascendant instead of .ascmc[0]
         }
 
-        res.json({ jd, ascendant, tithi: tithiData, planets: results });
+        const yogas = detectYogas(results, ascendant);
+
+        res.json({ jd, ascendant, tithi: tithiData, planets: results, yogas: yogas });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
