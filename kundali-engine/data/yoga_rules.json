@@ -756,5 +756,118 @@
       "type": "complex",
       "description": "Lords of 2, 9, 11 in 6, 8, 12."
     }
+  },
+  {
+    "id": "budhaditya_yoga",
+    "name": "बुधादित्य राजयोग (Budhaditya Yoga)",
+    "type": "राजयोग",
+    "description": "सूर्य और बुध की युति (Conjunction)। यह इंसान को अत्यंत बुद्धिमान, ज्ञानी, संवाद-कुशल और सफल बनाता है।",
+    "conditions": {
+      "type": "conjunction",
+      "planets": [
+        "Sun",
+        "Mercury"
+      ]
+    }
+  },
+  {
+    "id": "general_neechbhanga_rajyoga",
+    "name": "सामान्य नीचभंग राजयोग (General Neechbhanga Rajyoga)",
+    "type": "राजयोग",
+    "description": "जब कोई नीच का ग्रह अपने उच्चनाथ या स्वनाथ के साथ बैठे या उससे दृष्ट हो। यह जीवन में भारी संघर्ष के बाद बहुत बड़ी सफलता देता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Debilitated planet is conjunct or aspected by its dispositor or exaltation lord."
+    }
+  },
+  {
+    "id": "vipreet_rajyoga_sarala",
+    "name": "सरला विपरीत राजयोग (Sarala Vipreet Rajyoga)",
+    "type": "राजयोग",
+    "description": "जब 8वें भाव का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को निडर, विद्वान और संकटों में अचानक सफलता पाने वाला बनाता है।",
+    "conditions": {
+      "type": "lord_in_houses_multiple",
+      "lord": 8,
+      "in_houses": [
+        6,
+        8,
+        12
+      ]
+    }
+  },
+  {
+    "id": "vipreet_rajyoga_vimala",
+    "name": "विमला विपरीत राजयोग (Vimala Vipreet Rajyoga)",
+    "type": "राजयोग",
+    "description": "जब 12वें भाव का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को बहुत स्वतंत्र, सुखी और विदेशों/दूर की जगहों से लाभ कमाने वाला बनाता है।",
+    "conditions": {
+      "type": "lord_in_houses_multiple",
+      "lord": 12,
+      "in_houses": [
+        6,
+        8,
+        12
+      ]
+    }
+  },
+  {
+    "id": "vasumati_yoga",
+    "name": "वसुमती योग (Vasumati Yoga)",
+    "type": "धन योग",
+    "description": "जब शुभ ग्रह (गुरु, शुक्र, बुध) लग्न या चंद्रमा से उपचय भावों (3, 6, 10, 11) में हों। यह व्यक्ति को बेहद अमीर (Billionaire) और स्वतंत्र बनाता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Benefics (Jupiter, Venus, Mercury) in upachaya houses from Ascendant or Moon."
+    }
+  },
+  {
+    "id": "parvata_yoga",
+    "name": "पर्वत योग (Parvata Yoga)",
+    "type": "राजयोग",
+    "description": "जब लग्नेश शुभ भाव में हो और 6ठे/8वें भाव खाली हों या शुभ ग्रहों से दृष्ट हों। यह इंसान को राजा जैसा भाग्यशाली और लोकप्रिय बनाता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Lagna lord in auspicious house and 6th/8th houses are empty or aspected by benefics."
+    }
+  },
+  {
+    "id": "bhaskara_yoga",
+    "name": "भास्कर योग (Bhaskara Yoga)",
+    "type": "राजयोग",
+    "description": "जब सूर्य से 2रे में बुध, बुध से 11वें में चंद्रमा, और चंद्रमा से 5/9 में गुरु हो। यह बहुत बड़ा धन, यश और शास्त्रों का ज्ञान देता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Mercury 2nd from Sun, Moon 11th from Mercury, Jupiter 5th/9th from Moon."
+    }
+  },
+  {
+    "id": "kedar_yoga",
+    "name": "केदार योग (Kedar Yoga)",
+    "type": "नाभस योग",
+    "description": "जब कुंडली के सभी 7 ग्रह किन्हीं 4 भावों में स्थित हों। यह इंसान को कृषि, ज़मीन-जायदाद (Real Estate) और जनता का लीडर बनाता है।",
+    "conditions": {
+      "type": "planets_in_x_houses",
+      "count": 4
+    }
+  },
+  {
+    "id": "chamara_yoga",
+    "name": "चामर योग (Chamara Yoga)",
+    "type": "राजयोग",
+    "description": "जब लग्नेश उच्च का होकर केंद्र में हो और गुरु की उस पर दृष्टि हो। यह व्यक्ति को विद्वान, दीर्घायु और राजसी सम्मान दिलाता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Lagna lord exalted in Kendra, aspected by Jupiter."
+    }
+  },
+  {
+    "id": "mahabhagya_yoga",
+    "name": "महाभाग्य योग (Mahabhagya Yoga)",
+    "type": "राजयोग",
+    "description": "पुरुषों के लिए दिन का जन्म और सूर्य/चंद्र/लग्न विषम राशियों में। यह व्यक्ति को बेहद भाग्यशाली, प्रसिद्ध और जननेता बनाता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Day birth + Sun, Moon, Lagna in odd signs (for males)."
+    }
   }
 ]
