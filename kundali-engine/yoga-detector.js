@@ -9,17 +9,6 @@ const __dirname = path.dirname(__filename);
 const rulesPath = path.join(__dirname, 'data', 'yoga_rules.json');
 const yogaRules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
 
-// Helper function to map planet names from english to swisseph index equivalent or specific name
-const planetNameToIndex = {
-    "Sun": 0, "Moon": 1, "Mars": 2, "Mercury": 3, "Jupiter": 4, "Venus": 5, "Saturn": 6, "Rahu": 7
-};
-
-function getHouseDistance(house1, house2) {
-    let diff = house2 - house1;
-    if (diff < 0) diff += 12;
-    return diff + 1; // distance inclusive of starting house
-}
-
 function detectYogas(planetsData, ascendantDegree) {
     const ascendantSign = Math.floor(ascendantDegree / 30);
 
