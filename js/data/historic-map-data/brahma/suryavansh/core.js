@@ -410,7 +410,6 @@ export const coreData = [
         gender: 'male',
         parent: 'anarta_sharyati',
         yug: 'satya',
-        kali_year: -2160950,
         clusterName: 'शर्याति के वंशज',
         parichay: 'आनर्त के पुत्र जिन्होंने समुद्र के बीच कुशस्थली (वर्तमान द्वारका) नगरी की स्थापना की। इनके 100 पुत्र थे और इनके वंशज रैवत कहलाए।',
         kathayein: [
@@ -428,7 +427,6 @@ export const coreData = [
         gender: 'male',
         parent: 'reva_anarta',
         yug: 'satya',
-        kali_year: -2160925,
         clusterName: 'शर्याति के वंशज',
         parichay: 'राजा रेव के 100 पुत्रों में सबसे बड़े। ये कुशस्थली के शासक थे और अपनी पुत्री रेवती के विवाह के लिए भगवान ब्रह्मा के पास सत्यलोक गए थे।'
     },
@@ -439,7 +437,6 @@ export const coreData = [
         gender: 'female',
         parent: 'kakudmi',
         yug: 'satya',
-        kali_year: -2160900,
         clusterName: 'शर्याति के वंशज',
         parichay: 'राजा ककुद्मी की पुत्री, जिनका विवाह द्वापर युग में भगवान बलराम से हुआ। इनके जीवन में पौराणिक समय-यात्रा (Time Travel) की प्रसिद्ध घटना घटी।',
         kathayein: [
