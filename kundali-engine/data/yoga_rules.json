@@ -4,356 +4,757 @@
     "name": "रुचक पंच महापुरुष राजयोग",
     "type": "राजयोग",
     "description": "मंगल के केंद्र (1, 4, 7, 10) में स्वराशि (मेष, वृश्चिक) या उच्च राशि (मकर) में होने से बनता है। निडरता और अजेय लीडरशिप प्रदान करता है।",
-    "conditions": { "type": "single_planet", "planet": "Mars", "in_houses": [1, 4, 7, 10], "in_signs": [0, 7, 9] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Mars",
+      "in_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "in_signs": [
+        0,
+        7,
+        9
+      ]
+    }
   },
   {
     "id": "bhadra_yoga",
     "name": "भद्र पंच महापुरुष राजयोग",
     "type": "राजयोग",
     "description": "बुध के केंद्र (1, 4, 7, 10) में स्वराशि या उच्च राशि (मिथुन, कन्या) में होने से बनता है। तीक्ष्ण बुद्धि और व्यापारिक सफलता देता है।",
-    "conditions": { "type": "single_planet", "planet": "Mercury", "in_houses": [1, 4, 7, 10], "in_signs": [2, 5] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Mercury",
+      "in_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "in_signs": [
+        2,
+        5
+      ]
+    }
   },
   {
     "id": "hamsa_yoga",
     "name": "हंस पंच महापुरुष राजयोग",
     "type": "राजयोग",
     "description": "गुरु के केंद्र (1, 4, 7, 10) में स्वराशि (धनु, मीन) या उच्च राशि (कर्क) में होने से बनता है। अपार ज्ञान और समाज में उच्च सम्मान देता है।",
-    "conditions": { "type": "single_planet", "planet": "Jupiter", "in_houses": [1, 4, 7, 10], "in_signs": [8, 11, 3] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Jupiter",
+      "in_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "in_signs": [
+        8,
+        11,
+        3
+      ]
+    }
   },
   {
     "id": "malavya_yoga",
     "name": "मालव्य पंच महापुरुष राजयोग",
     "type": "राजयोग",
     "description": "शुक्र के केंद्र (1, 4, 7, 10) में स्वराशि (वृषभ, तुला) या उच्च राशि (मीन) में होने से बनता है। अपार भौतिक सुख और हाई-क्लास साम्राज्य देता है।",
-    "conditions": { "type": "single_planet", "planet": "Venus", "in_houses": [1, 4, 7, 10], "in_signs": [1, 6, 11] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Venus",
+      "in_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "in_signs": [
+        1,
+        6,
+        11
+      ]
+    }
   },
   {
     "id": "shasha_yoga",
     "name": "शश पंच महापुरुष राजयोग",
     "type": "राजयोग",
     "description": "शनि के केंद्र (1, 4, 7, 10) में स्वराशि (मकर, कुंभ) या उच्च राशि (तुला) में होने से बनता है। सत्ता, दीर्घायु और बड़े पैमाने पर सफलता देता है।",
-    "conditions": { "type": "single_planet", "planet": "Saturn", "in_houses": [1, 4, 7, 10], "in_signs": [9, 10, 6] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Saturn",
+      "in_houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "in_signs": [
+        9,
+        10,
+        6
+      ]
+    }
   },
   {
     "id": "shakti_shani_neechbhanga",
     "name": "शक्तिशाली शनि नीचभंग राजयोग",
     "type": "राजयोग",
     "description": "10वें भाव में नीच शनि को 7वें भाव में उच्च के मंगल द्वारा सीधी दृष्टि से सपोर्ट मिलना—संघर्ष के बाद सत्ता।",
-    "conditions": { "type": "complex_neechbhanga", "planet_neech": "Saturn", "neech_house": 10, "neech_sign": 0, "aspect_by": "Mars", "aspect_house": 7, "aspect_sign": 9 }
+    "conditions": {
+      "type": "complex_neechbhanga",
+      "planet_neech": "Saturn",
+      "neech_house": 10,
+      "neech_sign": 0,
+      "aspect_by": "Mars",
+      "aspect_house": 7,
+      "aspect_sign": 9
+    }
   },
   {
     "id": "maha_parivartan_rajyoga",
     "name": "महा-परिवर्तन राजयोग (मंगल-शनि)",
     "type": "राजयोग",
     "description": "7वें और 10वें घर के मालिकों का एक्सचेंज—पार्टनर के आते ही रातों-रात करियर में बूम।",
-    "conditions": { "type": "exchange_houses", "house1": 7, "house2": 10 }
+    "conditions": {
+      "type": "exchange_houses",
+      "house1": 7,
+      "house2": 10
+    }
   },
   {
     "id": "dharma_karmadhipati_rajyoga",
     "name": "धर्म-कर्माधिपति राजयोग",
     "type": "राजयोग",
     "description": "भाग्येश (9th lord) और कर्मेश (10th lord) की युति—कर्म करते ही भाग्य का 100% साथ।",
-    "conditions": { "type": "conjunction_lords", "lord1": 9, "lord2": 10 }
+    "conditions": {
+      "type": "conjunction_lords",
+      "lord1": 9,
+      "lord2": 10
+    }
   },
   {
     "id": "lakshmi_rajyoga",
     "name": "लक्ष्मी राजयोग (नवमेश-पंचमेश संबंध)",
     "type": "राजयोग",
     "description": "9वें त्रिकोण और 5वें त्रिकोण के स्वामियों का केंद्र में संबंध—अपार श्री और एथिकल वेल्थ।",
-    "conditions": { "type": "aspect_or_conjunction_lords", "lord1": 9, "lord2": 5, "in_houses": [1, 4, 7, 10] }
+    "conditions": {
+      "type": "aspect_or_conjunction_lords",
+      "lord1": 9,
+      "lord2": 5,
+      "in_houses": [
+        1,
+        4,
+        7,
+        10
+      ]
+    }
   },
   {
     "id": "kendra_trikona_guru_shani",
     "name": "केंद्र-त्रिकोण राजयोग (गुरु+शनि युति)",
     "type": "राजयोग",
     "description": "9वें त्रिकोण (गुरु) और 7वें केंद्र (शनि) के स्वामियों का 10वें भाव में मिलन।",
-    "conditions": { "type": "conjunction", "planets": ["Jupiter", "Saturn"], "in_houses": [10] }
+    "conditions": {
+      "type": "conjunction",
+      "planets": [
+        "Jupiter",
+        "Saturn"
+      ],
+      "in_houses": [
+        10
+      ]
+    }
   },
   {
     "id": "kendra_trikona_mangal",
     "name": "केंद्र-त्रिकोण राजयोग (योगकारक मंगल)",
     "type": "राजयोग",
     "description": "कर्क लग्न में मंगल 5वें और 10वें भाव का स्वामी होकर राजयोगकारक बन जाता है।",
-    "conditions": { "type": "ascendant_lordship", "ascendant_sign": 3, "planet": "Mars" }
+    "conditions": {
+      "type": "ascendant_lordship",
+      "ascendant_sign": 3,
+      "planet": "Mars"
+    }
   },
   {
     "id": "amala_rajyoga",
     "name": "अमला राजयोग",
     "type": "राजयोग",
     "description": "10वें कर्म भाव में सबसे शुभ ग्रह (गुरु) का होना—समाज में बेदाग छवि और यश।",
-    "conditions": { "type": "single_planet", "planet": "Jupiter", "in_houses": [10] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Jupiter",
+      "in_houses": [
+        10
+      ]
+    }
   },
   {
     "id": "shankha_rajyoga",
     "name": "शंख राजयोग",
     "type": "राजयोग",
     "description": "5वें के स्वामी और 6ठे के स्वामी का परस्पर केंद्र में होना—ज्ञान और अधिकार-संपन्नता।",
-    "conditions": { "type": "mutual_kendra_lords", "lord1": 5, "lord2": 6 }
+    "conditions": {
+      "type": "mutual_kendra_lords",
+      "lord1": 5,
+      "lord2": 6
+    }
   },
   {
     "id": "parijata_rajyoga",
     "name": "पारिजात राजयोग",
     "type": "राजयोग",
     "description": "लग्नेश ➔ बुध ➔ मंगल की चेन का 7वें भाव में 'उच्च' होना—शुरुआती भटकाव के बाद सम्राट जैसी स्थिति।",
-    "conditions": { "type": "complex", "description": "Lagna lord dispositor chain ends in exaltation in 7th house." }
+    "conditions": {
+      "type": "complex",
+      "description": "Lagna lord dispositor chain ends in exaltation in 7th house."
+    }
   },
   {
     "id": "kahala_rajyoga",
     "name": "काहल राजयोग",
     "type": "राजयोग",
     "description": "4थे स्वामी (शुक्र) और 9वें स्वामी (गुरु) का आमने-सामने होना—दूसरों के अधीन काम न करने की जिद्द।",
-    "conditions": { "type": "mutual_aspect_lords", "lord1": 4, "lord2": 9 }
+    "conditions": {
+      "type": "mutual_aspect_lords",
+      "lord1": 4,
+      "lord2": 9
+    }
   },
   {
     "id": "kendra_rahu_rajyoga",
     "name": "केंद्र-राहु राजयोग",
     "type": "राजयोग",
     "description": "लग्न में राहु का होना—शून्य से शिखर तक ले जाने वाला एक चतुर रणनीतिकार।",
-    "conditions": { "type": "single_planet", "planet": "Rahu", "in_houses": [1] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Rahu",
+      "in_houses": [
+        1
+      ]
+    }
   },
   {
     "id": "harsha_vipareeta_rajyoga",
     "name": "हर्ष विपरीत राजयोग (चंद्र कुंडली से)",
     "type": "राजयोग",
     "description": "6ठे के स्वामी का 8वें में उच्च का होना—मार्केट क्रैश या आपदा में सत्ता पाना।",
-    "conditions": { "type": "complex", "description": "6th lord from Moon in 8th from Moon in exaltation." }
+    "conditions": {
+      "type": "complex",
+      "description": "6th lord from Moon in 8th from Moon in exaltation."
+    }
   },
   {
     "id": "kendra_dosha_parihar",
     "name": "केन्द्राधिपत्य दोष-परिहार राजयोग",
     "type": "राजयोग",
     "description": "4थे केंद्र के स्वामी शुभ ग्रह शुक्र का 'दोष' पूरी तरह से भस्म होकर विशुद्ध राजयोग में बदलना।",
-    "conditions": { "type": "complex", "description": "Venus as 4th lord forming Malavya yoga cancels Kendradhipatya dosha." }
+    "conditions": {
+      "type": "complex",
+      "description": "Venus as 4th lord forming Malavya yoga cancels Kendradhipatya dosha."
+    }
   },
   {
     "id": "shukra_neechbhanga",
     "name": "शुक्र का नीचभंग राजयोग",
     "type": "राजयोग",
     "description": "नवमांश और गोचर में कन्या राशि के प्रभाव का भंग होना—जीवन के उत्तरार्ध में अथाह लग्जरी।",
-    "conditions": { "type": "complex", "description": "Neechbhanga in D9/Transit for Venus." }
+    "conditions": {
+      "type": "complex",
+      "description": "Neechbhanga in D9/Transit for Venus."
+    }
   },
   {
     "id": "maha_labha_yoga",
     "name": "महा-लाभ योग",
     "type": "धन योग",
     "description": "11वें का स्वामी 4थे में—इनकम का ठोस अचल संपत्ति में बदलना।",
-    "conditions": { "type": "lord_in_house", "lord": 11, "in_houses": [4] }
+    "conditions": {
+      "type": "lord_in_house",
+      "lord": 11,
+      "in_houses": [
+        4
+      ]
+    }
   },
   {
     "id": "ripu_dhan_yoga",
     "name": "रिपु-धन योग",
     "type": "धन योग",
     "description": "2रे का स्वामी (सूर्य) 6ठे में—शत्रुओं और समस्याओं को सुलझाकर पैसा कमाना।",
-    "conditions": { "type": "lord_in_house", "lord": 2, "in_houses": [6] }
+    "conditions": {
+      "type": "lord_in_house",
+      "lord": 2,
+      "in_houses": [
+        6
+      ]
+    }
   },
   {
     "id": "sva_arjit_dhan_yoga",
     "name": "स्व-अर्जित धन योग",
     "type": "धन योग",
     "description": "लग्नेश (चंद्रमा) और धनेश (सूर्य) का आमने-सामने होना—अपने दम पर करोड़ों का कैश जनरेट करना।",
-    "conditions": { "type": "mutual_aspect_lords", "lord1": 1, "lord2": 2 }
+    "conditions": {
+      "type": "mutual_aspect_lords",
+      "lord1": 1,
+      "lord2": 2
+    }
   },
   {
     "id": "dhan_drishti_yoga",
     "name": "धन-दृष्टि योग",
     "type": "धन योग",
     "description": "मंगल की 2रे भाव पर दृष्टि—रिस्क लेने की क्षमता का सीधे बैंक बैलेंस में तब्दील होना।",
-    "conditions": { "type": "aspect_on_house", "planet": "Mars", "house": 2 }
+    "conditions": {
+      "type": "aspect_on_house",
+      "planet": "Mars",
+      "house": 2
+    }
   },
   {
     "id": "bhagya_labh_maha_dhan_yoga",
     "name": "भाग्य-लाभ महा-धन योग",
     "type": "धन योग",
     "description": "9वें और 11वें के स्वामियों का आमने-सामने होना—किस्मत का सीधे प्रॉफिट में कनवर्ट होना।",
-    "conditions": { "type": "mutual_aspect_lords", "lord1": 9, "lord2": 11 }
+    "conditions": {
+      "type": "mutual_aspect_lords",
+      "lord1": 9,
+      "lord2": 11
+    }
   },
   {
     "id": "mahalakshmi_dhan_yoga",
     "name": "महा-लक्ष्मी धन योग (त्रिकोण धन)",
     "type": "धन योग",
     "description": "5वें और 9वें घर के मालिकों का विशेष दृष्टि संबंध—इन्वेस्टमेंट में कभी कंगाल न होना।",
-    "conditions": { "type": "mutual_aspect_lords", "lord1": 5, "lord2": 9 }
+    "conditions": {
+      "type": "mutual_aspect_lords",
+      "lord1": 5,
+      "lord2": 9
+    }
   },
   {
     "id": "indu_lagna_dhan",
     "name": "इंदु लग्न धन योग",
     "type": "धन योग",
     "description": "इंदु लग्न से उच्च के मंगल का भाग्य स्थान में होना—टेक्नोलॉजी और रियल एस्टेट से भारी आय।",
-    "conditions": { "type": "complex", "description": "Mars in 9th from Indu Lagna in exaltation." }
+    "conditions": {
+      "type": "complex",
+      "description": "Mars in 9th from Indu Lagna in exaltation."
+    }
   },
   {
     "id": "shubh_gochar_dhan_yoga",
     "name": "शुभ-गोचर धन योग (Benefic Aspect Wealth Yoga)",
     "type": "धन योग",
     "description": "बुध का 11वें भाव पर और गुरु की 2रे भाव तथा सूर्य पर अमृत दृष्टि—बैंक बैलेंस का दैवीय कवच।",
-    "conditions": { "type": "complex", "description": "Mercury aspects 11th, Jupiter aspects 2nd and Sun." }
+    "conditions": {
+      "type": "complex",
+      "description": "Mercury aspects 11th, Jupiter aspects 2nd and Sun."
+    }
   },
   {
     "id": "karkata_rahu_yoga",
     "name": "कर्कट राहु योग",
     "type": "धन योग",
     "description": "विदेशी तकनीक, डेटा और MNCs से भारी लाभ।",
-    "conditions": { "type": "single_planet", "planet": "Rahu", "in_signs": [3] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Rahu",
+      "in_signs": [
+        3
+      ]
+    }
   },
   {
     "id": "teekshna_buddhi_yoga",
     "name": "तीक्ष्ण-बुद्धि योग",
     "type": "ज्ञान/बुद्धि योग",
     "description": "5वें भाव में बुध—कंप्यूटर जैसा तेज़ दिमाग और ऑब्जर्वेशन।",
-    "conditions": { "type": "single_planet", "planet": "Mercury", "in_houses": [5] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Mercury",
+      "in_houses": [
+        5
+      ]
+    }
   },
   {
     "id": "goodha_vidya_yoga",
     "name": "गूढ़-विद्या योग",
     "type": "ज्ञान/बुद्धि योग",
     "description": "वृश्चिक राशि का प्रभाव (बुध 5वें भाव में)—रिसर्च, AI और सीक्रेट प्लानिंग का मास्टर।",
-    "conditions": { "type": "single_planet", "planet": "Mercury", "in_houses": [5], "in_signs": [7] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Mercury",
+      "in_houses": [
+        5
+      ],
+      "in_signs": [
+        7
+      ]
+    }
   },
   {
     "id": "dhee_parakrama_yoga",
     "name": "धी-पराक्रम योग",
     "type": "ज्ञान/बुद्धि योग",
     "description": "पराक्रम भाव (3rd lord) के स्वामी का 5वें में होना—शारीरिक बल की जगह बुद्धि से रिस्क लेना।",
-    "conditions": { "type": "lord_in_house", "lord": 3, "in_houses": [5] }
+    "conditions": {
+      "type": "lord_in_house",
+      "lord": 3,
+      "in_houses": [
+        5
+      ]
+    }
   },
   {
     "id": "kathor_vaak_yoga",
     "name": "कठोर-वाक योग",
     "type": "ज्ञान/बुद्धि योग",
     "description": "2रे भाव के स्वामी (सूर्य) का 6ठे में होना—आदेशात्मक और स्पष्ट वाणी।",
-    "conditions": { "type": "lord_in_house", "lord": 2, "in_houses": [6], "planet_check": "Sun" }
+    "conditions": {
+      "type": "lord_in_house",
+      "lord": 2,
+      "in_houses": [
+        6
+      ],
+      "planet_check": "Sun"
+    }
   },
   {
     "id": "saraswati_yoga",
     "name": "सरस्वती योग",
     "type": "ज्ञान/बुद्धि योग",
     "description": "बुध, शुक्र, और गुरु का विशेष केंद्र/त्रिकोण संबंध—ज्ञान, कला और वाणी से पैसा कमाने की ताकत।",
-    "conditions": { "type": "complex", "description": "Jupiter, Venus, Mercury in Kendra/Trikona or 2nd house with mutual relation." }
+    "conditions": {
+      "type": "complex",
+      "description": "Jupiter, Venus, Mercury in Kendra/Trikona or 2nd house with mutual relation."
+    }
   },
   {
     "id": "chatusagara_yoga",
     "name": "चतुःसागर योग",
     "type": "महा-कवच",
     "description": "चारों मुख्य केंद्रों—1, 4, 7 और 10—का ग्रहों से पूर्ण रूप से पैक होना। यह आपको अजेय 'पायनियर' बनाता है।",
-    "conditions": { "type": "all_kendra_occupied" }
+    "conditions": {
+      "type": "all_kendra_occupied"
+    }
   },
   {
     "id": "uchcha_mangal_dosha_parihar",
     "name": "उच्च मंगल दोष परिहार",
     "type": "महा-कवच",
     "description": "उच्च मंगल के कारण 7वें घर का बचाव—विवाह टूटने की जगह 'पावर-कपल' बनना।",
-    "conditions": { "type": "single_planet", "planet": "Mars", "in_houses": [7], "in_signs": [9] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Mars",
+      "in_houses": [
+        7
+      ],
+      "in_signs": [
+        9
+      ]
+    }
   },
   {
     "id": "shatruhanta_yoga",
     "name": "शत्रुहंता योग",
     "type": "महा-कवच",
     "description": "सूर्य का 6ठे भाव में होना—विरोधियों और कोर्ट-कचहरी में अजेय।",
-    "conditions": { "type": "single_planet", "planet": "Sun", "in_houses": [6] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Sun",
+      "in_houses": [
+        6
+      ]
+    }
   },
   {
     "id": "videsh_gaman_tarakki",
     "name": "विदेश-गमन तरक्की योग",
     "type": "महा-कवच",
     "description": "लग्न के स्वामी का 12वें में होना—जन्मस्थान से दूर या विदेश में जाने पर साम्राज्य का विस्तार।",
-    "conditions": { "type": "lord_in_house", "lord": 1, "in_houses": [12] }
+    "conditions": {
+      "type": "lord_in_house",
+      "lord": 1,
+      "in_houses": [
+        12
+      ]
+    }
   },
   {
     "id": "ubhayachari_yoga",
     "name": "उभयचरी योग",
     "type": "महा-कवच",
     "description": "सूर्य के आगे (मंगल) और पीछे (बुध) का होना—समाज में हर तरफ से 'प्रोटेक्टेड' रहना।",
-    "conditions": { "type": "complex", "description": "Planets (other than Moon) in 2nd and 12th from Sun." }
+    "conditions": {
+      "type": "complex",
+      "description": "Planets (other than Moon) in 2nd and 12th from Sun."
+    }
   },
   {
     "id": "matru_vahan_sukh",
     "name": "परिपूर्ण मातृ-वाहन सुख योग",
     "type": "महा-कवच",
     "description": "4थे भाव में शुक्र—ज़मीन-जायदाद और वाहनों की अटूट सुरक्षा।",
-    "conditions": { "type": "single_planet", "planet": "Venus", "in_houses": [4] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Venus",
+      "in_houses": [
+        4
+      ]
+    }
   },
   {
     "id": "dama_nabhasa_yoga",
     "name": "दाम नाभस योग (Dama Yoga)",
     "type": "नाभस योग",
     "description": "सभी 7 ग्रहों का ठीक 6 भावों में स्थित होना—जीवनभर परोपकार, ज्ञान, और अचल संपत्ति की गारंटी।",
-    "conditions": { "type": "planets_in_x_houses", "count": 6 }
+    "conditions": {
+      "type": "planets_in_x_houses",
+      "count": 6
+    }
   },
   {
     "id": "kemadruma_bhanga",
     "name": "केमद्रुम भंग राजयोग",
     "type": "राजयोग",
     "description": "चंद्रमा के आगे-पीछे ग्रह न होने का दोष 4, 7, 10 भावों में ग्रहों के होने से भस्म होना—अकेलेपन से उठकर सम्राट बनना।",
-    "conditions": { "type": "complex", "description": "Kemadruma conditions met BUT kendras from ascendant or Moon are occupied." }
+    "conditions": {
+      "type": "complex",
+      "description": "Kemadruma conditions met BUT kendras from ascendant or Moon are occupied."
+    }
   },
   {
     "id": "maha_purnima_yoga",
     "name": "महा-पूर्णिमा योग",
     "type": "शुभ योग",
     "description": "सूर्य और चंद्रमा का बिल्कुल आमने-सामने होना—अकल्पनीय सिक्स्थ-सेंस और मानसिक शांति।",
-    "conditions": { "type": "mutual_aspect", "planet1": "Sun", "planet2": "Moon" }
+    "conditions": {
+      "type": "mutual_aspect",
+      "planet1": "Sun",
+      "planet2": "Moon"
+    }
   },
   {
     "id": "veshi_yoga_mangal",
     "name": "वेशि योग (उच्च मंगल जनित)",
     "type": "राजयोग",
     "description": "सूर्य से अगले भाव में उच्च के मंगल का होना—आक्रामक मेहनत और जिद के दम पर अपना साम्राज्य बनाना।",
-    "conditions": { "type": "planet_in_relative_house", "from_planet": "Sun", "relative_house": 2, "require_planet": "Mars" }
+    "conditions": {
+      "type": "planet_in_relative_house",
+      "from_planet": "Sun",
+      "relative_house": 2,
+      "require_planet": "Mars"
+    }
   },
   {
     "id": "shubh_vashi_yoga",
     "name": "शुभ वाशि योग",
     "type": "शुभ योग",
     "description": "सूर्य से पिछले भाव में बुध का होना—लीडरशिप को बैकग्राउंड से सपोर्ट करने वाला कैलकुलेटिव और शांत दिमाग।",
-    "conditions": { "type": "planet_in_relative_house", "from_planet": "Sun", "relative_house": 12, "require_planet": "Mercury" }
+    "conditions": {
+      "type": "planet_in_relative_house",
+      "from_planet": "Sun",
+      "relative_house": 12,
+      "require_planet": "Mercury"
+    }
   },
   {
     "id": "shani_mangal_drishti",
     "name": "शनि-मंगल महा-परस्पर दृष्टि योग",
     "type": "राजयोग",
     "description": "शनि की 10वीं और मंगल की 4थी घातक दृष्टि का आपस में टकराना—कभी चैन से न बैठने की आग और इंजीनियरिंग/बिल्ड करने की क्षमता।",
-    "conditions": { "type": "complex", "description": "Saturn 10th aspect on Mars AND Mars 4th aspect on Saturn." }
+    "conditions": {
+      "type": "complex",
+      "description": "Saturn 10th aspect on Mars AND Mars 4th aspect on Saturn."
+    }
   },
   {
     "id": "guru_shukra_drishti",
     "name": "गुरु-शुक्र सम-सप्तक ज्ञान दृष्टि",
     "type": "शुभ योग",
     "description": "देवगुरु और दैत्यगुरु का आमने-सामने होना—अपार लग्जरी और पैसे का 100% नैतिक और 'क्लासी' उपयोग।",
-    "conditions": { "type": "mutual_aspect", "planet1": "Jupiter", "planet2": "Venus" }
+    "conditions": {
+      "type": "mutual_aspect",
+      "planet1": "Jupiter",
+      "planet2": "Venus"
+    }
   },
   {
     "id": "jivatma_drishti",
     "name": "जीवात्मा दृष्टि / राज-कृपा योग",
     "type": "राजयोग",
     "description": "10वें घर के गुरु की 9वीं दृष्टि का सूर्य पर पड़ना—शत्रु लड़कर नहीं, बल्कि सम्मान और बुद्धि के आगे सरेंडर करेंगे।",
-    "conditions": { "type": "aspect_on_planet", "aspecting_planet": "Jupiter", "aspected_planet": "Sun", "aspect_type": 9 }
+    "conditions": {
+      "type": "aspect_on_planet",
+      "aspecting_planet": "Jupiter",
+      "aspected_planet": "Sun",
+      "aspect_type": 9
+    }
   },
   {
     "id": "mangal_ketu_visfotak",
     "name": "मंगल-केतु विस्फोटक दोष",
     "type": "दोष",
     "description": "7वें घर में मंगल (आग) और केतु (विस्फोट) एक साथ। पार्टनरशिप में भयंकर 'ईगो' और 'शॉर्ट-टेम्पर' देता है।",
-    "conditions": { "type": "conjunction", "planets": ["Mars", "Ketu"], "in_houses": [7] }
+    "conditions": {
+      "type": "conjunction",
+      "planets": [
+        "Mars",
+        "Ketu"
+      ],
+      "in_houses": [
+        7
+      ]
+    }
   },
   {
     "id": "vish_yoga_punarphoo",
     "name": "विष योग / पुनर्फू दोष (The Silent Depression)",
     "type": "दोष",
     "description": "शनि की चंद्रमा पर दृष्टि या युति। भयंकर अकेलापन, उदासी और मन में डिटैचमेंट (वैराग्य) देता है।",
-    "conditions": { "type": "conjunction_or_aspect", "planet1": "Saturn", "planet2": "Moon" }
+    "conditions": {
+      "type": "conjunction_or_aspect",
+      "planet1": "Saturn",
+      "planet2": "Moon"
+    }
   },
   {
     "id": "shadashtaka_dosha_moon_mars",
     "name": "षडाष्टक मानसिक दोष (The Internal Friction)",
     "type": "दोष",
     "description": "चंद्रमा और मंगल 6/8 की दूरी पर। मन और एक्शन कभी एक पेज पर नहीं होते, जिससे ओवरथिंकिंग होती है।",
-    "conditions": { "type": "relative_position", "planet1": "Moon", "planet2": "Mars", "allowed_distances": [6, 8] }
+    "conditions": {
+      "type": "relative_position",
+      "planet1": "Moon",
+      "planet2": "Mars",
+      "allowed_distances": [
+        6,
+        8
+      ]
+    }
   },
   {
     "id": "lagna_rahu_dosha",
     "name": "लग्न राहु दोष / चांडाल प्रभाव",
     "type": "दोष",
     "description": "लग्न में राहु। इंसान को बड़ा 'भ्रम' (Illusion) देता है और शॉर्टकट ढूंढने की आदत डालता है।",
-    "conditions": { "type": "single_planet", "planet": "Rahu", "in_houses": [1] }
+    "conditions": {
+      "type": "single_planet",
+      "planet": "Rahu",
+      "in_houses": [
+        1
+      ]
+    }
+  },
+  {
+    "id": "kaal_sarp_dosha",
+    "name": "कालसर्प दोष (Kaal Sarp Dosha)",
+    "type": "दोष",
+    "description": "जब कुंडली के सभी 7 मुख्य ग्रह राहु और केतु की धुरी (Axis) के एक ही तरफ आ जाएं। यह अस्थिरता, संघर्ष और अचानक उतार-चढ़ाव देता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "All 7 planets on one side of the Rahu-Ketu axis."
+    }
+  },
+  {
+    "id": "pitra_dosha",
+    "name": "पितृ दोष (Pitra Dosha)",
+    "type": "दोष",
+    "description": "9वें भाव (भाग्य/पिता), सूर्य या गुरु पर राहु/केतु या शनि का गहरा पाप प्रभाव। यह पूर्वजों के ऋण और वंश वृद्धि में रुकावट को दर्शाता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Affliction to 9th house, 9th lord, Sun, or Jupiter by Rahu/Ketu/Saturn."
+    }
+  },
+  {
+    "id": "angarak_dosha",
+    "name": "अंगारक दोष (Angarak Dosha)",
+    "type": "दोष",
+    "description": "मंगल और राहु की युति (Conjunction)। यह इंसान को क्रोधी, जल्दबाज और कभी-कभी हिंसक प्रवृत्तियों की तरफ ले जा सकता है।",
+    "conditions": {
+      "type": "conjunction",
+      "planets": [
+        "Mars",
+        "Rahu"
+      ]
+    }
+  },
+  {
+    "id": "shrapit_dosha",
+    "name": "श्रापित दोष (Shrapit Dosha)",
+    "type": "दोष",
+    "description": "शनि और राहु की युति। इसे पिछले जन्म का 'श्राप' माना जाता है, जिससे कुंडली के अच्छे राजयोग भी अपना पूरा फल नहीं दे पाते।",
+    "conditions": {
+      "type": "conjunction",
+      "planets": [
+        "Saturn",
+        "Rahu"
+      ]
+    }
+  },
+  {
+    "id": "paap_kartari_dosha",
+    "name": "पापकर्तरी दोष (Paap Kartari Dosha)",
+    "type": "दोष",
+    "description": "जब कोई शुभ ग्रह या लग्न दो पापी ग्रहों के बीच सैंडविच (Sandwich) बन जाए (जैसे 2रे और 12वें भाव में पापी ग्रह)। इससे उस भाव का दम घुटता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Malefics in 2nd and 12th from a house or planet."
+    }
+  },
+  {
+    "id": "gandmool_dosha",
+    "name": "गंडमूल दोष (Gandmool Dosha)",
+    "type": "दोष",
+    "description": "अश्विनी, आश्लेषा, मघा, ज्येष्ठा, मूल या रेवती नक्षत्र (बुध और केतु के नक्षत्र) में जन्म। यह स्वास्थ्य और जीवन के लिए कष्टकारी माना जाता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Moon in Gandmool Nakshatras."
+    }
+  },
+  {
+    "id": "gandanta_dosha",
+    "name": "गंडांत दोष (Gandanta Dosha)",
+    "type": "दोष",
+    "description": "जल और अग्नि राशि के मिलन बिंदु (0 डिग्री या 29 डिग्री) पर बैठा ग्रह। यह एक ऐसी मनोवैज्ञानिक/शारीरिक ग्रंथि (Knot) बन जाता है जिसे सुलझाना मुश्किल है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Planet at exactly 0 or 29 degrees joining Water/Fire signs."
+    }
+  },
+  {
+    "id": "amavasya_dosha",
+    "name": "अमावस्या दोष (Amavasya Dosha)",
+    "type": "दोष",
+    "description": "सूर्य और चंद्रमा की बिल्कुल सटीक युति। इंसान मानसिक रूप से बहुत कमजोर, डरा हुआ या निराशावादी हो सकता है।",
+    "conditions": {
+      "type": "conjunction",
+      "planets": [
+        "Sun",
+        "Moon"
+      ]
+    }
+  },
+  {
+    "id": "daridra_dosha",
+    "name": "दारिद्र्य योग/दोष (Daridra Dosha)",
+    "type": "दोष",
+    "description": "धन भाव (2रा या 11वां) या भाग्य भाव (9वां) के स्वामी का 6ठे, 8वें या 12वें भाव में बैठना। यह आर्थिक तंगी और कर्ज देता है।",
+    "conditions": {
+      "type": "complex",
+      "description": "Lords of 2, 9, 11 in 6, 8, 12."
+    }
   }
 ]
