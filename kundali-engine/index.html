@@ -203,33 +203,33 @@
 
     <div class="container">
         <h1 class="title">Kundali Engine</h1>
-        <p class="subtitle">Advanced Astrological Calculations using Swiss Ephemeris</p>
+        <p class="subtitle">स्विस एफेमेरिस (Swiss Ephemeris) का उपयोग कर उन्नत ज्योतिषीय गणना</p>
 
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter Name">
+            <label for="name">नाम</label>
+            <input type="text" id="name" placeholder="नाम दर्ज करें">
         </div>
 
         <div class="form-group" style="display: flex; gap: 1rem;">
             <div style="flex: 1;">
-                <label for="dob">Date of Birth</label>
+                <label for="dob">जन्म तिथि</label>
                 <input type="date" id="dob" value="1999-12-22">
             </div>
             <div style="flex: 1;">
-                <label for="time">Time of Birth</label>
+                <label for="time">जन्म समय</label>
                 <input type="time" id="time" value="20:45">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="city">City of Birth</label>
-            <input type="text" id="city" value="Pilibhit, India" placeholder="e.g., Ayodhya, India">
+            <label for="city">जन्म स्थान (शहर)</label>
+            <input type="text" id="city" value="Pilibhit, India" placeholder="उदा., अयोध्या, भारत">
         </div>
 
-        <button id="calculateBtn">Generate Kundali Data</button>
+        <button id="calculateBtn">कुण्डली डेटा जनरेट करें</button>
 
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="search.html" style="color: var(--vault-accent); text-decoration: none; font-size: 0.9rem; border-bottom: 1px dotted var(--vault-accent);">Go to Historical Astronomical Search →</a>
+            <a href="search.html" style="color: var(--vault-accent); text-decoration: none; font-size: 0.9rem; border-bottom: 1px dotted var(--vault-accent);">ऐतिहासिक खगोलीय खोज पर जाएँ →</a>
         </div>
 
         <div id="resultBox" class="result-box"></div>

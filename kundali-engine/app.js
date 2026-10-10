@@ -6,7 +6,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
     const resultBox = document.getElementById('resultBox');
 
     resultBox.style.display = 'block';
-    resultBox.textContent = 'Fetching coordinates...';
+    resultBox.textContent = 'कोऑर्डिनेट्स प्राप्त किए जा रहे हैं...';
 
     let lat, lng;
 
@@ -18,9 +18,9 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         if (geoData && geoData.length > 0) {
             lat = parseFloat(geoData[0].lat);
             lng = parseFloat(geoData[0].lon);
-            resultBox.textContent = `Coordinates found: ${lat.toFixed(4)}, ${lng.toFixed(4)}. Calculating Kundali...`;
+            resultBox.textContent = `कोऑर्डिनेट्स प्राप्त हुए: ${lat.toFixed(4)}, ${lng.toFixed(4)}. कुंडली की गणना की जा रही है...`;
         } else {
-            throw new Error('City not found. Please try a different name (e.g., "New Delhi, India").');
+            throw new Error('शहर नहीं मिला। कृपया दूसरा नाम आज़माएं (उदा., "New Delhi, India")।');
         }
 
         const response = await fetch('http://localhost:3000/api/calculate', {
@@ -39,12 +39,12 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         const signNames = ["मेष (Aries)", "वृषभ (Taurus)", "मिथुन (Gemini)", "कर्क (Cancer)", "सिंह (Leo)", "कन्या (Virgo)", "तुला (Libra)", "वृश्चिक (Scorpio)", "धनु (Sagittarius)", "मकर (Capricorn)", "कुंभ (Aquarius)", "मीन (Pisces)"];
 
-        let output = `Kundali Results for ${name || 'User'}\n`;
-        output += `Date: ${date} Time: ${time}\n`;
-        output += `Location: ${city} (Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)})\n`;
-        output += `Julian Day: ${data.jd.toFixed(4)}\n`;
+        let output = `कुण्डली परिणाम: ${name || 'User'}\n`;
+        output += `दिनांक: ${date} समय: ${time}\n`;
+        output += `स्थान: ${city} (अक्षांश: ${lat.toFixed(4)}, देशांतर: ${lng.toFixed(4)})\n`;
+        output += `जूलियन डे: ${data.jd.toFixed(4)}\n`;
         if (data.tithi) {
-            output += `Tithi (Lunar Day): ${data.tithi.name} (${(data.tithi.percentage * 100).toFixed(2)}% complete)\n`;
+            output += `तिथि (Lunar Day): ${data.tithi.name} (${(data.tithi.percentage * 100).toFixed(2)}% पूर्ण)\n`;
         }
         output += `\n`;
 
@@ -64,10 +64,10 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             const deg = p.degreeInSign.toFixed(2).padStart(5) + '°';
             const planetName = p.name.padEnd(9);
 
-            let state = 'Direct';
-            if (p.name === 'Rahu' || p.name === 'Ketu') state = 'Retrograde';
-            else if (p.speed < 0) state = 'Retrograde';
-            else if (p.speed === 0) state = 'Stationary';
+            let state = 'मार्गी (Direct)';
+            if (p.name === 'Rahu' || p.name === 'Ketu') state = 'वक्री (Retrograde)';
+            else if (p.speed < 0) state = 'वक्री (Retrograde)';
+            else if (p.speed === 0) state = 'स्थिर (Stationary)';
 
             output += `${planetName} | ${signName} | ${deg}   | ${state}\n`;
         });
@@ -112,7 +112,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             yogaList.innerHTML = `
                 <div style="text-align: center; color: var(--vault-text-muted); padding: 2rem;">
                     <i class="fa-solid fa-moon" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                    <p>No specific yogas or doshas detected based on current rules.</p>
+                    <p>वर्तमान नियमों के आधार पर कोई विशिष्ट योग या दोष नहीं मिला।</p>
                 </div>
             `;
         } else {
