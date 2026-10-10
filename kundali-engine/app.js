@@ -72,22 +72,52 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             output += `${planetName} | ${signName} | ${deg}   | ${state}\n`;
         });
 
+        resultBox.textContent = output;
+
+        // Render Yogas and Doshas
+        const yogaContainer = document.getElementById('yogaContainer');
+        const yogaList = document.getElementById('yogaList');
+
+        yogaList.innerHTML = ''; // Clear previous results
+
         if (data.yogas && data.yogas.length > 0) {
-            output += `\n`;
-            output += `=== योग और दोष विश्लेषण (Yoga & Dosha Analysis) ===\n`;
-            output += `Total Detected: ${data.yogas.length}\n`;
-            output += `------------------------------------------------------\n`;
+            yogaContainer.style.display = 'block';
+
             data.yogas.forEach(yoga => {
-                output += `• [${yoga.type}] ${yoga.name}\n`;
-                output += `  ${yoga.description}\n\n`;
+                const isDosha = yoga.type.toLowerCase().includes('dosha');
+                const cardClass = isDosha ? 'yoga-card dosha' : 'yoga-card';
+                // Pick an icon based on type (just a simple heuristic)
+                let iconClass = isDosha ? 'fa-solid fa-triangle-exclamation' : 'fa-solid fa-star';
+
+                if(yoga.name.toLowerCase().includes('dhana')) iconClass = 'fa-solid fa-coins';
+                if(yoga.name.toLowerCase().includes('raj')) iconClass = 'fa-solid fa-crown';
+                if(yoga.name.toLowerCase().includes('saraswati') || yoga.name.toLowerCase().includes('buddhi')) iconClass = 'fa-solid fa-book-open';
+
+                const cardHTML = `
+                    <div class="${cardClass}">
+                        <div class="yoga-icon"><i class="${iconClass}"></i></div>
+                        <div class="yoga-content">
+                            <h3 class="yoga-title">
+                                ${yoga.name}
+                                <span class="yoga-badge">${yoga.type}</span>
+                            </h3>
+                            <p class="yoga-desc">${yoga.description}</p>
+                        </div>
+                    </div>
+                `;
+                yogaList.innerHTML += cardHTML;
             });
         } else if (data.yogas && data.yogas.length === 0) {
-            output += `\n`;
-            output += `=== योग और दोष विश्लेषण (Yoga & Dosha Analysis) ===\n`;
-            output += `No specific yogas or doshas detected based on current rules.\n`;
+            yogaContainer.style.display = 'block';
+            yogaList.innerHTML = `
+                <div style="text-align: center; color: var(--vault-text-muted); padding: 2rem;">
+                    <i class="fa-solid fa-moon" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <p>No specific yogas or doshas detected based on current rules.</p>
+                </div>
+            `;
+        } else {
+             yogaContainer.style.display = 'none';
         }
-
-        resultBox.textContent = output;
 
     } catch (error) {
         resultBox.textContent = `Error: ${error.message}`;
