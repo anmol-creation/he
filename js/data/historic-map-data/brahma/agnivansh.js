@@ -453,20 +453,13 @@ export const agnivanshData = [
         parichay: 'अग्निकुंड से सबसे अंत में चार भुजाओं के साथ प्रकट होने वाले वीर, जिन्होंने चौहान (चाहमान) वंश की स्थापना की। पृथ्वीराज चौहान इसी वंश में हुए।'
     },
     {
-        id: 'khandela_chauhan_proxy',
-        name: 'खंडेला चौहान शाखा',
-        subtitle: 'ऐतिहासिक अंतराल',
-        parent: 'chauhan',
-        yug: 'kaliyug',
-        parichay: 'प्राचीन खंडेला (सीकर) पर शासन करने वाले राजपूत, जिन्हें पारंपरिक रूप से चौहान (या अन्य अग्निवंशी) शाखा का माना जाता है।'
-    },
-    {
         id: 'khadgalsen_khandela',
         name: 'राजा खड़गसेन',
         subtitle: 'खंडेला के शासक',
-        parent: 'khandela_chauhan_proxy',
+        parent: 'chauhan',
         yug: 'kaliyug',
-        parichay: 'खंडेला के प्रतापी शासक। इनकी वंशावली सीधे किसी पौराणिक राजा से नहीं जुड़ती, बल्कि यह समाज के भाटों और चारणों की पारंपरिक लोककथाओं पर आधारित है।'
+        clusterName: 'खंडेला चौहान शाखा',
+        parichay: 'प्राचीन खंडेला (सीकर) के प्रतापी शासक। इनकी वंशावली सीधे किसी विशिष्ट ऐतिहासिक चौहान शासक से नहीं जुड़ती, बल्कि यह समाज के भाटों और चारणों की पारंपरिक लोककथाओं पर आधारित है जो इन्हें चौहान मानते हैं।'
     },
     {
         id: 'sujansen_maheshwari',
@@ -477,25 +470,8 @@ export const agnivanshData = [
         parichay: 'खंडेला के शासक। जब ऋषियों के श्राप से ये और इनके दरबार के 72 राजपूत सरदार पत्थर बन गए, तो भगवान शिव (महेश) की कृपा से उन्हें जीवनदान मिला और उन्होंने क्षत्रिय धर्म त्याग कर वैश्य धर्म (व्यापार) अपनाया। चूँकि सुजानसेन ने स्वयं भी तलवार त्यागी थी, उन्हें माहेश्वरी समाज का आदि-पुरुष माना जाता है।',
         kathayein: "माहेश्वरी उत्पत्ति कथा: राजा सुजानसेन शिकार खेलते हुए यज्ञ भंग कर बैठे, जिससे ऋषियों ने उन्हें और उनके 72 उमरावों (दरबारी सरदारों) को पत्थर बनने का श्राप दिया। रानी चन्द्रावती की तपस्या से प्रसन्न होकर भगवान शिव (महेश) ने उन्हें पुनर्जीवित किया। शिवजी के नाम पर यह पूरा समाज 'माहेश्वरी' कहलाया।"
     },
-    {
-        id: 'maheshwari_dynasty_proxy',
-        name: 'माहेश्वरी समाज',
-        subtitle: '72 खापें (गोत्र)',
-        parent: 'sujansen_maheshwari',
-        yug: 'kaliyug',
-        clusterName: 'माहेश्वरी वंश',
-        parichay: 'राजा सुजानसेन के दरबार के 72 सरदारों (उमरावों) से माहेश्वरी समाज की 72 खापें निकलीं (जैसे बिड़ला, सोमानी, बाहेती आदि)। 72 एक प्रतीकात्मक (numerological) संख्या है जो उनके कुलों की पूर्णता का प्रतिनिधित्व करती है। ये खापें उनके राजपूत कुल, गाँव या उपाधियों पर आधारित हैं।'
-    },
-    {
-        id: 'khandelwal_community_proxy',
-        name: 'खंडेलवाल समाज',
-        subtitle: 'खंडेला के मूल निवासी वैश्य',
-        parent: 'khadgalsen_khandela',
-        yug: 'kaliyug',
-        clusterName: 'खंडेलवाल वंश',
-        parichay: 'राजा खड़गसेन (सुजानसेन के पिता) के 72 सगे पुत्रों से खंडेलवाल समाज की उत्पत्ति मानी जाती है। कुछ लोककथाएं इन्हें "ऋषि खंडेल" से भी जोड़ती हैं। इस समाज के लोग खंडेला के मूल निवासी थे जिन्होंने बाद में व्यापार (वैश्य धर्म) अपना लिया।',
-        kathayein: 'धर्म परिवर्तन और शाखाएं: खंडेला के इन मूल क्षत्रियों/वैश्यों में से एक बड़े समूह ने जैन मुनियों (जैसे आचार्य जिनसेन) के प्रभाव में आकर अहिंसा का मार्ग अपनाया और जैन धर्म स्वीकार कर लिया, जो "सरावगी" (खंडेलवाल जैन - 84 गोत्र) कहलाए। जो सनातन धर्म में रहे, वे "खंडेलवाल वैश्य" कहलाए। माहेश्वरी और खंडेलवालों का उद्गम स्थान (खंडेला) और गोत्रों की संख्या (72) समान है, लेकिन दोनों समाज और उनके गोत्र (जैसे रावत, झालानी आदि) पूरी तरह अलग हैं।'
-    },
+
+
 
     // ----------------------------------------------------
     // CHALUKYA (SOLANKI) DYNASTY OF GUJARAT
@@ -904,23 +880,416 @@ export const agnivanshData = [
         clusterName: 'हाड़ा चौहान वंश',
         isProminent: true,
         parichay: 'सन् 1241 ई. में राव देवा ने मीणा सरदारों को पराजित कर "बूंदी" राज्य की स्थापना की। इन्होंने ही कोटा क्षेत्र को भी जीता और इस पूरे क्षेत्र का नाम इनके वंश के कारण "हाड़ौती" (Hadoti) पड़ा।'
-    },
+
+}
+
+    ,
     {
-        id: 'bundi_dynasty_proxy',
-        name: 'बूंदी राजवंश',
-        subtitle: 'राव सुरजन, राव रतन सिंह',
+        id: 'rao_samar_singh_hada',
+        name: 'राव समर सिंह हाड़ा',
+        subtitle: 'कोटा क्षेत्र के विजेता',
         parent: 'rao_deva_hada',
         yug: 'kaliyug',
         clusterName: 'हाड़ा चौहान वंश',
-        parichay: 'राव देवा के वंशजों ने सदियों तक बूंदी पर राज किया। इनमें राव सुरजन हाड़ा (जिन्होंने अकबर से रणथंभौर की संधि की) और राव रतन सिंह जैसे महान सेनापति हुए, जो अपनी वीरता और वचनबद्धता के लिए पूरे राजपूताने में प्रसिद्ध थे।'
+        parichay: 'राव देवा के पुत्र। इन्होंने कोटिया भीलों को पराजित कर कोटा क्षेत्र पर अधिकार किया और हाड़ौती साम्राज्य का विस्तार किया।'
     },
     {
-        id: 'kota_dynasty_proxy',
-        name: 'कोटा राजवंश',
-        subtitle: 'माधो सिंह हाड़ा',
-        parent: 'bundi_dynasty_proxy',
+        id: 'rao_napuji_hada',
+        name: 'राव नापूजी हाड़ा',
+        subtitle: 'बूंदी शासक',
+        parent: 'rao_samar_singh_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश'
+    },
+    {
+        id: 'rao_bando_hada',
+        name: 'राव बांडो हाड़ा',
+        subtitle: 'बूंदी शासक',
+        parent: 'rao_napuji_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश'
+    },
+    {
+        id: 'rao_narayan_das_hada',
+        name: 'राव नारायण दास हाड़ा',
+        subtitle: 'बूंदी शासक',
+        parent: 'rao_bando_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश'
+    },
+    {
+        id: 'rao_suraj_mal_hada',
+        name: 'राव सूरजमल हाड़ा',
+        subtitle: 'बूंदी शासक',
+        parent: 'rao_narayan_das_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश'
+    },
+    {
+        id: 'rao_surjan_hada',
+        name: 'राव सुरजन हाड़ा',
+        subtitle: 'रणथंभौर के किलेदार',
+        parent: 'rao_suraj_mal_hada',
         yug: 'kaliyug',
         clusterName: 'हाड़ा चौहान वंश',
-        parichay: '17वीं सदी में मुगल सम्राट शाहजहां के फरमान से कोटा को बूंदी से अलग कर एक स्वतंत्र राज्य बना दिया गया। राव रतन सिंह के पुत्र माधो सिंह हाड़ा कोटा के पहले स्वतंत्र शासक बने।'
+        isProminent: true,
+        parichay: 'ये बहुत प्रसिद्ध हाड़ा शासक थे जिनके पास रणथंभौर का अभेद्य किला था। 1569 ई. में इन्होंने सम्राट अकबर से संधि की थी। मुगलों के प्रमुख सेनापति बने।'
+    },
+    {
+        id: 'rao_bhoj_hada',
+        name: 'राव भोज हाड़ा',
+        subtitle: 'बूंदी शासक',
+        parent: 'rao_surjan_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश'
+    },
+    {
+        id: 'rao_ratan_singh_hada',
+        name: 'राव रतन सिंह हाड़ा',
+        subtitle: 'मुगलों के महान सेनापति',
+        parent: 'rao_bhoj_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश',
+        isProminent: true,
+        parichay: 'जहांगीर और शाहजहां के समय के महान सेनापति। जहांगीर ने इन्हें रामराज की उपाधि दी थी और बुरहानपुर का सूबेदार बनाया था। इन्हीं के समय कोटा को अलग रियासत बनाया गया।'
+    },
+    {
+        id: 'rao_chhatrasal_hada',
+        name: 'राव छतरसाल (शत्रुशाल)',
+        subtitle: 'सामूगढ़ के वीर',
+        parent: 'rao_ratan_singh_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश',
+        isProminent: true,
+        parichay: 'शाहजहां के वफादार। औरंगजेब के खिलाफ दारा शिकोह की तरफ से लड़ते हुए 1658 ई. में सामूगढ़ के युद्ध में वीरगति को प्राप्त हुए थे।'
+    },
+    {
+        id: 'rao_bhao_singh_hada',
+        name: 'राव भाव सिंह हाड़ा',
+        subtitle: 'बूंदी शासक',
+        parent: 'rao_chhatrasal_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश'
+    },
+    {
+        id: 'rao_madho_singh_kota',
+        name: 'राव माधो सिंह हाड़ा',
+        subtitle: 'कोटा के प्रथम स्वतंत्र शासक',
+        parent: 'rao_ratan_singh_hada',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश',
+        isProminent: true,
+        parichay: 'राव रतन सिंह के पुत्र। 1631 ई. में मुगल सम्राट शाहजहां के फरमान से कोटा को बूंदी से अलग कर एक स्वतंत्र राज्य बना दिया गया और माधो सिंह इसके पहले राजा बने।'
+    },
+    {
+        id: 'rao_mukund_singh_kota',
+        name: 'राव मुकुंद सिंह हाड़ा',
+        subtitle: 'कोटा शासक',
+        parent: 'rao_madho_singh_kota',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश',
+        parichay: 'इन्होंने मुकुंदरा की पहाड़ियों में मुकुंदगढ़ बनवाया था। ये भी सामूगढ़ के युद्ध में लड़े और वीरगति को प्राप्त हुए।'
+    },
+    {
+        id: 'maharao_bhim_singh_kota',
+        name: 'महाराव भीम सिंह प्रथम',
+        subtitle: 'कोटा के प्रतापी शासक',
+        parent: 'rao_mukund_singh_kota',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश',
+        parichay: 'इन्होंने अपना नाम कृष्णदास रख लिया था और कोटा का नाम बदलकर नंदग्राम कर दिया था। ये बहुत शक्तिशाली शासक थे।'
+    },
+    {
+        id: 'maharao_umed_singh_kota',
+        name: 'महाराव उम्मेद सिंह प्रथम',
+        subtitle: 'झाला जालिम सिंह का युग',
+        parent: 'maharao_bhim_singh_kota',
+        yug: 'kaliyug',
+        clusterName: 'हाड़ा चौहान वंश',
+        parichay: 'इनके शासनकाल में कोटा का वास्तविक राज-काज इनके महान दीवान झाला जालिम सिंह चलाते थे, जिन्होंने कोटा को मराठों और पिंडारियों के विनाशकारी हमलों से बचाया था।'
+    }
+
+    ,
+    {
+        id: 'birla_khap',
+        name: 'बिड़ला (Birla)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'somani_khap',
+        name: 'सोमानी (Somani)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'baheti_khap',
+        name: 'बाहेती (Baheti)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'kabra_khap',
+        name: 'काबरा (Kabra)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'daga_khap',
+        name: 'डागा (Daga)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'malpani_khap',
+        name: 'मालपानी (Malpani)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'rathi_khap',
+        name: 'राठी (Rathi)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'bhandari_maheshwari_khap',
+        name: 'भंडारी (Bhandari)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'kothari_maheshwari_khap',
+        name: 'कोठारी (Kothari)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'jhanwar_khap',
+        name: 'झंवर (Jhanwar)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'toshniwal_khap',
+        name: 'तोषनीवाल (Toshniwal)',
+        subtitle: 'माहेश्वरी खाप',
+        parent: 'sujansen_maheshwari',
+        yug: 'kaliyug',
+        clusterName: 'माहेश्वरी वंश'
+    },
+    {
+        id: 'rawat_khandelwal_khap',
+        name: 'रावत (Rawat)',
+        subtitle: 'खंडेलवाल वैश्य गोत्र',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'jhalani_khandelwal_khap',
+        name: 'झालानी (Jhalani)',
+        subtitle: 'खंडेलवाल वैश्य गोत्र',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'dangayach_khandelwal_khap',
+        name: 'डंगायच (Dangayach)',
+        subtitle: 'खंडेलवाल वैश्य गोत्र',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'natani_khandelwal_khap',
+        name: 'नटाणी (Natani)',
+        subtitle: 'खंडेलवाल वैश्य गोत्र',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'koolwal_khandelwal_khap',
+        name: 'कूलवाल (Koolwal)',
+        subtitle: 'खंडेलवाल वैश्य गोत्र',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'kasliwal_sarawagi_khap',
+        name: 'कासलीवाल (Kasliwal)',
+        subtitle: 'खंडेलवाल जैन (सरावगी)',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'chhabra_sarawagi_khap',
+        name: 'छाबड़ा (Chhabra)',
+        subtitle: 'खंडेलवाल जैन (सरावगी)',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    },
+    {
+        id: 'patni_sarawagi_khap',
+        name: 'पाटनी (Patni)',
+        subtitle: 'खंडेलवाल जैन (सरावगी)',
+        parent: 'khadgalsen_khandela',
+        yug: 'kaliyug',
+        clusterName: 'खंडेलवाल वंश'
+    }
+
+    ,
+    {
+        id: 'rao_lakshman_nadol',
+        name: 'राव लक्ष्मण (लाखन)',
+        subtitle: 'नाडोल चौहान संस्थापक',
+        parent: 'samantaraja_chauhan',
+        yug: 'kaliyug',
+        clusterName: 'नाडोल चौहान वंश',
+        parichay: 'इन्होंने अजमेर/शाकम्भरी के मुख्य चौहान वंश से अलग होकर नाडोल (पाली, राजस्थान) में चौहान साम्राज्य की स्थापना की। यहीं से बाद में सोनगरा और देवड़ा शाखाएं निकलीं।'
+    },
+    {
+        id: 'alhana_nadol',
+        name: 'राव आल्हण',
+        subtitle: 'नाडोल शासक',
+        parent: 'rao_lakshman_nadol',
+        yug: 'kaliyug',
+        clusterName: 'नाडोल चौहान वंश',
+        parichay: 'नाडोल के प्रसिद्ध शासक। इन्हीं के पुत्रों से जालोर और सिरोही के राजवंश चले।'
+    },
+    {
+        id: 'kirtipal_songara',
+        name: 'कीर्तिपाल चौहान (कीतू)',
+        subtitle: 'सोनगरा चौहान संस्थापक',
+        parent: 'alhana_nadol',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        isProminent: true,
+        parichay: 'राव आल्हण के पुत्र। इन्होंने 1181 ई. में जालोर (स्वर्णगिरी) पर अधिकार किया और सोनगरा चौहान शाखा की स्थापना की। स्वर्णगिरी किले के कारण ही ये "सोनगरा" कहलाए।'
+    },
+    {
+        id: 'samarasimha_songara',
+        name: 'समर सिंह सोनगरा',
+        subtitle: 'जालोर शासक',
+        parent: 'kirtipal_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश'
+    },
+    {
+        id: 'udayasimha_songara',
+        name: 'उदय सिंह सोनगरा',
+        subtitle: 'महान जालोर शासक',
+        parent: 'samarasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        parichay: 'जालोर के बहुत प्रतापी शासक, जिन्होंने दिल्ली सल्तनत के इल्तुतमिश को पीछे धकेला था।'
+    },
+    {
+        id: 'man_singh_deora_ancestor',
+        name: 'मान सिंह देवड़ा',
+        subtitle: 'देवड़ा शाखा के मूल',
+        parent: 'samarasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'देवड़ा चौहान वंश',
+        parichay: 'सोनगरा चौहानों (समर सिंह) के वंशज, जिनके नाम या वंशक्रम से "देवड़ा" (Deora) शाखा का आरंभ हुआ, जिन्होंने बाद में सिरोही पर राज किया।'
+    },
+    {
+        id: 'rao_lumbha_deora',
+        name: 'राव लुम्भा देवड़ा',
+        subtitle: 'सिरोही राज्य के संस्थापक',
+        parent: 'man_singh_deora_ancestor',
+        yug: 'kaliyug',
+        clusterName: 'देवड़ा चौहान वंश',
+        isProminent: true,
+        parichay: '1311 ई. में राव लुम्भा ने परमारों को हराकर आबू और चंद्रावती पर अधिकार किया और देवड़ा चौहान साम्राज्य की स्थापना की।'
+    },
+    {
+        id: 'rao_surtan_deora',
+        name: 'राव सुरताण देवड़ा',
+        subtitle: 'सिरोही के प्रतापी शासक',
+        parent: 'rao_lumbha_deora',
+        yug: 'kaliyug',
+        clusterName: 'देवड़ा चौहान वंश',
+        isProminent: true,
+        parichay: 'महाराणा प्रताप के समकालीन। इन्होंने 1583 में "दत्ताणी के युद्ध" में अकबर की सेना को बुरी तरह हराया था।'
+    },
+    {
+        id: 'chachigadeva_songara',
+        name: 'चाचिगदेव सोनगरा',
+        subtitle: 'जालोर शासक',
+        parent: 'udayasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश'
+    },
+    {
+        id: 'samantasimha_songara',
+        name: 'सामंत सिंह सोनगरा',
+        subtitle: 'जालोर शासक',
+        parent: 'chachigadeva_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश'
+    },
+    {
+        id: 'kanhadadeva_songara',
+        name: 'कान्हड़देव सोनगरा',
+        subtitle: 'जालोर के महान रक्षक',
+        parent: 'samantasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        isProminent: true,
+        parichay: 'जालोर के सबसे महान वीर शासक। इन्होंने 1311 ई. में अलाउद्दीन खिलजी की विशाल सेना का डटकर सामना किया और जालोर के युद्ध (शाका) में वीरगति को प्राप्त हुए। इनका शौर्य "कान्हड़दे प्रबंध" में वर्णित है।'
+    },
+    {
+        id: 'viramdeo_songara',
+        name: 'वीरमदेव सोनगरा',
+        subtitle: 'कान्हड़देव के पुत्र',
+        parent: 'kanhadadeva_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        parichay: 'अपने पिता के साथ जालोर रक्षा में अदम्य साहस दिखाया। अलाउद्दीन खिलजी की पुत्री फिरोजा इनसे प्रेम करती थी, लेकिन वीरमदेव ने मुगलों/तुर्कों से रिश्ता जोड़ने से इंकार कर दिया और वीरगति को चुना।'
+    },
+    {
+        id: 'khinchi_chauhan_ancestor',
+        name: 'खींची चौहान शाखा',
+        subtitle: 'मालवा/गागरोन शासक',
+        parent: 'samantaraja_chauhan',
+        yug: 'kaliyug',
+        clusterName: 'खींची चौहान वंश',
+        parichay: 'चौहानों की यह वीर शाखा मालवा और गागरोन (झालावाड़) क्षेत्र में बहुत शक्तिशाली रही।'
+    },
+    {
+        id: 'sant_pipaji_khinchi',
+        name: 'संत पीपाजी (प्रतापराव खींची)',
+        subtitle: 'महान भक्त एवं शासक',
+        parent: 'khinchi_chauhan_ancestor',
+        yug: 'kaliyug',
+        clusterName: 'खींची चौहान वंश',
+        isProminent: true,
+        parichay: 'गागरोन के खींची चौहान राजा, जो राजपाट त्यागकर रामानंद जी के शिष्य बन गए और महान संत "पीपाजी" कहलाए। दर्जी समाज इन्हें अपना आराध्य मानता है।'
     }
 ];
