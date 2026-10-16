@@ -1162,4 +1162,134 @@ export const agnivanshData = [
         yug: 'kaliyug',
         clusterName: 'खंडेलवाल वंश'
     }
+
+    ,
+    {
+        id: 'rao_lakshman_nadol',
+        name: 'राव लक्ष्मण (लाखन)',
+        subtitle: 'नाडोल चौहान संस्थापक',
+        parent: 'samantaraja_chauhan',
+        yug: 'kaliyug',
+        clusterName: 'नाडोल चौहान वंश',
+        parichay: 'इन्होंने अजमेर/शाकम्भरी के मुख्य चौहान वंश से अलग होकर नाडोल (पाली, राजस्थान) में चौहान साम्राज्य की स्थापना की। यहीं से बाद में सोनगरा और देवड़ा शाखाएं निकलीं।'
+    },
+    {
+        id: 'alhana_nadol',
+        name: 'राव आल्हण',
+        subtitle: 'नाडोल शासक',
+        parent: 'rao_lakshman_nadol',
+        yug: 'kaliyug',
+        clusterName: 'नाडोल चौहान वंश',
+        parichay: 'नाडोल के प्रसिद्ध शासक। इन्हीं के पुत्रों से जालोर और सिरोही के राजवंश चले।'
+    },
+    {
+        id: 'kirtipal_songara',
+        name: 'कीर्तिपाल चौहान (कीतू)',
+        subtitle: 'सोनगरा चौहान संस्थापक',
+        parent: 'alhana_nadol',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        isProminent: true,
+        parichay: 'राव आल्हण के पुत्र। इन्होंने 1181 ई. में जालोर (स्वर्णगिरी) पर अधिकार किया और सोनगरा चौहान शाखा की स्थापना की। स्वर्णगिरी किले के कारण ही ये "सोनगरा" कहलाए।'
+    },
+    {
+        id: 'samarasimha_songara',
+        name: 'समर सिंह सोनगरा',
+        subtitle: 'जालोर शासक',
+        parent: 'kirtipal_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश'
+    },
+    {
+        id: 'udayasimha_songara',
+        name: 'उदय सिंह सोनगरा',
+        subtitle: 'महान जालोर शासक',
+        parent: 'samarasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        parichay: 'जालोर के बहुत प्रतापी शासक, जिन्होंने दिल्ली सल्तनत के इल्तुतमिश को पीछे धकेला था।'
+    },
+    {
+        id: 'man_singh_deora_ancestor',
+        name: 'मान सिंह देवड़ा',
+        subtitle: 'देवड़ा शाखा के मूल',
+        parent: 'samarasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'देवड़ा चौहान वंश',
+        parichay: 'सोनगरा चौहानों (समर सिंह) के वंशज, जिनके नाम या वंशक्रम से "देवड़ा" (Deora) शाखा का आरंभ हुआ, जिन्होंने बाद में सिरोही पर राज किया।'
+    },
+    {
+        id: 'rao_lumbha_deora',
+        name: 'राव लुम्भा देवड़ा',
+        subtitle: 'सिरोही राज्य के संस्थापक',
+        parent: 'man_singh_deora_ancestor',
+        yug: 'kaliyug',
+        clusterName: 'देवड़ा चौहान वंश',
+        isProminent: true,
+        parichay: '1311 ई. में राव लुम्भा ने परमारों को हराकर आबू और चंद्रावती पर अधिकार किया और देवड़ा चौहान साम्राज्य की स्थापना की।'
+    },
+    {
+        id: 'rao_surtan_deora',
+        name: 'राव सुरताण देवड़ा',
+        subtitle: 'सिरोही के प्रतापी शासक',
+        parent: 'rao_lumbha_deora',
+        yug: 'kaliyug',
+        clusterName: 'देवड़ा चौहान वंश',
+        isProminent: true,
+        parichay: 'महाराणा प्रताप के समकालीन। इन्होंने 1583 में "दत्ताणी के युद्ध" में अकबर की सेना को बुरी तरह हराया था।'
+    },
+    {
+        id: 'chachigadeva_songara',
+        name: 'चाचिगदेव सोनगरा',
+        subtitle: 'जालोर शासक',
+        parent: 'udayasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश'
+    },
+    {
+        id: 'samantasimha_songara',
+        name: 'सामंत सिंह सोनगरा',
+        subtitle: 'जालोर शासक',
+        parent: 'chachigadeva_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश'
+    },
+    {
+        id: 'kanhadadeva_songara',
+        name: 'कान्हड़देव सोनगरा',
+        subtitle: 'जालोर के महान रक्षक',
+        parent: 'samantasimha_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        isProminent: true,
+        parichay: 'जालोर के सबसे महान वीर शासक। इन्होंने 1311 ई. में अलाउद्दीन खिलजी की विशाल सेना का डटकर सामना किया और जालोर के युद्ध (शाका) में वीरगति को प्राप्त हुए। इनका शौर्य "कान्हड़दे प्रबंध" में वर्णित है।'
+    },
+    {
+        id: 'viramdeo_songara',
+        name: 'वीरमदेव सोनगरा',
+        subtitle: 'कान्हड़देव के पुत्र',
+        parent: 'kanhadadeva_songara',
+        yug: 'kaliyug',
+        clusterName: 'सोनगरा चौहान वंश',
+        parichay: 'अपने पिता के साथ जालोर रक्षा में अदम्य साहस दिखाया। अलाउद्दीन खिलजी की पुत्री फिरोजा इनसे प्रेम करती थी, लेकिन वीरमदेव ने मुगलों/तुर्कों से रिश्ता जोड़ने से इंकार कर दिया और वीरगति को चुना।'
+    },
+    {
+        id: 'khinchi_chauhan_ancestor',
+        name: 'खींची चौहान शाखा',
+        subtitle: 'मालवा/गागरोन शासक',
+        parent: 'samantaraja_chauhan',
+        yug: 'kaliyug',
+        clusterName: 'खींची चौहान वंश',
+        parichay: 'चौहानों की यह वीर शाखा मालवा और गागरोन (झालावाड़) क्षेत्र में बहुत शक्तिशाली रही।'
+    },
+    {
+        id: 'sant_pipaji_khinchi',
+        name: 'संत पीपाजी (प्रतापराव खींची)',
+        subtitle: 'महान भक्त एवं शासक',
+        parent: 'khinchi_chauhan_ancestor',
+        yug: 'kaliyug',
+        clusterName: 'खींची चौहान वंश',
+        isProminent: true,
+        parichay: 'गागरोन के खींची चौहान राजा, जो राजपाट त्यागकर रामानंद जी के शिष्य बन गए और महान संत "पीपाजी" कहलाए। दर्जी समाज इन्हें अपना आराध्य मानता है।'
+    }
 ];
