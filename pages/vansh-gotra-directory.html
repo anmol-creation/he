@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vansh & Gotra Directory | Hindu Encyclopedia</title>
+    <meta name="description" content="Search and trace your lineage back to the Root Ancestor (Brahma) through your Surname or Gotra.">
+    <meta name="theme-color" content="#FF6B35">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Core Styling -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/geography.css"> <!-- Reusing dark theme architecture -->
+
+    <style>
+        .directory-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.95);
+            border: 1px solid rgba(255,140,0,0.2);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .master-search-container {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .master-search-input {
+            width: 100%;
+            padding: 20px 25px 20px 60px;
+            font-size: 1.2rem;
+            background: #111;
+            border: 2px solid var(--primary-saffron);
+            color: white;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .master-search-input:focus {
+            box-shadow: 0 0 15px rgba(255,140,0,0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-saffron);
+            font-size: 1.5rem;
+        }
+
+        .search-results-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #222;
+            border: 1px solid #444;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 15px 25px;
+            color: white;
+            cursor: pointer;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-result-item:hover {
+            background: rgba(255,140,0,0.1);
+        }
+
+        .result-type-badge {
+            font-size: 0.8rem;
+            background: #444;
+            padding: 3px 8px;
+            border-radius: 12px;
+            color: #ddd;
+        }
+
+        .filter-section {
+            display: grid;
+            gap: 1.5rem;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            color: var(--secondary-gold);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #111;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            cursor: pointer;
+            appearance: none; /* remove default arrow */
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat, repeat;
+            background-position: right .7em top 50%, 0 0;
+            background-size: .65em auto, 100%;
+        }
+
+        .filter-group select:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .result-card {
+            display: none;
+            margin-top: 3rem;
+            background: linear-gradient(135deg, rgba(255,140,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+            border-left: 5px solid var(--primary-saffron);
+            padding: 2rem;
+            border-radius: 8px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .breadcrumb-item {
+            color: white;
+            background: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-separator {
+            color: var(--primary-saffron);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="geo-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="geo-topbar">
+        <div class="geo-logo">
+            <img src="../icons/logo.jpg" alt="Logo">
+            <span class="geo-title">Vansh Directory</span>
+        </div>
+        <div class="geo-nav-links">
+            <a href="itihas-puran.html"><i class="fa-solid fa-book"></i> Veda Archive</a>
+            <a href="historic-map.html"><i class="fa-solid fa-map-location-dot"></i> Map</a>
+        </div>
+    </nav>
+
+    <div class="geo-layout-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="geo-sidebar" id="mainSidebar">
+            <div class="geo-sidebar-menu">
+                <a href="../index.html" class="geo-menu-item">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a href="itihas-puran.html" class="geo-menu-item">
+                    <i class="fa-solid fa-book-journal-whills"></i> Itihas Portal
+                </a>
+                <a href="vansh-gotra-directory.html" class="geo-menu-item active">
+                    <i class="fa-solid fa-sitemap"></i> Vansh Directory
+                </a>
+                <a href="sanatan-geography.html" class="geo-menu-item">
+                    <i class="fa-solid fa-earth-asia"></i> Bhugol Map
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="geo-main-content">
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="color: white; font-family: 'Yatra One', cursive; font-size: 3rem; margin-bottom: 1rem;">Lineage <span style="color: var(--primary-saffron);">Search</span></h1>
+                <p style="color: #aaa; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+                    Search for your Surname, Gotra, Community, or Vansh to trace your roots back to the ancient origins.
+                </p>
+            </div>
+
+            <div class="directory-container">
+
+                <!-- Master Search Box -->
+                <div class="master-search-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="masterSearch" class="master-search-input" placeholder="Search Surname, Gotra, Khap, or Vansh (e.g. 'Biyani', 'Chauhan')" autocomplete="off">
+                    <div id="searchResults" class="search-results-dropdown">
+                        <!-- Results injected here by JS -->
+                    </div>
+                </div>
+
+                <!-- Cascading Dropdowns -->
+                <div class="filter-section">
+
+                    <div class="filter-group">
+                        <label for="level1-mahavansh">1. Mahavansh / Pillar</label>
+                        <select id="level1-mahavansh">
+                            <option value="">-- Select Root Lineage --</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="level2-ethnicity">2. Ethnicity / Major Branch</label>
+                        <select id="level2-ethnicity" disabled>
+                            <option value="">-- Select Ethnicity --</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="level3-community">3. Community / Samaj / Khap</label>
+                        <select id="level3-community" disabled>
+                            <option value="">-- Select Community --</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="level4-surname">4. Surname / Gotra / Up-naam</label>
+                        <select id="level4-surname" disabled>
+                            <option value="">-- Select Surname / Gotra --</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Result Card -->
+                <div id="resultCard" class="result-card">
+                    <h3 style="color: white; margin-bottom: 1rem; border-bottom: 1px solid #444; padding-bottom: 10px;">Lineage Details</h3>
+                    <h2 id="resultName" style="color: var(--primary-saffron); font-size: 2rem; margin-bottom: 1rem;"></h2>
+                    <div style="color: #aaa; margin-bottom: 5px;">Trace Route:</div>
+                    <div id="resultPath" class="breadcrumb">
+                        <!-- Breadcrumb injected here -->
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="geo-bottom-nav">
+        <a href="../index.html" class="geo-nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="itihas-puran.html" class="geo-nav-item">
+            <i class="fa-solid fa-book"></i>
+            <span>Veda</span>
+        </a>
+        <a href="vansh-gotra-directory.html" class="geo-nav-item active">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>Vansh</span>
+        </a>
+        <a href="sanatan-geography.html" class="geo-nav-item">
+            <i class="fa-solid fa-earth-asia"></i>
+            <span>Map</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="../js/global.js"></script>
+    <script src="../js/data/vansh-directory.js"></script>
+    <script src="../js/vansh-directory-ui.js"></script>
+</body>
+</html>
