@@ -5,7 +5,9 @@ export const coreData = [
         subtitle: 'वर्तमान मनु',
         gender: 'male',
         parent: 'surya',
+        lineLabel: 'वैवस्वत मनु',
         yug: 'satya',
+        clusterName: 'सूर्य की संतति',
         kali_year: -3988000,
         parichay: 'वर्तमान (सातवें) मन्वंतर के अधिपति और सूर्यदेव (विवस्वान) के पुत्र। इन्हीं से मानव जाति और सूर्यवंशी/चंद्रवंशी क्षत्रिय राजाओं की उत्पत्ति हुई।',
         kathayein: [
@@ -961,6 +963,7 @@ export const coreData = [
         name: 'विकुक्षि',
         subtitle: 'शशाद',
         parent: 'ikshvaku',
+        lineLabel: 'विकुक्षि (शशाद)',
         yug: 'satya',
         clusterName: 'इक्ष्वाकु वंश',
         kali_year: -2160000,
@@ -979,6 +982,7 @@ export const coreData = [
         subtitle: 'विदेह वंश संस्थापक',
         gender: 'male',
         parent: 'ikshvaku',
+        lineLabel: 'विदेह (मिथिला)',
         yug: 'treta',
         kali_year: -2160000,
         clusterName: 'इक्ष्वाकु वंश',
@@ -1002,6 +1006,7 @@ export const coreData = [
         subtitle: 'इक्ष्वाकु के पुत्र',
         gender: 'male',
         parent: 'ikshvaku',
+        lineLabel: 'दण्डकारण्य',
         yug: 'satya',
         kali_year: -2160000,
         parichay: 'इक्ष्वाकु के 100 पुत्रों में से एक दण्डक अत्यंत उदंड और कामुक स्वभाव के थे। उनके इसी स्वभाव के कारण पिता इक्ष्वाकु ने उन्हें विंध्य पर्वत के दक्षिण का जंगली राज्य सौंप दिया। इन्होंने दण्डकारण्य नामक क्षेत्र बसाया।',
@@ -1400,18 +1405,7 @@ export const coreData = [
         parichay: 'सगर के अश्वमेध यज्ञ का घोड़ा इंद्र ने कपिल मुनि के आश्रम में बांध दिया था।',
         clusterName: 'अयोध्या राजवंश'
     },
-    {
-        id: 'sagara_wives_proxy',
-        name: 'सगर की पत्नियाँ',
-        subtitle: 'सुमति व केशिनी',
-        isProxy: true,
-        parent: '',
-        spouseOf: 'sagara',
-        clusterName: 'सगर की पत्नियाँ',
-        yug: 'treta',
-        clusterName: 'अयोध्या राजवंश'
-    },
-    {
+        {
         id: 'sumati_sagara',
         name: 'सुमति',
         subtitle: 'सगर पत्नी',

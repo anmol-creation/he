@@ -247,15 +247,6 @@ export const kashyapData = [
     // --- द्वादश आदित्य (अदिति के १२ पुत्र) ---
     // विवस्वान (सूर्य), इंद्र और उपेन्द्र (वामन) पहले से ही नीचे सूचीबद्ध हैं।
     {
-        id: 'dwadash_aditya_proxy',
-        name: 'अन्य आदित्य',
-        subtitle: 'द्वादश आदित्य',
-        isProxy: true,
-        parent: 'kashyap',
-        clusterName: 'द्वादश आदित्य (अन्य)',
-        yug: 'satya'
-    },
-    {
         id: 'dhatri_aditya',
         name: 'धाता',
         subtitle: 'आदित्य',
@@ -313,74 +304,60 @@ export const kashyapData = [
         subtitle: 'सूर्य देव (अदिति पुत्र)',
         parent: 'kashyap',
         mother: 'aditi',
-        yug: 'satya'
+        gender: 'male',
+        yug: 'satya',
+        parichay: 'कश्यप और अदिति के पुत्र, संपूर्ण सौरमंडल के अधिपति और सूर्यवंश के संस्थापक देव। महर्षि कश्यप के प्रमुख पुत्रों (द्वादश आदित्यों) में से एक।'
     },
     {
         id: 'sanjna_wife',
         name: 'संज्ञा',
         subtitle: 'सूर्य की पत्नी / विश्वकर्मा पुत्री',
-        parent: '',
         spouseOf: 'surya',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'देव शिल्पी विश्वकर्मा की पुत्री और सूर्यदेव की मुख्य पत्नी। ये सूर्य के प्रचंड तेज को सहन न कर पाने के कारण अपनी छाया छोड़कर तपस्या करने चली गई थीं। इन्ही से वैवस्वत मनु, यम, यमी (यमुना), अश्विनी कुमार और रेवन्त का जन्म हुआ।',
         clusterName: 'सूर्यदेव की पत्नियाँ'
     },
     {
         id: 'chhaya_wife',
-        name: 'छाया',
+        name: 'छाया (सवर्ण)',
         subtitle: 'सूर्य की पत्नी / संज्ञा की प्रतिरूप',
-        parent: '',
         spouseOf: 'surya',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'देवी संज्ञा की आध्यात्मिक छाया (प्रतिरूप)। जब संज्ञा तपस्या करने गईं तो उन्होंने अपनी जगह छाया को स्थापित किया। इन्ही से शनि देव, सावर्णि मनु, भद्रा (विष्टि) और ताप्ती का जन्म हुआ।',
         clusterName: 'सूर्यदेव की पत्नियाँ'
     },
-    {
-        id: 'kunti_surya_proxy',
-        name: 'कुंती',
-        subtitle: 'सूर्यदेव (आध्यात्मिक संबंध)',
-        parent: '',
-        spouseOf: 'surya',
-        yug: 'dwapar',
-        parichay: 'दुर्वासा मुनि के मंत्र प्रभाव से कुंती ने सूर्यदेव का आह्वान किया, जिससे कर्ण का जन्म हुआ।',
-        clusterName: 'सूर्यदेव की पत्नियाँ'
-    },
-
     // Surya's Children from Sanjna
-
-    {
-        id: 'surya_other_creations_proxy',
-        name: 'सूर्य की अन्य संतति',
-        subtitle: 'यम, शनि, अश्विनी कुमार',
-        isProxy: true,
-        parent: 'surya',
-        clusterName: 'सूर्य की अन्य संतति',
-        yug: 'satya'
-    },
     {
         id: 'yama',
         name: 'यम (धर्मराज)',
         subtitle: 'सूर्य पुत्र',
         parent: 'surya',
         mother: 'sanjna_wife',
+        gender: 'male',
         yug: 'satya',
-        parichay: 'मृत्यु और न्याय के देवता।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और संज्ञा के पुत्र। मृत्यु, धर्म और न्याय के देवता, जो दक्षिण दिशा के दिक्पाल हैं।',
+        clusterName: 'सूर्य की संतति'
     },
     {
         id: 'dhumorna_wife',
         name: 'धूमोर्णा',
         subtitle: 'यमराज की पत्नी',
-        parent: '',
         spouseOf: 'yama',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'यमराज की एक पत्नी।',
         clusterName: 'यमराज की पत्नियाँ'
     },
     {
         id: 'vijaya_yama_wife',
         name: 'विजया',
         subtitle: 'यमराज की पत्नी',
-        parent: '',
         spouseOf: 'yama',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'यमराज की एक पत्नी, जिनसे कटीला नामक पुत्र हुआ।',
         clusterName: 'यमराज की पत्नियाँ'
     },
     {
@@ -388,7 +365,10 @@ export const kashyapData = [
         name: 'कटीला',
         subtitle: 'यमराज पुत्र',
         parent: 'yama',
-        yug: 'satya'
+        mother: 'vijaya_yama_wife',
+        gender: 'male',
+        yug: 'satya',
+        parichay: 'यमराज और उनकी पत्नी विजया के पुत्र।'
     },
 
     {
@@ -397,27 +377,30 @@ export const kashyapData = [
         subtitle: 'सूर्य पुत्री',
         parent: 'surya',
         mother: 'sanjna_wife',
+        gender: 'female',
         yug: 'satya',
-        parichay: 'यमराज की जुड़वां बहन, जो बाद में यमुना नदी बनीं।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और संज्ञा की पुत्री, जो यमराज की जुड़वां बहन हैं। पृथ्वी पर यही यमुना नदी के रूप में प्रवाहित होती हैं।',
+        clusterName: 'सूर्य की संतति'
     },
     {
         id: 'ashwini_kumar',
-        name: 'अश्विनी कुमार',
-        subtitle: 'नासत्य एवं दस्र',
+        name: 'अश्विनी कुमार (नासत्य एवं दस्र)',
+        subtitle: 'सूर्य पुत्र / देव वैद्य',
         parent: 'surya',
         mother: 'sanjna_wife',
+        gender: 'male',
         yug: 'satya',
-        parichay: 'देवताओं के वैद्य। इनका जन्म तब हुआ जब सूर्य और संज्ञा अश्व रूप में थे।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और संज्ञा के जुड़वा पुत्र, जिनका जन्म अश्व (घोड़े) रूप में हुआ था। ये देवताओं के चिकित्सक (वैद्य) हैं। नासत्य और दस्र इनके मूल नाम हैं।',
+        clusterName: 'सूर्य की संतति'
     },
     {
         id: 'jyotishmati_wife',
         name: 'ज्योतिष्मती',
         subtitle: 'अश्विनी कुमार की पत्नी',
-        parent: '',
         spouseOf: 'ashwini_kumar',
-        yug: 'satya'
+        gender: 'female',
+        yug: 'satya',
+        parichay: 'देव वैद्य अश्विनी कुमारों की पत्नी।'
     },
     {
         id: 'revanta',
@@ -425,9 +408,10 @@ export const kashyapData = [
         subtitle: 'सूर्य पुत्र',
         parent: 'surya',
         mother: 'sanjna_wife',
+        gender: 'male',
         yug: 'satya',
-        parichay: 'युद्ध और अश्व-पालन के देवता। गुह्यकों के स्वामी।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और संज्ञा के सबसे छोटे पुत्र। ये युद्ध, घुड़सवारी और अश्व-पालन के देवता माने जाते हैं तथा गुह्यकों के स्वामी हैं।',
+        clusterName: 'सूर्य की संतति'
     },
 
     // Surya's Children from Chhaya
@@ -437,34 +421,39 @@ export const kashyapData = [
         subtitle: 'कर्मफल दाता',
         parent: 'surya',
         mother: 'chhaya_wife',
-        yug: 'satya' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        gender: 'male',
+        yug: 'satya',
+        parichay: 'सूर्य और छाया के पुत्र, जो नवग्रहों में कर्मफल दाता और दंडाधिकारी माने जाते हैं।',
+        clusterName: 'सूर्य की संतति'
     },
     {
         id: 'neela_wife',
         name: 'नीला',
         subtitle: 'शनि देव की पत्नी',
-        parent: '',
         spouseOf: 'shani',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'शनि देव की मुख्य पत्नियों में से एक।',
         clusterName: 'शनि देव की पत्नियाँ'
     },
     {
         id: 'manda_wife',
-        name: 'मंदा',
+        name: 'मंदा (गन्धर्वराज चित्ररथ की पुत्री)',
         subtitle: 'शनि देव की पत्नी',
-        parent: '',
         spouseOf: 'shani',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'शनि देव की पत्नी, जो गंधर्वराज चित्ररथ की पुत्री थीं। इन्होंने ही शनि देव को श्राप दिया था कि वे जिसे भी देखेंगे, वह नष्ट हो जाएगा।',
         clusterName: 'शनि देव की पत्नियाँ'
     },
     {
         id: 'dhamini_wife',
         name: 'दामिनी',
         subtitle: 'शनि देव की पत्नी',
-        parent: '',
         spouseOf: 'shani',
+        gender: 'female',
         yug: 'satya',
+        parichay: 'शनि देव की पत्नी।',
         clusterName: 'शनि देव की पत्नियाँ'
     },
     {
@@ -472,14 +461,18 @@ export const kashyapData = [
         name: 'गुलिक',
         subtitle: 'शनि पुत्र',
         parent: 'shani',
-        yug: 'satya'
+        gender: 'male',
+        yug: 'satya',
+        parichay: 'शनि देव के पुत्र, जिन्हें ज्योतिष शास्त्र में एक उपग्रह (गुलिक या मांदी) माना जाता है।'
     },
     {
         id: 'kuligai',
         name: 'कुलिगई',
         subtitle: 'शनि पुत्री',
         parent: 'shani',
-        yug: 'satya'
+        gender: 'female',
+        yug: 'satya',
+        parichay: 'शनि देव की पुत्री।'
     },
 
     {
@@ -488,9 +481,10 @@ export const kashyapData = [
         subtitle: 'सूर्य पुत्री',
         parent: 'surya',
         mother: 'chhaya_wife',
+        gender: 'female',
         yug: 'satya',
-        parichay: 'इनका विवाह कुरुवंश के राजा संवरण से हुआ।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और छाया की पुत्री, जो पृथ्वी पर ताप्ती नदी के रूप में प्रवाहित होती हैं। इनका विवाह चंद्रवंशी (कुरुवंश) राजा संवरण से हुआ और इन्हीं के पुत्र कुरु हुए।',
+        clusterName: 'सूर्य की संतति'
     },
     {
         id: 'savarni_manu',
@@ -498,9 +492,10 @@ export const kashyapData = [
         subtitle: 'आगामी मनु',
         parent: 'surya',
         mother: 'chhaya_wife',
+        gender: 'male',
         yug: 'satya',
-        parichay: 'आठवें मन्वंतर के मनु।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और छाया के पुत्र, जो भविष्य में आने वाले आठवें मन्वंतर के अधिपति (सावर्णि मनु) होंगे।',
+        clusterName: 'सूर्य की संतति'
     },
     {
         id: 'vishti_bhadra',
@@ -508,9 +503,10 @@ export const kashyapData = [
         subtitle: 'सूर्य पुत्री',
         parent: 'surya',
         mother: 'chhaya_wife',
+        gender: 'female',
         yug: 'satya',
-        parichay: 'काल और समय से जुड़ी देवी।' ,
-        clusterName: 'सूर्य की अन्य संतति'
+        parichay: 'सूर्य और छाया की पुत्री, जो स्वभाव से अत्यंत उग्र थीं। काल और समय (पंचांग में विष्टि करण / भद्रा काल) इन्हीं से जुड़ा है।',
+        clusterName: 'सूर्य की संतति'
     },
 
     {
@@ -572,8 +568,7 @@ export const kashyapData = [
         id: 'kirti_vamana_wife',
         name: 'कीर्ति',
         subtitle: 'वामन की पत्नी',
-        parent: '',
-        spouseOf: 'upendra_vamana',
+                spouseOf: 'upendra_vamana',
         yug: 'treta',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -601,8 +596,7 @@ export const kashyapData = [
         id: 'charshani_varuna_wife',
         name: 'चर्षाणी (वारुणी)',
         subtitle: 'वरुण की पत्नी',
-        parent: '',
-        spouseOf: 'varuna_aditya',
+                spouseOf: 'varuna_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -641,8 +635,7 @@ export const kashyapData = [
         id: 'revati_mitra_wife',
         name: 'रेवती',
         subtitle: 'मित्र की पत्नी',
-        parent: '',
-        spouseOf: 'mitra_aditya',
+                spouseOf: 'mitra_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -688,8 +681,7 @@ export const kashyapData = [
         id: 'matrika_aryama_wife',
         name: 'मातृका',
         subtitle: 'अर्यमा की पत्नी',
-        parent: '',
-        spouseOf: 'aryama_aditya',
+                spouseOf: 'aryama_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -719,8 +711,7 @@ export const kashyapData = [
         id: 'rachana_tvashta_wife',
         name: 'रचना',
         subtitle: 'दैत्यपुत्री / पत्नी',
-        parent: '',
-        spouseOf: 'tvashta_aditya',
+                spouseOf: 'tvashta_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -775,8 +766,7 @@ export const kashyapData = [
         id: 'ayati_dhata_wife',
         name: 'आयती',
         subtitle: 'धाता की पत्नी',
-        parent: '',
-        spouseOf: 'dhata_aditya',
+                spouseOf: 'dhata_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -804,8 +794,7 @@ export const kashyapData = [
         id: 'siddhi_bhaga_wife',
         name: 'सिद्धि',
         subtitle: 'भग की पत्नी',
-        parent: '',
-        spouseOf: 'bhaga_aditya',
+                spouseOf: 'bhaga_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -883,8 +872,7 @@ export const kashyapData = [
         id: 'prishni_savita_wife',
         name: 'पृश्नि',
         subtitle: 'सविता की पत्नी',
-        parent: '',
-        spouseOf: 'savita_aditya',
+                spouseOf: 'savita_aditya',
         yug: 'satya',
         clusterName: 'अन्य आदित्यों के परिवार'
     },
@@ -921,7 +909,7 @@ export const kashyapData = [
         id: 'vayu',
         name: 'वायु',
         subtitle: 'पवन देव',
-        parent: 'brahma_other_creations_proxy',
+        parent: 'brahma',
         yug: 'satya',
         clusterName: 'ब्रह्मा की अन्य सृष्टियां'
     },
@@ -1142,8 +1130,7 @@ export const kashyapData = [
         id: 'kayadhu',
         name: 'कयाधु',
         subtitle: 'हिरण्यकशिपु की पत्नी',
-        parent: '',
-        spouseOf: 'hiranyakashipu',
+                spouseOf: 'hiranyakashipu',
         yug: 'satya',
         parichay: 'दानवराज जम्भ की पुत्री और विष्णुभक्त प्रह्लाद की माता।'
     },
@@ -1234,8 +1221,7 @@ export const kashyapData = [
         id: 'vindhyavali',
         name: 'विंध्यावली (अश्ना)',
         subtitle: 'राजा बलि की पत्नी',
-        parent: '',
-        spouseOf: 'bali',
+                spouseOf: 'bali',
         yug: 'treta',
         parichay: 'दैत्यराज बलि की धर्मपत्नी, जो वामन अवतार के समय उनके साथ उपस्थित थीं।'
     },
@@ -1282,8 +1268,7 @@ export const kashyapData = [
         id: 'nagalakshmi',
         name: 'नागलक्ष्मी',
         subtitle: 'शेषनाग की पत्नी',
-        parent: '',
-        spouseOf: 'shesha',
+                spouseOf: 'shesha',
         yug: 'satya',
         clusterName: 'नाग वंश (कद्रू के वंशज)'
     },
@@ -1302,8 +1287,7 @@ export const kashyapData = [
         id: 'shatashirsha_naga',
         name: 'शतशीर्षा',
         subtitle: 'वासुकी की पत्नी',
-        parent: '',
-        spouseOf: 'vasuki',
+                spouseOf: 'vasuki',
         yug: 'satya',
         clusterName: 'नाग वंश (कद्रू के वंशज)'
     },
@@ -1363,8 +1347,7 @@ export const kashyapData = [
         id: 'kaliya_patnis',
         name: 'नाग पत्नियाँ',
         subtitle: 'कालिया नाग की पत्नियाँ',
-        parent: '',
-        spouseOf: 'kaliya_naga',
+                spouseOf: 'kaliya_naga',
         yug: 'dwapar',
         parichay: 'कालिया की पत्नियाँ जिन्होंने श्रीकृष्ण से अपने पति के प्राणों की भीख मांगी थी।',
         clusterName: 'नाग वंश (कद्रू के वंशज)'
@@ -1524,8 +1507,7 @@ export const kashyapData = [
         id: 'rishi_jaratkaru',
         name: 'महर्षि जरत्कारु',
         subtitle: 'यायावर वंश',
-        parent: '',
-        spouseOf: 'jaratkaru_naga_sister',
+                spouseOf: 'jaratkaru_naga_sister',
         yug: 'dwapar',
         parichay: 'एक कठोर तपस्वी महर्षि जिनका विवाह नागकन्या जरत्कारु से हुआ था।',
         clusterName: 'नाग वंश (कद्रू के वंशज)'
@@ -1949,8 +1931,7 @@ export const kashyapData = [
         id: 'ruma_wife',
         name: 'रूमा',
         subtitle: 'सुग्रीव की पत्नी',
-        parent: '',
-        spouseOf: 'sugriva',
+                spouseOf: 'sugriva',
         yug: 'treta',
         clusterName: 'सुग्रीव की पत्नियाँ'
     },
@@ -1958,8 +1939,7 @@ export const kashyapData = [
         id: 'tara_wife',
         name: 'तारा',
         subtitle: 'सुग्रीव की पत्नी',
-        parent: '',
-        spouseOf: 'sugriva',
+                spouseOf: 'sugriva',
         yug: 'treta',
         clusterName: 'सुग्रीव की पत्नियाँ'
     },
