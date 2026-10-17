@@ -384,6 +384,7 @@ export const brahmaBaseData = [
         gender: 'male',
         parichay: 'ब्रह्मा जी के शरीर के आधे भाग से उत्पन्न प्रथम पुरुष और प्रथम मन्वंतर के अधिपति।',
         yug: 'satya',
+        timeScale: 'kalpa'
     },
     {
         id: 'shatarupa_brahma',
