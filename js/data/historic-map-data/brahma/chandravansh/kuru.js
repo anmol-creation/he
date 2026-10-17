@@ -1298,7 +1298,8 @@ export const kuruData = [
   mother: 'kunti_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी',
-  kali_year: -127
+  kali_year: -127,
+  parichay: 'पांडवों में सबसे बड़े, धर्मराज (यमराज) के आध्यात्मिक पुत्र।'
 },
     {
   id: 'devika_yudhishthir_chandra',
