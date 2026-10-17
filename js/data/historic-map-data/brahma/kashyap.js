@@ -372,6 +372,36 @@ export const kashyapData = [
     },
 
     {
+        id: 'hemamala_wife',
+        name: 'हेमामाला',
+        subtitle: 'यमराज की पत्नी',
+        spouseOf: 'yama',
+        gender: 'female',
+        yug: 'satya',
+        parichay: 'यमराज (धर्मराज) की पत्नी।',
+        clusterName: 'यमराज की पत्नियाँ'
+    },
+    {
+        id: 'sushila_wife',
+        name: 'सुशीला',
+        subtitle: 'यमराज की पत्नी',
+        spouseOf: 'yama',
+        gender: 'female',
+        yug: 'satya',
+        parichay: 'यमराज (धर्मराज) की पत्नी।',
+        clusterName: 'यमराज की पत्नियाँ'
+    },
+    {
+        id: 'mathara_yama',
+        name: 'माठर',
+        subtitle: 'यमराज के सहायक / पुत्र',
+        parent: 'yama',
+        gender: 'male',
+        yug: 'satya',
+        parichay: 'यमराज के एक प्रमुख सहायक और पार्षद जिन्हें उनके पुत्र के समान भी माना जाता है।'
+    },
+
+    {
         id: 'yami',
         name: 'यमी (यमुना)',
         subtitle: 'सूर्य पुत्री',

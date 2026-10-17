@@ -265,7 +265,9 @@ export const brahmaBaseData = [
         subtitle: 'ब्रह्मा की काया से',
         parent: 'brahma',
         yug: 'satya',
-        timeScale: 'kalpa'
+        timeScale: 'kalpa',
+        gender: 'male',
+        parichay: 'ब्रह्मा जी की काया से उत्पन्न और यमराज (धर्मराज) के मुख्य सहायक जो प्राणियों के कर्मों का लेखा-जोखा रखते हैं।'
     },
     {
         id: 'kayastha_vansh',
@@ -273,7 +275,10 @@ export const brahmaBaseData = [
         subtitle: 'चित्रगुप्त का वंश',
         parent: 'chitragupta',
         yug: 'satya',
-        clusterName: 'चित्रगुप्त (कायस्थ) वंश'},
+        clusterName: 'चित्रगुप्त (कायस्थ) वंश',
+        gender: 'male',
+        parichay: 'चित्रगुप्त के वंशज जो कायस्थ कहलाए। ये भी यमराज के साम्राज्य और पृथ्वी पर कर्म-लेखा के कार्य से जुड़े रहे।'
+    },
     {
         id: 'marichi',
         name: 'मरीचि',
