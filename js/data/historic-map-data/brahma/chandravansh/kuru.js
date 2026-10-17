@@ -410,20 +410,11 @@ export const kuruData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'kaurav_proxy',
-  name: 'अन्य कौरव',
-  subtitle: 'धृतराष्ट्र के 96 पुत्र',
-  parent: 'dhritarashtra_chandra',
-  yug: 'dwapar',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'kaurava_bro_1_chandra',
   name: 'दुस्सह',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -432,7 +423,7 @@ export const kuruData = [
   id: 'kaurava_bro_2_chandra',
   name: 'जलसन्ध',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -441,7 +432,7 @@ export const kuruData = [
   id: 'kaurava_bro_3_chandra',
   name: 'सम',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -450,7 +441,7 @@ export const kuruData = [
   id: 'kaurava_bro_4_chandra',
   name: 'सह',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -459,7 +450,7 @@ export const kuruData = [
   id: 'kaurava_bro_5_chandra',
   name: 'विन्द',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -468,7 +459,7 @@ export const kuruData = [
   id: 'kaurava_bro_6_chandra',
   name: 'अनुविन्द',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -477,7 +468,7 @@ export const kuruData = [
   id: 'kaurava_bro_7_chandra',
   name: 'दुर्धर्ष',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -486,7 +477,7 @@ export const kuruData = [
   id: 'kaurava_bro_8_chandra',
   name: 'सुबाहु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -495,7 +486,7 @@ export const kuruData = [
   id: 'kaurava_bro_9_chandra',
   name: 'दुष्प्रधर्षण',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -504,7 +495,7 @@ export const kuruData = [
   id: 'kaurava_bro_10_chandra',
   name: 'दुर्मर्षण',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -513,7 +504,7 @@ export const kuruData = [
   id: 'kaurava_bro_11_chandra',
   name: 'दुर्मुख',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -522,7 +513,7 @@ export const kuruData = [
   id: 'kaurava_bro_12_chandra',
   name: 'दुष्कर्म',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -531,7 +522,7 @@ export const kuruData = [
   id: 'kaurava_bro_13_chandra',
   name: 'कर्ण (कौरव)',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -540,7 +531,7 @@ export const kuruData = [
   id: 'kaurava_bro_14_chandra',
   name: 'विविंशति',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -549,7 +540,7 @@ export const kuruData = [
   id: 'kaurava_bro_15_chandra',
   name: 'सुलोचन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -558,7 +549,7 @@ export const kuruData = [
   id: 'kaurava_bro_16_chandra',
   name: 'चित्र',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -567,7 +558,7 @@ export const kuruData = [
   id: 'kaurava_bro_17_chandra',
   name: 'उपचित्र',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -576,7 +567,7 @@ export const kuruData = [
   id: 'kaurava_bro_18_chandra',
   name: 'चित्राक्ष',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -585,7 +576,7 @@ export const kuruData = [
   id: 'kaurava_bro_19_chandra',
   name: 'चारुचित्र',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -594,7 +585,7 @@ export const kuruData = [
   id: 'kaurava_bro_20_chandra',
   name: 'शरासन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -603,7 +594,7 @@ export const kuruData = [
   id: 'kaurava_bro_21_chandra',
   name: 'दुर्मद',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -612,7 +603,7 @@ export const kuruData = [
   id: 'kaurava_bro_22_chandra',
   name: 'दुष्प्रगाह',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -621,7 +612,7 @@ export const kuruData = [
   id: 'kaurava_bro_23_chandra',
   name: 'विवित्सु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -630,7 +621,7 @@ export const kuruData = [
   id: 'kaurava_bro_24_chandra',
   name: 'विकट',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -639,7 +630,7 @@ export const kuruData = [
   id: 'kaurava_bro_25_chandra',
   name: 'ऊर्णनाभ',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -648,7 +639,7 @@ export const kuruData = [
   id: 'kaurava_bro_26_chandra',
   name: 'सुनाभ',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -657,7 +648,7 @@ export const kuruData = [
   id: 'kaurava_bro_27_chandra',
   name: 'नन्द',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -666,7 +657,7 @@ export const kuruData = [
   id: 'kaurava_bro_28_chandra',
   name: 'उपनन्दक',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -675,7 +666,7 @@ export const kuruData = [
   id: 'kaurava_bro_29_chandra',
   name: 'सेनापति',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -684,7 +675,7 @@ export const kuruData = [
   id: 'kaurava_bro_30_chandra',
   name: 'सुषेण (कौरव)',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -693,7 +684,7 @@ export const kuruData = [
   id: 'kaurava_bro_31_chandra',
   name: 'कुण्डोदर',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -702,7 +693,7 @@ export const kuruData = [
   id: 'kaurava_bro_32_chandra',
   name: 'महोदर',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -711,7 +702,7 @@ export const kuruData = [
   id: 'kaurava_bro_33_chandra',
   name: 'चित्रबाण',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -720,7 +711,7 @@ export const kuruData = [
   id: 'kaurava_bro_34_chandra',
   name: 'चित्रवर्मन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -729,7 +720,7 @@ export const kuruData = [
   id: 'kaurava_bro_35_chandra',
   name: 'सुवर्मन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -738,7 +729,7 @@ export const kuruData = [
   id: 'kaurava_bro_36_chandra',
   name: 'दुर्विमोचन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -747,7 +738,7 @@ export const kuruData = [
   id: 'kaurava_bro_37_chandra',
   name: 'अयोबाहु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -756,7 +747,7 @@ export const kuruData = [
   id: 'kaurava_bro_38_chandra',
   name: 'महाबाहु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -765,7 +756,7 @@ export const kuruData = [
   id: 'kaurava_bro_39_chandra',
   name: 'चित्रांग',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -774,7 +765,7 @@ export const kuruData = [
   id: 'kaurava_bro_40_chandra',
   name: 'चित्रकुण्डल',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -783,7 +774,7 @@ export const kuruData = [
   id: 'kaurava_bro_41_chandra',
   name: 'भीमवेग',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -792,7 +783,7 @@ export const kuruData = [
   id: 'kaurava_bro_42_chandra',
   name: 'भीमबल',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -801,7 +792,7 @@ export const kuruData = [
   id: 'kaurava_bro_43_chandra',
   name: 'बलाकी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -810,7 +801,7 @@ export const kuruData = [
   id: 'kaurava_bro_44_chandra',
   name: 'बलवर्धन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -819,7 +810,7 @@ export const kuruData = [
   id: 'kaurava_bro_45_chandra',
   name: 'उग्रायुध',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -828,7 +819,7 @@ export const kuruData = [
   id: 'kaurava_bro_46_chandra',
   name: 'भीमकर्ण',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -837,7 +828,7 @@ export const kuruData = [
   id: 'kaurava_bro_47_chandra',
   name: 'कनकायु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -846,7 +837,7 @@ export const kuruData = [
   id: 'kaurava_bro_48_chandra',
   name: 'दृढायुध',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -855,7 +846,7 @@ export const kuruData = [
   id: 'kaurava_bro_49_chandra',
   name: 'दृढवर्मन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -864,7 +855,7 @@ export const kuruData = [
   id: 'kaurava_bro_50_chandra',
   name: 'दृढक्षत्र',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -873,7 +864,7 @@ export const kuruData = [
   id: 'kaurava_bro_51_chandra',
   name: 'सोमकीर्ति',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -882,7 +873,7 @@ export const kuruData = [
   id: 'kaurava_bro_52_chandra',
   name: 'अनूदर',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -891,7 +882,7 @@ export const kuruData = [
   id: 'kaurava_bro_53_chandra',
   name: 'दृढसन्ध',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -900,7 +891,7 @@ export const kuruData = [
   id: 'kaurava_bro_54_chandra',
   name: 'जरासन्ध (कौरव)',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -909,7 +900,7 @@ export const kuruData = [
   id: 'kaurava_bro_55_chandra',
   name: 'सत्यसन्ध',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -918,7 +909,7 @@ export const kuruData = [
   id: 'kaurava_bro_56_chandra',
   name: 'सद:सुवाक',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -927,7 +918,7 @@ export const kuruData = [
   id: 'kaurava_bro_57_chandra',
   name: 'उग्रश्रवा',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -936,7 +927,7 @@ export const kuruData = [
   id: 'kaurava_bro_58_chandra',
   name: 'अश्वसेन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -945,7 +936,7 @@ export const kuruData = [
   id: 'kaurava_bro_59_chandra',
   name: 'सेनानी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -954,7 +945,7 @@ export const kuruData = [
   id: 'kaurava_bro_60_chandra',
   name: 'दुष्पराजय',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -963,7 +954,7 @@ export const kuruData = [
   id: 'kaurava_bro_61_chandra',
   name: 'अपराजित',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -972,7 +963,7 @@ export const kuruData = [
   id: 'kaurava_bro_62_chandra',
   name: 'पण्डितक',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -981,7 +972,7 @@ export const kuruData = [
   id: 'kaurava_bro_63_chandra',
   name: 'विशालाक्ष',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -990,7 +981,7 @@ export const kuruData = [
   id: 'kaurava_bro_64_chandra',
   name: 'दुरावर',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -999,7 +990,7 @@ export const kuruData = [
   id: 'kaurava_bro_65_chandra',
   name: 'दृढहस्त',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1008,7 +999,7 @@ export const kuruData = [
   id: 'kaurava_bro_66_chandra',
   name: 'सुहस्त',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1017,7 +1008,7 @@ export const kuruData = [
   id: 'kaurava_bro_67_chandra',
   name: 'वातवेग',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1026,7 +1017,7 @@ export const kuruData = [
   id: 'kaurava_bro_68_chandra',
   name: 'सुवर्चा',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1035,7 +1026,7 @@ export const kuruData = [
   id: 'kaurava_bro_69_chandra',
   name: 'आदित्यकेतु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1044,7 +1035,7 @@ export const kuruData = [
   id: 'kaurava_bro_70_chandra',
   name: 'बह्वाशी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1053,7 +1044,7 @@ export const kuruData = [
   id: 'kaurava_bro_71_chandra',
   name: 'नागदत्त',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1062,7 +1053,7 @@ export const kuruData = [
   id: 'kaurava_bro_72_chandra',
   name: 'उग्रयायी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1071,7 +1062,7 @@ export const kuruData = [
   id: 'kaurava_bro_73_chandra',
   name: 'कवची',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1080,7 +1071,7 @@ export const kuruData = [
   id: 'kaurava_bro_74_chandra',
   name: 'निषंगी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1089,7 +1080,7 @@ export const kuruData = [
   id: 'kaurava_bro_75_chandra',
   name: 'पाशी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1098,7 +1089,7 @@ export const kuruData = [
   id: 'kaurava_bro_76_chandra',
   name: 'दण्डधार',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1107,7 +1098,7 @@ export const kuruData = [
   id: 'kaurava_bro_77_chandra',
   name: 'धनुर्ग्रह',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1116,7 +1107,7 @@ export const kuruData = [
   id: 'kaurava_bro_78_chandra',
   name: 'उग्र',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1125,7 +1116,7 @@ export const kuruData = [
   id: 'kaurava_bro_79_chandra',
   name: 'भीमरथ',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1134,7 +1125,7 @@ export const kuruData = [
   id: 'kaurava_bro_80_chandra',
   name: 'वीर',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1143,7 +1134,7 @@ export const kuruData = [
   id: 'kaurava_bro_81_chandra',
   name: 'वीरबाहु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1152,7 +1143,7 @@ export const kuruData = [
   id: 'kaurava_bro_82_chandra',
   name: 'अलोलुप',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1161,7 +1152,7 @@ export const kuruData = [
   id: 'kaurava_bro_83_chandra',
   name: 'अभय',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1170,7 +1161,7 @@ export const kuruData = [
   id: 'kaurava_bro_84_chandra',
   name: 'रौद्रकर्मा',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1179,7 +1170,7 @@ export const kuruData = [
   id: 'kaurava_bro_85_chandra',
   name: 'दृढरथ',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1188,7 +1179,7 @@ export const kuruData = [
   id: 'kaurava_bro_86_chandra',
   name: 'अनाधृष्य',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1197,7 +1188,7 @@ export const kuruData = [
   id: 'kaurava_bro_87_chandra',
   name: 'कुण्डभेदी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1206,7 +1197,7 @@ export const kuruData = [
   id: 'kaurava_bro_88_chandra',
   name: 'विरावी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1215,7 +1206,7 @@ export const kuruData = [
   id: 'kaurava_bro_89_chandra',
   name: 'दीर्घलोचन',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1224,7 +1215,7 @@ export const kuruData = [
   id: 'kaurava_bro_90_chandra',
   name: 'दीर्घबाहु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1233,7 +1224,7 @@ export const kuruData = [
   id: 'kaurava_bro_91_chandra',
   name: 'महाबाहु (द्वितीय)',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1242,7 +1233,7 @@ export const kuruData = [
   id: 'kaurava_bro_92_chandra',
   name: 'व्यूढोरु',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1251,7 +1242,7 @@ export const kuruData = [
   id: 'kaurava_bro_93_chandra',
   name: 'कनकध्वज',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1260,7 +1251,7 @@ export const kuruData = [
   id: 'kaurava_bro_94_chandra',
   name: 'कुण्डाशी',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1269,7 +1260,7 @@ export const kuruData = [
   id: 'kaurava_bro_95_chandra',
   name: 'विरजा',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1278,7 +1269,7 @@ export const kuruData = [
   id: 'kaurava_bro_96_chandra',
   name: 'वीर्यवान',
   subtitle: 'कौरव',
-  parent: 'kaurav_proxy',
+  parent: 'dhritarashtra_chandra',
   mother: 'gandhari_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'

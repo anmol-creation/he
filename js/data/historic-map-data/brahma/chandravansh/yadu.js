@@ -187,20 +187,11 @@ export const yaduData = [
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'haihaya_dynasty_proxy',
-  name: 'हैहय वंश',
-  subtitle: 'हैहय के वंशज',
-  parent: 'shatajit_haihaya',
-  yug: 'treta',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'haihaya_chandra',
   name: 'हैहय',
   subtitle: 'हैहय वंश के संस्थापक',
-  parent: 'haihaya_dynasty_proxy',
+  parent: 'sahasrajit_yadu',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -569,21 +560,11 @@ export const yaduData = [
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'vidarbha_dynasty_proxy',
-  name: 'विदर्भ वंश',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'vidarbha_yadu',
-  yug: 'treta',
-  clusterName: 'विदर्भ वंश',
-  isProxy: true,
-  timeScale: 'kalpa'
-},
-    {
+        {
   id: 'bhishmaka_chandra',
   name: 'भीष्मक',
   subtitle: 'विदर्भ नरेश',
-  parent: 'vidarbha_dynasty_proxy',
+  parent: 'vidarbha_chandra',
   gender: 'male',
   clusterName: 'विदर्भ वंश',
   yug: 'dwapar'
@@ -781,16 +762,7 @@ export const yaduData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'satvata_sons_proxy',
-  name: 'सात्वत के पुत्र',
-  subtitle: 'अंधक, वृष्णि आदि 7 पुत्र',
-  isProxy: true,
-  parent: 'satvata_yadu',
-  yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'bhajina_satvata',
   name: 'भजिन',
   subtitle: 'सात्वत पुत्र',
@@ -911,20 +883,11 @@ export const yaduData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'andhaka_dynasty_proxy',
-  name: 'अन्धक वंश',
-  subtitle: 'अन्धक के वंशज',
-  parent: 'andhaka_satvata',
-  yug: 'dwapar',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'bhajamana_andhaka',
   name: 'भजमान',
   subtitle: 'अंधक पुत्र',
-  parent: 'andhaka_dynasty_proxy',
+  parent: 'andhaka_satvata',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -1178,16 +1141,7 @@ export const yaduData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'vrishni_dynasty_proxy',
-  name: 'वृष्णि वंश',
-  subtitle: 'वृष्णि के वंशज',
-  parent: 'vrishni_satvata',
-  yug: 'dwapar',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'shvaphalaka_vrishni',
   name: 'श्वफल्क',
   subtitle: 'वृष्णि वंश',
@@ -1231,17 +1185,7 @@ export const yaduData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'varshney_dynasty_proxy',
-  name: 'वार्ष्णेय (बारहसैनी) वंश',
-  subtitle: 'अक्रूर के वंशज',
-  parent: 'sudeva_akrura_chandra',
-  yug: 'kali',
-  isProxy: true,
-  parichay: 'आधुनिक वार्ष्णेय समाज (बारहसैनी) स्वयं को अक्रूर जी का वंशज मानता है। यह मुख्य रूप से मथुरा, अलीगढ़ और पश्चिमी उत्तर प्रदेश में निवास करते हैं।',
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'devamidhusha_vrishni',
   name: 'देवमीढ़ुष',
   subtitle: 'वृष्णि पुत्र',
@@ -1405,7 +1349,7 @@ export const yaduData = [
   id: 'mitravinda_krishna_chandra',
   name: 'मित्रविन्दा',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_wives_proxy',
+  parent: 'krishna_avatar',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1414,7 +1358,7 @@ export const yaduData = [
   id: 'nagnajiti_krishna_chandra',
   name: 'नग्नजिती (सत्या)',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_wives_proxy',
+  parent: 'krishna_avatar',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1423,7 +1367,7 @@ export const yaduData = [
   id: 'bhadra_krishna_chandra',
   name: 'भद्रा',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_wives_proxy',
+  parent: 'krishna_avatar',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1432,7 +1376,7 @@ export const yaduData = [
   id: 'lakshmana_krishna_chandra',
   name: 'लक्ष्मणा',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_wives_proxy',
+  parent: 'krishna_avatar',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1551,7 +1495,6 @@ export const yaduData = [
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
   parichay: 'भारत का विशाल यादव समाज जो अपनी उत्पत्ति भगवान श्रीकृष्ण और यदुवंश से मानता है। अहीर और अन्य संबंधित जातियां इसी वृहद समूह का हिस्सा हैं।',
-  isProxy: true,
   clusterName: 'नहुष चंद्रवंशी'
 },
     {
@@ -1561,7 +1504,6 @@ export const yaduData = [
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
   parichay: 'यह मुख्यतः महाराष्ट्र, गुजरात और अन्य क्षेत्रों का समुदाय है जो स्वयं को यदुवंशी मानता है। "जादव" शब्द प्राचीन "यादव" का ही सीधा रूपान्तरण है।',
-  isProxy: true,
   clusterName: 'नहुष चंद्रवंशी'
 },
     {
@@ -1571,7 +1513,6 @@ export const yaduData = [
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
   parichay: 'ऐतिहासिक शोधों और पृथ्वीराज रासो जैसे मध्यकालीन ग्रंथों के अनुसार, "जाटव" शब्द "यादव" का ही अपभ्रंश (Jadav/Jatavar) है। इस समुदाय के गोत्र (जैसे कश्यप, भारद्वाज) प्राचीन वैदिक ऋषियों से जुड़े हैं।',
-  isProxy: true,
   clusterName: 'नहुष चंद्रवंशी'
 },
     {
@@ -1590,16 +1531,7 @@ export const yaduData = [
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'bhati_dynasty_proxy',
-  name: 'भाटी वंश',
-  subtitle: 'जैसलमेर राजवंश',
-  parent: 'bhatti_rao_chandra',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'mangal_rao_bhati',
   name: 'मंगल राव',
   subtitle: 'भाटी नरेश',
@@ -1752,16 +1684,7 @@ export const yaduData = [
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'jadeja_dynasty_proxy',
-  name: 'जाडेजा वंश',
-  subtitle: 'कच्छ/जामनगर राजवंश',
-  parent: 'mangal_rao_bhati',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'lakho_jadani_chandra',
   name: 'लाखो जादाणी',
   subtitle: 'जाडेजा वंश के मूल',
@@ -1779,20 +1702,11 @@ export const yaduData = [
   parichay: '1540 ईस्वी में इन्होंने नवानगर (वर्तमान जामनगर) की स्थापना की।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'jadon_dynasty_proxy',
-  name: 'जादौन वंश',
-  subtitle: 'बयाना/करौली राजवंश',
-  parent: 'dharmapala_yaduvanshi_chandra',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'vijaypala_jadon',
   name: 'विजयपाल',
   subtitle: 'बयाना के संस्थापक',
-  parent: 'jadon_dynasty_proxy',
+  parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
   parichay: '1040 ईस्वी में बयाना (विजयमंदिरगढ़) पर राज किया। जादौन राजवंश के प्रमुख।',
   clusterName: 'नहुष चंद्रवंशी'
@@ -1894,16 +1808,7 @@ export const yaduData = [
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'seuna_dynasty_proxy',
-  name: 'सेउण (यादव) वंश',
-  subtitle: 'देवगिरि राजवंश',
-  parent: 'yaduvansh_medieval_link_chandra',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'dridhaprahara_seuna',
   name: 'दृढप्रहार',
   subtitle: 'देवगिरि यादव संस्थापक',
@@ -2074,21 +1979,11 @@ export const yaduData = [
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'sindkhed_jadhav_proxy',
-  name: 'सिंदखेड जाधव शाखा',
-  subtitle: 'ऐतिहासिक अंतराल',
-  parent: 'shankaradeva_seuna',
-  yug: 'kali',
-  parichay: 'देवगिरि के पतन के बाद, यादव वंशज सिंदखेड राजा के जागीरदार बने, जिन्हें जाधव (यादव का अपभ्रंश) कहा जाने लगा।',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'vithoji_jadhav',
   name: 'विठोजी जाधवराव',
   subtitle: 'सिंदखेड के जागीरदार',
-  parent: 'sindkhed_jadhav_proxy',
+  parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
@@ -2338,16 +2233,7 @@ export const yaduData = [
   parichay: 'क्षेमक (अंतिम कुरु राजा) के बाद उनके वंशज दक्षिण (गोदावरी क्षेत्र) चले गए थे, जो बाद में तोमर राजपूतों के रूप में दिल्ली लौटे।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'tomar_dynasty_proxy',
-  name: 'तोमर वंश',
-  subtitle: 'दिल्ली/ग्वालियर राजवंश',
-  parent: 'tomar_medieval_link',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'tungpal_tomar',
   name: 'तुंगपाल (बिलनदेव)',
   subtitle: 'तोमर वंश मूल',
@@ -2521,16 +2407,7 @@ export const yaduData = [
   parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'kalchuri_dynasty_proxy',
-  name: 'कलचुरी वंश',
-  subtitle: 'त्रिपुरी राजवंश',
-  parent: 'kalchuri_medieval_link',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
-    {
+        {
   id: 'vamaraja_kalchuri',
   name: 'वामराज',
   subtitle: 'कलचुरी वंश मूल',

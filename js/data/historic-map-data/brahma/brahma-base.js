@@ -160,15 +160,6 @@ export const brahmaBaseData = [
 
     // Personifications / Veda
     {
-        id: 'char_veda_proxy',
-        name: 'चार वेद',
-        subtitle: 'ब्रह्मा के मुखों से उत्पन्न',
-        parent: 'brahma',
-        yug: 'satya',
-        clusterName: 'चार वेद',
-        isProxy: true
-    },
-    {
         id: 'rigveda',
         name: 'ऋग्वेद',
         subtitle: 'पूर्व मुख से',
@@ -199,19 +190,7 @@ export const brahmaBaseData = [
         parent: 'brahma',
         yug: 'satya',
         clusterName: 'चार वेद'
-    },
-
-    {
-        id: 'char_kumar_proxy',
-        name: 'चार कुमार',
-        subtitle: 'ब्रह्मा के मानस पुत्र',
-        parent: 'brahma',
-        yug: 'satya',
-        timeScale: 'kalpa',
-        clusterName: 'चार कुमार',
-        isProxy: true
-    },
-    {
+    },    {
         id: 'sanak',
         name: 'सनक',
         subtitle: 'सनत कुमार',
@@ -294,9 +273,7 @@ export const brahmaBaseData = [
         subtitle: 'चित्रगुप्त का वंश',
         parent: 'chitragupta',
         yug: 'satya',
-        clusterName: 'चित्रगुप्त (कायस्थ) वंश',
-        isProxy: true
-    },
+        clusterName: 'चित्रगुप्त (कायस्थ) वंश'},
     {
         id: 'marichi',
         name: 'मरीचि',
@@ -390,6 +367,7 @@ export const brahmaBaseData = [
         name: 'दक्ष प्रजापति',
         subtitle: 'अंगूठे से उत्पन्न',
         parent: 'brahma',
+        gender: 'male',
         yug: 'satya',
         timeScale: 'kalpa'
     },
@@ -398,6 +376,8 @@ export const brahmaBaseData = [
         name: 'स्वायंभुव मनु',
         subtitle: 'प्रथम पुरुष',
         parent: 'brahma',
+        gender: 'male',
+        parichay: 'ब्रह्मा जी के शरीर के आधे भाग से उत्पन्न प्रथम पुरुष और प्रथम मन्वंतर के अधिपति।',
         yug: 'satya',
         manvantara: 1
     },
@@ -407,6 +387,8 @@ export const brahmaBaseData = [
         subtitle: 'प्रथम स्त्री',
         parent: 'brahma',
         spouseOf: 'svayambhuva_manu_brahma',
+        gender: 'female',
+        parichay: 'ब्रह्मा जी के शरीर के आधे भाग से उत्पन्न प्रथम स्त्री, जो स्वायंभुव मनु की पत्नी बनीं।',
         yug: 'satya'
     },
 
@@ -416,6 +398,8 @@ export const brahmaBaseData = [
         subtitle: 'मनु पुत्री',
         parent: 'svayambhuva_manu_brahma',
         mother: 'shatarupa_brahma',
+        gender: 'female',
+        parichay: 'स्वायंभुव मनु और शतरूपा की पुत्री, जिनका विवाह रुचि प्रजापति से हुआ।',
         yug: 'satya'
     },
     {
@@ -424,6 +408,7 @@ export const brahmaBaseData = [
         subtitle: 'प्रजापति',
         parent: 'brahma',
         spouseOf: 'akuti',
+        gender: 'male',
         yug: 'satya' ,
         clusterName: 'ब्रह्मा की अन्य सृष्टियाँ'
     },
@@ -433,6 +418,7 @@ export const brahmaBaseData = [
         subtitle: 'विष्णु अवतार',
         parent: 'ruci_prajapati',
         mother: 'akuti',
+        gender: 'male',
         yug: 'satya'
     },
     {
@@ -442,6 +428,7 @@ export const brahmaBaseData = [
         parent: 'ruci_prajapati',
         mother: 'akuti',
         spouseOf: 'yajna_avatar',
+        gender: 'female',
         yug: 'satya'
     },
 
@@ -451,6 +438,8 @@ export const brahmaBaseData = [
         subtitle: 'मनु पुत्री',
         parent: 'svayambhuva_manu_brahma',
         mother: 'shatarupa_brahma',
+        gender: 'female',
+        parichay: 'स्वायंभुव मनु और शतरूपा की पुत्री, जिनका विवाह कर्दम प्रजापति से हुआ और जिनसे कपिल मुनि का जन्म हुआ।',
         yug: 'satya'
     },
     {
@@ -459,6 +448,7 @@ export const brahmaBaseData = [
         subtitle: 'ब्रह्मा की छाया से',
         parent: 'brahma',
         spouseOf: 'devahuti',
+        gender: 'male',
         yug: 'satya' ,
         clusterName: 'ब्रह्मा की अन्य सृष्टियाँ'
     },
@@ -468,22 +458,12 @@ export const brahmaBaseData = [
         subtitle: 'विष्णु अवतार',
         parent: 'kardama_prajapati',
         mother: 'devahuti',
+        gender: 'male',
         yug: 'satya',
         parichay: 'सांख्य दर्शन के प्रणेता महान मुनि और विष्णु के अवतार।'
     },
 
     // --- MARICHI LINEAGE ---
-    {
-        id: 'marichi_wives_proxy',
-        name: 'मरीचि की पत्नियाँ',
-        subtitle: 'कला, सम्भूति व उर्णा',
-        parent: '',
-        spouseOf: 'marichi',
-        yug: 'satya',
-        clusterName: 'मरीचि की पत्नियाँ',
-        isProxy: true,
-        gender: 'female'
-    },
     {
         id: 'kala',
         name: 'कला',
@@ -625,8 +605,7 @@ export const brahmaBaseData = [
         mother: 'devahuti',
         spouseOf: 'atri',
         yug: 'satya',
-        parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।',
-    },
+        parichay: 'सती अनुसूया, जिन्होंने त्रिदेवों को बालक बना दिया था।'},
     {
         id: 'shanti',
         name: 'शांति',
@@ -643,6 +622,8 @@ export const brahmaBaseData = [
         parent: 'svayambhuva_manu_brahma',
         mother: 'shatarupa_brahma',
         spouseOf: 'daksha',
+        gender: 'female',
+        parichay: 'स्वायंभुव मनु और शतरूपा की पुत्री, जिनका विवाह दक्ष प्रजापति से हुआ।',
         yug: 'satya'
     },
 
@@ -652,14 +633,16 @@ export const brahmaBaseData = [
         subtitle: 'मनु के पुत्र',
         parent: 'svayambhuva_manu_brahma',
         mother: 'shatarupa_brahma',
+        gender: 'male',
+        parichay: 'स्वायंभुव मनु और शतरूपा के पुत्र, जो एक महान राजा हुए। इन्हीं के पुत्र भक्त ध्रुव थे।',
         yug: 'satya'
     },
     {
         id: 'suniti',
         name: 'सुनीति',
         subtitle: 'उत्तानपाद पत्नी',
-        parent: '',
         spouseOf: 'uttanapada',
+        gender: 'female',
         yug: 'satya',
         clusterName: 'उत्तानपाद की 2 पत्नियाँ'
     },
@@ -667,8 +650,8 @@ export const brahmaBaseData = [
         id: 'suruchi',
         name: 'सुरुचि',
         subtitle: 'उत्तानपाद पत्नी',
-        parent: '',
         spouseOf: 'uttanapada',
+        gender: 'female',
         yug: 'satya',
         clusterName: 'उत्तानपाद की 2 पत्नियाँ'
     },
@@ -678,6 +661,7 @@ export const brahmaBaseData = [
         subtitle: 'उत्तानपाद पुत्र',
         parent: 'uttanapada',
         mother: 'suruchi',
+        gender: 'male',
         yug: 'satya'
     },
     {
@@ -686,6 +670,7 @@ export const brahmaBaseData = [
         subtitle: 'परम भक्त / ध्रुव तारा',
         parent: 'uttanapada',
         mother: 'suniti',
+        gender: 'male',
         yug: 'satya'
     },
     {
@@ -693,6 +678,8 @@ export const brahmaBaseData = [
         name: 'श्लिष्टि',
         subtitle: 'ध्रुव पुत्र',
         parent: 'dhruva',
+        gender: 'male',
+        parichay: 'भक्त ध्रुव के पुत्र, जो अपने पिता के बाद राजा बने।',
         yug: 'satya'
     },
     {
@@ -700,6 +687,8 @@ export const brahmaBaseData = [
         name: 'रिपु',
         subtitle: 'श्लिष्टि पुत्र',
         parent: 'shlishti',
+        gender: 'male',
+        parichay: 'श्लिष्टि के पुत्र, जो चाक्षुष मनु के पिता थे।',
         yug: 'satya'
     },
     {
@@ -707,8 +696,9 @@ export const brahmaBaseData = [
         name: 'चाक्षुष मनु',
         subtitle: 'रिपु पुत्र',
         parent: 'ripu',
+        gender: 'male',
         yug: 'satya',
-        parichay: 'छठे मन्वंतर के अधिपति चाक्षुष मनु।',
+        parichay: 'सृष्टि के 14 मनुओं में से छठे मन्वंतर (चाक्षुष मन्वंतर) के अधिपति। ये स्वायंभुव मनु के वंशज (उत्तानपाद-ध्रुव-श्लिष्टि-रिपु के पुत्र) हैं।',
         manvantara: 6
     },
     {
@@ -716,6 +706,8 @@ export const brahmaBaseData = [
         name: 'उरु',
         subtitle: 'मनु पुत्र',
         parent: 'chakshusha_manu',
+        gender: 'male',
+        parichay: 'छठे मन्वंतर के अधिपति चाक्षुष मनु के पुत्र।',
         yug: 'satya'
     },
     {
@@ -723,6 +715,8 @@ export const brahmaBaseData = [
         name: 'अंग (वेन के पिता)',
         subtitle: 'उरु पुत्र',
         parent: 'uru',
+        gender: 'male',
+        parichay: 'उरु के पुत्र और राजा वेन के पिता। ये अत्यंत पुण्यात्मा और धर्मपरायण राजा थे।',
         yug: 'satya'
     },
     {
@@ -730,6 +724,8 @@ export const brahmaBaseData = [
         name: 'वेन',
         subtitle: 'अधर्मी राजा',
         parent: 'anga_king',
+        gender: 'male',
+        parichay: 'अंग के पुत्र। ये अत्यंत अधर्मी और अत्याचारी राजा थे, जिन्हें ऋषियों ने हुंकार मात्र से भस्म कर दिया था।',
         yug: 'satya'
     },
     {
@@ -737,6 +733,8 @@ export const brahmaBaseData = [
         name: 'पृथु',
         subtitle: 'जिनके नाम पर पृथ्वी',
         parent: 'vena',
+        gender: 'male',
+        parichay: 'राजा वेन के दाहिने हाथ के मंथन से उत्पन्न भगवान विष्णु के अंशावतार। इन्होंने ही पृथ्वी को समतल कर कृषि योग्य बनाया, जिसके कारण इसका नाम "पृथ्वी" पड़ा।',
         yug: 'satya'
     },
     {
@@ -744,6 +742,7 @@ export const brahmaBaseData = [
         name: 'विजिताश्व',
         subtitle: 'पृथु पुत्र',
         parent: 'prithu',
+        gender: 'male',
         yug: 'satya'
     },
     {
@@ -751,6 +750,7 @@ export const brahmaBaseData = [
         name: 'हर्यश्व',
         subtitle: 'विजिताश्व पुत्र',
         parent: 'vijitashva',
+        gender: 'male',
         yug: 'satya'
     },
     {
@@ -758,6 +758,7 @@ export const brahmaBaseData = [
         name: 'प्राचीनबर्हि',
         subtitle: 'हर्यश्व पुत्र',
         parent: 'haryashva',
+        gender: 'male',
         yug: 'satya'
     },
     {
@@ -765,6 +766,7 @@ export const brahmaBaseData = [
         name: 'प्रचेतागण (10)',
         subtitle: 'प्राचीनबर्हि पुत्र',
         parent: 'prachinabarhi',
+        gender: 'male',
         yug: 'satya',
         parichay: 'प्राचीनबर्हि के 10 पुत्र जिन्होंने 10,000 वर्ष समुद्र में तपस्या की।'
     },
@@ -775,6 +777,8 @@ export const brahmaBaseData = [
         subtitle: 'मनु के पुत्र',
         parent: 'svayambhuva_manu_brahma',
         mother: 'shatarupa_brahma',
+        gender: 'male',
+        parichay: 'स्वायंभुव मनु और शतरूपा के पुत्र। इन्होंने अपने रथ के पहियों से पृथ्वी पर सात समुद्र और सात द्वीप बनाए।',
         yug: 'satya'
     },
     {
@@ -782,6 +786,7 @@ export const brahmaBaseData = [
         name: 'आग्नीध्र',
         subtitle: 'प्रियव्रत पुत्र',
         parent: 'priyavrata',
+        gender: 'male',
         yug: 'satya',
         parichay: 'जम्बूद्वीप (एशिया) के प्रथम शासक।'
     },
@@ -790,14 +795,15 @@ export const brahmaBaseData = [
         name: 'नाभि',
         subtitle: 'आग्नीध्र पुत्र',
         parent: 'agnidhra',
+        gender: 'male',
         yug: 'satya'
     },
     {
         id: 'merudevi',
         name: 'मेरुदेवी',
         subtitle: 'नाभि पत्नी',
-        parent: '',
         spouseOf: 'nabhi',
+        gender: 'female',
         yug: 'satya'
     },
     {
@@ -919,22 +925,11 @@ export const brahmaBaseData = [
         parent: 'nakta',
         yug: 'satya',
         parichay: 'विष्णु के अंशावतार और एक अत्यंत महान और न्यायप्रिय राजर्षि। विष्णु पुराण और भागवत के अनुसार ये बहुत बड़े सिद्ध राजा थे।'
-    },
-    {
-        id: 'angiras_vansh_proxy',
-        name: 'अंगिरस वंश',
-        subtitle: 'अंगिरस के वंशज',
-        parent: 'angiras',
-        yug: 'satya',
-        clusterName: 'अंगिरस वंश',
-        isProxy: true
-    },
-    {
+    },    {
         id: 'shraddha',
         name: 'श्रद्धा (स्मृति)',
         subtitle: 'अंगिरस की पत्नी',
-        parent: '',
-        spouseOf: 'angiras',
+                spouseOf: 'angiras',
         yug: 'satya',
         parichay: 'सप्तर्षि अंगिरस की प्रमुख पत्नी। विभिन्न पुराणों में इन्हें श्रद्धा (कर्दम पुत्री) और स्मृति (दक्ष पुत्री) कहा गया है।',
         clusterName: 'अंगिरस वंश'
@@ -1011,8 +1006,7 @@ export const brahmaBaseData = [
         id: 'mamata',
         name: 'ममता',
         subtitle: 'उतथ्य की पत्नी',
-        parent: '',
-        spouseOf: 'utathya',
+                spouseOf: 'utathya',
         yug: 'satya',
         clusterName: 'अंगिरस वंश'
     },
@@ -1030,8 +1024,7 @@ export const brahmaBaseData = [
         id: 'pradveshi',
         name: 'प्रद्वेषी',
         subtitle: 'दीर्घतमस की प्रथम पत्नी',
-        parent: '',
-        spouseOf: 'dirghatamas',
+                spouseOf: 'dirghatamas',
         yug: 'treta',
         clusterName: 'अंगिरस वंश'
     },
@@ -1048,8 +1041,7 @@ export const brahmaBaseData = [
         id: 'ahalya',
         name: 'अहल्या',
         subtitle: 'गौतम की पत्नी',
-        parent: '',
-        spouseOf: 'gautama',
+                spouseOf: 'gautama',
         yug: 'treta',
         clusterName: 'अंगिरस वंश'
     },
@@ -1103,8 +1095,7 @@ export const brahmaBaseData = [
         id: 'tara_brihaspati',
         name: 'तारा',
         subtitle: 'बृहस्पति की पत्नी',
-        parent: '',
-        spouseOf: 'brihaspati',
+                spouseOf: 'brihaspati',
         yug: 'satya',
         clusterName: 'अंगिरस वंश'
     },
@@ -1132,8 +1123,7 @@ export const brahmaBaseData = [
         id: 'usij',
         name: 'उशिज',
         subtitle: 'दासी',
-        parent: '',
-        spouseOf: 'dirghatamas',
+                spouseOf: 'dirghatamas',
         yug: 'treta',
         clusterName: 'अंगिरस वंश'
     },
@@ -1150,8 +1140,7 @@ export const brahmaBaseData = [
         id: 'kakshivan_patni',
         name: 'राजा स्वनय की पुत्रियां',
         subtitle: 'कक्षीवान की पत्नियाँ',
-        parent: '',
-        spouseOf: 'kakshivan',
+                spouseOf: 'kakshivan',
         yug: 'treta',
         clusterName: 'अंगिरस वंश'
     },
@@ -1232,21 +1221,10 @@ export const brahmaBaseData = [
 
     // --- PULASTYA LINEAGE ---
     {
-        id: 'pulastya_vansh_proxy',
-        name: 'पुलस्त्य वंश',
-        subtitle: 'कुबेर, रावण आदि',
-        parent: '',
-        spouseOf: 'pulastya',
-        yug: 'treta',
-        clusterName: 'पुलस्त्य वंश (रावण/कुबेर)',
-        isProxy: true
-    },
-    {
         id: 'havirbhu',
         name: 'हविर्भू',
         subtitle: 'कर्दम ऋषि पुत्री',
-        parent: '',
-        spouseOf: 'pulastya',
+                spouseOf: 'pulastya',
         yug: 'satya',
         parichay: 'पुलस्त्य ऋषि की पत्नी और विश्रवा की माता।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1258,7 +1236,7 @@ export const brahmaBaseData = [
         id: 'suketu_yaksha',
         name: 'सुकेतु',
         subtitle: 'यक्षराज',
-        parent: 'brahma_other_creations_proxy',
+        parent: 'brahma',
         yug: 'satya',
         parichay: 'एक अत्यंत बलवान यक्ष जिसने ब्रह्मा जी की घोर तपस्या की, जिससे उसे ताड़का नामक पुत्री प्राप्त हुई।',
         clusterName: 'यक्ष वंश'
@@ -1276,8 +1254,7 @@ export const brahmaBaseData = [
         id: 'sunda_asura',
         name: 'सुन्द',
         subtitle: 'ताड़का का पति',
-        parent: '',
-        spouseOf: 'tataka',
+                spouseOf: 'tataka',
         yug: 'treta',
         parichay: 'एक असुर, जिसका वध अगस्त्य मुनि ने किया था।',
         clusterName: 'यक्ष वंश'
@@ -1306,7 +1283,7 @@ export const brahmaBaseData = [
         id: 'manibhadra_yaksha',
         name: 'मणिभद्र',
         subtitle: 'यक्ष सेनापति',
-        parent: 'brahma_other_creations_proxy',
+        parent: 'brahma',
         yug: 'satya',
         parichay: 'कुबेर के मुख्य सेनापतियों में से एक और धन के रक्षक। प्राचीन काल से ही इनकी पूजा होती रही है।',
         clusterName: 'यक्ष वंश'
@@ -1315,7 +1292,7 @@ export const brahmaBaseData = [
         id: 'sthuna_yaksha',
         name: 'स्थूणाकर्ण (स्थूण)',
         subtitle: 'यक्ष',
-        parent: 'brahma_other_creations_proxy',
+        parent: 'brahma',
         yug: 'dwapar',
         parichay: 'महाभारत का एक यक्ष, जिसने भीष्म से युद्ध करने के लिए अंबा (शिखंडी) को अपना पुरुषत्व दे दिया था।',
         clusterName: 'यक्ष वंश'
@@ -1380,16 +1357,6 @@ export const brahmaBaseData = [
 
     // Sumali's Prominent Children (Ravana's Maternal Uncles)
     {
-        id: 'sumali_sons_proxy',
-        name: 'सुमाली के 10 पुत्र',
-        subtitle: 'रावण के मामा',
-        parent: 'sumali_rakshasa',
-        yug: 'treta',
-        parichay: 'सुमाली के प्रहस्त, अकम्पन, विकट, धूम्राक्ष आदि 10 पुत्र, जो रावण की सेना के मुख्य सेनापति थे।',
-        clusterName: 'मूल राक्षस वंश'
-    },
-
-    {
         id: 'vishrava',
         name: 'विश्रवा',
         subtitle: 'पुलस्त्य पुत्र',
@@ -1412,8 +1379,7 @@ export const brahmaBaseData = [
         id: 'pushpotkata',
         name: 'पुष्पोत्कटा',
         subtitle: 'विश्रवा की पत्नी',
-        parent: '',
-        spouseOf: 'vishrava',
+                spouseOf: 'vishrava',
         yug: 'treta',
         parichay: 'विश्रवा की पत्नी और खर की माता।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1422,8 +1388,7 @@ export const brahmaBaseData = [
         id: 'malini',
         name: 'मालिनी',
         subtitle: 'विश्रवा की पत्नी',
-        parent: '',
-        spouseOf: 'vishrava',
+                spouseOf: 'vishrava',
         yug: 'treta',
         parichay: 'विश्रवा की पत्नी और दूषण की माता।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1443,8 +1408,7 @@ export const brahmaBaseData = [
         id: 'bhadra',
         name: 'भद्रा',
         subtitle: 'कुबेर की पत्नी',
-        parent: '',
-        spouseOf: 'kuber',
+                spouseOf: 'kuber',
         yug: 'treta',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
     },
@@ -1529,8 +1493,7 @@ export const brahmaBaseData = [
         id: 'dhanyamalini',
         name: 'धन्यमालिनी',
         subtitle: 'रावण की पत्नी',
-        parent: '',
-        spouseOf: 'ravana',
+                spouseOf: 'ravana',
         yug: 'treta',
         parichay: 'रावण की दूसरी पत्नी और अतिकाय की माता।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1636,8 +1599,7 @@ export const brahmaBaseData = [
         id: 'sarama',
         name: 'सरमा',
         subtitle: 'विभीषण की पत्नी',
-        parent: '',
-        spouseOf: 'vibhishana',
+                spouseOf: 'vibhishana',
         yug: 'treta',
         parichay: 'विभीषण की धार्मिक पत्नी।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1669,8 +1631,7 @@ export const brahmaBaseData = [
         id: 'karkati',
         name: 'कर्कटी',
         subtitle: 'कुम्भकर्ण की पत्नी',
-        parent: '',
-        spouseOf: 'kumbhakarna',
+                spouseOf: 'kumbhakarna',
         yug: 'treta',
         parichay: 'सह्याद्रि पर्वत की राक्षसी।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1690,8 +1651,7 @@ export const brahmaBaseData = [
         id: 'vidyujjihva',
         name: 'विद्युज्जिह्व',
         subtitle: 'शूर्पणखा का पति',
-        parent: '',
-        spouseOf: 'shurpanakha',
+                spouseOf: 'shurpanakha',
         yug: 'treta',
         parichay: 'कालकेय दानव, जिसे रावण ने गलती से युद्ध में मार दिया था।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1730,8 +1690,7 @@ export const brahmaBaseData = [
         id: 'madhu_asura_lavana',
         name: 'मधु (असुर)',
         subtitle: 'कुम्भीनसी का पति',
-        parent: '',
-        spouseOf: 'kumbhinasi',
+                spouseOf: 'kumbhinasi',
         yug: 'treta',
         parichay: 'मधुवन का राजा, जिसे शिव से त्रिशूल प्राप्त था।',
         clusterName: 'पुलस्त्य वंश (रावण/कुबेर)'
@@ -1779,26 +1738,15 @@ export const brahmaBaseData = [
         id: 'paulomi',
         name: 'पुलोमा',
         subtitle: 'भृगु पत्नी',
-        parent: '',
-        spouseOf: 'bhrigu',
+                spouseOf: 'bhrigu',
         yug: 'satya',
         parichay: 'महर्षि भृगु की पत्नी और च्यवन ऋषि की माता।',
         clusterName: 'भृगु की 2 पत्नियाँ'
-    },
-    {
-        id: 'bhrigu_dynasty_proxy',
-        name: 'भार्गव (भृगु) वंश',
-        subtitle: 'भृगु के वंशज',
-        parent: 'bhrigu',
-        yug: 'satya',
-        clusterName: 'भार्गव (भृगु) वंश',
-        isProxy: true
-    },
-    {
+    },    {
         id: 'dhata',
         name: 'धाता',
         subtitle: 'भृगु पुत्र',
-        parent: 'bhrigu_dynasty_proxy',
+        parent: 'bhrigu',
         clusterName: 'भार्गव (भृगु) वंश',
         mother: 'khyati',
         yug: 'satya'
@@ -1807,7 +1755,7 @@ export const brahmaBaseData = [
         id: 'vidhata',
         name: 'विधाता',
         subtitle: 'भृगु पुत्र',
-        parent: 'bhrigu_dynasty_proxy',
+        parent: 'bhrigu',
         clusterName: 'भार्गव (भृगु) वंश',
         mother: 'khyati',
         yug: 'satya'
@@ -1818,16 +1766,14 @@ export const brahmaBaseData = [
         id: 'ayati',
         name: 'आयति',
         subtitle: 'धाता पत्नी',
-        parent: '',
-        spouseOf: 'dhata',
+                spouseOf: 'dhata',
         yug: 'satya'
     },
     {
         id: 'niyati',
         name: 'नियति',
         subtitle: 'विधाता पत्नी',
-        parent: '',
-        spouseOf: 'vidhata',
+                spouseOf: 'vidhata',
         yug: 'satya'
     },
     {
@@ -1884,7 +1830,7 @@ export const brahmaBaseData = [
         id: 'dadhichi',
         name: 'दधीचि',
         subtitle: 'भृगु पुत्र',
-        parent: 'bhrigu_dynasty_proxy',
+        parent: 'bhrigu',
         clusterName: 'भार्गव (भृगु) वंश',
         yug: 'satya',
         parichay: 'महान शिव भक्त ऋषि जिन्होंने वृत्रासुर के वध हेतु वज्र बनाने के लिए अपनी अस्थियों का दान किया था।'
@@ -1901,8 +1847,7 @@ export const brahmaBaseData = [
         id: 'padma_pippalada',
         name: 'पद्मा',
         subtitle: 'अनरण्य पुत्री',
-        parent: '',
-        spouseOf: 'pippalada',
+                spouseOf: 'pippalada',
         yug: 'satya',
         parichay: 'इक्ष्वाकु वंशी राजा अनरण्य की पुत्री और महर्षि पिप्पलाद की पत्नी।'
     },
@@ -1912,7 +1857,7 @@ export const brahmaBaseData = [
         id: 'shukracharya',
         name: 'शुक्राचार्य',
         subtitle: 'दैत्यों के गुरु',
-        parent: 'bhrigu_dynasty_proxy',
+        parent: 'bhrigu',
         clusterName: 'भार्गव (भृगु) वंश',
         mother: 'khyati',
         yug: 'satya'
@@ -1964,7 +1909,7 @@ export const brahmaBaseData = [
         id: 'chyavana',
         name: 'च्यवन',
         subtitle: 'भृगु पुत्र',
-        parent: 'bhrigu_dynasty_proxy',
+        parent: 'bhrigu',
         clusterName: 'भार्गव (भृगु) वंश',
         mother: 'paulomi',
         yug: 'satya',
@@ -1974,8 +1919,7 @@ export const brahmaBaseData = [
         id: 'sukanya',
         name: 'सुकन्या',
         subtitle: 'शर्याति पुत्री',
-        parent: '',
-        spouseOf: 'chyavana',
+                spouseOf: 'chyavana',
         yug: 'satya',
         parichay: 'राजा शर्याति की पुत्री और च्यवन ऋषि की परम पतिव्रता पत्नी।'
     },
@@ -2009,8 +1953,7 @@ export const brahmaBaseData = [
         id: 'pramadvara',
         name: 'प्रमद्वरा',
         subtitle: 'रुरु पत्नी',
-        parent: '',
-        spouseOf: 'ruru',
+                spouseOf: 'ruru',
         yug: 'treta',
         parichay: 'मेनका अप्सरा की पुत्री और रुरु की पत्नी।'
     },
@@ -2103,20 +2046,10 @@ export const brahmaBaseData = [
 
     // --- VASHISTHA LINEAGE ---
     {
-        id: 'vashistha_vansh_proxy',
-        name: 'वशिष्ठ वंश',
-        subtitle: 'अरुंधती, व्यास आदि',
-        parent: 'vashistha',
-        yug: 'treta',
-        clusterName: 'वशिष्ठ वंश',
-        isProxy: true
-    },
-    {
         id: 'arundhati',
         name: 'अरुंधती',
         subtitle: 'वशिष्ठ पत्नी',
-        parent: '',
-        spouseOf: 'vashistha',
+                spouseOf: 'vashistha',
         yug: 'satya',
         clusterName: 'वशिष्ठ वंश'
     },
@@ -2133,8 +2066,7 @@ export const brahmaBaseData = [
         id: 'adrishyanti',
         name: 'अदृश्यन्ती',
         subtitle: 'शक्ति पत्नी',
-        parent: '',
-        spouseOf: 'shakti',
+                spouseOf: 'shakti',
         yug: 'satya',
         parichay: 'महर्षि शक्ति की पत्नी और पराशर की माता।',
         clusterName: 'वशिष्ठ वंश'
@@ -2152,8 +2084,7 @@ export const brahmaBaseData = [
         id: 'satyavati',
         name: 'सत्यवती',
         subtitle: 'मत्स्यगंधा',
-        parent: '',
-        spouseOf: 'parashar',
+                spouseOf: 'parashar',
         yug: 'treta',
         parichay: 'निषादराज की पुत्री। पराशर ऋषि के आशीर्वाद से इन्होने वेद व्यास को जन्म दिया। बाद में शांतनु से विवाह किया।',
         clusterName: 'वशिष्ठ वंश'
@@ -2179,8 +2110,7 @@ export const brahmaBaseData = [
         id: 'pivari',
         name: 'पिबरी',
         subtitle: 'शुकदेव पत्नी',
-        parent: '',
-        spouseOf: 'shuka',
+                spouseOf: 'shuka',
         yug: 'dwapar',
         parichay: 'शुकदेव मुनि की पत्नी और पितरों की मानसी पुत्री।',
         clusterName: 'वशिष्ठ वंश'
@@ -2244,8 +2174,7 @@ export const brahmaBaseData = [
         id: 'nandini_chitragupta',
         name: 'नंदिनी',
         subtitle: 'सूर्यदक्षिणा / चित्रगुप्त की पत्नी',
-        parent: '',
-        spouseOf: 'chitragupta',
+                spouseOf: 'chitragupta',
         yug: 'satya',
         clusterName: 'चित्रगुप्त की 2 पत्नियाँ'
     },
@@ -2253,8 +2182,7 @@ export const brahmaBaseData = [
         id: 'iravati_chitragupta',
         name: 'इरावती',
         subtitle: 'शोभावती / चित्रगुप्त की पत्नी',
-        parent: '',
-        spouseOf: 'chitragupta',
+                spouseOf: 'chitragupta',
         yug: 'satya',
         clusterName: 'चित्रगुप्त की 2 पत्नियाँ'
     },
@@ -2274,8 +2202,7 @@ export const brahmaBaseData = [
         id: 'padmini_bhanu',
         name: 'पद्मिनी',
         subtitle: 'भानु की पत्नी (वासुकी की पुत्री)',
-        parent: '',
-        spouseOf: 'bhanu',
+                spouseOf: 'bhanu',
         yug: 'satya'
     },
 
@@ -2293,8 +2220,7 @@ export const brahmaBaseData = [
         id: 'malati_vibhanu',
         name: 'मालती',
         subtitle: 'विभानु की पत्नी',
-        parent: '',
-        spouseOf: 'vibhanu',
+                spouseOf: 'vibhanu',
         yug: 'satya',
         clusterName: 'चित्रगुप्त (कायस्थ) वंश'
     },
@@ -2313,8 +2239,7 @@ export const brahmaBaseData = [
         id: 'bimbvati_vishvabhanu',
         name: 'बिम्बवती',
         subtitle: 'विश्वभानु की पत्नी',
-        parent: '',
-        spouseOf: 'vishvabhanu',
+                spouseOf: 'vishvabhanu',
         yug: 'satya'
     },
 
@@ -2332,8 +2257,7 @@ export const brahmaBaseData = [
         id: 'singhadhwani_veeryabhanu',
         name: 'सिंघध्वनि',
         subtitle: 'वीर्यभानु की पत्नी',
-        parent: '',
-        spouseOf: 'veeryabhanu',
+                spouseOf: 'veeryabhanu',
         yug: 'satya',
         clusterName: 'चित्रगुप्त (कायस्थ) वंश'
     },
@@ -2353,8 +2277,7 @@ export const brahmaBaseData = [
         id: 'pankajakshi_charu',
         name: 'पंकजाक्षी',
         subtitle: 'चारु की पत्नी',
-        parent: '',
-        spouseOf: 'charu',
+                spouseOf: 'charu',
         yug: 'satya',
         clusterName: 'चित्रगुप्त (कायस्थ) वंश'
     },
@@ -2373,8 +2296,7 @@ export const brahmaBaseData = [
         id: 'mandhiya_sucharu',
         name: 'मंधिया',
         subtitle: 'सुचारु की पत्नी',
-        parent: '',
-        spouseOf: 'sucharu',
+                spouseOf: 'sucharu',
         yug: 'satya',
         clusterName: 'चित्रगुप्त (कायस्थ) वंश'
     },
@@ -2393,8 +2315,7 @@ export const brahmaBaseData = [
         id: 'bhadrakalini_chitra',
         name: 'भद्रकालिनी',
         subtitle: 'चित्र की पत्नी',
-        parent: '',
-        spouseOf: 'chitra_son',
+                spouseOf: 'chitra_son',
         yug: 'satya'
     },
 
@@ -2412,8 +2333,7 @@ export const brahmaBaseData = [
         id: 'kokalesh_matibhan',
         name: 'कोकलेश',
         subtitle: 'मतिभान की पत्नी',
-        parent: '',
-        spouseOf: 'matibhan',
+                spouseOf: 'matibhan',
         yug: 'satya'
     },
 
@@ -2431,8 +2351,7 @@ export const brahmaBaseData = [
         id: 'bhujangakshi_himavan',
         name: 'भुजंगाक्षी',
         subtitle: 'हिमवान की पत्नी',
-        parent: '',
-        spouseOf: 'himavan',
+                spouseOf: 'himavan',
         yug: 'satya'
     },
 
@@ -2450,8 +2369,7 @@ export const brahmaBaseData = [
         id: 'ashagandhamati_chitracharu',
         name: 'अशगंधमति',
         subtitle: 'चित्रचारु की पत्नी',
-        parent: '',
-        spouseOf: 'chitracharu',
+                spouseOf: 'chitracharu',
         yug: 'satya'
     },
 
@@ -2469,8 +2387,7 @@ export const brahmaBaseData = [
         id: 'kokalasuta_chitracharan',
         name: 'कोकलसुता',
         subtitle: 'चित्रचरण की पत्नी',
-        parent: '',
-        spouseOf: 'chitracharan',
+                spouseOf: 'chitracharan',
         yug: 'satya'
     },
 
@@ -2488,8 +2405,7 @@ export const brahmaBaseData = [
         id: 'manjubhashini_charun',
         name: 'मंजुभाषिणी',
         subtitle: 'चारुण की पत्नी',
-        parent: '',
-        spouseOf: 'charun',
+                spouseOf: 'charun',
         yug: 'satya',
         clusterName: 'चित्रगुप्त (कायस्थ) वंश'
     },
@@ -2567,15 +2483,6 @@ export const brahmaBaseData = [
 
     // --- PULAHA LINEAGE ---
     {
-        id: 'pulaha_vansh_proxy',
-        name: 'पुलह वंश',
-        subtitle: 'पुलह के वंशज',
-        parent: 'pulaha',
-        yug: 'satya',
-        clusterName: 'पुलह वंश',
-        isProxy: true
-    },
-    {
         id: 'kshama_pulaha',
         name: 'क्षमा',
         subtitle: 'दक्ष पुत्री / पुलह पत्नी',
@@ -2589,8 +2496,7 @@ export const brahmaBaseData = [
         id: 'gati_pulaha',
         name: 'गति',
         subtitle: 'कर्दम पुत्री / पुलह पत्नी',
-        parent: '',
-        spouseOf: 'pulaha',
+                spouseOf: 'pulaha',
         yug: 'satya',
         parichay: 'कर्दम ऋषि की पुत्री और महर्षि पुलह की पत्नी।',
         clusterName: 'पुलह वंश'
@@ -2642,15 +2548,6 @@ export const brahmaBaseData = [
     },
 
     // --- DHARMA DEVA LINEAGE (Sons of Brahma) ---
-    {
-        id: 'dharma_vansh_proxy',
-        name: 'धर्म वंश',
-        subtitle: 'धर्म के वंशज',
-        parent: 'dharma_deva',
-        yug: 'satya',
-        clusterName: 'धर्म वंश',
-        isProxy: true
-    },
     {
         id: 'murti_dharma',
         name: 'मूर्ति',
@@ -2942,15 +2839,6 @@ export const brahmaBaseData = [
 
     // --- ADHARMA LINEAGE ---
     {
-        id: 'adharma_dynasty_proxy',
-        name: 'अधर्म वंश',
-        subtitle: 'अधर्म के वंशज',
-        parent: 'adharma',
-        yug: 'satya',
-        clusterName: 'अधर्म वंश',
-        isProxy: true
-    },
-    {
         id: 'mrisha_adharma',
         name: 'मृषा',
         subtitle: 'अधर्म की पत्नी',
@@ -2962,7 +2850,7 @@ export const brahmaBaseData = [
         id: 'dambha',
         name: 'दम्भ',
         subtitle: 'अधर्म पुत्र',
-        parent: 'adharma_dynasty_proxy',
+        parent: 'adharma',
         mother: 'mrisha_adharma',
         yug: 'satya' ,
         clusterName: 'अधर्म वंश'
@@ -2971,7 +2859,7 @@ export const brahmaBaseData = [
         id: 'maya_adharma',
         name: 'माया',
         subtitle: 'अधर्म पुत्री',
-        parent: 'adharma_dynasty_proxy',
+        parent: 'adharma',
         mother: 'mrisha_adharma',
         yug: 'satya' ,
         clusterName: 'अधर्म वंश'
@@ -3201,8 +3089,7 @@ export const brahmaBaseData = [
         id: 'kriya_kratu',
         name: 'क्रिया',
         subtitle: 'कर्दम पुत्री / क्रतु पत्नी',
-        parent: '',
-        spouseOf: 'kratu',
+                spouseOf: 'kratu',
         yug: 'satya',
         parichay: 'कर्दम ऋषि की पुत्री और महर्षि क्रतु की पत्नी (श्रीमद्भागवत)।',
         clusterName: 'क्रतु की 2 पत्नियाँ'
@@ -3285,29 +3172,7 @@ export const brahmaBaseData = [
         yug: 'satya',
         parichay: 'ब्रह्मा जी की वाणी से उत्पन्न मानस पुत्र (बाद में वेदव्यास बने)।' ,
         clusterName: 'ब्रह्मा की अन्य सृष्टियाँ'
-    },
-
-
-    {
-        id: 'brahma_other_creations_proxy',
-        name: 'ब्रह्मा की अन्य सृष्टियाँ',
-        subtitle: 'मानस एवं वैचारिक सृष्टियाँ',
-        isProxy: true,
-        parent: 'brahma',
-        clusterName: 'ब्रह्मा की अन्य सृष्टियाँ',
-        timeScale: 'kalpa',
-        yug: 'satya'
-    },
-    {
-        id: 'char_varna_proxy',
-        name: 'चार वर्ण',
-        subtitle: 'ब्रह्मा द्वारा उत्पन्न',
-        parent: 'brahma',
-        yug: 'satya',
-        clusterName: 'चार वर्ण',
-        isProxy: true
-    },
-    {
+    },    {
         id: 'brahmana_varna',
         name: 'ब्राह्मण (वर्ण)',
         subtitle: 'मुख से उत्पन्न',
