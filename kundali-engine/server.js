@@ -25,12 +25,13 @@ app.post('/api/calculate', (req, res) => {
         // Simple logic to convert local time to UTC for Swisseph
         // Indian Standard Time is UTC+5:30. Let's assume input is IST for this basic setup.
         // In a real app, you'd use a timezone library.
-        const localDate = new Date(`${date}T${time}:00+05:30`);
+        const istDateObj = new Date(`${date}T${time}:00+05:30`);
+        const year = istDateObj.getUTCFullYear();
+        const month = istDateObj.getUTCMonth() + 1; // getUTCMonth is 0-indexed
+        const day = istDateObj.getUTCDate();
 
-        const year = localDate.getUTCFullYear();
-        const month = localDate.getUTCMonth() + 1;
-        const day = localDate.getUTCDate();
-        const hour = localDate.getUTCHours() + localDate.getUTCMinutes() / 60.0 + localDate.getUTCSeconds() / 3600.0;
+        // Accurate decimal UTC hour calculation
+        const hour = istDateObj.getUTCHours() + (istDateObj.getUTCMinutes() / 60.0) + (istDateObj.getUTCSeconds() / 3600.0);
 
         const jd = swisseph.swe_julday(year, month, day, hour, swisseph.SE_GREG_CAL);
 
@@ -68,8 +69,8 @@ app.post('/api/calculate', (req, res) => {
         let sunLong = 0;
         let moonLong = 0;
         results.forEach(p => {
-            if (p.name === 'Sun') sunLong = p.longitude;
-            if (p.name === 'Moon') moonLong = p.longitude;
+            if (p.name.includes('Sun')) sunLong = p.longitude;
+            if (p.name.includes('Moon')) moonLong = p.longitude;
         });
 
         let diff = moonLong - sunLong;
