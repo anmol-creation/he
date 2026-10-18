@@ -12,6 +12,13 @@ const i18n = {
         yogaTitle: "Yoga and Dosha Analysis",
         namePlaceholder: "Enter name",
         cityPlaceholder: "e.g., Ayodhya, India",
+        patraLabel: "Patra (Current Life Status / Identity)",
+        patraOptions: {
+            student: "Student / Learner",
+            struggling_hustler: "Struggling Hustler / Founder",
+            job_employee: "9-to-5 Employee",
+            established_business: "Established Businessman"
+        },
         fetchingCoords: "Fetching coordinates...",
         coordsReceived: (lat, lng) => `Coordinates received: ${lat.toFixed(4)}, ${lng.toFixed(4)}. Calculating Kundali...`,
         cityNotFound: 'City not found. Please try another name (e.g., "New Delhi, India").',
@@ -43,6 +50,13 @@ const i18n = {
         yogaTitle: "योग और दोष विश्लेषण",
         namePlaceholder: "नाम दर्ज करें",
         cityPlaceholder: "उदा., अयोध्या, भारत",
+        patraLabel: "पात्र (वर्तमान जीवन स्थिति / Identity)",
+        patraOptions: {
+            student: "विद्यार्थी / अभी सीख रहा हूँ",
+            struggling_hustler: "संघर्षरत / खुद का कुछ कर रहा हूँ (Founder)",
+            job_employee: "नौकरीपेशा / जॉब (9-to-5)",
+            established_business: "स्थापित व्यापारी"
+        },
         fetchingCoords: "कोऑर्डिनेट्स प्राप्त किए जा रहे हैं...",
         coordsReceived: (lat, lng) => `कोऑर्डिनेट्स प्राप्त हुए: ${lat.toFixed(4)}, ${lng.toFixed(4)}. कुंडली की गणना की जा रही है...`,
         cityNotFound: 'शहर नहीं मिला। कृपया दूसरा नाम आज़माएं (उदा., "New Delhi, India")।',
@@ -111,8 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('searchLink').textContent = t.searchLink;
         document.getElementById('yogaTitle').textContent = t.yogaTitle;
 
+
         document.getElementById('name').placeholder = t.namePlaceholder;
         document.getElementById('city').placeholder = t.cityPlaceholder;
+
+        document.getElementById('patraLabel').textContent = t.patraLabel;
+        const patraSelect = document.getElementById('patra');
+        patraSelect.options[0].text = t.patraOptions.student;
+        patraSelect.options[1].text = t.patraOptions.struggling_hustler;
+        patraSelect.options[2].text = t.patraOptions.job_employee;
+        patraSelect.options[3].text = t.patraOptions.established_business;
 
         // Clear results when switching language to avoid mixed translations
         document.getElementById('resultBox').style.display = 'none';
@@ -125,6 +147,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
     const date = document.getElementById('dob').value;
     const time = document.getElementById('time').value;
     const city = document.getElementById('city').value;
+    const patra = document.getElementById('patra').value;
     const resultBox = document.getElementById('resultBox');
 
     const t = i18n[currentLang];
@@ -152,7 +175,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ date, time, lat, lng })
+            body: JSON.stringify({ date, time, lat, lng, patra })
         });
 
         if (!response.ok) {
@@ -204,11 +227,38 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         resultBox.textContent = output;
 
-        // Render Yogas and Doshas
+                // Render Yogas and Doshas
         const yogaContainer = document.getElementById('yogaContainer');
         const yogaList = document.getElementById('yogaList');
 
         yogaList.innerHTML = ''; // Clear previous results
+
+        // Render Chart Stats
+        if (data.chartStats) {
+            document.getElementById('chartTierLabel').textContent = data.chartStats.tier;
+            document.getElementById('chartTierTitle').textContent = data.chartStats.tierTitle;
+            document.getElementById('statRajyoga').textContent = data.chartStats.rajyogaScore;
+            document.getElementById('statDosha').textContent = data.chartStats.doshaScore;
+            document.getElementById('statRarity').textContent = data.chartStats.rarityScore;
+
+            // Contextual Patra Reading
+            let patraText = "";
+            const isHindi = (currentLang === 'hi');
+            if (patra === 'student') {
+                patraText = isHindi ? "विद्यार्थी के रूप में, यह पोटेंशियल आपको अपनी शिक्षा और स्किल्स में निवेश करने की सलाह देता है।" : "As a student, this potential advises you to invest heavily in skills and education.";
+            } else if (patra === 'struggling_hustler') {
+                patraText = isHindi ? "एक संघर्षरत फाउंडर के रूप में, आपको अपने राजयोगों का उपयोग धैर्य और निरंतरता के साथ करना होगा। हार न मानें, यह आपका कर्मा-टेस्टिंग फेज़ है।" : "As a struggling hustler, you must use your Rajyogas with patience and persistence. Do not give up, this is a karmic testing phase.";
+            } else if (patra === 'job_employee') {
+                patraText = isHindi ? "नौकरीपेशा व्यक्ति के रूप में, यह कुंडली आपको सुरक्षित विकास या रिस्क लेकर अपने पोटेंशियल को अनलॉक करने के बीच संतुलन दिखाती है।" : "As an employee, this chart shows the balance between safe steady growth and taking calculated risks to unlock potential.";
+            } else if (patra === 'established_business') {
+                patraText = isHindi ? "स्थापित व्यापारी के रूप में, इन योगों का उपयोग अपने साम्राज्य को स्थिर करने और दान/पुण्य के माध्यम से दोषों को कम करने के लिए करें।" : "As an established business, use these yogas to stabilize your empire and mitigate doshas through philanthropy.";
+            }
+
+            if (data.chartStats.tier.includes('Karmic')) {
+                patraText += isHindi ? " (विशेष टिप: भारी राजयोग और दोष के कारण आपका जीवन रोलर-कोस्टर रहेगा, मेंटल हेल्थ का ध्यान रखें)।" : " (Special Tip: High yogas and doshas mean a rollercoaster life, guard your mental health).";
+            }
+            document.getElementById('patraReading').textContent = patraText;
+        }
 
         if (data.yogas && data.yogas.length > 0) {
             yogaContainer.style.display = 'block';

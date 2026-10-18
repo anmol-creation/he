@@ -219,3 +219,29 @@ To render astrological data professionally, we classify planetary states (Dignit
 **Negative Doshas:**
 4.  **Warning Dosha:** `<i class="fa-solid fa-triangle-exclamation"></i>` (Yellow/Orange) - Challenges that can be overcome with disciplined effort.
 5.  **Karmic/Severe Dosha:** `<i class="fa-solid fa-skull"></i>` or `<i class="fa-solid fa-radiation"></i>` (Red) - Deep-rooted karmic debts requiring massive transformation (e.g., Chandal, Kaal Sarp).
+
+## 6. Holistic Chart Rarity & Parashari Synthesis
+
+Sage Parashara emphasized that individual Yogas do not define a chart; it is the **synthesis of all Yogas and Doshas** combined with the core strength of the Ascendant.
+
+### 6.1. The "Desh-Kaal-Patra" (Place, Time, Identity) Principle
+Astrology cannot be applied in a vacuum. A King's Rajyoga will yield an empire, while a beggar's exact same Rajyoga will yield a day of great alms.
+*   **Desh (Place):** The geography and economic state of where the person lives.
+*   **Kaal (Time/Era):** The historical context (e.g., Tech industry today vs. Agriculture in 1800s).
+*   **Patra (Identity/Vessel):** The genetic, financial, and societal background the person is born into.
+*Code Engine Note:* The engine provides the mathematical potential (S-Tier, Karmic, etc.), but the user must interpret it through the lens of their *Patra* (e.g., as noted in `kundali_analysis.md`).
+
+### 6.2. Kundali Rarity & Effect Scaling
+A chart's rarity isn't just about having "good" planets. It's measured by:
+1.  **Mathematical Frequency:** How often does this exact combination of planets occur in history? (e.g., Exalted Mars + Exalted Sun + Retrograde Saturn happens perhaps once in centuries).
+2.  **Cumulative Impact (The Rollercoaster):**
+    *   *High Rajyogas + Zero Doshas:* Smooth, highly successful, but often comfortable/complacent life.
+    *   *High Rajyogas + High Doshas:* **The Fighter/Karmic Tier.** Highly rare. Creates historic figures who suffer immense trauma but achieve legendary status (e.g., Steve Jobs, historic kings).
+    *   *Average Yogas:* The common 9-to-5 life.
+    *   *High Doshas + Low Rajyogas:* A life of deep struggle and karmic clearing.
+
+### 6.3. The Scoring Mechanism
+The engine will use a localized point system to determine the overall tier of the chart:
+*   Positive Yogas add *Rajyoga Points (+)*.
+*   Negative Doshas add *Arishta Points (-)*.
+*   The final Tier (S-Tier, A-Tier, Karmic/Fighter) is calculated based on the absolute values and the balance between the two.

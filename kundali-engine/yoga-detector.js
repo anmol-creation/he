@@ -123,17 +123,64 @@ function detectYogas(planetsData, ascendantDegree) {
                 finalName = `${finalName} (${matchedCombinationsCount}x Power)`;
             }
 
+            // Calculate final score for this yoga
+            let baseScore = rule.score || 10;
+            let finalScore = baseScore * matchedCombinationsCount; // Multiplier amplification
+
             detectedYogas.push({
                 id: rule.id,
                 name: finalName,
                 type: rule.type,
                 description: rule.description,
-                combinationsMatched: matchedCombinationsCount
+                combinationsMatched: matchedCombinationsCount,
+                score: finalScore,
+                rarityScore: (rule.frequency_multiplier || 1) * matchedCombinationsCount
             });
         }
     }
 
-    return detectedYogas;
+    // --- HOLISTIC RARITY CALCULATION ---
+    let totalRajyogaScore = 0;
+    let totalDoshaScore = 0;
+    let totalRarity = 0;
+
+    detectedYogas.forEach(y => {
+        if (y.score > 0) totalRajyogaScore += y.score;
+        else totalDoshaScore += Math.abs(y.score); // keep absolute for comparison
+
+        totalRarity += y.rarityScore || 0;
+    });
+
+    let netScore = totalRajyogaScore - totalDoshaScore;
+
+    let chartTier = "B-Tier (Common)";
+    let tierTitle = "सामान्य योग (Common Chart)";
+
+    if (totalRajyogaScore >= 100 && totalDoshaScore >= 100) {
+        chartTier = "Karmic-Tier (Fighter)";
+        tierTitle = "अत्यधिक संघर्ष और महान सफलता (Rollercoaster/Karmic)";
+    } else if (netScore >= 150) {
+        chartTier = "S-Tier (Legendary)";
+        tierTitle = "महा-राजयोग (Legendary / Top 1%)";
+    } else if (netScore >= 80) {
+        chartTier = "A-Tier (Excellent)";
+        tierTitle = "उत्कृष्ट राजयोग (Excellent / Top 10%)";
+    } else if (netScore <= -50) {
+        chartTier = "Warning-Tier";
+        tierTitle = "कठोर संघर्ष (Deep Struggle)";
+    }
+
+    return {
+        yogas: detectedYogas,
+        chartStats: {
+            rajyogaScore: totalRajyogaScore,
+            doshaScore: totalDoshaScore,
+            netScore: netScore,
+            rarityScore: totalRarity,
+            tier: chartTier,
+            tierTitle: tierTitle
+        }
+    };
 }
 
 export { detectYogas };

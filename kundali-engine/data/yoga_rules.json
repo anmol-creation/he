@@ -21,7 +21,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 5
   },
   {
     "id": "bhadra_yoga",
@@ -44,7 +46,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 5
   },
   {
     "id": "hamsa_yoga",
@@ -68,7 +72,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 5
   },
   {
     "id": "malavya_yoga",
@@ -92,7 +98,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 5
   },
   {
     "id": "shasha_yoga",
@@ -116,7 +124,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 5
   },
   {
     "id": "shakti_shani_neechbhanga",
@@ -134,7 +144,9 @@
         "aspect_sign": 9
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 4
   },
   {
     "id": "maha_parivartan_rajyoga",
@@ -148,7 +160,9 @@
         "house2": 10
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "dharma_karmadhipati_rajyoga",
@@ -162,7 +176,9 @@
         "lord2": 10
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "lakshmi_rajyoga",
@@ -182,7 +198,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "kendra_trikona_guru_shani",
@@ -201,7 +219,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "kendra_trikona_mangal",
@@ -215,7 +235,9 @@
         "planet": "Mars"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "amala_rajyoga",
@@ -231,7 +253,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "shankha_rajyoga",
@@ -245,7 +269,9 @@
         "lord2": 6
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "parijata_rajyoga",
@@ -258,7 +284,9 @@
         "description": "Lagna lord dispositor chain ends in exaltation in 7th house."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "kahala_rajyoga",
@@ -272,7 +300,9 @@
         "lord2": 9
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "kendra_rahu_rajyoga",
@@ -288,7 +318,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "harsha_vipareeta_rajyoga",
@@ -301,7 +333,9 @@
         "description": "6th lord from Moon in 8th from Moon in exaltation."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 4
   },
   {
     "id": "kendra_dosha_parihar",
@@ -314,7 +348,9 @@
         "description": "Venus as 4th lord forming Malavya yoga cancels Kendradhipatya dosha."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "shukra_neechbhanga",
@@ -327,7 +363,9 @@
         "description": "Neechbhanga in D9/Transit for Venus."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 4
   },
   {
     "id": "maha_labha_yoga",
@@ -343,7 +381,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "ripu_dhan_yoga",
@@ -359,7 +399,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "sva_arjit_dhan_yoga",
@@ -373,7 +415,9 @@
         "lord2": 2
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "dhan_drishti_yoga",
@@ -387,7 +431,9 @@
         "house": 2
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "bhagya_labh_maha_dhan_yoga",
@@ -401,7 +447,9 @@
         "lord2": 11
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "mahalakshmi_dhan_yoga",
@@ -415,7 +463,9 @@
         "lord2": 9
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "indu_lagna_dhan",
@@ -428,7 +478,9 @@
         "description": "Mars in 9th from Indu Lagna in exaltation."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "shubh_gochar_dhan_yoga",
@@ -441,7 +493,9 @@
         "description": "Mercury aspects 11th, Jupiter aspects 2nd and Sun."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "karkata_rahu_yoga",
@@ -457,7 +511,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "teekshna_buddhi_yoga",
@@ -473,7 +529,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "goodha_vidya_yoga",
@@ -492,7 +550,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "dhee_parakrama_yoga",
@@ -508,7 +568,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "kathor_vaak_yoga",
@@ -525,7 +587,9 @@
         "planet_check": "Sun"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "saraswati_yoga",
@@ -538,7 +602,9 @@
         "description": "Jupiter, Venus, Mercury in Kendra/Trikona or 2nd house with mutual relation."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "chatusagara_yoga",
@@ -550,7 +616,9 @@
         "type": "all_kendra_occupied"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
   },
   {
     "id": "uchcha_mangal_dosha_parihar",
@@ -569,7 +637,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
   },
   {
     "id": "shatruhanta_yoga",
@@ -585,7 +655,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
   },
   {
     "id": "videsh_gaman_tarakki",
@@ -601,7 +673,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
   },
   {
     "id": "ubhayachari_yoga",
@@ -614,7 +688,9 @@
         "description": "Planets (other than Moon) in 2nd and 12th from Sun."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
   },
   {
     "id": "matru_vahan_sukh",
@@ -630,7 +706,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
   },
   {
     "id": "dama_nabhasa_yoga",
@@ -643,7 +721,9 @@
         "count": 6
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "kemadruma_bhanga",
@@ -656,7 +736,9 @@
         "description": "Kemadruma conditions met BUT kendras from ascendant or Moon are occupied."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "maha_purnima_yoga",
@@ -670,7 +752,9 @@
         "planet2": "Moon"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "veshi_yoga_mangal",
@@ -685,7 +769,9 @@
         "require_planet": "Mars"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "shubh_vashi_yoga",
@@ -700,7 +786,9 @@
         "require_planet": "Mercury"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "shani_mangal_drishti",
@@ -713,7 +801,9 @@
         "description": "Saturn 10th aspect on Mars AND Mars 4th aspect on Saturn."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "guru_shukra_drishti",
@@ -727,7 +817,9 @@
         "planet2": "Venus"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "jivatma_drishti",
@@ -742,7 +834,9 @@
         "aspect_type": 9
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "mangal_ketu_visfotak",
@@ -761,7 +855,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "vish_yoga_punarphoo",
@@ -775,7 +871,9 @@
         "planet2": "Moon"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "shadashtaka_dosha_moon_mars",
@@ -793,7 +891,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "guru_chandal_dosha",
@@ -821,7 +921,9 @@
         "type": "benefic_aspect",
         "planet": "Jupiter"
       }
-    ]
+    ],
+    "score": -50,
+    "frequency_multiplier": 5
   },
   {
     "id": "kaal_sarp_dosha",
@@ -840,7 +942,9 @@
       {
         "type": "planet_outside_axis"
       }
-    ]
+    ],
+    "score": -50,
+    "frequency_multiplier": 5
   },
   {
     "id": "pitra_dosha",
@@ -853,7 +957,9 @@
         "description": "Affliction to 9th house, 9th lord, Sun, or Jupiter by Rahu/Ketu/Saturn."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "angarak_dosha",
@@ -869,7 +975,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "shrapit_dosha",
@@ -885,7 +993,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "paap_kartari_dosha",
@@ -898,7 +1008,9 @@
         "description": "Malefics in 2nd and 12th from a house or planet."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "gandmool_dosha",
@@ -911,7 +1023,9 @@
         "description": "Moon in Gandmool Nakshatras."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "gandanta_dosha",
@@ -924,7 +1038,9 @@
         "description": "Planet at exactly 0 or 29 degrees joining Water/Fire signs."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "amavasya_dosha",
@@ -940,7 +1056,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "daridra_dosha",
@@ -953,7 +1071,9 @@
         "description": "Lords of 2, 9, 11 in 6, 8, 12."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
   },
   {
     "id": "budhaditya_yoga",
@@ -992,7 +1112,9 @@
         "planet": "Mercury",
         "degree_limit": 14
       }
-    ]
+    ],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "general_neechbhanga_rajyoga",
@@ -1013,7 +1135,9 @@
         "type": "neechbhanga_aspect"
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 4
   },
   {
     "id": "vipreet_rajyoga_sarala",
@@ -1031,7 +1155,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 4
   },
   {
     "id": "vipreet_rajyoga_vimala",
@@ -1049,7 +1175,9 @@
         ]
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 4
   },
   {
     "id": "vasumati_yoga",
@@ -1062,7 +1190,9 @@
         "description": "Benefics (Jupiter, Venus, Mercury) in upachaya houses from Ascendant or Moon."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 2
   },
   {
     "id": "parvata_yoga",
@@ -1075,7 +1205,9 @@
         "description": "Lagna lord in auspicious house and 6th/8th houses are empty or aspected by benefics."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "bhaskara_yoga",
@@ -1088,7 +1220,9 @@
         "description": "Mercury 2nd from Sun, Moon 11th from Mercury, Jupiter 5th/9th from Moon."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "kedar_yoga",
@@ -1101,7 +1235,9 @@
         "count": 4
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
   },
   {
     "id": "chamara_yoga",
@@ -1114,7 +1250,9 @@
         "description": "Lagna lord exalted in Kendra, aspected by Jupiter."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 3
   },
   {
     "id": "mahabhagya_yoga",
@@ -1127,7 +1265,9 @@
         "description": "Day birth + Sun, Moon, Lagna in odd signs (for males)."
       }
     ],
-    "cancellations": []
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 5
   },
   {
     "id": "gajakesari_yoga",
@@ -1158,6 +1298,8 @@
           "Moon"
         ]
       }
-    ]
+    ],
+    "score": 30,
+    "frequency_multiplier": 3
   }
 ]

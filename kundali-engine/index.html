@@ -302,6 +302,17 @@
             <input type="text" id="city" value="Pilibhit, India" placeholder="उदा., अयोध्या, भारत">
         </div>
 
+        <div class="form-group">
+            <label for="patra" id="patraLabel">पात्र (वर्तमान जीवन स्थिति / Identity)</label>
+            <select id="patra" style="width: 100%; padding: 0.8rem; background: var(--vault-surface); border: 1px solid var(--vault-border); color: var(--vault-text); border-radius: 4px; font-family: 'Cinzel', serif;">
+                <option value="student">विद्यार्थी / अभी सीख रहा हूँ (Student/Learner)</option>
+                <option value="struggling_hustler" selected>संघर्षरत / खुद का कुछ कर रहा हूँ (Struggling Hustler/Founder)</option>
+                <option value="job_employee">नौकरीपेशा / जॉब (9-to-5 Employee)</option>
+                <option value="established_business">स्थापित व्यापारी (Established Businessman)</option>
+            </select>
+        </div>
+
+
         <button id="calculateBtn">कुण्डली डेटा जनरेट करें</button>
 
         <div style="text-align: center; margin-top: 2rem;">
@@ -310,7 +321,22 @@
 
         <div id="resultBox" class="result-box"></div>
 
+
         <div id="yogaContainer" style="display: none; margin-top: 2rem;">
+
+            <div id="chartStatsBox" style="background: var(--vault-surface); border: 1px solid var(--vault-accent); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+                <h3 id="chartTierLabel" style="color: var(--vault-accent); font-size: 1.8rem; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">S-Tier</h3>
+                <p id="chartTierTitle" style="color: var(--vault-text); font-size: 1.1rem; margin-bottom: 1rem;">महा-राजयोग</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; font-size: 0.9rem; color: var(--vault-text-muted);">
+                    <div><span style="color: #4ade80;">राजयोग पावर:</span> <span id="statRajyoga">0</span></div>
+                    <div><span style="color: #f87171;">दोष पावर:</span> <span id="statDosha">0</span></div>
+                    <div><span style="color: #60a5fa;">दुर्लभता (Rarity):</span> <span id="statRarity">0</span></div>
+                </div>
+                <div id="patraReading" style="margin-top: 1rem; font-style: italic; color: var(--vault-text-muted); font-size: 0.95rem; border-top: 1px solid var(--vault-border); padding-top: 1rem;">
+                    <!-- Contextual reading based on Patra goes here -->
+                </div>
+            </div>
+
             <h2 class="title" id="yogaTitle" style="font-size: 2rem; margin-bottom: 1.5rem;">योग और दोष विश्लेषण</h2>
             <div id="yogaList" style="display: flex; flex-direction: column; gap: 1rem;">
                 <!-- Yoga items will be injected here dynamically -->

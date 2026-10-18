@@ -155,9 +155,17 @@ app.post('/api/calculate', (req, res) => {
             ascendant = houses.ascendant; // Swisseph JS wrapper uses .ascendant instead of .ascmc[0]
         }
 
-        const yogas = detectYogas(results, ascendant);
+        const detectionData = detectYogas(results, ascendant);
+        // detectionData now contains { yogas, chartStats }
 
-        res.json({ jd, ascendant, tithi: tithiData, planets: results, yogas: yogas });
+        res.json({
+            jd,
+            ascendant,
+            tithi: tithiData,
+            planets: results,
+            yogas: detectionData.yogas,
+            chartStats: detectionData.chartStats
+        });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
