@@ -188,14 +188,18 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         data.planets.forEach(p => {
             const signName = signNames[p.sign].padEnd(12);
             const deg = p.degreeInSign.toFixed(2).padStart(5) + '°';
-            const planetName = p.name.padEnd(9);
+            const planetName = p.name.padEnd(12);
 
             let state = t.direct;
-            if (p.name === 'Rahu' || p.name === 'Ketu') state = t.retrograde;
-            else if (p.speed < 0) state = t.retrograde;
+            if (p.isRetrograde) state = t.retrograde;
             else if (p.speed === 0) state = t.stationary;
 
-            output += `${planetName} | ${signName} | ${deg}   | ${state}\n`;
+            let dignityStr = "";
+            if(p.dignity === 'Uccha') dignityStr = " [⇧ Uccha]";
+            if(p.dignity === 'Neecha') dignityStr = " [⇩ Neecha]";
+            if(p.dignity === 'Swarashi') dignityStr = " [⌂ Swarashi]";
+
+            output += `${planetName} | ${signName} | ${deg}   | ${state}${dignityStr}\n`;
         });
 
         resultBox.textContent = output;
@@ -213,11 +217,32 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                 const isDosha = yoga.type.toLowerCase().includes('dosha');
                 const cardClass = isDosha ? 'yoga-card dosha' : 'yoga-card';
                 // Pick an icon based on type (just a simple heuristic)
-                let iconClass = isDosha ? 'fa-solid fa-triangle-exclamation' : 'fa-solid fa-star';
 
-                if(yoga.name.toLowerCase().includes('dhana')) iconClass = 'fa-solid fa-coins';
-                if(yoga.name.toLowerCase().includes('raj')) iconClass = 'fa-solid fa-crown';
-                if(yoga.name.toLowerCase().includes('saraswati') || yoga.name.toLowerCase().includes('buddhi')) iconClass = 'fa-solid fa-book-open';
+                let iconClass = 'fa-regular fa-star'; // Default Common
+
+                // Detailed Rate Card Logic
+                if (isDosha) {
+                    if (yoga.name.includes('चांडाल') || yoga.name.includes('काल सर्प') || yoga.name.includes('गंभीर')) {
+                        iconClass = 'fa-solid fa-skull'; // Severe/Karmic
+                    } else {
+                        iconClass = 'fa-solid fa-triangle-exclamation'; // Warning
+                    }
+                } else {
+                    if (yoga.name.includes('महापुरुष') || yoga.name.includes('Legendary') || yoga.name.includes('महा')) {
+                        iconClass = 'fa-solid fa-crown'; // Legendary
+                    } else if (yoga.name.includes('राजयोग') || yoga.name.includes('Rare')) {
+                        iconClass = 'fa-solid fa-star'; // Rare
+                    }
+                }
+
+                // Add the 2x/3x Power badge if present
+                let badgeHTML = `${badgeHTML}`;
+                if (yoga.name.includes('Power)')) {
+                    const match = yoga.name.match(/(\d+x Power)/);
+                    if (match) {
+                        badgeHTML += ` <span class="yoga-badge" style="background-color: var(--vault-accent); color: #000; font-weight: bold;">${match[1]}</span>`;
+                    }
+                }
 
                 const cardHTML = `
                     <div class="${cardClass}">
@@ -225,7 +250,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                         <div class="yoga-content">
                             <h3 class="yoga-title">
                                 ${yoga.name}
-                                <span class="yoga-badge">${yoga.type}</span>
+                                ${badgeHTML}
                             </h3>
                             <p class="yoga-desc">${yoga.description}</p>
                         </div>

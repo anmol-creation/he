@@ -54,13 +54,58 @@ app.post('/api/calculate', (req, res) => {
                 const sign = Math.floor(pos.longitude / 30);
                 const degreeInSign = pos.longitude % 30;
 
+
+                // Dignity and Retrograde Calculation
+                let isRetrograde = false;
+                if (pos.longitudeSpeed < 0 && planetNames[index] !== 'राहु (Rahu)') {
+                    isRetrograde = true;
+                } else if (planetNames[index] === 'राहु (Rahu)' && pos.longitudeSpeed > 0) {
+                    // Rahu is normally retrograde, if speed > 0 it's direct, but we'll stick to standard retrograde marker for simplicity
+                    isRetrograde = false;
+                } else if (planetNames[index] === 'राहु (Rahu)') {
+                    isRetrograde = true; // Rahu/Ketu always retro visually
+                }
+
+                let dignity = "Neutral";
+                const pName = planetNames[index];
+
+                // Exaltation (Uccha) rules
+                if (pName.includes('Sun') && sign === 0) dignity = "Uccha";
+                else if (pName.includes('Moon') && sign === 1) dignity = "Uccha";
+                else if (pName.includes('Mars') && sign === 9) dignity = "Uccha";
+                else if (pName.includes('Mercury') && sign === 5) dignity = "Uccha";
+                else if (pName.includes('Jupiter') && sign === 3) dignity = "Uccha";
+                else if (pName.includes('Venus') && sign === 11) dignity = "Uccha";
+                else if (pName.includes('Saturn') && sign === 6) dignity = "Uccha";
+
+                // Debilitation (Neecha) rules (+6 signs from Uccha)
+                else if (pName.includes('Sun') && sign === 6) dignity = "Neecha";
+                else if (pName.includes('Moon') && sign === 7) dignity = "Neecha";
+                else if (pName.includes('Mars') && sign === 3) dignity = "Neecha";
+                else if (pName.includes('Mercury') && sign === 11) dignity = "Neecha";
+                else if (pName.includes('Jupiter') && sign === 9) dignity = "Neecha";
+                else if (pName.includes('Venus') && sign === 5) dignity = "Neecha";
+                else if (pName.includes('Saturn') && sign === 0) dignity = "Neecha";
+
+                // Swarashi (Own House)
+                else if (pName.includes('Sun') && sign === 4) dignity = "Swarashi";
+                else if (pName.includes('Moon') && sign === 3) dignity = "Swarashi";
+                else if (pName.includes('Mars') && (sign === 0 || sign === 7)) dignity = "Swarashi";
+                else if (pName.includes('Mercury') && (sign === 2 || sign === 5)) dignity = "Swarashi"; // Virgo is both Uccha and Swarashi
+                else if (pName.includes('Jupiter') && (sign === 8 || sign === 11)) dignity = "Swarashi";
+                else if (pName.includes('Venus') && (sign === 1 || sign === 6)) dignity = "Swarashi";
+                else if (pName.includes('Saturn') && (sign === 9 || sign === 10)) dignity = "Swarashi";
+
                 results.push({
                     name: planetNames[index],
                     longitude: pos.longitude,
                     sign: sign,
                     degreeInSign: degreeInSign,
-                    speed: pos.longitudeSpeed
+                    speed: pos.longitudeSpeed,
+                    isRetrograde: isRetrograde,
+                    dignity: dignity
                 });
+
             }
         });
 
