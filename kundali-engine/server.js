@@ -151,8 +151,27 @@ app.post('/api/calculate', (req, res) => {
         // Debugging structure of 'houses'
         // console.log("Houses object:", houses);
 
+        let ascendantSign = 0;
         if (houses && houses.ascendant) {
             ascendant = houses.ascendant; // Swisseph JS wrapper uses .ascendant instead of .ascmc[0]
+            ascendantSign = Math.floor(ascendant / 30);
+        }
+
+        // Calculate Houses for each planet
+        results.forEach(p => {
+            p.house = ((p.sign - ascendantSign + 12) % 12) + 1;
+        });
+
+        // Build explicit Lagna Chart representation (Houses 1-12)
+        const lagnaChart = [];
+        for (let houseNum = 1; houseNum <= 12; houseNum++) {
+            const signForHouse = (ascendantSign + houseNum - 1) % 12;
+            const planetsInHouse = results.filter(p => p.house === houseNum).map(p => p.name);
+            lagnaChart.push({
+                house: houseNum,
+                sign: signForHouse,
+                planets: planetsInHouse
+            });
         }
 
         const detectionData = detectYogas(results, ascendant);
@@ -163,6 +182,7 @@ app.post('/api/calculate', (req, res) => {
             ascendant,
             tithi: tithiData,
             planets: results,
+            lagnaChart: lagnaChart,
             yogas: detectionData.yogas,
             chartStats: detectionData.chartStats
         });

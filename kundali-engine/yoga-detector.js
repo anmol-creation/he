@@ -45,7 +45,8 @@ function detectYogas(planetsData, ascendantDegree) {
     planetsData.forEach(p => {
         let match = p.name.match(/\((.*?)\)/);
         let nameEn = match ? match[1] : p.name;
-        let house = ((p.sign - ascendantSign + 12) % 12) + 1;
+        // Use explicitly calculated house from server if available, else fallback to standard sign calculation
+        let house = p.house || ((p.sign - ascendantSign + 12) % 12) + 1;
 
         pMap[nameEn] = {
             sign: p.sign,
