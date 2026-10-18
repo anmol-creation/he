@@ -286,11 +286,11 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                 }
 
                 // Add the 2x/3x Power badge if present
-                let badgeHTML = `${badgeHTML}`;
+                let badgeHTML = "";
                 if (yoga.name.includes('Power)')) {
                     const match = yoga.name.match(/(\d+x Power)/);
                     if (match) {
-                        badgeHTML += ` <span class="yoga-badge" style="background-color: var(--vault-accent); color: #000; font-weight: bold;">${match[1]}</span>`;
+                        badgeHTML = ` <span class="yoga-badge" style="background-color: var(--vault-accent); color: #000; font-weight: bold;">${match[1]}</span>`;
                     }
                 }
 
