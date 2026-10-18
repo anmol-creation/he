@@ -212,6 +212,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             const signName = signNames[p.sign].padEnd(12);
             const deg = p.degreeInSign.toFixed(2).padStart(5) + '°';
             const planetName = p.name.padEnd(12);
+            const houseStr = p.house ? p.house.toString().padEnd(2) : "--";
 
             let state = t.direct;
             if (p.isRetrograde) state = t.retrograde;
@@ -222,12 +223,22 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             if(p.dignity === 'Neecha') dignityStr = " [⇩ Neecha]";
             if(p.dignity === 'Swarashi') dignityStr = " [⌂ Swarashi]";
 
-            output += `${planetName} | ${signName} | ${deg}   | ${state}${dignityStr}\n`;
+            output += `${planetName} | ${signName} | ${deg}   | ${state}${dignityStr} | H: ${houseStr}\n`;
         });
+
+        // Add explicit Lagna Chart section
+        if (data.lagnaChart) {
+            output += `\n--- Lagna Chart (Houses 1-12) ---\n`;
+            data.lagnaChart.forEach(h => {
+                const sName = signNames[h.sign].padEnd(12);
+                const pNames = h.planets.length > 0 ? h.planets.join(', ') : "Empty";
+                output += `House ${h.house.toString().padEnd(2)} | Sign: ${sName} | Planets: ${pNames}\n`;
+            });
+        }
 
         resultBox.textContent = output;
 
-                // Render Yogas and Doshas
+        // Render Yogas and Doshas
         const yogaContainer = document.getElementById('yogaContainer');
         const yogaList = document.getElementById('yogaList');
 
