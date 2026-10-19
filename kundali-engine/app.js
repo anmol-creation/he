@@ -170,7 +170,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             throw new Error(t.cityNotFound);
         }
 
-        const response = await fetch('http://localhost:3000/api/calculate', {
+        const response = await fetch('/api/calculate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
