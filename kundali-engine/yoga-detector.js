@@ -95,9 +95,78 @@ function detectYogas(planetsData, ascendantDegree) {
                             }
                         }
                     }
-                    else if (cond.type === 'mutual_aspect' || cond.type === 'mutual_aspect_lords') {
-                        // Simplified check for now
-                        isMatch = false;
+                    else if (cond.type === 'mutual_aspect') {
+                        let p1 = pMap[cond.planet1];
+                        let p2 = pMap[cond.planet2];
+                        if (p1 && p2) {
+                            let p1AspectsP2 = p1.aspects.includes(p2.house);
+                            let p2AspectsP1 = p2.aspects.includes(p1.house);
+                            isMatch = p1AspectsP2 && p2AspectsP1;
+                        }
+                    }
+                    else if (cond.type === 'mutual_aspect_lords') {
+                        // Get the planets ruling the specified houses
+                        let lord1Name = houseLords[cond.lord1];
+                        let lord2Name = houseLords[cond.lord2];
+                        let p1 = pMap[lord1Name];
+                        let p2 = pMap[lord2Name];
+                        if (p1 && p2) {
+                            let p1AspectsP2 = p1.aspects.includes(p2.house);
+                            let p2AspectsP1 = p2.aspects.includes(p1.house);
+                            isMatch = p1AspectsP2 && p2AspectsP1;
+                        }
+                    }
+                    else if (cond.type === 'lord_in_house') {
+                        let lordName = houseLords[cond.lord_of];
+                        let p = pMap[lordName];
+                        if (p) {
+                            isMatch = cond.in_houses.includes(p.house);
+                        }
+                    }
+                    else if (cond.type === 'exchange_houses') {
+                        let lord1Name = houseLords[cond.house1];
+                        let lord2Name = houseLords[cond.house2];
+                        let p1 = pMap[lord1Name];
+                        let p2 = pMap[lord2Name];
+                        if (p1 && p2) {
+                            isMatch = (p1.house === cond.house2 && p2.house === cond.house1);
+                        }
+                    }
+                    else if (cond.type === 'aspect_on_planet') {
+                        let aspectingP = pMap[cond.aspecting_planet];
+                        let targetP = pMap[cond.target_planet];
+                        if (aspectingP && targetP) {
+                            isMatch = aspectingP.aspects.includes(targetP.house);
+                        }
+                    }
+                    else if (cond.type === 'kaal_sarp_direct' || cond.type === 'kaal_sarp_reverse') {
+                        let rahu = pMap['Rahu'];
+                        let ketu = pMap['Ketu'];
+                        if (rahu && ketu) {
+                            let rHouse = rahu.house;
+                            let kHouse = ketu.house;
+                            isMatch = true;
+                            // Simplistic Hemmed Check: All normal planets must be between Rahu-Ketu or Ketu-Rahu
+                            let start = cond.type === 'kaal_sarp_direct' ? rHouse : kHouse;
+                            let end = cond.type === 'kaal_sarp_direct' ? kHouse : rHouse;
+                            for (let key in pMap) {
+                                if (key !== 'Rahu' && key !== 'Ketu' && !key.includes('Uranus') && !key.includes('Neptune') && !key.includes('Pluto')) {
+                                    let h = pMap[key].house;
+                                    // Check if house falls in the short arc from start to end
+                                    let isHemmed = false;
+                                    if (start < end) {
+                                        if (h > start && h < end) isHemmed = true;
+                                    } else {
+                                        // Wraps around 12
+                                        if (h > start || h < end) isHemmed = true;
+                                    }
+                                    if (!isHemmed) {
+                                        isMatch = false;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
                 } catch (e) {
                     console.error(`Error evaluating condition in ${rule.id}:`, e);
