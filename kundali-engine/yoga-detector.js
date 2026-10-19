@@ -123,6 +123,53 @@ function detectYogas(planetsData, ascendantDegree) {
                             isMatch = cond.in_houses.includes(p.house);
                         }
                     }
+                    else if (cond.type === 'lord_in_houses_multiple') {
+                        let lordName = houseLords[cond.lord];
+                        let p = pMap[lordName];
+                        if (p) {
+                            isMatch = cond.in_houses.includes(p.house);
+                        }
+                    }
+                    else if (cond.type === 'ascendant_lordship') {
+                        isMatch = (ascendantSign === cond.ascendant_sign && houseLords[1] === cond.planet);
+                    }
+                    else if (cond.type === 'conjunction_lords') {
+                        let p1Name = houseLords[cond.lord1];
+                        let p2Name = houseLords[cond.lord2];
+                        let p1 = pMap[p1Name];
+                        let p2 = pMap[p2Name];
+                        if (p1 && p2) {
+                            isMatch = (p1.house === p2.house);
+                        }
+                    }
+                    else if (cond.type === 'mutual_kendra') {
+                        let p1Name = cond.planets[0];
+                        let p2Name = cond.planets[1];
+                        let p1 = pMap[p1Name];
+                        let p2 = pMap[p2Name];
+                        if (p1 && p2) {
+                            // Distance between them is 1, 4, 7, 10
+                            let dist = (p1.house - p2.house + 12) % 12;
+                            isMatch = (dist === 0 || dist === 3 || dist === 6 || dist === 9);
+                        }
+                    }
+                    else if (cond.type === 'aspect_or_conjunction_lords') {
+                        let p1Name = houseLords[cond.lord1];
+                        let p2Name = houseLords[cond.lord2];
+                        let p1 = pMap[p1Name];
+                        let p2 = pMap[p2Name];
+                        if (p1 && p2) {
+                            let areConjoined = p1.house === p2.house;
+                            let p1AspectsP2 = p1.aspects.includes(p2.house);
+                            let p2AspectsP1 = p2.aspects.includes(p1.house);
+                            isMatch = areConjoined || p1AspectsP2 || p2AspectsP1;
+
+                            // Ensure this happens in specified houses if cond.in_houses is provided
+                            if (isMatch && cond.in_houses) {
+                                isMatch = cond.in_houses.includes(p1.house) && (cond.in_houses.includes(p2.house));
+                            }
+                        }
+                    }
                     else if (cond.type === 'exchange_houses') {
                         let lord1Name = houseLords[cond.house1];
                         let lord2Name = houseLords[cond.house2];
