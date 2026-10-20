@@ -1,4 +1,6 @@
 
+import { KundaliChartRenderer } from './kundali-ui.js';
+
 const i18n = {
     en: {
         mainTitle: "Kundali Engine",
@@ -85,12 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const langEnLabel = document.getElementById('lang-en-label');
     const langHiLabel = document.getElementById('lang-hi-label');
 
+    // Initialize chartRenderer globally
+    window.chartRenderer = new KundaliChartRenderer('kundaliSvgContainer');
+    document.getElementById('btnNorthStyle').addEventListener('click', (e) => {
+        window.chartRenderer.setStyle('north');
+        e.target.classList.add('active');
+        document.getElementById('btnSouthStyle').classList.remove('active');
+    });
+    document.getElementById('btnSouthStyle').addEventListener('click', (e) => {
+        window.chartRenderer.setStyle('south');
+        e.target.classList.add('active');
+        document.getElementById('btnNorthStyle').classList.remove('active');
+    });
+
     // Initialize based on checkbox state
     updateLanguage(langToggle.checked ? 'hi' : 'en');
 
     langToggle.addEventListener('change', (e) => {
         const lang = e.target.checked ? 'hi' : 'en';
         updateLanguage(lang);
+        window.chartRenderer.setLanguage(lang);
     });
 
     function updateLanguage(lang) {
@@ -214,16 +230,23 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             const planetName = p.name.padEnd(12);
             const houseStr = p.house ? p.house.toString().padEnd(2) : "--";
 
-            let state = t.direct;
-            if (p.isRetrograde) state = t.retrograde;
-            else if (p.speed === 0) state = t.stationary;
+            // Use the chartRenderer's logic to get emojis for the table too, keeping it consistent.
+            let emojis = "";
+            if (p.dignity === 'Uccha') emojis += "👑";
+            else if (p.dignity === 'Neecha') emojis += "📉";
+            else if (p.dignity === 'Swarashi') emojis += "🏰";
 
-            let dignityStr = "";
-            if(p.dignity === 'Uccha') dignityStr = " [⇧ Uccha]";
-            if(p.dignity === 'Neecha') dignityStr = " [⇩ Neecha]";
-            if(p.dignity === 'Swarashi') dignityStr = " [⌂ Swarashi]";
+            if (p.isRetrograde) emojis += "🔄";
 
-            output += `${planetName} | ${signName} | ${deg}   | ${state}${dignityStr} | H: ${houseStr}\n`;
+            const isOdd = (p.sign % 2 === 0);
+            let d = p.degreeInSign;
+            if (d >= 0 && d < 6) emojis += isOdd ? "👶" : "💀";
+            else if (d >= 6 && d < 12) emojis += isOdd ? "👦" : "👴";
+            else if (d >= 12 && d < 18) emojis += "👨";
+            else if (d >= 18 && d < 24) emojis += isOdd ? "👴" : "👦";
+            else emojis += isOdd ? "💀" : "👶";
+
+            output += `${planetName} | ${signName} | ${deg}   | ${emojis.padEnd(8)} | H: ${houseStr}\n`;
         });
 
         // Add explicit Lagna Chart section
@@ -237,6 +260,22 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         }
 
         resultBox.textContent = output;
+
+        // Render Visual SVG Chart
+        document.getElementById('chartSection').style.display = 'block';
+        if (data.ascendant !== undefined && data.planets) {
+            window.chartRenderer.setData({
+                ascendantSign: Math.floor(data.ascendant / 30),
+                planets: data.planets.map(p => ({
+                    name: p.name,
+                    sign: p.sign,
+                    degree: p.degreeInSign,
+                    isRetrograde: p.isRetrograde,
+                    dignity: p.dignity,
+                    house: p.house
+                }))
+            });
+        }
 
         // Render Yogas and Doshas
         const yogaContainer = document.getElementById('yogaContainer');
