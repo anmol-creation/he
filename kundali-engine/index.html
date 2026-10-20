@@ -255,6 +255,49 @@
             color: var(--vault-text-main);
             line-height: 1.5;
         }
+
+        /* Animations */
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #chartSection {
+            animation: slideUpFade 0.6s ease-out;
+        }
+
+        .yoga-card {
+            animation: slideUpFade 0.5s ease-out backwards;
+        }
+
+        .yoga-card:nth-child(1) { animation-delay: 0.1s; }
+        .yoga-card:nth-child(2) { animation-delay: 0.2s; }
+        .yoga-card:nth-child(3) { animation-delay: 0.3s; }
+        .yoga-card:nth-child(4) { animation-delay: 0.4s; }
+        .yoga-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .chart-style-btn {
+            background-color: var(--vault-surface);
+            color: var(--vault-text-muted);
+            border: 1px solid var(--vault-border);
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            width: auto;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .chart-style-btn.active {
+            background-color: var(--vault-primary);
+            color: #000;
+            border-color: var(--vault-accent);
+        }
+        .chart-style-btn:hover {
+            background-color: rgba(204, 106, 0, 0.2);
+            color: var(--vault-primary);
+        }
     </style>
 </head>
 <body>
@@ -312,6 +355,15 @@
             </select>
         </div>
 
+
+
+        <div id="chartSection" style="display: none; margin-top: 2rem; text-align: center;">
+            <div style="margin-bottom: 1rem;">
+                <button id="btnNorthStyle" class="chart-style-btn active">North Indian</button>
+                <button id="btnSouthStyle" class="chart-style-btn">South Indian</button>
+            </div>
+            <div id="kundaliSvgContainer" style="width: 100%; max-width: 400px; height: 400px; margin: 0 auto; background: var(--vault-surface); border: 1px solid var(--vault-border); border-radius: 8px;"></div>
+        </div>
 
         <button id="calculateBtn">कुण्डली डेटा जनरेट करें</button>
 
