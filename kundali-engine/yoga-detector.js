@@ -5,8 +5,16 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const rulesPath = path.join(__dirname, 'data', 'yoga_rules.json');
-const yogaRules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
+const rulesDir = path.join(__dirname, 'data', 'rules');
+const yogaRules = [];
+
+fs.readdirSync(rulesDir).forEach(file => {
+    if (file.endsWith('.json')) {
+        const filePath = path.join(rulesDir, file);
+        const fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        yogaRules.push(...fileContent);
+    }
+});
 
 const RASHI_LORDS = {
     0: 'Mars', 1: 'Venus', 2: 'Mercury', 3: 'Moon',
@@ -186,6 +194,145 @@ function detectYogas(planetsData, ascendantDegree) {
                             isMatch = aspectingP.aspects.includes(targetP.house);
                         }
                     }
+                    else if (cond.type === 'conjunction_or_aspect') {
+                        let p1 = pMap[cond.planet1];
+                        let p2 = pMap[cond.planet2];
+                        if (p1 && p2) {
+                            let areConjoined = p1.house === p2.house;
+                            let p1AspectsP2 = p1.aspects.includes(p2.house);
+                            let p2AspectsP1 = p2.aspects.includes(p1.house);
+                            isMatch = areConjoined || p1AspectsP2 || p2AspectsP1;
+                        }
+                    }
+                    else if (cond.type === 'planet_in_relative_house') {
+                        let fromP = pMap[cond.from_planet];
+                        let targetP = pMap[cond.require_planet];
+                        if (fromP && targetP) {
+                            let relativeHouse = ((targetP.house - fromP.house + 12) % 12) + 1;
+                            if (relativeHouse === cond.relative_house) {
+                                isMatch = true;
+                            }
+                        }
+                    }
+                    else if (cond.type === 'mutual_kendra_lords') {
+                        let p1Name = houseLords[cond.lord1];
+                        let p2Name = houseLords[cond.lord2];
+                        let p1 = pMap[p1Name];
+                        let p2 = pMap[p2Name];
+                        if (p1 && p2) {
+                            let dist = (p1.house - p2.house + 12) % 12;
+                            isMatch = (dist === 0 || dist === 3 || dist === 6 || dist === 9);
+                        }
+                    }
+                    else if (cond.type === 'combustion' || cond.type === 'debilitation') {
+                        // Usually found in cancellations, but checking if it exists as a combo type
+                        if (cond.type === 'debilitation') {
+                            isMatch = true;
+                            for (let pName of cond.planets) {
+                                if (pMap[pName] && pMap[pName].dignity !== 'Neecha') {
+                                    isMatch = false; break;
+                                }
+                            }
+                        } else if (cond.type === 'combustion') {
+                            let p = pMap[cond.planet];
+                            let sun = pMap['Sun'];
+                            if (p && sun) {
+                                let degDiff = Math.abs(p.longitude - sun.longitude);
+                                if (degDiff > 180) degDiff = 360 - degDiff;
+                                isMatch = degDiff <= (cond.degree_limit || 14);
+                            }
+                        }
+                    }
+                    else if (cond.type === 'neechbhanga_aspect' || cond.type === 'neechbhanga_conjunction' || cond.type === 'neechbhanga_exalted_in_kendra' || cond.type === 'neechbhanga_lord_in_kendra' || cond.type === 'complex_neechbhanga') {
+                        // General check for any debilitated planet getting neechbhanga
+                        for (let pName in pMap) {
+                            let p = pMap[pName];
+                            if (p.dignity === 'Neecha') {
+                                let dispositorName = RASHI_LORDS[p.sign];
+                                let dispositor = pMap[dispositorName];
+                                if (dispositor) {
+                                    if (cond.type === 'neechbhanga_aspect' && dispositor.aspects.includes(p.house)) {
+                                        isMatch = true; break;
+                                    } else if (cond.type === 'neechbhanga_conjunction' && dispositor.house === p.house) {
+                                        isMatch = true; break;
+                                    } else if (cond.type === 'neechbhanga_lord_in_kendra' && (dispositor.house === 1 || dispositor.house === 4 || dispositor.house === 7 || dispositor.house === 10)) {
+                                        isMatch = true; break;
+                                    }
+                                }
+
+                                // Exalted planet for that sign in kendra
+                                if (cond.type === 'neechbhanga_exalted_in_kendra' || cond.type === 'complex_neechbhanga') {
+                                    // Check if the planet that WOULD be exalted in this sign is in a Kendra
+                                    let exaltedPlanetName = null;
+                                    // Find which planet is exalted in p.sign
+                                    if (p.sign === 0) exaltedPlanetName = 'Sun';
+                                    else if (p.sign === 1) exaltedPlanetName = 'Moon';
+                                    else if (p.sign === 9) exaltedPlanetName = 'Mars';
+                                    else if (p.sign === 5) exaltedPlanetName = 'Mercury';
+                                    else if (p.sign === 3) exaltedPlanetName = 'Jupiter';
+                                    else if (p.sign === 11) exaltedPlanetName = 'Venus';
+                                    else if (p.sign === 6) exaltedPlanetName = 'Saturn';
+
+                                    if (exaltedPlanetName) {
+                                        let exP = pMap[exaltedPlanetName];
+                                        if (exP && (exP.house === 1 || exP.house === 4 || exP.house === 7 || exP.house === 10)) {
+                                            isMatch = true; break;
+                                        }
+                                    }
+
+                                    // Also honor specific complex neechbhanga JSON format if provided
+                                    if (!isMatch && cond.type === 'complex_neechbhanga') {
+                                        if (cond.planet_neech && pName === cond.planet_neech) {
+                                            if (cond.aspect_by) {
+                                                let asP = pMap[cond.aspect_by];
+                                                if (asP && asP.aspects.includes(p.house)) {
+                                                    isMatch = true; break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    else if (cond.type === 'all_kendra_occupied') {
+                        let kH = [1, 4, 7, 10];
+                        let filled = new Set();
+                        for (let key in pMap) {
+                            if (key !== 'Rahu' && key !== 'Ketu') {
+                                if (kH.includes(pMap[key].house)) {
+                                    filled.add(pMap[key].house);
+                                }
+                            }
+                        }
+                        if (filled.size === 4) isMatch = true;
+                    }
+                    else if (cond.type === 'planets_in_x_houses') {
+                        let uniqueHouses = new Set();
+                        for (let key in pMap) {
+                            if (key !== 'Rahu' && key !== 'Ketu') {
+                                uniqueHouses.add(pMap[key].house);
+                            }
+                        }
+                        if (uniqueHouses.size === cond.count) isMatch = true;
+                    }
+                    else if (cond.type === 'complex') {
+                        // Complex ones generally require specific NLP or a detailed hardcoded map.
+                        // For engine robustness without throwing an error, we can attempt soft-match
+                        // based on the rule's ID or skip. (For now, treat true to avoid blocking, but ideally should be explicitly scripted per ID).
+                        if (rule.id === 'gajakesari_yoga') {
+                            let ju = pMap['Jupiter'];
+                            let mo = pMap['Moon'];
+                            if (ju && mo) {
+                                let dist = (ju.house - mo.house + 12) % 12;
+                                if (dist === 0 || dist === 3 || dist === 6 || dist === 9) isMatch = true;
+                            }
+                        } else {
+                            // Currently unsupported complex string will evaluate false
+                            isMatch = false;
+                        }
+                    }
                     else if (cond.type === 'kaal_sarp_direct' || cond.type === 'kaal_sarp_reverse') {
                         let rahu = pMap['Rahu'];
                         let ketu = pMap['Ketu'];
@@ -202,10 +349,10 @@ function detectYogas(planetsData, ascendantDegree) {
                                     // Check if house falls in the short arc from start to end
                                     let isHemmed = false;
                                     if (start < end) {
-                                        if (h > start && h < end) isHemmed = true;
+                                        if (h >= start && h <= end) isHemmed = true;
                                     } else {
                                         // Wraps around 12
-                                        if (h > start || h < end) isHemmed = true;
+                                        if (h >= start || h <= end) isHemmed = true;
                                     }
                                     if (!isHemmed) {
                                         isMatch = false;

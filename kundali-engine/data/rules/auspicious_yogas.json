@@ -1,0 +1,51 @@
+[
+  {
+    "id": "maha_purnima_yoga",
+    "name": "महा-पूर्णिमा योग",
+    "type": "शुभ योग",
+    "description": "सूर्य और चंद्रमा का बिल्कुल आमने-सामने होना—अकल्पनीय सिक्स्थ-सेंस और मानसिक शांति।",
+    "combinations": [
+      {
+        "type": "mutual_aspect",
+        "planet1": "Sun",
+        "planet2": "Moon"
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "shubh_vashi_yoga",
+    "name": "शुभ वाशि योग",
+    "type": "शुभ योग",
+    "description": "सूर्य से पिछले भाव में बुध का होना—लीडरशिप को बैकग्राउंड से सपोर्ट करने वाला कैलकुलेटिव और शांत दिमाग।",
+    "combinations": [
+      {
+        "type": "planet_in_relative_house",
+        "from_planet": "Sun",
+        "relative_house": 12,
+        "require_planet": "Mercury"
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "guru_shukra_drishti",
+    "name": "गुरु-शुक्र सम-सप्तक ज्ञान दृष्टि",
+    "type": "शुभ योग",
+    "description": "देवगुरु और दैत्यगुरु का आमने-सामने होना—अपार लग्जरी और पैसे का 100% नैतिक और 'क्लासी' उपयोग।",
+    "combinations": [
+      {
+        "type": "mutual_aspect",
+        "planet1": "Jupiter",
+        "planet2": "Venus"
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  }
+]

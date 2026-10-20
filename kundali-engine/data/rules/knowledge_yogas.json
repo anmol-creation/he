@@ -1,0 +1,93 @@
+[
+  {
+    "id": "teekshna_buddhi_yoga",
+    "name": "तीक्ष्ण-बुद्धि योग",
+    "type": "ज्ञान/बुद्धि योग",
+    "description": "5वें भाव में बुध—कंप्यूटर जैसा तेज़ दिमाग और ऑब्जर्वेशन।",
+    "combinations": [
+      {
+        "type": "single_planet",
+        "planet": "Mercury",
+        "in_houses": [
+          5
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "goodha_vidya_yoga",
+    "name": "गूढ़-विद्या योग",
+    "type": "ज्ञान/बुद्धि योग",
+    "description": "वृश्चिक राशि का प्रभाव (बुध 5वें भाव में)—रिसर्च, AI और सीक्रेट प्लानिंग का मास्टर।",
+    "combinations": [
+      {
+        "type": "single_planet",
+        "planet": "Mercury",
+        "in_houses": [
+          5
+        ],
+        "in_signs": [
+          7
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "dhee_parakrama_yoga",
+    "name": "धी-पराक्रम योग",
+    "type": "ज्ञान/बुद्धि योग",
+    "description": "पराक्रम भाव (3rd lord) के स्वामी का 5वें में होना—शारीरिक बल की जगह बुद्धि से रिस्क लेना।",
+    "combinations": [
+      {
+        "type": "lord_in_house",
+        "lord": 3,
+        "in_houses": [
+          5
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "kathor_vaak_yoga",
+    "name": "कठोर-वाक योग",
+    "type": "ज्ञान/बुद्धि योग",
+    "description": "2रे भाव के स्वामी (सूर्य) का 6ठे में होना—आदेशात्मक और स्पष्ट वाणी।",
+    "combinations": [
+      {
+        "type": "lord_in_house",
+        "lord": 2,
+        "in_houses": [
+          6
+        ],
+        "planet_check": "Sun"
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "saraswati_yoga",
+    "name": "सरस्वती योग",
+    "type": "ज्ञान/बुद्धि योग",
+    "description": "बुध, शुक्र, और गुरु का विशेष केंद्र/त्रिकोण संबंध—ज्ञान, कला और वाणी से पैसा कमाने की ताकत।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Jupiter, Venus, Mercury in Kendra/Trikona or 2nd house with mutual relation."
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  }
+]
