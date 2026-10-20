@@ -232,19 +232,36 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
             // Use the chartRenderer's logic to get emojis for the table too, keeping it consistent.
             let emojis = "";
-            if (p.dignity === 'Uccha') emojis += "👑";
-            else if (p.dignity === 'Neecha') emojis += "📉";
-            else if (p.dignity === 'Swarashi') emojis += "🏰";
+            if (p.isRetrograde) emojis += "☯️";
 
-            if (p.isRetrograde) emojis += "🔄";
+            if (p.dignity === 'Vargottam') emojis += "⭐️⁺⁵";
+            else if (p.dignity === 'Uccha') emojis += "⭐️⁺⁴";
+            else if (p.dignity === 'Mooltrikona') emojis += "⭐️⁺³";
+            else if (p.dignity === 'Swarashi') emojis += "⭐️⁺²";
+            else if (p.dignity === 'Friendly') emojis += "⭐️⁺¹";
+            else if (p.dignity === 'Enemy') emojis += "⭐️⁻¹";
+            else if (p.dignity === 'Combust') emojis += "⭐️⁻²";
+            else if (p.dignity === 'Neecha') emojis += "⭐️⁻³";
 
+            // Avastha logic from before, converting to lightning bolt symbol representation
             const isOdd = (p.sign % 2 === 0);
             let d = p.degreeInSign;
-            if (d >= 0 && d < 6) emojis += isOdd ? "👶" : "💀";
-            else if (d >= 6 && d < 12) emojis += isOdd ? "👦" : "👴";
-            else if (d >= 12 && d < 18) emojis += "👨";
-            else if (d >= 18 && d < 24) emojis += isOdd ? "👴" : "👦";
-            else emojis += isOdd ? "💀" : "👶";
+            let power = 0;
+            if (d >= 0 && d < 6) power = isOdd ? 25 : 0;
+            else if (d >= 6 && d < 12) power = isOdd ? 50 : 10;
+            else if (d >= 12 && d < 18) power = 100;
+            else if (d >= 18 && d < 24) power = isOdd ? 10 : 50;
+            else power = isOdd ? 0 : 25;
+
+            // Optional mapping to Unicode superscripts
+            const mapSuperscript = {
+                0: '⁰',
+                10: '¹⁰',
+                25: '²⁵',
+                50: '⁵⁰',
+                100: '¹⁰⁰'
+            };
+            emojis += ` ⚡${mapSuperscript[power]}`;
 
             output += `${planetName} | ${signName} | ${deg}   | ${emojis.padEnd(8)} | H: ${houseStr}\n`;
         });

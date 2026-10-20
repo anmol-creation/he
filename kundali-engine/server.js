@@ -87,7 +87,16 @@ app.post('/api/calculate', (req, res) => {
                 else if (pName.includes('Venus') && sign === 5) dignity = "Neecha";
                 else if (pName.includes('Saturn') && sign === 0) dignity = "Neecha";
 
-                // Swarashi (Own House)
+                // Mooltrikona rules
+                else if (pName.includes('Sun') && sign === 4 && degreeInSign <= 20) dignity = "Mooltrikona";
+                else if (pName.includes('Moon') && sign === 1 && degreeInSign >= 3) dignity = "Mooltrikona";
+                else if (pName.includes('Mars') && sign === 0 && degreeInSign <= 12) dignity = "Mooltrikona";
+                else if (pName.includes('Mercury') && sign === 5 && degreeInSign >= 15 && degreeInSign <= 20) dignity = "Mooltrikona";
+                else if (pName.includes('Jupiter') && sign === 8 && degreeInSign <= 10) dignity = "Mooltrikona";
+                else if (pName.includes('Venus') && sign === 6 && degreeInSign <= 15) dignity = "Mooltrikona";
+                else if (pName.includes('Saturn') && sign === 10 && degreeInSign <= 20) dignity = "Mooltrikona";
+
+                // Swarashi (Own House) - Remaining degrees
                 else if (pName.includes('Sun') && sign === 4) dignity = "Swarashi";
                 else if (pName.includes('Moon') && sign === 3) dignity = "Swarashi";
                 else if (pName.includes('Mars') && (sign === 0 || sign === 7)) dignity = "Swarashi";
@@ -95,6 +104,43 @@ app.post('/api/calculate', (req, res) => {
                 else if (pName.includes('Jupiter') && (sign === 8 || sign === 11)) dignity = "Swarashi";
                 else if (pName.includes('Venus') && (sign === 1 || sign === 6)) dignity = "Swarashi";
                 else if (pName.includes('Saturn') && (sign === 9 || sign === 10)) dignity = "Swarashi";
+
+                // Natural Relationships (Simplified: Friendly/Enemy signs if not Neutral/Uccha/Neecha/Swarashi/Mooltrikona)
+                if (dignity === "Neutral") {
+                    const signLord = {
+                        0: 'Mars', 1: 'Venus', 2: 'Mercury', 3: 'Moon', 4: 'Sun', 5: 'Mercury',
+                        6: 'Venus', 7: 'Mars', 8: 'Jupiter', 9: 'Saturn', 10: 'Saturn', 11: 'Jupiter'
+                    }[sign];
+
+                    const friends = {
+                        'Sun': ['Moon', 'Mars', 'Jupiter'],
+                        'Moon': ['Sun', 'Mercury'],
+                        'Mars': ['Sun', 'Moon', 'Jupiter'],
+                        'Mercury': ['Sun', 'Venus'],
+                        'Jupiter': ['Sun', 'Moon', 'Mars'],
+                        'Venus': ['Mercury', 'Saturn'],
+                        'Saturn': ['Mercury', 'Venus']
+                    };
+
+                    const enemies = {
+                        'Sun': ['Venus', 'Saturn'],
+                        'Moon': [], // Moon has no natural enemies
+                        'Mars': ['Mercury'],
+                        'Mercury': ['Moon'],
+                        'Jupiter': ['Mercury', 'Venus'],
+                        'Venus': ['Sun', 'Moon'],
+                        'Saturn': ['Sun', 'Moon', 'Mars']
+                    };
+
+                    const pKey = ['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn'].find(k => pName.includes(k));
+                    if (pKey && signLord) {
+                        if (friends[pKey] && friends[pKey].includes(signLord)) {
+                            dignity = "Friendly";
+                        } else if (enemies[pKey] && enemies[pKey].includes(signLord)) {
+                            dignity = "Enemy";
+                        }
+                    }
+                }
 
                 results.push({
                     name: planetNames[index],
@@ -116,6 +162,50 @@ app.post('/api/calculate', (req, res) => {
         results.forEach(p => {
             if (p.name.includes('Sun')) sunLong = p.longitude;
             if (p.name.includes('Moon')) moonLong = p.longitude;
+        });
+
+        // Calculate Combust (Asta) and Vargottam
+        results.forEach(p => {
+            // Combust Logic (Asta) - Proximity to Sun
+            // Note: Rahu/Ketu are not considered combust
+            if (p.name !== 'सूर्य (Sun)' && !p.name.includes('Rahu') && !p.name.includes('Ketu')) {
+                let dist = Math.abs(p.longitude - sunLong);
+                if (dist > 180) dist = 360 - dist;
+
+                let combustOrb = 15; // default
+                if (p.name.includes('Moon')) combustOrb = 12;
+                if (p.name.includes('Mars')) combustOrb = 17;
+                if (p.name.includes('Mercury')) combustOrb = 14;
+                if (p.name.includes('Jupiter')) combustOrb = 11;
+                if (p.name.includes('Venus')) combustOrb = 10;
+                if (p.name.includes('Saturn')) combustOrb = 15;
+
+                if (dist <= combustOrb) {
+                    p.isCombust = true;
+                    // If planet is combust, it overrides other positive dignities in Vedic Astrology
+                    p.dignity = "Combust";
+                }
+            }
+
+            // Vargottam Logic (D1 sign == D9 sign)
+            const d1Sign = p.sign;
+            const navamshaPart = Math.floor(p.degreeInSign / (30/9));
+
+            let startingSign = 0;
+            if ([0, 4, 8].includes(d1Sign)) startingSign = 0;
+            else if ([1, 5, 9].includes(d1Sign)) startingSign = 9;
+            else if ([2, 6, 10].includes(d1Sign)) startingSign = 6;
+            else if ([3, 7, 11].includes(d1Sign)) startingSign = 3;
+
+            const d9Sign = (startingSign + navamshaPart) % 12;
+            p.d9Sign = d9Sign;
+
+            // If combust or debilitated, we usually don't give it Vargottam highest priority for basic UI display,
+            // but for logic, Vargottam stands. We'll let Vargottam override standard good dignities.
+            if (d1Sign === d9Sign && p.dignity !== "Combust" && p.dignity !== "Neecha") {
+                p.isVargottam = true;
+                p.dignity = "Vargottam";
+            }
         });
 
         let diff = moonLong - sunLong;

@@ -48,55 +48,87 @@ export class KundaliChartRenderer {
         // Odd signs: Aries(0), Gemini(2), Leo(4), Libra(6), Sagittarius(8), Aquarius(10)
         // Note: sign is 0-indexed here
         const isOdd = (sign % 2 === 0);
-        let avastha = "";
-        let avScore = 0;
+        let avasthaInfo, avScore, percentage;
 
         if (degree >= 0 && degree < 6) {
-            avastha = isOdd ? "👶" : "💀";
+            avasthaInfo = isOdd ? "Baal" : "Mrit";
+            percentage = isOdd ? "25" : "0";
             avScore = isOdd ? 0 : -2;
         } else if (degree >= 6 && degree < 12) {
-            avastha = isOdd ? "👦" : "👴";
+            avasthaInfo = isOdd ? "Kumar" : "Vriddh";
+            percentage = isOdd ? "50" : "10";
             avScore = isOdd ? 1 : -1;
         } else if (degree >= 12 && degree < 18) {
-            avastha = "👨"; // Yuva for both
+            avasthaInfo = "Yuva"; // Yuva for both
+            percentage = "100";
             avScore = 2;
         } else if (degree >= 18 && degree < 24) {
-            avastha = isOdd ? "👴" : "👦";
+            avasthaInfo = isOdd ? "Vriddh" : "Kumar";
+            percentage = isOdd ? "10" : "50";
             avScore = isOdd ? -1 : 1;
         } else {
-            avastha = isOdd ? "💀" : "👶";
+            avasthaInfo = isOdd ? "Mrit" : "Baal";
+            percentage = isOdd ? "0" : "25";
             avScore = isOdd ? -2 : 0;
         }
-        return { emoji: avastha, score: avScore };
+
+        // Superscript percentage mapping
+        const superscriptMap = {
+            '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+            '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+        };
+        const percentageStr = percentage.split('').map(char => superscriptMap[char] || char).join('');
+
+        // FontAwesome Lightning Bolt (⚡) unicode: \uf0e7.
+        // In SVG text, it needs the fa font family.
+        const symbol = "\uf0e7" + percentageStr;
+
+        return {
+            symbol: symbol,
+            score: avScore,
+            tooltip: `Power: ${percentage}% (${avasthaInfo})`
+        };
     }
 
     getPlanetDetails(p) {
         let emojis = "";
         let score = 0;
+        let dignityText = "";
+
+        // Retrograde Yin-Yang comes first if applicable
+        if (p.isRetrograde) {
+            emojis += "☯️";
+            score += 0.5; // vakri planets are strong
+            dignityText += "वक्री (Retrograde) | ";
+        }
 
         // Dignity
-        if (p.dignity === 'Uccha') { emojis += "👑"; score += 3; }
-        else if (p.dignity === 'Neecha') { emojis += "📉"; score -= 3; }
-        else if (p.dignity === 'Swarashi') { emojis += "🏰"; score += 2; }
-
-        // Retrograde
-        if (p.isRetrograde) { emojis += "🔄"; score += 0.5; /* vakri planets are strong */ }
+        if (p.dignity === 'Vargottam') { emojis += "⭐️⁺⁵"; score += 4; dignityText += "वर्गोत्तम (Vargottam)"; }
+        else if (p.dignity === 'Uccha') { emojis += "⭐️⁺⁴"; score += 3; dignityText += "उच्च (Exalted)"; }
+        else if (p.dignity === 'Mooltrikona') { emojis += "⭐️⁺³"; score += 2.5; dignityText += "मूलत्रिकोण (Mooltrikona)"; }
+        else if (p.dignity === 'Swarashi') { emojis += "⭐️⁺²"; score += 2; dignityText += "स्वराशि (Own Sign)"; }
+        else if (p.dignity === 'Friendly') { emojis += "⭐️⁺¹"; score += 1; dignityText += "मित्र राशि (Friendly Sign)"; }
+        else if (p.dignity === 'Neutral') { score += 0; dignityText += "सम (Neutral)"; }
+        else if (p.dignity === 'Enemy') { emojis += "⭐️⁻¹"; score -= 1; dignityText += "शत्रु राशि (Enemy Sign)"; }
+        else if (p.dignity === 'Combust') { emojis += "⭐️⁻²"; score -= 2; dignityText += "अस्त (Combust)"; }
+        else if (p.dignity === 'Neecha') { emojis += "⭐️⁻³"; score -= 3; dignityText += "नीच (Debilitated)"; }
 
         // Avastha
         const av = this.getAvastha(p.sign, p.degree);
-        emojis += av.emoji;
         score += av.score;
 
         // Determine Color based on score (Red to Green)
-        // Max score ~ 5.5, Min score ~ -5
         let color = "#e0e0e0"; // Default
-        if (score >= 4) color = "#4ade80"; // Bright Green
-        else if (score >= 2) color = "#86efac"; // Light Green
-        else if (score >= 0) color = "#fde047"; // Yellow
-        else if (score >= -2) color = "#fca5a5"; // Light Red
-        else color = "#ef4444"; // Bright Red
+        if (score >= 4) color = "#FFD700"; // Gold for premium top level
+        else if (score >= 2) color = "#4ade80"; // Bright Green
+        else if (score >= 0) color = "#86efac"; // Light Green
+        else if (score >= -1.5) color = "#fca5a5"; // Light Red
+        else color = "#ff4d4d"; // Bright Red
 
-        return { emojis, color };
+        const combinedTooltip = `${av.tooltip} | ${dignityText}`;
+
+        // Note: we separate avSymbol from emojis so we can apply font-awesome class to it in SVG
+        return { emojis, avSymbol: av.symbol, color, tooltipText: combinedTooltip };
     }
 
     render() {
@@ -222,10 +254,33 @@ export class KundaliChartRenderer {
                 const details = this.getPlanetDetails(p);
                 const pText = this.getPlanetSymbol(p.name, this.lang) + " " + details.emojis;
                 const offset = (index - (housePlanets.length-1)/2) * 16;
-                const t = this.createText(svg, houseCoords[i].hx, houseCoords[i].hy + offset + 5, pText, details.color, "15px", true, "planet-text");
-                // Simple hover interactivity natively on SVG
-                t.addEventListener('mouseenter', () => { t.setAttribute('font-size', '18px'); t.style.cursor = 'pointer'; });
-                t.addEventListener('mouseleave', () => { t.setAttribute('font-size', '15px'); });
+
+                // Group to hold text and tooltip
+                const g = document.createElementNS(SVG_NS, "g");
+                svg.appendChild(g);
+
+                // Main planet text
+                const t = this.createText(g, houseCoords[i].hx - 10, houseCoords[i].hy + offset + 5, pText, details.color, "15px", true, "planet-text");
+
+                // FontAwesome Icon text
+                const faIcon = this.createText(g, houseCoords[i].hx + 10, houseCoords[i].hy + offset + 5, details.avSymbol, details.color, "12px", false, "fa-solid");
+                faIcon.style.fontFamily = '"Font Awesome 6 Free"';
+                faIcon.style.fontWeight = '900';
+
+                // Add simple native tooltip
+                const title = document.createElementNS(SVG_NS, "title");
+                title.textContent = `${p.name} - ${details.tooltipText}`;
+                g.appendChild(title);
+
+                g.addEventListener('mouseenter', () => {
+                    t.setAttribute('font-size', '18px');
+                    faIcon.setAttribute('font-size', '14px');
+                    g.style.cursor = 'pointer';
+                });
+                g.addEventListener('mouseleave', () => {
+                    t.setAttribute('font-size', '15px');
+                    faIcon.setAttribute('font-size', '12px');
+                });
             });
         }
     }
@@ -278,9 +333,29 @@ export class KundaliChartRenderer {
                 const details = this.getPlanetDetails(p);
                 const pText = this.getPlanetSymbol(p.name, this.lang) + " " + details.emojis;
                 const offset = (index - (signPlanets.length-1)/2) * 16;
-                const t = this.createText(svg, cx, cy + offset, pText, details.color, "14px", true, "planet-text");
-                t.addEventListener('mouseenter', () => { t.setAttribute('font-size', '17px'); t.style.cursor = 'pointer'; });
-                t.addEventListener('mouseleave', () => { t.setAttribute('font-size', '14px'); });
+
+                const g = document.createElementNS(SVG_NS, "g");
+                svg.appendChild(g);
+
+                const t = this.createText(g, cx - 10, cy + offset, pText, details.color, "14px", true, "planet-text");
+
+                const faIcon = this.createText(g, cx + 10, cy + offset, details.avSymbol, details.color, "11px", false, "fa-solid");
+                faIcon.style.fontFamily = '"Font Awesome 6 Free"';
+                faIcon.style.fontWeight = '900';
+
+                const title = document.createElementNS(SVG_NS, "title");
+                title.textContent = `${p.name} - ${details.tooltipText}`;
+                g.appendChild(title);
+
+                g.addEventListener('mouseenter', () => {
+                    t.setAttribute('font-size', '17px');
+                    faIcon.setAttribute('font-size', '13px');
+                    g.style.cursor = 'pointer';
+                });
+                g.addEventListener('mouseleave', () => {
+                    t.setAttribute('font-size', '14px');
+                    faIcon.setAttribute('font-size', '11px');
+                });
             });
         }
     }
