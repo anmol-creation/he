@@ -1,0 +1,106 @@
+[
+  {
+    "id": "chatusagara_yoga",
+    "name": "चतुःसागर योग",
+    "type": "महा-कवच",
+    "description": "चारों मुख्य केंद्रों—1, 4, 7 और 10—का ग्रहों से पूर्ण रूप से पैक होना। यह आपको अजेय 'पायनियर' बनाता है।",
+    "combinations": [
+      {
+        "type": "all_kendra_occupied"
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
+  },
+  {
+    "id": "uchcha_mangal_dosha_parihar",
+    "name": "उच्च मंगल दोष परिहार",
+    "type": "महा-कवच",
+    "description": "उच्च मंगल के कारण 7वें घर का बचाव—विवाह टूटने की जगह 'पावर-कपल' बनना।",
+    "combinations": [
+      {
+        "type": "single_planet",
+        "planet": "Mars",
+        "in_houses": [
+          7
+        ],
+        "in_signs": [
+          9
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
+  },
+  {
+    "id": "shatruhanta_yoga",
+    "name": "शत्रुहंता योग",
+    "type": "महा-कवच",
+    "description": "सूर्य का 6ठे भाव में होना—विरोधियों और कोर्ट-कचहरी में अजेय।",
+    "combinations": [
+      {
+        "type": "single_planet",
+        "planet": "Sun",
+        "in_houses": [
+          6
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
+  },
+  {
+    "id": "videsh_gaman_tarakki",
+    "name": "विदेश-गमन तरक्की योग",
+    "type": "महा-कवच",
+    "description": "लग्न के स्वामी का 12वें में होना—जन्मस्थान से दूर या विदेश में जाने पर साम्राज्य का विस्तार।",
+    "combinations": [
+      {
+        "type": "lord_in_house",
+        "lord": 1,
+        "in_houses": [
+          12
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
+  },
+  {
+    "id": "ubhayachari_yoga",
+    "name": "उभयचरी योग",
+    "type": "महा-कवच",
+    "description": "सूर्य के आगे (मंगल) और पीछे (बुध) का होना—समाज में हर तरफ से 'प्रोटेक्टेड' रहना।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Planets (other than Moon) in 2nd and 12th from Sun."
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
+  },
+  {
+    "id": "matru_vahan_sukh",
+    "name": "परिपूर्ण मातृ-वाहन सुख योग",
+    "type": "महा-कवच",
+    "description": "4थे भाव में शुक्र—ज़मीन-जायदाद और वाहनों की अटूट सुरक्षा।",
+    "combinations": [
+      {
+        "type": "single_planet",
+        "planet": "Venus",
+        "in_houses": [
+          4
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 3
+  }
+]

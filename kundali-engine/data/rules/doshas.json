@@ -1,0 +1,239 @@
+[
+  {
+    "id": "mangal_ketu_visfotak",
+    "name": "मंगल-केतु विस्फोटक दोष",
+    "type": "दोष",
+    "description": "7वें घर में मंगल (आग) और केतु (विस्फोट) एक साथ। पार्टनरशिप में भयंकर 'ईगो' और 'शॉर्ट-टेम्पर' देता है।",
+    "combinations": [
+      {
+        "type": "conjunction",
+        "planets": [
+          "Mars",
+          "Ketu"
+        ],
+        "in_houses": [
+          7
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "vish_yoga_punarphoo",
+    "name": "विष योग / पुनर्फू दोष (The Silent Depression)",
+    "type": "दोष",
+    "description": "शनि की चंद्रमा पर दृष्टि या युति। भयंकर अकेलापन, उदासी और मन में डिटैचमेंट (वैराग्य) देता है।",
+    "combinations": [
+      {
+        "type": "conjunction_or_aspect",
+        "planet1": "Saturn",
+        "planet2": "Moon"
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "shadashtaka_dosha_moon_mars",
+    "name": "षडाष्टक मानसिक दोष (The Internal Friction)",
+    "type": "दोष",
+    "description": "चंद्रमा और मंगल 6/8 की दूरी पर। मन और एक्शन कभी एक पेज पर नहीं होते, जिससे ओवरथिंकिंग होती है।",
+    "combinations": [
+      {
+        "type": "relative_position",
+        "planet1": "Moon",
+        "planet2": "Mars",
+        "allowed_distances": [
+          6,
+          8
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "guru_chandal_dosha",
+    "name": "गुरु चांडाल दोष",
+    "type": "दोष",
+    "description": "लग्न में राहु। इंसान को बड़ा 'भ्रम' (Illusion) देता है और शॉर्टकट ढूंढने की आदत डालता है।",
+    "combinations": [
+      {
+        "type": "conjunction",
+        "planets": [
+          "Jupiter",
+          "Rahu"
+        ]
+      },
+      {
+        "type": "mutual_aspect",
+        "planets": [
+          "Jupiter",
+          "Rahu"
+        ]
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "benefic_aspect",
+        "planet": "Jupiter"
+      }
+    ],
+    "score": -50,
+    "frequency_multiplier": 5
+  },
+  {
+    "id": "kaal_sarp_dosha",
+    "name": "कालसर्प दोष (Kaal Sarp Dosha)",
+    "type": "दोष",
+    "description": "जब कुंडली के सभी 7 मुख्य ग्रह राहु और केतु की धुरी (Axis) के एक ही तरफ आ जाएं। यह अस्थिरता, संघर्ष और अचानक उतार-चढ़ाव देता है।",
+    "combinations": [
+      {
+        "type": "kaal_sarp_direct"
+      },
+      {
+        "type": "kaal_sarp_reverse"
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "planet_outside_axis"
+      }
+    ],
+    "score": -50,
+    "frequency_multiplier": 5
+  },
+  {
+    "id": "pitra_dosha",
+    "name": "पितृ दोष (Pitra Dosha)",
+    "type": "दोष",
+    "description": "9वें भाव (भाग्य/पिता), सूर्य या गुरु पर राहु/केतु या शनि का गहरा पाप प्रभाव। यह पूर्वजों के ऋण और वंश वृद्धि में रुकावट को दर्शाता है।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Affliction to 9th house, 9th lord, Sun, or Jupiter by Rahu/Ketu/Saturn."
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "angarak_dosha",
+    "name": "अंगारक दोष (Angarak Dosha)",
+    "type": "दोष",
+    "description": "मंगल और राहु की युति (Conjunction)। यह इंसान को क्रोधी, जल्दबाज और कभी-कभी हिंसक प्रवृत्तियों की तरफ ले जा सकता है।",
+    "combinations": [
+      {
+        "type": "conjunction",
+        "planets": [
+          "Mars",
+          "Rahu"
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "shrapit_dosha",
+    "name": "श्रापित दोष (Shrapit Dosha)",
+    "type": "दोष",
+    "description": "शनि और राहु की युति। इसे पिछले जन्म का 'श्राप' माना जाता है, जिससे कुंडली के अच्छे राजयोग भी अपना पूरा फल नहीं दे पाते।",
+    "combinations": [
+      {
+        "type": "conjunction",
+        "planets": [
+          "Saturn",
+          "Rahu"
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "paap_kartari_dosha",
+    "name": "पापकर्तरी दोष (Paap Kartari Dosha)",
+    "type": "दोष",
+    "description": "जब कोई शुभ ग्रह या लग्न दो पापी ग्रहों के बीच सैंडविच (Sandwich) बन जाए (जैसे 2रे और 12वें भाव में पापी ग्रह)। इससे उस भाव का दम घुटता है।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Malefics in 2nd and 12th from a house or planet."
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "gandmool_dosha",
+    "name": "गंडमूल दोष (Gandmool Dosha)",
+    "type": "दोष",
+    "description": "अश्विनी, आश्लेषा, मघा, ज्येष्ठा, मूल या रेवती नक्षत्र (बुध और केतु के नक्षत्र) में जन्म। यह स्वास्थ्य और जीवन के लिए कष्टकारी माना जाता है।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Moon in Gandmool Nakshatras."
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "gandanta_dosha",
+    "name": "गंडांत दोष (Gandanta Dosha)",
+    "type": "दोष",
+    "description": "जल और अग्नि राशि के मिलन बिंदु (0 डिग्री या 29 डिग्री) पर बैठा ग्रह। यह एक ऐसी मनोवैज्ञानिक/शारीरिक ग्रंथि (Knot) बन जाता है जिसे सुलझाना मुश्किल है।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Planet at exactly 0 or 29 degrees joining Water/Fire signs."
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "amavasya_dosha",
+    "name": "अमावस्या दोष (Amavasya Dosha)",
+    "type": "दोष",
+    "description": "सूर्य और चंद्रमा की बिल्कुल सटीक युति। इंसान मानसिक रूप से बहुत कमजोर, डरा हुआ या निराशावादी हो सकता है।",
+    "combinations": [
+      {
+        "type": "conjunction",
+        "planets": [
+          "Sun",
+          "Moon"
+        ]
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  },
+  {
+    "id": "daridra_dosha",
+    "name": "दारिद्र्य योग/दोष (Daridra Dosha)",
+    "type": "दोष",
+    "description": "धन भाव (2रा या 11वां) या भाग्य भाव (9वां) के स्वामी का 6ठे, 8वें या 12वें भाव में बैठना। यह आर्थिक तंगी और कर्ज देता है।",
+    "combinations": [
+      {
+        "type": "complex",
+        "description": "Lords of 2, 9, 11 in 6, 8, 12."
+      }
+    ],
+    "cancellations": [],
+    "score": -20,
+    "frequency_multiplier": 2
+  }
+]

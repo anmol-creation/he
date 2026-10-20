@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dama_nabhasa_yoga",
+    "name": "दाम नाभस योग (Dama Yoga)",
+    "type": "नाभस योग",
+    "description": "सभी 7 ग्रहों का ठीक 6 भावों में स्थित होना—जीवनभर परोपकार, ज्ञान, और अचल संपत्ति की गारंटी।",
+    "combinations": [
+      {
+        "type": "planets_in_x_houses",
+        "count": 6
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "kedar_yoga",
+    "name": "केदार योग (Kedar Yoga)",
+    "type": "नाभस योग",
+    "description": "जब कुंडली के सभी 7 ग्रह किन्हीं 4 भावों में स्थित हों। यह इंसान को कृषि, ज़मीन-जायदाद (Real Estate) और जनता का लीडर बनाता है।",
+    "combinations": [
+      {
+        "type": "planets_in_x_houses",
+        "count": 4
+      }
+    ],
+    "cancellations": [],
+    "score": 10,
+    "frequency_multiplier": 1
+  }
+]
