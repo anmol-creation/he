@@ -1080,7 +1080,47 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।',
   clusterName: 'वंग देश चंद्रवंशी'
 },
+      {
+  id: 'suppadevi_vanga',
+  name: 'सुप्पदेवी',
+  subtitle: 'वंग-कलिंग राजकुमारी',
+  parent: 'vanga_anu',
+  gender: 'female',
+  yug: 'dwapar',
+  parichay: 'महावंश (बौद्ध ग्रंथ) के अनुसार, वंग देश के राजा और कलिंग की राजकुमारी की पुत्री। यह स्वेच्छा से जंगल में रहने लगीं जहाँ इनका संपर्क एक सिंह से हुआ।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
     {
+  id: 'sinhabahu_vanga',
+  name: 'सिंहाबाहु',
+  subtitle: 'सिंहपुर का संस्थापक',
+  parent: 'suppadevi_vanga',
+  yug: 'kali',
+  parichay: 'सुप्पदेवी के पुत्र। इन्होंने सिंहपुर नगर बसाया और श्रीलंका के सिंहल वंश के मूल पुरुष बने।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'sinhasivali_vanga',
+  name: 'सिहसीवली',
+  subtitle: 'सिंहाबाहु की पत्नी व बहन',
+  parent: 'suppadevi_vanga',
+  gender: 'female',
+  spouseOf: 'sinhabahu_vanga',
+  yug: 'kali',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'prince_vijaya',
+  name: 'राजकुमार विजय',
+  subtitle: 'श्रीलंका के प्रथम राजा',
+  parent: 'sinhabahu_vanga',
+  mother: 'sinhasivali_vanga',
+  yug: 'kali',
+  kali_year: 543,
+  parichay: 'सिंहाबाहु के 32 पुत्रों में सबसे बड़े। पिता द्वारा निर्वासित किए जाने पर इन्होंने 543 ईसा पूर्व में श्रीलंका पहुँचकर ताम्बपर्णी (सिंहल राजवंश) की स्थापना की।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+  {
   id: 'kalinga_anu',
   name: 'कलिंग',
   subtitle: 'कलिंग देश संस्थापक',
