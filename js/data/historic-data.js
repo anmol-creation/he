@@ -10,6 +10,7 @@ import { yaduData } from './historic-map-data/brahma/chandravansh/yadu.js';
 import { puruData } from './historic-map-data/brahma/chandravansh/puru.js';
 import { kuruData } from './historic-map-data/brahma/chandravansh/kuru.js';
 import { anuDruhyuTurvasuData } from './historic-map-data/brahma/chandravansh/anu_druhyu_turvasu.js';
+import { sinhalaDynastyData } from './historic-map-data/brahma/chandravansh/sinhala_dynasty.js';
 import { agnivanshData } from './historic-map-data/brahma/agnivansh.js';
 import { nagavanshData } from './historic-map-data/brahma/nagavansh.js';
 import { jhansiNewalkarData } from './historic-map-data/brahma/jhansi-newalkar.js';
@@ -28,6 +29,7 @@ export const historicData = [
     ...puruData,
     ...kuruData,
     ...anuDruhyuTurvasuData,
+    ...sinhalaDynastyData,
     ...agnivanshData,
     ...nagavanshData,
     ...jhansiNewalkarData
