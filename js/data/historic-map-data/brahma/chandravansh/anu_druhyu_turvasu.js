@@ -1080,7 +1080,120 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।',
   clusterName: 'वंग देश चंद्रवंशी'
 },
+      {
+  id: 'suppadevi_vanga',
+  name: 'सुप्पदेवी',
+  subtitle: 'वंग-कलिंग राजकुमारी',
+  parent: 'vanga_anu',
+  gender: 'female',
+  yug: 'dwapar',
+  parichay: 'महावंश (बौद्ध ग्रंथ) के अनुसार, वंग देश के राजा और कलिंग की राजकुमारी की पुत्री। यह स्वेच्छा से जंगल में रहने लगीं जहाँ इनका संपर्क एक सिंह से हुआ।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
     {
+  id: 'sinhabahu_vanga',
+  name: 'सिंहाबाहु',
+  subtitle: 'सिंहपुर का संस्थापक',
+  parent: 'suppadevi_vanga',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'सुप्पदेवी के पुत्र। इन्होंने सिंहपुर नगर बसाया और श्रीलंका के सिंहल वंश के मूल पुरुष बने।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'sinhasivali_vanga',
+  name: 'सिहसीवली',
+  subtitle: 'सिंहाबाहु की पत्नी व बहन',
+  parent: 'suppadevi_vanga',
+  gender: 'female',
+  spouseOf: 'sinhabahu_vanga',
+  yug: 'kali',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'prince_vijaya',
+  name: 'राजकुमार विजय',
+  subtitle: 'श्रीलंका के प्रथम राजा',
+  parent: 'sinhabahu_vanga',
+  mother: 'sinhasivali_vanga',
+  gender: 'male',
+  yug: 'kali',
+  kali_year: 543,
+  parichay: 'सिंहाबाहु के 32 पुत्रों में सबसे बड़े। पिता द्वारा निर्वासित किए जाने पर इन्होंने 543 ईसा पूर्व में श्रीलंका पहुँचकर ताम्बपर्णी (सिंहल राजवंश) की स्थापना की।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'sumitta_sinhala',
+  name: 'सुमित्त',
+  subtitle: 'सिंहपुर के राजा',
+  parent: 'sinhabahu_vanga',
+  mother: 'sinhasivali_vanga',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'विजय के छोटे भाई। जब विजय की निसंतान मृत्यु हुई, तो सुमित्त के वंशजों को श्रीलंका का राजा बनाया गया।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'panduvasudeva_sinhala',
+  name: 'पण्डुवासुदेव',
+  subtitle: 'श्रीलंका के राजा',
+  parent: 'sumitta_sinhala',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'सुमित्त के पुत्र और विजय के भतीजे। ये श्रीलंका के अगले महान राजा बने।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'abhaya_sinhala',
+  name: 'अभय',
+  subtitle: 'श्रीलंका के राजा',
+  parent: 'panduvasudeva_sinhala',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'पण्डुवासुदेव के सबसे बड़े पुत्र और उत्तराधिकारी।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'chitra_sinhala',
+  name: 'चित्रा',
+  subtitle: 'अभय की बहन',
+  parent: 'panduvasudeva_sinhala',
+  gender: 'female',
+  yug: 'kali',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'pandukabhaya_sinhala',
+  name: 'पण्डुकाभय',
+  subtitle: 'अनुराधापुर के संस्थापक',
+  parent: 'chitra_sinhala',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'चित्रा के पुत्र। इन्होंने महान अनुराधापुर शहर की स्थापना की और श्रीलंका को एक संगठित राज्य बनाया।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'mutasiva_sinhala',
+  name: 'मुतसीव',
+  subtitle: 'श्रीलंका के राजा',
+  parent: 'pandukabhaya_sinhala',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'पण्डुकाभय के पुत्र और अनुराधापुर के अगले राजा।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'devanampiya_tissa_sinhala',
+  name: 'देवानाम्पिय तिस्स',
+  subtitle: 'श्रीलंका के महान बौद्ध राजा',
+  parent: 'mutasiva_sinhala',
+  gender: 'male',
+  yug: 'kali',
+  kali_year: 247,
+  parichay: 'मुतसीव के पुत्र। इनके समय में सम्राट अशोक के पुत्र महिन्द श्रीलंका आए और इन्होंने बौद्ध धर्म को राजकीय धर्म बनाया।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+  {
   id: 'kalinga_anu',
   name: 'कलिंग',
   subtitle: 'कलिंग देश संस्थापक',
@@ -1090,7 +1203,46 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की।',
   clusterName: 'कलिंग देश चंद्रवंशी'
 },
+      {
+  id: 'brahmadatta_kalinga',
+  name: 'ब्रह्मदत्त',
+  subtitle: 'कलिंग नरेश',
+  parent: 'kalinga_anu',
+  yug: 'dwapar',
+  parichay: 'कलिंग के प्राचीन राजा जिन्हें बुद्ध के परिनिर्वाण के बाद उनका पवित्र दाँत (Tooth Relic) प्राप्त हुआ था।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
     {
+  id: 'guhasiva_kalinga',
+  name: 'गुहसीव',
+  subtitle: 'कलिंग नरेश',
+  parent: 'brahmadatta_kalinga',
+  yug: 'kali',
+  parichay: 'दाठावंश के अनुसार कलिंग के राजा। जब इन पर हमला हुआ तो इन्होंने बुद्ध का पवित्र दाँत अपनी पुत्री हेममाला के माध्यम से श्रीलंका भेज दिया।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
+    {
+  id: 'hemamala_kalinga',
+  name: 'हेममाला',
+  subtitle: 'कलिंग राजकुमारी',
+  parent: 'guhasiva_kalinga',
+  gender: 'female',
+  yug: 'kali',
+  parichay: 'गुहसीव की पुत्री, जिन्होंने अपने बालों में छुपाकर बुद्ध का पवित्र दाँत (Tooth Relic) श्रीलंका पहुँचाया।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
+    {
+  id: 'dantha_kalinga',
+  name: 'दन्त',
+  subtitle: 'अवन्ती/उज्जैन के राजकुमार',
+  parent: '',
+  spouseOf: 'hemamala_kalinga',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'राजकुमारी हेममाला के पति और उज्जैन के राजकुमार, जो उनके साथ श्रीलंका गए।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
+  {
   id: 'pundra_anu',
   name: 'पुण्ड्र',
   subtitle: 'पुण्ड्र देश संस्थापक',
