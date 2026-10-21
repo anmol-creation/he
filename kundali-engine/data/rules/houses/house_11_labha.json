@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h11_sun",
+    "name": "ग्यारहवें भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य ग्यारहवें घर (लाभ, मित्र, नेटवर्क) में: सभी इच्छाएं पूरी होने के प्रबल योग। व्यक्ति का नेटवर्क बहुत मजबूत होता है और सरकार या प्रभावशाली लोगों से बड़े लाभ होते हैं। हालांकि, दोस्तों से थोड़ा 'ईगो' क्लैश हो सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [11] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_moon",
+    "name": "ग्यारहवें भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा ग्यारहवें घर में: दोस्तों और सोशल नेटवर्क से बहुत इमोशनल जुड़ाव होता है। बिजनेस में तरल पदार्थों (liquid cash) का फ्लो अच्छा रहता है। महिलाओं के सहयोग से धन लाभ हो सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [11] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_mars",
+    "name": "ग्यारहवें भाव में मंगल",
+    "type": "भाव फल",
+    "description": "मंगल ग्यारहवें घर में: यह भी धन लाभ की बहुत अच्छी स्थिति है। व्यक्ति अपनी मेहनत और आक्रामकता से भारी धन और प्रॉपर्टी कमाता है। बड़े भाई-बहनों से या दोस्तों से अक्सर वाद-विवाद होता रहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [11] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_mercury",
+    "name": "ग्यारहवें भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध ग्यारहवें घर में: बहुत बड़ा सोशल नेटवर्क होता है। व्यक्ति अपनी बुद्धि, नेटवर्किंग स्किल और कम्युनिकेशन से भारी लाभ कमाता है। मल्टीपल इनकम सोर्स बनाने में माहिर होते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [11] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_jupiter",
+    "name": "ग्यारहवें भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु ग्यारहवें घर में: ज्ञान, सलाहकार और बड़े संस्थानों से लाभ मिलता है। व्यक्ति के दोस्त बहुत संस्कारी और ज्ञानी होते हैं। जीवन में लगभग सभी सात्विक इच्छाएं पूरी होती हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [11] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_venus",
+    "name": "ग्यारहवें भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र ग्यारहवें घर में: बहुत ज्यादा लग्जरी और भौतिक सुख प्राप्त होता है। व्यक्ति पार्टियों और सोशल इवेंट्स की जान होता है। विपरीत लिंग (opposite gender) के मित्रों से विशेष लाभ और सफलता मिलती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [11] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_saturn",
+    "name": "ग्यारहवें भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि ग्यारहवें घर में: दोस्त कम होते हैं लेकिन जो होते हैं वो उम्र भर का साथ देते हैं। उम्र के साथ (36 वर्ष के बाद) आय और लाभ में बेतहाशा वृद्धि होती है। यह 'Slow but steady wealth' का बेहतरीन योग है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [11] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_rahu",
+    "name": "ग्यारहवें भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु ग्यारहवें घर में: यह राहु की 'सुपर-पावर' स्थिति है। व्यक्ति इंटरनेट, मास मीडिया, और सट्टेबाजी से रातों-रात बेहिसाब पैसा कमा सकता है। इच्छाएं कभी खत्म नहीं होतीं। बड़े भाई-बहनों से रिश्ते खराब हो सकते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [11] }],
+    "cancellations": [], "score": 20, "frequency_multiplier": 1
+  },
+  {
+    "id": "h11_ketu",
+    "name": "ग्यारहवें भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु ग्यारहवें घर में: बड़े सोशल नेटवर्क और भीड़भाड़ से व्यक्ति दूर भागता है। धन और लाभ को लेकर मन में वैराग्य रहता है। अक्सर व्यक्ति का नेटवर्क बहुत छोटा लेकिन आध्यात्मिक लोगों का होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [11] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  }
+]

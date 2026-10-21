@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h4_sun",
+    "name": "चौथे भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य चौथे घर (सुख, माता, घर) में: व्यक्ति अपने घर में राजा की तरह रहना पसंद करता है। घर का माहौल थोड़ा गर्म या अनुशासित हो सकता है। माता का स्वभाव अत्यंत स्वाभिमानी या डोमिनेटिंग हो सकता है। प्रॉपर्टी और वाहन सुख प्राप्त होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [4] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_moon",
+    "name": "चौथे भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा चौथे घर में: माता से बहुत गहरा भावनात्मक जुड़ाव होता है। घर का माहौल शांतिपूर्ण और इमोशनल होता है। व्यक्ति को अपने जन्मस्थान से बहुत प्यार होता है। प्रॉपर्टी और रियल एस्टेट से लाभ के योग बनते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [4] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_mars",
+    "name": "चौथे भाव में मंगल (मांगलिक)",
+    "type": "भाव फल",
+    "description": "मंगल चौथे घर में: घर में अक्सर बहस या अशांति का माहौल रह सकता है। माता के साथ वैचारिक मतभेद या माता के स्वास्थ्य में दिक्कत आ सकती है। हालांकि, व्यक्ति ज़मीन-जायदाद (real estate) बनाने में बहुत माहिर होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [4] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_mercury",
+    "name": "चौथे भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध चौथे घर में: घर का माहौल बौद्धिक (intellectual) और हंसी-मजाक वाला होता है। व्यक्ति घर से ही कोई व्यापार (Work from Home) या संचार से जुड़ा काम कर सकता है। शिक्षा के लिए यह एक बहुत अच्छी स्थिति है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [4] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_jupiter",
+    "name": "चौथे भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु चौथे घर में: अपार मानसिक शांति और बड़े घर का सुख मिलता है। घर का माहौल बहुत संस्कारी और धार्मिक होता है। व्यक्ति अपने जीवन के उत्तरार्ध (later life) में बहुत सुखी और सम्मानित जीवन व्यतीत करता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [4] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_venus",
+    "name": "चौथे भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र चौथे घर में: घर का इंटीरियर, सजावट और लग्जरी देखने लायक होती है। व्यक्ति को महंगी गाड़ियां और सुंदर घर का बहुत शौक होता है और वह इसे हासिल भी करता है। माता का स्वभाव बहुत कलात्मक और प्यार करने वाला होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [4] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_saturn",
+    "name": "चौथे भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि चौथे घर में: मानसिक सुख में कमी या एक प्रकार का 'अकेलापन' महसूस होता है। व्यक्ति को अपने घर से दूर जाकर या जन्मस्थान छोड़कर ही तरक्की मिलती है। पुराने घरों या कंस्ट्रक्शन के काम से लाभ हो सकता है। माता को स्वास्थ्य संबंधी कष्ट हो सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [4] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_rahu",
+    "name": "चौथे भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु चौथे घर में: व्यक्ति अपने जन्मस्थान से दूर या विदेश में जाकर बसना चाहता है। घर में अजीब सी अशांति या इल्यूजन रह सकता है। माता के साथ रिश्ते कॉम्प्लेक्स हो सकते हैं। बड़े और दिखावटी घर की चाहत होती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [4] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h4_ketu",
+    "name": "चौथे भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु चौथे घर में: व्यक्ति को अपने घर और प्रॉपर्टी से बहुत जल्दी वैराग्य (detachment) हो जाता है। चाहे कितना भी बड़ा घर हो, व्यक्ति को शांति एकांत में ही मिलती है। माता से दूरी या माता के आध्यात्मिक होने के योग बनते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [4] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  }
+]

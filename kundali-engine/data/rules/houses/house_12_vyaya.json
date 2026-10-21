@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h12_sun",
+    "name": "बारहवें भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य बारहवें घर (व्यय, विदेश, मोक्ष) में: व्यक्ति का आत्मविश्वास अक्सर छुपा हुआ रहता है। पिता से दूरी या पिता के स्वास्थ्य पर खर्चा हो सकता है। सरकार की तरफ से कुछ टैक्स या पेनल्टी लग सकती है। आध्यात्मिक जीवन अच्छा रहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [12] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_moon",
+    "name": "बारहवें भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा बारहवें घर में: व्यक्ति का मन बहुत एकांत-प्रिय और कल्पनाशील होता है। नींद आने में समस्या या डिप्रेशन के योग बनते हैं। विदेश यात्राएं अक्सर होती रहती हैं। व्यक्ति को योग या मेडिटेशन से बहुत लाभ होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [12] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_mars",
+    "name": "बारहवें भाव में मंगल (मांगलिक)",
+    "type": "भाव फल",
+    "description": "मंगल बारहवें घर में: बेडरूम और शयन सुख (bed comforts) में आक्रामकता या तनाव रहता है। अक्सर खर्चे बहुत ज्यादा और बेकाबू होते हैं। व्यक्ति को अनिद्रा (insomnia) की शिकायत हो सकती है। विदेश में प्रॉपर्टी से लाभ हो सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [12] }],
+    "cancellations": [], "score": -10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_mercury",
+    "name": "बारहवें भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध बारहवें घर में: दिमाग कभी शांत नहीं रहता (overactive mind)। व्यक्ति गुप्त योजनाएं बनाने में माहिर होता है। खर्चे कैलकुलेटेड होते हैं। विदेश में शिक्षा या विदेशी व्यापार (Import-Export) से बहुत लाभ मिलता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [12] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_jupiter",
+    "name": "बारहवें भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु बारहवें घर में: व्यक्ति बहुत अधिक दान-पुण्य करता है। यह मोक्ष (Spiritual liberation) के लिए बहुत अच्छी स्थिति है। व्यक्ति के खर्चे अक्सर अच्छे और धार्मिक कार्यों में होते हैं। आश्रम या अस्पताल से जुड़े कार्यों में सफलता मिलती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [12] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_venus",
+    "name": "बारहवें भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र बारहवें घर में: व्यक्ति लग्जरी, परफ्यूम, सुंदर कपड़ों और शयन सुख (bed comforts) पर अंधाधुंध पैसा खर्च करता है। वैवाहिक जीवन में कई बार अतिरिक्त (extra-marital) आकर्षण का खतरा रहता है। विदेश में अत्यंत सुख मिलता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [12] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_saturn",
+    "name": "बारहवें भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि बारहवें घर में: खर्चे बहुत सीमित होते हैं (कंजूसी)। व्यक्ति को अक्सर एकांत या 'आइसोलेशन' (Isolation) पसंद आता है। विदेश में सेटलमेंट के बहुत प्रबल योग होते हैं, लेकिन वहां भी कड़ी मेहनत करनी पड़ती है। नींद कम आती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [12] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_rahu",
+    "name": "बारहवें भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु बारहवें घर में: व्यक्ति को नींद की बहुत समस्या होती है। अजीब और डरावने सपने आ सकते हैं। गुप्त शत्रु हो सकते हैं। विदेश में बसने (Foreign Settlement) के लिए यह एक बहुत ही तीव्र और शक्तिशाली स्थिति है।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [12] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h12_ketu",
+    "name": "बारहवें भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु बारहवें घर में: यह 'मोक्ष' (Moksha) की अल्टीमेट और सर्वश्रेष्ठ स्थिति मानी जाती है। व्यक्ति का दुनियादारी और मोह-माया से पूरी तरह से मन उठ जाता है। व्यक्ति के अंदर अत्यंत गहरे आध्यात्मिक और रहस्यमयी अनुभव होते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [12] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  }
+]

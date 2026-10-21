@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h7_sun",
+    "name": "सातवें भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य सातवें घर (विवाह और पार्टनरशिप) में: जीवनसाथी (Partner) बहुत स्वाभिमानी, उच्च पद पर आसीन या 'ईगो' वाला हो सकता है। पार्टनरशिप में अक्सर वर्चस्व (Dominance) को लेकर टकराव रहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [7] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_moon",
+    "name": "सातवें भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा सातवें घर में: जीवनसाथी बहुत सुंदर, इमोशनल और देखभाल करने वाला होता है। वैवाहिक जीवन में रोमांस भरपूर होता है। बिजनेस पार्टनरशिप में भी अक्सर फैसले भावनाओं के आधार पर लिए जाते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [7] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_mars",
+    "name": "सातवें भाव में मंगल (मांगलिक)",
+    "type": "भाव फल",
+    "description": "मंगल सातवें घर में: विवाह के लिए यह एक चुनौतीपूर्ण स्थिति है। जीवनसाथी बहुत आक्रामक और जल्दी गुस्सा करने वाला होता है। वैवाहिक जीवन में 'शॉर्ट-टेम्पर' के कारण झगड़े होते हैं। बिजनेस पार्टनरशिप टूट सकती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [7] }],
+    "cancellations": [], "score": -10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_mercury",
+    "name": "सातवें भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध सातवें घर में: जीवनसाथी उम्र में छोटा दिख सकता है या स्वभाव से बहुत 'फ्रेंडली' और बातूनी (talkative) होता है। वैवाहिक जीवन एक अच्छी दोस्ती की तरह चलता है। बिजनेस और व्यापार के लिए यह बहुत अच्छी स्थिति है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [7] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_jupiter",
+    "name": "सातवें भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु सातवें घर में: जीवनसाथी बहुत समझदार, ज्ञानी और धार्मिक प्रवृत्ति का होता है। शादी के बाद भाग्य उदय होता है। पार्टनरशिप में ईमानदारी रहती है। यह एक अत्यंत शुभ वैवाहिक स्थिति है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [7] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_venus",
+    "name": "सातवें भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र सातवें घर में (कारक भाव): जीवनसाथी अत्यंत सुंदर, कलात्मक और लग्जरी पसंद करने वाला होता है। विवाह के बाद जीवन में भौतिक सुखों (Material comforts) की भरमार हो जाती है। हालांकि कामुकता अधिक हो सकती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [7] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_saturn",
+    "name": "सातवें भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि सातवें घर में: विवाह में सामान्यतः देरी (late marriage) होती है। जीवनसाथी उम्र में बड़ा, बहुत प्रैक्टिकल, सीरियस और अनुशासित होता है। वैवाहिक जीवन में रोमांस की कमी लग सकती है, लेकिन रिश्ता बहुत टिकाऊ और मजबूत होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [7] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_rahu",
+    "name": "सातवें भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु सातवें घर में: व्यक्ति अक्सर गैर-पारंपरिक (Inter-caste/Inter-religion) या अचानक शादी करता है। जीवनसाथी बहुत मॉडर्न या विदेशी हो सकता है। विवाह में 'इल्यूजन' और बाद में 'चीटिंग' या गलतफहमी का खतरा रहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [7] }],
+    "cancellations": [], "score": -10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h7_ketu",
+    "name": "सातवें भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु सातवें घर में: वैवाहिक सुख और जीवनसाथी से एक प्रकार का वैराग्य (detachment) या दूरी महसूस होती है। पार्टनर अक्सर आध्यात्मिक (Spiritual) या अंतर्मुखी (Introvert) होता है। पार्टनरशिप के बिजनेस में धोखा मिलने का डर रहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [7] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h6_sun",
+    "name": "छठे भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य छठे घर (रोग, ऋण, शत्रु) में: शत्रुहंता योग का निर्माण करता है। विरोधी और शत्रु कभी टिक नहीं पाते। सरकारी या प्रतियोगी परीक्षाओं (competitive exams) में गज़ब की सफलता मिलती है। व्यक्ति में रोग प्रतिरोधक क्षमता (immunity) मजबूत होती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [6] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_moon",
+    "name": "छठे भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा छठे घर में: मन अक्सर छोटी-छोटी बातों को लेकर चिंतित रहता है (anxiety)। शत्रुओं या कर्जों के कारण मानसिक तनाव बढ़ सकता है। पेट या पानी से जुड़ी बीमारियां परेशान कर सकती हैं। हालांकि, व्यक्ति एक अच्छा 'हीलर' या डॉक्टर बन सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [6] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_mars",
+    "name": "छठे भाव में मंगल",
+    "type": "भाव फल",
+    "description": "मंगल छठे घर में: शत्रुओं का नाश करने के लिए सबसे बेहतरीन स्थिति। व्यक्ति विवादों, कोर्ट-कचहरी और मुकदमों में जीत हासिल करता है। पुलिस, सेना या सर्जरी के प्रोफेशन में बहुत सफलता मिलती है। दुर्घटनाओं या सर्जरी की संभावना रहती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [6] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_mercury",
+    "name": "छठे भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध छठे घर में: व्यक्ति अपने विरोधियों को बातों और लॉजिक से हराता है। अकाउंटिंग, ऑडिटिंग या लीगल ड्राफ्टिंग के काम में सफलता। नसों (nerves) और त्वचा से जुड़ी समस्याएं हो सकती हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [6] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_jupiter",
+    "name": "छठे भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु छठे घर में: व्यक्ति अपने दुश्मनों को भी माफ कर देने वाला होता है। कार्यक्षेत्र (service) में बहुत ईमानदारी दिखाता है। लिवर (Liver) या मोटापे से जुड़ी स्वास्थ्य समस्याएं हो सकती हैं। ज्ञान का उपयोग दूसरों की समस्याएं सुलझाने में करता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [6] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_venus",
+    "name": "छठे भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र छठे घर में: कार्यक्षेत्र (नौकरी) का माहौल बहुत आरामदायक होता है, या व्यक्ति फैशन/डिज़ाइन से जुड़ा काम करता है। अधिक मीठा खाने या विलासिता के कारण डायबिटीज या किडनी से जुड़ी समस्याएं हो सकती हैं। विपरीत लिंग के सहकर्मियों से लाभ।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [6] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_saturn",
+    "name": "छठे भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि छठे घर में: अजेय शत्रुहंता योग। शनि यहाँ धीरे-धीरे लेकिन परमानेंट तरीके से विरोधियों का नाश करता है। व्यक्ति अपनी नौकरी और दैनिक दिनचर्या को लेकर बहुत अनुशासित होता है। कर्ज चुकता करने में समय लगता है लेकिन व्यक्ति मेहनत से सब पार कर लेता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [6] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_rahu",
+    "name": "छठे भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु छठे घर में: व्यक्ति गुप्त शत्रुओं का नाश बहुत कूटनीति (diplomacy) से करता है। 'Divide and Rule' की पॉलिसी में माहिर। अचानक से ऐसी बीमारियां हो सकती हैं जिनका डायग्नोसिस (diagnosis) जल्दी पकड़ में नहीं आता।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [6] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h6_ketu",
+    "name": "छठे भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु छठे घर में: दुश्मनों और विवादों से व्यक्ति दूरी बना लेता है या अचानक कोई ऐसा कदम उठाता है कि दुश्मन खुद पीछे हट जाते हैं। रहस्यमयी या 'ऑटो-इम्यून' बीमारियां होने का खतरा रहता है। पालतू जानवरों से खास लगाव हो सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [6] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  }
+]

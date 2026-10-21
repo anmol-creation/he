@@ -6,8 +6,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const rulesDir = path.join(__dirname, 'data', 'rules');
+const housesDir = path.join(rulesDir, 'houses');
 const yogaRules = [];
 
+// Load general yoga rules
 fs.readdirSync(rulesDir).forEach(file => {
     if (file.endsWith('.json')) {
         const filePath = path.join(rulesDir, file);
@@ -15,6 +17,17 @@ fs.readdirSync(rulesDir).forEach(file => {
         yogaRules.push(...fileContent);
     }
 });
+
+// Load house-specific rules
+if (fs.existsSync(housesDir)) {
+    fs.readdirSync(housesDir).forEach(file => {
+        if (file.endsWith('.json')) {
+            const filePath = path.join(housesDir, file);
+            const fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            yogaRules.push(...fileContent);
+        }
+    });
+}
 
 const RASHI_LORDS = {
     0: 'Mars', 1: 'Venus', 2: 'Mercury', 3: 'Moon',
@@ -76,7 +89,12 @@ function detectYogas(planetsData, ascendantDegree) {
             for (const cond of rule.combinations) {
                 let isMatch = false;
                 try {
-                    if (cond.type === 'single_planet') {
+                    if (cond.type === 'ascendant_sign') {
+                        if (ascendantSign === cond.sign) {
+                            isMatch = true;
+                        }
+                    }
+                    else if (cond.type === 'single_planet') {
                         const p = pMap[cond.planet];
                         if (p) {
                             let houseMatch = cond.in_houses ? cond.in_houses.includes(p.house) : true;
@@ -434,8 +452,15 @@ function detectYogas(planetsData, ascendantDegree) {
         tierTitle = "कठोर संघर्ष (Deep Struggle)";
     }
 
+    // Sort yogas by score (power) in descending order
+    detectedYogas.sort((a, b) => (b.score || 0) - (a.score || 0));
+
+    const classicYogas = detectedYogas.filter(y => y.type !== "भाव फल");
+    const bhaavPhal = detectedYogas.filter(y => y.type === "भाव फल");
+
     return {
-        yogas: detectedYogas,
+        yogas: classicYogas,
+        bhaavPhal: bhaavPhal,
         chartStats: {
             rajyogaScore: totalRajyogaScore,
             doshaScore: totalDoshaScore,
