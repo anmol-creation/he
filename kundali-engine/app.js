@@ -200,50 +200,87 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         const data = await response.json();
 
-        const signNamesHi = ["मेष (Aries)", "वृषभ (Taurus)", "मिथुन (Gemini)", "कर्क (Cancer)", "सिंह (Leo)", "कन्या (Virgo)", "तुला (Libra)", "वृश्चिक (Scorpio)", "धनु (Sagittarius)", "मकर (Capricorn)", "कुंभ (Aquarius)", "मीन (Pisces)"];
+        const signNamesHi = ["मेष", "वृषभ", "मिथुन", "कर्क", "सिंह", "कन्या", "तुला", "वृश्चिक", "धनु", "मकर", "कुंभ", "मीन"];
         const signNamesEn = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"];
         const signNames = currentLang === 'hi' ? signNamesHi : signNamesEn;
 
-        let output = t.kundaliResult(name) + '\n';
-        output += t.dateStr(date, time) + '\n';
-        output += t.locationStr(city, lat, lng) + '\n';
-        output += `${t.julianDay}: ${data.jd.toFixed(4)}\n`;
+        // Function to extract translated name based on current language
+        const getPlanetName = (rawName) => {
+            const match = rawName.match(/(.+?)\s*\((.+?)\)/);
+            if (match) {
+                return currentLang === 'hi' ? match[1].trim() : match[2].trim();
+            }
+            return rawName;
+        };
+
+        let outputHTML = `
+            <div style="font-family: 'Work Sans', sans-serif; color: var(--vault-text-main);">
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <h2 style="color: var(--vault-accent); margin: 0; font-family: 'EB Garamond', serif;">${t.kundaliResult(name)}</h2>
+                    <p style="color: var(--vault-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                        ${t.dateStr(date, time)}<br>
+                        ${t.locationStr(city, lat, lng)}
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; justify-content: center;">
+                    <div style="background: rgba(0,0,0,0.5); padding: 0.8rem 1.2rem; border-radius: 6px; border: 1px solid var(--vault-border);">
+                        <strong style="color: var(--vault-accent);">${t.julianDay}:</strong> ${data.jd.toFixed(4)}
+                    </div>`;
+
         if (data.tithi) {
-            output += t.tithiStr(data.tithi.name, data.tithi.percentage * 100) + '\n';
+            outputHTML += `
+                    <div style="background: rgba(0,0,0,0.5); padding: 0.8rem 1.2rem; border-radius: 6px; border: 1px solid var(--vault-border);">
+                        <strong style="color: var(--vault-accent);">${currentLang === 'hi' ? 'तिथि' : 'Tithi'}:</strong> ${data.tithi.name} (${(data.tithi.percentage * 100).toFixed(1)}%)
+                    </div>`;
         }
-        output += `\n`;
 
         if (data.ascendant) {
             const ascSign = Math.floor(data.ascendant / 30);
             const ascDegree = data.ascendant % 30;
-            output += t.ascendantStr(signNames[ascSign], ascDegree) + '\n\n';
+            outputHTML += `
+                    <div style="background: rgba(0,0,0,0.5); padding: 0.8rem 1.2rem; border-radius: 6px; border: 1px solid var(--vault-border);">
+                        <strong style="color: var(--vault-accent);">${currentLang === 'hi' ? 'लग्न' : 'Ascendant'}:</strong> ${signNames[ascSign]} (${ascDegree.toFixed(2)}°)
+                    </div>`;
         }
 
-        output += t.planetPos + '\n';
-        output += t.tableHeader2 + '\n';
-        output += t.tableHeader1 + '\n';
-        output += t.tableHeader2 + '\n';
+        outputHTML += `</div>`;
+
+        // Planetary Positions Table
+        outputHTML += `
+            <h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center;">${t.planetPos}</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; text-align: left;">
+                    <thead>
+                        <tr style="background-color: rgba(204, 106, 0, 0.15); border-bottom: 1px solid var(--vault-accent);">
+                            <th style="padding: 0.8rem; font-weight: 600; color: var(--vault-text-main);">${currentLang === 'hi' ? 'ग्रह' : 'Planet'}</th>
+                            <th style="padding: 0.8rem; font-weight: 600; color: var(--vault-text-main);">${currentLang === 'hi' ? 'राशि' : 'Sign'}</th>
+                            <th style="padding: 0.8rem; font-weight: 600; color: var(--vault-text-main);">${currentLang === 'hi' ? 'भाव' : 'House'}</th>
+                            <th style="padding: 0.8rem; font-weight: 600; color: var(--vault-text-main);">${currentLang === 'hi' ? 'अंश' : 'Degree'}</th>
+                            <th style="padding: 0.8rem; font-weight: 600; color: var(--vault-text-main);">${currentLang === 'hi' ? 'अवस्था/बल' : 'State/Power'}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
 
         data.planets.forEach(p => {
-            const signName = signNames[p.sign].padEnd(12);
-            const deg = p.degreeInSign.toFixed(2).padStart(5) + '°';
-            const planetName = p.name.padEnd(12);
-            const houseStr = p.house ? p.house.toString().padEnd(2) : "--";
+            const signName = signNames[p.sign];
+            const deg = p.degreeInSign.toFixed(2) + '°';
+            const planetName = getPlanetName(p.name);
+            const houseStr = p.house ? p.house : "--";
 
-            // Use the chartRenderer's logic to get emojis for the table too, keeping it consistent.
             let emojis = "";
-            if (p.isRetrograde) emojis += "☯️";
+            if (p.isRetrograde) emojis += '<span title="Retrograde">☯️</span> ';
 
-            if (p.dignity === 'Vargottam') emojis += "⭐️⁺⁵";
-            else if (p.dignity === 'Uccha') emojis += "⭐️⁺⁴";
-            else if (p.dignity === 'Mooltrikona') emojis += "⭐️⁺³";
-            else if (p.dignity === 'Swarashi') emojis += "⭐️⁺²";
-            else if (p.dignity === 'Friendly') emojis += "⭐️⁺¹";
-            else if (p.dignity === 'Enemy') emojis += "⭐️⁻¹";
-            else if (p.dignity === 'Combust') emojis += "⭐️⁻²";
-            else if (p.dignity === 'Neecha') emojis += "⭐️⁻³";
+            if (p.dignity === 'Vargottam') emojis += '<span title="Vargottam">⭐️⁺⁵</span>';
+            else if (p.dignity === 'Uccha') emojis += '<span title="Exalted">⭐️⁺⁴</span>';
+            else if (p.dignity === 'Mooltrikona') emojis += '<span title="Mooltrikona">⭐️⁺³</span>';
+            else if (p.dignity === 'Swarashi') emojis += '<span title="Own Sign">⭐️⁺²</span>';
+            else if (p.dignity === 'Friendly') emojis += '<span title="Friendly">⭐️⁺¹</span>';
+            else if (p.dignity === 'Enemy') emojis += '<span title="Enemy">⭐️⁻¹</span>';
+            else if (p.dignity === 'Combust') emojis += '<span title="Combust">⭐️⁻²</span>';
+            else if (p.dignity === 'Neecha') emojis += '<span title="Debilitated">⭐️⁻³</span>';
 
-            // Avastha logic from before, converting to lightning bolt symbol representation
             const isOdd = (p.sign % 2 === 0);
             let d = p.degreeInSign;
             let power = 0;
@@ -253,30 +290,51 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             else if (d >= 18 && d < 24) power = isOdd ? 10 : 50;
             else power = isOdd ? 0 : 25;
 
-            // Optional mapping to Unicode superscripts
-            const mapSuperscript = {
-                0: '⁰',
-                10: '¹⁰',
-                25: '²⁵',
-                50: '⁵⁰',
-                100: '¹⁰⁰'
-            };
-            emojis += ` ⚡${mapSuperscript[power]}`;
+            const mapSuperscript = { 0: '⁰', 10: '¹⁰', 25: '²⁵', 50: '⁵⁰', 100: '¹⁰⁰' };
+            emojis += ` <span title="Power ${power}%">⚡${mapSuperscript[power]}</span>`;
 
-            output += `${planetName} | ${signName} | ${deg}   | ${emojis.padEnd(8)} | H: ${houseStr}\n`;
+            outputHTML += `
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 0.8rem; font-weight: 500;">${planetName}</td>
+                    <td style="padding: 0.8rem;">${signName}</td>
+                    <td style="padding: 0.8rem;">${houseStr}</td>
+                    <td style="padding: 0.8rem;">${deg}</td>
+                    <td style="padding: 0.8rem; font-size: 1.1rem;">${emojis}</td>
+                </tr>
+            `;
         });
 
-        // Add explicit Lagna Chart section
+        outputHTML += `</tbody></table></div>`;
+
+        // Lagna Chart (Houses 1-12) Section
         if (data.lagnaChart) {
-            output += `\n--- Lagna Chart (Houses 1-12) ---\n`;
+            outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">${currentLang === 'hi' ? 'लग्न कुण्डली (भाव 1-12)' : 'Lagna Chart (Houses 1-12)'}</h3>`;
+            outputHTML += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">`;
+
             data.lagnaChart.forEach(h => {
-                const sName = signNames[h.sign].padEnd(12);
-                const pNames = h.planets.length > 0 ? h.planets.join(', ') : "Empty";
-                output += `House ${h.house.toString().padEnd(2)} | Sign: ${sName} | Planets: ${pNames}\n`;
+                const sName = signNames[h.sign];
+                // Clean up planet names in the house
+                const pNamesList = h.planets.map(pn => getPlanetName(pn));
+                const pNamesStr = pNamesList.length > 0 ? pNamesList.join(', ') : `<span style="opacity:0.4;">${currentLang === 'hi' ? 'रिक्त' : 'Empty'}</span>`;
+
+                outputHTML += `
+                    <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--vault-border); border-radius: 6px; padding: 1rem; text-align: center; position: relative;">
+                        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--vault-surface); border: 1px solid var(--vault-accent); color: var(--vault-accent); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">${h.house}</div>
+                        <div style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--vault-text-muted);">${sName}</div>
+                        <div style="margin-top: 0.5rem; font-weight: 500; font-size: 1rem;">${pNamesStr}</div>
+                    </div>
+                `;
             });
+            outputHTML += `</div>`;
         }
 
-        resultBox.textContent = output;
+        outputHTML += `</div>`;
+
+        resultBox.innerHTML = outputHTML;
+
+        // Remove pre-wrap class to allow custom HTML formatting
+        resultBox.style.whiteSpace = 'normal';
+        resultBox.style.fontFamily = 'inherit';
 
         // Render Visual SVG Chart
         document.getElementById('chartSection').style.display = 'block';

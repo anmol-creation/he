@@ -452,6 +452,9 @@ function detectYogas(planetsData, ascendantDegree) {
         tierTitle = "कठोर संघर्ष (Deep Struggle)";
     }
 
+    // Sort yogas by score (power) in descending order
+    detectedYogas.sort((a, b) => (b.score || 0) - (a.score || 0));
+
     const classicYogas = detectedYogas.filter(y => y.type !== "भाव फल");
     const bhaavPhal = detectedYogas.filter(y => y.type === "भाव फल");
 
