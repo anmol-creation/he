@@ -188,22 +188,13 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'द्रुह्यु चंद्रवंशी'
 },
     {
-  id: 'gandhara_dynasty_proxy',
-  name: 'गांधार वंश',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'dhrita_druhyu_chandra',
-  yug: 'dwapar',
-  clusterName: 'द्रुह्यु चंद्रवंशी',
-  isProxy: true,
-  timeScale: 'kalpa'
-},
-    {
   id: 'subala_gandhara_king',
   name: 'सुबल',
   subtitle: 'गांधार नरेश',
-  parent: 'gandhara_dynasty_proxy',
+  parent: 'dhrita_druhyu_chandra',
   gender: 'male',
-  clusterName: 'द्रुह्यु चंद्रवंशी',
+  parichay: 'गांधार देश के राजा। ये शकुनि और गांधारी के पिता थे।',
+  clusterName: 'गांधार वंश',
   yug: 'dwapar'
 },
     {
@@ -242,7 +233,8 @@ export const anuDruhyuTurvasuData = [
   id: 'samudrasena_vanga',
   name: 'समुद्रसेन',
   subtitle: 'वंग नरेश',
-  parent: 'vanga_dynasty_proxy',
+  parent: 'vanga_anu',
+  clusterName: 'वंग देश चंद्रवंशी',
   yug: 'dwapar',
   parichay: 'महाभारत काल में वंग देश (बंगाल) के शासक। ये कुरुक्षेत्र युद्ध में कौरवों की ओर से 10,000 हाथियों की सेना के साथ लड़े थे।',
 },
@@ -257,7 +249,8 @@ export const anuDruhyuTurvasuData = [
   id: 'paundraka_vasudeva_chandra',
   name: 'पौण्ड्रक वासुदेव',
   subtitle: 'पुण्ड्र नरेश',
-  parent: 'pundra_dynasty_proxy',
+  parent: 'pundra_anu',
+  clusterName: 'पुण्ड्र देश चंद्रवंशी',
   yug: 'dwapar',
   parichay: 'महाभारत काल में पुण्ड्र देश का राजा, जो स्वयं को असली वासुदेव (कृष्ण) मानता था।',
 },
@@ -802,22 +795,13 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'शिबि पुत्र'
 },
     {
-  id: 'sindhu_dynasty_proxy',
-  name: 'सिन्धु-सौवीर वंश',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'suvira_anu',
-  yug: 'dwapar',
-  clusterName: 'शिबि पुत्र',
-  isProxy: true,
-  timeScale: 'kalpa'
-},
-    {
   id: 'vridhakshetra_sindhu',
   name: 'वृद्धक्षत्र',
   subtitle: 'सिन्धु नरेश',
-  parent: 'sindhu_dynasty_proxy',
+  parent: 'suvira_anu',
   gender: 'male',
-  clusterName: 'शिबि पुत्र',
+  parichay: 'सिन्धु देश के राजा और जयद्रथ के पिता।',
+  clusterName: 'सिन्धु-सौवीर वंश',
   yug: 'dwapar'
 },
     {
@@ -865,20 +849,10 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'सत्यवान सावित्री'
 },
     {
-  id: 'madra_dynasty_proxy',
-  name: 'मद्र वंश',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'ashvapati_madra_anu',
-  yug: 'dwapar',
-  clusterName: 'मद्र देश',
-  isProxy: true,
-  timeScale: 'kalpa'
-},
-    {
   id: 'shalya_madra_king',
   name: 'शल्य',
   subtitle: 'मद्र नरेश',
-  parent: 'madra_dynasty_proxy',
+  parent: 'ashvapati_madra_anu',
   gender: 'male',
   clusterName: 'मद्र देश',
   yug: 'dwapar'
@@ -936,19 +910,10 @@ export const anuDruhyuTurvasuData = [
   clusterName: 'मालव गणराज्य'
 },
     {
-  id: 'second_aulikara_house_proxy',
-  name: 'औलिकर (द्वितीय घराना)',
-  subtitle: 'गुप्त साम्राज्य के पतन काल में',
-  parent: 'aulikara_dynasty_proxy',
-  yug: 'kali',
-  isProxy: true,
-  clusterName: 'मालव गणराज्य' 
-},
-    {
   id: 'drumavardhana_aulikara',
   name: 'द्रुमवर्धन',
   subtitle: 'औलिकर नरेश',
-  parent: 'second_aulikara_house_proxy',
+  parent: 'bandhuvarman_aulikara',
   yug: 'kali',
   clusterName: 'मालव गणराज्य'
 },
@@ -1080,7 +1045,37 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।',
   clusterName: 'वंग देश चंद्रवंशी'
 },
+      {
+  id: 'suppadevi_vanga',
+  name: 'सुप्पदेवी',
+  subtitle: 'वंग-कलिंग राजकुमारी',
+  parent: 'chandrasena_vanga',
+  gender: 'female',
+  yug: 'dwapar',
+  parichay: 'महावंश (बौद्ध ग्रंथ) के अनुसार, वंग देश के राजा और कलिंग की राजकुमारी की पुत्री। यह स्वेच्छा से जंगल में रहने लगीं जहाँ इनका संपर्क एक सिंह से हुआ।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
     {
+  id: 'sinhabahu_vanga',
+  name: 'सिंहाबाहु',
+  subtitle: 'सिंहपुर का संस्थापक',
+  parent: 'suppadevi_vanga',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'सुप्पदेवी के पुत्र। इन्होंने सिंहपुर नगर बसाया और श्रीलंका के सिंहल वंश के मूल पुरुष बने।',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+    {
+  id: 'sinhasivali_vanga',
+  name: 'सिहसीवली',
+  subtitle: 'सिंहाबाहु की पत्नी व बहन',
+  parent: 'suppadevi_vanga',
+  gender: 'female',
+  spouseOf: 'sinhabahu_vanga',
+  yug: 'kali',
+  clusterName: 'सिंहल वंश (श्रीलंका)'
+},
+  {
   id: 'kalinga_anu',
   name: 'कलिंग',
   subtitle: 'कलिंग देश संस्थापक',
@@ -1090,7 +1085,45 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की।',
   clusterName: 'कलिंग देश चंद्रवंशी'
 },
+      {
+  id: 'brahmadatta_kalinga',
+  name: 'ब्रह्मदत्त',
+  subtitle: 'कलिंग नरेश',
+  parent: 'kalinga_anu',
+  yug: 'dwapar',
+  parichay: 'कलिंग के प्राचीन राजा जिन्हें बुद्ध के परिनिर्वाण के बाद उनका पवित्र दाँत (Tooth Relic) प्राप्त हुआ था।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
     {
+  id: 'guhasiva_kalinga',
+  name: 'गुहसीव',
+  subtitle: 'कलिंग नरेश',
+  parent: 'brahmadatta_kalinga',
+  yug: 'kali',
+  parichay: 'दाठावंश के अनुसार कलिंग के राजा। जब इन पर हमला हुआ तो इन्होंने बुद्ध का पवित्र दाँत अपनी पुत्री हेममाला के माध्यम से श्रीलंका भेज दिया।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
+    {
+  id: 'hemamala_kalinga',
+  name: 'हेममाला',
+  subtitle: 'कलिंग राजकुमारी',
+  parent: 'guhasiva_kalinga',
+  gender: 'female',
+  yug: 'kali',
+  parichay: 'गुहसीव की पुत्री, जिन्होंने अपने बालों में छुपाकर बुद्ध का पवित्र दाँत (Tooth Relic) श्रीलंका पहुँचाया।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
+    {
+  id: 'dantha_kalinga',
+  name: 'दन्त',
+  subtitle: 'अवन्ती/उज्जैन के राजकुमार',
+  spouseOf: 'hemamala_kalinga',
+  gender: 'male',
+  yug: 'kali',
+  parichay: 'राजकुमारी हेममाला के पति और उज्जैन के राजकुमार, जो उनके साथ श्रीलंका गए।',
+  clusterName: 'कलिंग देश चंद्रवंशी'
+},
+  {
   id: 'pundra_anu',
   name: 'पुण्ड्र',
   subtitle: 'पुण्ड्र देश संस्थापक',
