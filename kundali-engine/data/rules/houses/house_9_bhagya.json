@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h9_sun",
+    "name": "नौवें भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य नौवें घर (भाग्य, धर्म, पिता) में: व्यक्ति बहुत उच्च आदर्शों और सिद्धांतों वाला होता है। पिता से बहुत कुछ सीखता है, हालांकि वैचारिक मतभेद (ego clash) हो सकते हैं। धर्म और कानून (Law) के क्षेत्र में अपार सम्मान मिलता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [9] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_moon",
+    "name": "नौवें भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा नौवें घर में: व्यक्ति का मन बहुत धार्मिक, सात्विक और परोपकारी होता है। विदेश यात्राओं या लंबी तीर्थयात्राओं के खूब योग बनते हैं। भाग्य अक्सर चंद्रमा की तरह घटता-बढ़ता है, लेकिन माता के आशीर्वाद से तरक्की होती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [9] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_mars",
+    "name": "नौवें भाव में मंगल",
+    "type": "भाव फल",
+    "description": "मंगल नौवें घर में: व्यक्ति अपने 'कर्म' और 'मेहनत' को ही अपना धर्म मानता है। अंधविश्वासों का सख्त विरोधी होता है। पिता या गुरु के साथ विचारों में आक्रामकता या बहस हो सकती है। भाग्य बनाने के लिए कड़ा संघर्ष करना पड़ता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [9] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_mercury",
+    "name": "नौवें भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध नौवें घर में: व्यक्ति उच्च शिक्षा प्राप्त करने का इच्छुक और बहुत तार्किक (logical) होता है। धर्म को भी विज्ञान के नज़रिए से देखता है। लेखन, पब्लिशिंग और विदेश में उच्च शिक्षा के लिए बेहतरीन स्थिति है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [9] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_jupiter",
+    "name": "नौवें भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु नौवें घर में (कारक भाव): धर्म और ज्ञान के लिए यह सर्वोत्तम स्थिति है। व्यक्ति सत्य बोलने वाला, भाग्यवान और समाज में गुरु के समान पूजा जाने वाला होता है। ईश्वर की विशेष कृपा बनी रहती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [9] }],
+    "cancellations": [], "score": 20, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_venus",
+    "name": "नौवें भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र नौवें घर में: व्यक्ति का भाग्य अक्सर विवाह के बाद चमकता है (Bhagya Uday after marriage)। विदेश यात्राएं सुखद और विलासिता से भरी होती हैं। व्यक्ति कलात्मक चीज़ों और फैशन के माध्यम से भाग्यवान बनता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [9] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_saturn",
+    "name": "नौवें भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि नौवें घर में: भाग्य का साथ बहुत देर से (लगभग 36 साल की उम्र के बाद) मिलता है। व्यक्ति पारंपरिक धर्म को नहीं मानता बल्कि अपनी अलग फिलासफी बनाता है। पिता से दूरी या वैचारिक मतभेद (generation gap) रहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [9] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_rahu",
+    "name": "नौवें भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु नौवें घर में: व्यक्ति पारंपरिक धर्म और रीति-रिवाजों को चुनौती देता है। विदेशी संस्कृति या गैर-पारंपरिक फिलासफी में रुचि होती है। अक्सर विदेश यात्राओं से भाग्योदय होता है। पिता के साथ रिश्ते तनावपूर्ण रह सकते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [9] }],
+    "cancellations": [], "score": 0, "frequency_multiplier": 1
+  },
+  {
+    "id": "h9_ketu",
+    "name": "नौवें भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु नौवें घर में: अत्यधिक आध्यात्मिक और वैरागी स्वभाव। व्यक्ति तीर्थयात्राएं करना पसंद करता है लेकिन रूढ़िवादी नियमों से दूर रहता है। भाग्य पर भरोसा करने की बजाय ईश्वर पर समर्पण भाव रखता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [9] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  }
+]

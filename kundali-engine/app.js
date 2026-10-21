@@ -297,8 +297,11 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         // Render Yogas and Doshas
         const yogaContainer = document.getElementById('yogaContainer');
         const yogaList = document.getElementById('yogaList');
+        const bhaavPhalList = document.getElementById('bhaavPhalList');
+        const bhaavPhalTitle = document.getElementById('bhaavPhalTitle');
 
         yogaList.innerHTML = ''; // Clear previous results
+        bhaavPhalList.innerHTML = ''; // Clear previous results
 
         // Render Chart Stats
         if (data.chartStats) {
@@ -383,8 +386,24 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                     <p>${t.noYogas}</p>
                 </div>
             `;
+        }
+
+        // Render Bhaav Phal
+        if (data.bhaavPhal && data.bhaavPhal.length > 0) {
+            bhaavPhalTitle.style.display = 'block';
+            bhaavPhalList.style.display = 'flex';
+            data.bhaavPhal.forEach(bp => {
+                const cardHTML = `
+                    <div style="background: var(--vault-surface); border: 1px solid var(--vault-border); border-left: 4px solid var(--vault-accent); padding: 1.5rem; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.3s ease;">
+                        <h4 style="color: var(--vault-text); font-size: 1.3rem; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">${bp.name}</h4>
+                        <p style="color: var(--vault-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">${bp.description}</p>
+                    </div>
+                `;
+                bhaavPhalList.innerHTML += cardHTML;
+            });
         } else {
-             yogaContainer.style.display = 'none';
+            bhaavPhalTitle.style.display = 'none';
+            bhaavPhalList.style.display = 'none';
         }
 
     } catch (error) {

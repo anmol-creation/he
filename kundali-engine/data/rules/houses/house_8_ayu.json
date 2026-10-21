@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h8_sun",
+    "name": "आठवें भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य आठवें घर (आयु, मृत्यु, रहस्य) में: व्यक्ति का ईगो कई बार गहराइयों में छुप जाता है। गुप्त विद्याओं या रिसर्च के प्रति झुकाव होता है। पिता के साथ वैचारिक दूरियां या उनके स्वास्थ्य में उतार-चढ़ाव रह सकता है। आंखों या हड्डियों की समस्या हो सकती है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [8] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_moon",
+    "name": "आठवें भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा आठवें घर में: 'बालारिष्ट' योग का निर्माण करता है। बचपन में स्वास्थ्य संबंधी समस्याएं हो सकती हैं। मन बहुत गहरा, अंतर्ज्ञानी और अक्सर 'डिप्रेशन' या अज्ञात भय से ग्रसित रहता है। माता के स्वास्थ्य को कष्ट हो सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [8] }],
+    "cancellations": [], "score": -10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_mars",
+    "name": "आठवें भाव में मंगल (मांगलिक)",
+    "type": "भाव फल",
+    "description": "मंगल आठवें घर में: अचानक दुर्घटना, चोट या सर्जरी का खतरा रहता है। व्यक्ति बहुत गहरे रहस्यों को खोजने वाला और निडर होता है। जीवनसाथी के परिवार (ससुराल) के साथ धन या संपत्ति को लेकर तीखे विवाद हो सकते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [8] }],
+    "cancellations": [], "score": -10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_mercury",
+    "name": "आठवें भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध आठवें घर में: यह एक बहुत अच्छी रिसर्च ओरिएंटेड स्थिति है। व्यक्ति 'Investigator', 'Astrologer' या डेटा एनालिस्ट बन सकता है। विरासत या इंश्योरेंस के माध्यम से धन लाभ हो सकता है। वाणी में एक प्रकार का रहस्य होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [8] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_jupiter",
+    "name": "आठवें भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु आठवें घर में: व्यक्ति को गुप्त और आध्यात्मिक ज्ञान (Occult, Astrology, Tantra) की गहरी समझ होती है। आयु लंबी होती है और मृत्यु शांतिपूर्ण होती है। ससुराल पक्ष से अक्सर सहयोग और धन प्राप्त होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [8] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_venus",
+    "name": "आठवें भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र आठवें घर में: जीवनसाथी के माध्यम से या शादी के बाद अचानक धन लाभ के योग बनते हैं। गुप्त प्रेम संबंध पनप सकते हैं। यूरिनरी या प्रजनन तंत्र से जुड़ी स्वास्थ्य समस्याएं हो सकती हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [8] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_saturn",
+    "name": "आठवें भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि आठवें घर में (आयु कारक): यह लंबी उम्र (Long life) का सबसे बड़ा सूचक है। हालांकि जीवन में कई बार अचानक बड़े दुख या रुकावटें आती हैं। व्यक्ति बहुत सीरियस और गहराइयों में उतरने वाला 'फिलोसोफर' बन जाता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [8] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_rahu",
+    "name": "आठवें भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु आठवें घर में: अचानक धन लाभ (लॉटरी, सट्टा) या अचानक बड़े नुकसान का खतरा रहता है। व्यक्ति गुप्त विद्याओं (Black magic, Occult) की ओर आकर्षित होता है। ऐसी बीमारियां हो सकती हैं जिनका कारण जल्दी पता नहीं चलता।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [8] }],
+    "cancellations": [], "score": -5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h8_ketu",
+    "name": "आठवें भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु आठवें घर में: आध्यात्मिकता और मोक्ष के लिए यह एक अत्यंत शक्तिशाली स्थिति है। व्यक्ति का 'Sixth Sense' गज़ब का होता है। अचानक चोट लगने या सर्जरी की संभावना रहती है। व्यक्ति रहस्यों की तह तक जाना चाहता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [8] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  }
+]

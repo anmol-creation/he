@@ -41,15 +41,34 @@ app.post('/api/calculate', (req, res) => {
         const planets = [
             swisseph.SE_SUN, swisseph.SE_MOON, swisseph.SE_MARS,
             swisseph.SE_MERCURY, swisseph.SE_JUPITER, swisseph.SE_VENUS,
-            swisseph.SE_SATURN, swisseph.SE_MEAN_NODE
+            swisseph.SE_SATURN, swisseph.SE_MEAN_NODE,
+            // Virtual planet for Ketu
+            -1
         ];
-        const planetNames = ['सूर्य (Sun)', 'चंद्र (Moon)', 'मंगल (Mars)', 'बुध (Mercury)', 'गुरु (Jupiter)', 'शुक्र (Venus)', 'शनि (Saturn)', 'राहु (Rahu)'];
+        const planetNames = ['सूर्य (Sun)', 'चंद्र (Moon)', 'मंगल (Mars)', 'बुध (Mercury)', 'गुरु (Jupiter)', 'शुक्र (Venus)', 'शनि (Saturn)', 'राहु (Rahu)', 'केतु (Ketu)'];
 
         planets.forEach((planet, index) => {
+            let pos;
             const flags = swisseph.SEFLG_SIDEREAL | swisseph.SEFLG_SPEED;
-            const pos = swisseph.swe_calc_ut(jd, planet, flags);
 
-            if (!pos.error) {
+            // Handle Ketu manually (180 degrees from Rahu)
+            if (planet === -1) {
+                // Find Rahu's position first
+                const rahuPos = swisseph.swe_calc_ut(jd, swisseph.SE_MEAN_NODE, flags);
+                if (!rahuPos.error) {
+                    pos = {
+                        longitude: (rahuPos.longitude + 180) % 360,
+                        longitudeSpeed: rahuPos.longitudeSpeed,
+                        error: null
+                    };
+                } else {
+                    pos = { error: rahuPos.error };
+                }
+            } else {
+                pos = swisseph.swe_calc_ut(jd, planet, flags);
+            }
+
+            if (pos && !pos.error) {
                 // Calculate Sign (0=Aries, 1=Taurus...)
                 const sign = Math.floor(pos.longitude / 30);
                 const degreeInSign = pos.longitude % 30;
@@ -57,18 +76,16 @@ app.post('/api/calculate', (req, res) => {
 
                 // Dignity and Retrograde Calculation
                 let isRetrograde = false;
-                if (pos.longitudeSpeed < 0 && planetNames[index] !== 'राहु (Rahu)') {
+                const pName = planetNames[index];
+
+                if (pName === 'राहु (Rahu)' || pName === 'केतु (Ketu)') {
+                    // Rahu/Ketu are always retrograde conceptually in basic Vedic UI
                     isRetrograde = true;
-                } else if (planetNames[index] === 'राहु (Rahu)' && pos.longitudeSpeed > 0) {
-                    // Rahu is normally retrograde, if speed > 0 it's direct, but we'll stick to standard retrograde marker for simplicity
-                    isRetrograde = false;
-                } else if (planetNames[index] === 'राहु (Rahu)') {
-                    isRetrograde = true; // Rahu/Ketu always retro visually
+                } else if (pos.longitudeSpeed < 0) {
+                    isRetrograde = true;
                 }
 
                 let dignity = "Neutral";
-                const pName = planetNames[index];
-
                 // Exaltation (Uccha) rules
                 if (pName.includes('Sun') && sign === 0) dignity = "Uccha";
                 else if (pName.includes('Moon') && sign === 1) dignity = "Uccha";
@@ -77,6 +94,8 @@ app.post('/api/calculate', (req, res) => {
                 else if (pName.includes('Jupiter') && sign === 3) dignity = "Uccha";
                 else if (pName.includes('Venus') && sign === 11) dignity = "Uccha";
                 else if (pName.includes('Saturn') && sign === 6) dignity = "Uccha";
+                else if (pName.includes('Rahu') && sign === 2) dignity = "Uccha"; // Gemini
+                else if (pName.includes('Ketu') && sign === 8) dignity = "Uccha"; // Sagittarius
 
                 // Debilitation (Neecha) rules (+6 signs from Uccha)
                 else if (pName.includes('Sun') && sign === 6) dignity = "Neecha";
@@ -86,6 +105,8 @@ app.post('/api/calculate', (req, res) => {
                 else if (pName.includes('Jupiter') && sign === 9) dignity = "Neecha";
                 else if (pName.includes('Venus') && sign === 5) dignity = "Neecha";
                 else if (pName.includes('Saturn') && sign === 0) dignity = "Neecha";
+                else if (pName.includes('Rahu') && sign === 8) dignity = "Neecha"; // Sagittarius
+                else if (pName.includes('Ketu') && sign === 2) dignity = "Neecha"; // Gemini
 
                 // Mooltrikona rules
                 else if (pName.includes('Sun') && sign === 4 && degreeInSign <= 20) dignity = "Mooltrikona";
@@ -265,7 +286,7 @@ app.post('/api/calculate', (req, res) => {
         }
 
         const detectionData = detectYogas(results, ascendant);
-        // detectionData now contains { yogas, chartStats }
+        // detectionData now contains { yogas, bhaavPhal, chartStats }
 
         res.json({
             jd,
@@ -274,6 +295,7 @@ app.post('/api/calculate', (req, res) => {
             planets: results,
             lagnaChart: lagnaChart,
             yogas: detectionData.yogas,
+            bhaavPhal: detectionData.bhaavPhal,
             chartStats: detectionData.chartStats
         });
     } catch (error) {

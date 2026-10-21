@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h3_sun",
+    "name": "तीसरे भाव में सूर्य",
+    "type": "भाव फल",
+    "description": "सूर्य तीसरे घर (पराक्रम और साहस) में: व्यक्ति अत्यधिक साहसी, निडर और अपने बलबूते पर सफलता पाने वाला होता है। छोटे भाई-बहनों पर अपना दबदबा बनाए रखना चाहता है। संचार (communication) में एक प्रकार का 'अधिकार' (authority) झलकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Sun", "in_houses": [3] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_moon",
+    "name": "तीसरे भाव में चंद्र",
+    "type": "भाव फल",
+    "description": "चंद्रमा तीसरे घर में: मन में हमेशा नए आइडियाज और कुछ नया करने की उत्सुकता रहती है। छोटे भाई-बहनों से इमोशनल लगाव होता है। यात्राओं का शौक होता है, लेकिन कई बार फैसले लेने में मन डगमगा सकता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Moon", "in_houses": [3] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_mars",
+    "name": "तीसरे भाव में मंगल",
+    "type": "भाव फल",
+    "description": "मंगल तीसरे घर में (कारक भाव): यह मंगल की अत्यंत शुभ और शक्तिशाली स्थिति है। व्यक्ति 'फाइटर' प्रवृत्ति का होता है और किसी भी रिस्क को लेने से नहीं डरता। छोटे भाइयों से मतभेद हो सकता है, लेकिन पराक्रम और मेहनत में व्यक्ति का कोई मुकाबला नहीं होता।",
+    "combinations": [{ "type": "single_planet", "planet": "Mars", "in_houses": [3] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_mercury",
+    "name": "तीसरे भाव में बुध",
+    "type": "भाव फल",
+    "description": "बुध तीसरे घर में: यह व्यक्ति को अत्यंत चतुर और बेहतरीन कम्युनिकेटर बनाता है। राइटिंग, पब्लिशिंग, सेल्स या मार्केटिंग के क्षेत्र में अपार सफलता मिल सकती है। दिमाग बहुत तेज़ी से काम करता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Mercury", "in_houses": [3] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_jupiter",
+    "name": "तीसरे भाव में गुरु",
+    "type": "भाव फल",
+    "description": "गुरु तीसरे घर में: व्यक्ति अपनी बुद्धि और ज्ञान के बल पर काम निकलवाता है, बाहुबल से नहीं। छोटे भाई-बहनों के लिए मार्गदर्शक (guide) का काम करता है। लेखन और उपदेश देने में निपुण होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Jupiter", "in_houses": [3] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_venus",
+    "name": "तीसरे भाव में शुक्र",
+    "type": "भाव फल",
+    "description": "शुक्र तीसरे घर में: शौक और रुचियां बहुत कलात्मक (artistic) होती हैं। व्यक्ति के शौक (hobbies) ही उसका प्रोफेशन बन सकते हैं। छोटी यात्राएं अक्सर आनंददायक और विलासिता से भरी होती हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Venus", "in_houses": [3] }],
+    "cancellations": [], "score": 10, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_saturn",
+    "name": "तीसरे भाव में शनि",
+    "type": "भाव फल",
+    "description": "शनि तीसरे घर में: व्यक्ति बहुत सोच-समझकर और कैलकुलेटेड रिस्क लेता है। शुरुआत में साहस में कमी लग सकती है, लेकिन उम्र के साथ व्यक्ति बहुत धैर्यवान और दृढ़ निश्चयी (determined) हो जाता है। भाई-बहनों से रिश्ते थोड़े ठंडे या दूरी वाले हो सकते हैं।",
+    "combinations": [{ "type": "single_planet", "planet": "Saturn", "in_houses": [3] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_rahu",
+    "name": "तीसरे भाव में राहु",
+    "type": "भाव फल",
+    "description": "राहु तीसरे घर में: यह राहु की सर्वश्रेष्ठ स्थितियों में से एक है। व्यक्ति अदम्य साहसी होता है और 'साम-दाम-दंड-भेद' से अपना काम निकलवाना जानता है। मीडिया, इंटरनेट और संचार के आधुनिक साधनों का बेहतरीन उपयोग करता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Rahu", "in_houses": [3] }],
+    "cancellations": [], "score": 15, "frequency_multiplier": 1
+  },
+  {
+    "id": "h3_ketu",
+    "name": "तीसरे भाव में केतु",
+    "type": "भाव फल",
+    "description": "केतु तीसरे घर में: व्यक्ति का साहस अचानक से फूटता है (explosive courage), लेकिन सामान्यतः वे शांत रहना पसंद करते हैं। भाई-बहनों से डिटैचमेंट (अलगाव) महसूस हो सकता है। अंतर्ज्ञान (intuition) बहुत तेज़ होता है।",
+    "combinations": [{ "type": "single_planet", "planet": "Ketu", "in_houses": [3] }],
+    "cancellations": [], "score": 5, "frequency_multiplier": 1
+  }
+]
