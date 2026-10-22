@@ -308,7 +308,93 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         // Lagna Chart (Houses 1-12) Section
         if (data.lagnaChart) {
-            outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">${currentLang === 'hi' ? 'लग्न कुण्डली (भाव 1-12)' : 'Lagna Chart (Houses 1-12)'}</h3>`;
+
+        // Planetary Reality Section
+        outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">${currentLang === 'hi' ? 'ग्रहों की यथार्थता (Planetary Reality DNA)' : 'Planetary Reality (Core DNA vs Manifestation)'}</h3>`;
+        outputHTML += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">`;
+
+        data.planets.forEach(p => {
+            const isHi = currentLang === 'hi';
+
+            // Skip rendering nodes and virtuals if we don't have core data? No, Rahu and Ketu have core data.
+            // Let's check if coreData exists
+            if (!p.coreData || !p.coreData.role) return;
+
+            const role = isHi ? p.coreData.role.hi : p.coreData.role.en;
+            const agenda = isHi ? p.coreData.core_agenda.hi : p.coreData.core_agenda.en;
+            const truth = isHi ? p.coreData.unchangeable_truth.hi : p.coreData.unchangeable_truth.en;
+
+            // Reconstruct basic info
+            const deg = `${Math.floor(p.degreeInSign)}° ${Math.floor((p.degreeInSign % 1) * 60)}'`;
+            const signName = isHi ? p.signNameHi : p.signNameEn;
+            const houseStr = p.house ? (isHi ? `भाव ${p.house}` : `House ${p.house}`) : '-';
+
+            // Calculate Avastha / Power
+            const isOdd = (p.sign % 2 === 0); // 0 is Aries
+            let d = p.degreeInSign;
+            let power = 0;
+            if (d >= 0 && d < 6) power = isOdd ? 25 : 0;
+            else if (d >= 6 && d < 12) power = isOdd ? 50 : 10;
+            else if (d >= 12 && d < 18) power = 100;
+            else if (d >= 18 && d < 24) power = isOdd ? 10 : 50;
+            else power = isOdd ? 0 : 25;
+
+            // Get translation for dignity
+            let dignityText = p.dignity;
+            if (isHi) {
+                const digMap = { 'Vargottam': 'वर्गोत्तम', 'Uccha': 'उच्च', 'Mooltrikona': 'मूलत्रिकोण', 'Swarashi': 'स्वराशि', 'Friendly': 'मित्र', 'Neutral': 'सम', 'Enemy': 'शत्रु', 'Combust': 'अस्त', 'Neecha': 'नीच' };
+                dignityText = digMap[p.dignity] || p.dignity;
+            }
+
+            outputHTML += `
+                <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--vault-border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+
+                    <!-- Fixed DNA Section -->
+                    <div style="background: rgba(0,0,0,0.6); padding: 1.2rem; border-bottom: 2px solid var(--vault-accent); position: relative;">
+                        <span style="position: absolute; top: 10px; right: 10px; font-size: 1.2rem; opacity: 0.8;" title="Fixed DNA">🧬</span>
+                        <h4 style="color: var(--vault-accent); font-size: 1.3rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            ${p.name.split(' ')[0]} <span style="font-size: 0.9rem; color: var(--vault-text-muted);">(${role})</span>
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.5rem;"><strong>${isHi ? 'मूल प्रकृति:' : 'Core Nature:'}</strong> ${agenda}</p>
+                        <p style="font-size: 0.85rem; color: #94a3b8; font-style: italic;">" ${truth} "</p>
+                    </div>
+
+                    <!-- Changeable Manifestation Section -->
+                    <div style="padding: 1.2rem; flex-grow: 1;">
+                        <h5 style="color: var(--vault-text); font-size: 1rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 1rem;" title="Current State">📍</span> ${isHi ? 'वर्तमान स्थिति (Manifestation)' : 'Current State (Manifestation)'}
+                        </h5>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span style="background: rgba(255,255,255,0.05); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem;">${houseStr}</span>
+                            <span style="background: rgba(255,255,255,0.05); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem;">${signName} (${deg})</span>
+                            <span style="background: ${p.dignity === 'Neecha' || p.dignity === 'Combust' || p.dignity === 'Enemy' ? 'rgba(239,68,68,0.2)' : p.dignity === 'Uccha' || p.dignity === 'Mooltrikona' || p.dignity === 'Swarashi' || p.dignity === 'Vargottam' ? 'rgba(34,197,94,0.2)' : 'rgba(255,255,255,0.05)'}; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; border: 1px solid ${p.dignity === 'Neecha' || p.dignity === 'Combust' || p.dignity === 'Enemy' ? 'rgba(239,68,68,0.5)' : p.dignity === 'Uccha' || p.dignity === 'Mooltrikona' || p.dignity === 'Swarashi' || p.dignity === 'Vargottam' ? 'rgba(34,197,94,0.5)' : 'transparent'};">${dignityText}</span>
+                        </div>
+
+                        <!-- Avastha / Fixed Physical Power Section -->
+                        <div style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.8rem; margin-top: 0.5rem;">
+                            <div style="font-size: 0.85rem; color: var(--vault-text-muted); margin-bottom: 0.3rem; display: flex; align-items: center; justify-content: space-between;">
+                                <span>${isHi ? 'ग्रह अवस्था (Physical Power):' : 'Graha Avastha (Physical Power):'}</span>
+                                <span style="font-weight: bold; color: ${power === 100 ? '#4ade80' : power === 0 ? '#ef4444' : '#e2e8f0'};">${power}%</span>
+                            </div>
+                            <div style="width: 100%; background: rgba(0,0,0,0.5); height: 6px; border-radius: 3px; overflow: hidden;">
+                                <div style="width: ${power}%; background: ${power === 100 ? '#4ade80' : power === 0 ? '#ef4444' : power >= 50 ? '#facc15' : '#f97316'}; height: 100%;"></div>
+                            </div>
+                            <div style="font-size: 0.75rem; color: #94a3b8; font-style: italic; margin-top: 0.4rem;">
+                                ${power === 100 ? (isHi ? 'युवा अवस्था: ग्रह पूर्ण 100% क्षमता के साथ फल देने में सक्षम है।' : 'Yuva Avastha: Planet is fully capable of delivering 100% results.') :
+                                   power === 0 ? (isHi ? 'मृत/बाल अवस्था: ग्रह में परिणाम देने की भौतिक ऊर्जा शून्य (0%) है।' : 'Mrit/Bala Avastha: Planet has zero (0%) physical energy to manifest results.') :
+                                   (isHi ? `ग्रह ${power}% शक्ति (कुमार/वृद्ध) के साथ आंशिक परिणाम देगा।` : `Planet will deliver partial results with ${power}% capacity.`)}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `;
+        });
+
+        outputHTML += `</div>`;
+
+outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">${currentLang === 'hi' ? 'लग्न कुण्डली (भाव 1-12)' : 'Lagna Chart (Houses 1-12)'}</h3>`;
             outputHTML += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">`;
 
             data.lagnaChart.forEach(h => {
@@ -317,11 +403,27 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                 const pNamesList = h.planets.map(pn => getPlanetName(pn));
                 const pNamesStr = pNamesList.length > 0 ? pNamesList.join(', ') : `<span style="opacity:0.4;">${currentLang === 'hi' ? 'रिक्त' : 'Empty'}</span>`;
 
+                // Add house core info
+                let houseCoreStr = '';
+                if (h.coreData) {
+                    const agenda = currentLang === 'hi' ? h.coreData.core_agenda.hi : h.coreData.core_agenda.en;
+                    const truth = currentLang === 'hi' ? h.coreData.unchangeable_truth.hi : h.coreData.unchangeable_truth.en;
+                    houseCoreStr = `
+                        <div style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem; text-align: left;">
+                            <div style="font-size: 0.8rem; color: var(--vault-accent); font-weight: bold; margin-bottom: 0.2rem;">${currentLang === 'hi' ? 'मूल प्रकृति' : 'Core Agenda'}</div>
+                            <div style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0.4rem;">${agenda}</div>
+                            <div style="font-size: 0.75rem; color: #94a3b8; font-style: italic;">"${truth}"</div>
+                        </div>
+                    `;
+                }
+
                 outputHTML += `
-                    <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--vault-border); border-radius: 6px; padding: 1rem; text-align: center; position: relative;">
+                    <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--vault-border); border-radius: 6px; padding: 1rem; text-align: center; position: relative; display: flex; flex-direction: column;">
                         <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--vault-surface); border: 1px solid var(--vault-accent); color: var(--vault-accent); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">${h.house}</div>
                         <div style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--vault-text-muted);">${sName}</div>
                         <div style="margin-top: 0.5rem; font-weight: 500; font-size: 1rem;">${pNamesStr}</div>
+                        <div style="flex-grow: 1;"></div>
+                        ${houseCoreStr}
                     </div>
                 `;
             });
@@ -391,7 +493,30 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         if (data.yogas && data.yogas.length > 0) {
             yogaContainer.style.display = 'block';
 
-            data.yogas.forEach(yoga => {
+            // Extract Karmic Axis
+            const karmicAxisList = data.yogas.filter(y => y.type === 'Karmic Axis');
+            const standardYogas = data.yogas.filter(y => y.type !== 'Karmic Axis');
+
+            if (karmicAxisList.length > 0) {
+                let karmicHTML = `<h2 class="title" style="font-size: 2rem; margin-bottom: 1.5rem; color: #ef4444; border-bottom: 1px solid #ef4444; padding-bottom: 0.5rem; text-shadow: 0 0 10px rgba(239,68,68,0.5);">🔥 ${currentLang === 'hi' ? 'प्रारब्ध (Karmic Journey)' : 'Prarabdha (Karmic Journey)'}</h2>`;
+                karmicHTML += `<div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem;">`;
+                karmicAxisList.forEach(yoga => {
+                    const name = currentLang === 'hi' && yoga.nameHi ? yoga.nameHi : yoga.name;
+                    const desc = currentLang === 'hi' && yoga.descriptionHi ? yoga.descriptionHi : yoga.description;
+                    karmicHTML += `
+                        <div style="background: linear-gradient(145deg, rgba(239,68,68,0.1) 0%, rgba(0,0,0,0.8) 100%); border: 1px solid #ef4444; border-left: 4px solid #ef4444; border-radius: 6px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; font-size: 1.3rem; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">${name}</h4>
+                            <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.6;">${desc}</p>
+                        </div>
+                    `;
+                });
+                karmicHTML += `</div>`;
+
+                // Prepend to yogaList
+                yogaList.innerHTML += karmicHTML;
+            }
+
+            standardYogas.forEach(yoga => {
                 const isDosha = yoga.type.toLowerCase().includes('dosha');
                 const cardClass = isDosha ? 'yoga-card dosha' : 'yoga-card';
                 // Pick an icon based on type (just a simple heuristic)

@@ -1,0 +1,182 @@
+[
+    {
+        "id": "karmic_axis_1_7",
+        "name": "The Prarabdha Axis (1/7): Self vs Partnership",
+        "nameHi": "प्रारब्ध अक्ष (1/7): स्वयं बनाम साझेदारी",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is relying on partnerships (7th). But your destiny demands you to stand alone and build your own identity (1st). The more you depend on others, the more disappointment you will face. Success comes only when you embrace the 'Solo Hustle'.",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन दूसरों या साझेदारी पर निर्भर रहना (7वां भाव) है। लेकिन आपकी नियति आपसे अकेले खड़े होने और खुद की पहचान (1ला भाव) बनाने की मांग करती है। आप दूसरों पर जितना निर्भर रहेंगे, उतनी ही निराशा हाथ लगेगी। सफलता तभी मिलेगी जब आप 'अकेले चलने' (Solo Hustle) का रास्ता अपनाएंगे।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_7_1",
+        "name": "The Prarabdha Axis (7/1): Partnership vs Self",
+        "nameHi": "प्रारब्ध अक्ष (7/1): साझेदारी बनाम स्वयं",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is being hyper-independent and self-obsessed (1st). But your destiny requires you to learn how to compromise, connect with the masses, and maintain partnerships (7th). Extreme independence will lead to isolation.",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन अति-स्वतंत्र और स्वयं पर केंद्रित रहना (1ला भाव) है। लेकिन आपकी नियति आपसे समझौता करना, लोगों से जुड़ना और साझेदारी (7वां भाव) निभाना सीखना चाहती है। अत्यधिक स्वतंत्रता आपको अकेला कर देगी।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_2_8",
+        "name": "The Prarabdha Axis (2/8): Security vs Transformation",
+        "nameHi": "प्रारब्ध अक्ष (2/8): सुरक्षा बनाम परिवर्तन",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is dealing with deep, hidden matters or managing crises/trauma (8th). Destiny pushes you to build tangible wealth, value your own voice, and focus on immediate family (2nd).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन गहरे, छिपे हुए मामलों या संकट/सदमे (8वां भाव) को संभालना है। नियति आपको ठोस धन बनाने, अपनी आवाज़ को महत्व देने और तत्काल परिवार (दूसरा भाव) पर ध्यान केंद्रित करने के लिए प्रेरित करती है।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_8_2",
+        "name": "The Prarabdha Axis (8/2): Transformation vs Security",
+        "nameHi": "प्रारब्ध अक्ष (8/2): परिवर्तन बनाम सुरक्षा",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is accumulating family wealth and seeking stability (2nd). But destiny will constantly throw sudden changes, requiring you to embrace the unknown, research, and let go of material hoarding (8th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन पारिवारिक संपत्ति जमा करना और स्थिरता (दूसरा भाव) खोजना है। लेकिन नियति लगातार अचानक बदलाव लाएगी, जिसके लिए आपको अज्ञात को अपनाने, शोध करने और भौतिक जमाखोरी (8वां भाव) को छोड़ने की आवश्यकता होगी।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_3_9",
+        "name": "The Prarabdha Axis (3/9): Intellect vs Wisdom",
+        "nameHi": "प्रारब्ध अक्ष (3/9): बुद्धि बनाम ज्ञान",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is following strict dogmas or gurus (9th). Destiny demands you to use your own logic, communication, and courage to question things and find your own daily hustle (3rd).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन सख्त सिद्धांतों या गुरुओं (9वां भाव) का पालन करना है। नियति मांग करती है कि आप चीजों पर सवाल उठाने और अपना खुद का संघर्ष (तीसरा भाव) खोजने के लिए अपने स्वयं के तर्क, संचार और साहस का उपयोग करें।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_9_3",
+        "name": "The Prarabdha Axis (9/3): Wisdom vs Intellect",
+        "nameHi": "प्रारब्ध अक्ष (9/3): ज्ञान बनाम बुद्धि",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is logical reasoning and short-term skills (3rd). Destiny pushes you toward higher wisdom, long-distance travel, and understanding the broader philosophical picture (9th) rather than just arguing details.",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन तार्किक तर्क और अल्पकालिक कौशल (तीसरा भाव) है। नियति आपको केवल विवरणों पर बहस करने के बजाय उच्च ज्ञान, लंबी दूरी की यात्रा और व्यापक दार्शनिक तस्वीर (9वां भाव) को समझने की ओर धकेलती है।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_4_10",
+        "name": "The Prarabdha Axis (4/10): Home vs World",
+        "nameHi": "प्रारब्ध अक्ष (4/10): घर बनाम दुनिया",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is your career and public image (10th). Destiny forces you to find inner peace, focus on your home life, and realize that professional success is hollow without emotional roots (4th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन आपका करियर और सार्वजनिक छवि (10वां भाव) है। नियति आपको आंतरिक शांति खोजने, अपने घरेलू जीवन पर ध्यान केंद्रित करने और यह महसूस करने के लिए मजबूर करती है कि भावनात्मक जड़ों (4था भाव) के बिना व्यावसायिक सफलता खोखली है।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_10_4",
+        "name": "The Prarabdha Axis (10/4): World vs Home",
+        "nameHi": "प्रारब्ध अक्ष (10/4): दुनिया बनाम घर",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is staying at home, safe and unseen (4th). Destiny demands you to step out, take public responsibility, and build an empire in the harsh real world (10th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन घर पर रहना, सुरक्षित और अनदेखा (4था भाव) है। नियति मांग करती है कि आप बाहर कदम रखें, सार्वजनिक जिम्मेदारी लें, और कठोर वास्तविक दुनिया (10वां भाव) में एक साम्राज्य का निर्माण करें।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_5_11",
+        "name": "The Prarabdha Axis (5/11): Individual Creativity vs Network",
+        "nameHi": "प्रारब्ध अक्ष (5/11): व्यक्तिगत रचनात्मकता बनाम नेटवर्क",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is socializing and being part of a large network/friends (11th). Destiny demands you to isolate slightly to develop your own unique creative talents, intellect, or focus on children (5th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन सामूहीकरण करना और बड़े नेटवर्क/दोस्तों (11वां भाव) का हिस्सा बनना है। नियति मांग करती है कि आप अपनी अनूठी रचनात्मक प्रतिभाओं, बुद्धि को विकसित करने या बच्चों (5वां भाव) पर ध्यान केंद्रित करने के लिए थोड़ा अलग हो जाएं।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_11_5",
+        "name": "The Prarabdha Axis (11/5): Network vs Individual Creativity",
+        "nameHi": "प्रारब्ध अक्ष (11/5): नेटवर्क बनाम व्यक्तिगत रचनात्मकता",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is being the lone genius/creator (5th). Destiny pushes you to take your creations to the masses, build a community, and focus on large-scale gains (11th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन अकेला प्रतिभा/निर्माता (5वां भाव) बनना है। नियति आपको अपनी कृतियों को जनता तक ले जाने, समुदाय बनाने और बड़े पैमाने पर लाभ (11वां भाव) पर ध्यान केंद्रित करने के लिए प्रेरित करती है।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_6_12",
+        "name": "The Prarabdha Axis (6/12): Practical Grind vs Spirituality",
+        "nameHi": "प्रारब्ध अक्ष (6/12): व्यावहारिक संघर्ष बनाम आध्यात्मिकता",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is isolation, escapism, or deep spirituality (12th). Destiny demands you face the harsh realities, deal with conflicts, debts, and enemies, and do the practical daily grind (6th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन अलगाव, पलायनवाद या गहरी आध्यात्मिकता (12वां भाव) है। नियति मांग करती है कि आप कठोर वास्तविकताओं का सामना करें, संघर्षों, ऋणों और दुश्मनों से निपटें, और व्यावहारिक दैनिक संघर्ष (6ठा भाव) करें।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    },
+    {
+        "id": "karmic_axis_12_6",
+        "name": "The Prarabdha Axis (12/6): Spirituality vs Practical Grind",
+        "nameHi": "प्रारब्ध अक्ष (12/6): आध्यात्मिकता बनाम व्यावहारिक संघर्ष",
+        "type": "Karmic Axis",
+        "description": "Your comfort zone is the daily grind, arguing, and fixing practical problems (6th). Destiny pushes you to let go of control, embrace spirituality, and accept things beyond the material world (12th).",
+        "descriptionHi": "आपका कम्फर्ट ज़ोन दैनिक संघर्ष, बहस करना और व्यावहारिक समस्याओं को ठीक करना (6ठा भाव) है। नियति आपको नियंत्रण छोड़ने, आध्यात्मिकता को अपनाने और भौतिक दुनिया (12वां भाव) से परे चीजों को स्वीकार करने के लिए प्रेरित करती है।",
+        "score": 100,
+        "rarityTier": 1,
+        "combinations": [
+            {
+                "type": "complex"
+            }
+        ]
+    }
+]

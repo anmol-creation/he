@@ -14,7 +14,9 @@ fs.readdirSync(rulesDir).forEach(file => {
     if (file.endsWith('.json')) {
         const filePath = path.join(rulesDir, file);
         const fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        yogaRules.push(...fileContent);
+        if (Array.isArray(fileContent)) {
+            yogaRules.push(...fileContent);
+        }
     }
 });
 
