@@ -1,0 +1,47 @@
+{
+  "Sun": {
+    "role": { "en": "The King / Soul", "hi": "राजा / आत्मा" },
+    "core_agenda": { "en": "Authority, Ego, Leadership, Father, Core Identity", "hi": "अधिकार, अहंकार, नेतृत्व, पिता, मूल पहचान" },
+    "unchangeable_truth": { "en": "The Sun gives light and authority, but it burns what comes too close (combustion). It demands respect and central focus.", "hi": "सूर्य प्रकाश और अधिकार देता है, लेकिन जो बहुत करीब आता है उसे जला देता है (अस्त)। यह सम्मान और केंद्र बिंदु की मांग करता है।" }
+  },
+  "Moon": {
+    "role": { "en": "The Queen / Mind", "hi": "रानी / मन" },
+    "core_agenda": { "en": "Emotions, Mother, Nourishment, Reaction, Fluctuation", "hi": "भावनाएं, माता, पोषण, प्रतिक्रिया, उतार-चढ़ाव" },
+    "unchangeable_truth": { "en": "The Moon constantly waxes and wanes. It represents the restless mind and will always seek emotional security and comfort.", "hi": "चंद्रमा लगातार घटता और बढ़ता है। यह बेचैन मन का प्रतिनिधित्व करता है और हमेशा भावनात्मक सुरक्षा और आराम की तलाश करेगा।" }
+  },
+  "Mars": {
+    "role": { "en": "The Commander / Energy", "hi": "सेनापति / ऊर्जा" },
+    "core_agenda": { "en": "Action, Courage, Aggression, Logic, Protection", "hi": "कार्य, साहस, आक्रामकता, तर्क, सुरक्षा" },
+    "unchangeable_truth": { "en": "Mars is raw physical energy and logic. It solves problems through conflict or action, not through diplomacy or peace.", "hi": "मंगल कच्ची शारीरिक ऊर्जा और तर्क है। यह समस्याओं को कूटनीति या शांति से नहीं, बल्कि संघर्ष या कार्रवाई से हल करता है।" }
+  },
+  "Mercury": {
+    "role": { "en": "The Prince / Intellect", "hi": "राजकुमार / बुद्धि" },
+    "core_agenda": { "en": "Communication, Business, Youthfulness, Adaptability, Trade", "hi": "संचार, व्यापार, युवापन, अनुकूलन क्षमता, व्यापार" },
+    "unchangeable_truth": { "en": "Mercury mimics its company. It is highly adaptable and logical, but lacks its own solid stance, acting as a messenger.", "hi": "बुध अपनी संगति की नकल करता है। यह अत्यधिक अनुकूलनीय और तार्किक है, लेकिन इसका अपना कोई ठोस रुख नहीं है, यह एक दूत के रूप में कार्य करता है।" }
+  },
+  "Jupiter": {
+    "role": { "en": "The Guru / Wisdom", "hi": "गुरु / ज्ञान" },
+    "core_agenda": { "en": "Expansion, Wealth, Law, Belief, Optimism", "hi": "विस्तार, धन, कानून, विश्वास, आशावाद" },
+    "unchangeable_truth": { "en": "Jupiter expands whatever it touches. It operates on hope, belief, and righteousness, refusing to engage in petty or illegal matters.", "hi": "गुरु जिस चीज को छूता है उसका विस्तार करता है। यह आशा, विश्वास और धार्मिकता पर काम करता है, और क्षुद्र या अवैध मामलों में शामिल होने से इनकार करता है।" }
+  },
+  "Venus": {
+    "role": { "en": "The Advisor (Asura Guru) / Desire", "hi": "असुर गुरु / इच्छा" },
+    "core_agenda": { "en": "Love, Luxury, Relationships, Convenience, Aesthetics", "hi": "प्रेम, विलासिता, रिश्ते, सुविधा, सौंदर्यशास्त्र" },
+    "unchangeable_truth": { "en": "Venus dictates desires and worldly attachments. It will always pull you towards comfort, beauty, and physical/material satisfaction.", "hi": "शुक्र इच्छाओं और सांसारिक मोह को निर्देशित करता है। यह हमेशा आपको आराम, सुंदरता और शारीरिक/भौतिक संतुष्टि की ओर खींचेगा।" }
+  },
+  "Saturn": {
+    "role": { "en": "The Judge / Karma", "hi": "न्यायाधीश / कर्म" },
+    "core_agenda": { "en": "Delay, Hard Work, Reality Checks, Limits, Boundaries", "hi": "देरी, कड़ी मेहनत, वास्तविकता की जांच, सीमाएं" },
+    "unchangeable_truth": { "en": "Saturn enforces reality. It delays results to teach patience and punishes shortcuts. Its core nature of 'grinding' cannot be cancelled.", "hi": "शनि वास्तविकता को लागू करता है। यह धैर्य सिखाने के लिए परिणामों में देरी करता है और शॉर्टकट को दंडित करता है। इसकी 'पीसने' की मूल प्रकृति को रद्द नहीं किया जा सकता।" }
+  },
+  "Rahu": {
+    "role": { "en": "The Rebel / Obsession", "hi": "विद्रोही / जुनून" },
+    "core_agenda": { "en": "Illusion, Amplification, Foreign, Taboo, Insatiable Desire", "hi": "भ्रम, प्रवर्धन, विदेशी, वर्जित, अतृप्त इच्छा" },
+    "unchangeable_truth": { "en": "Rahu is a headless obsession. It breaks traditional rules to achieve its goals and creates a hunger that can never be fully satisfied.", "hi": "राहु एक सिरहीन जुनून है। यह अपने लक्ष्यों को प्राप्त करने के लिए पारंपरिक नियमों को तोड़ता है और एक ऐसी भूख पैदा करता है जिसे कभी भी पूरी तरह से संतुष्ट नहीं किया जा सकता है।" }
+  },
+  "Ketu": {
+    "role": { "en": "The Monk / Detachment", "hi": "संन्यासी / वैराग्य" },
+    "core_agenda": { "en": "Moksha, Isolation, Past-life mastery, Dissatisfaction", "hi": "मोक्ष, अलगाव, पिछले जन्म की महारत, असंतोष" },
+    "unchangeable_truth": { "en": "Ketu represents what you have already mastered. It causes deep dissatisfaction in the material realm to push you towards spiritual liberation.", "hi": "केतु उस बात का प्रतिनिधित्व करता है जिसमें आप पहले ही महारत हासिल कर चुके हैं। यह आपको आध्यात्मिक मुक्ति की ओर धकेलने के लिए भौतिक क्षेत्र में गहरा असंतोष पैदा करता है।" }
+  }
+}
