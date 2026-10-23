@@ -306,15 +306,15 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         outputHTML += `</tbody></table></div>`;
 
-        // Lagna Chart (Houses 1-12) Section
-        // (Visual representation is typically handled by SVG, so we won't print raw text for the chart here unless necessary)
-        // Wait, the previous code had an unclosed if block: `if (data.lagnaChart) {`
-        // Wait, looking at grep:
-        // 310: if (data.lagnaChart) {
-        // 312: // Planetary Reality Section
-        // Let's fix that. Wait, the if block was likely closed further down. Let me just insert the Anchors section before the Lagna Chart visual section (or Planetary Reality).
+        // Lagna Chart (Houses 1-12) Section is handled visually, not as a table here.
 
-        // --- The Anchors / CEO Status Section ---
+        // --- The Anchors / Semi-Fixed Section ---
+
+        outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">
+            ${currentLang === 'hi' ? 'द एंकर्स (अर्ध-निश्चित कर्म)' : 'The Anchors (Semi-Fixed Karma)'}
+        </h3>`;
+
+        // 1. Lagnesh (CEO) Anchor
         if (data.ceoStatus) {
             const ceo = data.ceoStatus;
             const isHi = currentLang === 'hi';
@@ -381,6 +381,76 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                     <div style="background: rgba(200, 50, 50, 0.1); border-left: 4px solid ${ceoColor}; padding: 1rem; font-style: italic; color: #eee; line-height: 1.5;">
                         <i class="fa-solid fa-skull" style="margin-right: 8px; opacity: 0.8;"></i>
                         <strong>Brutal Reality Check:</strong> ${isHi ? brutalTextHi : brutalText}
+                    </div>
+                </div>
+            `;
+        }
+
+        // 2. Prime Timeline (Age 25-50) Anchor
+        if (data.primeTimeline && data.primeTimeline.length > 0) {
+            const isHi = currentLang === 'hi';
+
+            outputHTML += `
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--vault-border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                    <h3 style="color: var(--vault-text); font-family: 'EB Garamond', serif; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem;">
+                        <i class="fa-solid fa-hourglass-half"></i> ${isHi ? 'एंकर: प्राइम टाइमलाइन (उम्र 25-50)' : 'The Anchor: Prime Timeline (Age 25-50)'}
+                    </h3>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 1.5rem;">
+                        ${isHi ? 'यह आपकी लाइफ का सबसे महत्वपूर्ण समय है जहाँ आप अपना साम्राज्य बनाते हैं। राजयोग तभी काम आते हैं जब वो इस समय के दौरान सक्रिय हों।' : 'This is the most crucial phase of life where you build your empire. Rajyogas are only useful if they activate during this period.'}
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+            `;
+
+            data.primeTimeline.forEach(dasha => {
+                let evalColor = "var(--vault-text)";
+                let evalIcon = "fa-circle-question";
+                let evalTextEn = "";
+                let evalTextHi = "";
+
+                if (dasha.evaluation === "Golden") {
+                    evalColor = "var(--vault-accent)"; // Gold
+                    evalIcon = "fa-crown";
+                    evalTextEn = `Golden Period. The planet is strong and favorable. Push hard, take risks, accelerator down.`;
+                    evalTextHi = `स्वर्णिम काल। ग्रह मजबूत और अनुकूल है। पूरी ताकत लगाएँ, जोखिम लें, एक्सीलेटर दबाएँ।`;
+                } else if (dasha.evaluation === "Grind") {
+                    evalColor = "#cc3333"; // Red
+                    evalIcon = "fa-hammer";
+                    evalTextEn = `The Grind. Winter season. The planet is weak or malefic. Luck is zero. Rely solely on hard hustle and survival mode.`;
+                    evalTextHi = `संघर्ष काल। सर्दी का मौसम। ग्रह कमजोर या पापी है। भाग्य शून्य है। केवल कड़ी मेहनत और सर्वाइवल मोड पर निर्भर रहें।`;
+                } else if (dasha.evaluation === "Chaos") {
+                    evalColor = "#a855f7"; // Purple
+                    evalIcon = "fa-bolt";
+                    evalTextEn = `Unpredictable Chaos. Rahu/Ketu illusion. Extreme highs or extreme lows. Stay grounded and practical.`;
+                    evalTextHi = `अप्रत्याशित उथल-पुथल। राहु/केतु का भ्रम। अत्यधिक उच्च या अत्यधिक निम्न। जमीन से जुड़े रहें और व्यावहारिक बनें।`;
+                } else {
+                    evalColor = "#ffcc00"; // Yellow
+                    evalIcon = "fa-scale-balanced";
+                    evalTextEn = `Mixed Period. Effort equals reward.`;
+                    evalTextHi = `मिश्रित काल। जितना प्रयास, उतना फल।`;
+                }
+
+                outputHTML += `
+                        <div style="background: rgba(255,255,255,0.03); border-left: 4px solid ${evalColor}; padding: 1rem; border-radius: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <strong style="font-size: 1.1rem; color: ${evalColor};">
+                                    <i class="fa-solid ${evalIcon}"></i> ${getPlanetName(dasha.lord)} Mahadasha
+                                </strong>
+                                <span style="background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 12px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">
+                                    Age ${dasha.startAge.toFixed(1)} to ${dasha.endAge.toFixed(1)}
+                                </span>
+                            </div>
+                            <div style="font-size: 0.9rem; color: #ddd; margin-bottom: 0.5rem;">
+                                ${isHi ? 'भाव' : 'House'}: ${dasha.house || '-'} | ${isHi ? 'अवस्था' : 'State'}: ${dasha.dignity || '-'}
+                            </div>
+                            <div style="font-style: italic; color: #bbb; font-size: 0.95rem;">
+                                ${isHi ? evalTextHi : evalTextEn}
+                            </div>
+                        </div>
+                `;
+            });
+
+            outputHTML += `
                     </div>
                 </div>
             `;

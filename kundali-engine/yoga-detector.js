@@ -354,8 +354,10 @@ function detectYogas(planetsData, ascendantDegree) {
                             if (parts.length === 4) {
                                 const rahuExpectedHouse = parseInt(parts[2]);
                                 const ketuExpectedHouse = parseInt(parts[3]);
-                                let rahu = pMap['Rahu'];
-                                let ketu = pMap['Ketu'];
+                                let rahuKey = Object.keys(pMap).find(k => k.includes('Rahu'));
+                                let ketuKey = Object.keys(pMap).find(k => k.includes('Ketu'));
+                                let rahu = rahuKey ? pMap[rahuKey] : null;
+                                let ketu = ketuKey ? pMap[ketuKey] : null;
 
                                 if (rahu && ketu && rahu.house === rahuExpectedHouse && ketu.house === ketuExpectedHouse) {
                                     isMatch = true;
@@ -367,8 +369,10 @@ function detectYogas(planetsData, ascendantDegree) {
                         }
                     }
                     else if (cond.type === 'kaal_sarp_direct' || cond.type === 'kaal_sarp_reverse') {
-                        let rahu = pMap['Rahu'];
-                        let ketu = pMap['Ketu'];
+                        let rahuKey = Object.keys(pMap).find(k => k.includes('Rahu'));
+                        let ketuKey = Object.keys(pMap).find(k => k.includes('Ketu'));
+                        let rahu = rahuKey ? pMap[rahuKey] : null;
+                        let ketu = ketuKey ? pMap[ketuKey] : null;
                         if (rahu && ketu) {
                             let rHouse = rahu.house;
                             let kHouse = ketu.house;
