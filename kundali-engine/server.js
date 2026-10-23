@@ -2,6 +2,7 @@ import cors from "cors";
 import express from 'express';
 import swisseph from 'swisseph';
 import path from 'path';
+import fs from 'fs';
 import { detectYogas } from './yoga-detector.js';
 import { fileURLToPath } from 'url';
 
@@ -9,6 +10,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+// Load Core DNA Data for Planetary Reality Module
+let planetsCore = {};
+let housesCore = {};
+try {
+    planetsCore = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'planets_core.json'), 'utf-8'));
+    housesCore = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'houses_core.json'), 'utf-8'));
+} catch (err) {
+    console.error("Warning: Could not load core DNA JSON files", err);
+}
 const PORT = 3000;
 
 app.use(cors());
@@ -153,14 +164,21 @@ app.post('/api/calculate', (req, res) => {
                         'Saturn': ['Sun', 'Moon', 'Mars']
                     };
 
-                    const pKey = ['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn'].find(k => pName.includes(k));
-                    if (pKey && signLord) {
-                        if (friends[pKey] && friends[pKey].includes(signLord)) {
+                    const pKeyMatch = ['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn'].find(k => pName.includes(k));
+                    if (pKeyMatch && signLord) {
+                        if (friends[pKeyMatch] && friends[pKeyMatch].includes(signLord)) {
                             dignity = "Friendly";
-                        } else if (enemies[pKey] && enemies[pKey].includes(signLord)) {
+                        } else if (enemies[pKeyMatch] && enemies[pKeyMatch].includes(signLord)) {
                             dignity = "Enemy";
                         }
                     }
+                }
+
+                // Map the core data to the planet using the exact English key (e.g. "Sun", "Moon")
+                let pKeyForCore = ['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn'].find(k => pName.includes(k));
+                if (!pKeyForCore) {
+                    if (pName.includes('Rahu')) pKeyForCore = 'Rahu';
+                    if (pName.includes('Ketu')) pKeyForCore = 'Ketu';
                 }
 
                 results.push({
@@ -170,7 +188,8 @@ app.post('/api/calculate', (req, res) => {
                     degreeInSign: degreeInSign,
                     speed: pos.longitudeSpeed,
                     isRetrograde: isRetrograde,
-                    dignity: dignity
+                    dignity: dignity,
+                    coreData: pKeyForCore && planetsCore[pKeyForCore] ? planetsCore[pKeyForCore] : null
                 });
 
             }
@@ -281,7 +300,8 @@ app.post('/api/calculate', (req, res) => {
             lagnaChart.push({
                 house: houseNum,
                 sign: signForHouse,
-                planets: planetsInHouse
+                planets: planetsInHouse,
+                coreData: housesCore[houseNum.toString()] || null
             });
         }
 
@@ -296,7 +316,11 @@ app.post('/api/calculate', (req, res) => {
             lagnaChart: lagnaChart,
             yogas: detectionData.yogas,
             bhaavPhal: detectionData.bhaavPhal,
-            chartStats: detectionData.chartStats
+            chartStats: detectionData.chartStats,
+            coreData: {
+                planetsCore,
+                housesCore
+            }
         });
     } catch (error) {
         res.status(500).json({ error: error.message });
