@@ -363,7 +363,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             outputHTML += `
                 <div style="background: rgba(0,0,0,0.6); border: 1px solid ${ceoColor}; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                     <h3 style="color: ${ceoColor}; font-family: 'EB Garamond', serif; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem;">
-                        <i class="fa-solid fa-anchor"></i> ${isHi ? 'एंकर: लग्नेश (कुंडली का CEO)' : 'The Anchor: Lagnesh (The CEO of Your Chart)'}
+                        <i class="fa-solid fa-anchor"></i> ${isHi ? 'एंकर 1: लग्नेश (कुंडली का CEO)' : 'Anchor 1: Lagnesh (The CEO of Your Chart)'}
                     </h3>
 
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
@@ -393,7 +393,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
             outputHTML += `
                 <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--vault-border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                     <h3 style="color: var(--vault-text); font-family: 'EB Garamond', serif; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem;">
-                        <i class="fa-solid fa-hourglass-half"></i> ${isHi ? 'एंकर: प्राइम टाइमलाइन (उम्र 25-50)' : 'The Anchor: Prime Timeline (Age 25-50)'}
+                        <i class="fa-solid fa-hourglass-half"></i> ${isHi ? 'एंकर 2: प्राइम टाइमलाइन (उम्र 25-50)' : 'Anchor 2: Prime Timeline (Age 25-50)'}
                     </h3>
                     <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 1.5rem;">
                         ${isHi ? 'यह आपकी लाइफ का सबसे महत्वपूर्ण समय है जहाँ आप अपना साम्राज्य बनाते हैं। राजयोग तभी काम आते हैं जब वो इस समय के दौरान सक्रिय हों।' : 'This is the most crucial phase of life where you build your empire. Rajyogas are only useful if they activate during this period.'}
@@ -642,28 +642,46 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         if (data.yogas && data.yogas.length > 0) {
             yogaContainer.style.display = 'block';
 
-            // Extract Karmic Axis
-            const karmicAxisList = data.yogas.filter(y => y.type === 'Karmic Axis');
-            const standardYogas = data.yogas.filter(y => y.type !== 'Karmic Axis');
+            const karmicYogas = data.yogas.filter(y => y.type === 'Karmic Axis');
 
-            if (karmicAxisList.length > 0) {
-                let karmicHTML = `<h2 class="title" style="font-size: 2rem; margin-bottom: 1.5rem; color: #ef4444; border-bottom: 1px solid #ef4444; padding-bottom: 0.5rem; text-shadow: 0 0 10px rgba(239,68,68,0.5);">🔥 ${currentLang === 'hi' ? 'प्रारब्ध (Karmic Journey)' : 'Prarabdha (Karmic Journey)'}</h2>`;
-                karmicHTML += `<div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem;">`;
-                karmicAxisList.forEach(yoga => {
-                    const name = currentLang === 'hi' && yoga.nameHi ? yoga.nameHi : yoga.name;
-                    const desc = currentLang === 'hi' && yoga.descriptionHi ? yoga.descriptionHi : yoga.description;
-                    karmicHTML += `
-                        <div style="background: linear-gradient(145deg, rgba(239,68,68,0.1) 0%, rgba(0,0,0,0.8) 100%); border: 1px solid #ef4444; border-left: 4px solid #ef4444; border-radius: 6px; padding: 1.5rem;">
-                            <h4 style="color: #ef4444; font-size: 1.3rem; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">${name}</h4>
-                            <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.6;">${desc}</p>
+            if (karmicYogas.length > 0) {
+                const karmicYoga = karmicYogas[0]; // Usually just one
+                const karmicHTML = `
+                    <div style="background: rgba(139, 0, 0, 0.1); border: 1px solid #dc2626; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-infinity" style="color: #dc2626; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <h3 style="color: #ef4444; margin: 0; font-family: 'Cinzel', serif;">Anchor 3: Karmic Axis (Rahu-Ketu)</h3>
                         </div>
-                    `;
-                });
-                karmicHTML += `</div>`;
-
-                // Prepend to yogaList
+                        <div style="color: var(--vault-text); margin-bottom: 0.5rem; font-weight: bold; font-size: 1.1rem;">${karmicYoga.name}</div>
+                        <div style="color: var(--vault-text-muted); line-height: 1.5;">${karmicYoga.description}</div>
+                    </div>
+                `;
                 yogaList.innerHTML += karmicHTML;
             }
+
+            // Add Anchor 4: Vakri Grahas (Retrograde)
+            const vakriPlanets = data.planets ? data.planets.filter(p => p.isRetrograde && !p.name.includes("Rahu") && !p.name.includes("Ketu")) : [];
+            if (vakriPlanets.length > 0) {
+                let vakriStr = vakriPlanets.map(p => {
+                    const pName = currentLang === 'hi' ? p.name.split(' (')[0] : p.name;
+                    const truth = p.coreData ? (currentLang === 'hi' ? p.coreData.unchangeable_truth.hi : p.coreData.unchangeable_truth.en) : "";
+                    return `<div style="margin-bottom: 0.5rem;"><b>${pName}</b>: ${truth}</div>`;
+                }).join('');
+                const vakriHTML = `
+                    <div style="background: rgba(217, 119, 6, 0.1); border: 1px solid #d97706; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-yin-yang" style="color: #d97706; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <h3 style="color: #f59e0b; margin: 0; font-family: 'Cinzel', serif;">Anchor 4: Stubborn Karma (Vakri Graha)</h3>
+                        </div>
+                        <div style="color: var(--vault-text-muted); line-height: 1.5;">
+                            ${vakriStr}
+                        </div>
+                    </div>
+                `;
+                yogaList.innerHTML += vakriHTML;
+            }
+
+            const standardYogas = data.yogas.filter(y => y.type !== 'Karmic Axis');
 
             standardYogas.forEach(yoga => {
                 const isDosha = yoga.type.toLowerCase().includes('dosha');
