@@ -348,6 +348,19 @@ function detectYogas(planetsData, ascendantDegree) {
                                 let dist = (ju.house - mo.house + 12) % 12;
                                 if (dist === 0 || dist === 3 || dist === 6 || dist === 9) isMatch = true;
                             }
+                        } else if (rule.id && rule.id.startsWith('karmic_axis_')) {
+                            // Logic for Karmic Axis (Rahu/Ketu Axis)
+                            const parts = rule.id.split('_');
+                            if (parts.length === 4) {
+                                const rahuExpectedHouse = parseInt(parts[2]);
+                                const ketuExpectedHouse = parseInt(parts[3]);
+                                let rahu = pMap['Rahu'];
+                                let ketu = pMap['Ketu'];
+
+                                if (rahu && ketu && rahu.house === rahuExpectedHouse && ketu.house === ketuExpectedHouse) {
+                                    isMatch = true;
+                                }
+                            }
                         } else {
                             // Currently unsupported complex string will evaluate false
                             isMatch = false;

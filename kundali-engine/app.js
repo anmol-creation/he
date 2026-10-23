@@ -307,6 +307,85 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         outputHTML += `</tbody></table></div>`;
 
         // Lagna Chart (Houses 1-12) Section
+        // (Visual representation is typically handled by SVG, so we won't print raw text for the chart here unless necessary)
+        // Wait, the previous code had an unclosed if block: `if (data.lagnaChart) {`
+        // Wait, looking at grep:
+        // 310: if (data.lagnaChart) {
+        // 312: // Planetary Reality Section
+        // Let's fix that. Wait, the if block was likely closed further down. Let me just insert the Anchors section before the Lagna Chart visual section (or Planetary Reality).
+
+        // --- The Anchors / CEO Status Section ---
+        if (data.ceoStatus) {
+            const ceo = data.ceoStatus;
+            const isHi = currentLang === 'hi';
+
+            let dignityText = ceo.dignity;
+            if (isHi) {
+                const digMap = { 'Vargottam': 'वर्गोत्तम', 'Uccha': 'उच्च', 'Mooltrikona': 'मूलत्रिकोण', 'Swarashi': 'स्वराशि', 'Friendly': 'मित्र', 'Neutral': 'सम', 'Enemy': 'शत्रु', 'Combust': 'अस्त', 'Neecha': 'नीच' };
+                dignityText = digMap[ceo.dignity] || ceo.dignity;
+            }
+
+            // Determine Brutal Reality text based on placement
+            let brutalText = "";
+            let brutalTextHi = "";
+            let ceoColor = "var(--vault-text)";
+
+            // Kendra/Trikona (Good)
+            if ([1, 4, 5, 7, 9, 10].includes(ceo.house)) {
+                brutalText = `The CEO (${ceo.key}) is placed in a strong foundation house (${ceo.house}). It has the capacity to execute ideas, provided you put in the work.`;
+                brutalTextHi = `लग्नेश (${ceo.key}) मजबूत भाव (${ceo.house}) में है। इसमें विचारों को क्रियान्वित करने की क्षमता है, बशर्ते आप मेहनत करें।`;
+                ceoColor = "var(--vault-accent)";
+            }
+            // Trik Houses (Struggle)
+            else if ([6, 8, 12].includes(ceo.house)) {
+                brutalText = `The CEO (${ceo.key}) is struggling in the ${ceo.house}th house. The foundation is weak. Any Rajyogas in the chart will require 3x more hustle to manifest because you have to fix the foundation first. Stop relying on luck.`;
+                brutalTextHi = `लग्नेश (${ceo.key}) संघर्षपूर्ण ${ceo.house}वें भाव में है। नींव कमजोर है। कुंडली में कोई भी राजयोग फलीभूत होने के लिए 3 गुना अधिक संघर्ष मांगेगा, क्योंकि आपको पहले अपनी नींव ठीक करनी होगी। भाग्य पर निर्भर रहना छोड़ दें।`;
+                ceoColor = "#cc3333";
+            }
+            // Others (2, 3, 11)
+            else {
+                brutalText = `The CEO (${ceo.key}) is in the ${ceo.house}th house. Focus is directed heavily towards wealth, network, or daily grind. Effort equals reward.`;
+                brutalTextHi = `लग्नेश (${ceo.key}) ${ceo.house}वें भाव में है। आपका ध्यान धन, नेटवर्क या दैनिक संघर्ष की ओर है। प्रयास से ही फल मिलेगा।`;
+                ceoColor = "#ffcc00";
+            }
+
+            // Adjust for dignity
+            if (ceo.dignity === 'Neecha' || ceo.dignity === 'Enemy' || ceo.isCombust) {
+                brutalText += ` However, the CEO is currently weak (${dignityText}). Confidence and execution power are fundamentally compromised.`;
+                brutalTextHi += ` हालाँकि, लग्नेश वर्तमान में कमजोर (${dignityText}) है। आत्मविश्वास और कार्य क्षमता मूल रूप से प्रभावित है।`;
+                ceoColor = "#cc3333";
+            } else if (ceo.dignity === 'Uccha' || ceo.dignity === 'Swarashi' || ceo.dignity === 'Mooltrikona') {
+                brutalText += ` The CEO is in a powerful state (${dignityText}), granting strong willpower and self-reliance.`;
+                brutalTextHi += ` लग्नेश शक्तिशाली अवस्था (${dignityText}) में है, जो दृढ़ इच्छाशक्ति और आत्मनिर्भरता प्रदान करता है।`;
+                ceoColor = "var(--vault-accent)";
+            }
+
+            outputHTML += `
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid ${ceoColor}; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                    <h3 style="color: ${ceoColor}; font-family: 'EB Garamond', serif; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem;">
+                        <i class="fa-solid fa-anchor"></i> ${isHi ? 'एंकर: लग्नेश (कुंडली का CEO)' : 'The Anchor: Lagnesh (The CEO of Your Chart)'}
+                    </h3>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>${isHi ? 'लग्नेश' : 'CEO'}:</strong> ${ceo.name}
+                        </span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>${isHi ? 'भाव' : 'Office (House)'}:</strong> ${ceo.house}
+                        </span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>${isHi ? 'अवस्था' : 'State'}:</strong> ${dignityText}
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(200, 50, 50, 0.1); border-left: 4px solid ${ceoColor}; padding: 1rem; font-style: italic; color: #eee; line-height: 1.5;">
+                        <i class="fa-solid fa-skull" style="margin-right: 8px; opacity: 0.8;"></i>
+                        <strong>Brutal Reality Check:</strong> ${isHi ? brutalTextHi : brutalText}
+                    </div>
+                </div>
+            `;
+        }
+
         if (data.lagnaChart) {
 
         // Planetary Reality Section
@@ -326,7 +405,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
             // Reconstruct basic info
             const deg = `${Math.floor(p.degreeInSign)}° ${Math.floor((p.degreeInSign % 1) * 60)}'`;
-            const signName = isHi ? p.signNameHi : p.signNameEn;
+            const signName = signNames[p.sign];
             const houseStr = p.house ? (isHi ? `भाव ${p.house}` : `House ${p.house}`) : '-';
 
             // Calculate Avastha / Power

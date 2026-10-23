@@ -292,6 +292,38 @@ app.post('/api/calculate', (req, res) => {
             p.house = ((p.sign - ascendantSign + 12) % 12) + 1;
         });
 
+        // Calculate Lagnesh (Ascendant Lord / CEO)
+        const signLordsMap = {
+            0: 'Mars',    // Aries
+            1: 'Venus',   // Taurus
+            2: 'Mercury', // Gemini
+            3: 'Moon',    // Cancer
+            4: 'Sun',     // Leo
+            5: 'Mercury', // Virgo
+            6: 'Venus',   // Libra
+            7: 'Mars',    // Scorpio
+            8: 'Jupiter', // Sagittarius
+            9: 'Saturn',  // Capricorn
+            10: 'Saturn', // Aquarius
+            11: 'Jupiter' // Pisces
+        };
+
+        const lagneshKey = signLordsMap[ascendantSign];
+        const lagneshData = results.find(p => p.name.includes(lagneshKey));
+
+        let ceoStatus = null;
+        if (lagneshData) {
+            ceoStatus = {
+                key: lagneshKey,
+                name: lagneshData.name,
+                house: lagneshData.house,
+                sign: lagneshData.sign,
+                dignity: lagneshData.dignity,
+                isRetrograde: lagneshData.isRetrograde,
+                isCombust: lagneshData.isCombust || false
+            };
+        }
+
         // Build explicit Lagna Chart representation (Houses 1-12)
         const lagnaChart = [];
         for (let houseNum = 1; houseNum <= 12; houseNum++) {
@@ -317,6 +349,7 @@ app.post('/api/calculate', (req, res) => {
             yogas: detectionData.yogas,
             bhaavPhal: detectionData.bhaavPhal,
             chartStats: detectionData.chartStats,
+            ceoStatus: ceoStatus,
             coreData: {
                 planetsCore,
                 housesCore
