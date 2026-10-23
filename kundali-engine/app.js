@@ -306,7 +306,156 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
         outputHTML += `</tbody></table></div>`;
 
-        // Lagna Chart (Houses 1-12) Section
+        // Lagna Chart (Houses 1-12) Section is handled visually, not as a table here.
+
+        // --- The Anchors / Semi-Fixed Section ---
+
+        outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">
+            ${currentLang === 'hi' ? 'द एंकर्स (अर्ध-निश्चित कर्म)' : 'The Anchors (Semi-Fixed Karma)'}
+        </h3>`;
+
+        // 1. Lagnesh (CEO) Anchor
+        if (data.ceoStatus) {
+            const ceo = data.ceoStatus;
+            const isHi = currentLang === 'hi';
+
+            let dignityText = ceo.dignity;
+            if (isHi) {
+                const digMap = { 'Vargottam': 'वर्गोत्तम', 'Uccha': 'उच्च', 'Mooltrikona': 'मूलत्रिकोण', 'Swarashi': 'स्वराशि', 'Friendly': 'मित्र', 'Neutral': 'सम', 'Enemy': 'शत्रु', 'Combust': 'अस्त', 'Neecha': 'नीच' };
+                dignityText = digMap[ceo.dignity] || ceo.dignity;
+            }
+
+            // Determine Brutal Reality text based on placement
+            let brutalText = "";
+            let brutalTextHi = "";
+            let ceoColor = "var(--vault-text)";
+
+            // Kendra/Trikona (Good)
+            if ([1, 4, 5, 7, 9, 10].includes(ceo.house)) {
+                brutalText = `The CEO (${ceo.key}) is placed in a strong foundation house (${ceo.house}). It has the capacity to execute ideas, provided you put in the work.`;
+                brutalTextHi = `लग्नेश (${ceo.key}) मजबूत भाव (${ceo.house}) में है। इसमें विचारों को क्रियान्वित करने की क्षमता है, बशर्ते आप मेहनत करें।`;
+                ceoColor = "var(--vault-accent)";
+            }
+            // Trik Houses (Struggle)
+            else if ([6, 8, 12].includes(ceo.house)) {
+                brutalText = `The CEO (${ceo.key}) is struggling in the ${ceo.house}th house. The foundation is weak. Any Rajyogas in the chart will require 3x more hustle to manifest because you have to fix the foundation first. Stop relying on luck.`;
+                brutalTextHi = `लग्नेश (${ceo.key}) संघर्षपूर्ण ${ceo.house}वें भाव में है। नींव कमजोर है। कुंडली में कोई भी राजयोग फलीभूत होने के लिए 3 गुना अधिक संघर्ष मांगेगा, क्योंकि आपको पहले अपनी नींव ठीक करनी होगी। भाग्य पर निर्भर रहना छोड़ दें।`;
+                ceoColor = "#cc3333";
+            }
+            // Others (2, 3, 11)
+            else {
+                brutalText = `The CEO (${ceo.key}) is in the ${ceo.house}th house. Focus is directed heavily towards wealth, network, or daily grind. Effort equals reward.`;
+                brutalTextHi = `लग्नेश (${ceo.key}) ${ceo.house}वें भाव में है। आपका ध्यान धन, नेटवर्क या दैनिक संघर्ष की ओर है। प्रयास से ही फल मिलेगा।`;
+                ceoColor = "#ffcc00";
+            }
+
+            // Adjust for dignity
+            if (ceo.dignity === 'Neecha' || ceo.dignity === 'Enemy' || ceo.isCombust) {
+                brutalText += ` However, the CEO is currently weak (${dignityText}). Confidence and execution power are fundamentally compromised.`;
+                brutalTextHi += ` हालाँकि, लग्नेश वर्तमान में कमजोर (${dignityText}) है। आत्मविश्वास और कार्य क्षमता मूल रूप से प्रभावित है।`;
+                ceoColor = "#cc3333";
+            } else if (ceo.dignity === 'Uccha' || ceo.dignity === 'Swarashi' || ceo.dignity === 'Mooltrikona') {
+                brutalText += ` The CEO is in a powerful state (${dignityText}), granting strong willpower and self-reliance.`;
+                brutalTextHi += ` लग्नेश शक्तिशाली अवस्था (${dignityText}) में है, जो दृढ़ इच्छाशक्ति और आत्मनिर्भरता प्रदान करता है।`;
+                ceoColor = "var(--vault-accent)";
+            }
+
+            outputHTML += `
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid ${ceoColor}; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                    <h3 style="color: ${ceoColor}; font-family: 'EB Garamond', serif; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem;">
+                        <i class="fa-solid fa-anchor"></i> ${isHi ? 'एंकर 1: लग्नेश (कुंडली का CEO)' : 'Anchor 1: Lagnesh (The CEO of Your Chart)'}
+                    </h3>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>${isHi ? 'लग्नेश' : 'CEO'}:</strong> ${ceo.name}
+                        </span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>${isHi ? 'भाव' : 'Office (House)'}:</strong> ${ceo.house}
+                        </span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>${isHi ? 'अवस्था' : 'State'}:</strong> ${dignityText}
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(200, 50, 50, 0.1); border-left: 4px solid ${ceoColor}; padding: 1rem; font-style: italic; color: #eee; line-height: 1.5;">
+                        <i class="fa-solid fa-skull" style="margin-right: 8px; opacity: 0.8;"></i>
+                        <strong>Brutal Reality Check:</strong> ${isHi ? brutalTextHi : brutalText}
+                    </div>
+                </div>
+            `;
+        }
+
+        // 2. Prime Timeline (Age 25-50) Anchor
+        if (data.primeTimeline && data.primeTimeline.length > 0) {
+            const isHi = currentLang === 'hi';
+
+            outputHTML += `
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--vault-border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                    <h3 style="color: var(--vault-text); font-family: 'EB Garamond', serif; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.5rem;">
+                        <i class="fa-solid fa-hourglass-half"></i> ${isHi ? 'एंकर 2: प्राइम टाइमलाइन (उम्र 25-50)' : 'Anchor 2: Prime Timeline (Age 25-50)'}
+                    </h3>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 1.5rem;">
+                        ${isHi ? 'यह आपकी लाइफ का सबसे महत्वपूर्ण समय है जहाँ आप अपना साम्राज्य बनाते हैं। राजयोग तभी काम आते हैं जब वो इस समय के दौरान सक्रिय हों।' : 'This is the most crucial phase of life where you build your empire. Rajyogas are only useful if they activate during this period.'}
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+            `;
+
+            data.primeTimeline.forEach(dasha => {
+                let evalColor = "var(--vault-text)";
+                let evalIcon = "fa-circle-question";
+                let evalTextEn = "";
+                let evalTextHi = "";
+
+                if (dasha.evaluation === "Golden") {
+                    evalColor = "var(--vault-accent)"; // Gold
+                    evalIcon = "fa-crown";
+                    evalTextEn = `Golden Period. The planet is strong and favorable. Push hard, take risks, accelerator down.`;
+                    evalTextHi = `स्वर्णिम काल। ग्रह मजबूत और अनुकूल है। पूरी ताकत लगाएँ, जोखिम लें, एक्सीलेटर दबाएँ।`;
+                } else if (dasha.evaluation === "Grind") {
+                    evalColor = "#cc3333"; // Red
+                    evalIcon = "fa-hammer";
+                    evalTextEn = `The Grind. Winter season. The planet is weak or malefic. Luck is zero. Rely solely on hard hustle and survival mode.`;
+                    evalTextHi = `संघर्ष काल। सर्दी का मौसम। ग्रह कमजोर या पापी है। भाग्य शून्य है। केवल कड़ी मेहनत और सर्वाइवल मोड पर निर्भर रहें।`;
+                } else if (dasha.evaluation === "Chaos") {
+                    evalColor = "#a855f7"; // Purple
+                    evalIcon = "fa-bolt";
+                    evalTextEn = `Unpredictable Chaos. Rahu/Ketu illusion. Extreme highs or extreme lows. Stay grounded and practical.`;
+                    evalTextHi = `अप्रत्याशित उथल-पुथल। राहु/केतु का भ्रम। अत्यधिक उच्च या अत्यधिक निम्न। जमीन से जुड़े रहें और व्यावहारिक बनें।`;
+                } else {
+                    evalColor = "#ffcc00"; // Yellow
+                    evalIcon = "fa-scale-balanced";
+                    evalTextEn = `Mixed Period. Effort equals reward.`;
+                    evalTextHi = `मिश्रित काल। जितना प्रयास, उतना फल।`;
+                }
+
+                outputHTML += `
+                        <div style="background: rgba(255,255,255,0.03); border-left: 4px solid ${evalColor}; padding: 1rem; border-radius: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <strong style="font-size: 1.1rem; color: ${evalColor};">
+                                    <i class="fa-solid ${evalIcon}"></i> ${getPlanetName(dasha.lord)} Mahadasha
+                                </strong>
+                                <span style="background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 12px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">
+                                    Age ${dasha.startAge.toFixed(1)} to ${dasha.endAge.toFixed(1)}
+                                </span>
+                            </div>
+                            <div style="font-size: 0.9rem; color: #ddd; margin-bottom: 0.5rem;">
+                                ${isHi ? 'भाव' : 'House'}: ${dasha.house || '-'} | ${isHi ? 'अवस्था' : 'State'}: ${dasha.dignity || '-'}
+                            </div>
+                            <div style="font-style: italic; color: #bbb; font-size: 0.95rem;">
+                                ${isHi ? evalTextHi : evalTextEn}
+                            </div>
+                        </div>
+                `;
+            });
+
+            outputHTML += `
+                    </div>
+                </div>
+            `;
+        }
+
         if (data.lagnaChart) {
 
         // Planetary Reality Section
@@ -326,7 +475,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
 
             // Reconstruct basic info
             const deg = `${Math.floor(p.degreeInSign)}° ${Math.floor((p.degreeInSign % 1) * 60)}'`;
-            const signName = isHi ? p.signNameHi : p.signNameEn;
+            const signName = signNames[p.sign];
             const houseStr = p.house ? (isHi ? `भाव ${p.house}` : `House ${p.house}`) : '-';
 
             // Calculate Avastha / Power
@@ -493,28 +642,46 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         if (data.yogas && data.yogas.length > 0) {
             yogaContainer.style.display = 'block';
 
-            // Extract Karmic Axis
-            const karmicAxisList = data.yogas.filter(y => y.type === 'Karmic Axis');
-            const standardYogas = data.yogas.filter(y => y.type !== 'Karmic Axis');
+            const karmicYogas = data.yogas.filter(y => y.type === 'Karmic Axis');
 
-            if (karmicAxisList.length > 0) {
-                let karmicHTML = `<h2 class="title" style="font-size: 2rem; margin-bottom: 1.5rem; color: #ef4444; border-bottom: 1px solid #ef4444; padding-bottom: 0.5rem; text-shadow: 0 0 10px rgba(239,68,68,0.5);">🔥 ${currentLang === 'hi' ? 'प्रारब्ध (Karmic Journey)' : 'Prarabdha (Karmic Journey)'}</h2>`;
-                karmicHTML += `<div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem;">`;
-                karmicAxisList.forEach(yoga => {
-                    const name = currentLang === 'hi' && yoga.nameHi ? yoga.nameHi : yoga.name;
-                    const desc = currentLang === 'hi' && yoga.descriptionHi ? yoga.descriptionHi : yoga.description;
-                    karmicHTML += `
-                        <div style="background: linear-gradient(145deg, rgba(239,68,68,0.1) 0%, rgba(0,0,0,0.8) 100%); border: 1px solid #ef4444; border-left: 4px solid #ef4444; border-radius: 6px; padding: 1.5rem;">
-                            <h4 style="color: #ef4444; font-size: 1.3rem; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">${name}</h4>
-                            <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.6;">${desc}</p>
+            if (karmicYogas.length > 0) {
+                const karmicYoga = karmicYogas[0]; // Usually just one
+                const karmicHTML = `
+                    <div style="background: rgba(139, 0, 0, 0.1); border: 1px solid #dc2626; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-infinity" style="color: #dc2626; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <h3 style="color: #ef4444; margin: 0; font-family: 'Cinzel', serif;">Anchor 3: Karmic Axis (Rahu-Ketu)</h3>
                         </div>
-                    `;
-                });
-                karmicHTML += `</div>`;
-
-                // Prepend to yogaList
+                        <div style="color: var(--vault-text); margin-bottom: 0.5rem; font-weight: bold; font-size: 1.1rem;">${karmicYoga.name}</div>
+                        <div style="color: var(--vault-text-muted); line-height: 1.5;">${karmicYoga.description}</div>
+                    </div>
+                `;
                 yogaList.innerHTML += karmicHTML;
             }
+
+            // Add Anchor 4: Vakri Grahas (Retrograde)
+            const vakriPlanets = data.planets ? data.planets.filter(p => p.isRetrograde && !p.name.includes("Rahu") && !p.name.includes("Ketu")) : [];
+            if (vakriPlanets.length > 0) {
+                let vakriStr = vakriPlanets.map(p => {
+                    const pName = currentLang === 'hi' ? p.name.split(' (')[0] : p.name;
+                    const truth = p.coreData ? (currentLang === 'hi' ? p.coreData.unchangeable_truth.hi : p.coreData.unchangeable_truth.en) : "";
+                    return `<div style="margin-bottom: 0.5rem;"><b>${pName}</b>: ${truth}</div>`;
+                }).join('');
+                const vakriHTML = `
+                    <div style="background: rgba(217, 119, 6, 0.1); border: 1px solid #d97706; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-yin-yang" style="color: #d97706; font-size: 1.5rem; margin-right: 1rem;"></i>
+                            <h3 style="color: #f59e0b; margin: 0; font-family: 'Cinzel', serif;">Anchor 4: Stubborn Karma (Vakri Graha)</h3>
+                        </div>
+                        <div style="color: var(--vault-text-muted); line-height: 1.5;">
+                            ${vakriStr}
+                        </div>
+                    </div>
+                `;
+                yogaList.innerHTML += vakriHTML;
+            }
+
+            const standardYogas = data.yogas.filter(y => y.type !== 'Karmic Axis');
 
             standardYogas.forEach(yoga => {
                 const isDosha = yoga.type.toLowerCase().includes('dosha');

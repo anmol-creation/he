@@ -292,6 +292,140 @@ app.post('/api/calculate', (req, res) => {
             p.house = ((p.sign - ascendantSign + 12) % 12) + 1;
         });
 
+        // Calculate Vimshottari Dasha (Timeline)
+        const dashaLordsList = [
+            { lord: "Ketu", years: 7 }, { lord: "Venus", years: 20 }, { lord: "Sun", years: 6 },
+            { lord: "Moon", years: 10 }, { lord: "Mars", years: 7 }, { lord: "Rahu", years: 18 },
+            { lord: "Jupiter", years: 16 }, { lord: "Saturn", years: 19 }, { lord: "Mercury", years: 17 }
+        ];
+
+        let dashaTimeline = [];
+        if (moonLong > 0) {
+            const nakshatraLength = 360 / 27; // 13.3333 deg
+            const nakshatraIndex = Math.floor(moonLong / nakshatraLength);
+            const startNakshatraInfo = dashaLordsList[nakshatraIndex % 9];
+
+            const nakshatraDegreePassed = moonLong % nakshatraLength;
+            const fractionRemaining = 1 - (nakshatraDegreePassed / nakshatraLength);
+
+            let currentAge = 0;
+
+            // Birth Dasha
+            let yearsRemainingInBirthDasha = startNakshatraInfo.years * fractionRemaining;
+            dashaTimeline.push({
+                lord: startNakshatraInfo.lord,
+                startAge: 0,
+                endAge: currentAge + yearsRemainingInBirthDasha
+            });
+            currentAge += yearsRemainingInBirthDasha;
+
+            // Subsequent Dashas (Calculate up to age 100)
+            let currentDashaIndex = (nakshatraIndex % 9) + 1;
+            while (currentAge < 100) {
+                if (currentDashaIndex > 8) currentDashaIndex = 0;
+                const nextDasha = dashaLordsList[currentDashaIndex];
+
+                dashaTimeline.push({
+                    lord: nextDasha.lord,
+                    startAge: currentAge,
+                    endAge: currentAge + nextDasha.years
+                });
+
+                currentAge += nextDasha.years;
+                currentDashaIndex++;
+            }
+        }
+
+        // Calculate Lagnesh (Ascendant Lord / CEO)
+        const signLordsMap = {
+            0: 'Mars',    // Aries
+            1: 'Venus',   // Taurus
+            2: 'Mercury', // Gemini
+            3: 'Moon',    // Cancer
+            4: 'Sun',     // Leo
+            5: 'Mercury', // Virgo
+            6: 'Venus',   // Libra
+            7: 'Mars',    // Scorpio
+            8: 'Jupiter', // Sagittarius
+            9: 'Saturn',  // Capricorn
+            10: 'Saturn', // Aquarius
+            11: 'Jupiter' // Pisces
+        };
+
+        const lagneshKey = signLordsMap[ascendantSign];
+        const lagneshData = results.find(p => p.name.includes(lagneshKey));
+
+        // Evaluate Prime Timeline (Ages 25-50)
+        let primeTimeline = [];
+        dashaTimeline.forEach(dasha => {
+            // Check if this dasha overlaps with the 25-50 age range
+            if (dasha.endAge > 25 && dasha.startAge < 50) {
+                // Find the Dasha lord's data in the results
+                const lordData = results.find(p => p.name.includes(dasha.lord));
+
+                let evaluation = "Mixed"; // Default
+                let isGolden = false;
+                let isGrind = false;
+                let isChaos = false;
+
+                if (lordData) {
+                    // Check if it's Rahu or Ketu
+                    if (dasha.lord === 'Rahu' || dasha.lord === 'Ketu') {
+                        isChaos = true;
+                        evaluation = "Chaos";
+                    }
+                    else {
+                        // Check functional beneficence (Kendra/Trikona vs Trik lords)
+                        const isLagnesh = (dasha.lord === lagneshKey);
+                        // Identify houses this lord owns (excluding Rahu/Ketu)
+                        let ownedHouses = [];
+                        for (let s = 0; s < 12; s++) {
+                            if (signLordsMap[s] === dasha.lord) {
+                                // Find which house this sign falls in
+                                const houseNum = ((s - ascendantSign + 12) % 12) + 1;
+                                ownedHouses.push(houseNum);
+                            }
+                        }
+
+                        const ownsTrikona = ownedHouses.includes(1) || ownedHouses.includes(5) || ownedHouses.includes(9);
+                        const ownsKendra = ownedHouses.includes(1) || ownedHouses.includes(4) || ownedHouses.includes(7) || ownedHouses.includes(10);
+                        const ownsTrik = ownedHouses.includes(6) || ownedHouses.includes(8) || ownedHouses.includes(12);
+
+                        if (lordData.dignity === 'Neecha' || lordData.dignity === 'Combust' || lordData.dignity === 'Enemy' || (ownsTrik && !isLagnesh && !ownsTrikona)) {
+                            isGrind = true;
+                            evaluation = "Grind";
+                        }
+                        else if (isLagnesh || ownsTrikona || lordData.dignity === 'Uccha' || lordData.dignity === 'Mooltrikona' || lordData.dignity === 'Swarashi' || lordData.dignity === 'Vargottam') {
+                            isGolden = true;
+                            evaluation = "Golden";
+                        }
+                    }
+                }
+
+                primeTimeline.push({
+                    lord: dasha.lord,
+                    startAge: dasha.startAge,
+                    endAge: dasha.endAge,
+                    house: lordData ? lordData.house : null,
+                    dignity: lordData ? lordData.dignity : null,
+                    evaluation: evaluation
+                });
+            }
+        });
+
+        let ceoStatus = null;
+        if (lagneshData) {
+            ceoStatus = {
+                key: lagneshKey,
+                name: lagneshData.name,
+                house: lagneshData.house,
+                sign: lagneshData.sign,
+                dignity: lagneshData.dignity,
+                isRetrograde: lagneshData.isRetrograde,
+                isCombust: lagneshData.isCombust || false
+            };
+        }
+
         // Build explicit Lagna Chart representation (Houses 1-12)
         const lagnaChart = [];
         for (let houseNum = 1; houseNum <= 12; houseNum++) {
@@ -317,6 +451,8 @@ app.post('/api/calculate', (req, res) => {
             yogas: detectionData.yogas,
             bhaavPhal: detectionData.bhaavPhal,
             chartStats: detectionData.chartStats,
+            ceoStatus: ceoStatus,
+            primeTimeline: primeTimeline,
             coreData: {
                 planetsCore,
                 housesCore
