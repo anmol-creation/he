@@ -36,13 +36,36 @@ app.post('/api/calculate', (req, res) => {
         // Simple logic to convert local time to UTC for Swisseph
         // Indian Standard Time is UTC+5:30. Let's assume input is IST for this basic setup.
         // In a real app, you'd use a timezone library.
-        const istDateObj = new Date(`${date}T${time}:00+05:30`);
-        const year = istDateObj.getUTCFullYear();
-        const month = istDateObj.getUTCMonth() + 1; // getUTCMonth is 0-indexed
-        const day = istDateObj.getUTCDate();
+        let year, month, day, hour;
+        if (date.startsWith('-')) {
+            // Handle BCE dates manually because new Date() fails for negative years like '-5114-01-10'
+            const parts = date.split('-'); // ["", "5114", "01", "10"]
+            year = -parseInt(parts[1], 10);
+            month = parseInt(parts[2], 10);
+            day = parseInt(parts[3], 10);
+            const timeParts = time.split(':');
+            let localHour = parseInt(timeParts[0], 10);
+            let localMin = parseInt(timeParts[1], 10);
 
-        // Accurate decimal UTC hour calculation
-        const hour = istDateObj.getUTCHours() + (istDateObj.getUTCMinutes() / 60.0) + (istDateObj.getUTCSeconds() / 3600.0);
+            // IST to UTC: subtract 5 hours 30 mins
+            localMin -= 30;
+            if (localMin < 0) {
+                localMin += 60;
+                localHour -= 1;
+            }
+            localHour -= 5;
+            if (localHour < 0) {
+                localHour += 24;
+                day -= 1;
+            }
+            hour = localHour + (localMin / 60.0);
+        } else {
+            const istDateObj = new Date(`${date}T${time}:00+05:30`);
+            year = istDateObj.getUTCFullYear();
+            month = istDateObj.getUTCMonth() + 1;
+            day = istDateObj.getUTCDate();
+            hour = istDateObj.getUTCHours() + (istDateObj.getUTCMinutes() / 60.0) + (istDateObj.getUTCSeconds() / 3600.0);
+        }
 
         const jd = swisseph.swe_julday(year, month, day, hour, swisseph.SE_GREG_CAL);
 

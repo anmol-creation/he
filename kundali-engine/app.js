@@ -180,6 +180,11 @@ document.getElementById('quickSave').addEventListener('change', (e) => {
         document.getElementById('dob').value = quickSavePresets[val].dob;
         document.getElementById('time').value = quickSavePresets[val].time;
         document.getElementById('city').value = quickSavePresets[val].city;
+
+        // Auto-trigger calculation after a short delay
+        setTimeout(() => {
+            document.getElementById('calculateBtn').click();
+        }, 100);
     }
 });
 
