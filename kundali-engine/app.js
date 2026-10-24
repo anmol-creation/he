@@ -714,15 +714,34 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                     }
                 }
 
+                let modifierHTML = "";
+                let cardStyle = "";
+                let titleStyle = "";
+
+                if (yoga.isCancelled) {
+                    cardStyle = "border-left-color: #f59e0b; opacity: 0.8;";
+                    titleStyle = "text-decoration: line-through; color: #94a3b8;";
+                    modifierHTML = `
+                        <div style="margin-top: 0.8rem; padding: 0.8rem; background: rgba(245, 158, 11, 0.1); border: 1px dashed #f59e0b; border-radius: 4px;">
+                            <div style="color: #f59e0b; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.2rem; text-transform: uppercase;"><i class="fa-solid fa-ban" style="margin-right:0.3rem;"></i>Conditions Apply (Cancelled)</div>
+                            <div style="color: #cbd5e1; font-size: 0.9rem; font-style: italic;">${yoga.modifier_note}</div>
+                        </div>
+                    `;
+                } else if (yoga.type === 'Warning') {
+                    cardStyle = "border-left-color: #ef4444; background: rgba(239, 68, 68, 0.1);";
+                    iconClass = "fa-solid fa-radiation";
+                }
+
                 const cardHTML = `
-                    <div class="${cardClass}">
+                    <div class="${cardClass}" style="${cardStyle}">
                         <div class="yoga-icon"><i class="${iconClass}"></i></div>
-                        <div class="yoga-content">
-                            <h3 class="yoga-title">
+                        <div class="yoga-content" style="width: 100%;">
+                            <h3 class="yoga-title" style="${titleStyle}">
                                 ${yoga.name}
                                 ${badgeHTML}
                             </h3>
                             <p class="yoga-desc">${yoga.description}</p>
+                            ${modifierHTML}
                         </div>
                     </div>
                 `;
