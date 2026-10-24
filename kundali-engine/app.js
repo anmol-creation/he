@@ -158,6 +158,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const quickSavePresets = {
+    "ram": {
+        name: "भगवान राम (Lord Ram)",
+        dob: "-5114-01-10",
+        time: "12:00",
+        city: "Ayodhya, India"
+    },
+    "krishna": {
+        name: "भगवान कृष्ण (Lord Krishna)",
+        dob: "-3228-07-18",
+        time: "00:00",
+        city: "Mathura, India"
+    }
+};
+
+document.getElementById('quickSave').addEventListener('change', (e) => {
+    const val = e.target.value;
+    if (quickSavePresets[val]) {
+        document.getElementById('name').value = quickSavePresets[val].name;
+        document.getElementById('dob').value = quickSavePresets[val].dob;
+        document.getElementById('time').value = quickSavePresets[val].time;
+        document.getElementById('city').value = quickSavePresets[val].city;
+    }
+});
+
 document.getElementById('calculateBtn').addEventListener('click', async () => {
     const name = document.getElementById('name').value;
     const date = document.getElementById('dob').value;
