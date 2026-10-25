@@ -739,6 +739,32 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                     }
                 }
 
+                // Render detailed labels (Digbala, CEO, Avastha, Cancellations)
+                let labelsHTML = "";
+                if (yoga.labels && yoga.labels.length > 0) {
+                    let labelSpans = yoga.labels.map(label => {
+                        let bgColor = "rgba(255, 255, 255, 0.1)";
+                        let color = "#cbd5e1"; // default subtle text
+                        let border = "1px solid rgba(255,255,255,0.2)";
+
+                        // Apply Brutal Reality color coding
+                        if (label.includes('⚡') || label.includes('💎') || label.includes('👑') || label.includes('🛡️') || label.includes('🔋')) {
+                            bgColor = "rgba(212, 175, 55, 0.1)"; // Gold bg
+                            color = "#d4af37"; // Gold text
+                            border = "1px solid #d4af37";
+                        }
+                        if (label.includes('⚠️') || label.includes('💣') || label.includes('👁️')) {
+                            bgColor = "rgba(220, 38, 38, 0.1)"; // Red bg
+                            color = "#ef4444"; // Red text
+                            border = "1px solid #ef4444";
+                        }
+
+                        return `<span style="display: inline-block; padding: 0.2rem 0.6rem; margin: 0.3rem 0.3rem 0 0; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: ${bgColor}; color: ${color}; border: ${border}; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">${label}</span>`;
+                    }).join('');
+
+                    labelsHTML = `<div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 4px;">${labelSpans}</div>`;
+                }
+
                 let modifierHTML = "";
                 let cardStyle = "";
                 let titleStyle = "";
@@ -766,6 +792,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                                 ${badgeHTML}
                             </h3>
                             <p class="yoga-desc">${yoga.description}</p>
+                            ${labelsHTML}
                             ${modifierHTML}
                         </div>
                     </div>
