@@ -910,8 +910,10 @@ export const chandravanshCoreData = [
   name: 'गालव',
   subtitle: 'विश्वामित्र पुत्र / शिष्य',
   parent: 'vishwamitra_chandra',
+  gender: 'male',
   yug: 'treta',
-  clusterName: 'विश्वामित्र की अन्य संतान'
+  clusterName: 'विश्वामित्र की अन्य संतान',
+  parichay: 'ब्रह्मर्षि विश्वामित्र के पुत्र और शिष्य। इन्होंने ही सूर्यवंशी कुवलयाश्व को पातालकेतु राक्षस को मारने के लिए कुवलय नामक अश्व दिया था।'
 },
     {
   id: 'chandradeva_gahadavala',
