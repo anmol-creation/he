@@ -1041,6 +1041,17 @@ export const kashyapData = [
         clusterName: 'कश्यप की अन्य संतति'
     },
     {
+        id: 'patalaketu_danava',
+        name: 'पातालकेतु',
+        subtitle: 'दानव',
+        parent: 'kashyap',
+        mother: 'danu',
+        gender: 'male',
+        yug: 'treta',
+        clusterName: 'कश्यप की अन्य संतति',
+        parichay: 'एक क्रूर दानव जिसने गंधर्वराज विश्वावसु की पुत्री मदालसा का अपहरण किया था। सूर्यवंशी राजा कुवलयाश्व (ऋतध्वज) ने इसका वध किया था।'
+    },
+    {
         id: 'maya_danava',
         name: 'मय दानव (मयासुर)',
         subtitle: 'दानव वास्तुकार (दनु पुत्र)',
@@ -1784,7 +1795,19 @@ export const kashyapData = [
         parent: 'kashyap',
         mother: 'pradha_wife',
         yug: 'satya',
-        clusterName: 'प्राधा वंश (गंधर्व)'
+        clusterName: 'प्राधा वंश (गंधर्व)',
+        parichay: 'कश्यप और प्राधा के पुत्र। ये गंधर्वों के अत्यंत पूजनीय राजा थे। इनकी पुत्री मदालसा का विवाह सूर्यवंशी कुवलयाश्व से हुआ था।'
+    },
+    {
+        id: 'madalasa_gandharvi',
+        name: 'मदालसा',
+        subtitle: 'विदुषी महारानी',
+        parent: 'vishvavasu_gandharva',
+        spouseOf: 'kuvalayashva',
+        gender: 'female',
+        yug: 'treta',
+        clusterName: 'प्राधा वंश (गंधर्व)',
+        parichay: 'गंधर्वराज विश्वावसु की पुत्री और सूर्यवंशी राजा कुवलयाश्व (ऋतध्वज) की पत्नी। पातालकेतु दानव से मुक्ति के बाद इनका विवाह हुआ था। ये परम विदुषी और योगिनी थीं, जो अपने बच्चों को लोरियों (Lullabies) में ही वेदांत और ब्रह्मज्ञान सिखा देती थीं।'
     },
 
     // Laukika Apsaras

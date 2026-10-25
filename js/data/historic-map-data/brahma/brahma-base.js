@@ -1043,6 +1043,16 @@ export const brahmaBaseData = [
         clusterName: 'अंगिरस वंश'
     },
     {
+        id: 'uttanka_rishi',
+        name: 'उत्तंक',
+        subtitle: 'महान ऋषि',
+        parent: 'gautama',
+        gender: 'male',
+        yug: 'treta',
+        clusterName: 'अंगिरस वंश',
+        parichay: 'महर्षि गौतम (या महर्षि वेद) के परम शिष्य। ये मरुभूमि (रेगिस्तान) में आश्रम बनाकर रहते थे और इन्होंने ही सूर्यवंशी कुवलयाश्व को धुन्धु राक्षस का वध करने की प्रेरणा दी थी।'
+    },
+    {
         id: 'ahalya',
         name: 'अहल्या',
         subtitle: 'गौतम की पत्नी',
