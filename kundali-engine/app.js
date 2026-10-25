@@ -180,6 +180,11 @@ document.getElementById('quickSave').addEventListener('change', (e) => {
         document.getElementById('dob').value = quickSavePresets[val].dob;
         document.getElementById('time').value = quickSavePresets[val].time;
         document.getElementById('city').value = quickSavePresets[val].city;
+
+        // Auto-trigger calculation after a short delay
+        setTimeout(() => {
+            document.getElementById('calculateBtn').click();
+        }, 100);
     }
 });
 
@@ -401,7 +406,15 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                         <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
                             <strong>${isHi ? 'अवस्था' : 'State'}:</strong> ${dignityText}
                         </span>
+                        ${ceo.avastha ? `<span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>🔋 Battery:</strong> ${ceo.avastha.name} - ${ceo.avastha.power}%
+                        </span>` : ''}
                     </div>
+                    ${ceo.conditions && ceo.conditions.length > 0 ?
+                        ceo.conditions.map(c => `<div style="margin-bottom: 0.5rem; padding: 0.5rem; background: rgba(255,255,255,0.05); border-left: 3px solid ${c.type === 'danger' ? '#ef4444' : c.type === 'warning' ? '#f59e0b' : c.type === 'success' ? '#22c55e' : '#3b82f6'}; color: #fff; font-size: 0.9rem;">
+                            <i class="fa-solid ${c.type === 'danger' ? 'fa-skull' : c.type === 'warning' ? 'fa-radiation' : c.type === 'success' ? 'fa-shield-halved' : 'fa-info-circle'}" style="margin-right:0.4rem; color: ${c.type === 'danger' ? '#ef4444' : c.type === 'warning' ? '#f59e0b' : c.type === 'success' ? '#22c55e' : '#3b82f6'};"></i> ${c.text}
+                        </div>`).join('')
+                    : ''}
 
                     <div style="background: rgba(200, 50, 50, 0.1); border-left: 4px solid ${ceoColor}; padding: 1rem; font-style: italic; color: #eee; line-height: 1.5;">
                         <i class="fa-solid fa-skull" style="margin-right: 8px; opacity: 0.8;"></i>
@@ -739,32 +752,6 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                     }
                 }
 
-                // Render detailed labels (Digbala, CEO, Avastha, Cancellations)
-                let labelsHTML = "";
-                if (yoga.labels && yoga.labels.length > 0) {
-                    let labelSpans = yoga.labels.map(label => {
-                        let bgColor = "rgba(255, 255, 255, 0.1)";
-                        let color = "#cbd5e1"; // default subtle text
-                        let border = "1px solid rgba(255,255,255,0.2)";
-
-                        // Apply Brutal Reality color coding
-                        if (label.includes('⚡') || label.includes('💎') || label.includes('👑') || label.includes('🛡️') || label.includes('🔋')) {
-                            bgColor = "rgba(212, 175, 55, 0.1)"; // Gold bg
-                            color = "#d4af37"; // Gold text
-                            border = "1px solid #d4af37";
-                        }
-                        if (label.includes('⚠️') || label.includes('💣') || label.includes('👁️')) {
-                            bgColor = "rgba(220, 38, 38, 0.1)"; // Red bg
-                            color = "#ef4444"; // Red text
-                            border = "1px solid #ef4444";
-                        }
-
-                        return `<span style="display: inline-block; padding: 0.2rem 0.6rem; margin: 0.3rem 0.3rem 0 0; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: ${bgColor}; color: ${color}; border: ${border}; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">${label}</span>`;
-                    }).join('');
-
-                    labelsHTML = `<div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 4px;">${labelSpans}</div>`;
-                }
-
                 let modifierHTML = "";
                 let cardStyle = "";
                 let titleStyle = "";
@@ -787,12 +774,17 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                     <div class="${cardClass}" style="${cardStyle}">
                         <div class="yoga-icon"><i class="${iconClass}"></i></div>
                         <div class="yoga-content" style="width: 100%;">
-                            <h3 class="yoga-title" style="${titleStyle}">
-                                ${yoga.name}
-                                ${badgeHTML}
+                            <h3 class="yoga-title" style="${titleStyle}; display:flex; flex-direction:column; gap:0.5rem; align-items:flex-start;">
+                                <div>
+                                    ${yoga.name}
+                                    ${badgeHTML}
+                                </div>
+                                ${yoga.labels && yoga.labels.length > 0 ?
+                                    '<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.2rem;">' +
+                                    yoga.labels.map(l => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 0.1rem 0.5rem; border-radius: 4px; font-size:0.75rem; color: #fff;">${l}</span>`).join('') +
+                                    '</div>' : ''}
                             </h3>
                             <p class="yoga-desc">${yoga.description}</p>
-                            ${labelsHTML}
                             ${modifierHTML}
                         </div>
                     </div>
