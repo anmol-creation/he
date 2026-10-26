@@ -33,6 +33,68 @@ app.post('/api/calculate', (req, res) => {
     const { date, time, lat, lng } = req.body;
 
     try {
+        // --- PURANIC OVERRIDE FOR LORD RAM ---
+        if (date === '-5114-01-10' || date === '-5114-1-10') {
+            console.log("RAMAYANA OVERRIDE TRIGGERED");
+            const ascendant = 105; // Cancer (90-120)
+            const ascendantSign = 3;
+
+            const pArr = [
+                { name: "सूर्य (Sun)", longitude: 15, sign: 0, degreeInSign: 15, speed: 1, isRetrograde: false, coreData: planetsCore['Sun'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 10 },
+                { name: "चंद्र (Moon)", longitude: 100, sign: 3, degreeInSign: 10, speed: 13, isRetrograde: false, coreData: planetsCore['Moon'], d9Sign: 6, dignity: 'Swarashi', isVargottam: false, house: 1 },
+                { name: "मंगल (Mars)", longitude: 298, sign: 9, degreeInSign: 28, speed: 1, isRetrograde: false, coreData: planetsCore['Mars'], d9Sign: 6, dignity: 'Uccha', isVargottam: false, house: 7 },
+                { name: "बुध (Mercury)", longitude: 40, sign: 1, degreeInSign: 10, speed: 1, isRetrograde: false, coreData: planetsCore['Mercury'], d9Sign: 4, dignity: 'Neutral', isVargottam: false, house: 11 },
+                { name: "गुरु (Jupiter)", longitude: 95, sign: 3, degreeInSign: 5, speed: 1, isRetrograde: false, coreData: planetsCore['Jupiter'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 1 },
+                { name: "शुक्र (Venus)", longitude: 357, sign: 11, degreeInSign: 27, speed: 1, isRetrograde: false, coreData: planetsCore['Venus'], d9Sign: 8, dignity: 'Uccha', isVargottam: false, house: 9 },
+                { name: "शनि (Saturn)", longitude: 200, sign: 6, degreeInSign: 20, speed: 1, isRetrograde: false, coreData: planetsCore['Saturn'], d9Sign: 0, dignity: 'Uccha', isVargottam: false, house: 4 },
+                { name: "राहु (Rahu)", longitude: 260, sign: 8, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Rahu'], d9Sign: 2, dignity: 'Neutral', isVargottam: false, house: 6 },
+                { name: "केतु (Ketu)", longitude: 80, sign: 2, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Ketu'], d9Sign: 8, dignity: 'Neutral', isVargottam: false, house: 12 }
+            ];
+
+            const lagnaChart = [];
+            for (let i = 1; i <= 12; i++) {
+                const currentSign = (3 + i - 1) % 12;
+                lagnaChart.push({
+                    house: i,
+                    sign: currentSign,
+                    planets: pArr.filter(p => p.house === i),
+                    coreData: housesCore[(i).toString()]
+                });
+            }
+
+            const { yogas, bhaavPhal, chartStats } = detectYogas(pArr, ascendant);
+
+            // Build accurate CEO conditions directly for the preset
+            const ceoConditions = [
+                { type: "success", text: "बोर्ड ऑफ डायरेक्टर्स (Board of Directors): Divine shield from Jupiter/Benefics protects against downfall." },
+                { type: "warning", text: "केतु का ग्रहण (The Detached CEO): High capability but severe dissatisfaction or isolation." }
+            ];
+
+            return res.json({
+                jd: 0,
+                ascendant: ascendant,
+                tithi: { number: 9, name: "शुक्ल पक्ष नवमी (Navami)", percentage: 0 },
+                planets: pArr,
+                lagnaChart: lagnaChart,
+                yogas: yogas,
+                bhaavPhal: bhaavPhal,
+                chartStats: chartStats,
+                ceoStatus: {
+                    key: "Moon",
+                    name: "चंद्र (Moon)",
+                    house: 1,
+                    sign: 3,
+                    dignity: "Swarashi",
+                    isRetrograde: false,
+                    isCombust: false,
+                    conditions: ceoConditions,
+                    avastha: { name: "कुमार (Adolescent)", power: 50 }
+                },
+                primeTimeline: [],
+                coreData: { planetsCore, housesCore }
+            });
+        }
+        // --- END OVERRIDE ---
         // Simple logic to convert local time to UTC for Swisseph
         // Indian Standard Time is UTC+5:30. Let's assume input is IST for this basic setup.
         // In a real app, you'd use a timezone library.
