@@ -506,12 +506,12 @@ function detectYogas(planetsData, ascendantDegree) {
             let modifierNote = null;
             let mahapurushLabels = [];
             // Evaluate Modifiers (Bhanga / Cancellations)
-            if (rule.type === 'Rajyoga') {
+            if (rule.type === 'Rajyoga' || rule.type === 'राजयोग') {
                 let isMahapurush = rule.name.includes("महापुरुष") || rule.name.includes("Mahapurush");
                 let primaryPlanet = null;
                 let combustPlanets = [];
 
-                rule.conditions.forEach(cond => {
+                rule.combinations.forEach(cond => {
                     if (cond.planet) {
                         primaryPlanet = cond.planet;
                         if (pMap[cond.planet] && pMap[cond.planet].isCombust) combustPlanets.push(cond.planet);

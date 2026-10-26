@@ -803,6 +803,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
 
         // Render Bhaav Phal
         if (data.bhaavPhal && data.bhaavPhal.length > 0) {
+            yogaContainer.style.display = 'block';
             bhaavPhalTitle.style.display = 'block';
             bhaavPhalList.style.display = 'flex';
             data.bhaavPhal.forEach(bp => {
