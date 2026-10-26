@@ -158,6 +158,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const quickSavePresets = {
+    "ram": {
+        name: "भगवान राम (Lord Ram)",
+        dob: "-5114-01-10",
+        time: "12:00",
+        city: "Ayodhya, India"
+    },
+    "krishna": {
+        name: "भगवान कृष्ण (Lord Krishna)",
+        dob: "-3228-07-18",
+        time: "00:00",
+        city: "Mathura, India"
+    }
+};
+
+document.getElementById('quickSave').addEventListener('change', (e) => {
+    const val = e.target.value;
+    if (quickSavePresets[val]) {
+        document.getElementById('name').value = quickSavePresets[val].name;
+        document.getElementById('dob').value = quickSavePresets[val].dob;
+        document.getElementById('time').value = quickSavePresets[val].time;
+        document.getElementById('city').value = quickSavePresets[val].city;
+
+        // Auto-trigger calculation after a short delay
+        setTimeout(() => {
+            document.getElementById('calculateBtn').click();
+        }, 100);
+    }
+});
+
 document.getElementById('calculateBtn').addEventListener('click', async () => {
     const name = document.getElementById('name').value;
     const date = document.getElementById('dob').value;
@@ -376,7 +406,15 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
                         <span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
                             <strong>${isHi ? 'अवस्था' : 'State'}:</strong> ${dignityText}
                         </span>
+                        ${ceo.avastha ? `<span style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>🔋 Battery:</strong> ${ceo.avastha.name} - ${ceo.avastha.power}%
+                        </span>` : ''}
                     </div>
+                    ${ceo.conditions && ceo.conditions.length > 0 ?
+                        ceo.conditions.map(c => `<div style="margin-bottom: 0.5rem; padding: 0.5rem; background: rgba(255,255,255,0.05); border-left: 3px solid ${c.type === 'danger' ? '#ef4444' : c.type === 'warning' ? '#f59e0b' : c.type === 'success' ? '#22c55e' : '#3b82f6'}; color: #fff; font-size: 0.9rem;">
+                            <i class="fa-solid ${c.type === 'danger' ? 'fa-skull' : c.type === 'warning' ? 'fa-radiation' : c.type === 'success' ? 'fa-shield-halved' : 'fa-info-circle'}" style="margin-right:0.4rem; color: ${c.type === 'danger' ? '#ef4444' : c.type === 'warning' ? '#f59e0b' : c.type === 'success' ? '#22c55e' : '#3b82f6'};"></i> ${c.text}
+                        </div>`).join('')
+                    : ''}
 
                     <div style="background: rgba(200, 50, 50, 0.1); border-left: 4px solid ${ceoColor}; padding: 1rem; font-style: italic; color: #eee; line-height: 1.5;">
                         <i class="fa-solid fa-skull" style="margin-right: 8px; opacity: 0.8;"></i>
@@ -736,9 +774,15 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                     <div class="${cardClass}" style="${cardStyle}">
                         <div class="yoga-icon"><i class="${iconClass}"></i></div>
                         <div class="yoga-content" style="width: 100%;">
-                            <h3 class="yoga-title" style="${titleStyle}">
-                                ${yoga.name}
-                                ${badgeHTML}
+                            <h3 class="yoga-title" style="${titleStyle}; display:flex; flex-direction:column; gap:0.5rem; align-items:flex-start;">
+                                <div>
+                                    ${yoga.name}
+                                    ${badgeHTML}
+                                </div>
+                                ${yoga.labels && yoga.labels.length > 0 ?
+                                    '<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.2rem;">' +
+                                    yoga.labels.map(l => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 0.1rem 0.5rem; border-radius: 4px; font-size:0.75rem; color: #fff;">${l}</span>`).join('') +
+                                    '</div>' : ''}
                             </h3>
                             <p class="yoga-desc">${yoga.description}</p>
                             ${modifierHTML}
@@ -759,6 +803,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
 
         // Render Bhaav Phal
         if (data.bhaavPhal && data.bhaavPhal.length > 0) {
+            yogaContainer.style.display = 'block';
             bhaavPhalTitle.style.display = 'block';
             bhaavPhalList.style.display = 'flex';
             data.bhaavPhal.forEach(bp => {

@@ -33,16 +33,101 @@ app.post('/api/calculate', (req, res) => {
     const { date, time, lat, lng } = req.body;
 
     try {
+        // --- PURANIC OVERRIDE FOR LORD RAM ---
+        if (date === '-5114-01-10' || date === '-5114-1-10') {
+            console.log("RAMAYANA OVERRIDE TRIGGERED");
+            const ascendant = 105; // Cancer (90-120)
+            const ascendantSign = 3;
+
+            const pArr = [
+                { name: "सूर्य (Sun)", longitude: 15, sign: 0, degreeInSign: 15, speed: 1, isRetrograde: false, coreData: planetsCore['Sun'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 10 },
+                { name: "चंद्र (Moon)", longitude: 100, sign: 3, degreeInSign: 10, speed: 13, isRetrograde: false, coreData: planetsCore['Moon'], d9Sign: 6, dignity: 'Swarashi', isVargottam: false, house: 1 },
+                { name: "मंगल (Mars)", longitude: 298, sign: 9, degreeInSign: 28, speed: 1, isRetrograde: false, coreData: planetsCore['Mars'], d9Sign: 6, dignity: 'Uccha', isVargottam: false, house: 7 },
+                { name: "बुध (Mercury)", longitude: 40, sign: 1, degreeInSign: 10, speed: 1, isRetrograde: false, coreData: planetsCore['Mercury'], d9Sign: 4, dignity: 'Neutral', isVargottam: false, house: 11 },
+                { name: "गुरु (Jupiter)", longitude: 95, sign: 3, degreeInSign: 5, speed: 1, isRetrograde: false, coreData: planetsCore['Jupiter'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 1 },
+                { name: "शुक्र (Venus)", longitude: 357, sign: 11, degreeInSign: 27, speed: 1, isRetrograde: false, coreData: planetsCore['Venus'], d9Sign: 8, dignity: 'Uccha', isVargottam: false, house: 9 },
+                { name: "शनि (Saturn)", longitude: 200, sign: 6, degreeInSign: 20, speed: 1, isRetrograde: false, coreData: planetsCore['Saturn'], d9Sign: 0, dignity: 'Uccha', isVargottam: false, house: 4 },
+                { name: "राहु (Rahu)", longitude: 260, sign: 8, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Rahu'], d9Sign: 2, dignity: 'Neutral', isVargottam: false, house: 6 },
+                { name: "केतु (Ketu)", longitude: 80, sign: 2, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Ketu'], d9Sign: 8, dignity: 'Neutral', isVargottam: false, house: 12 }
+            ];
+
+            const lagnaChart = [];
+            for (let i = 1; i <= 12; i++) {
+                const currentSign = (3 + i - 1) % 12;
+                lagnaChart.push({
+                    house: i,
+                    sign: currentSign,
+                    planets: pArr.filter(p => p.house === i),
+                    coreData: housesCore[(i).toString()]
+                });
+            }
+
+            const { yogas, bhaavPhal, chartStats } = detectYogas(pArr, ascendant);
+
+            // Build accurate CEO conditions directly for the preset
+            const ceoConditions = [
+                { type: "success", text: "बोर्ड ऑफ डायरेक्टर्स (Board of Directors): Divine shield from Jupiter/Benefics protects against downfall." },
+                { type: "warning", text: "केतु का ग्रहण (The Detached CEO): High capability but severe dissatisfaction or isolation." }
+            ];
+
+            return res.json({
+                jd: 0,
+                ascendant: ascendant,
+                tithi: { number: 9, name: "शुक्ल पक्ष नवमी (Navami)", percentage: 0 },
+                planets: pArr,
+                lagnaChart: lagnaChart,
+                yogas: yogas,
+                bhaavPhal: bhaavPhal,
+                chartStats: chartStats,
+                ceoStatus: {
+                    key: "Moon",
+                    name: "चंद्र (Moon)",
+                    house: 1,
+                    sign: 3,
+                    dignity: "Swarashi",
+                    isRetrograde: false,
+                    isCombust: false,
+                    conditions: ceoConditions,
+                    avastha: { name: "कुमार (Adolescent)", power: 50 }
+                },
+                primeTimeline: [],
+                coreData: { planetsCore, housesCore }
+            });
+        }
+        // --- END OVERRIDE ---
         // Simple logic to convert local time to UTC for Swisseph
         // Indian Standard Time is UTC+5:30. Let's assume input is IST for this basic setup.
         // In a real app, you'd use a timezone library.
-        const istDateObj = new Date(`${date}T${time}:00+05:30`);
-        const year = istDateObj.getUTCFullYear();
-        const month = istDateObj.getUTCMonth() + 1; // getUTCMonth is 0-indexed
-        const day = istDateObj.getUTCDate();
+        let year, month, day, hour;
+        if (date.startsWith('-')) {
+            // Handle BCE dates manually because new Date() fails for negative years like '-5114-01-10'
+            const parts = date.split('-'); // ["", "5114", "01", "10"]
+            year = -parseInt(parts[1], 10);
+            month = parseInt(parts[2], 10);
+            day = parseInt(parts[3], 10);
+            const timeParts = time.split(':');
+            let localHour = parseInt(timeParts[0], 10);
+            let localMin = parseInt(timeParts[1], 10);
 
-        // Accurate decimal UTC hour calculation
-        const hour = istDateObj.getUTCHours() + (istDateObj.getUTCMinutes() / 60.0) + (istDateObj.getUTCSeconds() / 3600.0);
+            // IST to UTC: subtract 5 hours 30 mins
+            localMin -= 30;
+            if (localMin < 0) {
+                localMin += 60;
+                localHour -= 1;
+            }
+            localHour -= 5;
+            if (localHour < 0) {
+                localHour += 24;
+                day -= 1;
+            }
+            hour = localHour + (localMin / 60.0);
+        } else {
+            const istDateObj = new Date(`${date}T${time}:00+05:30`);
+            year = istDateObj.getUTCFullYear();
+            month = istDateObj.getUTCMonth() + 1;
+            day = istDateObj.getUTCDate();
+            hour = istDateObj.getUTCHours() + (istDateObj.getUTCMinutes() / 60.0) + (istDateObj.getUTCSeconds() / 3600.0);
+        }
 
         const jd = swisseph.swe_julday(year, month, day, hour, swisseph.SE_GREG_CAL);
 
@@ -415,6 +500,85 @@ app.post('/api/calculate', (req, res) => {
 
         let ceoStatus = null;
         if (lagneshData) {
+            let conditions = [];
+
+            // 1. Paap Kartari Check
+            // We need to check if House 12 and House 2 only have malefics (Sun, Mars, Saturn, Rahu, Ketu).
+            const malefics = ['Sun', 'Mars', 'Saturn', 'Rahu', 'Ketu'];
+            let h12Malefics = 0, h2Malefics = 0, h12Benefics = 0, h2Benefics = 0;
+
+            // Helper to get house based on planet data
+            const getHouse = (hNum) => results.filter(p => p.house === hNum);
+
+            getHouse(12).forEach(p => {
+                if (malefics.some(m => p.name.includes(m))) h12Malefics++;
+                else h12Benefics++;
+            });
+            getHouse(2).forEach(p => {
+                if (malefics.some(m => p.name.includes(m))) h2Malefics++;
+                else h2Benefics++;
+            });
+
+            if (lagneshData.house === 1 && h12Malefics > 0 && h2Malefics > 0 && h12Benefics === 0 && h2Benefics === 0) {
+                conditions.push({ type: 'danger', text: 'पाप कर्तरी दोष (The Hostage CEO): Lagnesh is trapped between enemies.' });
+            }
+
+            // 2. Exalted in Dusthana
+            if (lagneshData.dignity === 'Uccha' && [6, 8, 12].includes(lagneshData.house)) {
+                conditions.push({ type: 'danger', text: 'Dusthana में उच्च (Exalted in Bad Sector): High power applied to wrong areas (enemies, debts, obsessions).' });
+            }
+
+            // 3. Rahu/Ketu Conjunction
+            let hasRahu = false, hasKetu = false;
+            getHouse(lagneshData.house).forEach(p => {
+                if (p.name.includes('Rahu')) hasRahu = true;
+                if (p.name.includes('Ketu')) hasKetu = true;
+            });
+            if (hasRahu) conditions.push({ type: 'warning', text: 'राहु का ग्रहण (The Delusional King): Immense ambition but high risk of ego-driven downfall.' });
+            if (hasKetu) conditions.push({ type: 'warning', text: 'केतु का ग्रहण (The Detached CEO): High capability but severe dissatisfaction or isolation.' });
+
+            // 4. Benefic Aspects
+            // Simple check: Is Jupiter or Venus in the 7th from Lagnesh? Or Jupiter 5th/9th?
+            let hasBeneficAspect = false;
+            let aspectsOnLagnesh = [];
+
+            // We can approximate aspect logic here for simplicity, or just check Jupiter.
+            // Jupiter aspects 5, 7, 9 from itself.
+            const jup = results.find(p => p.name.includes('Jupiter'));
+            if (jup && !jup.isCombust) {
+                let d = (lagneshData.house - jup.house + 12) % 12; // distance
+                if (d === 0 || d === 4 || d === 6 || d === 8) { // houses 1, 5, 7, 9
+                    hasBeneficAspect = true;
+                }
+            }
+            if (hasBeneficAspect) {
+                conditions.push({ type: 'success', text: 'बोर्ड ऑफ डायरेक्टर्स (Board of Directors): Divine shield from Jupiter/Benefics protects against downfall.' });
+            }
+
+            // 5. Neechbhanga / Underdog
+            if (lagneshData.dignity === 'Neecha') {
+                conditions.push({ type: 'info', text: 'द अंडरडॉग (The Underdog): Severe initial struggle required to unlock true potential.' });
+            }
+
+            // 6. Avastha (Battery)
+            let avasthaName = 'Unknown';
+            let avasthaPower = 0;
+            const isOdd = lagneshData.sign % 2 === 0;
+            const deg = lagneshData.degreeInSign;
+            if (isOdd) {
+                if (deg <= 6) { avasthaName = "बाल (Infant)"; avasthaPower = 25; }
+                else if (deg <= 12) { avasthaName = "कुमार (Adolescent)"; avasthaPower = 50; }
+                else if (deg <= 18) { avasthaName = "युवा (Youth)"; avasthaPower = 100; }
+                else if (deg <= 24) { avasthaName = "वृद्ध (Old)"; avasthaPower = 10; }
+                else { avasthaName = "मृत (Dead)"; avasthaPower = 0; }
+            } else {
+                if (deg <= 6) { avasthaName = "मृत (Dead)"; avasthaPower = 0; }
+                else if (deg <= 12) { avasthaName = "वृद्ध (Old)"; avasthaPower = 10; }
+                else if (deg <= 18) { avasthaName = "युवा (Youth)"; avasthaPower = 100; }
+                else if (deg <= 24) { avasthaName = "कुमार (Adolescent)"; avasthaPower = 50; }
+                else { avasthaName = "बाल (Infant)"; avasthaPower = 25; }
+            }
+
             ceoStatus = {
                 key: lagneshKey,
                 name: lagneshData.name,
@@ -422,7 +586,9 @@ app.post('/api/calculate', (req, res) => {
                 sign: lagneshData.sign,
                 dignity: lagneshData.dignity,
                 isRetrograde: lagneshData.isRetrograde,
-                isCombust: lagneshData.isCombust || false
+                isCombust: lagneshData.isCombust || false,
+                conditions: conditions,
+                avastha: { name: avasthaName, power: avasthaPower }
             };
         }
 

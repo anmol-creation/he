@@ -31,6 +31,28 @@ if (fs.existsSync(housesDir)) {
     });
 }
 
+
+function getAvasthaAndPower(sign, degree) {
+    const isOdd = sign % 2 === 0; // Aries=0 (Odd), Taurus=1 (Even). Oh wait, 0 is Aries (1st sign). So if sign % 2 === 0, it's an Odd sign in Vedic numbering (1, 3, 5).
+    // Let's be explicit:
+    // Aries(0), Gemini(2), Leo(4), Libra(6), Sagittarius(8), Aquarius(10) are ODD signs.
+    const oddSign = (sign % 2 === 0);
+
+    if (oddSign) {
+        if (degree <= 6) return { name: "बाल अवस्था (Infant)", power: 25 };
+        if (degree <= 12) return { name: "कुमार अवस्था (Adolescent)", power: 50 };
+        if (degree <= 18) return { name: "युवा अवस्था (Youth)", power: 100 };
+        if (degree <= 24) return { name: "वृद्ध अवस्था (Old)", power: 10 };
+        return { name: "मृत अवस्था (Dead)", power: 0 };
+    } else {
+        if (degree <= 6) return { name: "मृत अवस्था (Dead)", power: 0 };
+        if (degree <= 12) return { name: "वृद्ध अवस्था (Old)", power: 10 };
+        if (degree <= 18) return { name: "युवा अवस्था (Youth)", power: 100 };
+        if (degree <= 24) return { name: "कुमार अवस्था (Adolescent)", power: 50 };
+        return { name: "बाल अवस्था (Infant)", power: 25 };
+    }
+}
+
 const RASHI_LORDS = {
     0: 'Mars', 1: 'Venus', 2: 'Mercury', 3: 'Moon',
     4: 'Sun', 5: 'Mercury', 6: 'Venus', 7: 'Mars',
@@ -79,7 +101,9 @@ function detectYogas(planetsData, ascendantDegree) {
             aspects: getAspectingHouses(nameEn, house),
             dignity: p.dignity,
             isCombust: p.isCombust || false,
-            isRetrograde: p.isRetrograde || false
+            isVargottam: p.isVargottam || false,
+            isRetrograde: p.isRetrograde || false,
+            d9Sign: p.d9Sign
         };
     });
 
@@ -480,27 +504,98 @@ function detectYogas(planetsData, ascendantDegree) {
 
             let isCancelled = false;
             let modifierNote = null;
-
+            let mahapurushLabels = [];
             // Evaluate Modifiers (Bhanga / Cancellations)
-            if (rule.type === 'Rajyoga') {
-                // Check if any planet causing this Rajyoga is Combust
+            if (rule.type === 'Rajyoga' || rule.type === 'राजयोग') {
+                let isMahapurush = rule.name.includes("महापुरुष") || rule.name.includes("Mahapurush");
+                let primaryPlanet = null;
                 let combustPlanets = [];
-                // Extract planet names from matched conditions
-                // Since conditions can be complex, we check the global pMap for any combust planet
-                // A better approach is to check if ANY planet involved in the conditions is combust
-                rule.conditions.forEach(cond => {
-                    if (cond.planet && pMap[cond.planet] && pMap[cond.planet].isCombust) {
-                        combustPlanets.push(cond.planet);
+
+                rule.combinations.forEach(cond => {
+                    if (cond.planet) {
+                        primaryPlanet = cond.planet;
+                        if (pMap[cond.planet] && pMap[cond.planet].isCombust) combustPlanets.push(cond.planet);
                     } else if (cond.planets) {
                         cond.planets.forEach(pl => {
+                            if (!primaryPlanet) primaryPlanet = pl;
                             if (pMap[pl] && pMap[pl].isCombust) combustPlanets.push(pl);
                         });
                     }
                 });
+
+                if (isMahapurush && primaryPlanet && pMap[primaryPlanet]) {
+                    const p = pMap[primaryPlanet];
+                    let powerMultiplier = 1;
+
+                    let hasDigbala = false;
+                    if ((primaryPlanet === 'Sun' || primaryPlanet === 'Mars') && p.house === 10) hasDigbala = true;
+                    if ((primaryPlanet === 'Jupiter' || primaryPlanet === 'Mercury') && p.house === 1) hasDigbala = true;
+                    if ((primaryPlanet === 'Moon' || primaryPlanet === 'Venus') && p.house === 4) hasDigbala = true;
+                    if (primaryPlanet === 'Saturn' && p.house === 7) hasDigbala = true;
+
+                    if (hasDigbala) {
+                        powerMultiplier++;
+                        mahapurushLabels.push("⚡ दिग्बल (Digbala)");
+                    }
+                    if (p.isVargottam) {
+                        powerMultiplier++;
+                        mahapurushLabels.push("💎 वर्गोत्तम (Vargottam)");
+                    }
+                    if (houseLords[1] === primaryPlanet) {
+                        powerMultiplier++;
+                        mahapurushLabels.push("👑 लग्नेश (CEO)");
+                    }
+                    if (primaryPlanet !== 'Jupiter' && pMap['Jupiter'] && pMap['Jupiter'].aspects.includes(p.house)) {
+                        let jupiter = pMap['Jupiter'];
+                        if (!jupiter.isCombust) {
+                            if (jupiter.dignity === 'Neecha') {
+                                powerMultiplier++;
+                                mahapurushLabels.push("👁️ गुरु की कठोर दृष्टि (Neecha)");
+                            } else if (jupiter.dignity === 'Uccha' || jupiter.dignity === 'Swarashi' || jupiter.dignity === 'Mooltrikona' || jupiter.isVargottam) {
+                                powerMultiplier += 2;
+                                mahapurushLabels.push("🛡️ गुरु की सुपर-अमृत दृष्टि");
+                            } else {
+                                powerMultiplier++;
+                                mahapurushLabels.push("👁️ गुरु की अमृत दृष्टि");
+                            }
+                        }
+                    }
+
+                    // Lagnesh (CEO) Strength Check
+                    const lagneshKey = houseLords[1];
+                    const lagneshData = pMap[lagneshKey];
+                    if (lagneshData) {
+                        if (lagneshData.dignity === 'Neecha' || lagneshData.isCombust || [6, 8, 12].includes(lagneshData.house)) {
+                            mahapurushLabels.push("⚠️ CEO Weak (Hard to Sustain Empire)");
+                            // Drastically reduce effective score if CEO is dying
+                            powerMultiplier = Math.max(1, powerMultiplier - 2);
+                        }
+                    }
+
+                    // Avastha / Battery Check
+                    const avastha = getAvasthaAndPower(p.sign, p.degreeInSign);
+                    mahapurushLabels.push(`🔋 ${avastha.name} (${avastha.power}% Power)`);
+
+                    // Multiply score by the battery percentage (so a dead planet gives 0 score logically, but we keep a base so it shows up)
+                    finalName = `${rule.name} (${powerMultiplier}x Power)`;
+                    finalScore = (baseScore * powerMultiplier) * (avastha.power > 0 ? (avastha.power / 100) : 0.1);
+
+                    const debSigns = { 'Sun': 6, 'Moon': 7, 'Mars': 3, 'Mercury': 11, 'Jupiter': 9, 'Venus': 5, 'Saturn': 0 };
+                    if (p.d9Sign === debSigns[primaryPlanet]) {
+                        mahapurushLabels.push("⚠️ Hollow Empire (D-9 Neecha)");
+                    }
+
+                    let rHouse = pMap['Rahu'] ? pMap['Rahu'].house : -1;
+                    let kHouse = pMap['Ketu'] ? pMap['Ketu'].house : -1;
+                    if (p.house === rHouse || p.house === kHouse) {
+                        mahapurushLabels.push("💣 Explosive/Corrupted (Nodes)");
+                    }
+                }
+
                 if (combustPlanets.length > 0) {
                     isCancelled = true;
                     modifierNote = "Physical existence jal gaya (Asta/Combust). Rajyoga sirf khayalon mein reh jayega.";
-                    finalScore = 0; // nullify power
+                    finalScore = 0;
                 }
             } else if (rule.type.includes('Dosha')) {
                 if (rule.name.includes("Kemdrum") || rule.name.includes("केमद्रुम")) {
@@ -536,7 +631,8 @@ function detectYogas(planetsData, ascendantDegree) {
                 score: finalScore,
                 rarityScore: (rule.frequency_multiplier || 1) * matchedCombinationsCount,
                 isCancelled: isCancelled,
-                modifier_note: modifierNote
+                modifier_note: modifierNote,
+                labels: (typeof mahapurushLabels !== 'undefined') ? mahapurushLabels : []
             });
         }
     }

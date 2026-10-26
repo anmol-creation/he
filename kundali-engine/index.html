@@ -324,6 +324,15 @@
         <h1 class="title" id="mainTitle">Kundali Engine</h1>
         <p class="subtitle" id="subTitle">स्विस एफेमेरिस (Swiss Ephemeris) का उपयोग कर उन्नत ज्योतिषीय गणना</p>
 
+        <div class="form-group" style="margin-bottom: 2rem;">
+            <label for="quickSave" id="quickSaveLabel">त्वरित कुंडलियां (Quick Saves)</label>
+            <select id="quickSave" style="width: 100%; padding: 0.8rem; background: var(--vault-surface); border: 1px solid var(--vault-border); color: var(--vault-accent); border-radius: 4px; font-family: 'Cinzel', serif;">
+                <option value="none">-- चुनें --</option>
+                <option value="ram">भगवान राम (Lord Ram)</option>
+                <option value="krishna">भगवान कृष्ण (Lord Krishna)</option>
+            </select>
+        </div>
+
         <div class="form-group">
             <label for="name" id="nameLabel">नाम</label>
             <input type="text" id="name" placeholder="नाम दर्ज करें">
@@ -332,7 +341,7 @@
         <div class="form-group" style="display: flex; gap: 1rem;">
             <div style="flex: 1;">
                 <label for="dob" id="dobLabel">जन्म तिथि</label>
-                <input type="date" id="dob" value="1999-12-22">
+                <input type="text" id="dob" value="1999-12-22" placeholder="YYYY-MM-DD (उदा. -5114-01-10)">
             </div>
             <div style="flex: 1;">
                 <label for="time" id="timeLabel">जन्म समय</label>
