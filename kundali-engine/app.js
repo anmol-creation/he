@@ -1,4 +1,42 @@
 
+function renderGroundReality(planets) {
+    const container = document.getElementById('ground-reality-container');
+    if (!container) return;
+
+    let html = '<div class="table-responsive"><table class="dashboard-table reality-table">';
+    html += '<thead><tr><th>Planet</th><th>Core Intent</th><th>Raw Power</th><th>Environment (SAV)</th><th>Modifiers & Combinations</th><th>Final Verdict</th></tr></thead><tbody>';
+
+    planets.forEach(p => {
+        let intentColor = p.functionalNature && p.functionalNature.includes('Benefic') ? '#27ae60' : (p.functionalNature && p.functionalNature.includes('Malefic') ? '#c0392b' : 'var(--text-color)');
+
+        let intentText = p.functionalNature || '';
+        if (p.isDeepExalted) intentText += ' <br><small style="color: gold;">(Param Uccha)</small>';
+        if (p.isDeepDebilitated) intentText += ' <br><small style="color: red;">(Param Neecha)</small>';
+
+        let batteryHtml = `<div style="font-size:0.8rem; margin-bottom:4px;">${p.avastha ? p.avastha.name : ''}</div>
+            <div class="battery-bar" style="width:100%; height:8px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden;">
+                <div style="width:${p.basePowerScore}%; height:100%; background:#f1c40f;"></div>
+            </div>
+            <div style="font-size:0.8rem; margin-top:4px;">${p.basePowerScore}%</div>
+            <div style="font-size:0.7rem; color:gray; margin-top:2px;">Nakshatra: ${p.nakshatraSupport || ''}</div>`;
+
+        let modHtml = '';
+        if (p.modifiers && p.modifiers.length > 0) p.modifiers.forEach(m => { modHtml += `<span class="badge-${m.type === 'Sanjeevani' ? 'success' : 'danger'}" style="display:block; margin-bottom:4px; padding:4px; font-size:0.8rem;">${m.from} (${m.relation})</span>`; });
+        if (p.kartariStatus && p.kartariStatus !== 'None') modHtml += `<span class="badge-${p.kartariStatus.includes('Paap') ? 'danger' : 'success'}" style="display:block; margin-bottom:4px; padding:4px; font-size:0.8rem;">${p.kartariStatus}</span>`;
+        if (p.conjunctions && p.conjunctions.length > 0) p.conjunctions.forEach(c => {
+            if (c.warStatus) modHtml += `<span class="badge-${c.warStatus === 'Winner' ? 'success' : 'danger'}" style="display:block; margin-bottom:4px; padding:4px; font-size:0.8rem;">Graha Yuddha: ${c.warStatus} vs ${c.planet.split(' ')[0]}</span>`;
+        });
+        if (p.dispositor) modHtml += `<div style="font-size:0.75rem; margin-top:6px; color:#aaa;">Dispositor: ${p.dispositor.name.split(' ')[0]} (${p.dispositor.dignity})</div>`;
+
+        if (!modHtml) modHtml = '<span style="color:gray; font-size:0.8rem;">No Major Influence</span>';
+
+        html += `<tr><td style="font-weight:bold;">${p.name}<br><small style="color:gray;">House ${p.house}</small></td><td style="color: ${intentColor};">${intentText}</td><td>${batteryHtml}</td><td>${p.savPoints} pts<br><small>${p.environmentStrength}</small></td><td>${modHtml}</td><td style="font-weight:600;">${p.finalVerdict || 'Pending'}</td></tr>`;
+    });
+
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+}
+
 import { KundaliChartRenderer } from './kundali-ui.js';
 
 const i18n = {
@@ -628,6 +666,13 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         // Render Visual SVG Chart
         document.getElementById('chartSection').style.display = 'block';
         if (data.ascendant !== undefined && data.planets) {
+
+            setTimeout(() => {
+                if(typeof renderGroundReality === 'function') {
+                    renderGroundReality(data.planets);
+                }
+            }, 100);
+
             window.chartRenderer.setData({
                 ascendantSign: Math.floor(data.ascendant / 30),
                 planets: data.planets.map(p => ({
