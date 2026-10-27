@@ -666,6 +666,13 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         // Render Visual SVG Chart
         document.getElementById('chartSection').style.display = 'block';
         if (data.ascendant !== undefined && data.planets) {
+
+            setTimeout(() => {
+                if(typeof renderGroundReality === 'function') {
+                    renderGroundReality(data.planets);
+                }
+            }, 100);
+
             window.chartRenderer.setData({
                 ascendantSign: Math.floor(data.ascendant / 30),
                 planets: data.planets.map(p => ({

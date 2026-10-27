@@ -266,6 +266,56 @@ app.post('/api/calculate', (req, res) => {
                     if (pName.includes('Ketu')) pKeyForCore = 'Ketu';
                 }
 
+
+                // Nakshatra & Pada Calculation
+                const nakshatraNames = [
+                    "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra",
+                    "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni",
+                    "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha", "Jyeshtha",
+                    "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha",
+                    "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
+                ];
+
+                const nakshatraLords = [
+                    "Ketu", "Venus", "Sun", "Moon", "Mars", "Rahu", "Jupiter", "Saturn", "Mercury",
+                    "Ketu", "Venus", "Sun", "Moon", "Mars", "Rahu", "Jupiter", "Saturn", "Mercury",
+                    "Ketu", "Venus", "Sun", "Moon", "Mars", "Rahu", "Jupiter", "Saturn", "Mercury"
+                ];
+
+                const nakshatraLength = 360 / 27;
+                const padaLength = nakshatraLength / 4;
+
+                const nakshatraIndex = Math.floor(pos.longitude / nakshatraLength);
+                const nakshatraName = nakshatraNames[nakshatraIndex];
+                const nakshatraLord = nakshatraLords[nakshatraIndex];
+
+                const degreeInNakshatra = pos.longitude % nakshatraLength;
+                const pada = Math.floor(degreeInNakshatra / padaLength) + 1;
+
+                // Avastha
+                let avasthaName = 'Unknown';
+                let avasthaPower = 0;
+                const isOdd = sign % 2 === 0;
+
+                if (pName.includes('Rahu') || pName.includes('Ketu')) {
+                    avasthaName = "छाया (Shadow)";
+                    avasthaPower = 100;
+                } else {
+                    if (isOdd) {
+                        if (degreeInSign <= 6) { avasthaName = "बाल (Infant)"; avasthaPower = 25; }
+                        else if (degreeInSign <= 12) { avasthaName = "कुमार (Adolescent)"; avasthaPower = 50; }
+                        else if (degreeInSign <= 18) { avasthaName = "युवा (Youth)"; avasthaPower = 100; }
+                        else if (degreeInSign <= 24) { avasthaName = "वृद्ध (Old)"; avasthaPower = 10; }
+                        else { avasthaName = "मृत (Dead)"; avasthaPower = 0; }
+                    } else {
+                        if (degreeInSign <= 6) { avasthaName = "मृत (Dead)"; avasthaPower = 0; }
+                        else if (degreeInSign <= 12) { avasthaName = "वृद्ध (Old)"; avasthaPower = 10; }
+                        else if (degreeInSign <= 18) { avasthaName = "युवा (Youth)"; avasthaPower = 100; }
+                        else if (degreeInSign <= 24) { avasthaName = "कुमार (Adolescent)"; avasthaPower = 50; }
+                        else { avasthaName = "बाल (Infant)"; avasthaPower = 25; }
+                    }
+                }
+
                 results.push({
                     name: planetNames[index],
                     longitude: pos.longitude,
@@ -274,8 +324,13 @@ app.post('/api/calculate', (req, res) => {
                     speed: pos.longitudeSpeed,
                     isRetrograde: isRetrograde,
                     dignity: dignity,
+                    nakshatra: nakshatraName,
+                    nakshatraLord: nakshatraLord,
+                    pada: pada,
+                    avastha: { name: avasthaName, power: avasthaPower },
                     coreData: pKeyForCore && planetsCore[pKeyForCore] ? planetsCore[pKeyForCore] : null
                 });
+
 
             }
         });
@@ -353,8 +408,8 @@ app.post('/api/calculate', (req, res) => {
 
             p.d9Dignity = d9Dignity;
 
-            // If combust or debilitated, we usually don't give it Vargottam highest priority for basic UI display,
 
+            // If combust or debilitated, we usually don't give it Vargottam highest priority for basic UI display,
             // but for logic, Vargottam stands. We'll let Vargottam override standard good dignities.
             if (d1Sign === d9Sign && p.dignity !== "Combust" && p.dignity !== "Neecha") {
                 p.isVargottam = true;
@@ -724,6 +779,7 @@ app.post('/api/calculate', (req, res) => {
 
         // --- PHASE 4: DRISHTI, BASE POWER ---
         const getRelativeHouse = (fromH, toH) => ((toH - fromH + 12) % 12) + 1;
+        const globalSignLordsMap = { 0: 'Mars', 1: 'Venus', 2: 'Mercury', 3: 'Moon', 4: 'Sun', 5: 'Mercury', 6: 'Venus', 7: 'Mars', 8: 'Jupiter', 9: 'Saturn', 10: 'Saturn', 11: 'Jupiter' };
 
         results.forEach(p => {
             const planetKeys = ['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn','Rahu','Ketu'];
@@ -743,7 +799,7 @@ app.post('/api/calculate', (req, res) => {
                  if (diff <= 3) { p.isDeepDebilitated = true; }
             }
 
-            const nLordData = results.find(n => n.name.includes(p.nakshatraLord));
+            const nLordData = results.find(n => n.name && n.name.includes(p.nakshatraLord));
             if (nLordData && p.name !== nLordData.name) {
                 if ([6, 8, 12].includes(nLordData.house)) {
                     p.nakshatraSupport = "Weak (Star Lord in Dusthana)";
@@ -774,7 +830,7 @@ app.post('/api/calculate', (req, res) => {
         const isNaturalBenefic = (pName) => ['Jupiter', 'Venus', 'Moon', 'Mercury'].some(m => pName.includes(m));
 
         results.forEach(p => {
-            const signLordName = signLordsMap[p.sign];
+            const signLordName = globalSignLordsMap[p.sign];
             if (signLordName) {
                 const dispositor = results.find(r => r.name.includes(signLordName));
                 if (dispositor) {
