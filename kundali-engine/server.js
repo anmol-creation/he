@@ -40,15 +40,15 @@ app.post('/api/calculate', (req, res) => {
             const ascendantSign = 3;
 
             const pArr = [
-                { name: "सूर्य (Sun)", longitude: 15, sign: 0, degreeInSign: 15, speed: 1, isRetrograde: false, coreData: planetsCore['Sun'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 10 },
-                { name: "चंद्र (Moon)", longitude: 100, sign: 3, degreeInSign: 10, speed: 13, isRetrograde: false, coreData: planetsCore['Moon'], d9Sign: 6, dignity: 'Swarashi', isVargottam: false, house: 1 },
-                { name: "मंगल (Mars)", longitude: 298, sign: 9, degreeInSign: 28, speed: 1, isRetrograde: false, coreData: planetsCore['Mars'], d9Sign: 6, dignity: 'Uccha', isVargottam: false, house: 7 },
-                { name: "बुध (Mercury)", longitude: 40, sign: 1, degreeInSign: 10, speed: 1, isRetrograde: false, coreData: planetsCore['Mercury'], d9Sign: 4, dignity: 'Neutral', isVargottam: false, house: 11 },
-                { name: "गुरु (Jupiter)", longitude: 95, sign: 3, degreeInSign: 5, speed: 1, isRetrograde: false, coreData: planetsCore['Jupiter'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 1 },
-                { name: "शुक्र (Venus)", longitude: 357, sign: 11, degreeInSign: 27, speed: 1, isRetrograde: false, coreData: planetsCore['Venus'], d9Sign: 8, dignity: 'Uccha', isVargottam: false, house: 9 },
-                { name: "शनि (Saturn)", longitude: 200, sign: 6, degreeInSign: 20, speed: 1, isRetrograde: false, coreData: planetsCore['Saturn'], d9Sign: 0, dignity: 'Uccha', isVargottam: false, house: 4 },
-                { name: "राहु (Rahu)", longitude: 260, sign: 8, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Rahu'], d9Sign: 2, dignity: 'Neutral', isVargottam: false, house: 6 },
-                { name: "केतु (Ketu)", longitude: 80, sign: 2, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Ketu'], d9Sign: 8, dignity: 'Neutral', isVargottam: false, house: 12 }
+                { name: "सूर्य (Sun)", longitude: 15, sign: 0, degreeInSign: 15, speed: 1, isRetrograde: false, coreData: planetsCore['Sun'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 10, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "चंद्र (Moon)", longitude: 100, sign: 3, degreeInSign: 10, speed: 13, isRetrograde: false, coreData: planetsCore['Moon'], d9Sign: 6, dignity: 'Swarashi', isVargottam: false, house: 1, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "मंगल (Mars)", longitude: 298, sign: 9, degreeInSign: 28, speed: 1, isRetrograde: false, coreData: planetsCore['Mars'], d9Sign: 6, dignity: 'Uccha', isVargottam: false, house: 7, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "बुध (Mercury)", longitude: 40, sign: 1, degreeInSign: 10, speed: 1, isRetrograde: false, coreData: planetsCore['Mercury'], d9Sign: 4, dignity: 'Neutral', isVargottam: false, house: 11, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "गुरु (Jupiter)", longitude: 95, sign: 3, degreeInSign: 5, speed: 1, isRetrograde: false, coreData: planetsCore['Jupiter'], d9Sign: 4, dignity: 'Uccha', isVargottam: false, house: 1, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "शुक्र (Venus)", longitude: 357, sign: 11, degreeInSign: 27, speed: 1, isRetrograde: false, coreData: planetsCore['Venus'], d9Sign: 8, dignity: 'Uccha', isVargottam: false, house: 9, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "शनि (Saturn)", longitude: 200, sign: 6, degreeInSign: 20, speed: 1, isRetrograde: false, coreData: planetsCore['Saturn'], d9Sign: 0, dignity: 'Uccha', isVargottam: false, house: 4, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "राहु (Rahu)", longitude: 260, sign: 8, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Rahu'], d9Sign: 2, dignity: 'Neutral', isVargottam: false, house: 6, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } },
+                { name: "केतु (Ketu)", longitude: 80, sign: 2, degreeInSign: 20, speed: -0.05, isRetrograde: true, coreData: planetsCore['Ketu'], d9Sign: 8, dignity: 'Neutral', isVargottam: false, house: 12, nakshatra: 'Punarvasu', nakshatraLord: 'Jupiter', pada: 1, avastha: { name: 'युवा (Youth)', power: 100 } }
             ];
 
             const lagnaChart = [];
@@ -322,10 +322,39 @@ app.post('/api/calculate', (req, res) => {
             else if ([2, 6, 10].includes(d1Sign)) startingSign = 6;
             else if ([3, 7, 11].includes(d1Sign)) startingSign = 3;
 
+
             const d9Sign = (startingSign + navamshaPart) % 12;
             p.d9Sign = d9Sign;
 
+            let d9Dignity = "Neutral";
+            if (p.name.includes('Sun') && d9Sign === 0) d9Dignity = "Uccha";
+            else if (p.name.includes('Moon') && d9Sign === 1) d9Dignity = "Uccha";
+            else if (p.name.includes('Mars') && d9Sign === 9) d9Dignity = "Uccha";
+            else if (p.name.includes('Mercury') && d9Sign === 5) d9Dignity = "Uccha";
+            else if (p.name.includes('Jupiter') && d9Sign === 3) d9Dignity = "Uccha";
+            else if (p.name.includes('Venus') && d9Sign === 11) d9Dignity = "Uccha";
+            else if (p.name.includes('Saturn') && d9Sign === 6) d9Dignity = "Uccha";
+
+            else if (p.name.includes('Sun') && d9Sign === 6) d9Dignity = "Neecha";
+            else if (p.name.includes('Moon') && d9Sign === 7) d9Dignity = "Neecha";
+            else if (p.name.includes('Mars') && d9Sign === 3) d9Dignity = "Neecha";
+            else if (p.name.includes('Mercury') && d9Sign === 11) d9Dignity = "Neecha";
+            else if (p.name.includes('Jupiter') && d9Sign === 9) d9Dignity = "Neecha";
+            else if (p.name.includes('Venus') && d9Sign === 5) d9Dignity = "Neecha";
+            else if (p.name.includes('Saturn') && d9Sign === 0) d9Dignity = "Neecha";
+
+            else if (p.name.includes('Sun') && d9Sign === 4) d9Dignity = "Swarashi";
+            else if (p.name.includes('Moon') && d9Sign === 3) d9Dignity = "Swarashi";
+            else if (p.name.includes('Mars') && (d9Sign === 0 || d9Sign === 7)) d9Dignity = "Swarashi";
+            else if (p.name.includes('Mercury') && (d9Sign === 2 || d9Sign === 5)) d9Dignity = "Swarashi";
+            else if (p.name.includes('Jupiter') && (d9Sign === 8 || d9Sign === 11)) d9Dignity = "Swarashi";
+            else if (p.name.includes('Venus') && (d9Sign === 1 || d9Sign === 6)) d9Dignity = "Swarashi";
+            else if (p.name.includes('Saturn') && (d9Sign === 9 || d9Sign === 10)) d9Dignity = "Swarashi";
+
+            p.d9Dignity = d9Dignity;
+
             // If combust or debilitated, we usually don't give it Vargottam highest priority for basic UI display,
+
             // but for logic, Vargottam stands. We'll let Vargottam override standard good dignities.
             if (d1Sign === d9Sign && p.dignity !== "Combust" && p.dignity !== "Neecha") {
                 p.isVargottam = true;
@@ -377,7 +406,48 @@ app.post('/api/calculate', (req, res) => {
             p.house = ((p.sign - ascendantSign + 12) % 12) + 1;
         });
 
+
+        // --- PHASE 2: FUNCTIONAL LORDSHIP & DIGBALA ---
+        results.forEach(p => {
+            let hasDigbala = false;
+            let pName = p.name;
+            if ((pName.includes('Sun') || pName.includes('Mars')) && p.house === 10) hasDigbala = true;
+            else if ((pName.includes('Jupiter') || pName.includes('Mercury')) && p.house === 1) hasDigbala = true;
+            else if ((pName.includes('Moon') || pName.includes('Venus')) && p.house === 4) hasDigbala = true;
+            else if (pName.includes('Saturn') && p.house === 7) hasDigbala = true;
+            p.hasDigbala = hasDigbala;
+
+            let functionalNature = "Neutral";
+            if (!pName.includes('Rahu') && !pName.includes('Ketu')) {
+                let ownedHouses = [];
+                for (let s = 0; s < 12; s++) {
+                    const signLord = { 0: 'Mars', 1: 'Venus', 2: 'Mercury', 3: 'Moon', 4: 'Sun', 5: 'Mercury', 6: 'Venus', 7: 'Mars', 8: 'Jupiter', 9: 'Saturn', 10: 'Saturn', 11: 'Jupiter' }[s];
+                    if (pName.includes(signLord)) {
+                        const houseNum = ((s - ascendantSign + 12) % 12) + 1;
+                        ownedHouses.push(houseNum);
+                    }
+                }
+                p.ownedHouses = ownedHouses;
+                const isLagnesh = ownedHouses.includes(1);
+                const isTrikonesh = ownedHouses.includes(1) || ownedHouses.includes(5) || ownedHouses.includes(9);
+                const isTrikLord = ownedHouses.includes(6) || ownedHouses.includes(8) || ownedHouses.includes(12);
+                const isMarak = ownedHouses.includes(2) || ownedHouses.includes(7);
+
+                if (isLagnesh || isTrikonesh) functionalNature = "Benefic (Dost)";
+                else if (isTrikLord) {
+                    if (pName.includes('Sun') && ownedHouses.includes(8)) functionalNature = "Neutral";
+                    else if (pName.includes('Moon') && ownedHouses.includes(8)) functionalNature = "Neutral";
+                    else functionalNature = "Malefic (Dushman)";
+                } else if (isMarak) functionalNature = "Marak (Killer/Neutral)";
+            } else {
+                functionalNature = [1,5,9].includes(p.house) ? "Benefic (Dost)" : ([6,8,12].includes(p.house) ? "Malefic (Dushman)" : "Neutral");
+            }
+            p.functionalNature = functionalNature;
+        });
+        // --- END PHASE 2 ---
+
         // Calculate Vimshottari Dasha (Timeline)
+
         const dashaLordsList = [
             { lord: "Ketu", years: 7 }, { lord: "Venus", years: 20 }, { lord: "Sun", years: 6 },
             { lord: "Moon", years: 10 }, { lord: "Mars", years: 7 }, { lord: "Rahu", years: 18 },
@@ -605,7 +675,190 @@ app.post('/api/calculate', (req, res) => {
             });
         }
 
+
+        // --- PHASE 3: ASHTAKVARGA (SAV) SYSTEM ---
+        const ashtakvargaRules = {
+            'Sun': { fromLagna: [3,4,6,10,11,12], fromSun: [1,2,4,7,8,9,10,11], fromMoon: [3,6,10,11], fromMars: [1,2,4,7,8,9,10,11], fromMercury: [3,5,6,9,10,11,12], fromJupiter: [5,6,9,11], fromVenus: [6,7,12], fromSaturn: [1,2,4,7,8,9,10,11] },
+            'Moon': { fromLagna: [3,6,10,11], fromSun: [3,6,7,8,10,11], fromMoon: [1,3,6,7,10,11], fromMars: [2,3,5,6,9,10,11], fromMercury: [1,3,4,5,7,8,10,11], fromJupiter: [1,4,7,8,10,11,12], fromVenus: [3,4,5,7,9,10,11], fromSaturn: [3,5,6,11] },
+            'Mars': { fromLagna: [1,3,6,10,11], fromSun: [3,5,6,10,11], fromMoon: [3,6,11], fromMars: [1,2,4,7,8,9,10,11], fromMercury: [3,5,6,11], fromJupiter: [6,10,11,12], fromVenus: [6,8,11,12], fromSaturn: [1,4,7,8,9,10,11] },
+            'Mercury': { fromLagna: [1,2,4,6,8,10,11], fromSun: [5,6,9,11,12], fromMoon: [2,4,6,8,10,11], fromMars: [1,2,4,7,8,9,10,11], fromMercury: [1,3,5,6,9,10,11,12], fromJupiter: [6,8,11,12], fromVenus: [1,2,3,4,5,8,9,11], fromSaturn: [1,2,4,7,8,9,10,11] },
+            'Jupiter': { fromLagna: [1,2,4,5,6,7,9,10,11], fromSun: [1,2,3,4,7,8,9,10,11], fromMoon: [2,5,7,9,11], fromMars: [1,2,4,7,8,10,11], fromMercury: [1,2,4,5,6,9,10,11], fromJupiter: [1,2,3,4,7,8,10,11], fromVenus: [2,5,6,9,10,11], fromSaturn: [3,5,6,12] },
+            'Venus': { fromLagna: [1,2,3,4,5,8,9,11], fromSun: [8,11,12], fromMoon: [1,2,3,4,5,8,9,11,12], fromMars: [3,5,6,9,11,12], fromMercury: [3,5,6,9,11], fromJupiter: [5,8,9,10,11], fromVenus: [1,2,3,4,5,8,9,10,11], fromSaturn: [3,4,5,8,9,10,11] },
+            'Saturn': { fromLagna: [1,3,4,6,10,11], fromSun: [1,2,4,7,8,9,10,11], fromMoon: [3,6,11], fromMars: [3,5,6,10,11,12], fromMercury: [6,8,9,10,11,12], fromJupiter: [5,6,11,12], fromVenus: [6,11,12], fromSaturn: [3,5,6,11] }
+        };
+
+        let sav = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0 };
+
+        const getHouseIndex = (baseHouse, offsetArr) => {
+            let pts = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0 };
+            offsetArr.forEach(offset => {
+                let targetHouse = ((baseHouse + offset - 2) % 12) + 1;
+                pts[targetHouse] = 1;
+            });
+            return pts;
+        };
+
+        const activePlanets = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
+        activePlanets.forEach(targetPlanet => {
+            const rules = ashtakvargaRules[targetPlanet];
+            if (!rules) return;
+            const lagnaPts = getHouseIndex(1, rules.fromLagna);
+            for(let i=1; i<=12; i++) sav[i] += lagnaPts[i];
+            activePlanets.forEach(giverPlanet => {
+                const giverData = results.find(p => p.name.includes(giverPlanet));
+                if (giverData && rules['from'+giverPlanet]) {
+                    const pts = getHouseIndex(giverData.house, rules['from'+giverPlanet]);
+                    for(let i=1; i<=12; i++) sav[i] += pts[i];
+                }
+            });
+        });
+
+        lagnaChart.forEach(h => { h.savPoints = sav[h.house]; });
+        results.forEach(p => {
+            p.savPoints = sav[p.house];
+            if (p.savPoints >= 30) p.environmentStrength = "Strong Support";
+            else if (p.savPoints >= 25) p.environmentStrength = "Average";
+            else p.environmentStrength = "Weak/Struggle";
+        });
+        // --- END PHASE 3 ---
+
+        // --- PHASE 4: DRISHTI, BASE POWER ---
+        const getRelativeHouse = (fromH, toH) => ((toH - fromH + 12) % 12) + 1;
+
+        results.forEach(p => {
+            const planetKeys = ['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn','Rahu','Ketu'];
+            let engKey = planetKeys.find(k => p.name.includes(k)) || p.name;
+
+            let powerScore = p.avastha ? p.avastha.power : 50;
+            if (p.isCombust) powerScore = 0;
+            if (p.hasDigbala) powerScore = Math.min(100, powerScore + 25);
+            if (p.isVargottam) powerScore = Math.min(100, powerScore + 25);
+
+            const deepExaltationDegrees = { 'Sun': 10, 'Moon': 3, 'Mars': 28, 'Mercury': 15, 'Jupiter': 5, 'Venus': 27, 'Saturn': 20 };
+            if (p.dignity === 'Uccha' && deepExaltationDegrees[engKey]) {
+                const diff = Math.abs(p.degreeInSign - deepExaltationDegrees[engKey]);
+                if (diff <= 3) { p.isDeepExalted = true; powerScore = Math.min(100, powerScore + 20); }
+            } else if (p.dignity === 'Neecha' && deepExaltationDegrees[engKey]) {
+                 const diff = Math.abs(p.degreeInSign - deepExaltationDegrees[engKey]);
+                 if (diff <= 3) { p.isDeepDebilitated = true; }
+            }
+
+            const nLordData = results.find(n => n.name.includes(p.nakshatraLord));
+            if (nLordData && p.name !== nLordData.name) {
+                if ([6, 8, 12].includes(nLordData.house)) {
+                    p.nakshatraSupport = "Weak (Star Lord in Dusthana)";
+                    powerScore = Math.max(10, powerScore - 20);
+                } else if ([1, 4, 5, 7, 9, 10].includes(nLordData.house)) {
+                    p.nakshatraSupport = "Strong (Star Lord in Kendra/Trikona)";
+                    powerScore = Math.min(100, powerScore + 10);
+                } else {
+                    p.nakshatraSupport = "Neutral";
+                }
+            } else {
+                p.nakshatraSupport = "Own Star (Self-supported)";
+                powerScore = Math.min(100, powerScore + 10);
+            }
+            p.basePowerScore = powerScore;
+
+            let aspects = [getRelativeHouse(p.house, p.house + 6)];
+            if (p.name.includes('Mars')) { aspects.push(getRelativeHouse(p.house, p.house + 3)); aspects.push(getRelativeHouse(p.house, p.house + 7)); }
+            else if (p.name.includes('Jupiter') || p.name.includes('Rahu') || p.name.includes('Ketu')) { aspects.push(getRelativeHouse(p.house, p.house + 4)); aspects.push(getRelativeHouse(p.house, p.house + 8)); }
+            else if (p.name.includes('Saturn')) { aspects.push(getRelativeHouse(p.house, p.house + 2)); aspects.push(getRelativeHouse(p.house, p.house + 9)); }
+
+            p.aspectingHouses = [...new Set(aspects)];
+            p.aspectsOn = p.aspectingHouses.map(offset => ((p.house + offset - 2) % 12) + 1);
+        });
+
+        // --- PHASE 4.5: DEEP YUTI, KARTARI & DISPOSITOR ---
+        const isNaturalMalefic = (pName) => ['Sun', 'Mars', 'Saturn', 'Rahu', 'Ketu'].some(m => pName.includes(m));
+        const isNaturalBenefic = (pName) => ['Jupiter', 'Venus', 'Moon', 'Mercury'].some(m => pName.includes(m));
+
+        results.forEach(p => {
+            const signLordName = signLordsMap[p.sign];
+            if (signLordName) {
+                const dispositor = results.find(r => r.name.includes(signLordName));
+                if (dispositor) {
+                    p.dispositor = { name: dispositor.name, house: dispositor.house, dignity: dispositor.dignity, isCombust: dispositor.isCombust };
+                }
+            }
+
+            let prevHouse = ((p.house - 2 + 12) % 12) + 1;
+            let nextHouse = ((p.house) % 12) + 1;
+
+            let prevMalefics = 0, prevBenefics = 0, nextMalefics = 0, nextBenefics = 0;
+            results.forEach(other => {
+                if (other.house === prevHouse) {
+                    if (isNaturalMalefic(other.name)) prevMalefics++;
+                    else if (isNaturalBenefic(other.name)) prevBenefics++;
+                }
+                if (other.house === nextHouse) {
+                    if (isNaturalMalefic(other.name)) nextMalefics++;
+                    else if (isNaturalBenefic(other.name)) nextBenefics++;
+                }
+            });
+
+            if (prevMalefics > 0 && nextMalefics > 0 && prevBenefics === 0 && nextBenefics === 0) p.kartariStatus = "Paap Kartari (Hostage)";
+            else if (prevBenefics > 0 && nextBenefics > 0 && prevMalefics === 0 && nextMalefics === 0) p.kartariStatus = "Shubh Kartari (Protected)";
+            else p.kartariStatus = "None";
+
+            p.conjunctions = [];
+            results.forEach(other => {
+                if (p.name !== other.name && p.house === other.house) {
+                    let diff = Math.abs(p.longitude - other.longitude);
+                    if (diff > 180) diff = 360 - diff;
+                    if (diff <= 15) {
+                        let yutiObj = { planet: other.name, distanceDegree: diff };
+                        if (diff <= 1.0) {
+                            const excludesWar = ['Sun', 'Moon', 'Rahu', 'Ketu'];
+                            if (!excludesWar.some(k => p.name.includes(k)) && !excludesWar.some(k => other.name.includes(k))) {
+                                if (p.degreeInSign < other.degreeInSign) yutiObj.warStatus = "Winner";
+                                else yutiObj.warStatus = "Loser";
+                            }
+                        }
+                        p.conjunctions.push(yutiObj);
+                    }
+                }
+            });
+        });
+
+        // Modifiers & Verdict
+        results.forEach(p => {
+            p.modifiers = [];
+            p.isResurrected = false;
+            p.isCursed = false;
+
+            results.forEach(otherP => {
+                if (p.name !== otherP.name) {
+                    const isConjoined = (p.house === otherP.house);
+                    const isAspecting = otherP.aspectsOn && otherP.aspectsOn.includes(p.house);
+
+                    if (isConjoined || isAspecting) {
+                        const rel = isConjoined ? 'Conjunction' : 'Aspect';
+                        if (otherP.name.includes('Jupiter') && !otherP.isCombust && otherP.dignity !== 'Neecha') {
+                            p.modifiers.push({ type: 'Sanjeevani', from: 'Jupiter', relation: rel, text: 'Amrit Drishti/Yuti protects and revives.' });
+                            p.isResurrected = true;
+                        }
+                        if (otherP.name.includes('Rahu') || otherP.name.includes('Ketu') || (otherP.name.includes('Saturn') && otherP.functionalNature && otherP.functionalNature.includes('Malefic'))) {
+                            p.modifiers.push({ type: 'Curse', from: otherP.name.split(' ')[0], relation: rel, text: 'Malefic influence limits positive output.' });
+                            p.isCursed = true;
+                        }
+                    }
+                }
+            });
+
+            let verdict = "Mixed/Average Results";
+            if (p.isCombust) verdict = p.isResurrected ? "Physically weak but Spiritually saved (Late Success)" : "Powerless (Combust) - No gains";
+            else if (p.functionalNature && p.functionalNature.includes("Malefic") && [6,8,12].includes(p.house) && p.ownedHouses && p.ownedHouses.some(h => [6,8,12].includes(h))) verdict = "Vipreet Rajyoga (Success through crisis)";
+            else if (p.dignity === 'Neecha') verdict = p.isResurrected ? "Neechbhanga Rajyoga (Extreme struggle to legendary success)" : "Debilitated (Deep struggle, destructive)";
+            else if (p.functionalNature && p.functionalNature.includes("Benefic") && (p.dignity === 'Uccha' || p.dignity === 'Mooltrikona' || p.dignity === 'Swarashi')) verdict = (p.isCursed && !p.isResurrected) ? "Highly Favorable but Severely Restricted" : "Supreme Benefic (Massive Positive Gains)";
+            else if (p.functionalNature && (p.functionalNature.includes("Malefic") || p.functionalNature.includes("Marak"))) verdict = p.dignity === 'Uccha' ? "Dangerous Power (High Authority - can destroy)" : "Malefic Output (Causes delays, losses)";
+            else if (p.dignity === 'Uccha' || p.hasDigbala) verdict = p.isCursed ? "Powerful but Restricted" : "Highly Active & Focused Output";
+
+            p.finalVerdict = verdict;
+        });
+
         const detectionData = detectYogas(results, ascendant);
+
         // detectionData now contains { yogas, bhaavPhal, chartStats }
 
         res.json({
