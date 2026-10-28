@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sanyasa_pravrajya",
+    "name": "प्रव्रज्या (संन्यास) योग",
+    "type": "विशेष योग",
+    "description": "एक ही भाव में 4 या उससे अधिक ग्रहों की युति। यह योग व्यक्ति को सांसारिक मोह-माया से विरक्त (Detached) करके एक महान तपस्वी, संत या आध्यात्मिक गुरु बनाता है।",
+    "combinations": [
+      {
+        "type": "sanyasa_yoga",
+        "subtype": "pravrajya"
+      }
+    ],
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "sanyasa_shani_lagnesh",
+    "name": "शनि-लग्नेश वैराग्य योग",
+    "type": "विशेष योग",
+    "description": "लग्नेश (Ascendant Lord) शनि की राशि में हो और शनि उसे देख रहा हो। यह व्यक्ति को भौतिक सुखों से दूर ले जाकर एकांत, वैराग्य और गहरे आध्यात्मिक चिंतन की ओर ले जाता है।",
+    "combinations": [
+      {
+        "type": "sanyasa_yoga",
+        "subtype": "shani_lagnesh"
+      }
+    ],
+    "cancellations": [],
+    "score": 25,
+    "frequency_multiplier": 1
+  }
+]
