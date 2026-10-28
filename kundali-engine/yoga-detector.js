@@ -302,6 +302,26 @@ function detectYogas(planetsData, ascendantDegree) {
                             isMatch = true;
                         }
                     }
+                    else if (cond.type === 'exact_parivartan') {
+                        let hA = cond.houseA;
+                        let hB = cond.houseB;
+                        let signA = (ascendantSign + hA - 1) % 12;
+                        let signB = (ascendantSign + hB - 1) % 12;
+                        let lordA_Name = RASHI_LORDS[signA];
+                        let lordB_Name = RASHI_LORDS[signB];
+                        let lordA = pMap[lordA_Name];
+                        let lordB = pMap[lordB_Name];
+
+                        if (lordA && lordB && lordA.house === hB && lordB.house === hA) {
+                            isMatch = true;
+                            matchedConditions.push(cond);
+
+                            const isPowerless = (p) => p.isCombust || p.dignity === 'Asta' || p.dignity === 'Mrit';
+                            if (isPowerless(lordA) || isPowerless(lordB)) {
+                                cond.cancelReason = `परिवर्तन करने वाला ग्रह (${isPowerless(lordA) ? lordA_Name : lordB_Name}) शक्तिहीन (अस्त/मृत) है।`;
+                            }
+                        }
+                    }
                     else if (cond.type === 'single_planet') {
                         const p = pMap[cond.planet];
                         if (p) {
@@ -652,6 +672,15 @@ function detectYogas(planetsData, ascendantDegree) {
             let isCancelled = false;
             let modifierNote = null;
             let mahapurushLabels = [];
+
+            // Check explicit cond.cancelReason from matched conditions (like parivartan)
+            matchedConditions.forEach(cond => {
+                if (cond.cancelReason) {
+                    isCancelled = true;
+                    modifierNote = cond.cancelReason;
+                }
+            });
+
             // Evaluate Modifiers (Bhanga / Cancellations)
             if (rule.type === 'Rajyoga' || rule.type === 'राजयोग') {
                 let isMahapurush = rule.name.includes("महापुरुष") || rule.name.includes("Mahapurush");
