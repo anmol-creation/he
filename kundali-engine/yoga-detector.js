@@ -103,7 +103,8 @@ function detectYogas(planetsData, ascendantDegree) {
             isCombust: p.isCombust || false,
             isVargottam: p.isVargottam || false,
             isRetrograde: p.isRetrograde || false,
-            d9Sign: p.d9Sign
+            d9Sign: p.d9Sign,
+            conjunctions: p.conjunctions || []
         };
     });
 
@@ -159,6 +160,7 @@ function detectYogas(planetsData, ascendantDegree) {
     for (const rule of yogaRules) {
         let matchedCombinationsCount = 0;
         let isCancelled = false;
+        let matchedConditions = [];
 
         // Process Combinations (OR logic)
         if (rule.combinations && Array.isArray(rule.combinations)) {
@@ -303,8 +305,20 @@ function detectYogas(planetsData, ascendantDegree) {
                         let targetP = pMap[cond.require_planet];
                         if (fromP && targetP) {
                             let relativeHouse = ((targetP.house - fromP.house + 12) % 12) + 1;
-                            if (relativeHouse === cond.relative_house) {
-                                isMatch = true;
+
+                            let houseMatched = false;
+                            if (Array.isArray(cond.relative_house)) {
+                                houseMatched = cond.relative_house.includes(relativeHouse);
+                            } else {
+                                houseMatched = (relativeHouse === cond.relative_house);
+                            }
+
+                            if (houseMatched) {
+                                // Add sign validation if required
+                                let signMatch = cond.in_signs ? cond.in_signs.includes(targetP.sign) : true;
+                                if (signMatch) {
+                                    isMatch = true;
+                                }
                             }
                         }
                     }
@@ -477,7 +491,10 @@ function detectYogas(planetsData, ascendantDegree) {
                     console.error(`Error evaluating condition in ${rule.id}:`, e);
                 }
 
-                if (isMatch) matchedCombinationsCount++;
+                if (isMatch) {
+                    matchedCombinationsCount++;
+                    matchedConditions.push(cond);
+                }
             }
         }
 
@@ -511,7 +528,9 @@ function detectYogas(planetsData, ascendantDegree) {
                 let primaryPlanet = null;
                 let combustPlanets = [];
 
-                rule.combinations.forEach(cond => {
+                let isChandraKendraOnly = true;
+
+                matchedConditions.forEach(cond => {
                     if (cond.planet) {
                         primaryPlanet = cond.planet;
                         if (pMap[cond.planet] && pMap[cond.planet].isCombust) combustPlanets.push(cond.planet);
@@ -520,12 +539,30 @@ function detectYogas(planetsData, ascendantDegree) {
                             if (!primaryPlanet) primaryPlanet = pl;
                             if (pMap[pl] && pMap[pl].isCombust) combustPlanets.push(pl);
                         });
+                    } else if (cond.require_planet) {
+                        primaryPlanet = cond.require_planet;
+                        if (pMap[cond.require_planet] && pMap[cond.require_planet].isCombust) combustPlanets.push(cond.require_planet);
+                    }
+
+                    if (cond.type === 'single_planet' || cond.type === 'lord_in_houses_multiple') {
+                        isChandraKendraOnly = false;
                     }
                 });
 
                 if (isMahapurush && primaryPlanet && pMap[primaryPlanet]) {
                     const p = pMap[primaryPlanet];
                     let powerMultiplier = 1;
+
+                    if (isChandraKendraOnly) {
+                        mahapurushLabels.push("🌙 चंद्र-केंद्र (Chandra Kendra)");
+                        powerMultiplier = 0.7; // Slightly less physical manifestation than Ascendant Kendra
+                    }
+
+                    // Check for Graha Yuddha (Planetary War) Defeat
+                    if (p.conjunctions && p.conjunctions.some(c => c.warStatus === "Loser")) {
+                        mahapurushLabels.push("⚠️ युद्ध में पराजित (Loser in Graha Yuddha)");
+                        powerMultiplier = Math.max(0.2, powerMultiplier - 1); // Severe penalty but not total 0 like combust
+                    }
 
                     let hasDigbala = false;
                     if ((primaryPlanet === 'Sun' || primaryPlanet === 'Mars') && p.house === 10) hasDigbala = true;
