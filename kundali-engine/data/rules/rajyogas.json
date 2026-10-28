@@ -460,20 +460,5 @@
     "cancellations": [],
     "score": 30,
     "frequency_multiplier": 3
-  },
-  {
-    "id": "chamara_yoga",
-    "name": "चामर योग (Chamara Yoga)",
-    "type": "राजयोग",
-    "description": "जब लग्नेश उच्च का होकर केंद्र में हो और गुरु की उस पर दृष्टि हो। यह व्यक्ति को विद्वान, दीर्घायु और राजसी सम्मान दिलाता है।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Lagna lord exalted in Kendra, aspected by Jupiter."
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
   }
 ]

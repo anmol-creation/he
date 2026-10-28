@@ -74,20 +74,5 @@
     "cancellations": [],
     "score": 10,
     "frequency_multiplier": 1
-  },
-  {
-    "id": "saraswati_yoga",
-    "name": "सरस्वती योग",
-    "type": "ज्ञान/बुद्धि योग",
-    "description": "बुध, शुक्र, और गुरु का विशेष केंद्र/त्रिकोण संबंध—ज्ञान, कला और वाणी से पैसा कमाने की ताकत।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Jupiter, Venus, Mercury in Kendra/Trikona or 2nd house with mutual relation."
-      }
-    ],
-    "cancellations": [],
-    "score": 10,
-    "frequency_multiplier": 1
   }
 ]

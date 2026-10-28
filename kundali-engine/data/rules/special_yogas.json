@@ -1,0 +1,77 @@
+[
+  {
+    "id": "special_saraswati",
+    "name": "सरस्वती योग (Saraswati Yoga)",
+    "type": "ज्ञान/कला योग",
+    "description": "बुध, गुरु, और शुक्र (सभी शुभ ग्रह) केंद्र, त्रिकोण, या दूसरे भाव में हों। यह व्यक्ति को अत्यंत विद्वान, लेखक, कवि, या बुद्धिजीवी बनाता है जिस पर माँ सरस्वती की विशेष कृपा होती है।",
+    "combinations": [
+      {
+        "type": "special_yoga",
+        "subtype": "saraswati"
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "special_kalanidhi",
+    "name": "कलानिधि योग (Kalanidhi Yoga)",
+    "type": "ज्ञान/कला योग",
+    "description": "गुरु (Jupiter) 2रे या 5वें भाव में हो और बुध/शुक्र के साथ हो या उनकी दृष्टि हो। व्यक्ति संगीत, कला, या ज्योतिष का महान ज्ञाता और उच्च कोटि का कलाकार होता है।",
+    "combinations": [
+      {
+        "type": "special_yoga",
+        "subtype": "kalanidhi"
+      }
+    ],
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "special_chamara",
+    "name": "चामर योग (Chamara Yoga)",
+    "type": "राजयोग",
+    "description": "लग्नेश (Ascendant Lord) उच्च का हो और उस पर गुरु की शुभ दृष्टि हो। यह व्यक्ति को समाज का सर्वमान्य नेता, विद्वान और राजाओं का भी राजा बनाता है (जैसे राजाओं के पीछे चामर डुलाया जाता है)।",
+    "combinations": [
+      {
+        "type": "special_yoga",
+        "subtype": "chamara"
+      }
+    ],
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "special_vasumathi",
+    "name": "वसुमति योग (Vasumathi Yoga)",
+    "type": "धन योग",
+    "description": "सभी शुभ ग्रह (गुरु, शुक्र, बुध) लग्न या चंद्रमा से उपचय भावों (3, 6, 10, 11) में स्थित हों। व्यक्ति अपने ही दम पर अकूत धन (अरबों की संपत्ति) कमाता है, चाहे वह कितने भी गरीब घर में पैदा हुआ हो।",
+    "combinations": [
+      {
+        "type": "special_yoga",
+        "subtype": "vasumathi"
+      }
+    ],
+    "cancellations": [],
+    "score": 45,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "special_akhand_samrajya",
+    "name": "अखंड साम्राज्य योग (Akhand Samrajya Yoga)",
+    "type": "राजयोग",
+    "description": "2रे, 9वें, और 11वें भाव (धन और भाग्य) के स्वामियों में से कम से कम कोई एक चंद्रमा से केंद्र में हो और लग्नेश बलवान हो। व्यक्ति को ऐसा साम्राज्य मिलता है जो पीढ़ियों तक नष्ट नहीं होता।",
+    "combinations": [
+      {
+        "type": "special_yoga",
+        "subtype": "akhand_samrajya"
+      }
+    ],
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 1
+  }
+]
