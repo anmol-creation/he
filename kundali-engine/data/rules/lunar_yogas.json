@@ -1,0 +1,107 @@
+[
+  {
+    "id": "lunar_gajakesari",
+    "name": "गजकेसरी योग (Gajakesari Yoga)",
+    "type": "राजयोग",
+    "description": "चंद्रमा से केंद्र (1, 4, 7, 10) में बृहस्पति (गुरु) का होना। यह अत्यंत शुभ योग व्यक्ति को बुद्धिमान, शानदार वक्ता और समाज में जीवन भर असीम सम्मान और यश दिलाता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "gajakesari"
+      }
+    ],
+    "cancellations": [],
+    "score": 35,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "lunar_chandra_mangal",
+    "name": "चंद्र-मंगल (महालक्ष्मी) योग",
+    "type": "राजयोग",
+    "description": "चंद्रमा और मंगल की युति या दृष्टि। यह व्यक्ति को धन कमाने की भयंकर जिद और अपार संपत्ति देता है (महालक्ष्मी योग), लेकिन स्वभाव को थोड़ा कठोर या स्वार्थी बना सकता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "chandra_mangal"
+      }
+    ],
+    "cancellations": [],
+    "score": 25,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "lunar_amala",
+    "name": "अमला योग (Amala Yoga)",
+    "type": "राजयोग",
+    "description": "चंद्रमा या लग्न से 10वें भाव में किसी शुभ ग्रह (गुरु, शुक्र, बुध) का होना। व्यक्ति का चरित्र और करियर बेदाग होता है और वह परोपकारी व अत्यंत प्रतिष्ठित होता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "amala"
+      }
+    ],
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "lunar_sunapha",
+    "name": "सुनफ़ा योग (Sunapha Yoga)",
+    "type": "राजयोग",
+    "description": "चंद्रमा से दूसरे (2nd) भाव में ग्रहों का होना (सूर्य/राहु/केतु को छोड़कर)। व्यक्ति अपने दम पर विशाल संपत्ति, सुख और राजाओं जैसा जीवन प्राप्त करता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "sunapha"
+      }
+    ],
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "lunar_anapha",
+    "name": "अनफ़ा योग (Anapha Yoga)",
+    "type": "राजयोग",
+    "description": "चंद्रमा से 12वें भाव में ग्रहों का होना (सूर्य/राहु/केतु को छोड़कर)। व्यक्ति अत्यंत आकर्षक, स्वस्थ और अच्छे चरित्र वाला होता है और जीवन का अंत सुखी व आध्यात्मिक होता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "anapha"
+      }
+    ],
+    "cancellations": [],
+    "score": 20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "lunar_durudhara",
+    "name": "दुरुधरा योग (Durudhara Yoga)",
+    "type": "राजयोग",
+    "description": "चंद्रमा के दोनों तरफ (2nd और 12th भाव में) ग्रहों का होना (सूर्य/राहु/केतु को छोड़कर)। व्यक्ति के पास नौकर-चाकर, अपार धन और चारों तरफ से सुख होता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "durudhara"
+      }
+    ],
+    "cancellations": [],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "lunar_kemadruma",
+    "name": "केमद्रुम दोष (Kemadruma Dosha)",
+    "type": "दोष",
+    "description": "चंद्रमा के आगे (2nd) और पीछे (12th) दोनों भाव खाली हों, और चंद्रमा के साथ भी कोई ग्रह न हो। व्यक्ति राजकुल में पैदा होकर भी दरिद्र, अकेला और मानसिक रूप से पीड़ित हो सकता है।",
+    "combinations": [
+      {
+        "type": "lunar_yoga",
+        "subtype": "kemadruma"
+      }
+    ],
+    "cancellations": [],
+    "score": -40,
+    "frequency_multiplier": 1
+  }
+]

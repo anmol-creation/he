@@ -324,24 +324,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "amala_rajyoga",
-    "name": "अमला राजयोग",
-    "type": "राजयोग",
-    "description": "10वें कर्म भाव में सबसे शुभ ग्रह (गुरु) का होना—समाज में बेदाग छवि और यश।",
-    "combinations": [
-      {
-        "type": "single_planet",
-        "planet": "Jupiter",
-        "in_houses": [
-          10
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
     "id": "shankha_rajyoga",
     "name": "शंख राजयोग",
     "type": "राजयोग",
@@ -435,21 +417,6 @@
     "cancellations": [],
     "score": 40,
     "frequency_multiplier": 4
-  },
-  {
-    "id": "kemadruma_bhanga",
-    "name": "केमद्रुम भंग राजयोग",
-    "type": "राजयोग",
-    "description": "चंद्रमा के आगे-पीछे ग्रह न होने का दोष 4, 7, 10 भावों में ग्रहों के होने से भस्म होना—अकेलेपन से उठकर सम्राट बनना।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Kemadruma conditions met BUT kendras from ascendant or Moon are occupied."
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
   },
   {
     "id": "veshi_yoga_mangal",
@@ -623,38 +590,5 @@
     "cancellations": [],
     "score": 50,
     "frequency_multiplier": 5
-  },
-  {
-    "id": "gajakesari_yoga",
-    "name": "गजकेसरी राजयोग",
-    "type": "राजयोग",
-    "description": "गुरु और चंद्रमा के केंद्र (1, 4, 7, 10) में होने या युति होने से बनता है।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Jupiter",
-          "Moon"
-        ]
-      },
-      {
-        "type": "mutual_kendra",
-        "planets": [
-          "Jupiter",
-          "Moon"
-        ]
-      }
-    ],
-    "cancellations": [
-      {
-        "type": "debilitation",
-        "planets": [
-          "Jupiter",
-          "Moon"
-        ]
-      }
-    ],
-    "score": 30,
-    "frequency_multiplier": 3
   }
 ]
