@@ -1,0 +1,1388 @@
+[
+  {
+    "id": "parivartan_1_2",
+    "name": "1 और 2 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 2 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 2
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_3",
+    "name": "1 और 3 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 3 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 3
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_4",
+    "name": "1 और 4 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 4 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 4
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_5",
+    "name": "1 और 5 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 5 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 5
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_6",
+    "name": "1 और 6 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "लग्न और षष्ठ भाव का दैन्य योग। स्वास्थ्य समस्याएं और शत्रुओं से जीवन भर संघर्ष।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 6
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_7",
+    "name": "1 और 7 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 7 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 7
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_8",
+    "name": "1 और 8 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "लग्न और अष्टम भाव का दैन्य योग। जीवन में अचानक भारी उतार-चढ़ाव और गहरे संकटों का सामना।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_9",
+    "name": "1 और 9 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "लग्न और नवम भाव का महा परिवर्तन। स्वयं का भाग्य से जुड़ाव। अत्यंत सौभाग्यशाली और राजसी जीवन।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_10",
+    "name": "1 और 10 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 10 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_11",
+    "name": "1 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 1 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_1_12",
+    "name": "1 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "लग्न और व्यय भाव का दैन्य योग। खर्चे, दूर स्थानों पर भटकाव या अलगाव की स्थिति।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 1,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_3",
+    "name": "2 और 3 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 3 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 3
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_4",
+    "name": "2 और 4 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 4 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 4
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_5",
+    "name": "2 और 5 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 5 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 5
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_6",
+    "name": "2 और 6 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 2 और 6 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 6
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_7",
+    "name": "2 और 7 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 7 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 7
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_8",
+    "name": "2 और 8 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 2 और 8 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_9",
+    "name": "2 और 9 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 9 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_10",
+    "name": "2 और 10 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 10 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_11",
+    "name": "2 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 2 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_2_12",
+    "name": "2 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 2 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 2,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_4",
+    "name": "3 और 4 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 3 और 4 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 4
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_5",
+    "name": "3 और 5 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 3 और 5 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 5
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_6",
+    "name": "3 और 6 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 3 और 6 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 6
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_7",
+    "name": "3 और 7 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 3 और 7 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 7
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_8",
+    "name": "3 और 8 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 3 और 8 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_9",
+    "name": "3 और 9 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 3 और 9 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_10",
+    "name": "3 और 10 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 3 और 10 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_11",
+    "name": "3 और 11 भाव का खल योग",
+    "type": "राजयोग",
+    "description": "भाव 3 और 11 का खल परिवर्तन योग। जीवन में अत्यधिक संघर्ष और पराक्रम के बाद सफलता। व्यक्ति कभी बहुत उदार तो कभी बहुत कठोर हो जाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 15,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_3_12",
+    "name": "3 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 3 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 3,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_5",
+    "name": "4 और 5 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 4 और 5 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 5
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_6",
+    "name": "4 और 6 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 4 और 6 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 6
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_7",
+    "name": "4 और 7 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 4 और 7 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 7
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_8",
+    "name": "4 और 8 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 4 और 8 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_9",
+    "name": "4 और 9 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 4 और 9 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_10",
+    "name": "4 और 10 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 4 और 10 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_11",
+    "name": "4 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 4 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_4_12",
+    "name": "4 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 4 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 4,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_6",
+    "name": "5 और 6 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 5 और 6 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 6
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_7",
+    "name": "5 और 7 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 5 और 7 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 7
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_8",
+    "name": "5 और 8 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 5 और 8 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_9",
+    "name": "5 और 9 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 5 और 9 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_10",
+    "name": "5 और 10 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 5 और 10 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_11",
+    "name": "5 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 5 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_5_12",
+    "name": "5 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 5 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 5,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_6_7",
+    "name": "6 और 7 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 6 और 7 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 6,
+        "houseB": 7
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_6_8",
+    "name": "6 और 8 भाव का विपरीत राजयोग",
+    "type": "राजयोग",
+    "description": "भाव 6 और 8 का विपरीत राजयोग। बुराई ने बुराई को काट दिया। भारी संकटों, पतन या शत्रुओं के विनाश के बाद अचानक से मिलने वाली विशाल सफलता।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 6,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 40,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_6_9",
+    "name": "6 और 9 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 6 और 9 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 6,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_6_10",
+    "name": "6 और 10 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 6 और 10 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 6,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_6_11",
+    "name": "6 और 11 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 6 और 11 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 6,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_6_12",
+    "name": "6 और 12 भाव का विपरीत राजयोग",
+    "type": "राजयोग",
+    "description": "भाव 6 और 12 का विपरीत राजयोग। बुराई ने बुराई को काट दिया। भारी संकटों, पतन या शत्रुओं के विनाश के बाद अचानक से मिलने वाली विशाल सफलता।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 6,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 40,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_7_8",
+    "name": "7 और 8 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 7 और 8 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 7,
+        "houseB": 8
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_7_9",
+    "name": "7 और 9 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 7 और 9 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 7,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_7_10",
+    "name": "7 और 10 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 7 और 10 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 7,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_7_11",
+    "name": "7 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 7 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 7,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_7_12",
+    "name": "7 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 7 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 7,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_8_9",
+    "name": "8 और 9 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 8 और 9 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 8,
+        "houseB": 9
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_8_10",
+    "name": "8 और 10 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 8 और 10 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 8,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_8_11",
+    "name": "8 और 11 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 8 और 11 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 8,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_8_12",
+    "name": "8 और 12 भाव का विपरीत राजयोग",
+    "type": "राजयोग",
+    "description": "भाव 8 और 12 का विपरीत राजयोग। बुराई ने बुराई को काट दिया। भारी संकटों, पतन या शत्रुओं के विनाश के बाद अचानक से मिलने वाली विशाल सफलता।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 8,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 40,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_9_10",
+    "name": "9 और 10 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "धर्म-कर्माधिपति महा परिवर्तन योग। करियर और भाग्य का सर्वोच्च शिखर।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 9,
+        "houseB": 10
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_9_11",
+    "name": "9 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 9 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 9,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_9_12",
+    "name": "9 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 9 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 9,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_10_11",
+    "name": "10 और 11 भाव का महा योग",
+    "type": "राजयोग",
+    "description": "भाव 10 और 11 के स्वामियों का महा परिवर्तन योग। यह व्यक्ति को अपने क्षेत्र में अपार सफलता, धन, सुख और राजा के समान प्रतिष्ठा दिलाता है।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 10,
+        "houseB": 11
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": 30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_10_12",
+    "name": "10 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 10 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 10,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "parivartan_11_12",
+    "name": "11 और 12 भाव का दैन्य योग",
+    "type": "दोष",
+    "description": "भाव 11 और 12 का दैन्य योग। जीवन में कर्ज, रोग, शत्रु बाधा या अपमान का सामना करना पड़ सकता है। बनते काम बिगड़ने का भय।",
+    "combinations": [
+      {
+        "type": "exact_parivartan",
+        "houseA": 11,
+        "houseB": 12
+      }
+    ],
+    "cancellations": [
+      {
+        "type": "combust_or_mrit_lord",
+        "description": "परिवर्तन करने वाला कोई भी ग्रह यदि अस्त या मृत हो, तो यह योग निष्फल (रद्द) हो जाता है।"
+      }
+    ],
+    "score": -20,
+    "frequency_multiplier": 1
+  }
+]

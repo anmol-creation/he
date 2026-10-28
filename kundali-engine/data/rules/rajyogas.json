@@ -19,6 +19,23 @@
           7,
           9
         ]
+      },
+      {
+        "type": "planet_in_relative_house",
+        "from_planet": "Moon",
+        "relative_house": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "require_planet": "Mars",
+        "in_signs": [
+          0,
+          7,
+          9
+        ],
+        "modifier_label": "Chandra-Kendra"
       }
     ],
     "cancellations": [],
@@ -44,6 +61,22 @@
           2,
           5
         ]
+      },
+      {
+        "type": "planet_in_relative_house",
+        "from_planet": "Moon",
+        "relative_house": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "require_planet": "Mercury",
+        "in_signs": [
+          2,
+          5
+        ],
+        "modifier_label": "Chandra-Kendra"
       }
     ],
     "cancellations": [],
@@ -70,6 +103,23 @@
           11,
           3
         ]
+      },
+      {
+        "type": "planet_in_relative_house",
+        "from_planet": "Moon",
+        "relative_house": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "require_planet": "Jupiter",
+        "in_signs": [
+          8,
+          11,
+          3
+        ],
+        "modifier_label": "Chandra-Kendra"
       }
     ],
     "cancellations": [],
@@ -96,6 +146,23 @@
           6,
           11
         ]
+      },
+      {
+        "type": "planet_in_relative_house",
+        "from_planet": "Moon",
+        "relative_house": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "require_planet": "Venus",
+        "in_signs": [
+          1,
+          6,
+          11
+        ],
+        "modifier_label": "Chandra-Kendra"
       }
     ],
     "cancellations": [],
@@ -122,6 +189,23 @@
           10,
           6
         ]
+      },
+      {
+        "type": "planet_in_relative_house",
+        "from_planet": "Moon",
+        "relative_house": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "require_planet": "Saturn",
+        "in_signs": [
+          9,
+          10,
+          6
+        ],
+        "modifier_label": "Chandra-Kendra"
       }
     ],
     "cancellations": [],

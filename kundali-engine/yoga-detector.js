@@ -103,7 +103,8 @@ function detectYogas(planetsData, ascendantDegree) {
             isCombust: p.isCombust || false,
             isVargottam: p.isVargottam || false,
             isRetrograde: p.isRetrograde || false,
-            d9Sign: p.d9Sign
+            d9Sign: p.d9Sign,
+            conjunctions: p.conjunctions || []
         };
     });
 
@@ -130,35 +131,166 @@ function detectYogas(planetsData, ascendantDegree) {
             }
         }
 
-        // 2. Neechbhanga Check
-        if (p.dignity === 'Neecha') {
-            // Find its dispositor (rashi lord)
-            const dispositorName = RASHI_LORDS[p.sign];
-            const dispositor = pMap[dispositorName];
-
-            if (dispositor) {
-                // Check if dispositor is in Kendra from Ascendant (1, 4, 7, 10)
-                // For a more advanced engine, we would also check Kendra from Moon
-                if ([1, 4, 7, 10].includes(dispositor.house)) {
-                    detectedYogas.push({
-                        id: `neechbhanga_${key}`,
-                        name: `Neechbhanga Rajyoga (${key})`,
-                        type: 'Rajyoga',
-                        description: "Neech planet ka swami Kendra mein hone se state badal gayi. Shuruaat mein bhayankar struggle, par baad mein massive success milti hai (Change of state).",
-                        combinationsMatched: 1,
-                        score: 20,
-                        rarityScore: 3,
-                        isCancelled: false,
-                        modifier_note: null
-                    });
-                }
-            }
-        }
     });
 
     for (const rule of yogaRules) {
         let matchedCombinationsCount = 0;
         let isCancelled = false;
+        let matchedConditions = [];
+        let labels = [];
+
+        // Intercept Neechbhanga Rajyoga rules
+        if (rule.id === 'general_neechbhanga_rajyoga') {
+            let neechPlanets = [];
+            // Find all debilitated planets
+            for (let pName in pMap) {
+                if (pMap[pName].dignity === 'Neecha') {
+                    neechPlanets.push(pName);
+                }
+            }
+
+            if (neechPlanets.length > 0) {
+                // We evaluate Neechbhanga per debilitated planet and push a unique yoga for each
+                for (let neechName of neechPlanets) {
+                    let p = pMap[neechName];
+                    let dispositorName = RASHI_LORDS[p.sign];
+                    let dispositor = pMap[dispositorName];
+
+                    // Exaltation lord logic: Planet that is exalted in p.sign
+                    // 0: Sun, 1: Moon, 3: Jupiter, 5: Mercury, 6: Saturn, 9: Mars, 11: Venus
+                    const exaltationLords = {
+                        0: 'Sun', 1: 'Moon', 3: 'Jupiter', 5: 'Mercury', 6: 'Saturn', 9: 'Mars', 11: 'Venus'
+                    };
+                    let exaltedPlanetName = exaltationLords[p.sign] || null;
+                    let exaltedLord = exaltedPlanetName ? pMap[exaltedPlanetName] : null;
+
+                    let hits = 0;
+                    let moonOnlyHits = 0;
+                    let hasAscHit = false;
+                    let hasMoonHit = false;
+
+                    let cancelReason = null;
+
+                    // Helper to check Bhanga for the helping planet
+                    const checkBhanga = (helpingPlanet) => {
+                        if (!helpingPlanet) return true; // Invalid
+                        if (helpingPlanet.isCombust || helpingPlanet.dignity === 'Asta' || helpingPlanet.dignity === 'Neecha' || helpingPlanet.dignity === 'Mrit') {
+                            return true; // Cancelled
+                        }
+                        return false;
+                    };
+
+                    // Rule 1: Dispositor in Kendra
+                    if (dispositor) {
+                        let inAscKendra = [1, 4, 7, 10].includes(dispositor.house);
+                        let moonHouse = pMap['Moon'] ? pMap['Moon'].house : 1;
+                        let inMoonKendra = [moonHouse, (moonHouse + 3) % 12 || 12, (moonHouse + 6) % 12 || 12, (moonHouse + 9) % 12 || 12].includes(dispositor.house);
+
+                        if (inAscKendra || inMoonKendra) {
+                            if (checkBhanga(dispositor)) {
+                                cancelReason = `Dispositor (${dispositorName}) is powerless (Combust/Neecha/Mrit).`;
+                            } else {
+                                hits++;
+                                if (inAscKendra) hasAscHit = true;
+                                if (inMoonKendra) hasMoonHit = true;
+                                if (inMoonKendra && !inAscKendra) moonOnlyHits++;
+                            }
+                        }
+                    }
+
+                    // Rule 2: Exaltation Lord in Kendra
+                    if (exaltedLord) {
+                        let inAscKendra = [1, 4, 7, 10].includes(exaltedLord.house);
+                        let moonHouse = pMap['Moon'] ? pMap['Moon'].house : 1;
+                        let inMoonKendra = [moonHouse, (moonHouse + 3) % 12 || 12, (moonHouse + 6) % 12 || 12, (moonHouse + 9) % 12 || 12].includes(exaltedLord.house);
+
+                        if (inAscKendra || inMoonKendra) {
+                            if (checkBhanga(exaltedLord)) {
+                                if (!cancelReason) cancelReason = `Exaltation Lord (${exaltedPlanetName}) is powerless.`;
+                            } else {
+                                hits++;
+                                if (inAscKendra) hasAscHit = true;
+                                if (inMoonKendra) hasMoonHit = true;
+                                if (inMoonKendra && !inAscKendra) moonOnlyHits++;
+                            }
+                        }
+                    }
+
+                    // Rule 3: Aspect of Dispositor
+                    if (dispositor && dispositor.aspects && dispositor.aspects.includes(p.house)) {
+                        if (checkBhanga(dispositor)) {
+                            if (!cancelReason) cancelReason = `Aspecting Dispositor (${dispositorName}) is powerless.`;
+                        } else {
+                            hits++;
+                            hasAscHit = true; // Treated as solid hit
+                        }
+                    }
+
+                    // Rule 4: Conjunction with Exalted Planet
+                    if (exaltedLord && exaltedLord.house === p.house) {
+                        if (checkBhanga(exaltedLord)) {
+                            if (!cancelReason) cancelReason = `Conjunct Exalted Planet (${exaltedPlanetName}) is powerless.`;
+                        } else {
+                            hits++;
+                            hasAscHit = true;
+                        }
+                    }
+
+                    // Rule 5: Connection (Parivartan or Conjunction) between Dispositor and Exaltation Lord
+                    if (dispositor && exaltedLord) {
+                        // Conjunction
+                        if (dispositor.house === exaltedLord.house) {
+                             if (!checkBhanga(dispositor) && !checkBhanga(exaltedLord)) {
+                                 hits++;
+                                 hasAscHit = true;
+                             }
+                        }
+                        // Parivartan
+                        else if (RASHI_LORDS[dispositor.sign] === exaltedPlanetName && RASHI_LORDS[exaltedLord.sign] === dispositorName) {
+                            if (!checkBhanga(dispositor) && !checkBhanga(exaltedLord)) {
+                                hits++;
+                                hasAscHit = true;
+                            }
+                        }
+                    }
+
+                    if (hits > 0 || cancelReason) {
+                        // Generate Yoga
+                        let finalScore = (rule.score || 40);
+                        let finalLabels = [];
+                        let isMoonOnly = (moonOnlyHits > 0 && !hasAscHit);
+
+                        // If everything is cancelled (hits == 0) OR if the hits were cancelled
+                        if (hits === 0 && cancelReason) {
+                            // Cancelled outright
+                            finalScore = 0;
+                        } else {
+                            // Apply multipliers
+                            finalScore = finalScore * hits;
+
+                            if (isMoonOnly) {
+                                finalScore = finalScore * 0.7;
+                                finalLabels.push('🌙 चंद्र-आधारित');
+                            }
+                        }
+
+                        detectedYogas.push({
+                            id: `${rule.id}_${neechName}`,
+                            name: `${rule.name} (${neechName})`,
+                            type: rule.type,
+                            description: hits === 0 ? `Neechbhanga failed: ${cancelReason}` : `Neechbhanga triggered with ${hits} conditions matched! Massive success after initial struggles.`,
+                            combinationsMatched: hits,
+                            score: finalScore,
+                            rarityScore: rule.rarityScore || 4,
+                            isCancelled: cancelReason !== null && hits === 0,
+                            modifier_note: (hits === 0) ? cancelReason : (isMoonOnly ? "Formed from Moon Kendra only (0.7x power)." : (hits > 1 ? `Multiple matches (${hits}x power).` : null)),
+                            labels: finalLabels
+                        });
+                    }
+                }
+            }
+            continue; // Skip the default processing for this rule
+        }
 
         // Process Combinations (OR logic)
         if (rule.combinations && Array.isArray(rule.combinations)) {
@@ -168,6 +300,26 @@ function detectYogas(planetsData, ascendantDegree) {
                     if (cond.type === 'ascendant_sign') {
                         if (ascendantSign === cond.sign) {
                             isMatch = true;
+                        }
+                    }
+                    else if (cond.type === 'exact_parivartan') {
+                        let hA = cond.houseA;
+                        let hB = cond.houseB;
+                        let signA = (ascendantSign + hA - 1) % 12;
+                        let signB = (ascendantSign + hB - 1) % 12;
+                        let lordA_Name = RASHI_LORDS[signA];
+                        let lordB_Name = RASHI_LORDS[signB];
+                        let lordA = pMap[lordA_Name];
+                        let lordB = pMap[lordB_Name];
+
+                        if (lordA && lordB && lordA.house === hB && lordB.house === hA) {
+                            isMatch = true;
+                            matchedConditions.push(cond);
+
+                            const isPowerless = (p) => p.isCombust || p.dignity === 'Asta' || p.dignity === 'Mrit';
+                            if (isPowerless(lordA) || isPowerless(lordB)) {
+                                cond.cancelReason = `परिवर्तन करने वाला ग्रह (${isPowerless(lordA) ? lordA_Name : lordB_Name}) शक्तिहीन (अस्त/मृत) है।`;
+                            }
                         }
                     }
                     else if (cond.type === 'single_planet') {
@@ -303,8 +455,20 @@ function detectYogas(planetsData, ascendantDegree) {
                         let targetP = pMap[cond.require_planet];
                         if (fromP && targetP) {
                             let relativeHouse = ((targetP.house - fromP.house + 12) % 12) + 1;
-                            if (relativeHouse === cond.relative_house) {
-                                isMatch = true;
+
+                            let houseMatched = false;
+                            if (Array.isArray(cond.relative_house)) {
+                                houseMatched = cond.relative_house.includes(relativeHouse);
+                            } else {
+                                houseMatched = (relativeHouse === cond.relative_house);
+                            }
+
+                            if (houseMatched) {
+                                // Add sign validation if required
+                                let signMatch = cond.in_signs ? cond.in_signs.includes(targetP.sign) : true;
+                                if (signMatch) {
+                                    isMatch = true;
+                                }
                             }
                         }
                     }
@@ -477,7 +641,10 @@ function detectYogas(planetsData, ascendantDegree) {
                     console.error(`Error evaluating condition in ${rule.id}:`, e);
                 }
 
-                if (isMatch) matchedCombinationsCount++;
+                if (isMatch) {
+                    matchedCombinationsCount++;
+                    matchedConditions.push(cond);
+                }
             }
         }
 
@@ -505,13 +672,24 @@ function detectYogas(planetsData, ascendantDegree) {
             let isCancelled = false;
             let modifierNote = null;
             let mahapurushLabels = [];
+
+            // Check explicit cond.cancelReason from matched conditions (like parivartan)
+            matchedConditions.forEach(cond => {
+                if (cond.cancelReason) {
+                    isCancelled = true;
+                    modifierNote = cond.cancelReason;
+                }
+            });
+
             // Evaluate Modifiers (Bhanga / Cancellations)
             if (rule.type === 'Rajyoga' || rule.type === 'राजयोग') {
                 let isMahapurush = rule.name.includes("महापुरुष") || rule.name.includes("Mahapurush");
                 let primaryPlanet = null;
                 let combustPlanets = [];
 
-                rule.combinations.forEach(cond => {
+                let isChandraKendraOnly = true;
+
+                matchedConditions.forEach(cond => {
                     if (cond.planet) {
                         primaryPlanet = cond.planet;
                         if (pMap[cond.planet] && pMap[cond.planet].isCombust) combustPlanets.push(cond.planet);
@@ -520,12 +698,30 @@ function detectYogas(planetsData, ascendantDegree) {
                             if (!primaryPlanet) primaryPlanet = pl;
                             if (pMap[pl] && pMap[pl].isCombust) combustPlanets.push(pl);
                         });
+                    } else if (cond.require_planet) {
+                        primaryPlanet = cond.require_planet;
+                        if (pMap[cond.require_planet] && pMap[cond.require_planet].isCombust) combustPlanets.push(cond.require_planet);
+                    }
+
+                    if (cond.type === 'single_planet' || cond.type === 'lord_in_houses_multiple') {
+                        isChandraKendraOnly = false;
                     }
                 });
 
                 if (isMahapurush && primaryPlanet && pMap[primaryPlanet]) {
                     const p = pMap[primaryPlanet];
                     let powerMultiplier = 1;
+
+                    if (isChandraKendraOnly) {
+                        mahapurushLabels.push("🌙 चंद्र-केंद्र (Chandra Kendra)");
+                        powerMultiplier = 0.7; // Slightly less physical manifestation than Ascendant Kendra
+                    }
+
+                    // Check for Graha Yuddha (Planetary War) Defeat
+                    if (p.conjunctions && p.conjunctions.some(c => c.warStatus === "Loser")) {
+                        mahapurushLabels.push("⚠️ युद्ध में पराजित (Loser in Graha Yuddha)");
+                        powerMultiplier = Math.max(0.2, powerMultiplier - 1); // Severe penalty but not total 0 like combust
+                    }
 
                     let hasDigbala = false;
                     if ((primaryPlanet === 'Sun' || primaryPlanet === 'Mars') && p.house === 10) hasDigbala = true;
