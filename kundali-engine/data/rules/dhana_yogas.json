@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dhana_kendra_trikona",
+    "name": "विशुद्ध राजयोग (Kendra-Trikona Sambandha)",
+    "type": "राजयोग",
+    "description": "केंद्र (1,4,7,10) और त्रिकोण (1,5,9) के स्वामियों का आपसी संबंध (युति या दृष्टि)। यह सबसे शक्तिशाली राजयोग है जो जीवन में बिना ज्यादा संघर्ष के अपार सफलता, सत्ता और भाग्य देता है।",
+    "combinations": [
+      {
+        "type": "dhana_yoga",
+        "subtype": "kendra_trikona"
+      }
+    ],
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "dhana_lakshmi",
+    "name": "महालक्ष्मी योग (Lakshmi Yoga)",
+    "type": "राजयोग",
+    "description": "नवम भाव (भाग्य) का स्वामी केंद्र में बलवान हो और लग्नेश भी अत्यंत मजबूत हो। व्यक्ति अपने जीवन में अपार धन, संपदा, और राजाओं जैसा ऐश्वर्य प्राप्त करता है।",
+    "combinations": [
+      {
+        "type": "dhana_yoga",
+        "subtype": "lakshmi"
+      }
+    ],
+    "cancellations": [],
+    "score": 45,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "dhana_maha_dhana",
+    "name": "महा धन योग (Maha Dhana Yoga)",
+    "type": "राजयोग",
+    "description": "दूसरे (धन) और ग्यारहवें (लाभ) भाव के स्वामियों का लग्न, पंचम या नवम भाव के स्वामियों से संबंध। यह व्यक्ति को अपने व्यापार या करियर में अरबपति (Billionaire) बनाता है।",
+    "combinations": [
+      {
+        "type": "dhana_yoga",
+        "subtype": "maha_dhana"
+      }
+    ],
+    "cancellations": [],
+    "score": 50,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "dhana_mahabhagya",
+    "name": "महाभाग्य योग (Mahabhagya Yoga)",
+    "type": "राजयोग",
+    "description": "लग्नेश, सूर्य, और चंद्रमा का एक विशेष बलवान स्थिति में होना। यह अत्यंत दुर्लभ योग व्यक्ति को जन्म से ही भाग्यशाली, प्रसिद्ध, और समाज का सर्वमान्य नेता बनाता है।",
+    "combinations": [
+      {
+        "type": "dhana_yoga",
+        "subtype": "mahabhagya"
+      }
+    ],
+    "cancellations": [],
+    "score": 40,
+    "frequency_multiplier": 1
+  }
+]

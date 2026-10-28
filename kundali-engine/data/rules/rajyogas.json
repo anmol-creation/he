@@ -265,65 +265,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "lakshmi_rajyoga",
-    "name": "लक्ष्मी राजयोग (नवमेश-पंचमेश संबंध)",
-    "type": "राजयोग",
-    "description": "9वें त्रिकोण और 5वें त्रिकोण के स्वामियों का केंद्र में संबंध—अपार श्री और एथिकल वेल्थ।",
-    "combinations": [
-      {
-        "type": "aspect_or_conjunction_lords",
-        "lord1": 9,
-        "lord2": 5,
-        "in_houses": [
-          1,
-          4,
-          7,
-          10
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "kendra_trikona_guru_shani",
-    "name": "केंद्र-त्रिकोण राजयोग (गुरु+शनि युति)",
-    "type": "राजयोग",
-    "description": "9वें त्रिकोण (गुरु) और 7वें केंद्र (शनि) के स्वामियों का 10वें भाव में मिलन।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Jupiter",
-          "Saturn"
-        ],
-        "in_houses": [
-          10
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "kendra_trikona_mangal",
-    "name": "केंद्र-त्रिकोण राजयोग (योगकारक मंगल)",
-    "type": "राजयोग",
-    "description": "कर्क लग्न में मंगल 5वें और 10वें भाव का स्वामी होकर राजयोगकारक बन जाता है।",
-    "combinations": [
-      {
-        "type": "ascendant_lordship",
-        "ascendant_sign": 3,
-        "planet": "Mars"
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
     "id": "shankha_rajyoga",
     "name": "शंख राजयोग",
     "type": "राजयोग",
@@ -534,20 +475,5 @@
     "cancellations": [],
     "score": 30,
     "frequency_multiplier": 3
-  },
-  {
-    "id": "mahabhagya_yoga",
-    "name": "महाभाग्य योग (Mahabhagya Yoga)",
-    "type": "राजयोग",
-    "description": "पुरुषों के लिए दिन का जन्म और सूर्य/चंद्र/लग्न विषम राशियों में। यह व्यक्ति को बेहद भाग्यशाली, प्रसिद्ध और जननेता बनाता है।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Day birth + Sun, Moon, Lagna in odd signs (for males)."
-      }
-    ],
-    "cancellations": [],
-    "score": 50,
-    "frequency_multiplier": 5
   }
 ]
