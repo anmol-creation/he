@@ -302,6 +302,862 @@ function detectYogas(planetsData, ascendantDegree) {
                             isMatch = true;
                         }
                     }
+                                                            else if (cond.type === 'lunar_yoga') {
+                        let moon = pMap['Moon'];
+                        if (moon) {
+                            let moonHouse = moon.house;
+                            let subtype = cond.subtype;
+
+                            // Helper for checking adjacent houses (ignoring Sun, Rahu, Ketu)
+                            const checkHouseForPlanetsCount = (h) => {
+                                let count = 0;
+                                for (let pName in pMap) {
+                                    if (pName !== 'Moon' && pName !== 'Sun' && pName !== 'Rahu' && pName !== 'Ketu') {
+                                        if (pMap[pName].house === h) count++;
+                                    }
+                                }
+                                return count;
+                            };
+                            const checkHouseForPlanets = (h) => checkHouseForPlanetsCount(h) > 0;
+
+                            let house2 = (moonHouse) % 12 + 1; // 2nd from moon
+                            let house12 = (moonHouse + 10) % 12 + 1; // 12th from moon
+                            let house10_from_moon = (moonHouse + 8) % 12 + 1;
+
+                            let hasPlanet2nd = checkHouseForPlanets(house2);
+                            let hasPlanet12th = checkHouseForPlanets(house12);
+                            let hasPlanetWithMoon = checkHouseForPlanets(moonHouse);
+
+                            if (subtype === 'gajakesari') {
+                                let jupiter = pMap['Jupiter'];
+                                if (jupiter) {
+                                    let distance = (jupiter.house - moonHouse + 12) % 12;
+                                    if (distance === 0 || distance === 3 || distance === 6 || distance === 9) {
+                                        isMatch = true;
+                                        matchedConditions.push(cond);
+                                        // Bhanga for Gajakesari
+                                        if (jupiter.isCombust || jupiter.dignity === 'Asta' || jupiter.dignity === 'Neecha' || jupiter.dignity === 'Mrit') {
+                                            cond.cancelReason = 'गुरु (Jupiter) अस्त, नीच या मृत है। योग की शुभता नष्ट हो गई।';
+                                        }
+                                    }
+                                }
+                            }
+                            else if (subtype === 'chandra_mangal') {
+                                let mars = pMap['Mars'];
+                                if (mars) {
+                                    // Conjunction or Mutual Aspect
+                                    let isConjunct = (mars.house === moonHouse);
+                                    let isAspecting = (moon.aspects && moon.aspects.includes(mars.house)) || (mars.aspects && mars.aspects.includes(moonHouse));
+                                    if (isConjunct || isAspecting) {
+                                        isMatch = true;
+                                        matchedConditions.push(cond);
+                                    }
+                                }
+                            }
+                            else if (subtype === 'amala') {
+                                // 10th from Moon or Ascendant has Benefic (Jupiter, Venus, Mercury) and NO Malefic
+                                let checkAmala = (h) => {
+                                    let hasBenefic = false;
+                                    let hasMalefic = false;
+                                    for (let pName in pMap) {
+                                        if (pMap[pName].house === h) {
+                                            if (['Jupiter', 'Venus', 'Mercury'].includes(pName)) hasBenefic = true;
+                                            if (['Sun', 'Mars', 'Saturn', 'Rahu', 'Ketu'].includes(pName)) hasMalefic = true;
+                                        }
+                                    }
+                                    return hasBenefic && !hasMalefic;
+                                };
+
+                                if (checkAmala(house10_from_moon) || checkAmala(10)) {
+                                    isMatch = true;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'sunapha') {
+                                // 2nd has planets, 12th empty
+                                if (hasPlanet2nd && !hasPlanet12th && !hasPlanetWithMoon) {
+                                    isMatch = true;
+                                    let count = checkHouseForPlanetsCount(house2);
+                                    if(count > 0) cond.powerMultiplier = count;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'anapha') {
+                                // 12th has planets, 2nd empty
+                                if (hasPlanet12th && !hasPlanet2nd && !hasPlanetWithMoon) {
+                                    isMatch = true;
+                                    let count = checkHouseForPlanetsCount(house12);
+                                    if(count > 0) cond.powerMultiplier = count;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'durudhara') {
+                                // Both 2nd and 12th have planets
+                                if (hasPlanet2nd && hasPlanet12th) {
+                                    isMatch = true;
+                                    let count = checkHouseForPlanetsCount(house2) + checkHouseForPlanetsCount(house12);
+                                    if(count > 0) cond.powerMultiplier = count;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'kemadruma') {
+                                // No planets in 2nd, 12th, or conjunct with Moon
+                                if (!hasPlanet2nd && !hasPlanet12th && !hasPlanetWithMoon) {
+                                    isMatch = true;
+                                    matchedConditions.push(cond);
+
+                                    // Kemadruma Bhanga (Cancellation)
+                                    // 1. Jupiter aspects Moon
+                                    // 2. Planets in Kendra from Ascendant (1, 4, 7, 10)
+                                    let jupiter = pMap['Jupiter'];
+                                    let juAspect = (jupiter && jupiter.aspects && jupiter.aspects.includes(moonHouse));
+
+                                    let planetsInKendra = false;
+                                    for (let pName in pMap) {
+                                        if (pName !== 'Sun' && pName !== 'Rahu' && pName !== 'Ketu' && pName !== 'Moon') {
+                                            if ([1, 4, 7, 10].includes(pMap[pName].house)) {
+                                                planetsInKendra = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+
+                                    if (juAspect || planetsInKendra) {
+                                        cond.cancelReason = 'केमद्रुम भंग: गुरु की दृष्टि या केंद्र में ग्रहों के होने से यह भयंकर दोष कट गया है!';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'solar_yoga') {
+                        let sun = pMap['Sun'];
+                        if (sun) {
+                            let sunHouse = sun.house;
+                            let subtype = cond.subtype;
+
+                            // Helper for checking adjacent houses and returning number of valid planets (multiplier logic)
+                            const checkHouseForPlanets = (h) => {
+                                let validPlanetsCount = 0;
+                                for (let pName in pMap) {
+                                    if (pName !== 'Sun' && pName !== 'Moon' && pName !== 'Rahu' && pName !== 'Ketu') {
+                                        if (pMap[pName].house === h) {
+                                            validPlanetsCount++;
+                                        }
+                                    }
+                                }
+                                return validPlanetsCount;
+                            };
+
+                            let house2 = (sunHouse) % 12 + 1; // 2nd from Sun
+                            let house12 = (sunHouse + 10) % 12 + 1; // 12th from Sun
+
+                            let pCount2nd = checkHouseForPlanets(house2);
+                            let pCount12th = checkHouseForPlanets(house12);
+
+                            if (subtype === 'budhaditya') {
+                                let mercury = pMap['Mercury'];
+                                if (mercury && mercury.house === sunHouse) {
+                                    isMatch = true;
+                                    matchedConditions.push(cond);
+
+                                    // Bhanga: Mercury is Combust (Ast)
+                                    // Normally Mercury is always near Sun. Deep combustion (Ast) reduces power.
+                                    if (mercury.isCombust || mercury.dignity === 'Asta' || mercury.dignity === 'Mrit') {
+                                        cond.cancelReason = 'बुध अस्त या मृत है। योग का फल आंशिक रह गया है।';
+                                        cond.powerMultiplier = 0.5; // Reduces score to half instead of outright 0
+                                    } else if (mercury.dignity === 'Uccha' || mercury.dignity === 'Swarashi') {
+                                        cond.powerMultiplier = 2; // Super Budhaditya
+                                    }
+                                }
+                            }
+                            else if (subtype === 'vesi') {
+                                if (pCount2nd > 0 && pCount12th === 0) {
+                                    isMatch = true;
+                                    cond.powerMultiplier = pCount2nd; // More planets = More Power
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'vosi') {
+                                if (pCount12th > 0 && pCount2nd === 0) {
+                                    isMatch = true;
+                                    cond.powerMultiplier = pCount12th;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'ubhayachari') {
+                                if (pCount2nd > 0 && pCount12th > 0) {
+                                    isMatch = true;
+                                    cond.powerMultiplier = (pCount2nd + pCount12th);
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'sanyasa_yoga') {
+                        let subtype = cond.subtype;
+
+                        if (subtype === 'pravrajya') {
+                            // Find any house that has 4 or more planets (Usually excludes Rahu/Ketu, but some classics include them if they eclipse the ascendant. We'll stick to the 7 physical planets for pure asceticism, but count nodes if they participate in the cluster).
+                            // Actually, Brihat Jataka strictly speaks of 4+ out of the 7 physical planets.
+                            let houseCounts = {};
+                            for (let i = 1; i <= 12; i++) houseCounts[i] = [];
+
+                            for (let pName in pMap) {
+                                if (!['Rahu', 'Ketu'].includes(pName)) {
+                                    houseCounts[pMap[pName].house].push(pMap[pName]);
+                                }
+                            }
+
+                            for (let h = 1; h <= 12; h++) {
+                                if (houseCounts[h].length >= 4) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond, powerMultiplier: houseCounts[h].length - 3 }; // 4 planets = 1x, 5 planets = 2x power
+
+                                    // Sanyasa Bhanga: If the strongest planet in the cluster is combust, or if the dispositor of this house is defeated/combust, it becomes a "Fake Ascetic" (Kapat Sanyasi)
+                                    let isAnyCombust = houseCounts[h].some(p => p.isCombust || p.dignity === 'Asta');
+                                    if (isAnyCombust) {
+                                        matchedCond.cancelReason = 'संन्यास भंग: युति में शामिल ग्रह अस्त (Combust) हैं। व्यक्ति संन्यास तो लेगा, पर सच्चा वैराग्य नहीं होगा (कपट संन्यासी)।';
+                                    }
+
+                                    matchedConditions.push(matchedCond);
+                                    break; // Only need to detect one such house
+                                }
+                            }
+                        }
+                        else if (subtype === 'shani_lagnesh') {
+                            let lagneshName = RASHI_LORDS[ascendantSign];
+                            let lagnesh = pMap[lagneshName];
+                            let saturn = pMap['Saturn'];
+
+                            if (lagnesh && saturn && lagneshName !== 'Saturn') {
+                                // Lagnesh is in Saturn's signs (Capricorn=9, Aquarius=10)
+                                if (lagnesh.sign === 9 || lagnesh.sign === 10) {
+                                    // Saturn aspects Lagnesh OR conjuncts Lagnesh
+                                    let saAspect = (saturn.aspects && saturn.aspects.includes(lagnesh.house)) || (saturn.house === lagnesh.house);
+                                    if (saAspect) {
+                                        isMatch = true;
+                                        let matchedCond = { ...cond };
+
+                                        // Bhanga: If Saturn is Combust or Debilitated (Aries), the vairagya is forced by poverty, not spiritual enlightenment.
+                                        if (saturn.isCombust || saturn.dignity === 'Asta' || saturn.dignity === 'Neecha') {
+                                            matchedCond.cancelReason = 'वैराग्य भंग: शनि अस्त या नीच का है। व्यक्ति आध्यात्मिक ज्ञान के कारण नहीं, बल्कि गरीबी या दुखों के कारण दुनिया छोड़ेगा।';
+                                        }
+
+                                        matchedConditions.push(matchedCond);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'special_yoga') {
+                        let subtype = cond.subtype;
+
+                        const isPowerless = (p) => !p || p.isCombust || p.dignity === 'Asta' || p.dignity === 'Neecha' || p.dignity === 'Mrit';
+
+                        let ju = pMap['Jupiter'];
+                        let me = pMap['Mercury'];
+                        let ve = pMap['Venus'];
+
+                        if (subtype === 'saraswati') {
+                            if (ju && me && ve) {
+                                let validHouses = [1, 2, 4, 5, 7, 9, 10];
+                                if (validHouses.includes(ju.house) && validHouses.includes(me.house) && validHouses.includes(ve.house)) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond };
+
+                                    if (isPowerless(ju) || isPowerless(me) || isPowerless(ve)) {
+                                        matchedCond.cancelReason = 'सरस्वती योग भंग: विद्या और कला के कारक ग्रह अस्त/नीच हैं। शिक्षा में भयंकर बाधा आएगी।';
+                                    } else {
+                                        let hCount = new Set([ju.house, me.house, ve.house]).size;
+                                        if (hCount === 1) matchedCond.powerMultiplier = 2; // All 3 in one valid house = Super Saraswati
+                                    }
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                        else if (subtype === 'kalanidhi') {
+                            if (ju && (ju.house === 2 || ju.house === 5)) {
+                                if (me || ve) {
+                                    let aspectMe = me && ((me.house === ju.house) || (me.aspects && me.aspects.includes(ju.house)));
+                                    let aspectVe = ve && ((ve.house === ju.house) || (ve.aspects && ve.aspects.includes(ju.house)));
+
+                                    if (aspectMe || aspectVe) {
+                                        isMatch = true;
+                                        let matchedCond = { ...cond };
+                                        if (isPowerless(ju)) {
+                                            matchedCond.cancelReason = 'कलानिधि भंग: गुरु अस्त या नीच है, कला का विकास नहीं हो पाएगा।';
+                                        } else if (aspectMe && aspectVe) {
+                                            matchedCond.powerMultiplier = 2;
+                                        }
+                                        matchedConditions.push(matchedCond);
+                                    }
+                                }
+                            }
+                        }
+                        else if (subtype === 'chamara') {
+                            let lagneshName = RASHI_LORDS[ascendantSign];
+                            let lagnesh = pMap[lagneshName];
+
+                            if (lagnesh && lagnesh.dignity === 'Uccha') {
+                                if (ju && ((ju.house === lagnesh.house) || (ju.aspects && ju.aspects.includes(lagnesh.house)))) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond };
+                                    if (isPowerless(ju)) {
+                                        matchedCond.cancelReason = 'चामर योग भंग: दृष्टि डालने वाला गुरु शक्तिहीन है।';
+                                    }
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                        else if (subtype === 'vasumathi') {
+                            let moon = pMap['Moon'];
+                            if (ju && me && ve) {
+                                let upachayaAsc = [3, 6, 10, 11];
+
+                                let checkUpachaya = (refHouse) => {
+                                    let uH = [(refHouse+2)%12 || 12, (refHouse+5)%12 || 12, (refHouse+9)%12 || 12, (refHouse+10)%12 || 12];
+                                    return uH.includes(ju.house) && uH.includes(me.house) && uH.includes(ve.house);
+                                };
+
+                                let fromAsc = upachayaAsc.includes(ju.house) && upachayaAsc.includes(me.house) && upachayaAsc.includes(ve.house);
+                                let fromMoon = moon ? checkUpachaya(moon.house) : false;
+
+                                if (fromAsc || fromMoon) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond };
+                                    if (fromAsc && fromMoon) matchedCond.powerMultiplier = 2; // Super wealth
+
+                                    if (isPowerless(ju) || isPowerless(me) || isPowerless(ve)) {
+                                        matchedCond.cancelReason = 'वसुमति योग भंग: शुभ ग्रह अस्त/नीच हैं। धन संचय में भारी दिक्कत।';
+                                    }
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                        else if (subtype === 'akhand_samrajya') {
+                            let moon = pMap['Moon'];
+                            if (moon) {
+                                let getLordOfHouse = (h) => pMap[RASHI_LORDS[(ascendantSign + h - 1) % 12]];
+                                let l2 = getLordOfHouse(2);
+                                let l9 = getLordOfHouse(9);
+                                let l11 = getLordOfHouse(11);
+
+                                let moonKendras = [moon.house, (moon.house+3)%12 || 12, (moon.house+6)%12 || 12, (moon.house+9)%12 || 12];
+
+                                let hits = 0;
+                                if (l2 && moonKendras.includes(l2.house) && !isPowerless(l2)) hits++;
+                                if (l9 && moonKendras.includes(l9.house) && !isPowerless(l9)) hits++;
+                                if (l11 && moonKendras.includes(l11.house) && !isPowerless(l11)) hits++;
+
+                                let lagneshName = RASHI_LORDS[ascendantSign];
+                                let lagnesh = pMap[lagneshName];
+
+                                if (hits > 0 && lagnesh && !isPowerless(lagnesh)) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond, powerMultiplier: hits };
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'nabhasa_yoga') {
+                        let subtype = cond.subtype;
+
+                        // Gather all 7 physical planets
+                        let physicalPlanets = [];
+                        for (let pName in pMap) {
+                            if (!['Rahu', 'Ketu'].includes(pName)) {
+                                physicalPlanets.push(pMap[pName]);
+                            }
+                        }
+
+                        // We can only evaluate Nabhasa yogas if we have all 7 planets
+                        if (physicalPlanets.length === 7) {
+
+                            // Ashraya Yogas: Modality Check
+                            if (['rajju', 'musala', 'nala'].includes(subtype)) {
+                                let isAllMovable = true;
+                                let isAllFixed = true;
+                                let isAllDual = true;
+
+                                physicalPlanets.forEach(p => {
+                                    let mod = p.sign % 3; // 0: Movable (1,4,7,10), 1: Fixed (2,5,8,11), 2: Dual (3,6,9,12)
+                                    if (mod !== 0) isAllMovable = false;
+                                    if (mod !== 1) isAllFixed = false;
+                                    if (mod !== 2) isAllDual = false;
+                                });
+
+                                if (subtype === 'rajju' && isAllMovable) {
+                                    isMatch = true;
+                                    matchedConditions.push({ ...cond });
+                                } else if (subtype === 'musala' && isAllFixed) {
+                                    isMatch = true;
+                                    matchedConditions.push({ ...cond });
+                                } else if (subtype === 'nala' && isAllDual) {
+                                    isMatch = true;
+                                    matchedConditions.push({ ...cond });
+                                }
+                            }
+
+                            // Sankhya Yogas: Occupied Houses Count
+                            if (subtype.startsWith('sankhya_')) {
+                                let targetCount = parseInt(subtype.split('_')[1]);
+
+                                let occupiedHouses = new Set();
+                                physicalPlanets.forEach(p => occupiedHouses.add(p.house));
+
+                                // In classical texts, Sankhya yogas only apply if NO OTHER Nabhasa yoga (like Akriti/Ashraya) applies.
+                                // However, for simplicity and modularity, we just trigger the shape match.
+                                if (occupiedHouses.size === targetCount) {
+                                    isMatch = true;
+                                    matchedConditions.push({ ...cond });
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'arishta_dosha') {
+                        let subtype = cond.subtype;
+
+                        let mo = pMap['Moon'];
+                        let sa = pMap['Saturn'];
+                        let su = pMap['Sun'];
+                        let ra = pMap['Rahu'];
+                        let ke = pMap['Ketu'];
+                        let ma = pMap['Mars'];
+                        let ju = pMap['Jupiter'];
+
+                        if (subtype === 'vish') {
+                            if (mo && sa) {
+                                let isConjunct = (mo.house === sa.house);
+                                let isAspecting = (mo.aspects && mo.aspects.includes(sa.house)) || (sa.aspects && sa.aspects.includes(mo.house));
+
+                                if (isConjunct || isAspecting) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond };
+
+                                    // Vish Dosha Bhanga: Jupiter aspecting the Moon cancels the poison.
+                                    if (ju && ((ju.house === mo.house) || (ju.aspects && ju.aspects.includes(mo.house)))) {
+                                        matchedCond.cancelReason = 'विष दोष भंग: गुरु (Jupiter) की अमृतमयी दृष्टि ने चंद्रमा को बचा लिया है। डिप्रेशन की जगह गहरी सोच विकसित होगी।';
+                                    } else {
+                                        if (isConjunct && isAspecting) matchedCond.powerMultiplier = 2; // Very tight connection
+                                    }
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                        else if (subtype === 'pitra') {
+                            let lord9 = pMap[RASHI_LORDS[(ascendantSign + 8) % 12]]; // 9th lord
+                            let hits = 0;
+
+                            // Check Sun affliction
+                            if (su) {
+                                if (ra && su.house === ra.house) hits++;
+                                if (ke && su.house === ke.house) hits++;
+                                if (sa && (su.house === sa.house || (sa.aspects && sa.aspects.includes(su.house)))) hits++;
+                            }
+
+                            // Check 9th Lord/House affliction
+                            if (lord9) {
+                                if (ra && lord9.house === ra.house) hits++;
+                                if (ke && lord9.house === ke.house) hits++;
+                                if (sa && (lord9.house === sa.house || (sa.aspects && sa.aspects.includes(lord9.house)))) hits++;
+                            }
+
+                            // Check Rahu/Ketu/Saturn in 9th house itself
+                            let house9planets = 0;
+                            ['Rahu', 'Ketu', 'Saturn'].forEach(pn => {
+                                if (pMap[pn] && pMap[pn].house === 9) house9planets++;
+                            });
+                            hits += house9planets;
+
+                            if (hits > 0) {
+                                isMatch = true;
+                                let matchedCond = { ...cond, powerMultiplier: hits };
+
+                                // Pitra Dosha Bhanga: If Jupiter is strongly aspecting the Sun AND the 9th house, the curse is lifted through Dharmic deeds.
+                                if (ju && ju.aspects && ju.aspects.includes(su.house) && ju.aspects.includes(9)) {
+                                    matchedCond.cancelReason = 'पितृ दोष भंग: गुरु की कृपा से पूर्वजों का श्राप कट गया है, धार्मिक कार्यों से विशेष लाभ होगा।';
+                                }
+
+                                matchedConditions.push(matchedCond);
+                            }
+                        }
+                        else if (subtype === 'balarishta') {
+                            if (mo && [6, 8, 12].includes(mo.house)) {
+                                let hits = 0;
+                                let malefics = [sa, ra, ke, ma, su];
+                                malefics.forEach(mal => {
+                                    if (mal) {
+                                        if (mal.house === mo.house) hits++;
+                                        if (mal.aspects && mal.aspects.includes(mo.house)) hits++;
+                                    }
+                                });
+
+                                if (hits > 0) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond, powerMultiplier: hits };
+
+                                    // Balarishta Bhanga: Jupiter aspecting the Moon cancels infantile mortality.
+                                    if (ju && ((ju.house === mo.house) || (ju.aspects && ju.aspects.includes(mo.house)))) {
+                                        matchedCond.cancelReason = 'बालारिष्ट भंग: गुरु की दृष्टि से शिशु के जीवन पर आया संकट टल गया है।';
+                                    } else if (mo.dignity === 'Uccha' || mo.dignity === 'Swarashi') {
+                                        matchedCond.cancelReason = 'बालारिष्ट भंग: चंद्रमा स्वयं अपनी उच्च/स्वराशि में अत्यंत बलवान है, अतः यह दोष असरदार नहीं है।';
+                                    }
+
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'daridra_yoga') {
+                        let subtype = cond.subtype;
+
+                        const getLordOfHouse = (h) => {
+                            let sign = (ascendantSign + h - 1) % 12;
+                            return pMap[RASHI_LORDS[sign]];
+                        };
+
+                        let lagnesh = getLordOfHouse(1);
+                        let lord2 = getLordOfHouse(2);
+                        let lord11 = getLordOfHouse(11);
+
+                        // Cancellation logic: If the lord is Exalted (Uccha) or Swarashi (Own Sign), the Daridra Yoga is cancelled (Neechbhanga/Vipreet effect)
+                        const isCancelledDignity = (p) => p && (p.dignity === 'Uccha' || p.dignity === 'Swarashi' || p.dignity === 'Mooltrikona');
+
+                        if (subtype === 'weak_lagnesh' && lagnesh) {
+                            if ([6, 8, 12].includes(lagnesh.house)) {
+                                let matchedCond = { ...cond };
+                                if (isCancelledDignity(lagnesh)) {
+                                    isMatch = true;
+                                    matchedCond.cancelReason = 'लग्नेश त्रिक भाव में है, लेकिन उच्च/स्वराशि का होने के कारण व्यक्ति अपने संघर्षों से राजा बनेगा (दारिद्र्य भंग)।';
+                                } else {
+                                    isMatch = true;
+                                    if (lagnesh.isCombust || lagnesh.dignity === 'Neecha' || lagnesh.dignity === 'Asta') {
+                                        matchedCond.powerMultiplier = 1.5; // Severe penalty if also debilitated/combust
+                                    }
+                                }
+                                matchedConditions.push(matchedCond);
+                            }
+                        }
+                        else if (subtype === 'dhan_nash' && lord2) {
+                            if ([6, 8, 12].includes(lord2.house)) {
+                                let matchedCond = { ...cond };
+                                if (isCancelledDignity(lord2)) {
+                                    isMatch = true;
+                                    matchedCond.cancelReason = 'धन भाव का स्वामी त्रिक में है, लेकिन अत्यंत बलवान है। धन का नाश नहीं, बल्कि विदेशी/गुप्त स्रोतों से धन आएगा।';
+                                } else {
+                                    isMatch = true;
+                                    if (lord2.isCombust || lord2.dignity === 'Neecha') matchedCond.powerMultiplier = 1.5;
+                                }
+                                matchedConditions.push(matchedCond);
+                            }
+                        }
+                        else if (subtype === 'labh_nash' && lord11) {
+                            if ([6, 8, 12].includes(lord11.house)) {
+                                let matchedCond = { ...cond };
+                                if (isCancelledDignity(lord11)) {
+                                    isMatch = true;
+                                    matchedCond.cancelReason = 'लाभ भाव का स्वामी त्रिक में है, लेकिन अत्यंत बलवान है। लाभ में देरी होगी, पर नाश नहीं होगा।';
+                                } else {
+                                    isMatch = true;
+                                    if (lord11.isCombust || lord11.dignity === 'Neecha') matchedCond.powerMultiplier = 1.5;
+                                }
+                                matchedConditions.push(matchedCond);
+                            }
+                        }
+                    }
+                    else if (cond.type === 'major_dosha') {
+                        let subtype = cond.subtype;
+
+                        if (subtype === 'kaal_sarp') {
+                            let rahu = pMap['Rahu'];
+                            let ketu = pMap['Ketu'];
+                            if (rahu && ketu) {
+                                let rHouse = rahu.house;
+                                let kHouse = ketu.house;
+
+                                let countSide1 = 0;
+                                let countSide2 = 0;
+
+                                for (let pName in pMap) {
+                                    if (!['Rahu', 'Ketu'].includes(pName)) {
+                                        let h = pMap[pName].house;
+                                        let diff1 = (kHouse - rHouse + 12) % 12;
+                                        let pDiff1 = (h - rHouse + 12) % 12;
+                                        if (pDiff1 <= diff1 && pDiff1 > 0 && diff1 > 0) countSide1++;
+                                        else if (h === rHouse || h === kHouse) countSide1++;
+
+                                        let diff2 = (rHouse - kHouse + 12) % 12;
+                                        let pDiff2 = (h - kHouse + 12) % 12;
+                                        if (pDiff2 <= diff2 && pDiff2 > 0 && diff2 > 0) countSide2++;
+                                        else if (h === rHouse || h === kHouse) countSide2++;
+                                    }
+                                }
+
+                                if (countSide1 === 7 || countSide2 === 7) {
+                                    isMatch = true;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                        }
+                        else if (subtype === 'mangalik') {
+                            let mars = pMap['Mars'];
+                            if (mars) {
+                                if ([1, 4, 7, 8, 12].includes(mars.house)) {
+                                    let jupiter = pMap['Jupiter'];
+                                    let juAspect = false;
+                                    if (jupiter) {
+                                        juAspect = (jupiter.house === mars.house) || (jupiter.aspects && jupiter.aspects.includes(mars.house));
+                                    }
+
+                                    let matchedCond = { ...cond };
+                                    if (mars.dignity === 'Uccha' || mars.dignity === 'Swarashi' || mars.dignity === 'Mooltrikona') {
+                                        isMatch = true;
+                                        matchedCond.cancelReason = 'मांगलिक परिहार: मंगल अपनी ही राशि या उच्च राशि में है। दोष का प्रभाव खत्म हो गया है।';
+                                        matchedConditions.push(matchedCond);
+                                    } else if (juAspect) {
+                                        isMatch = true;
+                                        matchedCond.cancelReason = 'मांगलिक परिहार: गुरु की दृष्टि या युति ने मंगल के उग्र दोष को शांत कर दिया है।';
+                                        matchedConditions.push(matchedCond);
+                                    } else {
+                                        isMatch = true;
+                                        matchedConditions.push(matchedCond);
+                                    }
+                                }
+                            }
+                        }
+                        else if (subtype === 'guru_chandal') {
+                            let ju = pMap['Jupiter'];
+                            let ra = pMap['Rahu'];
+                            if (ju && ra && ju.house === ra.house) {
+                                isMatch = true;
+                                matchedConditions.push(cond);
+                            }
+                        }
+                        else if (subtype === 'shrapit') {
+                            let sa = pMap['Saturn'];
+                            let ra = pMap['Rahu'];
+                            if (sa && ra && sa.house === ra.house) {
+                                isMatch = true;
+                                matchedConditions.push(cond);
+                            }
+                        }
+                        else if (subtype === 'angarak') {
+                            let ma = pMap['Mars'];
+                            let ra = pMap['Rahu'];
+                            let ke = pMap['Ketu'];
+                            if (ma && ((ra && ma.house === ra.house) || (ke && ma.house === ke.house))) {
+                                isMatch = true;
+                                matchedConditions.push(cond);
+                            }
+                        }
+                        else if (subtype === 'grahan') {
+                            let su = pMap['Sun'];
+                            let mo = pMap['Moon'];
+                            let ra = pMap['Rahu'];
+                            let ke = pMap['Ketu'];
+
+                            let hits = 0;
+                            if (su && ((ra && su.house === ra.house) || (ke && su.house === ke.house))) hits++;
+                            if (mo && ((ra && mo.house === ra.house) || (ke && mo.house === ke.house))) hits++;
+
+                            if (hits > 0) {
+                                isMatch = true;
+                                let matchedCond = { ...cond, powerMultiplier: hits };
+                                matchedConditions.push(matchedCond);
+                            }
+                        }
+                    }
+                    else if (cond.type === 'dhana_yoga') {
+                        let subtype = cond.subtype;
+                        let lagneshName = RASHI_LORDS[ascendantSign];
+                        let lagnesh = pMap[lagneshName];
+
+                        const isPowerless = (p) => !p || p.isCombust || p.dignity === 'Asta' || p.dignity === 'Neecha' || p.dignity === 'Mrit';
+                        const isStrong = (p) => p && !isPowerless(p) && (p.dignity === 'Uccha' || p.dignity === 'Swarashi' || p.dignity === 'Mooltrikona');
+
+                        // Helper to get lord of a specific house relative to Ascendant
+                        const getLordOfHouse = (h) => {
+                            let sign = (ascendantSign + h - 1) % 12;
+                            return pMap[RASHI_LORDS[sign]];
+                        };
+
+                        if (subtype === 'kendra_trikona') {
+                            // Kendra Lords: 1, 4, 7, 10
+                            // Trikona Lords: 1, 5, 9
+                            let kendraLords = [getLordOfHouse(1), getLordOfHouse(4), getLordOfHouse(7), getLordOfHouse(10)].filter(Boolean);
+                            let trikonaLords = [getLordOfHouse(1), getLordOfHouse(5), getLordOfHouse(9)].filter(Boolean);
+
+                            let matches = 0;
+                            let cancelledMatches = 0;
+
+                            kendraLords.forEach(kl => {
+                                trikonaLords.forEach(tl => {
+                                    if (kl.name !== tl.name) { // Ignore if the same planet rules both (e.g. Mars for Aries rules 1 and 8, not a pure KT unless it's like Saturn ruling 9,10 for Taurus)
+                                        // Relation: Conjunction or Mutual Aspect
+                                        let conjunct = (kl.house === tl.house);
+                                        let mutualAspect = (kl.aspects && tl.aspects && kl.aspects.includes(tl.house) && tl.aspects.includes(kl.house));
+
+                                        if (conjunct || mutualAspect) {
+                                            if (isPowerless(kl) || isPowerless(tl)) {
+                                                cancelledMatches++;
+                                            } else {
+                                                matches++;
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+
+
+                            // Special case: Single planet ruling both Kendra and Trikona
+                            const yogakarakaCheck = (lord) => {
+                                let rulesKendra = false;
+                                let rulesTrikona = false;
+                                for(let i=1; i<=12; i++) {
+                                    let sign = (ascendantSign + i - 1) % 12;
+                                    if (RASHI_LORDS[sign] === lord.name) {
+                                        if ([1,4,7,10].includes(i)) rulesKendra = true;
+                                        if ([1,5,9].includes(i)) rulesTrikona = true;
+                                    }
+                                }
+                                return rulesKendra && rulesTrikona;
+                            };
+
+                            for(let pName in pMap) {
+                                let p = pMap[pName];
+                                // wait, pMap objects have `name` inside? Yes, but maybe it's missing in my mock?
+                                p.name = p.name || pName; // Ensure name exists
+                                if (yogakarakaCheck(p) && [1,4,5,7,9,10].includes(p.house)) {
+                                    if (isPowerless(p)) cancelledMatches++;
+                                    else matches++;
+                                }
+                            }
+
+
+                            if (matches > 0) {
+                                isMatch = true;
+                                cond.powerMultiplier = matches; // 2 relations = 2x power
+                                matchedConditions.push(cond);
+                            } else if (cancelledMatches > 0) {
+                                isMatch = true;
+                                cond.cancelReason = 'केंद्र-त्रिकोण राजयोग बनाने वाले ग्रह अस्त या नीच हैं। राजयोग भंग हो गया है।';
+                                matchedConditions.push(cond);
+                            }
+                        }
+                        else if (subtype === 'lakshmi') {
+                            let lord9 = getLordOfHouse(9);
+                            if (lord9 && lagnesh) {
+                                let lord9InKendra = [1,4,7,10].includes(lord9.house);
+                                let lord9Strong = isStrong(lord9);
+                                let lagneshStrong = isStrong(lagnesh) || [1,4,5,7,9,10].includes(lagnesh.house);
+
+                                if (lord9InKendra && lord9Strong && lagneshStrong) {
+                                    if (isPowerless(lord9) || isPowerless(lagnesh)) {
+                                        isMatch = true;
+                                        cond.cancelReason = 'महालक्ष्मी योग बनाने वाले ग्रह (लग्नेश या भाग्येश) शक्तिहीन हैं।';
+                                        matchedConditions.push(cond);
+                                    } else {
+                                        isMatch = true;
+                                        matchedConditions.push(cond);
+                                    }
+                                }
+                            }
+                        }
+                        else if (subtype === 'maha_dhana') {
+                            // 2nd, 11th lords connecting with 1st, 5th, 9th lords
+                            let wealthLords = [getLordOfHouse(2), getLordOfHouse(11)].filter(Boolean);
+                            let trikonaLords = [getLordOfHouse(1), getLordOfHouse(5), getLordOfHouse(9)].filter(Boolean);
+
+                            let matches = 0;
+                            let cancelledMatches = 0;
+
+                            wealthLords.forEach(wl => {
+                                trikonaLords.forEach(tl => {
+                                    if (wl.name !== tl.name) {
+                                        let conjunct = (wl.house === tl.house);
+                                        let mutualAspect = (wl.aspects && tl.aspects && wl.aspects.includes(tl.house) && tl.aspects.includes(wl.house));
+
+                                        if (conjunct || mutualAspect) {
+                                            if (isPowerless(wl) || isPowerless(tl)) {
+                                                cancelledMatches++;
+                                            } else {
+                                                matches++;
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+
+                            if (matches > 0) {
+                                isMatch = true;
+                                cond.powerMultiplier = matches;
+                                matchedConditions.push(cond);
+                            } else if (cancelledMatches > 0) {
+                                isMatch = true;
+                                cond.cancelReason = 'धन योग बनाने वाले ग्रह अस्त या मृत हैं। धन प्राप्ति में भयंकर बाधाएं।';
+                                matchedConditions.push(cond);
+                            }
+                        }
+                        else if (subtype === 'mahabhagya') {
+                            // Mahabhagya Yoga
+                            // Male: Born in Day (Sun in 7-12), Sun, Moon, Lagna all in Odd signs (0, 2, 4, 6, 8, 10).
+                            // Female: Born in Night (Sun in 1-6), Sun, Moon, Lagna all in Even signs (1, 3, 5, 7, 9, 11).
+                            // Since we don't have gender data directly in detector, we check for the pure astronomical alignment:
+                            // We will check for the pure Male condition for now, or just if Sun, Moon, Lagna are in identical sign parity and strong.
+                            let sun = pMap['Sun'];
+                            let moon = pMap['Moon'];
+                            if (sun && moon) {
+                                let allOdd = (sun.sign % 2 === 0) && (moon.sign % 2 === 0) && (ascendantSign % 2 === 0);
+                                let allEven = (sun.sign % 2 !== 0) && (moon.sign % 2 !== 0) && (ascendantSign % 2 !== 0);
+
+                                if (allOdd || allEven) {
+                                    // Make sure they are not severely debilitated
+                                    if (!isPowerless(sun) && !isPowerless(moon) && lagnesh && !isPowerless(lagnesh)) {
+                                        isMatch = true;
+                                        matchedConditions.push(cond);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'vipreet_rajyoga') {
+                        let targetHouse = cond.lord;
+                        let targetSign = (ascendantSign + targetHouse - 1) % 12;
+                        let targetLordName = RASHI_LORDS[targetSign];
+                        let targetLord = pMap[targetLordName];
+
+                        let lagneshName = RASHI_LORDS[ascendantSign];
+                        let lagnesh = pMap[lagneshName];
+
+                        if (targetLord && cond.in_houses.includes(targetLord.house)) {
+                            isMatch = true;
+                            matchedConditions.push(cond);
+
+                            let bhangaReason = null;
+                            let multiplier = 1;
+
+                            // Parihar (Cancellation) Rule 1: The planet forming the yoga must not be combust or mrit
+                            if (targetLord.isCombust || targetLord.dignity === 'Asta' || targetLord.dignity === 'Mrit') {
+                                bhangaReason = `योग बनाने वाला ग्रह (${targetLordName}) अस्त या मृत है। बुराई को काटने की शक्ति नहीं है।`;
+                            }
+                            // Parihar (Cancellation) Rule 2: Lagnesh must be strong enough to handle the crisis
+                            else if (!lagnesh) {
+                                bhangaReason = `लग्नेश का डेटा उपलब्ध नहीं है।`;
+                            } else if (lagnesh.isCombust || lagnesh.dignity === 'Asta' || lagnesh.dignity === 'Neecha' || lagnesh.dignity === 'Mrit' || [6, 8, 12].includes(lagnesh.house)) {
+                                bhangaReason = `लग्नेश (${lagneshName}) बहुत कमजोर/अस्त/नीच है या त्रिक भाव में है। जातक संकटों से लड़ने में सक्षम नहीं है।`;
+                            }
+
+                            if (bhangaReason) {
+                                cond.cancelReason = bhangaReason;
+                            } else {
+                                // Multiplier Logic: If Lagnesh is in Kendra/Trikona or Exalted/Own sign, double the power!
+                                if ([1, 4, 5, 7, 9, 10].includes(lagnesh.house) || lagnesh.dignity === 'Uccha' || lagnesh.dignity === 'Swarashi' || lagnesh.dignity === 'Mooltrikona') {
+                                    cond.powerMultiplier = 2;
+                                }
+                            }
+                        }
+                    }
                     else if (cond.type === 'exact_parivartan') {
                         let hA = cond.houseA;
                         let hB = cond.houseB;
@@ -666,18 +1522,30 @@ function detectYogas(planetsData, ascendantDegree) {
             }
 
             // Calculate final score for this yoga
-            let baseScore = rule.score || 10;
+                        let baseScore = rule.score || 10;
             let finalScore = baseScore * matchedCombinationsCount; // Multiplier amplification
 
             let isCancelled = false;
             let modifierNote = null;
             let mahapurushLabels = [];
 
-            // Check explicit cond.cancelReason from matched conditions (like parivartan)
+            // Check explicit cond.cancelReason from matched conditions (like parivartan or vipreet)
             matchedConditions.forEach(cond => {
                 if (cond.cancelReason) {
                     isCancelled = true;
                     modifierNote = cond.cancelReason;
+                }
+                if (cond.powerMultiplier && !cond.cancelReason) {
+                    finalScore = finalScore * cond.powerMultiplier;
+                    if (!modifierNote && cond.powerMultiplier > 1) {
+                        if (cond.type === 'vipreet_rajyoga') modifierNote = `Strong Lagnesh boosts power (${cond.powerMultiplier}x).`;
+                        else if (cond.type === 'major_dosha') modifierNote = `Multiple eclipses detected (${cond.powerMultiplier}x severity).`;
+                        else if (cond.type === 'daridra_yoga') modifierNote = `Lord is debilitated/combust (${cond.powerMultiplier}x severity).`;
+                        else if (cond.type === 'sanyasa_yoga') modifierNote = `Massive planetary cluster (${cond.powerMultiplier + 3} planets involved).`;
+                        else if (cond.type === 'special_yoga') modifierNote = `Exceptional planetary alignment (${cond.powerMultiplier}x power).`;
+                        else if (cond.type === 'arishta_dosha') modifierNote = `Multiple afflictions detected (${cond.powerMultiplier}x severity).`;
+                        else modifierNote = `Multi-planet amplification (${cond.powerMultiplier}x power).`;
+                    }
                 }
             });
 

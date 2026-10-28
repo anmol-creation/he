@@ -1,0 +1,47 @@
+[
+  {
+    "id": "arishta_vish",
+    "name": "विष दोष (Vish Dosha / Punarphoo)",
+    "type": "दोष",
+    "description": "चंद्रमा (मन) और शनि (दुःख/ठंडक) की युति या परस्पर दृष्टि। यह व्यक्ति को जीवनभर मानसिक तनाव, डिप्रेशन, वैराग्य या जहर/दवाइयों का रिएक्शन दे सकता है।",
+    "combinations": [
+      {
+        "type": "arishta_dosha",
+        "subtype": "vish"
+      }
+    ],
+    "cancellations": [],
+    "score": -30,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "arishta_pitra",
+    "name": "पितृ दोष (Pitra Dosha)",
+    "type": "दोष",
+    "description": "सूर्य (पिता) और 9वें भाव (पूर्वज/भाग्य) का राहु, केतु या शनि से भयंकर रूप से पीड़ित होना। यह वंश वृद्धि में रुकावट, भाग्य में बाधा और पिता के साथ गंभीर विवाद देता है।",
+    "combinations": [
+      {
+        "type": "arishta_dosha",
+        "subtype": "pitra"
+      }
+    ],
+    "cancellations": [],
+    "score": -40,
+    "frequency_multiplier": 1
+  },
+  {
+    "id": "arishta_balarishta",
+    "name": "बालारिष्ट योग (Balarishta)",
+    "type": "दोष",
+    "description": "चंद्रमा 6, 8, या 12वें भाव में हो और पाप ग्रहों (मंगल, शनि, राहु, केतु, सूर्य) से बुरी तरह पीड़ित हो। यह बचपन (शुरुआती 8-12 साल) में बहुत गंभीर शारीरिक बीमारियां या मृत्युतुल्य कष्ट देता है।",
+    "combinations": [
+      {
+        "type": "arishta_dosha",
+        "subtype": "balarishta"
+      }
+    ],
+    "cancellations": [],
+    "score": -45,
+    "frequency_multiplier": 1
+  }
+]

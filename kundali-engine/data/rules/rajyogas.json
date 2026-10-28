@@ -265,83 +265,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "lakshmi_rajyoga",
-    "name": "लक्ष्मी राजयोग (नवमेश-पंचमेश संबंध)",
-    "type": "राजयोग",
-    "description": "9वें त्रिकोण और 5वें त्रिकोण के स्वामियों का केंद्र में संबंध—अपार श्री और एथिकल वेल्थ।",
-    "combinations": [
-      {
-        "type": "aspect_or_conjunction_lords",
-        "lord1": 9,
-        "lord2": 5,
-        "in_houses": [
-          1,
-          4,
-          7,
-          10
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "kendra_trikona_guru_shani",
-    "name": "केंद्र-त्रिकोण राजयोग (गुरु+शनि युति)",
-    "type": "राजयोग",
-    "description": "9वें त्रिकोण (गुरु) और 7वें केंद्र (शनि) के स्वामियों का 10वें भाव में मिलन।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Jupiter",
-          "Saturn"
-        ],
-        "in_houses": [
-          10
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "kendra_trikona_mangal",
-    "name": "केंद्र-त्रिकोण राजयोग (योगकारक मंगल)",
-    "type": "राजयोग",
-    "description": "कर्क लग्न में मंगल 5वें और 10वें भाव का स्वामी होकर राजयोगकारक बन जाता है।",
-    "combinations": [
-      {
-        "type": "ascendant_lordship",
-        "ascendant_sign": 3,
-        "planet": "Mars"
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "amala_rajyoga",
-    "name": "अमला राजयोग",
-    "type": "राजयोग",
-    "description": "10वें कर्म भाव में सबसे शुभ ग्रह (गुरु) का होना—समाज में बेदाग छवि और यश।",
-    "combinations": [
-      {
-        "type": "single_planet",
-        "planet": "Jupiter",
-        "in_houses": [
-          10
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
     "id": "shankha_rajyoga",
     "name": "शंख राजयोग",
     "type": "राजयोग",
@@ -407,21 +330,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "harsha_vipareeta_rajyoga",
-    "name": "हर्ष विपरीत राजयोग (चंद्र कुंडली से)",
-    "type": "राजयोग",
-    "description": "6ठे के स्वामी का 8वें में उच्च का होना—मार्केट क्रैश या आपदा में सत्ता पाना।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "6th lord from Moon in 8th from Moon in exaltation."
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
     "id": "kendra_dosha_parihar",
     "name": "केन्द्राधिपत्य दोष-परिहार राजयोग",
     "type": "राजयोग",
@@ -450,21 +358,6 @@
     "cancellations": [],
     "score": 40,
     "frequency_multiplier": 4
-  },
-  {
-    "id": "kemadruma_bhanga",
-    "name": "केमद्रुम भंग राजयोग",
-    "type": "राजयोग",
-    "description": "चंद्रमा के आगे-पीछे ग्रह न होने का दोष 4, 7, 10 भावों में ग्रहों के होने से भस्म होना—अकेलेपन से उठकर सम्राट बनना।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Kemadruma conditions met BUT kendras from ascendant or Moon are occupied."
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
   },
   {
     "id": "veshi_yoga_mangal",
@@ -516,47 +409,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "budhaditya_yoga",
-    "name": "बुधादित्य राजयोग (Budhaditya Yoga)",
-    "type": "राजयोग",
-    "description": "सूर्य और बुध की युति (Conjunction)। यह इंसान को अत्यंत बुद्धिमान, ज्ञानी, संवाद-कुशल और सफल बनाता है।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Sun",
-          "Mercury"
-        ],
-        "in_houses": [
-          1,
-          2,
-          4,
-          5,
-          7,
-          9,
-          10,
-          11
-        ]
-      },
-      {
-        "type": "conjunction",
-        "planets": [
-          "Sun",
-          "Mercury"
-        ]
-      }
-    ],
-    "cancellations": [
-      {
-        "type": "combustion",
-        "planet": "Mercury",
-        "degree_limit": 14
-      }
-    ],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
     "id": "general_neechbhanga_rajyoga",
     "name": "सामान्य नीचभंग राजयोग (General Neechbhanga Rajyoga)",
     "type": "राजयोग",
@@ -573,46 +425,6 @@
       },
       {
         "type": "neechbhanga_aspect"
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
-    "id": "vipreet_rajyoga_sarala",
-    "name": "सरला विपरीत राजयोग (Sarala Vipreet Rajyoga)",
-    "type": "राजयोग",
-    "description": "जब 8वें भाव का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को निडर, विद्वान और संकटों में अचानक सफलता पाने वाला बनाता है।",
-    "combinations": [
-      {
-        "type": "lord_in_houses_multiple",
-        "lord": 8,
-        "in_houses": [
-          6,
-          8,
-          12
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
-    "id": "vipreet_rajyoga_vimala",
-    "name": "विमला विपरीत राजयोग (Vimala Vipreet Rajyoga)",
-    "type": "राजयोग",
-    "description": "जब 12वें भाव का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को बहुत स्वतंत्र, सुखी और विदेशों/दूर की जगहों से लाभ कमाने वाला बनाता है।",
-    "combinations": [
-      {
-        "type": "lord_in_houses_multiple",
-        "lord": 12,
-        "in_houses": [
-          6,
-          8,
-          12
-        ]
       }
     ],
     "cancellations": [],
@@ -646,69 +458,6 @@
       }
     ],
     "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "chamara_yoga",
-    "name": "चामर योग (Chamara Yoga)",
-    "type": "राजयोग",
-    "description": "जब लग्नेश उच्च का होकर केंद्र में हो और गुरु की उस पर दृष्टि हो। यह व्यक्ति को विद्वान, दीर्घायु और राजसी सम्मान दिलाता है।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Lagna lord exalted in Kendra, aspected by Jupiter."
-      }
-    ],
-    "cancellations": [],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
-    "id": "mahabhagya_yoga",
-    "name": "महाभाग्य योग (Mahabhagya Yoga)",
-    "type": "राजयोग",
-    "description": "पुरुषों के लिए दिन का जन्म और सूर्य/चंद्र/लग्न विषम राशियों में। यह व्यक्ति को बेहद भाग्यशाली, प्रसिद्ध और जननेता बनाता है।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Day birth + Sun, Moon, Lagna in odd signs (for males)."
-      }
-    ],
-    "cancellations": [],
-    "score": 50,
-    "frequency_multiplier": 5
-  },
-  {
-    "id": "gajakesari_yoga",
-    "name": "गजकेसरी राजयोग",
-    "type": "राजयोग",
-    "description": "गुरु और चंद्रमा के केंद्र (1, 4, 7, 10) में होने या युति होने से बनता है।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Jupiter",
-          "Moon"
-        ]
-      },
-      {
-        "type": "mutual_kendra",
-        "planets": [
-          "Jupiter",
-          "Moon"
-        ]
-      }
-    ],
-    "cancellations": [
-      {
-        "type": "debilitation",
-        "planets": [
-          "Jupiter",
-          "Moon"
-        ]
-      }
-    ],
     "score": 30,
     "frequency_multiplier": 3
   }
