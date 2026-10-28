@@ -1,0 +1,110 @@
+const fs = require('fs');
+
+const nabhasaYogas = [
+    // --- Ashraya Yogas (Based on Sign Modality) ---
+    {
+        id: "nabhasa_rajju",
+        name: "रज्जु योग (Rajju Yoga)",
+        type: "नाभस योग",
+        description: "सभी 7 ग्रह चर राशियों (Movable Signs - 1,4,7,10) में स्थित हैं। व्यक्ति हमेशा यात्रा करने वाला, महत्वाकांक्षी, विदेश में बसने वाला और भाग्यवान होता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "rajju" }],
+        cancellations: [],
+        score: 15,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_musala",
+        name: "मूसल योग (Musala Yoga)",
+        type: "नाभस योग",
+        description: "सभी 7 ग्रह स्थिर राशियों (Fixed Signs - 2,5,8,11) में स्थित हैं। व्यक्ति अत्यंत ज्ञानी, धनवान, स्थिर स्वभाव का और अपने उसूलों का पक्का होता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "musala" }],
+        cancellations: [],
+        score: 15,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_nala",
+        name: "नल योग (Nala Yoga)",
+        type: "नाभस योग",
+        description: "सभी 7 ग्रह द्विस्वभाव राशियों (Dual Signs - 3,6,9,12) में स्थित हैं। व्यक्ति बहुत चतुर, मल्टी-टैलेंटेड और कई रास्तों से पैसा कमाने वाला होता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "nala" }],
+        cancellations: [],
+        score: 15,
+        frequency_multiplier: 1
+    },
+
+    // --- Sankhya Yogas (Based on number of occupied houses) ---
+    {
+        id: "nabhasa_gola",
+        name: "गोल योग (Gola Yoga)",
+        type: "दोष",
+        description: "सभी 7 ग्रह केवल 1 ही भाव में स्थित हैं! व्यक्ति अत्यंत गरीब, भाग्यहीन और मानसिक रूप से पीड़ित होता है। (यह बहुत ही दुर्लभ है)।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_1" }],
+        cancellations: [],
+        score: -40,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_yuga",
+        name: "युग योग (Yuga Yoga)",
+        type: "दोष",
+        description: "सभी 7 ग्रह केवल 2 भावों में स्थित हैं। व्यक्ति हमेशा संघर्ष में रहता है और उसे जीवन में ज्यादा मान-सम्मान नहीं मिलता।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_2" }],
+        cancellations: [],
+        score: -20,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_shula",
+        name: "शूल योग (Shula Yoga)",
+        type: "दोष",
+        description: "सभी 7 ग्रह केवल 3 भावों में स्थित हैं। व्यक्ति बहुत तीखा बोलने वाला, क्रोधी और हिंसक हो सकता है, लेकिन वह बहादुर होता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_3" }],
+        cancellations: [],
+        score: -10,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_kedara",
+        name: "केदार योग (Kedara Yoga)",
+        type: "राजयोग",
+        description: "सभी 7 ग्रह ठीक 4 भावों में स्थित हैं। यह इंसान को कृषि, ज़मीन-जायदाद (Real Estate) और जनता का लीडर बनाता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_4" }],
+        cancellations: [],
+        score: 15,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_pasha",
+        name: "पाश योग (Pasha Yoga)",
+        type: "राजयोग",
+        description: "सभी 7 ग्रह ठीक 5 भावों में स्थित हैं। व्यक्ति अपने परिवार से जुड़ा हुआ, कुशल व्यवसायी और जीवन का आनंद लेने वाला होता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_5" }],
+        cancellations: [],
+        score: 15,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_dama",
+        name: "दाम योग (Dama Yoga)",
+        type: "राजयोग",
+        description: "सभी 7 ग्रह ठीक 6 भावों में स्थित हैं। यह जीवनभर परोपकार, ज्ञान, और अचल संपत्ति की गारंटी देता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_6" }],
+        cancellations: [],
+        score: 15,
+        frequency_multiplier: 1
+    },
+    {
+        id: "nabhasa_veena",
+        name: "वीणा योग (Veena Yoga)",
+        type: "राजयोग",
+        description: "सभी 7 ग्रह ठीक 7 अलग-अलग भावों में फैले हुए हैं! व्यक्ति कला, संगीत और राजनीति में अत्यंत कुशल होता है और उसे हर तरह का सुख मिलता है।",
+        combinations: [{ type: "nabhasa_yoga", subtype: "sankhya_7" }],
+        cancellations: [],
+        score: 25,
+        frequency_multiplier: 1
+    }
+];
+
+fs.writeFileSync('kundali-engine/data/rules/nabhasa_yogas.json', JSON.stringify(nabhasaYogas, null, 2));
+console.log('nabhasa_yogas.json generated successfully.');
