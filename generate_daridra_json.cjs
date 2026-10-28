@@ -1,0 +1,37 @@
+const fs = require('fs');
+
+const daridraYogas = [
+    {
+        id: "daridra_lagnesh",
+        name: "लग्नेश दोष (Weak Lagnesh)",
+        type: "दोष",
+        description: "लग्नेश (कुंडली का राजा) 6ठे, 8वें या 12वें भाव में जाकर कमज़ोर हो गया है। व्यक्ति का जीवन अत्यंत संघर्षपूर्ण, स्वास्थ्य खराब, और हमेशा चुनौतियों से भरा रहता है।",
+        combinations: [{ type: "daridra_yoga", subtype: "weak_lagnesh" }],
+        cancellations: [],
+        score: -40,
+        frequency_multiplier: 1
+    },
+    {
+        id: "daridra_dhan_nash",
+        name: "धन नाश योग (Daridra Yoga)",
+        type: "दोष",
+        description: "दूसरे भाव (धन) का स्वामी 6ठे, 8वें या 12वें भाव में चला गया है। व्यक्ति कर्ज, धन की भारी हानि, और पारिवारिक संपत्ति के विवादों में फँसा रहता है।",
+        combinations: [{ type: "daridra_yoga", subtype: "dhan_nash" }],
+        cancellations: [],
+        score: -35,
+        frequency_multiplier: 1
+    },
+    {
+        id: "daridra_labh_nash",
+        name: "लाभ नाश योग (Daridra Yoga)",
+        type: "दोष",
+        description: "ग्यारहवें भाव (लाभ) का स्वामी 6ठे, 8वें या 12वें भाव में चला गया है। व्यक्ति जितनी भी मेहनत कर ले, उसे कभी अपनी मेहनत का पूरा लाभ या सफलता नहीं मिल पाती।",
+        combinations: [{ type: "daridra_yoga", subtype: "labh_nash" }],
+        cancellations: [],
+        score: -35,
+        frequency_multiplier: 1
+    }
+];
+
+fs.writeFileSync('kundali-engine/data/rules/daridra_yogas.json', JSON.stringify(daridraYogas, null, 2));
+console.log('daridra_yogas.json generated successfully.');

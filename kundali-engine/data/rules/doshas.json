@@ -133,20 +133,5 @@
     "cancellations": [],
     "score": -20,
     "frequency_multiplier": 2
-  },
-  {
-    "id": "daridra_dosha",
-    "name": "दारिद्र्य योग/दोष (Daridra Dosha)",
-    "type": "दोष",
-    "description": "धन भाव (2रा या 11वां) या भाग्य भाव (9वां) के स्वामी का 6ठे, 8वें या 12वें भाव में बैठना। यह आर्थिक तंगी और कर्ज देता है।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Lords of 2, 9, 11 in 6, 8, 12."
-      }
-    ],
-    "cancellations": [],
-    "score": -20,
-    "frequency_multiplier": 2
   }
 ]
