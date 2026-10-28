@@ -1,0 +1,55 @@
+const fs = require('fs');
+
+const vipreetYogas = [
+    {
+        id: "vipreet_rajyoga_harsha",
+        name: "हर्ष विपरीत राजयोग (Harsha Vipreet Rajyoga)",
+        type: "राजयोग",
+        description: "जब 6वें भाव (रोग/शत्रु) का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को शारीरिक रूप से अत्यंत मजबूत बनाता है और शत्रुओं के विनाश के बाद भारी सफलता देता है।",
+        combinations: [
+            {
+                type: "vipreet_rajyoga",
+                lord: 6,
+                in_houses: [6, 8, 12]
+            }
+        ],
+        cancellations: [],
+        score: 40,
+        frequency_multiplier: 2
+    },
+    {
+        id: "vipreet_rajyoga_sarala",
+        name: "सरल विपरीत राजयोग (Sarala Vipreet Rajyoga)",
+        type: "राजयोग",
+        description: "जब 8वें भाव (संकट/मृत्यु) का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को जीवन में अचानक आने वाले भारी संकटों और धोखे से बचाकर विशाल धन और लंबी आयु देता है।",
+        combinations: [
+            {
+                type: "vipreet_rajyoga",
+                lord: 8,
+                in_houses: [6, 8, 12]
+            }
+        ],
+        cancellations: [],
+        score: 40,
+        frequency_multiplier: 2
+    },
+    {
+        id: "vipreet_rajyoga_vimala",
+        name: "विमल विपरीत राजयोग (Vimala Vipreet Rajyoga)",
+        type: "राजयोग",
+        description: "जब 12वें भाव (व्यय/हानि) का स्वामी 6ठे, 8वें या 12वें भाव में हो। बुराई ने बुराई को काट दिया। यह खर्चों पर नियंत्रण, विदेश में अपार सफलता और स्वतंत्र सुखी जीवन देता है।",
+        combinations: [
+            {
+                type: "vipreet_rajyoga",
+                lord: 12,
+                in_houses: [6, 8, 12]
+            }
+        ],
+        cancellations: [],
+        score: 40,
+        frequency_multiplier: 2
+    }
+];
+
+fs.writeFileSync('kundali-engine/data/rules/vipreet.json', JSON.stringify(vipreetYogas, null, 2));
+console.log('vipreet.json generated successfully.');

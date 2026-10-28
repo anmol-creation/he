@@ -407,21 +407,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "harsha_vipareeta_rajyoga",
-    "name": "हर्ष विपरीत राजयोग (चंद्र कुंडली से)",
-    "type": "राजयोग",
-    "description": "6ठे के स्वामी का 8वें में उच्च का होना—मार्केट क्रैश या आपदा में सत्ता पाना।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "6th lord from Moon in 8th from Moon in exaltation."
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
     "id": "kendra_dosha_parihar",
     "name": "केन्द्राधिपत्य दोष-परिहार राजयोग",
     "type": "राजयोग",
@@ -573,46 +558,6 @@
       },
       {
         "type": "neechbhanga_aspect"
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
-    "id": "vipreet_rajyoga_sarala",
-    "name": "सरला विपरीत राजयोग (Sarala Vipreet Rajyoga)",
-    "type": "राजयोग",
-    "description": "जब 8वें भाव का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को निडर, विद्वान और संकटों में अचानक सफलता पाने वाला बनाता है।",
-    "combinations": [
-      {
-        "type": "lord_in_houses_multiple",
-        "lord": 8,
-        "in_houses": [
-          6,
-          8,
-          12
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
-    "id": "vipreet_rajyoga_vimala",
-    "name": "विमला विपरीत राजयोग (Vimala Vipreet Rajyoga)",
-    "type": "राजयोग",
-    "description": "जब 12वें भाव का स्वामी 6ठे, 8वें या 12वें भाव में हो। यह व्यक्ति को बहुत स्वतंत्र, सुखी और विदेशों/दूर की जगहों से लाभ कमाने वाला बनाता है।",
-    "combinations": [
-      {
-        "type": "lord_in_houses_multiple",
-        "lord": 12,
-        "in_houses": [
-          6,
-          8,
-          12
-        ]
       }
     ],
     "cancellations": [],
