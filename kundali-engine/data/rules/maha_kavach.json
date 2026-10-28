@@ -71,21 +71,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "ubhayachari_yoga",
-    "name": "उभयचरी योग",
-    "type": "महा-कवच",
-    "description": "सूर्य के आगे (मंगल) और पीछे (बुध) का होना—समाज में हर तरफ से 'प्रोटेक्टेड' रहना।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Planets (other than Moon) in 2nd and 12th from Sun."
-      }
-    ],
-    "cancellations": [],
-    "score": 35,
-    "frequency_multiplier": 3
-  },
-  {
     "id": "matru_vahan_sukh",
     "name": "परिपूर्ण मातृ-वाहन सुख योग",
     "type": "महा-कवच",

@@ -309,18 +309,16 @@ function detectYogas(planetsData, ascendantDegree) {
                             let subtype = cond.subtype;
 
                             // Helper for checking adjacent houses (ignoring Sun, Rahu, Ketu)
-                            const checkHouseForPlanets = (h) => {
-                                let found = false;
+                            const checkHouseForPlanetsCount = (h) => {
+                                let count = 0;
                                 for (let pName in pMap) {
                                     if (pName !== 'Moon' && pName !== 'Sun' && pName !== 'Rahu' && pName !== 'Ketu') {
-                                        if (pMap[pName].house === h) {
-                                            found = true;
-                                            break;
-                                        }
+                                        if (pMap[pName].house === h) count++;
                                     }
                                 }
-                                return found;
+                                return count;
                             };
+                            const checkHouseForPlanets = (h) => checkHouseForPlanetsCount(h) > 0;
 
                             let house2 = (moonHouse) % 12 + 1; // 2nd from moon
                             let house12 = (moonHouse + 10) % 12 + 1; // 12th from moon
@@ -379,6 +377,8 @@ function detectYogas(planetsData, ascendantDegree) {
                                 // 2nd has planets, 12th empty
                                 if (hasPlanet2nd && !hasPlanet12th && !hasPlanetWithMoon) {
                                     isMatch = true;
+                                    let count = checkHouseForPlanetsCount(house2);
+                                    if(count > 0) cond.powerMultiplier = count;
                                     matchedConditions.push(cond);
                                 }
                             }
@@ -386,6 +386,8 @@ function detectYogas(planetsData, ascendantDegree) {
                                 // 12th has planets, 2nd empty
                                 if (hasPlanet12th && !hasPlanet2nd && !hasPlanetWithMoon) {
                                     isMatch = true;
+                                    let count = checkHouseForPlanetsCount(house12);
+                                    if(count > 0) cond.powerMultiplier = count;
                                     matchedConditions.push(cond);
                                 }
                             }
@@ -393,6 +395,8 @@ function detectYogas(planetsData, ascendantDegree) {
                                 // Both 2nd and 12th have planets
                                 if (hasPlanet2nd && hasPlanet12th) {
                                     isMatch = true;
+                                    let count = checkHouseForPlanetsCount(house2) + checkHouseForPlanetsCount(house12);
+                                    if(count > 0) cond.powerMultiplier = count;
                                     matchedConditions.push(cond);
                                 }
                             }
@@ -421,6 +425,70 @@ function detectYogas(planetsData, ascendantDegree) {
                                     if (juAspect || planetsInKendra) {
                                         cond.cancelReason = 'केमद्रुम भंग: गुरु की दृष्टि या केंद्र में ग्रहों के होने से यह भयंकर दोष कट गया है!';
                                     }
+                                }
+                            }
+                        }
+                    }
+                    else if (cond.type === 'solar_yoga') {
+                        let sun = pMap['Sun'];
+                        if (sun) {
+                            let sunHouse = sun.house;
+                            let subtype = cond.subtype;
+
+                            // Helper for checking adjacent houses and returning number of valid planets (multiplier logic)
+                            const checkHouseForPlanets = (h) => {
+                                let validPlanetsCount = 0;
+                                for (let pName in pMap) {
+                                    if (pName !== 'Sun' && pName !== 'Moon' && pName !== 'Rahu' && pName !== 'Ketu') {
+                                        if (pMap[pName].house === h) {
+                                            validPlanetsCount++;
+                                        }
+                                    }
+                                }
+                                return validPlanetsCount;
+                            };
+
+                            let house2 = (sunHouse) % 12 + 1; // 2nd from Sun
+                            let house12 = (sunHouse + 10) % 12 + 1; // 12th from Sun
+
+                            let pCount2nd = checkHouseForPlanets(house2);
+                            let pCount12th = checkHouseForPlanets(house12);
+
+                            if (subtype === 'budhaditya') {
+                                let mercury = pMap['Mercury'];
+                                if (mercury && mercury.house === sunHouse) {
+                                    isMatch = true;
+                                    matchedConditions.push(cond);
+
+                                    // Bhanga: Mercury is Combust (Ast)
+                                    // Normally Mercury is always near Sun. Deep combustion (Ast) reduces power.
+                                    if (mercury.isCombust || mercury.dignity === 'Asta' || mercury.dignity === 'Mrit') {
+                                        cond.cancelReason = 'बुध अस्त या मृत है। योग का फल आंशिक रह गया है।';
+                                        cond.powerMultiplier = 0.5; // Reduces score to half instead of outright 0
+                                    } else if (mercury.dignity === 'Uccha' || mercury.dignity === 'Swarashi') {
+                                        cond.powerMultiplier = 2; // Super Budhaditya
+                                    }
+                                }
+                            }
+                            else if (subtype === 'vesi') {
+                                if (pCount2nd > 0 && pCount12th === 0) {
+                                    isMatch = true;
+                                    cond.powerMultiplier = pCount2nd; // More planets = More Power
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'vosi') {
+                                if (pCount12th > 0 && pCount2nd === 0) {
+                                    isMatch = true;
+                                    cond.powerMultiplier = pCount12th;
+                                    matchedConditions.push(cond);
+                                }
+                            }
+                            else if (subtype === 'ubhayachari') {
+                                if (pCount2nd > 0 && pCount12th > 0) {
+                                    isMatch = true;
+                                    cond.powerMultiplier = (pCount2nd + pCount12th);
+                                    matchedConditions.push(cond);
                                 }
                             }
                         }
@@ -841,7 +909,9 @@ function detectYogas(planetsData, ascendantDegree) {
                 }
                 if (cond.powerMultiplier && !cond.cancelReason) {
                     finalScore = finalScore * cond.powerMultiplier;
-                    if (!modifierNote) modifierNote = `Strong Lagnesh boosts power (${cond.powerMultiplier}x).`;
+                    if (!modifierNote) {
+                        modifierNote = cond.type === 'vipreet_rajyoga' ? `Strong Lagnesh boosts power (${cond.powerMultiplier}x).` : `Multi-planet amplification (${cond.powerMultiplier}x power).`;
+                    }
                 }
             });
 

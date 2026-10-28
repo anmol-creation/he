@@ -468,47 +468,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "budhaditya_yoga",
-    "name": "बुधादित्य राजयोग (Budhaditya Yoga)",
-    "type": "राजयोग",
-    "description": "सूर्य और बुध की युति (Conjunction)। यह इंसान को अत्यंत बुद्धिमान, ज्ञानी, संवाद-कुशल और सफल बनाता है।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Sun",
-          "Mercury"
-        ],
-        "in_houses": [
-          1,
-          2,
-          4,
-          5,
-          7,
-          9,
-          10,
-          11
-        ]
-      },
-      {
-        "type": "conjunction",
-        "planets": [
-          "Sun",
-          "Mercury"
-        ]
-      }
-    ],
-    "cancellations": [
-      {
-        "type": "combustion",
-        "planet": "Mercury",
-        "degree_limit": 14
-      }
-    ],
-    "score": 30,
-    "frequency_multiplier": 3
-  },
-  {
     "id": "general_neechbhanga_rajyoga",
     "name": "सामान्य नीचभंग राजयोग (General Neechbhanga Rajyoga)",
     "type": "राजयोग",
