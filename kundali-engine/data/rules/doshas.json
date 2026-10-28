@@ -21,22 +21,6 @@
     "frequency_multiplier": 2
   },
   {
-    "id": "vish_yoga_punarphoo",
-    "name": "विष योग / पुनर्फू दोष (The Silent Depression)",
-    "type": "दोष",
-    "description": "शनि की चंद्रमा पर दृष्टि या युति। भयंकर अकेलापन, उदासी और मन में डिटैचमेंट (वैराग्य) देता है।",
-    "combinations": [
-      {
-        "type": "conjunction_or_aspect",
-        "planet1": "Saturn",
-        "planet2": "Moon"
-      }
-    ],
-    "cancellations": [],
-    "score": -20,
-    "frequency_multiplier": 2
-  },
-  {
     "id": "shadashtaka_dosha_moon_mars",
     "name": "षडाष्टक मानसिक दोष (The Internal Friction)",
     "type": "दोष",
@@ -50,21 +34,6 @@
           6,
           8
         ]
-      }
-    ],
-    "cancellations": [],
-    "score": -20,
-    "frequency_multiplier": 2
-  },
-  {
-    "id": "pitra_dosha",
-    "name": "पितृ दोष (Pitra Dosha)",
-    "type": "दोष",
-    "description": "9वें भाव (भाग्य/पिता), सूर्य या गुरु पर राहु/केतु या शनि का गहरा पाप प्रभाव। यह पूर्वजों के ऋण और वंश वृद्धि में रुकावट को दर्शाता है।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Affliction to 9th house, 9th lord, Sun, or Jupiter by Rahu/Ketu/Saturn."
       }
     ],
     "cancellations": [],

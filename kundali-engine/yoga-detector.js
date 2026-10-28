@@ -715,6 +715,100 @@ function detectYogas(planetsData, ascendantDegree) {
                             }
                         }
                     }
+                    else if (cond.type === 'arishta_dosha') {
+                        let subtype = cond.subtype;
+
+                        let mo = pMap['Moon'];
+                        let sa = pMap['Saturn'];
+                        let su = pMap['Sun'];
+                        let ra = pMap['Rahu'];
+                        let ke = pMap['Ketu'];
+                        let ma = pMap['Mars'];
+                        let ju = pMap['Jupiter'];
+
+                        if (subtype === 'vish') {
+                            if (mo && sa) {
+                                let isConjunct = (mo.house === sa.house);
+                                let isAspecting = (mo.aspects && mo.aspects.includes(sa.house)) || (sa.aspects && sa.aspects.includes(mo.house));
+
+                                if (isConjunct || isAspecting) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond };
+
+                                    // Vish Dosha Bhanga: Jupiter aspecting the Moon cancels the poison.
+                                    if (ju && ((ju.house === mo.house) || (ju.aspects && ju.aspects.includes(mo.house)))) {
+                                        matchedCond.cancelReason = 'विष दोष भंग: गुरु (Jupiter) की अमृतमयी दृष्टि ने चंद्रमा को बचा लिया है। डिप्रेशन की जगह गहरी सोच विकसित होगी।';
+                                    } else {
+                                        if (isConjunct && isAspecting) matchedCond.powerMultiplier = 2; // Very tight connection
+                                    }
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                        else if (subtype === 'pitra') {
+                            let lord9 = pMap[RASHI_LORDS[(ascendantSign + 8) % 12]]; // 9th lord
+                            let hits = 0;
+
+                            // Check Sun affliction
+                            if (su) {
+                                if (ra && su.house === ra.house) hits++;
+                                if (ke && su.house === ke.house) hits++;
+                                if (sa && (su.house === sa.house || (sa.aspects && sa.aspects.includes(su.house)))) hits++;
+                            }
+
+                            // Check 9th Lord/House affliction
+                            if (lord9) {
+                                if (ra && lord9.house === ra.house) hits++;
+                                if (ke && lord9.house === ke.house) hits++;
+                                if (sa && (lord9.house === sa.house || (sa.aspects && sa.aspects.includes(lord9.house)))) hits++;
+                            }
+
+                            // Check Rahu/Ketu/Saturn in 9th house itself
+                            let house9planets = 0;
+                            ['Rahu', 'Ketu', 'Saturn'].forEach(pn => {
+                                if (pMap[pn] && pMap[pn].house === 9) house9planets++;
+                            });
+                            hits += house9planets;
+
+                            if (hits > 0) {
+                                isMatch = true;
+                                let matchedCond = { ...cond, powerMultiplier: hits };
+
+                                // Pitra Dosha Bhanga: If Jupiter is strongly aspecting the Sun AND the 9th house, the curse is lifted through Dharmic deeds.
+                                if (ju && ju.aspects && ju.aspects.includes(su.house) && ju.aspects.includes(9)) {
+                                    matchedCond.cancelReason = 'पितृ दोष भंग: गुरु की कृपा से पूर्वजों का श्राप कट गया है, धार्मिक कार्यों से विशेष लाभ होगा।';
+                                }
+
+                                matchedConditions.push(matchedCond);
+                            }
+                        }
+                        else if (subtype === 'balarishta') {
+                            if (mo && [6, 8, 12].includes(mo.house)) {
+                                let hits = 0;
+                                let malefics = [sa, ra, ke, ma, su];
+                                malefics.forEach(mal => {
+                                    if (mal) {
+                                        if (mal.house === mo.house) hits++;
+                                        if (mal.aspects && mal.aspects.includes(mo.house)) hits++;
+                                    }
+                                });
+
+                                if (hits > 0) {
+                                    isMatch = true;
+                                    let matchedCond = { ...cond, powerMultiplier: hits };
+
+                                    // Balarishta Bhanga: Jupiter aspecting the Moon cancels infantile mortality.
+                                    if (ju && ((ju.house === mo.house) || (ju.aspects && ju.aspects.includes(mo.house)))) {
+                                        matchedCond.cancelReason = 'बालारिष्ट भंग: गुरु की दृष्टि से शिशु के जीवन पर आया संकट टल गया है।';
+                                    } else if (mo.dignity === 'Uccha' || mo.dignity === 'Swarashi') {
+                                        matchedCond.cancelReason = 'बालारिष्ट भंग: चंद्रमा स्वयं अपनी उच्च/स्वराशि में अत्यंत बलवान है, अतः यह दोष असरदार नहीं है।';
+                                    }
+
+                                    matchedConditions.push(matchedCond);
+                                }
+                            }
+                        }
+                    }
                     else if (cond.type === 'daridra_yoga') {
                         let subtype = cond.subtype;
 
@@ -1449,6 +1543,7 @@ function detectYogas(planetsData, ascendantDegree) {
                         else if (cond.type === 'daridra_yoga') modifierNote = `Lord is debilitated/combust (${cond.powerMultiplier}x severity).`;
                         else if (cond.type === 'sanyasa_yoga') modifierNote = `Massive planetary cluster (${cond.powerMultiplier + 3} planets involved).`;
                         else if (cond.type === 'special_yoga') modifierNote = `Exceptional planetary alignment (${cond.powerMultiplier}x power).`;
+                        else if (cond.type === 'arishta_dosha') modifierNote = `Multiple afflictions detected (${cond.powerMultiplier}x severity).`;
                         else modifierNote = `Multi-planet amplification (${cond.powerMultiplier}x power).`;
                     }
                 }
