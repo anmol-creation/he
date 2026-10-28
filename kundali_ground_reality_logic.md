@@ -69,3 +69,26 @@ Instead of adding +5 and -5, the engine uses strict combinations to declare the 
 *   **Status:** CHALLENGING (Ek brake aur ek accelerator).
 *   **Reason:** Guru (Optimism/Wisdom) aur Shani (Pessimism/Hard Reality) ka sath hona ek "Brahma-Shrap" ya "Conflict" hai. Shani Guru ko aaram se kaam nahi karne dega. Shani hamesha bolega ki "Bina proof aur mehnat ke koi result nahi dunga." Is wajah se career (10th house) me success bohot zyada mehnat aur delay ke baad aati hai.
 *   **Ultimate Result:** Yeh Yuti "Bura" nahi hai agar aap mehnat karne ko taiyar hain, kyunki Shani ka Neechbhanga is yuti ko ultimate solid success (Late 20s ke baad) me convert kar deta hai. Par early life me ye yuti definitely frustrate karti hai (Neutral to Challenging).
+
+## Deep Texts and Core Scriptural Authority
+The logic behind the "Brutal Reality" of the Kundali engine is deeply rooted in the foundational texts of Vedic Astrology, primarily filtering the vast scope of **Brihat Parashara Hora Shastra (BPHS)** through the strict, algorithmic lens of **Varahamihira's Brihat Jataka** and the master rules of **Mantreswara's Phaladeepika**.
+
+### The Principle of Ast/Combustion and Rajyoga
+The engine does not delete or ignore Rajyogas (like Neechbhanga) when the participating planets are Combust (Ast). Instead, it applies a *Multiplier* logic rooted in the texts:
+- **Base Power (31-Point Status):** Defines the "Intent" or "Capacity" of the planet (e.g., Exalted Mars in a Rajyoga has a base power of 100).
+- **Avastha Multiplier (Asta/Mrit):** Defines the "Delivery Mechanism." A Combust planet's external/material power drops to near zero, but its internal/spiritual significance remains.
+- **Scriptural Rule (Phaladeepika Ch. 4, Shloka 6 & Ch. 6, Shloka 30):** *"Yogeshu satswapi phalam na bhaven-naranam..."* Even if great Yogas exist, if the planets forming them are *Moodha* (Combust), defeated in war, or *Mrit* (Dead), they cannot deliver the material results of the Yoga. A person born in a royal family might become a pauper.
+- **Engine Logic:** The Yoga is recorded, but the output strictly states that while the *potential* (talent/intellect) exists, the *material manifestation* (wealth/power) is severely restricted or denied.
+
+### The Jupiter-Saturn Conjunction (Guru-Shani Yuti)
+While texts state that Saturn yields good results when associated with a Benefic, this interaction is a "One-Way Traffic" street.
+- **Saturn Benefits:** Saturn is refined and tamed by Jupiter, turning its harshness into strict justice, philosophy, and disciplined labor.
+- **Jupiter Suffers:** Jupiter's natural expansive, luck-giving nature is restricted by Saturn.
+- **Scriptural Rule (BPHS & Brihat Jataka Ch. 14, Shloka 4):** The pure texts state that this combination yields tradesmen, artisans (Shilpi), barbers, or cooks—indicating labor-intensive, grounded, and hard-earned success, rather than effortless royal luxury.
+
+### The Intersection of Neechbhanga Rajyoga and Vargottam in the 10th House
+When multiple powerful conditions intersect (e.g., Saturn with Neechbhanga Rajyoga and Jupiter Vargottam in the 10th House):
+- The basic "artisan/cook" result of the conjunction is **overridden (cancelled)** by the massive power of the Rajyoga and Vargottam status.
+- **Saturn (Neechbhanga in Kendra):** Promises a rise to a supreme leadership role (Chakravarti) after immense initial struggle.
+- **Jupiter (Vargottam in 10th):** Grants supreme wisdom, acting with the power of its own sign, elevating the career to advisory or judicial heights.
+- **Crucial Caveat:** This override *only* functions if both planets possess sufficient *Bala* (Power/Avastha). If either planet is Dead or Combust, the master rule of Phaladeepika triggers, stripping the Rajyoga of its material output.
