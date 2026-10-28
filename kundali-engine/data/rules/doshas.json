@@ -57,57 +57,6 @@
     "frequency_multiplier": 2
   },
   {
-    "id": "guru_chandal_dosha",
-    "name": "गुरु चांडाल दोष",
-    "type": "दोष",
-    "description": "लग्न में राहु। इंसान को बड़ा 'भ्रम' (Illusion) देता है और शॉर्टकट ढूंढने की आदत डालता है।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Jupiter",
-          "Rahu"
-        ]
-      },
-      {
-        "type": "mutual_aspect",
-        "planets": [
-          "Jupiter",
-          "Rahu"
-        ]
-      }
-    ],
-    "cancellations": [
-      {
-        "type": "benefic_aspect",
-        "planet": "Jupiter"
-      }
-    ],
-    "score": -50,
-    "frequency_multiplier": 5
-  },
-  {
-    "id": "kaal_sarp_dosha",
-    "name": "कालसर्प दोष (Kaal Sarp Dosha)",
-    "type": "दोष",
-    "description": "जब कुंडली के सभी 7 मुख्य ग्रह राहु और केतु की धुरी (Axis) के एक ही तरफ आ जाएं। यह अस्थिरता, संघर्ष और अचानक उतार-चढ़ाव देता है।",
-    "combinations": [
-      {
-        "type": "kaal_sarp_direct"
-      },
-      {
-        "type": "kaal_sarp_reverse"
-      }
-    ],
-    "cancellations": [
-      {
-        "type": "planet_outside_axis"
-      }
-    ],
-    "score": -50,
-    "frequency_multiplier": 5
-  },
-  {
     "id": "pitra_dosha",
     "name": "पितृ दोष (Pitra Dosha)",
     "type": "दोष",
@@ -116,42 +65,6 @@
       {
         "type": "complex",
         "description": "Affliction to 9th house, 9th lord, Sun, or Jupiter by Rahu/Ketu/Saturn."
-      }
-    ],
-    "cancellations": [],
-    "score": -20,
-    "frequency_multiplier": 2
-  },
-  {
-    "id": "angarak_dosha",
-    "name": "अंगारक दोष (Angarak Dosha)",
-    "type": "दोष",
-    "description": "मंगल और राहु की युति (Conjunction)। यह इंसान को क्रोधी, जल्दबाज और कभी-कभी हिंसक प्रवृत्तियों की तरफ ले जा सकता है।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Mars",
-          "Rahu"
-        ]
-      }
-    ],
-    "cancellations": [],
-    "score": -20,
-    "frequency_multiplier": 2
-  },
-  {
-    "id": "shrapit_dosha",
-    "name": "श्रापित दोष (Shrapit Dosha)",
-    "type": "दोष",
-    "description": "शनि और राहु की युति। इसे पिछले जन्म का 'श्राप' माना जाता है, जिससे कुंडली के अच्छे राजयोग भी अपना पूरा फल नहीं दे पाते।",
-    "combinations": [
-      {
-        "type": "conjunction",
-        "planets": [
-          "Saturn",
-          "Rahu"
-        ]
       }
     ],
     "cancellations": [],
