@@ -233,6 +233,14 @@ const quickSavePresets = {
 document.getElementById('quickSave').addEventListener('change', (e) => {
     const val = e.target.value;
     if (quickSavePresets[val]) {
+        const dobInput = document.getElementById('dob');
+        // HTML5 date input doesn't support negative years (BCE), so we temporarily switch to text for avatars
+        if (quickSavePresets[val].dob.startsWith('-')) {
+            dobInput.type = 'text';
+        } else {
+            dobInput.type = 'date';
+        }
+
         document.getElementById('name').value = quickSavePresets[val].name;
         document.getElementById('dob').value = quickSavePresets[val].dob;
         document.getElementById('time').value = quickSavePresets[val].time;
@@ -245,6 +253,25 @@ document.getElementById('quickSave').addEventListener('change', (e) => {
     }
 });
 
+// Restore date picker type if user clears the ancient text
+document.getElementById('dob').addEventListener('input', (e) => {
+    if (e.target.type === 'text' && !e.target.value.startsWith('-')) {
+        e.target.type = 'date';
+    }
+});
+
+// Edit Details Button Logic
+document.getElementById('editDetailsBtn').addEventListener('click', () => {
+    const formContainer = document.getElementById('formContainer');
+    const editContainer = document.getElementById('editDetailsContainer');
+
+    formContainer.style.maxHeight = '1000px';
+    formContainer.style.opacity = '1';
+    formContainer.style.marginBottom = '2rem';
+
+    editContainer.style.display = 'none';
+});
+
 document.getElementById('calculateBtn').addEventListener('click', async () => {
     const name = document.getElementById('name').value;
     const date = document.getElementById('dob').value;
@@ -253,7 +280,18 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
     const patra = document.getElementById('patra').value;
     const resultBox = document.getElementById('resultBox');
 
+    const formContainer = document.getElementById('formContainer');
+    const editContainer = document.getElementById('editDetailsContainer');
+
     const t = i18n[currentLang];
+
+    // Collapse form and show edit button on calculate
+    formContainer.style.maxHeight = '0';
+    formContainer.style.opacity = '0';
+    formContainer.style.marginBottom = '0';
+    setTimeout(() => {
+        editContainer.style.display = 'block';
+    }, 500);
 
     resultBox.style.display = 'block';
     resultBox.textContent = t.fetchingCoords;

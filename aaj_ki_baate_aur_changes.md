@@ -76,3 +76,13 @@ Aapke nirdesh ke anusar, life ko macro-categories mein divide karke unki 12 bhav
 3. **Frontend UI:** `app.js` aur `index.html` me naye changes kiye gaye hain taaki user ko "8 Master Life Categories" ka ek tabbed navigation mile. Jaise hi user "Rishte" tab par click karta hai, use sirf Rishto se jude bhav (houses), unke specific topics, un gharon me baithe grah (occupants) aur un gharon ke malik (lords) ekdum saaf aur direct format mein dikhayi dete hain.
 
 Ye approach astrology ko "house-first" ki jagah sach much "life-first" banati hai!
+
+## Update: Premium UI and Form Collapsing
+
+Aapki latest request (date picker, autocomplete, and animation) ke base pe, front-end mein niche diye gaye UI/UX changes implement kiye gaye hain:
+
+1. **DOB Calendar Picker:** Date of Birth field ko standard text (`YYYY-MM-DD`) se hatakar HTML5 calendar picker (`<input type="date">`) me badal diya gaya hai taaki user aasani se date select kar sake.
+2. **City Autocomplete:** Location input par `datalist` add karke major Indian cities (Ayodhya, Varanasi, Mumbai etc.) ka dropdown / type-ahead filter diya gaya hai.
+3. **Form Collapsing & 'Edit Details':** Jaise hi user 'Calculate' button press karta hai, pura input form animation ke saath hide (collapse) ho jata hai taaki results par focus rahe. Form ki jagah ek **'Edit Details'** (विवरण संपादित करें) button aa jata hai jise click karne par form wapis smooth animation ke saath reveal ho jata hai.
+
+Yeh sabhi changes `index.html` aur `app.js` me bina backend touch kiye implement ho gaye hain.
