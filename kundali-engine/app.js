@@ -755,17 +755,46 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         yogaList.innerHTML = ''; // Clear previous results
         bhaavPhalList.innerHTML = ''; // Clear previous results
 
+        // Helper for UI
+        window.toggleAccordion = function(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                element.classList.remove("open");
+            } else {
+                content.style.display = "block";
+                element.classList.add("open");
+            }
+        };
+
         // Render Chart Stats
         if (data.chartStats) {
-            document.getElementById('chartTierLabel').textContent = data.chartStats.tier;
-            document.getElementById('chartTierTitle').textContent = data.chartStats.tierTitle;
+            const isHindi = (currentLang === 'hi');
+            // Apply Diamond/Gold/Silver mapping for Tier
+            let tierDisplay = data.chartStats.tier;
+            let tierTitleDisplay = data.chartStats.tierTitle;
+
+            if (tierDisplay.includes("S-Tier")) {
+                tierDisplay = "💎 Diamond (S-Tier)";
+            } else if (tierDisplay.includes("A-Tier")) {
+                tierDisplay = "🥇 Gold (A-Tier)";
+            } else if (tierDisplay.includes("B-Tier")) {
+                tierDisplay = "🥈 Silver (B-Tier)";
+            } else if (tierDisplay.includes("Warning")) {
+                tierDisplay = "⚠️ Alert (Struggle)";
+            } else if (tierDisplay.includes("Karmic")) {
+                tierDisplay = "☯️ Karmic (Rollercoaster)";
+            }
+
+            document.getElementById('chartTierLabel').textContent = tierDisplay;
+            document.getElementById('chartTierTitle').textContent = tierTitleDisplay;
             document.getElementById('statRajyoga').textContent = data.chartStats.rajyogaScore;
             document.getElementById('statDosha').textContent = data.chartStats.doshaScore;
             document.getElementById('statRarity').textContent = data.chartStats.rarityScore;
 
             // Contextual Patra Reading
             let patraText = "";
-            const isHindi = (currentLang === 'hi');
             if (patra === 'student') {
                 patraText = isHindi ? "विद्यार्थी के रूप में, यह पोटेंशियल आपको अपनी शिक्षा और स्किल्स में निवेश करने की सलाह देता है।" : "As a student, this potential advises you to invest heavily in skills and education.";
             } else if (patra === 'struggling_hustler') {
@@ -785,10 +814,11 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         if (data.yogas && data.yogas.length > 0) {
             yogaContainer.style.display = 'block';
 
+            // Special Anchors Rendering (Karmic Axis & Vakri)
             const karmicYogas = data.yogas.filter(y => y.type === 'Karmic Axis');
 
             if (karmicYogas.length > 0) {
-                const karmicYoga = karmicYogas[0]; // Usually just one
+                const karmicYoga = karmicYogas[0];
                 const karmicHTML = `
                     <div style="background: rgba(139, 0, 0, 0.1); border: 1px solid #dc2626; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
                         <div style="display: flex; align-items: center; margin-bottom: 1rem;">
@@ -802,7 +832,6 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 yogaList.innerHTML += karmicHTML;
             }
 
-            // Add Anchor 4: Vakri Grahas (Retrograde)
             const vakriPlanets = data.planets ? data.planets.filter(p => p.isRetrograde && !p.name.includes("Rahu") && !p.name.includes("Ketu")) : [];
             if (vakriPlanets.length > 0) {
                 let vakriStr = vakriPlanets.map(p => {
@@ -824,78 +853,84 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 yogaList.innerHTML += vakriHTML;
             }
 
+            // Standard Yogas Categorization and Rendering
             const standardYogas = data.yogas.filter(y => y.type !== 'Karmic Axis');
 
+            // Group by Category (type)
+            const categories = {};
             standardYogas.forEach(yoga => {
-                const isDosha = yoga.type.toLowerCase().includes('dosha');
-                const cardClass = isDosha ? 'yoga-card dosha' : 'yoga-card';
-                // Pick an icon based on type (just a simple heuristic)
+                const cat = yoga.type || (isHindi ? "अन्य" : "Other");
+                if (!categories[cat]) categories[cat] = [];
+                categories[cat].push(yoga);
+            });
 
-                let iconClass = 'fa-regular fa-star'; // Default Common
+            // Generate Accordion HTML for each Category
+            for (const [categoryName, items] of Object.entries(categories)) {
+                let categoryHTML = `
+                    <div class="category-section">
+                        <div class="category-header" onclick="window.toggleAccordion(this)">
+                            <h3>${categoryName} <span class="category-count">${items.length}</span></h3>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-content">
+                `;
 
-                // Detailed Rate Card Logic
-                if (isDosha) {
-                    if (yoga.name.includes('चांडाल') || yoga.name.includes('काल सर्प') || yoga.name.includes('गंभीर')) {
-                        iconClass = 'fa-solid fa-skull'; // Severe/Karmic
-                    } else {
-                        iconClass = 'fa-solid fa-triangle-exclamation'; // Warning
+                items.forEach(yoga => {
+                    let badgeHTML = "";
+                    let powerText = yoga.name.match(/(\d+x Power)/);
+                    if (powerText) {
+                        badgeHTML = `<span style="background-color: var(--vault-accent); color: #000; font-size: 0.75rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: bold; margin-left: 0.5rem;">${powerText[1]}</span>`;
                     }
-                } else {
-                    if (yoga.name.includes('महापुरुष') || yoga.name.includes('Legendary') || yoga.name.includes('महा')) {
-                        iconClass = 'fa-solid fa-crown'; // Legendary
-                    } else if (yoga.name.includes('राजयोग') || yoga.name.includes('Rare')) {
-                        iconClass = 'fa-solid fa-star'; // Rare
+
+                    const labelsHTML = yoga.labels && yoga.labels.length > 0
+                        ? yoga.labels.map(l => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 0.1rem 0.5rem; border-radius: 4px; font-size:0.7rem; color: #ccc;">${l}</span>`).join('')
+                        : '';
+
+                    let modifierHTML = "";
+                    let titleStyle = "";
+
+                    if (yoga.modifier_note && !yoga.isCancelled) {
+                        modifierHTML = `
+                            <div style="margin-top: 0.8rem; padding: 0.8rem; background: rgba(16, 185, 129, 0.1); border: 1px dashed #10b981; border-radius: 4px;">
+                                <div style="color: #10b981; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.2rem; text-transform: uppercase;"><i class="fa-solid fa-bolt" style="margin-right:0.3rem;"></i>Amplifier Active</div>
+                                <div style="color: #cbd5e1; font-size: 0.9rem; font-style: italic;">${yoga.modifier_note}</div>
+                            </div>
+                        `;
+                    } else if (yoga.isCancelled) {
+                        titleStyle = "text-decoration: line-through; color: #94a3b8;";
+                        modifierHTML = `
+                            <div style="margin-top: 0.8rem; padding: 0.8rem; background: rgba(245, 158, 11, 0.1); border: 1px dashed #f59e0b; border-radius: 4px;">
+                                <div style="color: #f59e0b; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.2rem; text-transform: uppercase;"><i class="fa-solid fa-ban" style="margin-right:0.3rem;"></i>Conditions Apply (Cancelled)</div>
+                                <div style="color: #cbd5e1; font-size: 0.9rem; font-style: italic;">${yoga.modifier_note}</div>
+                            </div>
+                        `;
                     }
-                }
 
-                // Add the 2x/3x Power badge if present
-                let badgeHTML = "";
-                if (yoga.name.includes('Power)')) {
-                    const match = yoga.name.match(/(\d+x Power)/);
-                    if (match) {
-                        badgeHTML = ` <span class="yoga-badge" style="background-color: var(--vault-accent); color: #000; font-weight: bold;">${match[1]}</span>`;
-                    }
-                }
-
-                let modifierHTML = "";
-                let cardStyle = "";
-                let titleStyle = "";
-
-                if (yoga.isCancelled) {
-                    cardStyle = "border-left-color: #f59e0b; opacity: 0.8;";
-                    titleStyle = "text-decoration: line-through; color: #94a3b8;";
-                    modifierHTML = `
-                        <div style="margin-top: 0.8rem; padding: 0.8rem; background: rgba(245, 158, 11, 0.1); border: 1px dashed #f59e0b; border-radius: 4px;">
-                            <div style="color: #f59e0b; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.2rem; text-transform: uppercase;"><i class="fa-solid fa-ban" style="margin-right:0.3rem;"></i>Conditions Apply (Cancelled)</div>
-                            <div style="color: #cbd5e1; font-size: 0.9rem; font-style: italic;">${yoga.modifier_note}</div>
+                    // Level 2 Accordion Item
+                    categoryHTML += `
+                        <div class="yoga-item">
+                            <div class="yoga-header" onclick="window.toggleAccordion(this)">
+                                <div class="yoga-header-title" style="${titleStyle}">
+                                    <strong>${yoga.name.replace(/ \(\d+x Power\)/, '')}</strong>
+                                    ${badgeHTML}
+                                    ${labelsHTML !== '' ? `<div style="display:flex; gap:0.3rem; margin-left:0.5rem; flex-wrap: wrap;">${labelsHTML}</div>` : ''}
+                                </div>
+                                <i class="fa-solid fa-chevron-down toggle-icon" style="font-size: 0.8rem;"></i>
+                            </div>
+                            <div class="yoga-details">
+                                <p style="margin: 0 0 0.5rem 0; color: #ddd; line-height: 1.5; font-size: 0.95rem;">${yoga.description}</p>
+                                ${modifierHTML}
+                            </div>
                         </div>
                     `;
-                } else if (yoga.type === 'Warning') {
-                    cardStyle = "border-left-color: #ef4444; background: rgba(239, 68, 68, 0.1);";
-                    iconClass = "fa-solid fa-radiation";
-                }
+                });
 
-                const cardHTML = `
-                    <div class="${cardClass}" style="${cardStyle}">
-                        <div class="yoga-icon"><i class="${iconClass}"></i></div>
-                        <div class="yoga-content" style="width: 100%;">
-                            <h3 class="yoga-title" style="${titleStyle}; display:flex; flex-direction:column; gap:0.5rem; align-items:flex-start;">
-                                <div>
-                                    ${yoga.name}
-                                    ${badgeHTML}
-                                </div>
-                                ${yoga.labels && yoga.labels.length > 0 ?
-                                    '<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.2rem;">' +
-                                    yoga.labels.map(l => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 0.1rem 0.5rem; border-radius: 4px; font-size:0.75rem; color: #fff;">${l}</span>`).join('') +
-                                    '</div>' : ''}
-                            </h3>
-                            <p class="yoga-desc">${yoga.description}</p>
-                            ${modifierHTML}
+                categoryHTML += `
                         </div>
                     </div>
                 `;
-                yogaList.innerHTML += cardHTML;
-            });
+                yogaList.innerHTML += categoryHTML;
+            }
         } else if (data.yogas && data.yogas.length === 0) {
             yogaContainer.style.display = 'block';
             yogaList.innerHTML = `
