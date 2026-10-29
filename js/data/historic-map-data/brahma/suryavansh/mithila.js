@@ -133,7 +133,9 @@ export const mithilaData = [
         subtitle: 'मरु पुत्र',
         parent: 'maru',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के राजा और मरु के पुत्र। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'kirtiratha',
@@ -141,7 +143,9 @@ export const mithilaData = [
         subtitle: 'प्रतीन्धक पुत्र',
         parent: 'pratindhaka',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'devamidha',
@@ -149,7 +153,9 @@ export const mithilaData = [
         subtitle: 'कीर्तिरथ पुत्र',
         parent: 'kirtiratha',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'vibudha',
@@ -157,7 +163,9 @@ export const mithilaData = [
         subtitle: 'देवमीढ पुत्र',
         parent: 'devamidha',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'mahidhrak',
@@ -165,7 +173,9 @@ export const mithilaData = [
         subtitle: 'विबुध पुत्र',
         parent: 'vibudha',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'kirtirata',
@@ -173,7 +183,9 @@ export const mithilaData = [
         subtitle: 'महिध्रक पुत्र',
         parent: 'mahidhrak',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'maharoma',
@@ -181,7 +193,9 @@ export const mithilaData = [
         subtitle: 'कीर्तिरात पुत्र',
         parent: 'kirtirata',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'svarnaroma',
@@ -189,7 +203,9 @@ export const mithilaData = [
         subtitle: 'महारोमा पुत्र',
         parent: 'maharoma',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। श्रीमद्भागवत पुराण के अनुसार, इन्होने निमि और मिथि की महान जनक-परम्परा और ज्ञान-योग को आगे बढ़ाया।'
     },
     {
         id: 'hrasvaroma',
@@ -197,7 +213,9 @@ export const mithilaData = [
         subtitle: 'स्वर्णरोमा पुत्र',
         parent: 'svarnaroma',
         yug: 'treta',
-        clusterName: 'मिथिला राजवंश'
+        clusterName: 'मिथिला राजवंश',
+        gender: 'male',
+        parichay: 'विदेह (मिथिला) राजवंश के प्रतापी एवं अध्यात्मनिष्ठ राजा। ये महान सीरध्वज जनक (सीता जी के पिता) और कुशध्वज के पिता थे। इन्होने जनक-परम्परा को अत्यंत सुदृढ़ किया।'
     },
     {
         id: 'seeradhwaja_janak',
