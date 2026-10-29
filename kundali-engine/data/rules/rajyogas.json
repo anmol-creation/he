@@ -213,26 +213,6 @@
     "frequency_multiplier": 5
   },
   {
-    "id": "shakti_shani_neechbhanga",
-    "name": "शक्तिशाली शनि नीचभंग राजयोग",
-    "type": "राजयोग",
-    "description": "10वें भाव में नीच शनि को 7वें भाव में उच्च के मंगल द्वारा सीधी दृष्टि से सपोर्ट मिलना—संघर्ष के बाद सत्ता।",
-    "combinations": [
-      {
-        "type": "complex_neechbhanga",
-        "planet_neech": "Saturn",
-        "neech_house": 10,
-        "neech_sign": 0,
-        "aspect_by": "Mars",
-        "aspect_house": 7,
-        "aspect_sign": 9
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
     "id": "maha_parivartan_rajyoga",
     "name": "महा-परिवर्तन राजयोग (मंगल-शनि)",
     "type": "राजयोग",
@@ -345,21 +325,6 @@
     "frequency_multiplier": 3
   },
   {
-    "id": "shukra_neechbhanga",
-    "name": "शुक्र का नीचभंग राजयोग",
-    "type": "राजयोग",
-    "description": "नवमांश और गोचर में कन्या राशि के प्रभाव का भंग होना—जीवन के उत्तरार्ध में अथाह लग्जरी।",
-    "combinations": [
-      {
-        "type": "complex",
-        "description": "Neechbhanga in D9/Transit for Venus."
-      }
-    ],
-    "cancellations": [],
-    "score": 40,
-    "frequency_multiplier": 4
-  },
-  {
     "id": "veshi_yoga_mangal",
     "name": "वेशि योग (उच्च मंगल जनित)",
     "type": "राजयोग",
@@ -410,7 +375,7 @@
   },
   {
     "id": "general_neechbhanga_rajyoga",
-    "name": "सामान्य नीचभंग राजयोग (General Neechbhanga Rajyoga)",
+    "name": "नीचभंग राजयोग (Neechbhanga Rajyoga)",
     "type": "राजयोग",
     "description": "जब कोई नीच का ग्रह अपने उच्चनाथ या स्वनाथ के साथ बैठे या उससे दृष्ट हो। यह जीवन में भारी संघर्ष के बाद बहुत बड़ी सफलता देता है।",
     "combinations": [

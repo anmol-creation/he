@@ -876,20 +876,28 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 `;
 
                 items.forEach(yoga => {
-                    let badgeHTML = "";
-                    let powerText = yoga.name.match(/(\d+x Power)/);
-                    if (powerText) {
-                        badgeHTML = `<span style="background-color: var(--vault-accent); color: #000; font-size: 0.75rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: bold; margin-left: 0.5rem;">${powerText[1]}</span>`;
-                    }
+                    // Extract icons/emojis for the header line
+                    let headerIcons = [];
+
+                    // Remove text-based badges completely
+                    // let powerText = yoga.name.match(/(\d+x Power)/);
 
                     const labelsHTML = yoga.labels && yoga.labels.length > 0
-                        ? yoga.labels.map(l => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 0.1rem 0.5rem; border-radius: 4px; font-size:0.7rem; color: #ccc;">${l}</span>`).join('')
+                        ? yoga.labels.map(l => {
+                            // Extract just the emoji/first character to show on header
+                            const iconMatch = l.match(/^([\uD800-\uDBFF][\uDC00-\uDFFF]|\S)/);
+                            if (iconMatch) {
+                                headerIcons.push(iconMatch[1]);
+                            }
+                            return `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 0.1rem 0.5rem; border-radius: 4px; font-size:0.7rem; color: #ccc;">${l}</span>`;
+                        }).join('')
                         : '';
 
                     let modifierHTML = "";
                     let titleStyle = "";
 
                     if (yoga.modifier_note && !yoga.isCancelled) {
+                        headerIcons.push(`<i class="fa-solid fa-bolt" style="color: #10b981; font-size: 0.9rem;"></i>`);
                         modifierHTML = `
                             <div style="margin-top: 0.8rem; padding: 0.8rem; background: rgba(16, 185, 129, 0.1); border: 1px dashed #10b981; border-radius: 4px;">
                                 <div style="color: #10b981; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.2rem; text-transform: uppercase;"><i class="fa-solid fa-bolt" style="margin-right:0.3rem;"></i>Amplifier Active</div>
@@ -897,6 +905,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                             </div>
                         `;
                     } else if (yoga.isCancelled) {
+                        headerIcons.push(`<i class="fa-solid fa-ban" style="color: #f59e0b; font-size: 0.9rem;"></i>`);
                         titleStyle = "text-decoration: line-through; color: #94a3b8;";
                         modifierHTML = `
                             <div style="margin-top: 0.8rem; padding: 0.8rem; background: rgba(245, 158, 11, 0.1); border: 1px dashed #f59e0b; border-radius: 4px;">
@@ -912,13 +921,15 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                             <div class="yoga-header" onclick="window.toggleAccordion(this)">
                                 <div class="yoga-header-title" style="${titleStyle}">
                                     <strong>${yoga.name.replace(/ \(\d+x Power\)/, '')}</strong>
-                                    ${badgeHTML}
-                                    ${labelsHTML !== '' ? `<div style="display:flex; gap:0.3rem; margin-left:0.5rem; flex-wrap: wrap;">${labelsHTML}</div>` : ''}
                                 </div>
-                                <i class="fa-solid fa-chevron-down toggle-icon" style="font-size: 0.8rem;"></i>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    ${headerIcons.length > 0 ? `<div style="display:flex; gap:0.4rem; margin-right: 0.5rem; align-items: center;">${headerIcons.join('')}</div>` : ''}
+                                    <i class="fa-solid fa-chevron-down toggle-icon" style="font-size: 0.8rem;"></i>
+                                </div>
                             </div>
                             <div class="yoga-details">
                                 <p style="margin: 0 0 0.5rem 0; color: #ddd; line-height: 1.5; font-size: 0.95rem;">${yoga.description}</p>
+                                ${labelsHTML !== '' ? `<div style="display:flex; gap:0.3rem; margin-bottom:0.5rem; flex-wrap: wrap;">${labelsHTML}</div>` : ''}
                                 ${modifierHTML}
                             </div>
                         </div>
