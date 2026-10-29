@@ -10,6 +10,25 @@ function renderGroundReality(planets) {
         let intentColor = p.functionalNature && p.functionalNature.includes('Benefic') ? '#27ae60' : (p.functionalNature && p.functionalNature.includes('Malefic') ? '#c0392b' : 'var(--text-color)');
 
         let intentText = p.functionalNature || '';
+
+        // Add Lordship Badges
+        if (p.lordships && p.lordships.length > 0) {
+            let badgesHtml = p.lordships.map(lord => {
+                let icon = '👑';
+                if (lord === 'Dhanesh' || lord === 'Labhesh') icon = '💰';
+                if (lord === 'Bhagyesh') icon = '🍀';
+                if (lord === 'Karmesh') icon = '⚔️';
+                if (lord === 'Rogesh') icon = '🛡️';
+                if (lord === 'Ashtamesh' || lord === 'Vyayesh') icon = '⚠️';
+                if (lord === 'Sukhesh') icon = '🏠';
+                if (lord === 'Panchamesh') icon = '🧠';
+                if (lord === 'Lagnesh') icon = '⭐';
+                if (lord === 'Parakramesh') icon = '🔥';
+                if (lord === 'Saptamesh') icon = '🤝';
+                return `<span style="display:inline-block; margin-right:4px; margin-bottom:4px; padding:2px 6px; background:rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 3px; font-size: 0.75rem; color: #d4af37;">${icon} ${lord}</span>`;
+            }).join('');
+            intentText = `<div style="margin-bottom:6px;">${badgesHtml}</div>` + intentText;
+        }
         if (p.isDeepExalted) intentText += ' <br><small style="color: gold;">(Param Uccha)</small>';
         if (p.isDeepDebilitated) intentText += ' <br><small style="color: red;">(Param Neecha)</small>';
 

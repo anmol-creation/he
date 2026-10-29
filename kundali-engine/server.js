@@ -565,6 +565,25 @@ app.post('/api/calculate', (req, res) => {
         const lagneshKey = signLordsMap[ascendantSign];
         const lagneshData = results.find(p => p.name.includes(lagneshKey));
 
+        // --- Calculate Lordships for all 12 Houses ---
+        const lordshipTitles = {
+            1: 'Lagnesh', 2: 'Dhanesh', 3: 'Parakramesh', 4: 'Sukhesh',
+            5: 'Panchamesh', 6: 'Rogesh', 7: 'Saptamesh', 8: 'Ashtamesh',
+            9: 'Bhagyesh', 10: 'Karmesh', 11: 'Labhesh', 12: 'Vyayesh'
+        };
+
+        // Initialize lordships array for all planets
+        results.forEach(p => p.lordships = []);
+
+        for (let h = 1; h <= 12; h++) {
+            let hSign = (ascendantSign + h - 1) % 12;
+            let lordName = signLordsMap[hSign];
+            let lordPlanet = results.find(p => p.name.includes(lordName));
+            if (lordPlanet) {
+                lordPlanet.lordships.push(lordshipTitles[h]);
+            }
+        }
+
         // Evaluate Prime Timeline (Ages 25-50)
         let primeTimeline = [];
         dashaTimeline.forEach(dasha => {

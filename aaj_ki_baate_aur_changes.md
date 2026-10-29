@@ -55,3 +55,14 @@ Aap jab kahenge, mai frontend ki file `app.js` me sirf ek chota sa thik se manua
 
 2. **Re-affirming Strict Rule:**
    Jaisa aapne saaf instructions diye the: Main sirf discussion aur verification kar raha hoon. Jab tak aap khud nahi kahenge (jaise "Pr bana do" ya "code likho"), main na to koi Pull Request banaunga, na hi source code ko commit karunga. Code bilkul ready rakha hua hai, bas aapki permission ka intezaar hai.
+
+## Update: 12 House Lordships Implementation (Post-Permission)
+
+1. **Aapki Permission:**
+   Aapne explicitly mujhe allow kiya ki "Thik h filhal isko add karo fir aage dekhte h", isliye main ab active development (code changes) proceed kar raha hoon.
+
+2. **Kya Add Kiya Gaya:**
+   - **Backend (`server.js`):** Saare 12 gharon (houses) ke lords ko identify karne ki logic add kar di gayi hai (Lagnesh, Dhanesh, Parakramesh, Sukhesh, Panchamesh, Rogesh, Saptamesh, Ashtamesh, Bhagyesh, Karmesh, Labhesh, Vyayesh). Ab har planet object ke andar ek `lordships` array aayega.
+   - **Frontend (`app.js`):** 'Brutal Reality' matrix table ke "Core Intent" column me ab ye sabhi lordships as a badge dikhenge. Inko represent karne ke liye special icons lagaye gaye hain (Jaise 💰 Dhanesh/Labhesh ke liye, 🍀 Bhagyesh ke liye, ⚔️ Karmesh ke liye).
+
+Ye feature kaafi tagda foundation bana dega aage jakar specific yogas aur deeper analysis karne ke liye.
