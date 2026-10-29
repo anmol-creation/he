@@ -690,6 +690,9 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 if(typeof renderGroundReality === 'function') {
                     renderGroundReality(data.planets);
                 }
+                if(typeof renderLifeAspects === 'function' && data.coreData && data.coreData.lifeAspectsMap) {
+                    renderLifeAspects(data.coreData.lifeAspectsMap, data.planets);
+                }
             }, 100);
 
             window.chartRenderer.setData({
@@ -888,3 +891,75 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
         resultBox.textContent = t.error(error.message);
     }
 });
+
+
+function renderLifeAspects(aspectsMap, planets) {
+    const tabsContainer = document.getElementById('life-aspects-tabs');
+    const contentContainer = document.getElementById('life-aspects-content');
+
+    if (!tabsContainer || !contentContainer) return;
+
+    tabsContainer.innerHTML = '';
+    contentContainer.innerHTML = '';
+
+    let currentCategoryId = aspectsMap[0].categoryId;
+
+    aspectsMap.forEach((category, index) => {
+        const btn = document.createElement('button');
+        btn.textContent = category.title;
+        btn.style.padding = '0.5rem 1rem';
+        btn.style.background = index === 0 ? 'var(--vault-accent)' : 'transparent';
+        btn.style.color = index === 0 ? '#000' : 'var(--vault-text)';
+        btn.style.border = '1px solid var(--vault-accent)';
+        btn.style.borderRadius = '4px';
+        btn.style.cursor = 'pointer';
+        btn.style.whiteSpace = 'nowrap';
+
+        btn.onclick = () => {
+            currentCategoryId = category.categoryId;
+            // Update button styles
+            Array.from(tabsContainer.children).forEach(c => {
+                c.style.background = 'transparent';
+                c.style.color = 'var(--vault-text)';
+            });
+            btn.style.background = 'var(--vault-accent)';
+            btn.style.color = '#000';
+
+            // Render content
+            renderCategoryContent(category, planets);
+        };
+        tabsContainer.appendChild(btn);
+    });
+
+    // Initial render
+    renderCategoryContent(aspectsMap[0], planets);
+
+    function renderCategoryContent(category, planetsData) {
+        let html = `<div style="grid-column: 1 / -1; margin-bottom: 1rem; color: var(--vault-text-muted); font-style: italic;">${category.description}</div>`;
+
+        category.houses.forEach(hData => {
+            const hNum = hData.house;
+            const planetsInHouse = planetsData.filter(p => p.house === hNum).map(p => p.name.split(' ')[0]).join(', ') || 'Empty';
+            const lordPlanet = planetsData.find(p => p.lordships && p.lordships.some(l => {
+                const titles = {1:'Lagnesh', 2:'Dhanesh', 3:'Parakramesh', 4:'Sukhesh', 5:'Panchamesh', 6:'Rogesh', 7:'Saptamesh', 8:'Ashtamesh', 9:'Bhagyesh', 10:'Karmesh', 11:'Labhesh', 12:'Vyayesh'};
+                return l === titles[hNum];
+            }));
+
+            let lordInfo = 'Unknown';
+            if (lordPlanet) {
+                lordInfo = `${lordPlanet.name.split(' ')[0]} (in H${lordPlanet.house})`;
+            }
+
+            html += `
+                <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid var(--vault-accent); padding: 1rem; border-radius: 4px;">
+                    <div style="font-weight: bold; margin-bottom: 0.5rem; color: #e2e8f0; font-size: 0.95rem;">${hData.topic}</div>
+                    <div style="font-size: 0.8rem; color: var(--vault-text-muted); margin-bottom: 0.2rem;"><i class="fa-solid fa-home" style="width: 15px;"></i> House ${hNum}</div>
+                    <div style="font-size: 0.8rem; color: var(--vault-text-muted); margin-bottom: 0.2rem;"><i class="fa-solid fa-crown" style="width: 15px;"></i> Lord: <span style="color: #cbd5e1;">${lordInfo}</span></div>
+                    <div style="font-size: 0.8rem; color: var(--vault-text-muted);"><i class="fa-solid fa-users" style="width: 15px;"></i> Occupants: <span style="color: #cbd5e1;">${planetsInHouse}</span></div>
+                </div>
+            `;
+        });
+
+        contentContainer.innerHTML = html;
+    }
+}

@@ -66,3 +66,13 @@ Aap jab kahenge, mai frontend ki file `app.js` me sirf ek chota sa thik se manua
    - **Frontend (`app.js`):** 'Brutal Reality' matrix table ke "Core Intent" column me ab ye sabhi lordships as a badge dikhenge. Inko represent karne ke liye special icons lagaye gaye hain (Jaise 💰 Dhanesh/Labhesh ke liye, 🍀 Bhagyesh ke liye, ⚔️ Karmesh ke liye).
 
 Ye feature kaafi tagda foundation bana dega aage jakar specific yogas aur deeper analysis karne ke liye.
+
+## Update: 8 Master Life Categories (House-wise Breakdown)
+
+Aapke nirdesh ke anusar, life ko macro-categories mein divide karke unki 12 bhavo ki mapping engine mein add kar di gayi hai:
+
+1. **New JSON Configuration:** `data/rules/life_aspects_map.json` banaya gaya hai jisme 8 Master Categories define ki gayi hain (Rishte, Mann, Swasthya, Dhan, Shiksha, Career, Yatra, Sankat). Har category ke andar specify kiya gaya hai ki kaunsa ghar (house) uss vishay (topic) ka kaunsa hissa darshata hai (e.g., Rishte -> 4th House = Maa, 7th House = Sathi).
+2. **Backend Engine:** `server.js` ab is map ko load karke `coreData` ke roop mein frontend ko bhejta hai.
+3. **Frontend UI:** `app.js` aur `index.html` me naye changes kiye gaye hain taaki user ko "8 Master Life Categories" ka ek tabbed navigation mile. Jaise hi user "Rishte" tab par click karta hai, use sirf Rishto se jude bhav (houses), unke specific topics, un gharon me baithe grah (occupants) aur un gharon ke malik (lords) ekdum saaf aur direct format mein dikhayi dete hain.
+
+Ye approach astrology ko "house-first" ki jagah sach much "life-first" banati hai!

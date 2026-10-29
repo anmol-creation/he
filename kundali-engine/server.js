@@ -14,9 +14,11 @@ const app = express();
 // Load Core DNA Data for Planetary Reality Module
 let planetsCore = {};
 let housesCore = {};
+let lifeAspectsMap = [];
 try {
     planetsCore = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'planets_core.json'), 'utf-8'));
     housesCore = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'houses_core.json'), 'utf-8'));
+    lifeAspectsMap = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'life_aspects_map.json'), 'utf-8'));
 } catch (err) {
     console.error("Warning: Could not load core DNA JSON files", err);
 }
@@ -949,7 +951,8 @@ app.post('/api/calculate', (req, res) => {
             primeTimeline: primeTimeline,
             coreData: {
                 planetsCore,
-                housesCore
+                housesCore,
+                lifeAspectsMap
             }
         });
     } catch (error) {
