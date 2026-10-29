@@ -255,37 +255,44 @@ function detectYogas(planetsData, ascendantDegree) {
                     }
 
                     if (hits > 0 || cancelReason) {
-                        // Generate Yoga
+                        // Since we removed specific neechbhangas, we can just push it directly
                         let finalScore = (rule.score || 40);
                         let finalLabels = [];
                         let isMoonOnly = (moonOnlyHits > 0 && !hasAscHit);
 
-                        // If everything is cancelled (hits == 0) OR if the hits were cancelled
-                        if (hits === 0 && cancelReason) {
-                            // Cancelled outright
-                            finalScore = 0;
-                        } else {
-                            // Apply multipliers
-                            finalScore = finalScore * hits;
+                            // If everything is cancelled (hits == 0) OR if the hits were cancelled
+                            if (hits === 0 && cancelReason) {
+                                // Cancelled outright
+                                finalScore = 0;
+                            } else {
+                                // Apply multipliers
+                                finalScore = finalScore * hits;
 
-                            if (isMoonOnly) {
-                                finalScore = finalScore * 0.7;
-                                finalLabels.push('🌙 चंद्र-आधारित');
+                                if (isMoonOnly) {
+                                    finalScore = finalScore * 0.7;
+                                    finalLabels.push('🌙 चंद्र-आधारित');
+                                }
                             }
-                        }
 
-                        detectedYogas.push({
-                            id: `${rule.id}_${neechName}`,
-                            name: `${rule.name} (${neechName})`,
-                            type: rule.type,
-                            description: hits === 0 ? `Neechbhanga failed: ${cancelReason}` : `Neechbhanga triggered with ${hits} conditions matched! Massive success after initial struggles.`,
-                            combinationsMatched: hits,
-                            score: finalScore,
-                            rarityScore: rule.rarityScore || 4,
-                            isCancelled: cancelReason !== null && hits === 0,
-                            modifier_note: (hits === 0) ? cancelReason : (isMoonOnly ? "Formed from Moon Kendra only (0.7x power)." : (hits > 1 ? `Multiple matches (${hits}x power).` : null)),
-                            labels: finalLabels
-                        });
+                            // Determine Rashi name for Hindi localization
+                            const RASHI_HINDI = ["मेष", "वृषभ", "मिथुन", "कर्क", "सिंह", "कन्या", "तुला", "वृश्चिक", "धनु", "मकर", "कुंभ", "मीन"];
+                            let rashiName = RASHI_HINDI[p.sign] || p.sign;
+                            let grahaNameHindi = neechName; // Fallback
+                            const GRAHA_HINDI = { 'Sun': 'सूर्य', 'Moon': 'चंद्र', 'Mars': 'मंगल', 'Mercury': 'बुध', 'Jupiter': 'गुरु', 'Venus': 'शुक्र', 'Saturn': 'शनि', 'Rahu': 'राहु', 'Ketu': 'केतु' };
+                            if (GRAHA_HINDI[neechName]) grahaNameHindi = GRAHA_HINDI[neechName];
+
+                            detectedYogas.push({
+                                id: `${rule.id}_${neechName}`,
+                                name: `${rule.name} (${grahaNameHindi} - ${rashiName})`,
+                                type: rule.type,
+                                description: hits === 0 ? `नीचभंग विफल: ${cancelReason}` : `${rashiName} राशि में बैठे नीच ${grahaNameHindi} का नीचभंग ${hits} स्थितियों द्वारा हुआ। ${rule.description}`,
+                                combinationsMatched: hits,
+                                score: finalScore,
+                                rarityScore: rule.rarityScore || 4,
+                                isCancelled: cancelReason !== null && hits === 0,
+                                modifier_note: (hits === 0) ? cancelReason : (isMoonOnly ? "Formed from Moon Kendra only (0.7x power)." : (hits > 1 ? `Multiple matches (${hits}x power).` : null)),
+                                labels: finalLabels
+                            });
                     }
                 }
             }
