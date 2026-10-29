@@ -14,9 +14,11 @@ const app = express();
 // Load Core DNA Data for Planetary Reality Module
 let planetsCore = {};
 let housesCore = {};
+let lifeAspectsMap = [];
 try {
     planetsCore = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'planets_core.json'), 'utf-8'));
     housesCore = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'houses_core.json'), 'utf-8'));
+    lifeAspectsMap = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rules', 'life_aspects_map.json'), 'utf-8'));
 } catch (err) {
     console.error("Warning: Could not load core DNA JSON files", err);
 }
@@ -565,6 +567,25 @@ app.post('/api/calculate', (req, res) => {
         const lagneshKey = signLordsMap[ascendantSign];
         const lagneshData = results.find(p => p.name.includes(lagneshKey));
 
+        // --- Calculate Lordships for all 12 Houses ---
+        const lordshipTitles = {
+            1: 'Lagnesh', 2: 'Dhanesh', 3: 'Parakramesh', 4: 'Sukhesh',
+            5: 'Panchamesh', 6: 'Rogesh', 7: 'Saptamesh', 8: 'Ashtamesh',
+            9: 'Bhagyesh', 10: 'Karmesh', 11: 'Labhesh', 12: 'Vyayesh'
+        };
+
+        // Initialize lordships array for all planets
+        results.forEach(p => p.lordships = []);
+
+        for (let h = 1; h <= 12; h++) {
+            let hSign = (ascendantSign + h - 1) % 12;
+            let lordName = signLordsMap[hSign];
+            let lordPlanet = results.find(p => p.name.includes(lordName));
+            if (lordPlanet) {
+                lordPlanet.lordships.push(lordshipTitles[h]);
+            }
+        }
+
         // Evaluate Prime Timeline (Ages 25-50)
         let primeTimeline = [];
         dashaTimeline.forEach(dasha => {
@@ -930,7 +951,8 @@ app.post('/api/calculate', (req, res) => {
             primeTimeline: primeTimeline,
             coreData: {
                 planetsCore,
-                housesCore
+                housesCore,
+                lifeAspectsMap
             }
         });
     } catch (error) {

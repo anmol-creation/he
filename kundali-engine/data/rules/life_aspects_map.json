@@ -1,0 +1,105 @@
+[
+  {
+    "categoryId": "relationships",
+    "title": "🤝 Rishte aur Log (Relationships & People)",
+    "description": "Aapke jeevan mein aane wale log aur unse aapka talluq.",
+    "houses": [
+      { "house": 2, "topic": "Parivar (Kutumb) aur Dada-Dadi" },
+      { "house": 3, "topic": "Chote Bhai-Behan, Padosi, Cousins" },
+      { "house": 4, "topic": "Mata (Mother)" },
+      { "house": 5, "topic": "Bacche (Children)" },
+      { "house": 6, "topic": "Dushman (Enemies), Mama (Maternal Uncle)" },
+      { "house": 7, "topic": "Jeevan-Sathi (Spouse), Business Partner" },
+      { "house": 8, "topic": "Sasural (In-laws)" },
+      { "house": 9, "topic": "Pita (Father - South Indian), Guru" },
+      { "house": 10, "topic": "Pita (Father - North Indian), Boss" },
+      { "house": 11, "topic": "Bade Bhai-Behan, Dost (Friends circle)" },
+      { "house": 12, "topic": "Gupt Shatru (Secret enemies)" }
+    ]
+  },
+  {
+    "categoryId": "mind_emotions",
+    "title": "🧠 Mann, Bhaavnaayein (Mind & Emotions)",
+    "description": "Aapki mansik sthiti, bhaavnaayein aur swabhav.",
+    "houses": [
+      { "house": 1, "topic": "Attitude, Ego, Self-confidence" },
+      { "house": 3, "topic": "Himmat (Courage), Dar (Fear)" },
+      { "house": 4, "topic": "Sukoon (Inner peace), Khushi" },
+      { "house": 5, "topic": "Pyaar (Romance), Intelligence (IQ)" },
+      { "house": 6, "topic": "Chinta (Anxiety), Competitive Spirit" },
+      { "house": 8, "topic": "Trauma, Deep fears, Depression" },
+      { "house": 12, "topic": "Akelapan (Loneliness), Vairagya, Neend (Sleep)" }
+    ]
+  },
+  {
+    "categoryId": "health_body",
+    "title": "🏥 Sharir aur Swasthya (Body & Health)",
+    "description": "Aapka swasthya, immunity aur body parts.",
+    "houses": [
+      { "house": 1, "topic": "Poora sharir, Immunity, Sar (Head)" },
+      { "house": 2, "topic": "Roti-Pani (Diet), Chehra, Gala" },
+      { "house": 6, "topic": "Bimariyaan (Daily/Routine illness), Intestines" },
+      { "house": 8, "topic": "Surgery, Chronic lambi bimari, Aayu (Longevity)" },
+      { "house": 12, "topic": "Hospitalization, Bed rest, Paer (Feet)" }
+    ]
+  },
+  {
+    "categoryId": "wealth_assets",
+    "title": "💰 Dhan, Sampatti aur Karza (Wealth & Assets)",
+    "description": "Paisa kahan se aayega, kahan jayega aur sampatti.",
+    "houses": [
+      { "house": 2, "topic": "Bank Balance (Savings), Liquid cash" },
+      { "house": 4, "topic": "Property (Real estate), Gadi (Vehicles)" },
+      { "house": 6, "topic": "Karza (Loans/Debt)" },
+      { "house": 8, "topic": "Achanak Paisa (Sudden Wealth, Lottery, Inheritance)" },
+      { "house": 11, "topic": "Profits, Gains, ROI" },
+      { "house": 12, "topic": "Kharcha (Vyaya), Losses" }
+    ]
+  },
+  {
+    "categoryId": "education_wisdom",
+    "title": "📚 Shiksha aur Gyan (Education & Wisdom)",
+    "description": "Aapki seekhne ki kshamta aur dharam-gyan.",
+    "houses": [
+      { "house": 2, "topic": "Basic Schooling, Sanskara" },
+      { "house": 4, "topic": "Degree / Graduation" },
+      { "house": 5, "topic": "Intellect (Buddhi), Memory, Scholarships" },
+      { "house": 8, "topic": "Occult, Research, Deep Science" },
+      { "house": 9, "topic": "Higher Studies (PhD), Dharma, Guru" }
+    ]
+  },
+  {
+    "categoryId": "career_status",
+    "title": "⚔️ Career, Karma aur Status (Profession)",
+    "description": "Aapka career path, mehnat aur samajik rutba.",
+    "houses": [
+      { "house": 3, "topic": "Hustle, Mehnat, Media/Sales" },
+      { "house": 6, "topic": "Daily Job, Service, Subordinates" },
+      { "house": 7, "topic": "Business, Trade, Public dealing" },
+      { "house": 10, "topic": "Profession, Status, Fame, Power" },
+      { "house": 11, "topic": "Ambitions, Target achievements, Promotions" }
+    ]
+  },
+  {
+    "categoryId": "travel_settlement",
+    "title": "✈️ Yatra aur Sthan Parivartan (Travel & Settlement)",
+    "description": "Aapki yatrayein, ghar aur videsh vas.",
+    "houses": [
+      { "house": 3, "topic": "Short Trips (Aas-paas ki yatra)" },
+      { "house": 4, "topic": "Hometown (Apni mitti/ghar)" },
+      { "house": 9, "topic": "Long Journeys, Tirth yatra" },
+      { "house": 12, "topic": "Foreign Settlement, Visa, Export-Import" }
+    ]
+  },
+  {
+    "categoryId": "spirituality_challenges",
+    "title": "🧘‍♂️ Sankat, Rahasya aur Moksha (Spirituality & Occult)",
+    "description": "Jeevan ki rukawatein aur aakhri sach.",
+    "houses": [
+      { "house": 6, "topic": "Bad Luck, Obstacles (Rukawatein)" },
+      { "house": 8, "topic": "Black Magic, Gupt Vidya, Sudden crisis" },
+      { "house": 9, "topic": "Dharam-Karam, Spiritual Gurus" },
+      { "house": 12, "topic": "Let-go, Vairagya, Moksha (Mukti)" }
+    ]
+  }
+]

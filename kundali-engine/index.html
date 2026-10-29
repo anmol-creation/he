@@ -325,46 +325,65 @@
         <h1 class="title" id="mainTitle">Kundali Engine</h1>
         <p class="subtitle" id="subTitle">स्विस एफेमेरिस (Swiss Ephemeris) का उपयोग कर उन्नत ज्योतिषीय गणना</p>
 
-        <div class="form-group" style="margin-bottom: 2rem;">
-            <label for="quickSave" id="quickSaveLabel">त्वरित कुंडलियां (Quick Saves)</label>
-            <select id="quickSave" style="width: 100%; padding: 0.8rem; background: var(--vault-surface); border: 1px solid var(--vault-border); color: var(--vault-accent); border-radius: 4px; font-family: 'Cinzel', serif;">
-                <option value="none">-- चुनें --</option>
-                <option value="ram">भगवान राम (Lord Ram)</option>
-                <option value="krishna">भगवान कृष्ण (Lord Krishna)</option>
-            </select>
+        <div id="editDetailsContainer" style="display: none; text-align: center; margin-bottom: 2rem; animation: slideUpFade 0.5s ease-out;">
+            <button id="editDetailsBtn" style="width: auto; padding: 0.8rem 2rem; background: transparent; border: 1px solid var(--vault-accent); color: var(--vault-accent); border-radius: 4px; cursor: pointer; font-family: 'Cinzel', serif;"><i class="fa-solid fa-pen"></i> विवरण संपादित करें (Edit Details)</button>
         </div>
 
-        <div class="form-group">
-            <label for="name" id="nameLabel">नाम</label>
-            <input type="text" id="name" placeholder="नाम दर्ज करें">
-        </div>
-
-        <div class="form-group" style="display: flex; gap: 1rem;">
-            <div style="flex: 1;">
-                <label for="dob" id="dobLabel">जन्म तिथि</label>
-                <input type="text" id="dob" value="1999-12-22" placeholder="YYYY-MM-DD (उदा. -5114-01-10)">
+        <div id="formContainer" style="transition: all 0.5s ease; overflow: hidden;">
+            <div class="form-group" style="margin-bottom: 2rem;">
+                <label for="quickSave" id="quickSaveLabel">त्वरित कुंडलियां (Quick Saves)</label>
+                <select id="quickSave" style="width: 100%; padding: 0.8rem; background: var(--vault-surface); border: 1px solid var(--vault-border); color: var(--vault-accent); border-radius: 4px; font-family: 'Cinzel', serif;">
+                    <option value="none">-- चुनें --</option>
+                    <option value="ram">भगवान राम (Lord Ram)</option>
+                    <option value="krishna">भगवान कृष्ण (Lord Krishna)</option>
+                </select>
             </div>
-            <div style="flex: 1;">
-                <label for="time" id="timeLabel">जन्म समय</label>
-                <input type="time" id="time" value="20:45">
+
+            <div class="form-group">
+                <label for="name" id="nameLabel">नाम</label>
+                <input type="text" id="name" placeholder="नाम दर्ज करें">
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="city" id="cityLabel">जन्म स्थान (शहर)</label>
-            <input type="text" id="city" value="Pilibhit, India" placeholder="उदा., अयोध्या, भारत">
-        </div>
+            <div class="form-group" style="display: flex; gap: 1rem;">
+                <div style="flex: 1;">
+                    <label for="dob" id="dobLabel">जन्म तिथि</label>
+                    <input type="date" id="dob" value="1999-12-22" placeholder="YYYY-MM-DD">
+                </div>
+                <div style="flex: 1;">
+                    <label for="time" id="timeLabel">जन्म समय</label>
+                    <input type="time" id="time" value="20:45">
+                </div>
+            </div>
 
-        <div class="form-group">
-            <label for="patra" id="patraLabel">पात्र (वर्तमान जीवन स्थिति / Identity)</label>
-            <select id="patra" style="width: 100%; padding: 0.8rem; background: var(--vault-surface); border: 1px solid var(--vault-border); color: var(--vault-text); border-radius: 4px; font-family: 'Cinzel', serif;">
-                <option value="student">विद्यार्थी / अभी सीख रहा हूँ (Student/Learner)</option>
-                <option value="struggling_hustler" selected>संघर्षरत / खुद का कुछ कर रहा हूँ (Struggling Hustler/Founder)</option>
-                <option value="job_employee">नौकरीपेशा / जॉब (9-to-5 Employee)</option>
-                <option value="established_business">स्थापित व्यापारी (Established Businessman)</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="city" id="cityLabel">जन्म स्थान (शहर)</label>
+                <input type="text" id="city" value="Pilibhit, India" placeholder="उदा., अयोध्या, भारत" list="citySuggestions">
+                <datalist id="citySuggestions">
+                    <option value="Ayodhya, India"></option>
+                    <option value="Mathura, India"></option>
+                    <option value="Varanasi, India"></option>
+                    <option value="New Delhi, India"></option>
+                    <option value="Mumbai, India"></option>
+                    <option value="Pilibhit, India"></option>
+                    <option value="Lucknow, India"></option>
+                    <option value="Bangalore, India"></option>
+                    <option value="Chennai, India"></option>
+                    <option value="Kolkata, India"></option>
+                </datalist>
+            </div>
 
+            <div class="form-group">
+                <label for="patra" id="patraLabel">पात्र (वर्तमान जीवन स्थिति / Identity)</label>
+                <select id="patra" style="width: 100%; padding: 0.8rem; background: var(--vault-surface); border: 1px solid var(--vault-border); color: var(--vault-text); border-radius: 4px; font-family: 'Cinzel', serif;">
+                    <option value="student">विद्यार्थी / अभी सीख रहा हूँ (Student/Learner)</option>
+                    <option value="struggling_hustler" selected>संघर्षरत / खुद का कुछ कर रहा हूँ (Struggling Hustler/Founder)</option>
+                    <option value="job_employee">नौकरीपेशा / जॉब (9-to-5 Employee)</option>
+                    <option value="established_business">स्थापित व्यापारी (Established Businessman)</option>
+                </select>
+            </div>
+
+            <button id="calculateBtn">कुण्डली डेटा जनरेट करें</button>
+        </div>
 
 
         <div id="chartSection" style="display: none; margin-top: 2rem; text-align: center;">
@@ -375,13 +394,17 @@
             <div id="kundaliSvgContainer" style="width: 100%; max-width: 400px; height: 400px; margin: 0 auto; background: var(--vault-surface); border: 1px solid var(--vault-border); border-radius: 8px;"></div>
         </div>
 
-        <button id="calculateBtn">कुण्डली डेटा जनरेट करें</button>
-
         <div style="text-align: center; margin-top: 2rem;">
             <a href="search.html" id="searchLink" style="color: var(--vault-accent); text-decoration: none; font-size: 0.9rem; border-bottom: 1px dotted var(--vault-accent);">ऐतिहासिक खगोलीय खोज पर जाएँ →</a>
         </div>
 
         <div id="resultBox" class="result-box"></div>
+
+        <div id="life-aspects-container" style="margin-top: 2rem; background: var(--vault-surface); border: 1px solid var(--vault-border); padding: 1.5rem; border-radius: 8px;">
+            <h3 style="color: var(--vault-accent); margin-bottom: 1rem; border-bottom: 1px solid var(--vault-border); padding-bottom: 0.5rem;"><i class="fa-solid fa-list"></i> 8 Master Life Categories</h3>
+            <div id="life-aspects-tabs" style="display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--vault-border);"></div>
+            <div id="life-aspects-content" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;"></div>
+        </div>
 
         <div id="ground-reality-container" style="margin-top: 2rem;"></div>
 
