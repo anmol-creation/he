@@ -57,6 +57,7 @@ function renderGroundReality(planets) {
 }
 
 import { KundaliChartRenderer } from './kundali-ui.js';
+import { DepartmentChartRenderer } from './department_chart.js';
 
 const i18n = {
     en: {
@@ -146,15 +147,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize chartRenderer globally
     window.chartRenderer = new KundaliChartRenderer('kundaliSvgContainer');
+    window.deptChartRenderer = new DepartmentChartRenderer('deptChartContainer');
+
     document.getElementById('btnNorthStyle').addEventListener('click', (e) => {
         window.chartRenderer.setStyle('north');
         e.target.classList.add('active');
         document.getElementById('btnSouthStyle').classList.remove('active');
+        document.getElementById('btnDeptStyle').classList.remove('active');
+        document.getElementById('kundaliSvgContainer').style.display = 'block';
+        document.getElementById('deptChartContainer').style.display = 'none';
     });
     document.getElementById('btnSouthStyle').addEventListener('click', (e) => {
         window.chartRenderer.setStyle('south');
         e.target.classList.add('active');
         document.getElementById('btnNorthStyle').classList.remove('active');
+        document.getElementById('btnDeptStyle').classList.remove('active');
+        document.getElementById('kundaliSvgContainer').style.display = 'block';
+        document.getElementById('deptChartContainer').style.display = 'none';
+    });
+    document.getElementById('btnDeptStyle').addEventListener('click', (e) => {
+        e.target.classList.add('active');
+        document.getElementById('btnNorthStyle').classList.remove('active');
+        document.getElementById('btnSouthStyle').classList.remove('active');
+        document.getElementById('kundaliSvgContainer').style.display = 'none';
+        document.getElementById('deptChartContainer').style.display = 'block';
     });
 
     // Initialize based on checkbox state
@@ -164,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lang = e.target.checked ? 'hi' : 'en';
         updateLanguage(lang);
         window.chartRenderer.setLanguage(lang);
+        if (window.deptChartRenderer) window.deptChartRenderer.setLanguage(lang);
     });
 
     function updateLanguage(lang) {
@@ -733,7 +750,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 }
             }, 100);
 
-            window.chartRenderer.setData({
+            const chartDataToPass = {
                 ascendantSign: Math.floor(data.ascendant / 30),
                 planets: data.planets.map(p => ({
                     name: p.name,
@@ -741,9 +758,13 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                     degree: p.degreeInSign,
                     isRetrograde: p.isRetrograde,
                     dignity: p.dignity,
-                    house: p.house
+                    house: p.house,
+                    lordships: p.lordships,
+                    coreData: p.coreData
                 }))
-            });
+            };
+            window.chartRenderer.setData(chartDataToPass);
+            console.log("CHART DATA:", chartDataToPass.planets); window.deptChartRenderer.updateData(chartDataToPass);
         }
 
         // Render Yogas and Doshas

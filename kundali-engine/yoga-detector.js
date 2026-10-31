@@ -301,7 +301,8 @@ function detectYogas(planetsData, ascendantDegree) {
 
         // Process Combinations (OR logic)
         if (rule.combinations && Array.isArray(rule.combinations)) {
-            for (const cond of rule.combinations) {
+            for (const originalCond of rule.combinations) {
+                let cond = JSON.parse(JSON.stringify(originalCond)); // Deep clone to avoid memory mutation
                 let isMatch = false;
                 try {
                     if (cond.type === 'ascendant_sign') {
@@ -465,8 +466,6 @@ function detectYogas(planetsData, ascendantDegree) {
                                 let mercury = pMap['Mercury'];
                                 if (mercury && mercury.house === sunHouse) {
                                     isMatch = true;
-                                    matchedConditions.push(cond);
-
                                     // Bhanga: Mercury is Combust (Ast)
                                     // Normally Mercury is always near Sun. Deep combustion (Ast) reduces power.
                                     if (mercury.isCombust || mercury.dignity === 'Asta' || mercury.dignity === 'Mrit') {
@@ -475,6 +474,7 @@ function detectYogas(planetsData, ascendantDegree) {
                                     } else if (mercury.dignity === 'Uccha' || mercury.dignity === 'Swarashi') {
                                         cond.powerMultiplier = 2; // Super Budhaditya
                                     }
+                                    matchedConditions.push(cond);
                                 }
                             }
                             else if (subtype === 'vesi') {
@@ -1139,7 +1139,6 @@ function detectYogas(planetsData, ascendantDegree) {
 
                         if (targetLord && cond.in_houses.includes(targetLord.house)) {
                             isMatch = true;
-                            matchedConditions.push(cond);
 
                             let bhangaReason = null;
                             let multiplier = 1;
@@ -1163,6 +1162,7 @@ function detectYogas(planetsData, ascendantDegree) {
                                     cond.powerMultiplier = 2;
                                 }
                             }
+                            matchedConditions.push(cond);
                         }
                     }
                     else if (cond.type === 'exact_parivartan') {
@@ -1177,12 +1177,12 @@ function detectYogas(planetsData, ascendantDegree) {
 
                         if (lordA && lordB && lordA.house === hB && lordB.house === hA) {
                             isMatch = true;
-                            matchedConditions.push(cond);
 
                             const isPowerless = (p) => p.isCombust || p.dignity === 'Asta' || p.dignity === 'Mrit';
                             if (isPowerless(lordA) || isPowerless(lordB)) {
                                 cond.cancelReason = `परिवर्तन करने वाला ग्रह (${isPowerless(lordA) ? lordA_Name : lordB_Name}) शक्तिहीन (अस्त/मृत) है।`;
                             }
+                            matchedConditions.push(cond);
                         }
                     }
                     else if (cond.type === 'single_planet') {
