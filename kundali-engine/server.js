@@ -957,6 +957,12 @@ app.post('/api/calculate', (req, res) => {
         });
     } catch (error) {
         res.status(500).json({ error: error.message });
+    } finally {
+        try {
+            swisseph.swe_close();
+        } catch (e) {
+            console.error("Error closing swisseph in /api/calculate:", e);
+        }
     }
 });
 
@@ -1033,6 +1039,12 @@ app.post('/api/search', (req, res) => {
         res.json({ results: matches });
     } catch (error) {
         res.status(500).json({ error: error.message });
+    } finally {
+        try {
+            swisseph.swe_close();
+        } catch (e) {
+            console.error("Error closing swisseph in /api/search:", e);
+        }
     }
 });
 
