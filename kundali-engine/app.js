@@ -180,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lang = e.target.checked ? 'hi' : 'en';
         updateLanguage(lang);
         window.chartRenderer.setLanguage(lang);
+        if (window.deptChartRenderer) window.deptChartRenderer.setLanguage(lang);
     });
 
     function updateLanguage(lang) {
@@ -763,7 +764,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 }))
             };
             window.chartRenderer.setData(chartDataToPass);
-            window.deptChartRenderer.updateData(chartDataToPass);
+            console.log("CHART DATA:", chartDataToPass.planets); window.deptChartRenderer.updateData(chartDataToPass);
         }
 
         // Render Yogas and Doshas
