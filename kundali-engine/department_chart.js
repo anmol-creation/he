@@ -65,7 +65,7 @@ export class DepartmentChartRenderer {
 
     updateData(data) {
         this.chartData = data;
-        this.selectedHouse = null;
+        this.selectedHouse = 1;
         this.detailBox.style.display = 'none';
         this.render();
     }
