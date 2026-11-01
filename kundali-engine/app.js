@@ -3,10 +3,9 @@ function renderGroundReality(planets) {
     const container = document.getElementById('ground-reality-container');
     if (!container) return;
 
-    let html = '<div class="table-responsive"><table class="dashboard-table reality-table">';
-    html += '<thead><tr><th>Planet</th><th>Core Intent</th><th>Raw Power</th><th>Environment (SAV)</th><th>Modifiers & Combinations</th><th>Final Verdict</th></tr></thead><tbody>';
+    let html = '<div class="accordion" id="realityAccordion">';
 
-    planets.forEach(p => {
+    planets.forEach((p, index) => {
         let intentColor = p.functionalNature && p.functionalNature.includes('Benefic') ? '#27ae60' : (p.functionalNature && p.functionalNature.includes('Malefic') ? '#c0392b' : 'var(--text-color)');
 
         let intentText = p.functionalNature || '';
@@ -49,10 +48,106 @@ function renderGroundReality(planets) {
 
         if (!modHtml) modHtml = '<span style="color:gray; font-size:0.8rem;">No Major Influence</span>';
 
-        html += `<tr><td style="font-weight:bold;">${p.name}<br><small style="color:gray;">House ${p.house}</small></td><td style="color: ${intentColor};">${intentText}</td><td>${batteryHtml}</td><td>${p.savPoints} pts<br><small>${p.environmentStrength}</small></td><td>${modHtml}</td><td style="font-weight:600;">${p.finalVerdict || 'Pending'}</td></tr>`;
+        const collapseId = 'collapse' + index;
+        const headingId = 'heading' + index;
+
+        // Vedic title mapping (assuming p.name has some mapping or using parts of it)
+        // Here we just use the name and a default representation, or you can use your vedic titles logic if needed.
+        let vedicTitle = p.name; // In the screenshot, it shows things like "☀️ सूर्य (राजा / आत्मा)".
+
+        html += `
+        <div class="accordion-item" style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--vault-accent); margin-bottom: 8px; border-radius: 8px; overflow: hidden;">
+            <h2 class="accordion-header" id="${headingId}" style="margin: 0;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}" style="background: transparent; color: var(--vault-text); box-shadow: none; border: none; padding: 12px 15px; width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s ease;">
+                    <span style="font-weight: bold; font-size: 1.1rem; color: ${intentColor};">${vedicTitle}</span>
+                    <span style="font-size: 0.9rem; color: var(--vault-text-muted);">House ${p.house} <span class="accordion-icon" style="margin-left: 8px; font-size: 0.8rem;">▼</span></span>
+                </button>
+            </h2>
+            <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="${headingId}" data-bs-parent="#realityAccordion">
+                <div class="accordion-body" style="padding: 15px; border-top: 1px solid rgba(197, 160, 89, 0.2);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div>
+                            <h6 style="color: var(--vault-text-muted); margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase;">Core Intent</h6>
+                            <div style="color: ${intentColor};">${intentText}</div>
+                        </div>
+                        <div>
+                            <h6 style="color: var(--vault-text-muted); margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase;">Raw Power</h6>
+                            <div>${batteryHtml}</div>
+                        </div>
+                        <div>
+                            <h6 style="color: var(--vault-text-muted); margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase;">Environment (SAV)</h6>
+                            <div>${p.savPoints} pts<br><small style="color: gray;">${p.environmentStrength}</small></div>
+                        </div>
+                        <div>
+                            <h6 style="color: var(--vault-text-muted); margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase;">Modifiers & Combinations</h6>
+                            <div>${modHtml}</div>
+                        </div>
+                        <div style="grid-column: 1 / -1; background: rgba(197, 160, 89, 0.1); padding: 10px; border-radius: 4px; border-left: 3px solid var(--vault-accent); margin-top: 5px;">
+                            <h6 style="color: var(--vault-accent); margin-bottom: 5px; font-size: 0.9rem;">Final Verdict</h6>
+                            <div style="font-weight: bold; font-size: 1.05rem;">${p.finalVerdict || 'Pending'}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
     });
 
-    html += '</tbody></table></div>';
+    html += '</div>';
+
+    // Add some inline CSS for the accordion interactions if Bootstrap JS is not used natively here, but assuming it is since there's an accordion mentioned.
+    // I will add a script block just in case to handle custom accordion toggles if data-bs-toggle is not parsed by standard bootstrap in this environment.
+    html += `
+        <script>
+        document.querySelectorAll('.accordion-button').forEach(function(btn) {
+            btn.onclick = function() {
+                var targetId = this.getAttribute('data-bs-target');
+                var target = document.querySelector(targetId);
+                var isExpanded = this.getAttribute('aria-expanded') === 'true';
+                var icon = this.querySelector('.accordion-icon');
+
+                document.querySelectorAll('.accordion-collapse').forEach(function(el) {
+                    if (el.id !== targetId.substring(1)) {
+                        el.classList.remove('show');
+                    }
+                });
+
+                document.querySelectorAll('.accordion-button').forEach(function(otherBtn) {
+                     if (otherBtn !== btn) {
+                         otherBtn.setAttribute('aria-expanded', 'false');
+                         var otherIcon = otherBtn.querySelector('.accordion-icon');
+                         if (otherIcon) otherIcon.textContent = '▼';
+                     }
+                });
+
+                if (isExpanded) {
+                    this.setAttribute('aria-expanded', 'false');
+                    target.classList.remove('show');
+                    if (icon) icon.textContent = '▼';
+                } else {
+                    this.setAttribute('aria-expanded', 'true');
+                    target.classList.add('show');
+                    if (icon) icon.textContent = '▲';
+                }
+            };
+        });
+    </script>
+    `;
+
+    // Simple custom CSS for the 'show' class since we might not have bootstrap loaded exactly this way.
+    html += `
+    <style>
+        .accordion-collapse:not(.show) {
+            display: none;
+        }
+        .accordion-collapse.show {
+            display: block;
+        }
+        .accordion-button:hover {
+            background: rgba(197, 160, 89, 0.1) !important;
+        }
+    </style>
+    `;
+
     container.innerHTML = html;
 }
 
@@ -153,24 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.chartRenderer.setStyle('north');
         e.target.classList.add('active');
         document.getElementById('btnSouthStyle').classList.remove('active');
-        document.getElementById('btnDeptStyle').classList.remove('active');
-        document.getElementById('kundaliSvgContainer').style.display = 'block';
-        document.getElementById('deptChartContainer').style.display = 'none';
     });
     document.getElementById('btnSouthStyle').addEventListener('click', (e) => {
         window.chartRenderer.setStyle('south');
         e.target.classList.add('active');
         document.getElementById('btnNorthStyle').classList.remove('active');
-        document.getElementById('btnDeptStyle').classList.remove('active');
-        document.getElementById('kundaliSvgContainer').style.display = 'block';
-        document.getElementById('deptChartContainer').style.display = 'none';
-    });
-    document.getElementById('btnDeptStyle').addEventListener('click', (e) => {
-        e.target.classList.add('active');
-        document.getElementById('btnNorthStyle').classList.remove('active');
-        document.getElementById('btnSouthStyle').classList.remove('active');
-        document.getElementById('kundaliSvgContainer').style.display = 'none';
-        document.getElementById('deptChartContainer').style.display = 'block';
     });
 
     // Initialize based on checkbox state
@@ -455,6 +537,7 @@ document.getElementById('calculateBtn').addEventListener('click', async () => {
         outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond', serif; margin-bottom: 1rem; text-align: center; margin-top: 2rem;">
             ${currentLang === 'hi' ? 'द एंकर्स (अर्ध-निश्चित कर्म)' : 'The Anchors (Semi-Fixed Karma)'}
         </h3>`;
+        outputHTML += `<div id="anchorsDeptChartPlaceholder"></div>`;
 
         // 1. Lagnesh (CEO) Anchor
         if (data.ceoStatus) {
@@ -765,6 +848,13 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
             };
             window.chartRenderer.setData(chartDataToPass);
             window.deptChartRenderer.updateData(chartDataToPass);
+        }
+
+        const placeholder = document.getElementById('anchorsDeptChartPlaceholder');
+        const masterContainer = document.getElementById('deptChartMasterContainer');
+        if (placeholder && masterContainer) {
+            placeholder.appendChild(masterContainer);
+            masterContainer.style.display = 'block';
         }
 
         // Render Yogas and Doshas
