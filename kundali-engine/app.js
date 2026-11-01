@@ -751,7 +751,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
             }, 100);
 
             const chartDataToPass = {
-                ascendantSign: Math.floor(data.ascendant / 30),
+                ascendantSign: data.ascendantSign !== undefined ? data.ascendantSign + 1 : (data.ascendant !== null ? Math.floor(data.ascendant / 30) + 1 : 1),
                 planets: data.planets.map(p => ({
                     name: p.name,
                     sign: p.sign,
@@ -764,7 +764,7 @@ outputHTML += `<h3 style="color: var(--vault-accent); font-family: 'EB Garamond'
                 }))
             };
             window.chartRenderer.setData(chartDataToPass);
-            console.log("CHART DATA:", chartDataToPass.planets); window.deptChartRenderer.updateData(chartDataToPass);
+            window.deptChartRenderer.updateData(chartDataToPass);
         }
 
         // Render Yogas and Doshas

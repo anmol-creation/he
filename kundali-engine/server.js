@@ -75,6 +75,7 @@ app.post('/api/calculate', (req, res) => {
             return res.json({
                 jd: 0,
                 ascendant: ascendant,
+                ascendantSign: ascendant !== null ? Math.floor(ascendant / 30) : 0,
                 tithi: { number: 9, name: "शुक्ल पक्ष नवमी (Navami)", percentage: 0 },
                 planets: pArr,
                 lagnaChart: lagnaChart,
@@ -941,6 +942,7 @@ app.post('/api/calculate', (req, res) => {
         res.json({
             jd,
             ascendant,
+            ascendantSign: ascendant !== null ? Math.floor(ascendant / 30) : 0,
             tithi: tithiData,
             planets: results,
             lagnaChart: lagnaChart,
