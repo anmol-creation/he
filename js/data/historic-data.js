@@ -13,6 +13,7 @@ import { anuDruhyuTurvasuData } from './historic-map-data/brahma/chandravansh/an
 import { sinhalaDynastyData } from './historic-map-data/brahma/chandravansh/sinhala_dynasty.js';
 import { agnivanshData } from './historic-map-data/brahma/agnivansh.js';
 import { nagavanshData } from './historic-map-data/brahma/nagavansh.js';
+import { abrahamicLineage } from './historic-map-data/brahma/abrahamic_lineage.js';
 import { jhansiNewalkarData } from './historic-map-data/brahma/jhansi-newalkar.js';
 
 // Combine all data into one master array
@@ -30,6 +31,7 @@ export const historicData = [
     ...kuruData,
     ...anuDruhyuTurvasuData,
     ...sinhalaDynastyData,
+    ...abrahamicLineage,
     ...agnivanshData,
     ...nagavanshData,
     ...jhansiNewalkarData
