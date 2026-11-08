@@ -996,7 +996,7 @@ export const chandravanshCoreData = [
   name: 'चच',
   subtitle: 'चच वंश संस्थापक',
   gender: 'male',
-  parent: 'pururava',
+  parent: 'pururavas_chandra',
   yug: 'kali',
   clusterName: 'चच वंश (सिंध)',
   parichay: 'इन्होंने बौद्ध राय राजवंश के बाद सिंध में हिंदू साम्राज्य स्थापित किया (631-671 AD)।'
@@ -1421,7 +1421,7 @@ export const chandravanshCoreData = [
   id: 'bhumichand_katoch',
   name: 'भूमिचंद',
   subtitle: 'त्रिगर्त के संस्थापक',
-  parent: 'pururava',
+  parent: 'pururavas_chandra',
   yug: 'satya',
   parichay: 'इन्हें चंद्रवंश/सोमवंश का माना जाता है जिन्होंने कांगड़ा (त्रिगर्त) राज्य की स्थापना की।',
   clusterName: 'चंद्रवंश'
@@ -1595,5 +1595,37 @@ export const chandravanshCoreData = [
   yug: 'kali',
   parichay: 'इन्हें कांगड़ा का स्वर्ण युग लाने का श्रेय है। इन्होंने कांगड़ा चित्रकला (Kangra Paintings) को संरक्षण दिया और महाराजा रणजीत सिंह के साथ संधियां कीं।',
   clusterName: 'कटोच (कांगड़ा) वंश'
+},
+
+    {
+  id: 'king_porus_paurava',
+  name: 'पोरस (पर्वतेश्वर)',
+  gender: 'male',
+  subtitle: 'पंजाब के पौरव नरेश',
+  parent: 'nichakshu_chandra',
+  yug: 'kali',
+  isProminent: true,
+  parichay: 'महाभारत के बाद पौरव वंश की शाखा जो पंजाब (झेलम और चिनाब के मध्य) में राज करती रही। 326 BCE में सिकंदर (Alexander) के साथ हाइडेस्पीज (Hydaspes) का प्रसिद्ध युद्ध लड़ा।',
+  clusterName: 'पौरव वंश (पंजाब शाखा)'
+},
+    {
+  id: 'malayketu_paurava',
+  name: 'मलयकेतु',
+  gender: 'male',
+  subtitle: 'पोरस के पुत्र',
+  parent: 'king_porus_paurava',
+  yug: 'kali',
+  parichay: 'विशाखदत्त के मुद्राराक्षस के अनुसार पर्वतेश्वर (पोरस) के पुत्र। पिता की हत्या के बाद चाणक्य और चंद्रगुप्त मौर्य का विरोध किया, पर अंततः अधीनता स्वीकार की।',
+  clusterName: 'पौरव वंश (पंजाब शाखा)'
+},
+    {
+  id: 'porus_the_younger',
+  name: 'छोटा पोरस (भतीजा)',
+  gender: 'male',
+  subtitle: 'पोरस का भतीजा',
+  parent: 'nichakshu_chandra',
+  yug: 'kali',
+  parichay: 'सिकंदर के आक्रमण के समय पोरस के राज्य के पूर्व में रावी नदी के पास इनका राज्य था। सिकंदर के भय से यह भाग गया था।',
+  clusterName: 'पौरव वंश (पंजाब शाखा)'
 }
 ];

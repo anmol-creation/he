@@ -564,7 +564,7 @@ export const yaduData = [
   id: 'bhishmaka_chandra',
   name: 'भीष्मक',
   subtitle: 'विदर्भ नरेश',
-  parent: 'vidarbha_chandra',
+  parent: 'vidarbha_yadu',
   gender: 'male',
   clusterName: 'विदर्भ वंश',
   yug: 'dwapar'
@@ -1349,7 +1349,7 @@ export const yaduData = [
   id: 'mitravinda_krishna_chandra',
   name: 'मित्रविन्दा',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_avatar',
+  parent: '',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1358,7 +1358,7 @@ export const yaduData = [
   id: 'nagnajiti_krishna_chandra',
   name: 'नग्नजिती (सत्या)',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_avatar',
+  parent: '',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1367,7 +1367,7 @@ export const yaduData = [
   id: 'bhadra_krishna_chandra',
   name: 'भद्रा',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_avatar',
+  parent: '',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'
@@ -1376,7 +1376,7 @@ export const yaduData = [
   id: 'lakshmana_krishna_chandra',
   name: 'लक्ष्मणा',
   subtitle: 'श्रीकृष्ण की पत्नी',
-  parent: 'krishna_avatar',
+  parent: '',
   spouseOf: 'krishna_chandra',
   yug: 'dwapar',
   clusterName: 'अष्टभार्या'

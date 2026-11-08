@@ -871,7 +871,7 @@ export const anuDruhyuTurvasuData = [
   id: 'jayavarman_aulikara',
   name: 'जयवर्मन',
   subtitle: 'औलिकर नरेश (प्रथम घराना)',
-  parent: 'aulikara_dynasty_proxy',
+  parent: 'malava_tribe_founders',
   yug: 'kali',
   clusterName: 'मालव गणराज्य'
 },
@@ -1757,7 +1757,7 @@ export const anuDruhyuTurvasuData = [
   id: 'early_chola_link',
   name: 'ऐतिहासिक अंतराल (संगम काल)',
   subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'chola_dynasty_proxy',
+  parent: 'chola_turvasu_chandra',
   yug: 'kali',
   parichay: 'पौराणिक चोल संस्थापक से लेकर संगम युग (लगभग 300 BCE - 200 CE) के बीच की अज्ञात पीढ़ियाँ।',
   clusterName: 'चोल राजवंश'
