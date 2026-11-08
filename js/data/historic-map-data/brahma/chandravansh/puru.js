@@ -10,21 +10,12 @@ export const puruData = [
   lineLabel: 'पुरुवंश',
   clusterName: 'चंद्रवंश'
 },
-    {
-  id: 'puru_offshoot_proxy',
-  name: 'पुरु वंश (शाखा)',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'puru_chandra',
-  yug: 'treta',
-  isProxy: true,
-  parichay: 'पुरु वंश की एक शाखा, जिसके कुछ पीढ़ियों के नाम अज्ञात हैं, जहाँ से राजा व्युषिताश्व आते हैं।',
-  clusterName: 'नहुष चंद्रवंशी'
-},
+
     {
   id: 'vyushitashva_puru',
   name: 'व्युषिताश्व',
   subtitle: 'पुरु वंशी नरेश',
-  parent: 'puru_offshoot_proxy',
+  parent: 'puru_chandra',
   yug: 'treta',
   parichay: 'एक अत्यंत प्रतापी और धार्मिक राजा। कुंती द्वारा महाभारत में वर्णित कथा के अनुसार, इनकी मृत्यु के पश्चात इनकी पत्नी ने आत्मिक संयोग से पुत्र प्राप्त किए।',
   clusterName: 'नहुष चंद्रवंशी'
@@ -39,22 +30,12 @@ export const puruData = [
   parichay: 'कक्षीवान की पुत्री। अपने मृत पति के आशीर्वाद से इन्होंने 7 पुत्रों (3 शाल्व और 4 मद्र) को जन्म दिया।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'salwa_dynasty_proxy',
-  name: 'शाल्व वंश',
-  subtitle: 'व्युषिताश्व के 3 पुत्र',
-  parent: 'vyushitashva_puru',
-  mother: 'bhadra_kakshivat_wife',
-  yug: 'treta',
-  isProxy: true,
-  parichay: 'राजा व्युषिताश्व और भद्रा के 3 पुत्रों द्वारा स्थापित वंश।',
-  clusterName: 'नहुष चंद्रवंशी'
-},
+
     {
   id: 'dyumatsena_salwa',
   name: 'द्युमत्सेन',
   subtitle: 'शाल्व नरेश',
-  parent: 'salwa_dynasty_proxy',
+  parent: 'vyushitashva_puru',
   yug: 'treta',
   parichay: 'सत्यवान के पिता। यह अंधे हो गए थे और शत्रुओं ने इनका राज्य छीन लिया था, जिसके कारण इन्हें वन में रहना पड़ा।',
   clusterName: 'नहुष चंद्रवंशी'
@@ -79,20 +60,12 @@ export const puruData = [
   parichay: 'यमराज के वरदान स्वरूप सावित्री और सत्यवान को 100 तेजस्वी पुत्रों की प्राप्ति हुई, जिन्होंने आगे शाल्व वंश को बढ़ाया।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'late_salwa_dynasty_proxy',
-  name: 'महाभारत कालीन शाल्व',
-  subtitle: 'ऐतिहासिक अंतराल',
-  parent: 'satyavan_100_sons',
-  yug: 'dwapar',
-  isProxy: true,
-  clusterName: 'नहुष चंद्रवंशी'
-},
+
     {
   id: 'shalva_saubha_king',
   name: 'शाल्व (सौभ नरेश)',
   subtitle: 'शाल्व नरेश',
-  parent: 'late_salwa_dynasty_proxy',
+  parent: 'satyavan_100_sons',
   yug: 'dwapar',
   isProminent: true,
   parichay: 'सौभ नगर का राजा। यह अंबा का प्रेमी था। शिशुपाल की मृत्यु के बाद इसने द्वारका पर आक्रमण किया था, जहाँ भगवान कृष्ण ने इसका वध किया।',
@@ -890,15 +863,7 @@ export const puruData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'ajamidha_sons_proxy',
-  name: 'अजमीढ़ के अन्य पुत्र',
-  subtitle: 'ऋक्ष, नील आदि',
-  isProxy: true,
-  parent: 'ajamidha_2_chandra',
-  yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी'
-},
+
     {
   id: 'riksha_2_chandra',
   name: 'ऋक्ष (कुरु वंश)',
@@ -1015,21 +980,12 @@ export const puruData = [
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-    {
-  id: 'chedi_dynasty_proxy',
-  name: 'चेदि वंश',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'yadu_vasu_chandra',
-  yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी',
-  isProxy: true,
-  timeScale: 'kalpa'
-},
+
     {
   id: 'damaghosha_chandra',
   name: 'दमघोष',
   subtitle: 'चेदि नरेश',
-  parent: 'chedi_dynasty_proxy',
+  parent: 'yadu_vasu_chandra',
   gender: 'male',
   clusterName: 'नहुष चंद्रवंशी',
   yug: 'dwapar'
@@ -1043,21 +999,12 @@ export const puruData = [
   gender: 'male',
   yug: 'dwapar'
 },
-    {
-  id: 'matsya_dynasty_proxy',
-  name: 'मत्स्य वंश',
-  subtitle: 'अज्ञात पीढ़ियाँ',
-  parent: 'vasu_uparichara_chandra',
-  yug: 'dwapar',
-  clusterName: 'नहुष चंद्रवंशी',
-  isProxy: true,
-  timeScale: 'kalpa'
-},
+
     {
   id: 'virata_matsya',
   name: 'विराट',
   subtitle: 'मत्स्य नरेश',
-  parent: 'matsya_dynasty_proxy',
+  parent: 'vasu_uparichara_chandra',
   gender: 'male',
   clusterName: 'नहुष चंद्रवंशी',
   yug: 'dwapar'
