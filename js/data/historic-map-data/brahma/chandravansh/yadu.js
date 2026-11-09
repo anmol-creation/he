@@ -1,5 +1,4 @@
 export const yaduData = [
-
     {
   id: 'chandratreya_chandel',
   name: 'चंद्रात्रेय',
@@ -13,6 +12,7 @@ export const yaduData = [
     {
   id: 'chandel_unknown_gap',
   name: 'ऐतिहासिक अंतराल',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'chandratreya_chandel',
   yug: 'kali',
@@ -134,8 +134,6 @@ export const yaduData = [
   parichay: 'विद्याधर के वंशज (विजयपाल, देववर्मन, कीर्तिवर्मन, मदनवर्मन आदि के बाद)। परमर्दिदेव (परमाल) के ही दरबार में प्रसिद्ध वीर सेनापति "आल्हा" और "ऊदल" थे। 1182 CE में पृथ्वीराज चौहान के साथ इनका महोबा का युद्ध हुआ था।',
   clusterName: 'चंदेल राजवंश'
 },
-
-
     {
   id: 'yadu_chandra',
   name: 'यदु',
@@ -150,6 +148,7 @@ export const yaduData = [
     {
   id: 'sahasrajit_yadu',
   name: 'सहस्रजित',
+  gender: 'male',
   subtitle: 'यदु पुत्र (हैहय वंश के मूल)',
   parent: 'yadu_chandra',
   yug: 'treta',
@@ -158,6 +157,7 @@ export const yaduData = [
     {
   id: 'kroshtu_yadu',
   name: 'क्रोष्टु',
+  gender: 'male',
   subtitle: 'यदु पुत्र (वृष्णि/अंधक वंश के मूल)',
   parent: 'yadu_chandra',
   yug: 'treta',
@@ -166,6 +166,7 @@ export const yaduData = [
     {
   id: 'nala_yadu',
   name: 'नल',
+  gender: 'male',
   subtitle: 'यदु पुत्र',
   parent: 'yadu_chandra',
   yug: 'treta',
@@ -174,6 +175,7 @@ export const yaduData = [
     {
   id: 'ripu_yadu',
   name: 'रिपु',
+  gender: 'male',
   subtitle: 'यदु पुत्र',
   parent: 'yadu_chandra',
   yug: 'treta',
@@ -182,14 +184,16 @@ export const yaduData = [
     {
   id: 'shatajit_haihaya',
   name: 'शतजित',
+  gender: 'male',
   subtitle: 'सहस्रजित पुत्र',
   parent: 'sahasrajit_yadu',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'haihaya_chandra',
   name: 'हैहय',
+  gender: 'male',
   subtitle: 'हैहय वंश के संस्थापक',
   parent: 'sahasrajit_yadu',
   yug: 'treta',
@@ -198,6 +202,7 @@ export const yaduData = [
     {
   id: 'dharma_haihaya',
   name: 'धर्म',
+  gender: 'male',
   subtitle: 'हैहय पुत्र',
   parent: 'haihaya_chandra',
   yug: 'treta',
@@ -206,6 +211,7 @@ export const yaduData = [
     {
   id: 'netra_haihaya',
   name: 'नेत्र',
+  gender: 'male',
   subtitle: 'धर्म पुत्र',
   parent: 'dharma_haihaya',
   yug: 'treta',
@@ -214,6 +220,7 @@ export const yaduData = [
     {
   id: 'kunti_haihaya',
   name: 'कुंती',
+  gender: 'male',
   subtitle: 'नेत्र पुत्र',
   parent: 'netra_haihaya',
   yug: 'treta',
@@ -222,6 +229,7 @@ export const yaduData = [
     {
   id: 'sohanji_haihaya',
   name: 'सोहंजि',
+  gender: 'male',
   subtitle: 'कुंती पुत्र',
   parent: 'kunti_haihaya',
   yug: 'treta',
@@ -230,6 +238,7 @@ export const yaduData = [
     {
   id: 'mahishman_haihaya',
   name: 'महिष्मान',
+  gender: 'male',
   subtitle: 'महिष्मती के संस्थापक',
   parent: 'sohanji_haihaya',
   yug: 'treta',
@@ -239,6 +248,7 @@ export const yaduData = [
     {
   id: 'bhadrasen_haihaya',
   name: 'भद्रसेन',
+  gender: 'male',
   subtitle: 'महिष्मान पुत्र',
   parent: 'mahishman_haihaya',
   yug: 'treta',
@@ -247,6 +257,7 @@ export const yaduData = [
     {
   id: 'durdama_haihaya',
   name: 'दुर्दाम',
+  gender: 'male',
   subtitle: 'भद्रसेन पुत्र',
   parent: 'bhadrasen_haihaya',
   yug: 'treta',
@@ -255,6 +266,7 @@ export const yaduData = [
     {
   id: 'dhanaka_haihaya',
   name: 'धनक',
+  gender: 'male',
   subtitle: 'दुर्दाम पुत्र',
   parent: 'durdama_haihaya',
   yug: 'treta',
@@ -263,6 +275,7 @@ export const yaduData = [
     {
   id: 'kritavirya_haihaya',
   name: 'कृतवीर्य',
+  gender: 'male',
   subtitle: 'धनक पुत्र',
   parent: 'dhanaka_haihaya',
   yug: 'treta',
@@ -271,6 +284,7 @@ export const yaduData = [
     {
   id: 'kritagni_haihaya',
   name: 'कृताग्नि',
+  gender: 'male',
   subtitle: 'धनक पुत्र',
   parent: 'dhanaka_haihaya',
   yug: 'treta',
@@ -279,6 +293,7 @@ export const yaduData = [
     {
   id: 'kritavarma_haihaya',
   name: 'कृतवर्मा',
+  gender: 'male',
   subtitle: 'धनक पुत्र',
   parent: 'dhanaka_haihaya',
   yug: 'treta',
@@ -287,6 +302,7 @@ export const yaduData = [
     {
   id: 'kritauja_haihaya',
   name: 'कृतौजा',
+  gender: 'male',
   subtitle: 'धनक पुत्र',
   parent: 'dhanaka_haihaya',
   yug: 'treta',
@@ -295,6 +311,7 @@ export const yaduData = [
     {
   id: 'kartavirya_arjuna_chandra',
   name: 'कार्तवीर्य अर्जुन',
+  gender: 'male',
   subtitle: 'सहस्रबाहु',
   parent: 'kritavirya_haihaya',
   yug: 'treta',
@@ -304,6 +321,7 @@ export const yaduData = [
     {
   id: 'jayadhvaja_haihaya',
   name: 'जयध्वज',
+  gender: 'male',
   subtitle: 'कार्तवीर्य पुत्र',
   parent: 'kartavirya_arjuna_chandra',
   yug: 'treta',
@@ -312,6 +330,7 @@ export const yaduData = [
     {
   id: 'shurasena_haihaya',
   name: 'शूरसेन',
+  gender: 'male',
   subtitle: 'कार्तवीर्य पुत्र',
   parent: 'kartavirya_arjuna_chandra',
   yug: 'treta',
@@ -320,6 +339,7 @@ export const yaduData = [
     {
   id: 'vrishabha_haihaya',
   name: 'वृषभ',
+  gender: 'male',
   subtitle: 'कार्तवीर्य पुत्र',
   parent: 'kartavirya_arjuna_chandra',
   yug: 'treta',
@@ -328,6 +348,7 @@ export const yaduData = [
     {
   id: 'madhu_haihaya',
   name: 'मधु',
+  gender: 'male',
   subtitle: 'कार्तवीर्य पुत्र',
   parent: 'kartavirya_arjuna_chandra',
   yug: 'treta',
@@ -336,6 +357,7 @@ export const yaduData = [
     {
   id: 'urjita_haihaya',
   name: 'ऊर्जित',
+  gender: 'male',
   subtitle: 'कार्तवीर्य पुत्र',
   parent: 'kartavirya_arjuna_chandra',
   yug: 'treta',
@@ -344,6 +366,7 @@ export const yaduData = [
     {
   id: 'talajangha_haihaya',
   name: 'तालजंघ',
+  gender: 'male',
   subtitle: 'जयध्वज पुत्र',
   parent: 'jayadhvaja_haihaya',
   yug: 'treta',
@@ -352,6 +375,7 @@ export const yaduData = [
     {
   id: 'vitihotra_haihaya',
   name: 'वीतिहोत्र',
+  gender: 'male',
   subtitle: 'तालजंघ पुत्र',
   parent: 'talajangha_haihaya',
   yug: 'treta',
@@ -360,6 +384,7 @@ export const yaduData = [
     {
   id: 'avanti_haihaya',
   name: 'अवन्ति',
+  gender: 'male',
   subtitle: 'तालजंघ पुत्र',
   parent: 'talajangha_haihaya',
   yug: 'treta',
@@ -369,6 +394,7 @@ export const yaduData = [
     {
   id: 'bhoja_haihaya',
   name: 'भोज (हैहय)',
+  gender: 'male',
   subtitle: 'तालजंघ पुत्र',
   parent: 'talajangha_haihaya',
   yug: 'treta',
@@ -377,6 +403,7 @@ export const yaduData = [
     {
   id: 'toundikera_haihaya',
   name: 'तुण्डिकेर',
+  gender: 'male',
   subtitle: 'तालजंघ पुत्र',
   parent: 'talajangha_haihaya',
   yug: 'treta',
@@ -385,6 +412,7 @@ export const yaduData = [
     {
   id: 'sujata_haihaya',
   name: 'सुजात',
+  gender: 'male',
   subtitle: 'तालजंघ पुत्र',
   parent: 'talajangha_haihaya',
   yug: 'treta',
@@ -393,6 +421,7 @@ export const yaduData = [
     {
   id: 'ananta_haihaya',
   name: 'अनन्त',
+  gender: 'male',
   subtitle: 'वीतिहोत्र पुत्र',
   parent: 'vitihotra_haihaya',
   yug: 'treta',
@@ -401,6 +430,7 @@ export const yaduData = [
     {
   id: 'durjaya_haihaya',
   name: 'दुर्जय',
+  gender: 'male',
   subtitle: 'अनन्त पुत्र',
   parent: 'ananta_haihaya',
   yug: 'treta',
@@ -409,6 +439,7 @@ export const yaduData = [
     {
   id: 'supratika_haihaya',
   name: 'सुप्रतीक',
+  gender: 'male',
   subtitle: 'दुर्जय पुत्र',
   parent: 'durjaya_haihaya',
   yug: 'treta',
@@ -417,6 +448,7 @@ export const yaduData = [
     {
   id: 'vrishni_haihaya',
   name: 'वृष्णि (हैहय)',
+  gender: 'male',
   subtitle: 'मधु के वंशज',
   parent: 'madhu_haihaya',
   yug: 'treta',
@@ -426,6 +458,7 @@ export const yaduData = [
     {
   id: 'vrijinivan_yadu',
   name: 'वृजिनिवान',
+  gender: 'male',
   subtitle: 'क्रोष्टु पुत्र',
   parent: 'kroshtu_yadu',
   yug: 'treta',
@@ -434,6 +467,7 @@ export const yaduData = [
     {
   id: 'svahi_yadu',
   name: 'स्वाहि',
+  gender: 'male',
   subtitle: 'वृजिनिवान पुत्र',
   parent: 'vrijinivan_yadu',
   yug: 'treta',
@@ -442,6 +476,7 @@ export const yaduData = [
     {
   id: 'rushadgu_yadu',
   name: 'रुशद्गु',
+  gender: 'male',
   subtitle: 'स्वाहि पुत्र',
   parent: 'svahi_yadu',
   yug: 'treta',
@@ -450,6 +485,7 @@ export const yaduData = [
     {
   id: 'chitraratha_yadu',
   name: 'चित्ररथ',
+  gender: 'male',
   subtitle: 'रुशद्गु पुत्र',
   parent: 'rushadgu_yadu',
   yug: 'treta',
@@ -458,6 +494,7 @@ export const yaduData = [
     {
   id: 'shashabindu_yadu',
   name: 'शशबिंदु',
+  gender: 'male',
   subtitle: 'महान चक्रवर्ती सम्राट',
   parent: 'chitraratha_yadu',
   yug: 'treta',
@@ -466,6 +503,7 @@ export const yaduData = [
     {
   id: 'prithushravas_yadu',
   name: 'पृथुश्रवस',
+  gender: 'male',
   subtitle: 'शशबिंदु पुत्र',
   parent: 'shashabindu_yadu',
   yug: 'treta',
@@ -474,6 +512,7 @@ export const yaduData = [
     {
   id: 'antara_yadu',
   name: 'अन्तर',
+  gender: 'male',
   subtitle: 'पृथुश्रवस पुत्र',
   parent: 'prithushravas_yadu',
   yug: 'treta',
@@ -482,6 +521,7 @@ export const yaduData = [
     {
   id: 'suyajna_yadu',
   name: 'सुयज्ञ',
+  gender: 'male',
   subtitle: 'अन्तर पुत्र',
   parent: 'antara_yadu',
   yug: 'treta',
@@ -490,6 +530,7 @@ export const yaduData = [
     {
   id: 'ushanas_yadu',
   name: 'उशनस',
+  gender: 'male',
   subtitle: 'सुयज्ञ पुत्र',
   parent: 'suyajna_yadu',
   yug: 'treta',
@@ -498,6 +539,7 @@ export const yaduData = [
     {
   id: 'shineyu_yadu',
   name: 'शिनेयु',
+  gender: 'male',
   subtitle: 'उशनस पुत्र',
   parent: 'ushanas_yadu',
   yug: 'treta',
@@ -506,6 +548,7 @@ export const yaduData = [
     {
   id: 'marutta_yadu',
   name: 'मरुत्त',
+  gender: 'male',
   subtitle: 'शिनेयु पुत्र',
   parent: 'shineyu_yadu',
   yug: 'treta',
@@ -514,6 +557,7 @@ export const yaduData = [
     {
   id: 'kambalabarhis_yadu',
   name: 'कम्बलवर्हिष',
+  gender: 'male',
   subtitle: 'मरुत्त पुत्र',
   parent: 'marutta_yadu',
   yug: 'treta',
@@ -522,6 +566,7 @@ export const yaduData = [
     {
   id: 'rukmakavacha_yadu',
   name: 'रुक्मकवच',
+  gender: 'male',
   subtitle: 'कम्बलवर्हिष पुत्र',
   parent: 'kambalabarhis_yadu',
   yug: 'treta',
@@ -530,6 +575,7 @@ export const yaduData = [
     {
   id: 'parajit_yadu',
   name: 'पराजित',
+  gender: 'male',
   subtitle: 'रुक्मकवच पुत्र',
   parent: 'rukmakavacha_yadu',
   yug: 'treta',
@@ -538,6 +584,7 @@ export const yaduData = [
     {
   id: 'jyamagha_yadu',
   name: 'ज्याघम',
+  gender: 'male',
   subtitle: 'पराजित पुत्र',
   parent: 'parajit_yadu',
   yug: 'treta',
@@ -546,6 +593,7 @@ export const yaduData = [
     {
   id: 'shaibya_jyamagha_chandra',
   name: 'शैव्या',
+  gender: 'female',
   subtitle: 'ज्याघम की पत्नी',
   parent: '',
   spouseOf: 'jyamagha_yadu',
@@ -554,13 +602,14 @@ export const yaduData = [
     {
   id: 'vidarbha_yadu',
   name: 'विदर्भ',
+  gender: 'male',
   subtitle: 'विदर्भ देश के संस्थापक',
   parent: 'jyamagha_yadu',
   mother: 'shaibya_jyamagha_chandra',
   yug: 'treta',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'bhishmaka_chandra',
   name: 'भीष्मक',
   subtitle: 'विदर्भ नरेश',
@@ -581,6 +630,7 @@ export const yaduData = [
     {
   id: 'kratha_yadu',
   name: 'क्रथ',
+  gender: 'male',
   subtitle: 'विदर्भ पुत्र',
   parent: 'vidarbha_yadu',
   yug: 'treta',
@@ -589,6 +639,7 @@ export const yaduData = [
     {
   id: 'kaushika_yadu',
   name: 'कौशिक',
+  gender: 'male',
   subtitle: 'विदर्भ पुत्र',
   parent: 'vidarbha_yadu',
   yug: 'treta',
@@ -597,6 +648,7 @@ export const yaduData = [
     {
   id: 'romapada_yadu',
   name: 'रोमपाद',
+  gender: 'male',
   subtitle: 'विदर्भ पुत्र',
   parent: 'vidarbha_yadu',
   yug: 'treta',
@@ -605,6 +657,7 @@ export const yaduData = [
     {
   id: 'kunti_kratha_chandra',
   name: 'कुंती',
+  gender: 'male',
   subtitle: 'क्रथ पुत्र',
   parent: 'kratha_yadu',
   yug: 'treta',
@@ -613,6 +666,7 @@ export const yaduData = [
     {
   id: 'vrishni_kratha_chandra',
   name: 'वृष्णि (प्रथम)',
+  gender: 'male',
   subtitle: 'कुंती पुत्र',
   parent: 'kunti_kratha_chandra',
   yug: 'treta',
@@ -621,6 +675,7 @@ export const yaduData = [
     {
   id: 'nirvriti_yadu',
   name: 'निर्वृति',
+  gender: 'male',
   subtitle: 'वृष्णि पुत्र',
   parent: 'vrishni_kratha_chandra',
   yug: 'treta',
@@ -629,6 +684,7 @@ export const yaduData = [
     {
   id: 'dasharha_yadu',
   name: 'दशार्ह',
+  gender: 'male',
   subtitle: 'निर्वृति पुत्र',
   parent: 'nirvriti_yadu',
   yug: 'treta',
@@ -637,6 +693,7 @@ export const yaduData = [
     {
   id: 'vyoman_yadu',
   name: 'व्योमन',
+  gender: 'male',
   subtitle: 'दशार्ह पुत्र',
   parent: 'dasharha_yadu',
   yug: 'treta',
@@ -645,6 +702,7 @@ export const yaduData = [
     {
   id: 'jimuta_yadu',
   name: 'जीमूत',
+  gender: 'male',
   subtitle: 'व्योमन पुत्र',
   parent: 'vyoman_yadu',
   yug: 'treta',
@@ -653,6 +711,7 @@ export const yaduData = [
     {
   id: 'vikriti_yadu',
   name: 'विकृति',
+  gender: 'male',
   subtitle: 'जीमूत पुत्र',
   parent: 'jimuta_yadu',
   yug: 'treta',
@@ -661,6 +720,7 @@ export const yaduData = [
     {
   id: 'bhimaratha_yadu',
   name: 'भीमरथ',
+  gender: 'male',
   subtitle: 'विकृति पुत्र',
   parent: 'vikriti_yadu',
   yug: 'dwapar',
@@ -669,6 +729,7 @@ export const yaduData = [
     {
   id: 'navaratha_yadu',
   name: 'नवरथ',
+  gender: 'male',
   subtitle: 'भीमरथ पुत्र',
   parent: 'bhimaratha_yadu',
   yug: 'dwapar',
@@ -677,6 +738,7 @@ export const yaduData = [
     {
   id: 'dasharatha_yadu',
   name: 'दशरथ',
+  gender: 'male',
   subtitle: 'नवरथ पुत्र',
   parent: 'navaratha_yadu',
   yug: 'dwapar',
@@ -685,6 +747,7 @@ export const yaduData = [
     {
   id: 'shakuni_yadu',
   name: 'शकुनि',
+  gender: 'male',
   subtitle: 'दशरथ पुत्र',
   parent: 'dasharatha_yadu',
   yug: 'dwapar',
@@ -693,6 +756,7 @@ export const yaduData = [
     {
   id: 'karambhi_yadu',
   name: 'करम्भी',
+  gender: 'male',
   subtitle: 'शकुनि पुत्र',
   parent: 'shakuni_yadu',
   yug: 'dwapar',
@@ -701,6 +765,7 @@ export const yaduData = [
     {
   id: 'devarata_yadu',
   name: 'देवरथ',
+  gender: 'male',
   subtitle: 'करम्भी पुत्र',
   parent: 'karambhi_yadu',
   yug: 'dwapar',
@@ -709,6 +774,7 @@ export const yaduData = [
     {
   id: 'devakshatra_yadu',
   name: 'देवक्षत्र',
+  gender: 'male',
   subtitle: 'देवरथ पुत्र',
   parent: 'devarata_yadu',
   yug: 'dwapar',
@@ -717,6 +783,7 @@ export const yaduData = [
     {
   id: 'madhu_yadu',
   name: 'मधु',
+  gender: 'male',
   subtitle: 'देवक्षत्र पुत्र',
   parent: 'devakshatra_yadu',
   yug: 'dwapar',
@@ -725,6 +792,7 @@ export const yaduData = [
     {
   id: 'kuruvasa_yadu',
   name: 'कुरुवश',
+  gender: 'male',
   subtitle: 'मधु पुत्र',
   parent: 'madhu_yadu',
   yug: 'dwapar',
@@ -733,6 +801,7 @@ export const yaduData = [
     {
   id: 'anu_yadu',
   name: 'अनु',
+  gender: 'male',
   subtitle: 'कुरुवश पुत्र',
   parent: 'kuruvasa_yadu',
   yug: 'dwapar',
@@ -741,6 +810,7 @@ export const yaduData = [
     {
   id: 'puruhotra_yadu',
   name: 'पुरुहोत्र',
+  gender: 'male',
   subtitle: 'अनु पुत्र',
   parent: 'anu_yadu',
   yug: 'dwapar',
@@ -749,6 +819,7 @@ export const yaduData = [
     {
   id: 'ayu_yadu',
   name: 'आयु',
+  gender: 'male',
   subtitle: 'पुरुहोत्र पुत्र',
   parent: 'puruhotra_yadu',
   yug: 'dwapar',
@@ -757,14 +828,16 @@ export const yaduData = [
     {
   id: 'satvata_yadu',
   name: 'सात्वत',
+  gender: 'male',
   subtitle: 'सात्वत वंश के मूल',
   parent: 'ayu_yadu',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'bhajina_satvata',
   name: 'भजिन',
+  gender: 'male',
   subtitle: 'सात्वत पुत्र',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -773,6 +846,7 @@ export const yaduData = [
     {
   id: 'bhajamana_satvata',
   name: 'भजमान',
+  gender: 'male',
   subtitle: 'सात्वत पुत्र',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -781,6 +855,7 @@ export const yaduData = [
     {
   id: 'divya_satvata',
   name: 'दिव्य',
+  gender: 'male',
   subtitle: 'सात्वत पुत्र',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -789,6 +864,7 @@ export const yaduData = [
     {
   id: 'andhaka_satvata',
   name: 'अंधक',
+  gender: 'male',
   subtitle: 'अंधक वंश के मूल',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -797,6 +873,7 @@ export const yaduData = [
     {
   id: 'devavridha_satvata',
   name: 'देववृध',
+  gender: 'male',
   subtitle: 'सात्वत पुत्र',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -805,6 +882,7 @@ export const yaduData = [
     {
   id: 'mahabhoja_satvata',
   name: 'महाभोज',
+  gender: 'male',
   subtitle: 'सात्वत पुत्र',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -813,6 +891,7 @@ export const yaduData = [
     {
   id: 'kuntibhoja_chandra',
   name: 'कुंतीभोज',
+  gender: 'male',
   subtitle: 'भोज नरेश',
   parent: 'mahabhoja_satvata',
   yug: 'dwapar',
@@ -822,6 +901,7 @@ export const yaduData = [
     {
   id: 'vrishni_satvata',
   name: 'वृष्णि (द्वितीय)',
+  gender: 'male',
   subtitle: 'वृष्णि वंश के मूल',
   parent: 'satvata_yadu',
   yug: 'dwapar',
@@ -878,14 +958,16 @@ export const yaduData = [
     {
   id: 'kukura_andhaka',
   name: 'कुकुर',
+  gender: 'male',
   subtitle: 'अंधक पुत्र',
   parent: 'andhaka_satvata',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'bhajamana_andhaka',
   name: 'भजमान',
+  gender: 'male',
   subtitle: 'अंधक पुत्र',
   parent: 'andhaka_satvata',
   yug: 'dwapar',
@@ -894,6 +976,7 @@ export const yaduData = [
     {
   id: 'shuchi_andhaka',
   name: 'शुचि',
+  gender: 'male',
   subtitle: 'अंधक पुत्र',
   parent: 'andhaka_satvata',
   yug: 'dwapar',
@@ -902,6 +985,7 @@ export const yaduData = [
     {
   id: 'kambalabarhisha_andhaka',
   name: 'कम्बलवर्हिष',
+  gender: 'male',
   subtitle: 'अंधक पुत्र',
   parent: 'andhaka_satvata',
   yug: 'dwapar',
@@ -910,6 +994,7 @@ export const yaduData = [
     {
   id: 'vahni_kukura',
   name: 'वह्नि',
+  gender: 'male',
   subtitle: 'कुकुर पुत्र',
   parent: 'kukura_andhaka',
   yug: 'dwapar',
@@ -918,6 +1003,7 @@ export const yaduData = [
     {
   id: 'viloma_kukura',
   name: 'विलोमा',
+  gender: 'male',
   subtitle: 'वह्नि पुत्र',
   parent: 'vahni_kukura',
   yug: 'dwapar',
@@ -926,6 +1012,7 @@ export const yaduData = [
     {
   id: 'kapotaroma_kukura',
   name: 'कपोतरोमा',
+  gender: 'male',
   subtitle: 'विलोमा पुत्र',
   parent: 'viloma_kukura',
   yug: 'dwapar',
@@ -934,6 +1021,7 @@ export const yaduData = [
     {
   id: 'tumburu_kukura',
   name: 'तुम्बुरु',
+  gender: 'male',
   subtitle: 'कपोतरोमा पुत्र',
   parent: 'kapotaroma_kukura',
   yug: 'dwapar',
@@ -942,6 +1030,7 @@ export const yaduData = [
     {
   id: 'dundubhi_kukura',
   name: 'दुन्दुभि',
+  gender: 'male',
   subtitle: 'तुम्बुरु पुत्र',
   parent: 'tumburu_kukura',
   yug: 'dwapar',
@@ -950,6 +1039,7 @@ export const yaduData = [
     {
   id: 'daridra_kukura',
   name: 'दरिद्र',
+  gender: 'male',
   subtitle: 'दुन्दुभि पुत्र',
   parent: 'dundubhi_kukura',
   yug: 'dwapar',
@@ -958,6 +1048,7 @@ export const yaduData = [
     {
   id: 'vasu_kukura',
   name: 'वसु',
+  gender: 'male',
   subtitle: 'दरिद्र पुत्र',
   parent: 'daridra_kukura',
   yug: 'dwapar',
@@ -966,6 +1057,7 @@ export const yaduData = [
     {
   id: 'ahuka_kukura',
   name: 'आहुक',
+  gender: 'male',
   subtitle: 'वसु पुत्र',
   parent: 'vasu_kukura',
   yug: 'dwapar',
@@ -974,6 +1066,7 @@ export const yaduData = [
     {
   id: 'devaka_kukura',
   name: 'देवक',
+  gender: 'male',
   subtitle: 'देवकी के पिता',
   parent: 'ahuka_kukura',
   yug: 'dwapar',
@@ -982,6 +1075,7 @@ export const yaduData = [
     {
   id: 'ugrasen_kukura',
   name: 'उग्रसेन',
+  gender: 'male',
   subtitle: 'मथुरा नरेश',
   parent: 'ahuka_kukura',
   yug: 'dwapar',
@@ -990,6 +1084,7 @@ export const yaduData = [
     {
   id: 'kamsa_ugrasen_chandra',
   name: 'कंस',
+  gender: 'male',
   subtitle: 'उग्रसेन पुत्र',
   parent: 'ugrasen_kukura',
   yug: 'dwapar',
@@ -998,6 +1093,7 @@ export const yaduData = [
     {
   id: 'devaki_devaka_chandra',
   name: 'देवकी',
+  gender: 'female',
   subtitle: 'देवक पुत्री',
   parent: 'devaka_kukura',
   spouseOf: 'vasudev_chandra',
@@ -1007,6 +1103,7 @@ export const yaduData = [
     {
   id: 'viduratha_bhajamana_chandra',
   name: 'विदूरथ',
+  gender: 'male',
   subtitle: 'भजमान (अंधक) पुत्र',
   parent: 'bhajamana_andhaka',
   yug: 'dwapar',
@@ -1015,6 +1112,7 @@ export const yaduData = [
     {
   id: 'shura_viduratha_chandra',
   name: 'शूर',
+  gender: 'male',
   subtitle: 'विदूरथ पुत्र',
   parent: 'viduratha_bhajamana_chandra',
   yug: 'dwapar',
@@ -1023,6 +1121,7 @@ export const yaduData = [
     {
   id: 'shini_shura_chandra',
   name: 'शिनि',
+  gender: 'male',
   subtitle: 'शूर पुत्र',
   parent: 'shura_viduratha_chandra',
   yug: 'dwapar',
@@ -1031,6 +1130,7 @@ export const yaduData = [
     {
   id: 'svayambhoja_shini_chandra',
   name: 'स्वयंभोज',
+  gender: 'male',
   subtitle: 'शिनि पुत्र',
   parent: 'shini_shura_chandra',
   yug: 'dwapar',
@@ -1039,6 +1139,7 @@ export const yaduData = [
     {
   id: 'hridika_svayambhoja_chandra',
   name: 'हृदिक',
+  gender: 'male',
   subtitle: 'स्वयंभोज पुत्र',
   parent: 'svayambhoja_shini_chandra',
   yug: 'dwapar',
@@ -1047,6 +1148,7 @@ export const yaduData = [
     {
   id: 'devamidha_hridika_chandra',
   name: 'देवमीढ',
+  gender: 'male',
   subtitle: 'हृदिक पुत्र',
   parent: 'hridika_svayambhoja_chandra',
   yug: 'dwapar',
@@ -1055,6 +1157,7 @@ export const yaduData = [
     {
   id: 'shatadhanva_hridika_chandra',
   name: 'शतधन्वा',
+  gender: 'male',
   subtitle: 'हृदिक पुत्र',
   parent: 'hridika_svayambhoja_chandra',
   yug: 'dwapar',
@@ -1063,6 +1166,7 @@ export const yaduData = [
     {
   id: 'kritavarma_hridika_chandra',
   name: 'कृतवर्मा',
+  gender: 'male',
   subtitle: 'हृदिक पुत्र',
   parent: 'hridika_svayambhoja_chandra',
   yug: 'dwapar',
@@ -1071,6 +1175,7 @@ export const yaduData = [
     {
   id: 'anamitra_hridika_chandra',
   name: 'अनमित्र',
+  gender: 'male',
   subtitle: 'हृदिक पुत्र',
   parent: 'hridika_svayambhoja_chandra',
   yug: 'dwapar',
@@ -1079,6 +1184,7 @@ export const yaduData = [
     {
   id: 'shini_anamitra_chandra',
   name: 'शिनि',
+  gender: 'male',
   subtitle: 'अनमित्र पुत्र',
   parent: 'anamitra_hridika_chandra',
   yug: 'dwapar',
@@ -1087,6 +1193,7 @@ export const yaduData = [
     {
   id: 'satyaka_chandra',
   name: 'सत्यक',
+  gender: 'male',
   subtitle: 'शिनि पुत्र',
   parent: 'shini_anamitra_chandra',
   yug: 'dwapar',
@@ -1095,6 +1202,7 @@ export const yaduData = [
     {
   id: 'satyaki_chandra',
   name: 'सात्यकि (युयुधान)',
+  gender: 'male',
   subtitle: 'सत्यक पुत्र',
   parent: 'satyaka_chandra',
   yug: 'dwapar',
@@ -1104,6 +1212,7 @@ export const yaduData = [
     {
   id: 'asanga_satyaki_chandra',
   name: 'असंग',
+  gender: 'male',
   subtitle: 'सात्यकि पुत्र',
   parent: 'satyaki_chandra',
   yug: 'dwapar',
@@ -1112,6 +1221,7 @@ export const yaduData = [
     {
   id: 'yugandhara_asanga_chandra',
   name: 'युगन्धर',
+  gender: 'male',
   subtitle: 'असंग पुत्र',
   parent: 'asanga_satyaki_chandra',
   yug: 'dwapar',
@@ -1120,6 +1230,7 @@ export const yaduData = [
     {
   id: 'nighna_anamitra_chandra',
   name: 'निघ्न',
+  gender: 'male',
   subtitle: 'अनमित्र पुत्र',
   parent: 'anamitra_hridika_chandra',
   yug: 'dwapar',
@@ -1128,6 +1239,7 @@ export const yaduData = [
     {
   id: 'satrajit_nighna_chandra',
   name: 'सत्राजित',
+  gender: 'male',
   subtitle: 'निघ्न पुत्र (स्यमंतक मणि धारक)',
   parent: 'nighna_anamitra_chandra',
   yug: 'dwapar',
@@ -1136,14 +1248,16 @@ export const yaduData = [
     {
   id: 'prasena_nighna_chandra',
   name: 'प्रसेन',
+  gender: 'male',
   subtitle: 'निघ्न पुत्र',
   parent: 'nighna_anamitra_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'shvaphalaka_vrishni',
   name: 'श्वफल्क',
+  gender: 'male',
   subtitle: 'वृष्णि वंश',
   parent: 'yudhajit_vrishni',
   yug: 'dwapar',
@@ -1152,6 +1266,7 @@ export const yaduData = [
     {
   id: 'akrura_chandra',
   name: 'अक्रूर',
+  gender: 'male',
   subtitle: 'श्वफल्क पुत्र',
   parent: 'shvaphalaka_vrishni',
   yug: 'dwapar',
@@ -1161,6 +1276,7 @@ export const yaduData = [
     {
   id: 'ugraseni_chandra',
   name: 'उग्रसेनी',
+  gender: 'female',
   subtitle: 'उग्रसेन पुत्री / अक्रूर पत्नी',
   parent: 'ugrasen_kukura',
   spouseOf: 'akrura_chandra',
@@ -1170,6 +1286,7 @@ export const yaduData = [
     {
   id: 'sudeva_akrura_chandra',
   name: 'सुदेव',
+  gender: 'male',
   subtitle: 'अक्रूर पुत्र',
   parent: 'akrura_chandra',
   mother: 'ugraseni_chandra',
@@ -1179,13 +1296,14 @@ export const yaduData = [
     {
   id: 'upadeva_akrura_chandra',
   name: 'उपदेव',
+  gender: 'male',
   subtitle: 'अक्रूर पुत्र',
   parent: 'akrura_chandra',
   mother: 'ugraseni_chandra',
   yug: 'dwapar',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'devamidhusha_vrishni',
   name: 'देवमीढ़ुष',
   subtitle: 'वृष्णि पुत्र',
@@ -1226,6 +1344,7 @@ export const yaduData = [
     {
   id: 'shurasen_chandra',
   name: 'शूरसेन (शूर)',
+  gender: 'male',
   subtitle: 'देवमीढुष पुत्र',
   parent: 'devamidhusha_vrishni',
   yug: 'dwapar',
@@ -1234,6 +1353,7 @@ export const yaduData = [
     {
   id: 'marisha_shurasen_chandra',
   name: 'मारिषा',
+  gender: 'female',
   subtitle: 'शूरसेन पत्नी',
   parent: '',
   spouseOf: 'shurasen_chandra',
@@ -1243,6 +1363,7 @@ export const yaduData = [
     {
   id: 'vasudev_chandra',
   name: 'वसुदेव (आनकदुन्दुभि)',
+  gender: 'male',
   subtitle: 'कृष्ण के पिता',
   parent: 'shurasen_chandra',
   mother: 'marisha_shurasen_chandra',
@@ -1252,6 +1373,7 @@ export const yaduData = [
     {
   id: 'shrutasrava_chandra',
   name: 'श्रुतश्रवा',
+  gender: 'female',
   subtitle: 'शूरसेन पुत्री',
   parent: 'shurasen_chandra',
   mother: 'marisha_shurasen_chandra',
@@ -1263,6 +1385,7 @@ export const yaduData = [
     {
   id: 'rohini_vasudev_chandra',
   name: 'रोहिणी',
+  gender: 'female',
   subtitle: 'वसुदेव पत्नी',
   parent: '',
   spouseOf: 'vasudev_chandra',
@@ -1272,6 +1395,7 @@ export const yaduData = [
     {
   id: 'balram_chandra',
   name: 'बलराम (संकर्षण)',
+  gender: 'male',
   subtitle: 'शेषनाग अवतार',
   parent: 'vasudev_chandra',
   mother: 'rohini_vasudev_chandra',
@@ -1281,6 +1405,7 @@ export const yaduData = [
     {
   id: 'revati_balram_chandra',
   name: 'रेवती',
+  gender: 'female',
   subtitle: 'बलराम पत्नी',
   parent: '',
   spouseOf: 'balram_chandra',
@@ -1289,6 +1414,7 @@ export const yaduData = [
     {
   id: 'krishna_chandra',
   name: 'कृष्ण (वासुदेव)',
+  gender: 'male',
   subtitle: 'पूर्णावतार',
   parent: 'vasudev_chandra',
   mother: 'devaki_devaka_chandra',
@@ -1301,6 +1427,7 @@ export const yaduData = [
     {
   id: 'subhadra_chandra',
   name: 'सुभद्रा',
+  gender: 'female',
   subtitle: 'कृष्ण की बहन',
   parent: 'vasudev_chandra',
   mother: 'rohini_vasudev_chandra',
@@ -1311,6 +1438,7 @@ export const yaduData = [
     {
   id: 'rukmini_krishna_chandra',
   name: 'रुक्मिणी',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की प्रथम पत्नी (लक्ष्मी अवतार)',
   parent: 'bhishmaka_chandra',
   spouseOf: 'krishna_chandra',
@@ -1320,6 +1448,7 @@ export const yaduData = [
     {
   id: 'satyabhama_krishna_chandra',
   name: 'सत्यभामा',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी (भूदेवी)',
   parent: 'satrajit_nighna_chandra',
   spouseOf: 'krishna_chandra',
@@ -1329,6 +1458,7 @@ export const yaduData = [
     {
   id: 'jambavati_chandra',
   name: 'जाम्बवती',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी',
   parent: 'jambavan',
   spouseOf: 'krishna_chandra',
@@ -1339,6 +1469,7 @@ export const yaduData = [
     {
   id: 'kalindi_krishna_chandra',
   name: 'कालिंदी',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी',
   parent: 'surya',
   spouseOf: 'krishna_chandra',
@@ -1348,6 +1479,7 @@ export const yaduData = [
     {
   id: 'mitravinda_krishna_chandra',
   name: 'मित्रविन्दा',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी',
   parent: '',
   spouseOf: 'krishna_chandra',
@@ -1357,6 +1489,7 @@ export const yaduData = [
     {
   id: 'nagnajiti_krishna_chandra',
   name: 'नग्नजिती (सत्या)',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी',
   parent: '',
   spouseOf: 'krishna_chandra',
@@ -1366,6 +1499,7 @@ export const yaduData = [
     {
   id: 'bhadra_krishna_chandra',
   name: 'भद्रा',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी',
   parent: '',
   spouseOf: 'krishna_chandra',
@@ -1375,6 +1509,7 @@ export const yaduData = [
     {
   id: 'lakshmana_krishna_chandra',
   name: 'लक्ष्मणा',
+  gender: 'female',
   subtitle: 'श्रीकृष्ण की पत्नी',
   parent: '',
   spouseOf: 'krishna_chandra',
@@ -1384,6 +1519,7 @@ export const yaduData = [
     {
   id: 'pradyumna_chandra',
   name: 'प्रद्युम्न',
+  gender: 'male',
   subtitle: 'कामदेव अवतार',
   parent: 'krishna_chandra',
   mother: 'rukmini_krishna_chandra',
@@ -1394,6 +1530,7 @@ export const yaduData = [
     {
   id: 'charudeshna_chandra',
   name: 'चारुदेष्ण',
+  gender: 'male',
   subtitle: 'कृष्ण पुत्र',
   parent: 'krishna_chandra',
   mother: 'rukmini_krishna_chandra',
@@ -1404,6 +1541,7 @@ export const yaduData = [
     {
   id: 'samba_krishna_chandra',
   name: 'साम्ब',
+  gender: 'male',
   subtitle: 'कृष्ण पुत्र',
   parent: 'krishna_chandra',
   mother: 'jambavati_chandra',
@@ -1414,6 +1552,7 @@ export const yaduData = [
     {
   id: 'rukmavati_pradyumna_chandra',
   name: 'रुक्मवती',
+  gender: 'female',
   subtitle: 'रुक्मी पुत्री',
   parent: 'rukmi_vidarbha_chandra',
   spouseOf: 'pradyumna_chandra',
@@ -1422,6 +1561,7 @@ export const yaduData = [
     {
   id: 'aniruddha_chandra',
   name: 'अनिरुद्ध',
+  gender: 'male',
   subtitle: 'प्रद्युम्न पुत्र',
   parent: 'pradyumna_chandra',
   mother: 'rukmavati_pradyumna_chandra',
@@ -1432,6 +1572,7 @@ export const yaduData = [
     {
   id: 'rochana_aniruddha_chandra',
   name: 'रोचना',
+  gender: 'female',
   subtitle: 'रुक्मी की पौत्री',
   parent: '',
   spouseOf: 'aniruddha_chandra',
@@ -1440,6 +1581,7 @@ export const yaduData = [
     {
   id: 'vajranabha_chandra',
   name: 'वज्रनाभ',
+  gender: 'male',
   subtitle: 'मथुरा नरेश',
   parent: 'aniruddha_chandra',
   mother: 'rochana_aniruddha_chandra',
@@ -1450,6 +1592,7 @@ export const yaduData = [
     {
   id: 'pratibahu_vajranabha_chandra',
   name: 'प्रतिबाहु',
+  gender: 'male',
   subtitle: 'वज्रनाभ पुत्र',
   parent: 'vajranabha_chandra',
   yug: 'kali',
@@ -1458,6 +1601,7 @@ export const yaduData = [
     {
   id: 'subahu_pratibahu_chandra',
   name: 'सुबाहु',
+  gender: 'male',
   subtitle: 'प्रतिबाहु पुत्र',
   parent: 'pratibahu_vajranabha_chandra',
   yug: 'kali',
@@ -1466,6 +1610,7 @@ export const yaduData = [
     {
   id: 'shantasena_subahu_chandra',
   name: 'शान्तसेन',
+  gender: 'male',
   subtitle: 'सुबाहु पुत्र',
   parent: 'subahu_pratibahu_chandra',
   yug: 'kali',
@@ -1474,6 +1619,7 @@ export const yaduData = [
     {
   id: 'shatasena_shantasena_chandra',
   name: 'शतसेन',
+  gender: 'male',
   subtitle: 'शान्तसेन पुत्र',
   parent: 'shantasena_subahu_chandra',
   yug: 'kali',
@@ -1482,6 +1628,7 @@ export const yaduData = [
     {
   id: 'yaduvansh_medieval_link_chandra',
   name: 'ऐतिहासिक अंतराल',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'shatasena_shantasena_chandra',
   yug: 'kali',
@@ -1491,6 +1638,7 @@ export const yaduData = [
     {
   id: 'modern_yadav_community_chandra',
   name: 'यादव समुदाय',
+  gender: 'male',
   subtitle: 'यदुवंशी समाज',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1500,6 +1648,7 @@ export const yaduData = [
     {
   id: 'modern_jadav_community_chandra',
   name: 'जादव समुदाय',
+  gender: 'male',
   subtitle: 'यदुवंशी समाज',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1509,6 +1658,7 @@ export const yaduData = [
     {
   id: 'modern_jatav_community_chandra',
   name: 'जाटव समुदाय',
+  gender: 'male',
   subtitle: 'यदुवंशी मूल',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1518,6 +1668,7 @@ export const yaduData = [
     {
   id: 'dharmapala_yaduvanshi_chandra',
   name: 'धर्मपाल',
+  gender: 'male',
   subtitle: 'जादौन / भाटी मूल',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1526,14 +1677,16 @@ export const yaduData = [
     {
   id: 'bhatti_rao_chandra',
   name: 'भट्टी (भाटी)',
+  gender: 'male',
   subtitle: 'भाटी वंश के संस्थापक',
   parent: 'dharmapala_yaduvanshi_chandra',
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'mangal_rao_bhati',
   name: 'मंगल राव',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'bhatti_rao_chandra',
   yug: 'kali',
@@ -1542,6 +1695,7 @@ export const yaduData = [
     {
   id: 'majam_rao_bhati',
   name: 'मजम राव',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'mangal_rao_bhati',
   yug: 'kali',
@@ -1550,6 +1704,7 @@ export const yaduData = [
     {
   id: 'kehar_1_bhati',
   name: 'केहर (प्रथम)',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'majam_rao_bhati',
   yug: 'kali',
@@ -1558,6 +1713,7 @@ export const yaduData = [
     {
   id: 'tano_bhati',
   name: 'तणू',
+  gender: 'male',
   subtitle: 'तणोट के संस्थापक',
   parent: 'kehar_1_bhati',
   yug: 'kali',
@@ -1566,6 +1722,7 @@ export const yaduData = [
     {
   id: 'biji_ray_bhati',
   name: 'बिजी राय',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'tano_bhati',
   yug: 'kali',
@@ -1574,6 +1731,7 @@ export const yaduData = [
     {
   id: 'deoraj_bhati',
   name: 'देवराज (रावल)',
+  gender: 'male',
   subtitle: 'देरावर के संस्थापक',
   parent: 'biji_ray_bhati',
   yug: 'kali',
@@ -1582,6 +1740,7 @@ export const yaduData = [
     {
   id: 'mund_bhati',
   name: 'मुंड',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'deoraj_bhati',
   yug: 'kali',
@@ -1590,6 +1749,7 @@ export const yaduData = [
     {
   id: 'bachera_bhati',
   name: 'बचेरा',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'mund_bhati',
   yug: 'kali',
@@ -1598,6 +1758,7 @@ export const yaduData = [
     {
   id: 'dusaj_bhati',
   name: 'दुसज',
+  gender: 'male',
   subtitle: 'भाटी नरेश',
   parent: 'bachera_bhati',
   yug: 'kali',
@@ -1606,6 +1767,7 @@ export const yaduData = [
     {
   id: 'jaisal_bhati',
   name: 'रावल जैसल',
+  gender: 'male',
   subtitle: 'जैसलमेर के संस्थापक',
   parent: 'dusaj_bhati',
   yug: 'kali',
@@ -1615,6 +1777,7 @@ export const yaduData = [
     {
   id: 'salivahan_bhati',
   name: 'शालिवाहन',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'jaisal_bhati',
   yug: 'kali',
@@ -1623,6 +1786,7 @@ export const yaduData = [
     {
   id: 'kelan_bhati',
   name: 'केलण',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'salivahan_bhati',
   yug: 'kali',
@@ -1631,6 +1795,7 @@ export const yaduData = [
     {
   id: 'chachigdeo_bhati',
   name: 'चाचिगदेव',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'kelan_bhati',
   yug: 'kali',
@@ -1639,6 +1804,7 @@ export const yaduData = [
     {
   id: 'karan_bhati',
   name: 'कर्ण',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'chachigdeo_bhati',
   yug: 'kali',
@@ -1647,6 +1813,7 @@ export const yaduData = [
     {
   id: 'lakhsen_bhati',
   name: 'लाखसेन',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'karan_bhati',
   yug: 'kali',
@@ -1655,6 +1822,7 @@ export const yaduData = [
     {
   id: 'punpal_bhati',
   name: 'पुनपाल',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'lakhsen_bhati',
   yug: 'kali',
@@ -1663,6 +1831,7 @@ export const yaduData = [
     {
   id: 'jait_singh_bhati',
   name: 'जैत सिंह',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'punpal_bhati',
   yug: 'kali',
@@ -1671,6 +1840,7 @@ export const yaduData = [
     {
   id: 'mularaja_bhati',
   name: 'मूलराज',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'jait_singh_bhati',
   yug: 'kali',
@@ -1679,14 +1849,16 @@ export const yaduData = [
     {
   id: 'ratan_singh_bhati',
   name: 'रतन सिंह',
+  gender: 'male',
   subtitle: 'जैसलमेर नरेश',
   parent: 'mularaja_bhati',
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'lakho_jadani_chandra',
   name: 'लाखो जादाणी',
+  gender: 'male',
   subtitle: 'जाडेजा वंश के मूल',
   parent: 'mangal_rao_bhati',
   yug: 'kali',
@@ -1696,15 +1868,17 @@ export const yaduData = [
     {
   id: 'jam_raval_jadeja_chandra',
   name: 'जाम रावल',
+  gender: 'male',
   subtitle: 'नवानगर के संस्थापक',
   parent: 'lakho_jadani_chandra',
   yug: 'kali',
   parichay: '1540 ईस्वी में इन्होंने नवानगर (वर्तमान जामनगर) की स्थापना की।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'vijaypala_jadon',
   name: 'विजयपाल',
+  gender: 'male',
   subtitle: 'बयाना के संस्थापक',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1714,6 +1888,7 @@ export const yaduData = [
     {
   id: 'tahanpala_jadon',
   name: 'तिहनपाल',
+  gender: 'male',
   subtitle: 'तिहनगढ़ के संस्थापक',
   parent: 'vijaypala_jadon',
   yug: 'kali',
@@ -1722,6 +1897,7 @@ export const yaduData = [
     {
   id: 'dharmapala_2_jadon',
   name: 'धर्मपाल (द्वितीय)',
+  gender: 'male',
   subtitle: 'जादौन नरेश',
   parent: 'tahanpala_jadon',
   yug: 'kali',
@@ -1730,6 +1906,7 @@ export const yaduData = [
     {
   id: 'kuntalpala_jadon',
   name: 'कुंतलपाल',
+  gender: 'male',
   subtitle: 'जादौन नरेश',
   parent: 'dharmapala_2_jadon',
   yug: 'kali',
@@ -1738,6 +1915,7 @@ export const yaduData = [
     {
   id: 'asala_jadon',
   name: 'असाल',
+  gender: 'male',
   subtitle: 'जादौन नरेश',
   parent: 'kuntalpala_jadon',
   yug: 'kali',
@@ -1746,6 +1924,7 @@ export const yaduData = [
     {
   id: 'gokul_deva_jadon',
   name: 'गोकुल देव',
+  gender: 'male',
   subtitle: 'जादौन नरेश',
   parent: 'asala_jadon',
   yug: 'kali',
@@ -1754,6 +1933,7 @@ export const yaduData = [
     {
   id: 'arjunpala_jadon',
   name: 'अर्जुनपाल',
+  gender: 'male',
   subtitle: 'करौली के संस्थापक',
   parent: 'gokul_deva_jadon',
   yug: 'kali',
@@ -1763,6 +1943,7 @@ export const yaduData = [
     {
   id: 'vikramaditya_jadon',
   name: 'विक्रमादित्य',
+  gender: 'male',
   subtitle: 'करौली नरेश',
   parent: 'arjunpala_jadon',
   yug: 'kali',
@@ -1771,6 +1952,7 @@ export const yaduData = [
     {
   id: 'abhaychand_jadon',
   name: 'अभयचंद',
+  gender: 'male',
   subtitle: 'करौली नरेश',
   parent: 'vikramaditya_jadon',
   yug: 'kali',
@@ -1779,6 +1961,7 @@ export const yaduData = [
     {
   id: 'prithvipala_jadon',
   name: 'पृथ्वीपाल',
+  gender: 'male',
   subtitle: 'करौली नरेश',
   parent: 'abhaychand_jadon',
   yug: 'kali',
@@ -1787,6 +1970,7 @@ export const yaduData = [
     {
   id: 'pratap_singh_jadon',
   name: 'प्रताप सिंह',
+  gender: 'male',
   subtitle: 'करौली नरेश',
   parent: 'prithvipala_jadon',
   yug: 'kali',
@@ -1795,6 +1979,7 @@ export const yaduData = [
     {
   id: 'gopal_singh_jadon',
   name: 'गोपाल सिंह',
+  gender: 'male',
   subtitle: 'करौली नरेश',
   parent: 'pratap_singh_jadon',
   yug: 'kali',
@@ -1803,14 +1988,16 @@ export const yaduData = [
     {
   id: 'bhanwar_pal_jadon',
   name: 'भंवर पाल',
+  gender: 'male',
   subtitle: 'करौली नरेश',
   parent: 'gopal_singh_jadon',
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'dridhaprahara_seuna',
   name: 'दृढप्रहार',
+  gender: 'male',
   subtitle: 'देवगिरि यादव संस्थापक',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1820,6 +2007,7 @@ export const yaduData = [
     {
   id: 'seunachandra_chandra',
   name: 'सेउणचन्द्र',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'dridhaprahara_seuna',
   yug: 'kali',
@@ -1828,6 +2016,7 @@ export const yaduData = [
     {
   id: 'dhadiyappa_chandra',
   name: 'धाडियप्प',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'seunachandra_chandra',
   yug: 'kali',
@@ -1836,6 +2025,7 @@ export const yaduData = [
     {
   id: 'bhilamma_1_chandra',
   name: 'भिल्लम (प्रथम)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'dhadiyappa_chandra',
   yug: 'kali',
@@ -1844,6 +2034,7 @@ export const yaduData = [
     {
   id: 'rajagi_chandra',
   name: 'राजगी',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'bhilamma_1_chandra',
   yug: 'kali',
@@ -1852,6 +2043,7 @@ export const yaduData = [
     {
   id: 'vadugi_1_chandra',
   name: 'वदुगी (प्रथम)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'rajagi_chandra',
   yug: 'kali',
@@ -1860,6 +2052,7 @@ export const yaduData = [
     {
   id: 'vesugi_1_chandra',
   name: 'वेसुगी (प्रथम)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'vadugi_1_chandra',
   yug: 'kali',
@@ -1868,6 +2061,7 @@ export const yaduData = [
     {
   id: 'bhilamma_2_chandra',
   name: 'भिल्लम (द्वितीय)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'vesugi_1_chandra',
   yug: 'kali',
@@ -1876,6 +2070,7 @@ export const yaduData = [
     {
   id: 'vesugi_2_chandra',
   name: 'वेसुगी (द्वितीय)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'bhilamma_2_chandra',
   yug: 'kali',
@@ -1884,6 +2079,7 @@ export const yaduData = [
     {
   id: 'bhilamma_3_chandra',
   name: 'भिल्लम (तृतीय)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'vesugi_2_chandra',
   yug: 'kali',
@@ -1892,6 +2088,7 @@ export const yaduData = [
     {
   id: 'vadugi_2_chandra',
   name: 'वदुगी (द्वितीय)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'bhilamma_3_chandra',
   yug: 'kali',
@@ -1900,6 +2097,7 @@ export const yaduData = [
     {
   id: 'seunachandra_2_chandra',
   name: 'सेउणचन्द्र (द्वितीय)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'vadugi_2_chandra',
   yug: 'kali',
@@ -1908,6 +2106,7 @@ export const yaduData = [
     {
   id: 'singhana_1_chandra',
   name: 'सिंघण (प्रथम)',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'seunachandra_2_chandra',
   yug: 'kali',
@@ -1916,6 +2115,7 @@ export const yaduData = [
     {
   id: 'mallugi_chandra',
   name: 'मल्लुगी',
+  gender: 'male',
   subtitle: 'देवगिरि यादव नरेश',
   parent: 'singhana_1_chandra',
   yug: 'kali',
@@ -1924,6 +2124,7 @@ export const yaduData = [
     {
   id: 'bhilamma_5_chandra',
   name: 'भिल्लम (पंचम)',
+  gender: 'male',
   subtitle: 'देवगिरि सम्राट',
   parent: 'mallugi_chandra',
   yug: 'kali',
@@ -1933,6 +2134,7 @@ export const yaduData = [
     {
   id: 'jaitugi_1_chandra',
   name: 'जैतुगी (प्रथम)',
+  gender: 'male',
   subtitle: 'देवगिरि सम्राट',
   parent: 'bhilamma_5_chandra',
   yug: 'kali',
@@ -1941,6 +2143,7 @@ export const yaduData = [
     {
   id: 'singhana_2_chandra',
   name: 'सिंघण (द्वितीय)',
+  gender: 'male',
   subtitle: 'देवगिरि सम्राट',
   parent: 'jaitugi_1_chandra',
   yug: 'kali',
@@ -1949,6 +2152,7 @@ export const yaduData = [
     {
   id: 'krishna_seuna',
   name: 'कृष्ण (कान्हण)',
+  gender: 'male',
   subtitle: 'देवगिरि सम्राट',
   parent: 'singhana_2_chandra',
   yug: 'kali',
@@ -1957,6 +2161,7 @@ export const yaduData = [
     {
   id: 'mahadeva_seuna',
   name: 'महादेव',
+  gender: 'male',
   subtitle: 'देवगिरि सम्राट',
   parent: 'krishna_seuna',
   yug: 'kali',
@@ -1965,6 +2170,7 @@ export const yaduData = [
     {
   id: 'ramachandra_seuna',
   name: 'रामचन्द्र',
+  gender: 'male',
   subtitle: 'देवगिरि सम्राट',
   parent: 'mahadeva_seuna',
   yug: 'kali',
@@ -1974,14 +2180,16 @@ export const yaduData = [
     {
   id: 'shankaradeva_seuna',
   name: 'शंकरदेव',
+  gender: 'male',
   subtitle: 'अंतिम देवगिरि नरेश',
   parent: 'ramachandra_seuna',
   yug: 'kali',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'vithoji_jadhav',
   name: 'विठोजी जाधवराव',
+  gender: 'male',
   subtitle: 'सिंदखेड के जागीरदार',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -1990,6 +2198,7 @@ export const yaduData = [
     {
   id: 'lakhuji_jadhav',
   name: 'लखूजी जाधवराव',
+  gender: 'male',
   subtitle: 'महान मराठा सरदार',
   parent: 'vithoji_jadhav',
   yug: 'kali',
@@ -1999,6 +2208,7 @@ export const yaduData = [
     {
   id: 'jijabai_jadhav',
   name: 'राजमाता जीजाबाई',
+  gender: 'female',
   subtitle: 'शिवाजी की माता',
   parent: 'lakhuji_jadhav',
   yug: 'kali',
@@ -2008,6 +2218,7 @@ export const yaduData = [
     {
   id: 'ahura_nandaram_chandra',
   name: 'राव नन्दराम',
+  gender: 'male',
   subtitle: 'रेवाड़ी रियासत (अहीरवाल)',
   parent: 'yaduvansh_medieval_link_chandra',
   yug: 'kali',
@@ -2017,6 +2228,7 @@ export const yaduData = [
     {
   id: 'rao_balkishan_chandra',
   name: 'राव बालकिशन',
+  gender: 'male',
   subtitle: 'रेवाड़ी नरेश',
   parent: 'ahura_nandaram_chandra',
   yug: 'kali',
@@ -2025,6 +2237,7 @@ export const yaduData = [
     {
   id: 'rao_gujarmal_chandra',
   name: 'राव गूजरमल',
+  gender: 'male',
   subtitle: 'रेवाड़ी नरेश',
   parent: 'rao_balkishan_chandra',
   yug: 'kali',
@@ -2033,6 +2246,7 @@ export const yaduData = [
     {
   id: 'rao_bhavani_singh_chandra',
   name: 'राव भवानी सिंह',
+  gender: 'male',
   subtitle: 'रेवाड़ी नरेश',
   parent: 'rao_gujarmal_chandra',
   yug: 'kali',
@@ -2041,6 +2255,7 @@ export const yaduData = [
     {
   id: 'rao_ram_singh_chandra',
   name: 'राव राम सिंह',
+  gender: 'male',
   subtitle: 'रेवाड़ी नरेश',
   parent: 'rao_bhavani_singh_chandra',
   yug: 'kali',
@@ -2049,6 +2264,7 @@ export const yaduData = [
     {
   id: 'rao_puran_singh_chandra',
   name: 'राव पूरण सिंह',
+  gender: 'male',
   subtitle: 'रेवाड़ी नरेश',
   parent: 'rao_ram_singh_chandra',
   yug: 'kali',
@@ -2057,6 +2273,7 @@ export const yaduData = [
     {
   id: 'rao_tula_ram_chandra',
   name: 'राव तुला राम',
+  gender: 'male',
   subtitle: '1857 के स्वतंत्रता सेनानी',
   parent: 'rao_puran_singh_chandra',
   yug: 'kali',
@@ -2066,6 +2283,7 @@ export const yaduData = [
     {
   id: 'vrishniman_chandra',
   name: 'वृष्णिमान',
+  gender: 'male',
   subtitle: 'चित्ररथ पुत्र',
   parent: 'chitraratha_kuru',
   yug: 'kali',
@@ -2074,6 +2292,7 @@ export const yaduData = [
     {
   id: 'sushena_kuru',
   name: 'सुषेण',
+  gender: 'male',
   subtitle: 'वृष्णिमान पुत्र',
   parent: 'vrishniman_chandra',
   yug: 'kali',
@@ -2082,6 +2301,7 @@ export const yaduData = [
     {
   id: 'sunitha_kuru',
   name: 'सुनीथ',
+  gender: 'male',
   subtitle: 'सुषेण पुत्र',
   parent: 'sushena_kuru',
   yug: 'kali',
@@ -2090,6 +2310,7 @@ export const yaduData = [
     {
   id: 'rucha_kuru',
   name: 'रुच',
+  gender: 'male',
   subtitle: 'सुनीथ पुत्र',
   parent: 'sunitha_kuru',
   yug: 'kali',
@@ -2098,6 +2319,7 @@ export const yaduData = [
     {
   id: 'nrichakshu_chandra',
   name: 'नृचक्षु',
+  gender: 'male',
   subtitle: 'रुच पुत्र',
   parent: 'rucha_kuru',
   yug: 'kali',
@@ -2106,6 +2328,7 @@ export const yaduData = [
     {
   id: 'sukhibala_chandra',
   name: 'सुखिबल',
+  gender: 'male',
   subtitle: 'नृचक्षु पुत्र',
   parent: 'nrichakshu_chandra',
   yug: 'kali',
@@ -2114,6 +2337,7 @@ export const yaduData = [
     {
   id: 'pariplava_chandra',
   name: 'परिप्लव',
+  gender: 'male',
   subtitle: 'सुखिबल पुत्र',
   parent: 'sukhibala_chandra',
   yug: 'kali',
@@ -2122,6 +2346,7 @@ export const yaduData = [
     {
   id: 'sunaya_chandra',
   name: 'सुनय',
+  gender: 'male',
   subtitle: 'परिप्लव पुत्र',
   parent: 'pariplava_chandra',
   yug: 'kali',
@@ -2130,6 +2355,7 @@ export const yaduData = [
     {
   id: 'medhavi_chandra',
   name: 'मेधावी',
+  gender: 'male',
   subtitle: 'सुनय पुत्र',
   parent: 'sunaya_chandra',
   yug: 'kali',
@@ -2138,6 +2364,7 @@ export const yaduData = [
     {
   id: 'nripanjaya_chandra',
   name: 'नृपंजय',
+  gender: 'male',
   subtitle: 'मेधावी पुत्र',
   parent: 'medhavi_chandra',
   yug: 'kali',
@@ -2146,6 +2373,7 @@ export const yaduData = [
     {
   id: 'dhrva_kali',
   name: 'ध्रुव',
+  gender: 'male',
   subtitle: 'नृपंजय पुत्र',
   parent: 'nripanjaya_chandra',
   yug: 'kali',
@@ -2154,6 +2382,7 @@ export const yaduData = [
     {
   id: 'tigmajoti_chandra',
   name: 'तिग्मज्योति',
+  gender: 'male',
   subtitle: 'ध्रुव पुत्र',
   parent: 'dhrva_kali',
   yug: 'kali',
@@ -2162,6 +2391,7 @@ export const yaduData = [
     {
   id: 'brihadratha_kali',
   name: 'बृहद्रथ',
+  gender: 'male',
   subtitle: 'तिग्मज्योति पुत्र',
   parent: 'tigmajoti_chandra',
   yug: 'kali',
@@ -2170,6 +2400,7 @@ export const yaduData = [
     {
   id: 'vasudana_chandra',
   name: 'वसुदान',
+  gender: 'male',
   subtitle: 'बृहद्रथ पुत्र',
   parent: 'brihadratha_kali',
   yug: 'kali',
@@ -2178,6 +2409,7 @@ export const yaduData = [
     {
   id: 'shatanika_2_kali',
   name: 'शतानीक (द्वितीय)',
+  gender: 'male',
   subtitle: 'वसुदान पुत्र',
   parent: 'vasudana_chandra',
   yug: 'kali',
@@ -2186,6 +2418,7 @@ export const yaduData = [
     {
   id: 'udayana_chandra',
   name: 'उदयन',
+  gender: 'male',
   subtitle: 'शतानीक पुत्र',
   parent: 'shatanika_2_kali',
   yug: 'kali',
@@ -2194,6 +2427,7 @@ export const yaduData = [
     {
   id: 'ahinara_chandra',
   name: 'अहीनार',
+  gender: 'male',
   subtitle: 'उदयन पुत्र',
   parent: 'udayana_chandra',
   yug: 'kali',
@@ -2202,6 +2436,7 @@ export const yaduData = [
     {
   id: 'khandapani_chandra',
   name: 'खण्डपाणि',
+  gender: 'male',
   subtitle: 'अहीनार पुत्र',
   parent: 'ahinara_chandra',
   yug: 'kali',
@@ -2210,6 +2445,7 @@ export const yaduData = [
     {
   id: 'niramitra_kali',
   name: 'निरमित्र',
+  gender: 'male',
   subtitle: 'खण्डपाणि पुत्र',
   parent: 'khandapani_chandra',
   yug: 'kali',
@@ -2218,6 +2454,7 @@ export const yaduData = [
     {
   id: 'kshemaka_chandra',
   name: 'क्षेमक',
+  gender: 'male',
   subtitle: 'अंतिम कुरु राजा',
   parent: 'niramitra_kali',
   yug: 'kali',
@@ -2227,15 +2464,17 @@ export const yaduData = [
     {
   id: 'tomar_medieval_link',
   name: 'ऐतिहासिक अंतराल (तोमर)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'kshemaka_chandra',
   yug: 'kali',
   parichay: 'क्षेमक (अंतिम कुरु राजा) के बाद उनके वंशज दक्षिण (गोदावरी क्षेत्र) चले गए थे, जो बाद में तोमर राजपूतों के रूप में दिल्ली लौटे।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'tungpal_tomar',
   name: 'तुंगपाल (बिलनदेव)',
+  gender: 'male',
   subtitle: 'तोमर वंश मूल',
   parent: 'tomar_medieval_link',
   yug: 'kali',
@@ -2244,6 +2483,7 @@ export const yaduData = [
     {
   id: 'anangpal_1_tomar',
   name: 'अनंगपाल तोमर (प्रथम)',
+  gender: 'male',
   subtitle: 'दिल्ली के संस्थापक',
   parent: 'tungpal_tomar',
   yug: 'kali',
@@ -2253,6 +2493,7 @@ export const yaduData = [
     {
   id: 'vasudeva_tomar',
   name: 'वासुदेव',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'anangpal_1_tomar',
   yug: 'kali',
@@ -2261,6 +2502,7 @@ export const yaduData = [
     {
   id: 'ganggeya_tomar',
   name: 'गांगेय',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'vasudeva_tomar',
   yug: 'kali',
@@ -2269,6 +2511,7 @@ export const yaduData = [
     {
   id: 'prithvimal_tomar',
   name: 'पृथ्वीमल',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'ganggeya_tomar',
   yug: 'kali',
@@ -2277,6 +2520,7 @@ export const yaduData = [
     {
   id: 'jayadeva_tomar',
   name: 'जयदेव',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'prithvimal_tomar',
   yug: 'kali',
@@ -2285,6 +2529,7 @@ export const yaduData = [
     {
   id: 'nirapal_tomar',
   name: 'नीरपाल',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'jayadeva_tomar',
   yug: 'kali',
@@ -2293,6 +2538,7 @@ export const yaduData = [
     {
   id: 'udayaraja_tomar',
   name: 'उदयराज',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'nirapal_tomar',
   yug: 'kali',
@@ -2301,6 +2547,7 @@ export const yaduData = [
     {
   id: 'vacharaja_tomar',
   name: 'वछराज',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'udayaraja_tomar',
   yug: 'kali',
@@ -2309,6 +2556,7 @@ export const yaduData = [
     {
   id: 'virapala_tomar',
   name: 'वीरपाल',
+  gender: 'male',
   subtitle: 'दिल्ली नरेश',
   parent: 'vacharaja_tomar',
   yug: 'kali',
@@ -2317,6 +2565,7 @@ export const yaduData = [
     {
   id: 'anangpal_2_tomar',
   name: 'अनंगपाल तोमर (द्वितीय)',
+  gender: 'male',
   subtitle: 'महान दिल्ली सम्राट',
   parent: 'virapala_tomar',
   yug: 'kali',
@@ -2326,6 +2575,7 @@ export const yaduData = [
     {
   id: 'veer_singh_dev_tomar',
   name: 'वीर सिंह देव',
+  gender: 'male',
   subtitle: 'ग्वालियर तोमर संस्थापक',
   parent: 'anangpal_2_tomar',
   yug: 'kali',
@@ -2335,6 +2585,7 @@ export const yaduData = [
     {
   id: 'uddharan_dev_tomar',
   name: 'उद्धरण देव',
+  gender: 'male',
   subtitle: 'ग्वालियर नरेश',
   parent: 'veer_singh_dev_tomar',
   yug: 'kali',
@@ -2343,6 +2594,7 @@ export const yaduData = [
     {
   id: 'viram_dev_tomar',
   name: 'वीरम देव',
+  gender: 'male',
   subtitle: 'ग्वालियर नरेश',
   parent: 'uddharan_dev_tomar',
   yug: 'kali',
@@ -2351,6 +2603,7 @@ export const yaduData = [
     {
   id: 'ganpati_dev_tomar',
   name: 'गणपति देव',
+  gender: 'male',
   subtitle: 'ग्वालियर नरेश',
   parent: 'viram_dev_tomar',
   yug: 'kali',
@@ -2359,6 +2612,7 @@ export const yaduData = [
     {
   id: 'dungar_singh_tomar',
   name: 'डूंगर सिंह',
+  gender: 'male',
   subtitle: 'ग्वालियर नरेश',
   parent: 'ganpati_dev_tomar',
   yug: 'kali',
@@ -2367,6 +2621,7 @@ export const yaduData = [
     {
   id: 'kirti_singh_tomar',
   name: 'कीर्ति सिंह',
+  gender: 'male',
   subtitle: 'ग्वालियर नरेश',
   parent: 'dungar_singh_tomar',
   yug: 'kali',
@@ -2375,6 +2630,7 @@ export const yaduData = [
     {
   id: 'kalyan_malla_tomar',
   name: 'कल्याण मल्ल',
+  gender: 'male',
   subtitle: 'ग्वालियर नरेश',
   parent: 'kirti_singh_tomar',
   yug: 'kali',
@@ -2383,6 +2639,7 @@ export const yaduData = [
     {
   id: 'man_singh_tomar',
   name: 'राजा मान सिंह तोमर',
+  gender: 'male',
   subtitle: 'ग्वालियर के महान सम्राट',
   parent: 'kalyan_malla_tomar',
   yug: 'kali',
@@ -2392,6 +2649,7 @@ export const yaduData = [
     {
   id: 'vikramaditya_tomar',
   name: 'विक्रमादित्य तोमर',
+  gender: 'male',
   subtitle: 'ग्वालियर के अंतिम नरेश',
   parent: 'man_singh_tomar',
   yug: 'kali',
@@ -2401,15 +2659,17 @@ export const yaduData = [
     {
   id: 'kalchuri_medieval_link',
   name: 'ऐतिहासिक अंतराल (कलचुरी)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'supratika_haihaya',
   yug: 'kali',
   parichay: 'प्राचीन माहिष्मती के हैहय वंश के पतन के बाद 8वीं सदी में त्रिपुरी (मध्य प्रदेश) में कलचुरी वंश का उदय हुआ।',
   clusterName: 'नहुष चंद्रवंशी'
 },
-        {
+    {
   id: 'vamaraja_kalchuri',
   name: 'वामराज',
+  gender: 'male',
   subtitle: 'कलचुरी वंश मूल',
   parent: 'kalchuri_medieval_link',
   yug: 'kali',
@@ -2418,6 +2678,7 @@ export const yaduData = [
     {
   id: 'shankaragana_1_kalchuri',
   name: 'शंकरगण (प्रथम)',
+  gender: 'male',
   subtitle: 'कलचुरी नरेश',
   parent: 'vamaraja_kalchuri',
   yug: 'kali',
@@ -2426,6 +2687,7 @@ export const yaduData = [
     {
   id: 'kokalla_1_kalchuri',
   name: 'कोकल्ल (प्रथम)',
+  gender: 'male',
   subtitle: 'त्रिपुरी शाखा के संस्थापक',
   parent: 'shankaragana_1_kalchuri',
   yug: 'kali',
@@ -2435,6 +2697,7 @@ export const yaduData = [
     {
   id: 'shankaragana_2_kalchuri',
   name: 'शंकरगण (द्वितीय) मुग्धतुंग',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'kokalla_1_kalchuri',
   yug: 'kali',
@@ -2443,6 +2706,7 @@ export const yaduData = [
     {
   id: 'balaharsha_kalchuri',
   name: 'बालहर्ष',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'shankaragana_2_kalchuri',
   yug: 'kali',
@@ -2451,6 +2715,7 @@ export const yaduData = [
     {
   id: 'yuvarajadeva_1_kalchuri',
   name: 'युवराजदेव (प्रथम) केयूरवर्ष',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'shankaragana_2_kalchuri',
   yug: 'kali',
@@ -2459,6 +2724,7 @@ export const yaduData = [
     {
   id: 'lakshmanaraja_2_kalchuri',
   name: 'लक्ष्मणराज (द्वितीय)',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'yuvarajadeva_1_kalchuri',
   yug: 'kali',
@@ -2467,6 +2733,7 @@ export const yaduData = [
     {
   id: 'shankaragana_3_kalchuri',
   name: 'शंकरगण (तृतीय)',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'lakshmanaraja_2_kalchuri',
   yug: 'kali',
@@ -2475,6 +2742,7 @@ export const yaduData = [
     {
   id: 'yuvarajadeva_2_kalchuri',
   name: 'युवराजदेव (द्वितीय)',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'lakshmanaraja_2_kalchuri',
   yug: 'kali',
@@ -2483,6 +2751,7 @@ export const yaduData = [
     {
   id: 'kokalla_2_kalchuri',
   name: 'कोकल्ल (द्वितीय)',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'yuvarajadeva_2_kalchuri',
   yug: 'kali',
@@ -2491,6 +2760,7 @@ export const yaduData = [
     {
   id: 'gangeyadeva_kalchuri',
   name: 'गांगेयदेव (विक्रमादित्य)',
+  gender: 'male',
   subtitle: 'महान कलचुरी सम्राट',
   parent: 'kokalla_2_kalchuri',
   yug: 'kali',
@@ -2500,6 +2770,7 @@ export const yaduData = [
     {
   id: 'lakshmikarna_kalchuri',
   name: 'लक्ष्मीकर्ण (कर्णदेव)',
+  gender: 'male',
   subtitle: 'चक्रवर्ती सम्राट',
   parent: 'gangeyadeva_kalchuri',
   yug: 'kali',
@@ -2509,6 +2780,7 @@ export const yaduData = [
     {
   id: 'yashahkarna_kalchuri',
   name: 'यशःकर्ण',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'lakshmikarna_kalchuri',
   yug: 'kali',
@@ -2517,6 +2789,7 @@ export const yaduData = [
     {
   id: 'gayakarna_kalchuri',
   name: 'गयाकर्ण',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'yashahkarna_kalchuri',
   yug: 'kali',
@@ -2525,6 +2798,7 @@ export const yaduData = [
     {
   id: 'narasimha_kalchuri',
   name: 'नरसिंह',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'gayakarna_kalchuri',
   yug: 'kali',
@@ -2533,6 +2807,7 @@ export const yaduData = [
     {
   id: 'jayasimha_kalchuri',
   name: 'जयसिंह',
+  gender: 'male',
   subtitle: 'त्रिपुरी नरेश',
   parent: 'gayakarna_kalchuri',
   yug: 'kali',
@@ -2541,6 +2816,7 @@ export const yaduData = [
     {
   id: 'vijayasimha_kalchuri',
   name: 'विजयसिंह',
+  gender: 'male',
   subtitle: 'अंतिम त्रिपुरी नरेश',
   parent: 'jayasimha_kalchuri',
   yug: 'kali',

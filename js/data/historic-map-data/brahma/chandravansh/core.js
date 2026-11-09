@@ -129,7 +129,7 @@ export const chandravanshCoreData = [
   yug: 'satya',
   clusterName: 'सूर्यवंश',
   kathayein: [
-      {
+    {
           title: "मनु की प्रथम संतान और चंद्रवंश की माता",
           source: "श्रीमद्भागवत पुराण / विष्णु पुराण",
           content: "माता इला वैवस्वत मनु और श्रद्धा की सबसे पहली संतान थीं। भगवान विष्णु की कृपा से वे पुरुष रूप 'सुद्युम्न' बन गईं। किंतु सुकुमार वन में भगवान शिव के श्राप के कारण वे पुनः स्त्री रूप (इला) में आ गईं। इसी रूप में उनका चंद्रदेव के पुत्र 'बुध' से विवाह हुआ और उनसे 'पुरुरवा' का जन्म हुआ, जो चंद्रवंश के प्रथम राजा बने। अतः माता इला चंद्रवंश की आदिमाता भी मानी जाती हैं। विस्तृत जीवन कथा उनके पुरुष रूप 'सुद्युम्न' के पृष्ठ पर उपलब्ध है।"
@@ -149,17 +149,17 @@ export const chandravanshCoreData = [
   kali_year: -2160000,
   parichay: 'बुध और इला के पुत्र, जो चंद्रवंश के प्रथम राजा बने। ये एक अत्यंत पराक्रमी और धर्मपरायण राजा थे जिन्होंने 100 अश्वमेध यज्ञ किये और अपनी राजधानी प्रतिष्ठानपुर (आधुनिक झूँसी, प्रयागराज) में स्थापित की।',
   kathayein: [
-      {
+    {
           title: 'उर्वशी के साथ प्रेम और अलगाव',
           source: 'ऋग्वेद, शतपथ ब्राह्मण, विष्णु पुराण',
           content: 'पुरुरवा की कहानी सबसे प्रसिद्ध उनकी पत्नी अप्सरा उर्वशी के साथ है। उर्वशी ने पुरुरवा से विवाह के लिए कुछ शर्तें रखी थीं (जैसे कि पुरूरवा उसकी पालतू भेड़ों की रक्षा करेंगे और कभी निर्वस्त्र नहीं दिखेंगे)। जब देवराज इंद्र ने गंधर्वों को भेजकर उन भेड़ों को चुरा लिया, तो पुरूरवा भेड़ों को बचाने दौड़े, लेकिन वह भूल गए कि वे निर्वस्त्र हैं। इंद्र की बिजली चमकने से उर्वशी ने उन्हें देख लिया। शर्त टूटने के कारण उर्वशी स्वर्ग वापस लौट गईं। पुरूरवा उनके विरह में पागल हो गए थे, लेकिन बाद में गंधर्वों की कृपा से उन्हें एक विशेष "अग्नि" मिली और वे गंधर्वलोक में उर्वशी से पुनः मिल सके।'
       },
-      {
+    {
           title: 'तीन अग्नियों का पृथ्वी पर विस्तार',
           source: 'महाभारत',
           content: 'उर्वशी के वियोग में भटकते हुए पुरुरवा को गंधर्वों ने एक विशेष अग्नि (अरणि) दी थी। कहा जाता है कि पुरुरवा ही वह पहले राजा थे जिन्होंने त्रेता युग में पृथ्वी पर तीन प्रकार की यज्ञीय अग्नियों (गार्हपत्य, आहवनीय और दक्षिणाग्नि) का विस्तार किया।'
       },
-      {
+    {
           title: 'विभिन्न ग्रंथों में पुरूरवा के पुत्र',
           source: 'श्रीमद्भागवत, विष्णु पुराण, महाभारत, वायु पुराण',
           content: 'शास्त्रों में पुरूरवा के पुत्रों के नामों को लेकर दो अलग-अलग सूचियां मिलती हैं। श्रीमद्भागवत (9.15.1) और विष्णु पुराण के अनुसार इनके 6 पुत्र थे: आयु, श्रुतायु, सत्यायु, रय, विजय, और जय। वहीं दूसरी ओर, महाभारत (आदि पर्व) और वायु/मत्स्य पुराण के अनुसार इनके 6 पुत्र थे: आयु, धीमान, अमावसु, दृढायु, वनायु, और शतायु। इन सभी पुत्रों में से सबसे प्रतापी और मुख्य चंद्रवंश को आगे बढ़ाने वाले ज्येष्ठ पुत्र \'आयु\' ही हुए, जबकि अन्य पुत्रों (जैसे अमावसु) ने अलग-अलग प्रांतीय राजवंशों की स्थापना की।'
@@ -177,27 +177,27 @@ export const chandravanshCoreData = [
   yug: 'satya',
   parichay: 'स्वर्ग की सबसे प्रमुख और सुंदर अप्सरा, जो महर्षि नारायण की जंघा से उत्पन्न हुई थीं। ये चंद्रवंश के प्रथम राजा पुरुरवा की पत्नी बनीं।',
   kathayein: [
-      {
+    {
           title: 'नारायण की जंघा (उरु) से उत्पत्ति',
           source: 'देवी भागवत पुराण',
           content: 'उर्वशी किसी माता-पिता से सामान्य रूप से उत्पन्न नहीं हुई थीं। जब देवराज इंद्र ने नर-नारायण ऋषियों की तपस्या भंग करने के लिए रंभा, मेनका आदि अप्सराओं को भेजा, तो महर्षि नारायण ने अपनी जांघ (उरु) पर एक फूल मारा, जिससे एक अत्यंत सुंदर स्त्री प्रकट हुई। उरु से उत्पन्न होने के कारण उनका नाम \'उर्वशी\' पड़ा। उनकी सुंदरता से स्वर्ग की अप्सराएं भी लज्जित हो गईं। बाद में नारायण ने उर्वशी को इंद्र को सौंप दिया।'
       },
-      {
+    {
           title: 'पुरुरवा से विवाह और संतानें',
           source: 'पुराण',
           content: 'उर्वशी ने चंद्रवंशी राजा पुरुरवा से विवाह किया। दोनों से आयु, अमावसु (विजय), श्रुतायु, सत्यायु, रय, और जय नामक छह पुत्र हुए। आगे चलकर इन्हीं पुत्रों से चंद्रवंश का विस्तार हुआ।'
       },
-      {
+    {
           title: 'अगस्त्य और वशिष्ठ का जन्म',
           source: 'ऋग्वेद, पुराण',
           content: 'एक बार मित्रावरुण (मित्र और वरुण देव) यज्ञ कर रहे थे, तब उर्वशी उनके सामने आ गईं। उन्हें देखकर मित्रावरुण मोहित हो गए और उनका वीर्य स्खलित होकर एक कलश (घड़े) में गिर गया। इसी कलश से दो महान ऋषियों का जन्म हुआ: महर्षि वशिष्ठ और महर्षि अगस्त्य। इस प्रकार उर्वशी को अप्रत्यक्ष रूप से इन ऋषियों की माता माना जाता है।'
       },
-      {
+    {
           title: 'अर्जुन को श्राप',
           source: 'महाभारत (वन पर्व)',
           content: 'जब अर्जुन अस्त्र-शस्त्र की शिक्षा लेने स्वर्ग गए, तब उर्वशी उन पर मोहित हो गईं। उन्होंने अर्जुन के समक्ष प्रणय-निवेदन किया, लेकिन अर्जुन ने उन्हें अस्वीकार कर दिया और कहा कि "आप मेरे पूर्वज पुरूरवा की पत्नी रही हैं, इस नाते आप मेरी माता के समान हैं।" क्रोधित होकर उर्वशी ने अर्जुन को श्राप दिया कि उन्हें एक वर्ष तक \'नपुंसक\' (किन्नर) के रूप में रहना पड़ेगा। यही श्राप बाद में अर्जुन के अज्ञातवास (बृहन्नला के रूप में) में वरदान साबित हुआ।'
       },
-      {
+    {
           title: 'ऋष्यश्रृंग मुनि का जन्म',
           source: 'महाभारत',
           content: 'महर्षि विभांडक ने उर्वशी (या एक अन्य अप्सरा) को देखकर अपना वीर्यपात कर दिया था, जिसे एक हिरनी ने पी लिया। उसी हिरनी के गर्भ से महर्षि \'ऋष्यश्रृंग\' (जिनके सिर पर सींग था) का जन्म हुआ था।'
@@ -216,12 +216,12 @@ export const chandravanshCoreData = [
   clusterName: 'चंद्रवंश',
   parichay: 'पुरूरवा और उर्वशी के ज्येष्ठ पुत्र। इन्होने मुख्य चंद्रवंश को आगे बढ़ाया और प्रतिष्ठानपुर पर शासन किया।',
   kathayein: [
-      {
+    {
           title: 'दत्तात्रेय की तपस्या और वरदान',
           source: 'मार्कण्डेय पुराण / महाभारत',
           content: 'यद्यपि आयु चक्रवर्ती सम्राट थे, लेकिन बहुत समय तक उन्हें कोई संतान नहीं हुई। महर्षियों की सलाह पर, राजा आयु ने अपनी पत्नी स्वरभावी (प्रभा) के साथ भगवान दत्तात्रेय की घोर तपस्या की। दत्तात्रेय उस समय सह्याद्री पर्वत पर अवधूत रूप में रहते थे और कभी-कभी क्रोधित स्वरूप का नाटक करते थे, ताकि लोग उनके पास न आएं। आयु ने दत्तात्रेय के इस उग्र स्वरूप से डरने के बजाय उनकी निस्वार्थ सेवा की। प्रसन्न होकर दत्तात्रेय ने आयु को वरदान दिया कि उन्हें एक ऐसा पुत्र प्राप्त होगा जो देवताओं का भी राजा बनेगा।'
       },
-      {
+    {
           title: 'हुंड असुर द्वारा पुत्र का अपहरण',
           source: 'मत्स्य पुराण',
           content: 'जब आयु के ज्येष्ठ पुत्र नहुष का जन्म हुआ, तो हुंड नामक असुर ने नवजात नहुष का अपहरण कर लिया क्योंकि भविष्यवाणी थी कि नहुष उसका वध करेगा। राजा आयु और उनकी पत्नी कई वर्षों तक गहरे शोक में रहे। अंततः महर्षि वशिष्ठ के आश्रम में पले-बढ़े नहुष ने हुंड का वध किया और माता-पिता से पुनः मिला। आयु ने भावुक होकर अपना सारा साम्राज्य नहुष को सौंप दिया और स्वयं वानप्रस्थ (तपस्या) के लिए वन चले गए।'
@@ -240,12 +240,12 @@ export const chandravanshCoreData = [
   clusterName: 'चंद्रवंश',
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के द्वितीय पुत्र।',
   kathayein: [
-      {
+    {
           title: 'जन्म और राज्य',
           source: 'श्रीमद्भागवत पुराण 9.15.1 / महाभारत',
           content: 'श्रुतायु, चंद्रवंश के आदि-पुरुष सम्राट पुरूरवा और स्वर्ग की अप्सरा उर्वशी के द्वितीय पुत्र थे। महाभारत और कुछ पुराणों में इन्हें शतायु या दृढायु भी कहा गया है। जब पुरूरवा ने अपने साम्राज्य का विभाजन किया, तो मुख्य केंद्र (प्रतिष्ठानपुर) ज्येष्ठ पुत्र आयु को मिला, जबकि श्रुतायु को साम्राज्य के अंतर्गत गंगा-यमुना दोआब या प्रतिष्ठानपुर के आस-पास का कोई क्षेत्रीय राज्य (Provincial Kingdom) सौंपा गया।'
       },
-      {
+    {
           title: 'वंश विस्तार',
           source: 'श्रीमद्भागवत पुराण 9.15.2',
           content: 'श्रीमद्भागवत पुराण (९.१५.२) के श्लोक "श्रुतायोर्वसुमान् पुत्रः..." के अनुसार श्रुतायु के पुत्र का नाम वसुमान था। वसुमान के बाद इस वंश के किसी प्रतापी राजा या बड़े युद्ध का वर्णन नहीं मिलता। ऐतिहासिक दृष्टिकोण से श्रुतायु की राजसत्ता कुछ समय बाद या तो चंद्रवंश की मुख्य शाखा (आयु के वंश) में विलीन हो गई, या उनके वंशजों ने राजपाट छोड़ दिया।'
@@ -264,12 +264,12 @@ export const chandravanshCoreData = [
   clusterName: 'चंद्रवंश',
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के तृतीय पुत्र।',
   kathayein: [
-      {
+    {
           title: 'जन्म और राज्य',
           source: 'श्रीमद्भागवत पुराण 9.15.1 / महाभारत',
           content: 'सत्यायु (जिन्हें महाभारत और मत्स्य पुराण में अमावसु या धीमान भी कहा गया है), पुरूरवा और उर्वशी के पुत्र थे। श्रुतायु की ही भांति सत्यायु को भी पुरूरवा के साम्राज्य (प्रतिष्ठानपुर के अधीन) का कोई विशिष्ट क्षेत्रीय राज्य प्राप्त हुआ था। इन भाइयों का झुकाव राजसत्ता से अधिक आध्यात्मिक और धार्मिक कार्यों की ओर था।'
       },
-      {
+    {
           title: 'वंश विस्तार',
           source: 'श्रीमद्भागवत पुराण 9.15.2',
           content: 'श्रीमद्भागवत पुराण (९.१५.२) के श्लोक "श्रुतायोर्वसुमान् पुत्रः सत्यायोः श्रुतञ्जयः" के अनुसार सत्यायु के पुत्र का नाम श्रुतिंजय था। श्रुतिंजय के बाद इस वंश के किसी अन्य प्रतापी राजा का वर्णन नहीं मिलता। ऐतिहासिक दृष्टिकोण से इनकी राजसत्ता कुछ समय बाद या तो चंद्रवंश की मुख्य शाखा में विलीन हो गई, या इन्होंने वानप्रस्थ आश्रम अपना लिया।'
@@ -288,7 +288,6 @@ export const chandravanshCoreData = [
   clusterName: 'चंद्रवंश',
   parichay: 'चंद्रवंश के संस्थापक सम्राट पुरूरवा और अप्सरा उर्वशी के चतुर्थ पुत्र।'
 },
-
     {
   id: 'jaya_chandra',
   name: 'जय',
@@ -356,12 +355,12 @@ export const chandravanshCoreData = [
   clusterName: 'चंद्रवंश',
   parichay: 'दानवराज स्वर्भानु (राहु) की पुत्री और चंद्रवंशी सम्राट आयु की पत्नी।',
   kathayein: [
-      {
+    {
           title: 'दानव कन्या का चंद्रवंश में विवाह',
           source: 'मत्स्य पुराण / वायु पुराण',
           content: 'प्रभा (जिन्हें स्वरभावी भी कहा जाता है) कोई साधारण कन्या नहीं थीं, बल्कि वे विप्रचित्ति और सिंहिका के शक्तिशाली पुत्र, महापराक्रमी दानव स्वर्भानु (जिन्हें हम ग्रहों में राहु के नाम से जानते हैं) की पुत्री थीं। उस काल में देवताओं, मनुष्यों और दानवों के बीच वैवाहिक संबंध होते रहते थे। इनका विवाह चंद्रवंश के महान सम्राट आयु के साथ हुआ और इन्हीं के गर्भ से नहुष, क्षत्रवृद्ध, रजि, रंभ और अनेना जैसे प्रतापी पुत्रों का जन्म हुआ।'
       },
-      {
+    {
           title: 'पुत्र वियोग का दुःख',
           source: 'मत्स्य पुराण',
           content: 'जब इनके सबसे बड़े पुत्र नहुष का जन्म हुआ था, तब हुंड नामक असुर ने नवजात नहुष का अपहरण कर लिया था। माता प्रभा ने अपने पुत्र के वियोग में कई वर्षों तक घोर विलाप किया और दुःख सहा, जब तक कि महर्षि वशिष्ठ के आश्रम में पले-बढ़े नहुष ने हुंड का वध करके अपने माता-पिता को दर्शन नहीं दिए।'
@@ -381,22 +380,22 @@ export const chandravanshCoreData = [
   yug: 'satya',
   parichay: "नहुष चंद्रवंशी राजा आयु और माता प्रभा (स्वरभानु की पुत्री) के अत्यंत प्रतापी पुत्र थे। वे भगवान शिव की पुत्री अशोकसुंदरी के पति और महान चक्रवर्ती सम्राट ययाति के पिता थे। इन्होंने स्वर्ग के अधिपति (इन्द्र) का पद भी प्राप्त किया था, किंतु महर्षि अगस्त्य के शाप से सर्प बन गए।",
   kathayein: [
-      {
+    {
           title: "जन्म और अशोकसुंदरी से विवाह",
           source: "पद्म पुराण / महाभारत",
           content: "नहुष का जन्म चंद्रवंशी राजा आयु और उनकी पत्नी प्रभा के घर हुआ। जब वे नवजात शिशु थे, तब हुंड नामक असुर ने उनका अपहरण कर लिया था, क्योंकि उसे पता था कि नहुष ही उसका वध करेगा। महर्षि वशिष्ठ के आश्रम में पले-बढ़े नहुष ने बड़े होकर हुंड का वध किया और भगवान शिव व माता पार्वती की पुत्री अशोकसुंदरी से विवाह किया। इनके यति, ययाति, संयाति, अयाति, वियति और कृति नामक छः पुत्र हुए।"
       },
-      {
+    {
           title: "स्वर्ग का अधिपति (इन्द्र) बनना",
           source: "महाभारत / पुराण",
           content: "जब देवराज इन्द्र ने वृत्रासुर का वध किया, तो उन्हें ब्रह्महत्या का पाप लग गया और वे मानसरोवर में छुप गए। इन्द्र के बिना स्वर्ग अनाथ हो गया। ऐसे में देवताओं और ऋषियों ने पृथ्वी के सबसे प्रतापी और पुण्यात्मा राजा नहुष, जिन्होंने 100 अश्वमेध यज्ञ किये थे, को स्वर्ग का नया इन्द्र नियुक्त किया।"
       },
-      {
+    {
           title: "अहंकार और महर्षि अगस्त्य का शाप",
           source: "महाभारत (उद्योग पर्व)",
           content: "स्वर्ग का राजा बनने के बाद नहुष में अत्यंत अहंकार आ गया। वह इन्द्राणी शची पर कुदृष्टि डालने लगा। शची की शर्त के अनुसार, नहुष ने सप्तर्षियों को अपनी पालकी उठाने का आदेश दिया। कामांध और अहंकारी नहुष को शची के पास पहुँचने की बहुत जल्दी थी। जब महर्षि अगस्त्य और अन्य ऋषि तेज़ी से पालकी नहीं उठा पाए, तो नहुष ने महर्षि अगस्त्य के सिर पर लात मारी और कहा—'सर्प! सर्प!' (जल्दी चलो)। इस घोर अपमान से क्रोधित होकर महर्षि अगस्त्य ने शाप दिया कि वह स्वर्ग से गिरकर एक विशाल सर्प (अजगर) बन जाए।"
       },
-      {
+    {
           title: "युधिष्ठिर द्वारा उद्धार",
           source: "महाभारत (वन पर्व)",
           content: "शाप के कारण नहुष स्वर्ग से गिरकर पृथ्वी पर एक विशाल अजगर बन गया। द्वापर युग में, जब पाण्डव वनवास में थे, तब इस अजगर (नहुष) ने भीम को जकड़ लिया। वहाँ पहुँचने पर युधिष्ठिर ने अजगर द्वारा पूछे गए धर्म, कर्म और आत्मा से जुड़े अत्यंत गूढ़ दार्शनिक प्रश्नों के सटीक उत्तर दिए। अपने वंशज (युधिष्ठिर) के ज्ञान और धर्म को देखकर नहुष बहुत प्रसन्न हुए, उन्हें शाप से मुक्ति मिल गई, और वे अपने दिव्य रूप में स्वर्ग लौट गए।"
@@ -414,7 +413,7 @@ export const chandravanshCoreData = [
   clusterName: 'आयु वंश',
   parichay: "रम्भ (या राभ) चंद्रवंशी राजा आयु और माता प्रभा के प्रतापी पुत्र तथा नहुष के भाई थे। इन्होंने चंद्रवंश की रम्भ शाखा की शुरुआत की।",
   kathayein: [
-      {
+    {
           title: "चंद्रवंश की रम्भ शाखा",
           source: "श्रीमद्भागवत पुराण 9.17.1-10",
           content: "रम्भ (या राभ) चंद्रवंशी राजा आयु और उनकी पत्नी प्रभा के अत्यंत पराक्रमी पुत्र थे। इन्होने चंद्रवंश की अपनी एक अलग शाखा की शुरुआत की, जिसे रम्भ वंश के नाम से जाना गया। इनके पुत्र का नाम रभस था।"
@@ -460,7 +459,7 @@ export const chandravanshCoreData = [
   clusterName: 'आयु वंश',
   parichay: "रजि चंद्रवंशी राजा आयु और प्रभा के पराक्रमी पुत्र तथा नहुष के भाई थे। इन्होंने देवासुर संग्राम में देवताओं की सहायता की थी। इनके 500 बलशाली पुत्र थे जिन्हें रजेय कहा जाता था।",
   kathayein: [
-      {
+    {
           title: "देवासुर संग्राम और स्वर्ग का अधिपति",
           source: "श्रीमद्भागवत पुराण 9.17.13",
           content: "राजा रजि आयु के अत्यंत पराक्रमी पुत्र थे। एक बार देवासुर संग्राम में देवताओं के अनुरोध पर उन्होंने असुरों का वध किया और स्वर्ग का राज्य देवराज इन्द्र को सौंप दिया। किंतु इन्द्र को हिरण्यकशिपु के पुत्र प्रह्लाद और अन्य असुरों का इतना अधिक भय था कि उसने वह स्वर्ग का राज्य वापस राजा रजि को ही दे दिया और उनकी शरण में आ गया। इस प्रकार राजा रजि कुछ समय तक स्वर्ग के अधिपति भी रहे। इससे स्पष्ट होता है कि राजा रजि प्रह्लाद के समकालीन (contemporary) थे।"
@@ -476,7 +475,7 @@ export const chandravanshCoreData = [
   yug: 'satya',
   parichay: 'राजा रजि के 500 बलवान पुत्र। इन्होंने इंद्र से स्वर्ग छीन लिया था, जिसे बाद में बृहस्पति के छल से नष्ट किया गया',
   kathayein: [
-      {
+    {
           title: "इन्द्र से विवाद और बृहस्पति का छल",
           source: "श्रीमद्भागवत पुराण 9.17.14-15",
           content: "राजा रजि के 500 पुत्र थे, जो अत्यंत बलशाली थे। जब राजा रजि की मृत्यु हुई, तो इन्द्र ने स्वर्ग का राज्य वापस माँगा, किंतु रजेयों ने इसे अपनी पैतृक संपत्ति मानकर लौटाने से मना कर दिया। देवताओं के गुरु बृहस्पति ने छल से ऐसे यज्ञ किए जिससे रजेयों की बुद्धि मलिन हो गई और वे धर्म के मार्ग से भ्रष्ट हो गए। धर्म-भ्रष्ट होते ही वे शक्तिहीन हो गए, जिसके बाद इन्द्र ने बड़ी आसानी से रजि के सभी 500 पुत्रों का वध कर दिया।"
@@ -494,7 +493,7 @@ export const chandravanshCoreData = [
   clusterName: 'आयु वंश',
   parichay: "अनेना चंद्रवंशी राजा आयु और प्रभा के पुत्र तथा नहुष के भाई थे। इन्होंने चंद्रवंश की एक शाखा की स्थापना की जो विरक्ति और आध्यात्मिकता के लिए जानी गई।",
   kathayein: [
-      {
+    {
           title: "चंद्रवंश की अनेना शाखा",
           source: "श्रीमद्भागवत पुराण 9.17",
           content: "अनेना चंद्रवंशी राजा आयु और उनकी पत्नी प्रभा के पाँचवें पुत्र थे। उनके भाई नहुष, क्षत्रवृद्ध, रजि और रभ थे। अनेना ने चंद्रवंश की एक अलग शाखा की स्थापना की जो आध्यात्मिकता और विरक्ति के लिए जानी गई।"
@@ -510,7 +509,7 @@ export const chandravanshCoreData = [
   yug: 'satya',
   clusterName: 'अनेना वंश',
   kathayein: [
-      {
+    {
           title: "अनेना के उत्तराधिकारी",
           source: "श्रीमद्भागवत पुराण 9.17.11",
           content: "शुद्ध चंद्रवंशी राजा अनेना के पुत्र थे। उन्होंने अपने पिता के बाद इस शाखा को आगे बढ़ाया।"
@@ -526,7 +525,7 @@ export const chandravanshCoreData = [
   yug: 'satya',
   clusterName: 'अनेना वंश',
   kathayein: [
-      {
+    {
           title: "शुद्ध के पुत्र",
           source: "श्रीमद्भागवत पुराण 9.17.11",
           content: "शुचि राजा शुद्ध के पुत्र और अनेना के पौत्र थे। वे इस अत्यंत आध्यात्मिक और संक्षिप्त वंश की एक महत्वपूर्ण कड़ी थे।"
@@ -542,7 +541,7 @@ export const chandravanshCoreData = [
   yug: 'satya',
   clusterName: 'अनेना वंश',
   kathayein: [
-      {
+    {
           title: "चित्रकृत् / धर्मसारथि",
           source: "श्रीमद्भागवत पुराण 9.17.11",
           content: "त्रिककुद्, जिन्हें भागवत पुराण में 'चित्रकृत्' और 'धर्मसारथि' भी कहा गया है, शुचि के पुत्र थे। उनका नाम 'धर्मसारथि' उनके धार्मिक मार्ग पर चलने (धर्म को रथ के समान हांकने वाले) के कारण पड़ा।"
@@ -559,7 +558,7 @@ export const chandravanshCoreData = [
   parichay: 'ये आत्मज्ञानी (ब्रह्मज्ञानी) थे, अतः इन्होंने अपना वंश आगे नहीं बढ़ाया।',
   clusterName: 'अनेना वंश',
   kathayein: [
-      {
+    {
           title: "वंश की समाप्ति और विरक्ति",
           source: "श्रीमद्भागवत पुराण 9.17.12",
           content: "शान्तरय (या शान्तरज) त्रिककुद् (चित्रकृत्) के पुत्र थे। भागवत पुराण के अनुसार, वे एक आत्म-साक्षात्कारी (आत्मवान्) व्यक्ति थे। उन्होंने अपने जीवन में सारे आवश्यक वैदिक कर्म (कृत-कृत्य) पूरे कर लिए थे। उनकी इस पूर्णता और विरक्ति के कारण उन्होंने विवाह करके कोई संतान उत्पन्न नहीं की। इसी कारण अनेना का यह वंश शान्तरय पर आकर समाप्त हो गया।"
@@ -646,6 +645,7 @@ export const chandravanshCoreData = [
     {
   id: 'devayani_yayati_chandra',
   name: 'देवयानी',
+  gender: 'female',
   subtitle: 'ययाति की पत्नी (शुक्राचार्य की पुत्री)',
   parent: 'shukracharya',
   spouseOf: 'yayati_chandra',
@@ -655,6 +655,7 @@ export const chandravanshCoreData = [
     {
   id: 'sharmishtha_chandra',
   name: 'शर्मिष्ठा',
+  gender: 'female',
   subtitle: 'ययाति की पत्नी (वृषपर्वा की पुत्री)',
   parent: 'vrishaparva_danava',
   spouseOf: 'yayati_chandra',
@@ -672,12 +673,12 @@ export const chandravanshCoreData = [
   clusterName: 'चंद्रवंश',
   parichay: 'पुरूरवा के पुत्र (महाभारत व वायु पुराण के अनुसार)। इन्होंने अपनी वीरता से एक स्वतंत्र राज्य की स्थापना की, जो बाद में कान्यकुब्ज (कन्नौज) राजवंश के नाम से प्रसिद्ध हुआ।',
   kathayein: [
-      {
+    {
           title: 'पितरों की पुत्री अच्छोदा से प्रेम और श्राप',
           source: 'मत्स्य पुराण / वायु पुराण',
           content: 'स्वर्ग में अग्निष्वात्त पितरों की एक मानसिक पुत्री थी, जिसका नाम अच्छोदा था। एक बार अच्छोदा पृथ्वी पर विचर रही थी और उसने अमावसु को देखा। अमावसु अत्यंत रूपवान और पराक्रमी थे। अच्छोदा उनके रूप पर इतनी मोहित हो गई कि उसने मन ही मन अमावसु को अपना पति मान लिया। जब पितरों को यह बात पता चली, तो उन्होंने क्रोधित होकर अच्छोदा को श्राप दे दिया कि वह स्वर्ग से गिरकर पृथ्वी पर मनुष्य योनि में जन्म लेगी (जो बाद में सत्यवती बनी)।'
       },
-      {
+    {
           title: 'धर्मनिष्ठा और वैराग्य',
           source: 'पुराण',
           content: 'ग्रंथों में अमावसु को अत्यंत धर्मनिष्ठ और संयमी बताया गया है। उन्होंने अच्छोदा के इस आकर्षण को स्वीकार नहीं किया और अपने धर्म पर अडिग रहे, जिसके कारण उनका कोई संबंध नहीं जुड़ा। इन्हीं अमावसु के वंश में आगे चलकर कान्यकुब्ज (कन्नौज) के महान राजा गाधि और महर्षि विश्वामित्र उत्पन्न हुए।'
@@ -687,13 +688,14 @@ export const chandravanshCoreData = [
     {
   id: 'bhima_amavasu_chandra',
   name: 'भीम',
+  gender: 'male',
   subtitle: 'अमावसु पुत्र',
   parent: 'amavasu_chandra',
   yug: 'satya',
   clusterName: 'कान्यकुब्ज राजवंश',
   parichay: "भीम चंद्रवंशी राजा अमावसु के प्रतापी पुत्र थे। इन्होंने चंद्रवंश की कान्यकुब्ज (कन्नौज) शाखा को स्थापित किया, जिसमें आगे चलकर महर्षि विश्वामित्र का जन्म हुआ।",
   kathayein: [
-      {
+    {
           title: "कान्यकुब्ज वंश के पूर्वज",
           source: "श्रीमद्भागवत पुराण / महाभारत",
           content: "भीम चंद्रवंशी सम्राट पुरुरवा के पौत्र और अमावसु के पुत्र थे। वे अत्यंत धर्मनिष्ठ राजा थे। यद्यपि उनके जीवन की स्वतंत्र कथाएँ पुराणों में अल्प हैं, तथापि चंद्रवंश में उनका स्थान अत्यंत महत्त्वपूर्ण है क्योंकि उन्होंने उस महान वंश-परंपरा (कान्यकुब्ज राजवंश) को आगे बढ़ाया जिसमें राजा गाधि और महर्षि विश्वामित्र जैसे तेजस्वी महापुरुष अवतरित हुए। भीम के पुत्र का नाम कांचन था।"
@@ -703,6 +705,7 @@ export const chandravanshCoreData = [
     {
   id: 'kanchana_chandra',
   name: 'कांचन',
+  gender: 'male',
   subtitle: 'भीम पुत्र',
   parent: 'bhima_amavasu_chandra',
   yug: 'satya',
@@ -712,6 +715,7 @@ export const chandravanshCoreData = [
     {
   id: 'suhotra_amavasu_chandra',
   name: 'सुहोत्र',
+  gender: 'male',
   subtitle: 'कांचन पुत्र',
   parent: 'kanchana_chandra',
   yug: 'satya',
@@ -719,7 +723,7 @@ export const chandravanshCoreData = [
   spouseOf: 'keshini_suhotra_wife',
   parichay: "सुहोत्र कान्यकुब्ज (कन्नौज) राजवंश के अत्यंत प्रतापी राजा थे। ये कांचन के पुत्र थे। इनका विवाह सूर्यवंशी राजकुमारी केशिनी से हुआ था।",
   kathayein: [
-      {
+    {
           title: "सुहोत्र और केशिनी का विवाह",
           source: "वायु पुराण / हरिवंश",
           content: "सुहोत्र चंद्रवंश की कान्यकुब्ज शाखा के राजा थे। उनका विवाह सूर्यवंशी राजा सुकेतु (संभवतः निमि वंश के सुकेतु) की कन्या 'केशिनी' से हुआ। इस विवाह से सुहोत्र और केशिनी को एक अत्यंत तेजस्वी और प्रतापी पुत्र की प्राप्ति हुई, जिसका नाम 'जह्नु' रखा गया, जिन्होंने आगे चलकर गंगा का पान किया था।"
@@ -729,6 +733,7 @@ export const chandravanshCoreData = [
     {
   id: 'keshini_suhotra_wife',
   name: 'केशिनी',
+  gender: 'female',
   subtitle: 'सुहोत्र की पत्नी (सुकेतु पुत्री)',
   parent: 'suketu',
   spouseOf: 'suhotra_amavasu_chandra',
@@ -739,6 +744,7 @@ export const chandravanshCoreData = [
     {
   id: 'jahnu_chandra',
   name: 'जह्नु',
+  gender: 'male',
   subtitle: 'जाह्नवी (गंगा) के पिता',
   parent: 'suhotra_amavasu_chandra',
   mother: 'keshini_suhotra_wife',
@@ -747,12 +753,12 @@ export const chandravanshCoreData = [
   parichay: 'कान्यकुब्ज नरेश जह्नु एक महान राजा और ब्रह्मर्षि थे। इन्होंने भगीरथ द्वारा लाई गई संपूर्ण गंगा को अपने तपोबल से पी लिया था।',
   clusterName: 'कान्यकुब्ज राजवंश',
   kathayein: [
-      {
+    {
           title: "राज्य प्राप्ति और समकालीन राजा",
           source: "पुराण",
           content: "जह्नु कान्यकुब्ज के प्रतापी राजा सुहोत्र और सूर्यवंशी कन्या केशिनी के पुत्र थे। इनका काल वैवस्वत मनु से 8वीं पीढ़ी का है, जो कि नहुष (चंद्रवंश) और श्रावस्त (सूर्यवंश) का समकालीन है। युवावस्था में ही राज्य मिलने के बाद इनका विवाह सूर्यवंशी राजा युवनाश्व प्रथम की पुत्री कावेरी से हुआ। जह्नु जन्म से क्षत्रिय थे परंतु उनका झुकाव तपस्या और ब्रह्मचर्य की ओर था।"
       },
-      {
+    {
           title: "गंगा-पान और जाह्नवी की उत्पत्ति",
           source: "हरिवंश / वायु पुराण",
           content: "राजपाट त्यागकर महर्षि बनने के बाद जह्नु एक दीर्घकालीन महायज्ञ कर रहे थे। अपने तपोबल से वे दीर्घायु (अमर) हो चुके थे। कई पीढ़ियों बाद जब भगीरथ गंगा को लेकर पृथ्वी पर आए, तो गंगा के प्रचंड वेग ने जह्नु के आश्रम को डुबो दिया। क्रोधित महर्षि जह्नु ने संपूर्ण गंगा को एक घूंट में पी लिया। बाद में देवताओं और भगीरथ की प्रार्थना पर उन्होंने अपनी दायीं जांघ (या कान) फाड़कर गंगा को मुक्त किया। इसी कारण गंगा को 'जाह्नवी' (जह्नु की पुत्री) कहा जाता है।"
@@ -762,6 +768,7 @@ export const chandravanshCoreData = [
     {
   id: 'kaveri_jahnu_wife',
   name: 'कावेरी',
+  gender: 'female',
   subtitle: 'जह्नु पत्नी (युवनाश्व पुत्री)',
   parent: 'yuvanashva_1',
   spouseOf: 'jahnu_chandra',
@@ -769,7 +776,7 @@ export const chandravanshCoreData = [
   clusterName: 'कान्यकुब्ज राजवंश',
   parichay: "कावेरी सूर्यवंशी राजा युवनाश्व प्रथम की पुत्री थीं। इनका विवाह महर्षि जह्नु से हुआ था। वरदान के प्रभाव से इनका आधा अंश एक पवित्र नदी बन गया।",
   kathayein: [
-      {
+    {
           title: "कावेरी के नदी बनने का वरदान",
           source: "हरिवंश पुराण",
           content: "कावेरी जन्म से ही अत्यंत तपस्विनी थीं। विश्व-कल्याण की भावना से उन्होंने घोर तपस्या की। उनकी तपस्या से प्रसन्न होकर उन्हें यह वरदान मिला कि उनके शरीर का एक आधा भाग (अंश) सदा के लिए एक अत्यंत पवित्र 'नदी' के रूप में पृथ्वी पर बहेगा और पापियों का उद्धार करेगा। जबकि उनका दूसरा आधा मानवीय अंश महर्षि जह्नु की पत्नी के रूप में संसार का पालन करेगा। इसी मानवीय अंश से सुनह नामक पुत्र का जन्म हुआ।"
@@ -779,6 +786,7 @@ export const chandravanshCoreData = [
     {
   id: 'sunaha_chandra',
   name: 'सुनह',
+  gender: 'male',
   subtitle: 'जह्नु पुत्र',
   parent: 'jahnu_chandra',
   mother: 'kaveri_jahnu_wife',
@@ -788,6 +796,7 @@ export const chandravanshCoreData = [
     {
   id: 'ajaka_chandra',
   name: 'अजक',
+  gender: 'male',
   subtitle: 'सुनह पुत्र',
   parent: 'sunaha_chandra',
   yug: 'satya',
@@ -796,6 +805,7 @@ export const chandravanshCoreData = [
     {
   id: 'balakashva_chandra',
   name: 'बलाकश्व',
+  gender: 'male',
   subtitle: 'अजक पुत्र',
   parent: 'ajaka_chandra',
   yug: 'satya',
@@ -804,6 +814,7 @@ export const chandravanshCoreData = [
     {
   id: 'kusha_amavasu_chandra',
   name: 'कुश',
+  gender: 'male',
   subtitle: 'बलाकश्व पुत्र',
   parent: 'balakashva_chandra',
   yug: 'satya',
@@ -812,6 +823,7 @@ export const chandravanshCoreData = [
     {
   id: 'kushanabha_chandra',
   name: 'कुशनाभ',
+  gender: 'male',
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
@@ -820,6 +832,7 @@ export const chandravanshCoreData = [
     {
   id: 'kushamba_chandra',
   name: 'कुशाम्ब',
+  gender: 'male',
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
@@ -828,6 +841,7 @@ export const chandravanshCoreData = [
     {
   id: 'amurtarajas_chandra',
   name: 'अमूर्तरजस',
+  gender: 'male',
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
@@ -836,6 +850,7 @@ export const chandravanshCoreData = [
     {
   id: 'vasu_amavasu_chandra',
   name: 'वसु',
+  gender: 'male',
   subtitle: 'कुश पुत्र',
   parent: 'kusha_amavasu_chandra',
   yug: 'treta',
@@ -844,6 +859,7 @@ export const chandravanshCoreData = [
     {
   id: 'gadhi_chandra',
   name: 'गाधि',
+  gender: 'male',
   subtitle: 'कुशनाभ पुत्र',
   parent: 'kushanabha_chandra',
   yug: 'treta',
@@ -852,6 +868,7 @@ export const chandravanshCoreData = [
     {
   id: 'satyavati_gadhi_chandra',
   name: 'सत्यवती',
+  gender: 'female',
   subtitle: 'गाधि पुत्री',
   parent: 'gadhi_chandra',
   spouseOf: 'ruchika',
@@ -862,13 +879,13 @@ export const chandravanshCoreData = [
     {
   id: 'vishwamitra_chandra',
   name: 'विश्वामित्र',
+  gender: 'male',
   subtitle: 'ब्रह्मर्षि',
   parent: 'gadhi_chandra',
   yug: 'treta',
   parichay: 'जन्म से क्षत्रिय राजा थे, परन्तु वशिष्ठ ऋषि से विवाद के बाद घोर तपस्या कर ब्रह्मर्षि का पद प्राप्त किया। गायत्री मंत्र के द्रष्टा।',
   clusterName: 'कान्यकुब्ज राजवंश'
 },
-
     {
   id: 'shakuntala_vishwamitra_chandra',
   name: 'शकुंतला',
@@ -883,6 +900,7 @@ export const chandravanshCoreData = [
     {
   id: 'shunahshepa_chandra',
   name: 'शुनःशेप (देवरथ)',
+  gender: 'male',
   subtitle: 'दत्तक पुत्र',
   parent: 'vishwamitra_chandra',
   yug: 'treta',
@@ -892,6 +910,7 @@ export const chandravanshCoreData = [
     {
   id: 'madhucchandas_chandra',
   name: 'मधुच्छंदस',
+  gender: 'male',
   subtitle: 'विश्वामित्र पुत्र',
   parent: 'vishwamitra_chandra',
   yug: 'treta',
@@ -900,6 +919,7 @@ export const chandravanshCoreData = [
     {
   id: 'ashtaka_chandra',
   name: 'अष्टक',
+  gender: 'male',
   subtitle: 'विश्वामित्र पुत्र',
   parent: 'vishwamitra_chandra',
   yug: 'treta',
@@ -918,6 +938,7 @@ export const chandravanshCoreData = [
     {
   id: 'chandradeva_gahadavala',
   name: 'चन्द्रदेव',
+  gender: 'male',
   subtitle: 'गाहड़वाल संस्थापक',
   parent: 'vishwamitra_chandra',
   yug: 'kali',
@@ -926,6 +947,7 @@ export const chandravanshCoreData = [
     {
   id: 'madanapala_gahadavala',
   name: 'मदनपाल',
+  gender: 'male',
   subtitle: 'कन्नौज नरेश',
   parent: 'chandradeva_gahadavala',
   yug: 'kali',
@@ -934,6 +956,7 @@ export const chandravanshCoreData = [
     {
   id: 'govindachandra_gahadavala',
   name: 'गोविन्दचन्द्र',
+  gender: 'male',
   subtitle: 'कन्नौज नरेश',
   parent: 'madanapala_gahadavala',
   yug: 'kali',
@@ -942,6 +965,7 @@ export const chandravanshCoreData = [
     {
   id: 'vijayachandra_gahadavala',
   name: 'विजयचन्द्र',
+  gender: 'male',
   subtitle: 'कन्नौज नरेश',
   parent: 'govindachandra_gahadavala',
   yug: 'kali',
@@ -950,6 +974,7 @@ export const chandravanshCoreData = [
     {
   id: 'jaichand_gahadavala',
   name: 'जयचंद',
+  gender: 'male',
   subtitle: 'कन्नौज नरेश',
   parent: 'vijayachandra_gahadavala',
   yug: 'kali',
@@ -959,12 +984,13 @@ export const chandravanshCoreData = [
     {
   id: 'harishchandra_gahadavala',
   name: 'हरिश्चन्द्र',
+  gender: 'male',
   subtitle: 'कन्नौज नरेश',
   parent: 'jaichand_gahadavala',
   yug: 'kali',
   clusterName: 'गाहड़वाल वंश'
 },
-        {
+    {
   id: 'chitravahana_manipur',
   name: 'चित्रवाहन',
   subtitle: 'मणिपुर नरेश',
@@ -1102,6 +1128,7 @@ export const chandravanshCoreData = [
     {
   id: 'bhim_chandra',
   name: 'भीम (वृकोदर)',
+  gender: 'male',
   subtitle: 'पवन पुत्र / पांडव',
   parent: 'pandu_chandra',
   mother: 'kunti_chandra',
@@ -1122,6 +1149,7 @@ export const chandravanshCoreData = [
     {
   id: 'valandhara_chandra',
   name: 'वलंधरा',
+  gender: 'female',
   subtitle: 'काशी पुत्री',
   clusterName: 'भीम की पत्नियाँ',
   parent: '',
@@ -1131,6 +1159,7 @@ export const chandravanshCoreData = [
     {
   id: 'ghatotkacha_chandra',
   name: 'घटोत्कच',
+  gender: 'male',
   subtitle: 'भीम-हिडिम्बा पुत्र',
   parent: 'bhim_chandra',
   mother: 'hidimba_wife_chandra',
@@ -1140,6 +1169,7 @@ export const chandravanshCoreData = [
     {
   id: 'ahilawati_chandra',
   name: 'अहिलावती',
+  gender: 'female',
   subtitle: 'घटोत्कच पत्नी',
   parent: '',
   spouseOf: 'ghatotkacha_chandra',
@@ -1148,6 +1178,7 @@ export const chandravanshCoreData = [
     {
   id: 'barbarik_chandra',
   name: 'बर्बरीक (खाटू श्याम)',
+  gender: 'male',
   subtitle: 'घटोत्कच पुत्र',
   parent: 'ghatotkacha_chandra',
   mother: 'ahilawati_chandra',
@@ -1157,6 +1188,7 @@ export const chandravanshCoreData = [
     {
   id: 'anjanaparvan_chandra',
   name: 'अंजनपर्वा',
+  gender: 'male',
   subtitle: 'घटोत्कच पुत्र',
   parent: 'ghatotkacha_chandra',
   mother: 'ahilawati_chandra',
@@ -1166,6 +1198,7 @@ export const chandravanshCoreData = [
     {
   id: 'meghavarna_chandra',
   name: 'मेघवर्ण',
+  gender: 'male',
   subtitle: 'घटोत्कच पुत्र',
   parent: 'ghatotkacha_chandra',
   mother: 'ahilawati_chandra',
@@ -1175,6 +1208,7 @@ export const chandravanshCoreData = [
     {
   id: 'sarvaga_chandra',
   name: 'सर्वग',
+  gender: 'male',
   subtitle: 'भीम पुत्र',
   parent: 'bhim_chandra',
   mother: 'valandhara_chandra',
@@ -1184,6 +1218,7 @@ export const chandravanshCoreData = [
     {
   id: 'arjun_chandra',
   name: 'अर्जुन (पार्थ)',
+  gender: 'male',
   subtitle: 'इंद्र पुत्र / पांडव',
   parent: 'pandu_chandra',
   mother: 'kunti_chandra',
@@ -1194,6 +1229,7 @@ export const chandravanshCoreData = [
     {
   id: 'ulupi_chandra',
   name: 'उलूपी',
+  gender: 'female',
   subtitle: 'नाग कन्या / अर्जुन पत्नी',
   clusterName: 'अर्जुन की पत्नियाँ',
   parent: 'kauravya_naga_king',
@@ -1203,6 +1239,7 @@ export const chandravanshCoreData = [
     {
   id: 'chitrangada_wife_chandra',
   name: 'चित्रांगदा',
+  gender: 'female',
   subtitle: 'मणिपुर पुत्री / अर्जुन पत्नी',
   parent: 'chitravahana_manipur',
   spouseOf: 'arjun_chandra',
@@ -1212,6 +1249,7 @@ export const chandravanshCoreData = [
     {
   id: 'abhimanyu_chandra',
   name: 'अभिमन्यु',
+  gender: 'male',
   subtitle: 'अर्जुन-सुभद्रा पुत्र',
   parent: 'arjun_chandra',
   mother: 'subhadra_chandra',
@@ -1221,6 +1259,7 @@ export const chandravanshCoreData = [
     {
   id: 'iravan_chandra',
   name: 'इरावन',
+  gender: 'male',
   subtitle: 'अर्जुन पुत्र',
   parent: 'arjun_chandra',
   mother: 'ulupi_chandra',
@@ -1230,6 +1269,7 @@ export const chandravanshCoreData = [
     {
   id: 'babhruvahana_chandra',
   name: 'बभ्रुवाहन',
+  gender: 'male',
   subtitle: 'अर्जुन पुत्र',
   parent: 'arjun_chandra',
   mother: 'chitrangada_wife_chandra',
@@ -1239,6 +1279,7 @@ export const chandravanshCoreData = [
     {
   id: 'nakul_chandra',
   name: 'नकुल',
+  gender: 'male',
   subtitle: 'अश्विनी कुमार पुत्र',
   parent: 'pandu_chandra',
   mother: 'madri_chandra',
@@ -1249,6 +1290,7 @@ export const chandravanshCoreData = [
     {
   id: 'karenumati_chandra',
   name: 'करेणुमती',
+  gender: 'female',
   subtitle: 'चेदि पुत्री / नकुल पत्नी',
   parent: 'shishupala_chandra',
   spouseOf: 'nakul_chandra',
@@ -1257,6 +1299,7 @@ export const chandravanshCoreData = [
     {
   id: 'niramitra_chandra',
   name: 'निरमित्र',
+  gender: 'male',
   subtitle: 'नकुल पुत्र',
   parent: 'nakul_chandra',
   mother: 'karenumati_chandra',
@@ -1266,6 +1309,7 @@ export const chandravanshCoreData = [
     {
   id: 'sahadev_chandra',
   name: 'सहदेव',
+  gender: 'male',
   subtitle: 'अश्विनी कुमार पुत्र',
   parent: 'pandu_chandra',
   mother: 'madri_chandra',
@@ -1276,6 +1320,7 @@ export const chandravanshCoreData = [
     {
   id: 'vijaya_sahadev_chandra',
   name: 'विजया',
+  gender: 'female',
   subtitle: 'मद्र पुत्री / सहदेव पत्नी',
   parent: 'shalya_madra_king',
   spouseOf: 'sahadev_chandra',
@@ -1284,6 +1329,7 @@ export const chandravanshCoreData = [
     {
   id: 'suhotra_sahadev_chandra',
   name: 'सुहोत्र',
+  gender: 'male',
   subtitle: 'सहदेव पुत्र',
   parent: 'sahadev_chandra',
   mother: 'vijaya_sahadev_chandra',
@@ -1292,6 +1338,7 @@ export const chandravanshCoreData = [
     {
   id: 'uttara_abhimanyu_chandra',
   name: 'उत्तरा',
+  gender: 'female',
   subtitle: 'विराट पुत्री / अभिमन्यु पत्नी',
   parent: 'virata_matsya',
   spouseOf: 'abhimanyu_chandra',
@@ -1300,6 +1347,7 @@ export const chandravanshCoreData = [
     {
   id: 'parikshit_chandra',
   name: 'परीक्षित (द्वितीय)',
+  gender: 'male',
   subtitle: 'कलियुग के प्रथम कुरु राजा',
   parent: 'abhimanyu_chandra',
   mother: 'uttara_abhimanyu_chandra',
@@ -1309,6 +1357,7 @@ export const chandravanshCoreData = [
     {
   id: 'madravati_parikshit_chandra',
   name: 'मद्रावती',
+  gender: 'female',
   subtitle: 'परीक्षित पत्नी',
   parent: '',
   spouseOf: 'parikshit_chandra',
@@ -1317,6 +1366,7 @@ export const chandravanshCoreData = [
     {
   id: 'janamejaya_2_chandra',
   name: 'जनमेजय (द्वितीय)',
+  gender: 'male',
   subtitle: 'परीक्षित पुत्र (सर्पसत्र)',
   parent: 'parikshit_chandra',
   mother: 'madravati_parikshit_chandra',
@@ -1326,6 +1376,7 @@ export const chandravanshCoreData = [
     {
   id: 'shrutasena_kali',
   name: 'श्रुतसेन',
+  gender: 'male',
   subtitle: 'परीक्षित पुत्र',
   parent: 'parikshit_chandra',
   mother: 'madravati_parikshit_chandra',
@@ -1335,6 +1386,7 @@ export const chandravanshCoreData = [
     {
   id: 'ugrasena_kali',
   name: 'उग्रसेन',
+  gender: 'male',
   subtitle: 'परीक्षित पुत्र',
   parent: 'parikshit_chandra',
   mother: 'madravati_parikshit_chandra',
@@ -1344,6 +1396,7 @@ export const chandravanshCoreData = [
     {
   id: 'bhimasena_kali',
   name: 'भीमसेन',
+  gender: 'male',
   subtitle: 'परीक्षित पुत्र',
   parent: 'parikshit_chandra',
   mother: 'madravati_parikshit_chandra',
@@ -1353,6 +1406,7 @@ export const chandravanshCoreData = [
     {
   id: 'vapushtama_chandra',
   name: 'वपुष्टमा',
+  gender: 'female',
   subtitle: 'जनमेजय पत्नी',
   parent: '',
   spouseOf: 'janamejaya_2_chandra',
@@ -1361,6 +1415,7 @@ export const chandravanshCoreData = [
     {
   id: 'shatanika_kali',
   name: 'शतानीक',
+  gender: 'male',
   subtitle: 'जनमेजय पुत्र',
   parent: 'janamejaya_2_chandra',
   mother: 'vapushtama_chandra',
@@ -1370,6 +1425,7 @@ export const chandravanshCoreData = [
     {
   id: 'shankukarna_chandra',
   name: 'शंकुकर्ण',
+  gender: 'male',
   subtitle: 'जनमेजय पुत्र',
   parent: 'janamejaya_2_chandra',
   mother: 'vapushtama_chandra',
@@ -1379,6 +1435,7 @@ export const chandravanshCoreData = [
     {
   id: 'ashvamedhadatta_chandra',
   name: 'अश्वमेधदत्त',
+  gender: 'male',
   subtitle: 'शतानीक पुत्र',
   parent: 'shatanika_kali',
   yug: 'kali',
@@ -1387,6 +1444,7 @@ export const chandravanshCoreData = [
     {
   id: 'asimakrishna_chandra',
   name: 'असीमकृष्ण',
+  gender: 'male',
   subtitle: 'अश्वमेधदत्त पुत्र',
   parent: 'ashvamedhadatta_chandra',
   yug: 'kali',
@@ -1395,6 +1453,7 @@ export const chandravanshCoreData = [
     {
   id: 'nichakshu_chandra',
   name: 'निचक्षु',
+  gender: 'male',
   subtitle: 'कौशाम्बी नरेश',
   parent: 'asimakrishna_chandra',
   yug: 'kali',
@@ -1404,6 +1463,7 @@ export const chandravanshCoreData = [
     {
   id: 'ushna_kuru',
   name: 'उष्ण',
+  gender: 'male',
   subtitle: 'निचक्षु पुत्र',
   parent: 'nichakshu_chandra',
   yug: 'kali',
@@ -1412,6 +1472,7 @@ export const chandravanshCoreData = [
     {
   id: 'chitraratha_kuru',
   name: 'चित्ररथ',
+  gender: 'male',
   subtitle: 'उष्ण पुत्र',
   parent: 'ushna_kuru',
   yug: 'kali',
@@ -1420,6 +1481,7 @@ export const chandravanshCoreData = [
     {
   id: 'bhumichand_katoch',
   name: 'भूमिचंद',
+  gender: 'male',
   subtitle: 'त्रिगर्त के संस्थापक',
   parent: 'pururavas_chandra',
   yug: 'satya',
@@ -1429,6 +1491,7 @@ export const chandravanshCoreData = [
     {
   id: 'susharma_chandra_katoch',
   name: 'सुशर्मा चन्द्र',
+  gender: 'male',
   subtitle: 'त्रिगर्त नरेश (महाभारत काल)',
   parent: 'bhumichand_katoch',
   yug: 'dwapar',
@@ -1437,14 +1500,16 @@ export const chandravanshCoreData = [
     {
   id: 'katoch_medieval_link',
   name: 'ऐतिहासिक अंतराल (कटोच)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'susharma_chandra_katoch',
   yug: 'kali',
   parichay: 'सुशर्मा चन्द्र के बाद कांगड़ा रियासत के कई राजा हुए (जैसे रूप चन्द्र, जय चन्द्र)।'
 },
-        {
+    {
   id: 'rup_chandra_katoch',
   name: 'रूप चन्द्र',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   clusterName: 'कटोच (कांगड़ा) वंश',
   yug: 'kali',
@@ -1453,6 +1518,7 @@ export const chandravanshCoreData = [
     {
   id: 'sangara_chandra_katoch',
   name: 'संगारा चन्द्र',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'rup_chandra_katoch',
   yug: 'kali',
@@ -1461,6 +1527,7 @@ export const chandravanshCoreData = [
     {
   id: 'megh_chandra_katoch',
   name: 'मेघ चन्द्र',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'sangara_chandra_katoch',
   yug: 'kali',
@@ -1469,6 +1536,7 @@ export const chandravanshCoreData = [
     {
   id: 'hari_chandra_katoch',
   name: 'हरि चन्द्र',
+  gender: 'male',
   subtitle: 'गुलेर राज्य संस्थापक',
   parent: 'megh_chandra_katoch',
   yug: 'kali',
@@ -1477,6 +1545,7 @@ export const chandravanshCoreData = [
     {
   id: 'karam_chandra_katoch',
   name: 'करम चन्द्र',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'megh_chandra_katoch',
   yug: 'kali',
@@ -1485,6 +1554,7 @@ export const chandravanshCoreData = [
     {
   id: 'sansar_chand_1_katoch',
   name: 'संसार चन्द (प्रथम)',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'karam_chandra_katoch',
   yug: 'kali',
@@ -1493,6 +1563,7 @@ export const chandravanshCoreData = [
     {
   id: 'gurcharan_chand_katoch',
   name: 'गुरचरण चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'sansar_chand_1_katoch',
   yug: 'kali',
@@ -1501,6 +1572,7 @@ export const chandravanshCoreData = [
     {
   id: 'bidhi_chand_katoch',
   name: 'बिधि चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'gurcharan_chand_katoch',
   yug: 'kali',
@@ -1509,6 +1581,7 @@ export const chandravanshCoreData = [
     {
   id: 'trilok_chand_katoch',
   name: 'त्रिलोक चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'bidhi_chand_katoch',
   yug: 'kali',
@@ -1517,6 +1590,7 @@ export const chandravanshCoreData = [
     {
   id: 'hari_chand_2_katoch',
   name: 'हरि चन्द (द्वितीय)',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'trilok_chand_katoch',
   yug: 'kali',
@@ -1525,6 +1599,7 @@ export const chandravanshCoreData = [
     {
   id: 'chander_bhan_chand_katoch',
   name: 'चन्द्रभान चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'hari_chand_2_katoch',
   yug: 'kali',
@@ -1533,6 +1608,7 @@ export const chandravanshCoreData = [
     {
   id: 'vijay_ram_chand_katoch',
   name: 'विजय राम चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'chander_bhan_chand_katoch',
   yug: 'kali',
@@ -1541,6 +1617,7 @@ export const chandravanshCoreData = [
     {
   id: 'udai_ram_chand_katoch',
   name: 'उदय राम चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'vijay_ram_chand_katoch',
   yug: 'kali',
@@ -1549,6 +1626,7 @@ export const chandravanshCoreData = [
     {
   id: 'pirthi_chand_katoch',
   name: 'पृथ्वी चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'udai_ram_chand_katoch',
   yug: 'kali',
@@ -1557,6 +1635,7 @@ export const chandravanshCoreData = [
     {
   id: 'hamir_chand_katoch',
   name: 'हमीर चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'pirthi_chand_katoch',
   yug: 'kali',
@@ -1565,6 +1644,7 @@ export const chandravanshCoreData = [
     {
   id: 'abhai_chand_katoch',
   name: 'अभय चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'hamir_chand_katoch',
   yug: 'kali',
@@ -1573,6 +1653,7 @@ export const chandravanshCoreData = [
     {
   id: 'ghamand_chand_katoch',
   name: 'घमंड चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'abhai_chand_katoch',
   yug: 'kali',
@@ -1582,6 +1663,7 @@ export const chandravanshCoreData = [
     {
   id: 'tegh_chand_katoch',
   name: 'तेग चन्द',
+  gender: 'male',
   subtitle: 'कांगड़ा नरेश',
   parent: 'ghamand_chand_katoch',
   yug: 'kali',
@@ -1590,13 +1672,13 @@ export const chandravanshCoreData = [
     {
   id: 'sansar_chand_2_katoch',
   name: 'महाराजा संसार चन्द (द्वितीय)',
+  gender: 'male',
   subtitle: 'कांगड़ा के महान सम्राट',
   parent: 'tegh_chand_katoch',
   yug: 'kali',
   parichay: 'इन्हें कांगड़ा का स्वर्ण युग लाने का श्रेय है। इन्होंने कांगड़ा चित्रकला (Kangra Paintings) को संरक्षण दिया और महाराजा रणजीत सिंह के साथ संधियां कीं।',
   clusterName: 'कटोच (कांगड़ा) वंश'
 },
-
     {
   id: 'king_porus_paurava',
   name: 'पोरस (पर्वतेश्वर)',

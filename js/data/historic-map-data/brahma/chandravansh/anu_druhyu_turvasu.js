@@ -44,6 +44,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'garbha_turvasu_chandra',
   name: 'गर्भ',
+  gender: 'male',
   subtitle: 'वह्नि पुत्र',
   parent: 'vahni_turvasu_chandra',
   yug: 'treta',
@@ -52,6 +53,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'gobhanu_turvasu_chandra',
   name: 'गोभानु',
+  gender: 'male',
   subtitle: 'गर्भ पुत्र',
   parent: 'garbha_turvasu_chandra',
   yug: 'treta',
@@ -60,6 +62,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'trishanu_turvasu_chandra',
   name: 'त्रिशानु',
+  gender: 'male',
   subtitle: 'गोभानु पुत्र',
   parent: 'gobhanu_turvasu_chandra',
   yug: 'treta',
@@ -68,6 +71,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'karandhama_turvasu_chandra',
   name: 'करन्धम',
+  gender: 'male',
   subtitle: 'त्रिशानु पुत्र',
   parent: 'trishanu_turvasu_chandra',
   yug: 'treta',
@@ -76,6 +80,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'marutta_turvasu_chandra',
   name: 'मरुत्त',
+  gender: 'male',
   subtitle: 'करन्धम पुत्र',
   parent: 'karandhama_turvasu_chandra',
   yug: 'treta',
@@ -85,6 +90,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dushyanta_turvasu_chandra',
   name: 'दुष्यंत (दत्तक)',
+  gender: 'male',
   subtitle: 'मरुत्त के दत्तक पुत्र',
   parent: 'marutta_turvasu_chandra',
   yug: 'treta',
@@ -94,6 +100,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sharutthama_turvasu_chandra',
   name: 'शरुत्थाम',
+  gender: 'male',
   subtitle: 'दुष्यंत पुत्र',
   parent: 'dushyanta_turvasu_chandra',
   yug: 'treta',
@@ -102,6 +109,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'akrida_turvasu_chandra',
   name: 'आक्रीड',
+  gender: 'male',
   subtitle: 'शरुत्थाम पुत्र',
   parent: 'sharutthama_turvasu_chandra',
   yug: 'treta',
@@ -110,6 +118,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'pandya_turvasu_chandra',
   name: 'पाण्ड्य',
+  gender: 'male',
   subtitle: 'पाण्ड्य देश संस्थापक',
   parent: 'akrida_turvasu_chandra',
   yug: 'treta',
@@ -118,6 +127,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kerala_turvasu_chandra',
   name: 'केरल',
+  gender: 'male',
   subtitle: 'केरल देश संस्थापक',
   parent: 'akrida_turvasu_chandra',
   yug: 'treta',
@@ -126,6 +136,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chola_turvasu_chandra',
   name: 'चोल',
+  gender: 'male',
   subtitle: 'चोल देश संस्थापक',
   parent: 'akrida_turvasu_chandra',
   yug: 'treta',
@@ -134,6 +145,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kola_turvasu_chandra',
   name: 'कोल',
+  gender: 'male',
   subtitle: 'कोल देश संस्थापक',
   parent: 'akrida_turvasu_chandra',
   yug: 'treta'
@@ -141,6 +153,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'babhru_druhyu_chandra',
   name: 'बभ्रु',
+  gender: 'male',
   subtitle: 'द्रुह्यु पुत्र',
   parent: 'druhyu_chandra',
   yug: 'treta',
@@ -149,6 +162,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'setu_druhyu_chandra',
   name: 'सेतु',
+  gender: 'male',
   subtitle: 'बभ्रु पुत्र',
   parent: 'babhru_druhyu_chandra',
   yug: 'treta',
@@ -157,6 +171,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'arabdha_druhyu_chandra',
   name: 'आरब्ध (आरद्वत)',
+  gender: 'male',
   subtitle: 'सेतु पुत्र',
   parent: 'setu_druhyu_chandra',
   yug: 'treta',
@@ -165,6 +180,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'gandhara_druhyu_chandra',
   name: 'गान्धार',
+  gender: 'male',
   subtitle: 'गान्धार देश संस्थापक',
   parent: 'arabdha_druhyu_chandra',
   yug: 'treta',
@@ -174,6 +190,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dharma_druhyu_chandra',
   name: 'धर्म',
+  gender: 'male',
   subtitle: 'गान्धार पुत्र',
   parent: 'gandhara_druhyu_chandra',
   yug: 'treta',
@@ -182,6 +199,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dhrita_druhyu_chandra',
   name: 'धृत',
+  gender: 'male',
   subtitle: 'धर्म पुत्र',
   parent: 'dharma_druhyu_chandra',
   yug: 'treta',
@@ -200,6 +218,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'duryaman_druhyu_chandra',
   name: 'दुर्मन',
+  gender: 'male',
   subtitle: 'धृत पुत्र',
   parent: 'dhrita_druhyu_chandra',
   yug: 'treta',
@@ -208,6 +227,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'prachetas_druhyu_chandra',
   name: 'प्रचेतस',
+  gender: 'male',
   subtitle: 'दुर्मन पुत्र',
   parent: 'duryaman_druhyu_chandra',
   yug: 'treta',
@@ -216,6 +236,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'suchetas_druhyu_chandra',
   name: 'सुचेतस',
+  gender: 'male',
   subtitle: 'प्रचेतस के पुत्र',
   parent: 'prachetas_druhyu_chandra',
   yug: 'treta',
@@ -225,6 +246,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'mleccha_kings',
   name: 'म्लेच्छ राजवंश',
+  gender: 'male',
   subtitle: 'सुचेतस व अन्य भाइयों के वंश',
   parent: 'suchetas_druhyu_chandra',
   yug: 'treta'
@@ -232,6 +254,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'samudrasena_vanga',
   name: 'समुद्रसेन',
+  gender: 'male',
   subtitle: 'वंग नरेश',
   parent: 'vanga_anu',
   clusterName: 'वंग देश चंद्रवंशी',
@@ -241,6 +264,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chandrasena_vanga',
   name: 'चन्द्रसेन',
+  gender: 'male',
   subtitle: 'वंग नरेश',
   parent: 'samudrasena_vanga',
   yug: 'dwapar',
@@ -248,6 +272,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'paundraka_vasudeva_chandra',
   name: 'पौण्ड्रक वासुदेव',
+  gender: 'male',
   subtitle: 'पुण्ड्र नरेश',
   parent: 'pundra_anu',
   clusterName: 'पुण्ड्र देश चंद्रवंशी',
@@ -257,6 +282,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chitrangada_kalinga_chandra',
   name: 'चित्रांगद',
+  gender: 'male',
   subtitle: 'कलिंग नरेश',
   parent: 'kalinga_anu',
   yug: 'dwapar',
@@ -266,6 +292,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'shrutayush_kalinga_chandra',
   name: 'श्रुतायु',
+  gender: 'male',
   subtitle: 'कलिंग नरेश',
   parent: 'kalinga_anu',
   yug: 'dwapar',
@@ -275,6 +302,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulashekara_pandya_myth',
   name: 'कुलशेखर पाण्ड्य (पौराणिक)',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'pandya_turvasu_chandra',
   yug: 'dwapar',
@@ -283,6 +311,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'malayadhwaja_pandya_chandra',
   name: 'मलयध्वज',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'kulashekara_pandya_myth',
   yug: 'dwapar',
@@ -314,6 +343,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sundareshwarar_shiva',
   name: 'सुंदरेश्वरर (शिव)',
+  gender: 'male',
   subtitle: 'मीनाक्षी के पति',
   parent: '',
   spouseOf: 'meenakshi_tadaatagai',
@@ -324,6 +354,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ugra_pandya',
   name: 'उग्र पाण्ड्य (सुब्रमण्य)',
+  gender: 'male',
   subtitle: 'मीनाक्षी-सुंदरेश्वरर के पुत्र',
   parent: 'sundareshwarar_shiva',
   mother: 'meenakshi_tadaatagai',
@@ -334,6 +365,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'early_pandya_link',
   name: 'ऐतिहासिक अंतराल (पाण्ड्य)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'ugra_pandya',
   yug: 'kali',
@@ -343,6 +375,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'mudattirumaran',
   name: 'मुदत्तिरुमारन',
+  gender: 'male',
   subtitle: 'संगम पाण्ड्य नरेश',
   parent: 'early_pandya_link',
   yug: 'kali',
@@ -351,6 +384,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'koon_pandya',
   name: 'कून पाण्ड्य',
+  gender: 'male',
   subtitle: 'संगम पाण्ड्य नरेश',
   parent: 'mudattirumaran',
   yug: 'kali',
@@ -359,6 +393,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'mudukudumi_peruvaluthi',
   name: 'मुदुकुडुमी पेरुवलुथि',
+  gender: 'male',
   subtitle: 'पलयागसलाई',
   parent: 'koon_pandya',
   yug: 'kali',
@@ -368,6 +403,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nedunjeliyan_1',
   name: 'नेदुन्जेलियन प्रथम',
+  gender: 'male',
   subtitle: 'आर्य पदाई कडन्था',
   parent: 'mudukudumi_peruvaluthi',
   yug: 'kali',
@@ -388,6 +424,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nedunjeliyan_2',
   name: 'नेदुन्जेलियन द्वितीय',
+  gender: 'male',
   subtitle: 'तलैयालंगनाथु',
   parent: 'nedunjeliyan_1',
   mother: 'kopperundevi',
@@ -398,6 +435,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nan_maran',
   name: 'नन मारन',
+  gender: 'male',
   subtitle: 'संगम पाण्ड्य नरेश',
   parent: 'nedunjeliyan_2',
   yug: 'kali',
@@ -406,6 +444,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nedunjeliyan_3',
   name: 'नेदुन्जेलियन तृतीय',
+  gender: 'male',
   subtitle: 'संगम पाण्ड्य नरेश',
   parent: 'nan_maran',
   yug: 'kali',
@@ -414,6 +453,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ukkirap_peruvaludi',
   name: 'उक्किरप पेरुवलुदी',
+  gender: 'male',
   subtitle: 'संगम पाण्ड्य नरेश',
   parent: 'nedunjeliyan_3',
   yug: 'kali',
@@ -422,6 +462,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kalabhra_interregnum_pandya',
   name: 'कलभ्र अंतराल',
+  gender: 'male',
   subtitle: 'अंधकार युग',
   parent: 'ukkirap_peruvaludi',
   yug: 'kali',
@@ -431,6 +472,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kadungon',
   name: 'कडुंगोन',
+  gender: 'male',
   subtitle: 'पाण्ड्य पुनरुद्धारक',
   parent: 'kalabhra_interregnum_pandya',
   yug: 'kali',
@@ -440,6 +482,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_avanisulamani',
   name: 'मारवर्मन अवनिसुलामणी',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'kadungon',
   yug: 'kali',
@@ -448,6 +491,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'seliyan_sendan',
   name: 'सेलियान सेंडन (जयंतवर्मन)',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'maravarman_avanisulamani',
   yug: 'kali',
@@ -456,6 +500,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'arikesari_maravarman',
   name: 'अरीकेसरी मारवर्मन (परंकुसन)',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'seliyan_sendan',
   yug: 'kali',
@@ -464,6 +509,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kochadaiyan_ranadhiran',
   name: 'कोचदैयन रणधीर',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'arikesari_maravarman',
   yug: 'kali',
@@ -472,6 +518,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_rajasimha_1',
   name: 'मारवर्मन राजसिम्हा प्रथम',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'kochadaiyan_ranadhiran',
   yug: 'kali',
@@ -480,6 +527,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'varagunavarman_1',
   name: 'वरगुणवर्मन प्रथम',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'maravarman_rajasimha_1',
   yug: 'kali',
@@ -488,6 +536,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_srimara_srivallabha',
   name: 'मारवर्मन श्रीमारा श्रीवल्लभ',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'varagunavarman_1',
   yug: 'kali',
@@ -496,6 +545,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'varagunavarman_2',
   name: 'वरगुणवर्मन द्वितीय',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'maravarman_srimara_srivallabha',
   yug: 'kali',
@@ -504,6 +554,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'parantaka_viranarayana',
   name: 'परान्तक वीरनारायण',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'varagunavarman_2',
   yug: 'kali',
@@ -512,6 +563,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_rajasimha_2',
   name: 'मारवर्मन राजसिम्हा द्वितीय',
+  gender: 'male',
   subtitle: 'प्रथम साम्राज्य के अंतिम',
   parent: 'parantaka_viranarayana',
   yug: 'kali',
@@ -520,6 +572,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chola_dominance_pandya',
   name: 'चोल आधिपत्य अंतराल',
+  gender: 'male',
   subtitle: 'अवनति काल',
   parent: 'maravarman_rajasimha_2',
   yug: 'kali',
@@ -529,6 +582,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_srivallabha',
   name: 'मारवर्मन श्रीवल्लभ',
+  gender: 'male',
   subtitle: 'साम्राज्य पुनरुद्धारक',
   parent: 'chola_dominance_pandya',
   yug: 'kali',
@@ -537,6 +591,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jatavarman_srivallabha',
   name: 'जटावर्मन श्रीवल्लभ',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'maravarman_srivallabha',
   yug: 'kali',
@@ -545,6 +600,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jatavarman_kulasekara_1',
   name: 'जटावर्मन कुलशेखर प्रथम',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'jatavarman_srivallabha',
   yug: 'kali',
@@ -553,6 +609,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_sundara_pandyan_1',
   name: 'मारवर्मन सुंदर पाण्ड्य प्रथम',
+  gender: 'male',
   subtitle: 'साम्राज्य विस्तारक',
   parent: 'jatavarman_kulasekara_1',
   yug: 'kali',
@@ -562,6 +619,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sadayavarman_kulasekaran_2',
   name: 'सदयावर्मन कुलशेखर द्वितीय',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'maravarman_sundara_pandyan_1',
   yug: 'kali',
@@ -570,6 +628,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_sundara_pandyan_2',
   name: 'मारवर्मन सुंदर पाण्ड्य द्वितीय',
+  gender: 'male',
   subtitle: 'पाण्ड्य नरेश',
   parent: 'sadayavarman_kulasekaran_2',
   yug: 'kali',
@@ -578,6 +637,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jatavarman_sundara_pandyan_1',
   name: 'जटावर्मन सुंदर पाण्ड्य प्रथम',
+  gender: 'male',
   subtitle: 'दक्षिण का नेपोलियन',
   parent: 'maravarman_sundara_pandyan_2',
   yug: 'kali',
@@ -587,6 +647,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'maravarman_kulasekara_pandyan_1',
   name: 'मारवर्मन कुलशेखर प्रथम',
+  gender: 'male',
   subtitle: 'महान पाण्ड्य नरेश',
   parent: 'jatavarman_sundara_pandyan_1',
   yug: 'kali',
@@ -595,6 +656,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vira_pandya_4',
   name: 'वीर पाण्ड्य',
+  gender: 'male',
   subtitle: 'कुलशेखर के पुत्र',
   parent: 'maravarman_kulasekara_pandyan_1',
   yug: 'kali',
@@ -604,6 +666,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sundara_pandya_4',
   name: 'सुंदर पाण्ड्य चतुर्थ',
+  gender: 'male',
   subtitle: 'कुलशेखर के पुत्र',
   parent: 'maravarman_kulasekara_pandyan_1',
   yug: 'kali',
@@ -612,6 +675,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sadaavarman_parakrama_pandya',
   name: 'सदावर्मन पराक्रम पाण्ड्य',
+  gender: 'male',
   subtitle: 'तेनकासी पाण्ड्य संस्थापक',
   parent: 'sundara_pandya_4',
   yug: 'kali',
@@ -621,6 +685,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulasekara_pandiyan_3',
   name: 'कुलशेखर पाण्ड्य तृतीय',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'sadaavarman_parakrama_pandya',
   yug: 'kali',
@@ -629,6 +694,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'aksharan_perumal_parakrama_pandya',
   name: 'अक्षरन पेरुमल पराक्रम पाण्ड्य',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'kulasekara_pandiyan_3',
   yug: 'kali',
@@ -637,6 +703,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulasekara_pandya_later',
   name: 'कुलशेखर पाण्ड्य (तेनकासी)',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'aksharan_perumal_parakrama_pandya',
   yug: 'kali',
@@ -645,6 +712,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sadaverman_sewallapa_pandya',
   name: 'सदावर्मन सेवलप्पा पाण्ड्य',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'kulasekara_pandya_later',
   yug: 'kali',
@@ -653,6 +721,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'parakrama_kulasekaran',
   name: 'पराक्रम कुलशेखर',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'sadaverman_sewallapa_pandya',
   yug: 'kali',
@@ -661,6 +730,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nelveli_maran',
   name: 'नेल्वेली मारन',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'parakrama_kulasekaran',
   yug: 'kali',
@@ -669,6 +739,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sadaavarman_adeevirama_pandya',
   name: 'सदावर्मन अदीविराम पाण्ड्य',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'nelveli_maran',
   yug: 'kali',
@@ -677,6 +748,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'varathuranga_pandya',
   name: 'वरथुरंग पाण्ड्य',
+  gender: 'male',
   subtitle: 'तेनकासी नरेश',
   parent: 'sadaavarman_adeevirama_pandya',
   yug: 'kali',
@@ -685,6 +757,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'varagunarama_pandya',
   name: 'वरगुणराम पाण्ड्य',
+  gender: 'male',
   subtitle: 'अंतिम ज्ञात पाण्ड्य शासक',
   parent: 'varathuranga_pandya',
   yug: 'kali',
@@ -695,6 +768,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sabhanara_anu',
   name: 'सभानर',
+  gender: 'male',
   subtitle: 'अनु पुत्र',
   parent: 'anu_yayati_chandra',
   yug: 'treta',
@@ -703,6 +777,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chakshusha_anu',
   name: 'चाक्षुष',
+  gender: 'male',
   subtitle: 'अनु पुत्र',
   parent: 'anu_yayati_chandra',
   yug: 'treta',
@@ -712,6 +787,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'paroksha_anu',
   name: 'परोक्ष (परमेक्षु)',
+  gender: 'male',
   subtitle: 'अनु पुत्र',
   parent: 'anu_yayati_chandra',
   yug: 'treta',
@@ -724,6 +800,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kalanara_anu',
   name: 'कालानर',
+  gender: 'male',
   subtitle: 'सभानर पुत्र',
   parent: 'sabhanara_anu',
   yug: 'treta',
@@ -732,6 +809,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'srijaya_anu',
   name: 'सृंजय',
+  gender: 'male',
   subtitle: 'कालानर पुत्र',
   parent: 'kalanara_anu',
   yug: 'treta',
@@ -740,6 +818,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'janamejaya_anu',
   name: 'जनमेजय',
+  gender: 'male',
   subtitle: 'सृंजय पुत्र',
   parent: 'srijaya_anu',
   yug: 'treta',
@@ -748,6 +827,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'mahashala_anu',
   name: 'महाशाल',
+  gender: 'male',
   subtitle: 'जनमेजय पुत्र',
   parent: 'janamejaya_anu',
   yug: 'treta',
@@ -756,6 +836,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'mahamana_anu',
   name: 'महामना',
+  gender: 'male',
   subtitle: 'महाशाल पुत्र',
   parent: 'mahashala_anu',
   yug: 'treta',
@@ -764,6 +845,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ushinara_anu',
   name: 'उशीनर',
+  gender: 'male',
   subtitle: 'महामना पुत्र',
   parent: 'mahamana_anu',
   yug: 'treta',
@@ -772,6 +854,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sibi_anu',
   name: 'शिबि',
+  gender: 'male',
   subtitle: 'महान दानी राजा',
   parent: 'ushinara_anu',
   yug: 'treta',
@@ -781,6 +864,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vrishadarbha_anu',
   name: 'वृषदर्भ',
+  gender: 'male',
   subtitle: 'शिबि पुत्र',
   parent: 'sibi_anu',
   yug: 'treta',
@@ -789,6 +873,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'suvira_anu',
   name: 'सुवीर',
+  gender: 'male',
   subtitle: 'शिबि पुत्र (सौवीर)',
   parent: 'sibi_anu',
   yug: 'treta',
@@ -816,6 +901,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'madra_anu',
   name: 'मद्र',
+  gender: 'male',
   subtitle: 'मद्र देश संस्थापक',
   parent: 'sibi_anu',
   yug: 'treta',
@@ -824,6 +910,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ashvapati_madra_anu',
   name: 'अश्वपति',
+  gender: 'male',
   subtitle: 'मद्र नरेश',
   parent: 'madra_anu',
   yug: 'treta',
@@ -833,6 +920,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'malavi_ashvapati_wife',
   name: 'मालवी',
+  gender: 'female',
   subtitle: 'अश्वपति की पत्नी',
   parent: '',
   spouseOf: 'ashvapati_madra_anu',
@@ -841,6 +929,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'savitri_madra',
   name: 'महा-सावित्री',
+  gender: 'female',
   subtitle: 'अश्वपति-मालवी पुत्री',
   parent: 'ashvapati_madra_anu',
   mother: 'malavi_ashvapati_wife',
@@ -860,6 +949,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'malava_tribe_founders',
   name: '100 मालव पुत्र',
+  gender: 'male',
   subtitle: 'मालव गणराज्य के संस्थापक',
   parent: 'ashvapati_madra_anu',
   mother: 'malavi_ashvapati_wife',
@@ -870,6 +960,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jayavarman_aulikara',
   name: 'जयवर्मन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश (प्रथम घराना)',
   parent: 'malava_tribe_founders',
   yug: 'kali',
@@ -878,6 +969,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'simhavarman_aulikara',
   name: 'सिंहवर्मन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'jayavarman_aulikara',
   yug: 'kali',
@@ -886,6 +978,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'naravarman_aulikara',
   name: 'नरवर्मन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'simhavarman_aulikara',
   yug: 'kali',
@@ -895,6 +988,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vishvavarman_aulikara',
   name: 'विश्ववर्मन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'naravarman_aulikara',
   yug: 'kali',
@@ -903,6 +997,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'bandhuvarman_aulikara',
   name: 'बन्धुवर्मन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'vishvavarman_aulikara',
   yug: 'kali',
@@ -912,6 +1007,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'drumavardhana_aulikara',
   name: 'द्रुमवर्धन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'bandhuvarman_aulikara',
   yug: 'kali',
@@ -920,6 +1016,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jayavardhana_aulikara',
   name: 'जयवर्धन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'drumavardhana_aulikara',
   yug: 'kali',
@@ -928,6 +1025,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ajitavardhana_aulikara',
   name: 'अजितवर्धन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'jayavardhana_aulikara',
   yug: 'kali',
@@ -936,6 +1034,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vibhishanavardhana_aulikara',
   name: 'विभीषणवर्धन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'ajitavardhana_aulikara',
   yug: 'kali',
@@ -944,6 +1043,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajyavardhana_aulikara',
   name: 'राज्यवर्धन',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'vibhishanavardhana_aulikara',
   yug: 'kali',
@@ -952,6 +1052,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'prakashadharma_aulikara',
   name: 'प्रकाशधर्मा',
+  gender: 'male',
   subtitle: 'औलिकर नरेश',
   parent: 'rajyavardhana_aulikara',
   yug: 'kali',
@@ -961,6 +1062,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'yashodharman_aulikara',
   name: 'यशोधर्मन (विष्णुवर्धन)',
+  gender: 'male',
   subtitle: 'औलिकर सम्राट (हूण-विनाशक)',
   parent: 'prakashadharma_aulikara',
   yug: 'kali',
@@ -971,6 +1073,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kekaya_anu',
   name: 'केकय',
+  gender: 'male',
   subtitle: 'केकय देश संस्थापक',
   parent: 'sibi_anu',
   yug: 'treta',
@@ -979,6 +1082,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'titikshu_anu',
   name: 'तितिक्षु',
+  gender: 'male',
   subtitle: 'महामना पुत्र',
   parent: 'mahamana_anu',
   yug: 'treta',
@@ -987,6 +1091,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rushadratha_anu',
   name: 'रुशद्रथ',
+  gender: 'male',
   subtitle: 'तितिक्षु पुत्र',
   parent: 'titikshu_anu',
   yug: 'treta',
@@ -995,6 +1100,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'hema_anu',
   name: 'हेम',
+  gender: 'male',
   subtitle: 'रुशद्रथ पुत्र',
   parent: 'rushadratha_anu',
   yug: 'treta',
@@ -1003,6 +1109,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sutapas_anu',
   name: 'सुतपस',
+  gender: 'male',
   subtitle: 'हेम पुत्र',
   parent: 'hema_anu',
   yug: 'treta',
@@ -1011,6 +1118,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'bali_anu',
   name: 'बलि',
+  gender: 'male',
   subtitle: 'सुतपस पुत्र',
   parent: 'sutapas_anu',
   yug: 'treta',
@@ -1020,6 +1128,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sudeshna_bali_wife_chandra',
   name: 'सुदेष्णा',
+  gender: 'female',
   subtitle: 'राजा बलि की पत्नी',
   parent: '',
   spouseOf: 'bali_anu',
@@ -1028,6 +1137,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'anga_anu',
   name: 'अंग',
+  gender: 'male',
   subtitle: 'अंग देश संस्थापक',
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
@@ -1038,6 +1148,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vanga_anu',
   name: 'वंग',
+  gender: 'male',
   subtitle: 'वंग देश संस्थापक',
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
@@ -1045,7 +1156,7 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने वंग देश (वर्तमान बंगाल) की स्थापना की।',
   clusterName: 'वंग देश चंद्रवंशी'
 },
-      {
+    {
   id: 'suppadevi_vanga',
   name: 'सुप्पदेवी',
   subtitle: 'वंग-कलिंग राजकुमारी',
@@ -1075,9 +1186,10 @@ export const anuDruhyuTurvasuData = [
   yug: 'kali',
   clusterName: 'सिंहल वंश (श्रीलंका)'
 },
-  {
+    {
   id: 'kalinga_anu',
   name: 'कलिंग',
+  gender: 'male',
   subtitle: 'कलिंग देश संस्थापक',
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
@@ -1085,9 +1197,10 @@ export const anuDruhyuTurvasuData = [
   parichay: 'इन्होंने कलिंग देश (वर्तमान ओडिशा) की स्थापना की।',
   clusterName: 'कलिंग देश चंद्रवंशी'
 },
-      {
+    {
   id: 'brahmadatta_kalinga',
   name: 'ब्रह्मदत्त',
+  gender: 'male',
   subtitle: 'कलिंग नरेश',
   parent: 'kalinga_anu',
   yug: 'dwapar',
@@ -1097,6 +1210,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'guhasiva_kalinga',
   name: 'गुहसीव',
+  gender: 'male',
   subtitle: 'कलिंग नरेश',
   parent: 'brahmadatta_kalinga',
   yug: 'kali',
@@ -1123,9 +1237,10 @@ export const anuDruhyuTurvasuData = [
   parichay: 'राजकुमारी हेममाला के पति और उज्जैन के राजकुमार, जो उनके साथ श्रीलंका गए।',
   clusterName: 'कलिंग देश चंद्रवंशी'
 },
-  {
+    {
   id: 'pundra_anu',
   name: 'पुण्ड्र',
+  gender: 'male',
   subtitle: 'पुण्ड्र देश संस्थापक',
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
@@ -1135,6 +1250,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'suhma_anu',
   name: 'सुह्म',
+  gender: 'male',
   subtitle: 'सुह्म देश संस्थापक',
   parent: 'bali_anu',
   mother: 'sudeshna_bali_wife_chandra',
@@ -1144,6 +1260,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dadhivahana_anu',
   name: 'दधिवाहन',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'anga_anu',
   yug: 'treta',
@@ -1152,6 +1269,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'khalapana_anu',
   name: 'खलपान',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'dadhivahana_anu',
   yug: 'treta',
@@ -1160,6 +1278,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'diviratha_anu',
   name: 'दिविरथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'khalapana_anu',
   yug: 'treta',
@@ -1168,6 +1287,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dharmaratha_anu',
   name: 'धर्मरथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'diviratha_anu',
   yug: 'treta',
@@ -1176,6 +1296,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chitraratha_anga_anu',
   name: 'चित्ररथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'dharmaratha_anu',
   yug: 'treta',
@@ -1184,6 +1305,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dasharatha_anga_anu',
   name: 'दशरथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'chitraratha_anga_anu',
   yug: 'treta',
@@ -1192,6 +1314,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chaturanga_anu',
   name: 'चतुरंग',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'dasharatha_anga_anu',
   yug: 'treta',
@@ -1200,6 +1323,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'prithulaksha_anu',
   name: 'पृथुलाक्ष',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'chaturanga_anu',
   yug: 'treta',
@@ -1208,6 +1332,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'bhadraratha_anu',
   name: 'भद्ररथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'prithulaksha_anu',
   yug: 'treta',
@@ -1216,6 +1341,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihadratha_anga_anu',
   name: 'बृहद्रथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'bhadraratha_anu',
   yug: 'treta',
@@ -1224,6 +1350,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihatkarman_anu',
   name: 'बृहत्कर्मन',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihadratha_anga_anu',
   yug: 'treta',
@@ -1232,6 +1359,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihadbhanu_anu',
   name: 'बृहद्भानु',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihatkarman_anu',
   yug: 'treta',
@@ -1240,6 +1368,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihanmanas_anu',
   name: 'बृहन्मनस',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihadbhanu_anu',
   yug: 'treta',
@@ -1248,6 +1377,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jayadratha_anga_anu',
   name: 'जयद्रथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihanmanas_anu',
   yug: 'treta',
@@ -1256,6 +1386,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dridharatha_anu',
   name: 'दृढरथ',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'jayadratha_anga_anu',
   yug: 'treta',
@@ -1264,6 +1395,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vishvajit_anga_anu',
   name: 'विश्वजित',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'dridharatha_anu',
   yug: 'treta',
@@ -1272,6 +1404,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'romapada_anu',
   name: 'रोमपाद (चित्ररथ)',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'vishvajit_anga_anu',
   yug: 'treta',
@@ -1281,6 +1414,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chaturanga_ii_anu',
   name: 'चतुरंग द्वितीय',
+  gender: 'male',
   subtitle: 'रोमपाद पुत्र',
   parent: 'romapada_anu',
   yug: 'treta',
@@ -1289,6 +1423,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'prithulaksha_ii_anu',
   name: 'पृथुलाक्ष द्वितीय',
+  gender: 'male',
   subtitle: 'चतुरंग द्वितीय पुत्र',
   parent: 'chaturanga_ii_anu',
   yug: 'treta',
@@ -1297,6 +1432,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'champa_anu',
   name: 'चम्प',
+  gender: 'male',
   subtitle: 'चम्पापुरी संस्थापक',
   parent: 'prithulaksha_ii_anu',
   yug: 'treta',
@@ -1306,6 +1442,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'haryanga_anu',
   name: 'हर्यंग',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'champa_anu',
   yug: 'dwapar',
@@ -1314,6 +1451,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'bhadraratha_ii_anu',
   name: 'भद्ररथ द्वितीय',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'haryanga_anu',
   yug: 'dwapar',
@@ -1322,6 +1460,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihatkarman_ii_anu',
   name: 'बृहत्कर्मन द्वितीय',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'bhadraratha_ii_anu',
   yug: 'dwapar',
@@ -1330,6 +1469,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihadbhanu_ii_anu',
   name: 'बृहद्भानु द्वितीय',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihatkarman_ii_anu',
   yug: 'dwapar',
@@ -1338,6 +1478,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brihanmanas_ii_anu',
   name: 'बृहन्मनस द्वितीय',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihadbhanu_ii_anu',
   yug: 'dwapar',
@@ -1346,6 +1487,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'jayadratha_ii_anu',
   name: 'जयद्रथ द्वितीय',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'brihanmanas_ii_anu',
   yug: 'dwapar',
@@ -1354,6 +1496,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vijaya_anga_anu',
   name: 'विजय',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'jayadratha_ii_anu',
   yug: 'dwapar',
@@ -1362,6 +1505,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dhriti_anga_anu',
   name: 'धृति',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'vijaya_anga_anu',
   yug: 'dwapar',
@@ -1370,6 +1514,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dhritavrata_anu',
   name: 'धृतव्रत',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'dhriti_anga_anu',
   yug: 'dwapar',
@@ -1378,6 +1523,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'satyakarman_anu',
   name: 'सत्यकर्मन',
+  gender: 'male',
   subtitle: 'अंग नरेश',
   parent: 'dhritavrata_anu',
   yug: 'dwapar',
@@ -1386,6 +1532,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'adhiratha_anu',
   name: 'अधिरथ',
+  gender: 'male',
   subtitle: 'सत्यकर्मन पुत्र',
   parent: 'satyakarman_anu',
   yug: 'dwapar',
@@ -1395,6 +1542,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'radha_karna_chandra',
   name: 'राधा',
+  gender: 'female',
   subtitle: 'अधिरथ की पत्नी',
   parent: '',
   spouseOf: 'adhiratha_anu',
@@ -1404,6 +1552,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'shon_anu',
   name: 'शोण',
+  gender: 'male',
   subtitle: 'अधिरथ-राधा पुत्र',
   parent: 'adhiratha_anu',
   mother: 'radha_karna_chandra',
@@ -1414,6 +1563,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'karna_chandra',
   name: 'कर्ण',
+  gender: 'male',
   subtitle: 'अंगराज / सूर्य पुत्र',
   parent: 'adhiratha_anu',
   mother: 'radha_karna_chandra',
@@ -1424,6 +1574,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vrushali_chandra',
   name: 'वृषाली',
+  gender: 'female',
   subtitle: 'कर्ण की प्रथम पत्नी',
   parent: '',
   spouseOf: 'karna_chandra',
@@ -1433,6 +1584,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'supriya_chandra',
   name: 'सुप्रिया',
+  gender: 'female',
   subtitle: 'कर्ण की द्वितीय पत्नी',
   parent: '',
   spouseOf: 'karna_chandra',
@@ -1442,6 +1594,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vrishasena_karna_chandra',
   name: 'वृषसेन',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
@@ -1451,6 +1604,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chitrasena_karna_chandra',
   name: 'चित्रसेन',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
@@ -1460,6 +1614,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'satyasena_karna_chandra',
   name: 'सत्यसेन',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
@@ -1469,6 +1624,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sushena_karna_chandra',
   name: 'सुषेण',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
@@ -1478,6 +1634,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'shatrunjaya_karna_chandra',
   name: 'शत्रुंजय',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
@@ -1487,6 +1644,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'dvipata_karna_chandra',
   name: 'द्विपात',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'vrushali_chandra',
@@ -1496,6 +1654,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'prasena_karna_chandra',
   name: 'प्रसेन',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'supriya_chandra',
@@ -1505,6 +1664,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'banasena_karna_chandra',
   name: 'बाणसेन',
+  gender: 'male',
   subtitle: 'कर्ण पुत्र',
   parent: 'karna_chandra',
   mother: 'supriya_chandra',
@@ -1514,6 +1674,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vrishaketu_karna_chandra',
   name: 'वृषकेतु',
+  gender: 'male',
   subtitle: 'कर्ण के एकमात्र जीवित पुत्र',
   parent: 'karna_chandra',
   mother: 'supriya_chandra',
@@ -1524,6 +1685,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'anga_unknown_generations',
   name: 'ऐतिहासिक अंतराल',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'vrishaketu_karna_chandra',
   yug: 'kali',
@@ -1532,6 +1694,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'brahmadatta_anga',
   name: 'ब्रह्मदत्त',
+  gender: 'male',
   subtitle: 'अंतिम अंग नरेश',
   parent: 'anga_unknown_generations',
   yug: 'kali',
@@ -1540,6 +1703,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'early_chera_link',
   name: 'ऐतिहासिक अंतराल (संगम काल)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'kerala_turvasu_chandra',
   yug: 'kali',
@@ -1549,6 +1713,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'uthiyan_cheralathan',
   name: 'उदियन चेरलथन',
+  gender: 'male',
   subtitle: 'प्रथम संगम चेर नरेश',
   parent: 'early_chera_link',
   yug: 'kali',
@@ -1569,6 +1734,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nedum_cheralathan',
   name: 'नेदुम चेरलथन',
+  gender: 'male',
   subtitle: 'इमयावरम्पन',
   parent: 'uthiyan_cheralathan',
   mother: 'veliyan_nallini',
@@ -1579,6 +1745,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'palyanai_chel_kelu_kuttuvan',
   name: 'पलयानई चेल केलु कुट्टुवन',
+  gender: 'male',
   subtitle: 'उदियन के पुत्र',
   parent: 'uthiyan_cheralathan',
   mother: 'veliyan_nallini',
@@ -1610,6 +1777,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'narmudi_cheral',
   name: 'नार्मुडी चेरल',
+  gender: 'male',
   subtitle: 'नेदुम के पुत्र',
   parent: 'nedum_cheralathan',
   mother: 'other_wife_nedum',
@@ -1620,6 +1788,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'senguttuvan_chera',
   name: 'सेनगुट्टुवन (चेनकुट्टुवन)',
+  gender: 'male',
   subtitle: 'महान चेर नरेश',
   parent: 'nedum_cheralathan',
   mother: 'chola_princess_manikilli',
@@ -1630,6 +1799,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ilango_adigal',
   name: 'इलंगो अडिगल',
+  gender: 'male',
   subtitle: 'शिलप्पादिकारम के रचयिता',
   parent: 'nedum_cheralathan',
   mother: 'chola_princess_manikilli',
@@ -1640,6 +1810,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'adu_kottu_pattu_cheralathan',
   name: 'आडु कोट्टु पट्टु चेरलथन',
+  gender: 'male',
   subtitle: 'नेदुम के पुत्र',
   parent: 'nedum_cheralathan',
   mother: 'chola_princess_manikilli',
@@ -1650,6 +1821,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'anthuvan_cheral',
   name: 'अन्थुवन चेरल',
+  gender: 'male',
   subtitle: 'इरुम्पोरई शाखा के संस्थापक',
   parent: 'early_chera_link',
   yug: 'kali',
@@ -1658,6 +1830,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'chelva_kadumko_vali_athan',
   name: 'चेल्वा कडुमको वलि अथन',
+  gender: 'male',
   subtitle: 'चेर नरेश',
   parent: 'anthuvan_cheral',
   yug: 'kali',
@@ -1667,6 +1840,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'perum_cheral_irumporai',
   name: 'पेरुम चेरल इरुम्पोरई',
+  gender: 'male',
   subtitle: 'महान चेर नरेश',
   parent: 'chelva_kadumko_vali_athan',
   yug: 'kali',
@@ -1676,6 +1850,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kudakko_illam_cheral_irumporai',
   name: 'कुडक्को इल्लम चेरल इरुम्पोरई',
+  gender: 'male',
   subtitle: 'चेर नरेश',
   parent: 'perum_cheral_irumporai',
   yug: 'kali',
@@ -1685,6 +1860,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kanaikkal_irumporai',
   name: 'कनैक्कल इरुम्पोरई',
+  gender: 'male',
   subtitle: 'संगम काल के अंतिम चेर',
   parent: 'kudakko_illam_cheral_irumporai',
   yug: 'kali',
@@ -1694,6 +1870,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'later_chera_link',
   name: 'कलभ्र अंतराल (Kalabhra Interregnum)',
+  gender: 'male',
   subtitle: 'अंधकार युग',
   parent: 'kanaikkal_irumporai',
   yug: 'kali',
@@ -1703,6 +1880,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulasekhara_alvar',
   name: 'कुलशेखर आलवार (स्थाणु रवि)',
+  gender: 'male',
   subtitle: 'प्रथम पेरुमल',
   parent: 'later_chera_link',
   yug: 'kali',
@@ -1712,6 +1890,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rama_rajasekhara',
   name: 'राम राजशेखर (चेरामन पेरुमल)',
+  gender: 'male',
   subtitle: 'नयनार संत राजा',
   parent: 'kulasekhara_alvar',
   yug: 'kali',
@@ -1721,6 +1900,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sthanu_ravi_varma',
   name: 'स्थाणु रवि वर्मा',
+  gender: 'male',
   subtitle: 'पेरुमल नरेश',
   parent: 'rama_rajasekhara',
   yug: 'kali',
@@ -1730,6 +1910,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'goda_ravi',
   name: 'गोदा रवि',
+  gender: 'male',
   subtitle: 'पेरुमल नरेश',
   parent: 'sthanu_ravi_varma',
   yug: 'kali',
@@ -1738,6 +1919,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'bhaskara_ravi_varman',
   name: 'भास्कर रवि वर्मन',
+  gender: 'male',
   subtitle: 'मनुकुलादित्य',
   parent: 'goda_ravi',
   yug: 'kali',
@@ -1747,6 +1929,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rama_kulasekhara',
   name: 'राम कुलशेखर',
+  gender: 'male',
   subtitle: 'अंतिम महान पेरुमल',
   parent: 'bhaskara_ravi_varman',
   yug: 'kali',
@@ -1756,6 +1939,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'early_chola_link',
   name: 'ऐतिहासिक अंतराल (संगम काल)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'chola_turvasu_chandra',
   yug: 'kali',
@@ -1765,6 +1949,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sibi_chakravarthi_chola',
   name: 'शिबि चक्रवर्ती (चोल उपाधि)',
+  gender: 'male',
   subtitle: 'चोलों के दावानल पूर्वज',
   parent: 'early_chola_link',
   yug: 'kali',
@@ -1774,6 +1959,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'manu_needhi_cholan',
   name: 'मनु नीधि चोलन',
+  gender: 'male',
   subtitle: 'न्यायप्रिय राजा',
   parent: 'sibi_chakravarthi_chola',
   yug: 'kali',
@@ -1783,6 +1969,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'ilamcetcenni',
   name: 'इलमचेतचेन्नी',
+  gender: 'male',
   subtitle: 'संगम चोल नरेश',
   parent: 'manu_needhi_cholan',
   yug: 'kali',
@@ -1791,6 +1978,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'karikala_chola_1',
   name: 'करिकाल चोल',
+  gender: 'male',
   subtitle: 'महान संगम नरेश',
   parent: 'ilamcetcenni',
   yug: 'kali',
@@ -1800,6 +1988,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nedunkilli',
   name: 'नेदुनकिल्ली',
+  gender: 'male',
   subtitle: 'संगम चोल नरेश',
   parent: 'karikala_chola_1',
   yug: 'kali',
@@ -1808,6 +1997,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'nalankilli',
   name: 'नलानकिल्ली',
+  gender: 'male',
   subtitle: 'संगम चोल नरेश',
   parent: 'karikala_chola_1',
   yug: 'kali',
@@ -1816,6 +2006,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'killivalavan',
   name: 'किल्लीवलवन',
+  gender: 'male',
   subtitle: 'संगम चोल नरेश',
   parent: 'nalankilli',
   yug: 'kali',
@@ -1824,6 +2015,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kopperuncholan',
   name: 'कोप्पेरुंचोलन',
+  gender: 'male',
   subtitle: 'संगम चोल नरेश',
   parent: 'killivalavan',
   yug: 'kali',
@@ -1832,6 +2024,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kocengannan',
   name: 'कोचेंगन्नान',
+  gender: 'male',
   subtitle: 'अंतिम महान संगम चोल',
   parent: 'kopperuncholan',
   yug: 'kali',
@@ -1841,6 +2034,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'perunarkilli',
   name: 'पेरुनारकिल्ली',
+  gender: 'male',
   subtitle: 'संगम चोल नरेश',
   parent: 'kocengannan',
   yug: 'kali',
@@ -1849,6 +2043,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'imperial_chola_link',
   name: 'ऐतिहासिक अंतराल (अंधकार युग)',
+  gender: 'male',
   subtitle: 'अज्ञात पीढ़ियाँ',
   parent: 'perunarkilli',
   yug: 'kali',
@@ -1858,6 +2053,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vijayalaya_chola',
   name: 'विजयालय चोल',
+  gender: 'male',
   subtitle: 'साम्राज्यवादी चोल संस्थापक',
   parent: 'imperial_chola_link',
   yug: 'kali',
@@ -1867,6 +2063,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'aditya_1_chola',
   name: 'आदित्य प्रथम',
+  gender: 'male',
   subtitle: 'विजयालय पुत्र',
   parent: 'vijayalaya_chola',
   yug: 'kali',
@@ -1875,6 +2072,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'parantaka_1_chola',
   name: 'परान्तक प्रथम',
+  gender: 'male',
   subtitle: 'आदित्य प्रथम पुत्र',
   parent: 'aditya_1_chola',
   yug: 'kali',
@@ -1883,6 +2081,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajaditya_chola',
   name: 'राजादित्य चोल',
+  gender: 'male',
   subtitle: 'परान्तक प्रथम पुत्र',
   parent: 'parantaka_1_chola',
   yug: 'kali',
@@ -1891,6 +2090,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'gandaraditya_chola',
   name: 'गंडरादित्य',
+  gender: 'male',
   subtitle: 'परान्तक प्रथम पुत्र',
   parent: 'parantaka_1_chola',
   yug: 'kali',
@@ -1899,6 +2099,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'arinjaya_chola',
   name: 'अरिंजय चोल',
+  gender: 'male',
   subtitle: 'परान्तक प्रथम पुत्र',
   parent: 'parantaka_1_chola',
   yug: 'kali',
@@ -1907,6 +2108,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'uttama_chola',
   name: 'उत्तम चोल',
+  gender: 'male',
   subtitle: 'गंडरादित्य पुत्र',
   parent: 'gandaraditya_chola',
   yug: 'kali',
@@ -1915,6 +2117,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'sundara_chola',
   name: 'सुंदर चोल (परान्तक द्वितीय)',
+  gender: 'male',
   subtitle: 'अरिंजय पुत्र',
   parent: 'arinjaya_chola',
   yug: 'kali',
@@ -1923,6 +2126,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vanavan_mahadevi',
   name: 'वनवन महादेवी',
+  gender: 'female',
   subtitle: 'सुंदर चोल की पत्नी',
   parent: '',
   spouseOf: 'sundara_chola',
@@ -1931,6 +2135,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'aditya_2_karikala',
   name: 'आदित्य द्वितीय (करिकाल)',
+  gender: 'male',
   subtitle: 'सुंदर चोल पुत्र',
   parent: 'sundara_chola',
   mother: 'vanavan_mahadevi',
@@ -1952,6 +2157,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajaraja_1_chola',
   name: 'राजराजा चोल प्रथम',
+  gender: 'male',
   subtitle: 'राजराजा द ग्रेट',
   parent: 'sundara_chola',
   mother: 'vanavan_mahadevi',
@@ -1962,6 +2168,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'tribhuvana_mahadevi',
   name: 'त्रिभुवन महादेवी',
+  gender: 'female',
   subtitle: 'राजराजा प्रथम की पत्नी',
   parent: '',
   spouseOf: 'rajaraja_1_chola',
@@ -1970,6 +2177,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajendra_1_chola',
   name: 'राजेंद्र चोल प्रथम',
+  gender: 'male',
   subtitle: 'गंगईकोंडा चोल',
   parent: 'rajaraja_1_chola',
   mother: 'tribhuvana_mahadevi',
@@ -1980,6 +2188,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'mukkokilan',
   name: 'मुक्कोकिलन',
+  gender: 'female',
   subtitle: 'राजेंद्र प्रथम की पत्नी',
   parent: '',
   spouseOf: 'rajendra_1_chola',
@@ -1988,6 +2197,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajadhiraja_1_chola',
   name: 'राजाधिराज चोल प्रथम',
+  gender: 'male',
   subtitle: 'राजेंद्र प्रथम पुत्र',
   parent: 'rajendra_1_chola',
   mother: 'mukkokilan',
@@ -1997,6 +2207,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajendra_2_chola',
   name: 'राजेंद्र चोल द्वितीय',
+  gender: 'male',
   subtitle: 'राजेंद्र प्रथम पुत्र',
   parent: 'rajendra_1_chola',
   mother: 'mukkokilan',
@@ -2006,6 +2217,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'virarajendra_chola',
   name: 'वीरराजेंद्र चोल',
+  gender: 'male',
   subtitle: 'राजेंद्र प्रथम पुत्र',
   parent: 'rajendra_1_chola',
   mother: 'mukkokilan',
@@ -2026,6 +2238,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'athirajendra_chola',
   name: 'अधिराजेंद्र चोल',
+  gender: 'male',
   subtitle: 'वीरराजेंद्र पुत्र',
   parent: 'virarajendra_chola',
   yug: 'kali',
@@ -2035,6 +2248,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulothunga_1_chola',
   name: 'कुलोत्तुंग चोल प्रथम',
+  gender: 'male',
   subtitle: 'चालुक्य-चोल संस्थापक',
   parent: 'ammangadevi',
   yug: 'kali',
@@ -2044,6 +2258,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'vikrama_chola',
   name: 'विक्रम चोल',
+  gender: 'male',
   subtitle: 'कुलोत्तुंग प्रथम पुत्र',
   parent: 'kulothunga_1_chola',
   yug: 'kali',
@@ -2052,6 +2267,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulothunga_2_chola',
   name: 'कुलोत्तुंग चोल द्वितीय',
+  gender: 'male',
   subtitle: 'विक्रम चोल पुत्र',
   parent: 'vikrama_chola',
   yug: 'kali',
@@ -2060,6 +2276,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajaraja_2_chola',
   name: 'राजराजा चोल द्वितीय',
+  gender: 'male',
   subtitle: 'कुलोत्तुंग द्वितीय पुत्र',
   parent: 'kulothunga_2_chola',
   yug: 'kali',
@@ -2069,6 +2286,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajadhiraja_2_chola',
   name: 'राजाधिराज चोल द्वितीय',
+  gender: 'male',
   subtitle: 'राजराजा द्वितीय के भतीजे',
   parent: 'rajaraja_2_chola',
   yug: 'kali',
@@ -2077,6 +2295,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'kulothunga_3_chola',
   name: 'कुलोत्तुंग चोल तृतीय',
+  gender: 'male',
   subtitle: 'राजाधिराज द्वितीय पुत्र',
   parent: 'rajadhiraja_2_chola',
   yug: 'kali',
@@ -2086,6 +2305,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajaraja_3_chola',
   name: 'राजराजा चोल तृतीय',
+  gender: 'male',
   subtitle: 'कुलोत्तुंग तृतीय पुत्र',
   parent: 'kulothunga_3_chola',
   yug: 'kali',
@@ -2094,6 +2314,7 @@ export const anuDruhyuTurvasuData = [
     {
   id: 'rajendra_3_chola',
   name: 'राजेंद्र चोल तृतीय',
+  gender: 'male',
   subtitle: 'अंतिम चोल सम्राट',
   parent: 'rajaraja_3_chola',
   yug: 'kali',

@@ -476,7 +476,6 @@ export const sinhalaDynastyData = [
   parichay: 'वोहारिक के पुत्र।',
   clusterName: 'सिंहल वंश (श्रीलंका)'
 },
-
     {
   id: 'abhayanaga_sinhala',
   name: 'अभय नाग',
